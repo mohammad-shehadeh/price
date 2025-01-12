@@ -152,108 +152,106 @@ p {
         <!-- سيتم إدراج الفئات والمنتجات ديناميكيًا -->
     </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 <script>
-    // تحميل البيانات من ملف test.txt
-    async function loadDataFromFile() {
-        try {
-            const response = await fetch('test.txt'); // رابط ملف الأصناف
-            const data = await response.text();
-            return parseData(data);
-        } catch (error) {
-            console.error('خطأ أثناء تحميل الملف:', error);
-            alert('تعذر تحميل البيانات من الملف.');
-        }
-    }
-
-    // تحليل البيانات من ملف النصوص
-    function parseData(data) {
-        const categories = {};
-        const lines = data.split('\n'); // تقسيم النص إلى أسطر
-
-        lines.forEach(line => {
-            if (line.trim() === '') return; // تخطي الأسطر الفارغة
-            const [company, name, memory, price, image] = line.split(',');
-
-            if (!categories[company]) {
-                categories[company] = {
-                    name: company,
-                    image: getCompanyImage(company),
-                    products: []
-                };
+        // تحميل البيانات من ملف test.txt
+        async function loadDataFromFile() {
+            try {
+                const response = await fetch('test.txt'); // رابط ملف النصوص
+                if (!response.ok) {
+                    throw new Error('تعذر تحميل الملف، تحقق من وجوده في نفس المجلد.');
+                }
+                const data = await response.text();
+                return parseData(data);
+            } catch (error) {
+                console.error('خطأ أثناء تحميل الملف:', error);
+                alert('تعذر تحميل البيانات من الملف. تحقق من اسم الملف أو موقعه.');
             }
-
-            categories[company].products.push({
-                name: name.trim(),
-                memory: memory.trim(),
-                price: price.trim(),
-                image: image.trim()
-            });
-        });
-
-        return Object.values(categories); // تحويل القاموس إلى مصفوفة
-    }
-
-    // الحصول على صورة الشركة الافتراضية بناءً على الاسم
-    function getCompanyImage(company) {
-        const companyImages = {
-            'Samsung': 'https://static.vecteezy.com/system/resources/previews/020/975/669/non_2x/samsung-logo-samsung-icon-transparent-free-png.png',
-            'Xiaomi': 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Xiaomi_logo.svg/512px-Xiaomi_logo.svg.png',
-            'Apple': 'https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg',
-            'Tecno': 'https://getlogovector.com/wp-content/uploads/2021/05/tecno-mobile-logo-vector.png',
-            'Infinix': 'https://static.vecteezy.com/system/resources/previews/020/927/525/non_2x/infinix-brand-logo-phone-symbol-name-green-design-china-mobile-illustration-free-vector.jpg',
-            'Honor': 'https://logowik.com/content/uploads/images/honor7358.logowik.com.webp',
-            'Others': 'https://media-cdn.tripadvisor.com/media/photo-m/1280/1d/86/21/5d/undefined-primary-logo.jpg'
-        };
-
-        return companyImages[company] || companyImages['Others'];
-    }
-
-    // عرض الأصناف والمنتجات
-    function renderCategories(categories) {
-        const categoriesDiv = document.getElementById('categories');
-        categoriesDiv.innerHTML = '';
-
-        categories.forEach(category => {
-            const categoryDiv = document.createElement('div');
-            categoryDiv.classList.add('category');
-            categoryDiv.innerHTML = `
-                <h2>${category.name}</h2>
-                <img src="${category.image}" alt="${category.name}">
-                <div class="products"></div>
-            `;
-
-            const productsDiv = categoryDiv.querySelector('.products');
-            category.products.forEach(product => {
-                const productDiv = document.createElement('div');
-                productDiv.classList.add('product');
-                productDiv.innerHTML = `
-                    <img src="${product.image}" alt="${product.name}">
-                    <h3>${product.name}</h3>
-                    <p>الذاكرة: ${product.memory}</p>
-                    <p>السعر: ${product.price}</p>
-                `;
-                productsDiv.appendChild(productDiv);
-            });
-
-            categoriesDiv.appendChild(categoryDiv);
-        });
-    }
-
-    // تحميل البيانات وعرضها
-    async function initializeApp() {
-        const categories = await loadDataFromFile();
-        if (categories) {
-            renderCategories(categories);
         }
-    }
 
-    // استدعاء التطبيق عند تحميل الصفحة
-    initializeApp();
-</script>
+        // تحليل البيانات من ملف النصوص
+        function parseData(data) {
+            const categories = {};
+            const lines = data.split('\n'); // تقسيم النص إلى أسطر
 
-<!-- إضافة عنصر لعرض الأصناف -->
-<div id="categories"></div>
+            lines.forEach(line => {
+                if (line.trim() === '') return; // تخطي الأسطر الفارغة
+                const [company, name, memory, price, image] = line.split(','); // تقسيم السطر إلى أجزاء
 
+                if (!categories[company]) {
+                    categories[company] = {
+                        name: company.trim(),
+                        image: getCompanyImage(company.trim()),
+                        products: []
+                    };
+                }
+
+                categories[company].products.push({
+                    name: name.trim(),
+                    memory: memory.trim(),
+                    price: price.trim(),
+                    image: image.trim()
+                });
+            });
+
+            return Object.values(categories); // تحويل القاموس إلى مصفوفة
+        }
+
+        // الحصول على صورة الشركة الافتراضية بناءً على الاسم
+        function getCompanyImage(company) {
+            const companyImages = {
+                'Samsung': 'https://static.vecteezy.com/system/resources/previews/020/975/669/non_2x/samsung-logo-samsung-icon-transparent-free-png.png',
+                'Xiaomi': 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Xiaomi_logo.svg/512px-Xiaomi_logo.svg.png',
+                'Apple': 'https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg',
+                'Tecno': 'https://getlogovector.com/wp-content/uploads/2021/05/tecno-mobile-logo-vector.png',
+                'Infinix': 'https://static.vecteezy.com/system/resources/previews/020/927/525/non_2x/infinix-brand-logo-phone-symbol-name-green-design-china-mobile-illustration-free-vector.jpg',
+                'Honor': 'https://logowik.com/content/uploads/images/honor7358.logowik.com.webp',
+                'Others': 'https://media-cdn.tripadvisor.com/media/photo-m/1280/1d/86/21/5d/undefined-primary-logo.jpg'
+            };
+
+            return companyImages[company] || companyImages['Others'];
+        }
+
+        // عرض الأصناف والمنتجات
+        function renderCategories(categories) {
+            const categoriesDiv = document.getElementById('categories');
+            categoriesDiv.innerHTML = '';
+
+            categories.forEach(category => {
+                const categoryDiv = document.createElement('div');
+                categoryDiv.classList.add('category');
+                categoryDiv.innerHTML = `
+                    <h2>${category.name}</h2>
+                    <img src="${category.image}" alt="${category.name}">
+                    <div class="products"></div>
+                `;
+
+                const productsDiv = categoryDiv.querySelector('.products');
+                category.products.forEach(product => {
+                    const productDiv = document.createElement('div');
+                    productDiv.classList.add('product');
+                    productDiv.innerHTML = `
+                        <img src="${product.image}" alt="${product.name}">
+                        <h3>${product.name}</h3>
+                        <p>الذاكرة: ${product.memory}</p>
+                        <p>السعر: ${product.price}</p>
+                    `;
+                    productsDiv.appendChild(productDiv);
+                });
+
+                categoriesDiv.appendChild(categoryDiv);
+            });
+        }
+
+        // تحميل البيانات وعرضها
+        async function initializeApp() {
+            const categories = await loadDataFromFile();
+            if (categories) {
+                renderCategories(categories);
+            }
+        }
+
+        // استدعاء التطبيق عند تحميل الصفحة
+        initializeApp();
+    </script>
 </body>
 </html>
