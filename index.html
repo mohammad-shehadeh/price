@@ -152,301 +152,108 @@ p {
         <!-- سيتم إدراج الفئات والمنتجات ديناميكيًا -->
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-    <script>
-        const { jsPDF } = window.jspdf;
-
-        // مفاتيح API
-        const apiKey = 'AIzaSyAcr_SCnjPFKgydVUO0YVv8ukPJ5EMRAmM';
-        const searchEngineId = 'b284a81d633f74a1b';
-
-        const categories = [
-    {
-        name: "",
-        keywords: ["galaxy", "samsung", "S*", "sam"],
-        image: "https://static.vecteezy.com/system/resources/previews/020/975/669/non_2x/samsung-logo-samsung-icon-transparent-free-png.png",
-        products: []
-    },
-    {
-        name: "",
-        keywords: ["redmi", "mi", "xiaomi", "poco", "Note"],
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Xiaomi_logo.svg/512px-Xiaomi_logo.svg.png",
-        products: []
-    },
-    {
-        name: "",
-        keywords: ["iphone", "apple", "ipad", "ip"],
-        image: "https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg",
-        products: []
-    },
-    {
-        name: "",
-        keywords: ["tecno", "pova", "spark"],
-        image: "https://getlogovector.com/wp-content/uploads/2021/05/tecno-mobile-logo-vector.png",
-        products: []
-    },
-    {
-        name: "",
-        keywords: ["infinix", "hot", "smart"],
-        image: "https://static.vecteezy.com/system/resources/previews/020/927/525/non_2x/infinix-brand-logo-phone-symbol-name-green-design-china-mobile-illustration-free-vector.jpg",
-        products: []
-    },
-    {
-        name: "",
-        keywords: ["honor", "X"],
-        image: "https://logowik.com/content/uploads/images/honor7358.logowik.com.webp",
-        products: []
-    },
-    {
-    name: "",
-        keywords: ["OALE", "nokia", "kxd", "blackview", "oale", "oscal", "teclast"],
-        image: "https://media-cdn.tripadvisor.com/media/photo-m/1280/1d/86/21/5d/undefined-primary-logo.jpg",
-        products: []
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script>
+    // تحميل البيانات من ملف test.txt
+    async function loadDataFromFile() {
+        try {
+            const response = await fetch('test.txt'); // رابط ملف الأصناف
+            const data = await response.text();
+            return parseData(data);
+        } catch (error) {
+            console.error('خطأ أثناء تحميل الملف:', error);
+            alert('تعذر تحميل البيانات من الملف.');
+        }
     }
 
-];
+    // تحليل البيانات من ملف النصوص
+    function parseData(data) {
+        const categories = {};
+        const lines = data.split('\n'); // تقسيم النص إلى أسطر
 
-        function loadFromLocalStorage() {
-            const savedData = localStorage.getItem("categories");
-            if (savedData) {
-                const parsedData = JSON.parse(savedData);
-                parsedData.forEach((category, index) => {
-                    categories[index].products = category.products;
-                });
-            }
-        }
+        lines.forEach(line => {
+            if (line.trim() === '') return; // تخطي الأسطر الفارغة
+            const [company, name, memory, price, image] = line.split(',');
 
-        function saveToLocalStorage() {
-            localStorage.setItem("categories", JSON.stringify(categories));
-        }
-
-function updateDateTime() {
-    const datetimeDiv = document.getElementById("datetime");
-    const now = new Date();
-    
-    // تنسيق اليوم بالعربي
-    const daysOfWeek = ['الأحد', 'الاثنين', 'الثلاثاء', 'الأربعاء', 'الخميس', 'الجمعة', 'السبت'];
-    const dayOfWeek = daysOfWeek[now.getDay()]; // الحصول على اليوم بالعربي
-
-    // تنسيق التاريخ
-    const day = String(now.getDate()).padStart(2, '0');
-    const month = String(now.getMonth() + 1).padStart(2, '0');
-    const year = now.getFullYear();
-    const date = `${day}/${month}/${year}`;
-
-    // تنسيق الوقت باستخدام الأرقام الإنجليزية
-    const time = now.toLocaleTimeString('en-GB'); // تنسيق الوقت بأرقام إنجليزية
-
-    // تحديث النص داخل العنصر
-    datetimeDiv.textContent = `${dayOfWeek} - ${date} - ${time}`;
-}
-
-setInterval(updateDateTime, 1000);
-
-async function fetchProductImage(productName) {
-    const searchQuery = `${productName} front and back`;
-    const url = `https://www.googleapis.com/customsearch/v1?q=${encodeURIComponent(searchQuery)}&searchType=image&fileType=png&imgType=photo&key=${apiKey}&cx=${searchEngineId}`;
-
-    try {
-        const response = await fetch(url);
-        const data = await response.json();
-
-        if (data.items && data.items.length > 0) {
-            let squareImage = null;
-
-            // التحقق أولاً من الصور المربعة
-            for (let item of data.items) {
-                const imageUrl = item.link;
-                const imageWidth = item.image.width;
-                const imageHeight = item.image.height;
-
-                // إذا كانت الصورة مربعة (العرض = الارتفاع)
-                if (imageWidth === imageHeight) {
-                    squareImage = imageUrl;
-                    break; // اختيار الصورة المربعة الأولى
-                }
+            if (!categories[company]) {
+                categories[company] = {
+                    name: company,
+                    image: getCompanyImage(company),
+                    products: []
+                };
             }
 
-            // إذا تم العثور على صورة مربعة
-            if (squareImage) {
-                return squareImage;
-            }
-
-            // إذا لم يتم العثور على صورة مربعة، اختيار أول صورة متاحة
-            return data.items[0].link;
-        }
-
-        // إذا لم توجد أي صور، إرجاع صورة افتراضية
-        return 'https://www.example.com/default_image.png'; // صورة افتراضية
-
-    } catch (error) {
-        console.error('خطأ أثناء جلب الصورة:', error);
-        // عند حدوث خطأ، إرجاع صورة افتراضية
-        return 'https://www.example.com/default_image.png'; // صورة افتراضية
-    }
-}
-
-function getCategoryForProduct(productName) {
-    const lowerCaseName = productName.toLowerCase();
-    for (let category of categories) {
-        for (let keyword of category.keywords) {
-            if (lowerCaseName.includes(keyword)) {
-                return category;
-            }
-        }
-    }
-    return null;
-}
-
-
-        async function addProduct() {
-    const name = document.getElementById("product-name").value.trim();
-    const memory = document.getElementById("product-memory").value.trim();
-    const price = document.getElementById("product-price").value.trim();
-
-    if (!name || !memory || !price) {
-        alert("يرجى ملء جميع الحقول.");
-        return;
-    }
-
-    const image = await fetchProductImage(name);
-    const category = getCategoryForProduct(name);
-
-    if (category) {
-        category.products.push({ name, memory, price, image });
-
-        // الكلمات المفتاحية ذات الأولوية
-        const priorityKeywords = ["pro", "max", "ultra", "plus", "s"];
-
-        // فرز المنتجات داخل الفئة
-        category.products.sort((a, b) => {
-            // استخلاص الأرقام من الأسماء
-            const aNumber = parseInt(a.name.match(/\d+/)) || 0;
-            const bNumber = parseInt(b.name.match(/\d+/)) || 0;
-
-            // التحقق من أولوية الكلمات المفتاحية
-            const aPriority = priorityKeywords.findIndex(keyword => a.name.toLowerCase().includes(keyword));
-            const bPriority = priorityKeywords.findIndex(keyword => b.name.toLowerCase().includes(keyword));
-
-            // إذا كان لأحدهما أولوية أعلى
-            if (aPriority !== bPriority) {
-                if (aPriority === -1) return 1; // `a` ليس له أولوية
-                if (bPriority === -1) return -1; // `b` ليس له أولوية
-                return aPriority - bPriority; // ترتيب حسب الأولوية
-            }
-
-            // إذا كانت الأولوية متساوية، يتم الفرز حسب الرقم
-            if (aNumber !== bNumber) return bNumber - aNumber;
-
-            // إذا كانت الأرقام متساوية، يتم الفرز حسب الاسم
-            return a.name.localeCompare(b.name, 'en', { numeric: true });
-        });
-    } else {
-        alert("لم يتم العثور على فئة مناسبة للمنتج!");
-        return;
-    }
-
-    // حفظ البيانات وعرض التحديثات
-    saveToLocalStorage();
-    renderCategories();
-    clearForm();
-
-    // دالة لإضافة المنتج
-    function addProduct() {
-        // منطق إضافة المنتج هنا
-    }
-
-}
-              // دالة لإخفاء النموذج عند الضغط على الزر
-              function toggleForm() {
-        var formContainer = document.querySelector('.form-container');
-        formContainer.style.display = 'none';
-    }
-
-        function editProduct(categoryIndex, productIndex) {
-            const product = categories[categoryIndex].products[productIndex];
-            const newMemory = prompt("الذاكرة:", product.memory);
-            const newPrice = prompt("السعر:", product.price);
-
-            if (newName && newMemory && newPrice) {
-                categories[categoryIndex].products[productIndex] = { ...product, name: newName, memory: newMemory, price: newPrice };
-                saveToLocalStorage();
-                renderCategories();
-            }
-        }
-
-        function deleteProduct(categoryIndex, productIndex) {
-            categories[categoryIndex].products.splice(productIndex, 1);
-            saveToLocalStorage();
-            renderCategories();
-        }
-
-        function clearForm() {
-            document.getElementById("product-name").value = "";
-            document.getElementById("product-memory").value = "";
-            document.getElementById("product-price").value = "";
-        }
-
-        function renderCategories() {
-            const categoriesDiv = document.getElementById("categories");
-            categoriesDiv.innerHTML = "";
-
-            categories.forEach(category => {
-                const categoryDiv = document.createElement("div");
-                categoryDiv.classList.add("category");
-                categoryDiv.innerHTML = `
-                    <h2>${category.name}</h2>
-                    <img src="${category.image}" alt="${category.name}">
-                    <div class="products"></div>
-                `;
-
-                const productsDiv = categoryDiv.querySelector(".products");
-                category.products.forEach((product, index) => {
-                    const productDiv = document.createElement("div");
-                    productDiv.classList.add("product");
-                    productDiv.innerHTML = `
-                        <img src="${product.image}" alt="${product.name}">
-                        <h3>${product.name}</h3>
-                        <p>الذاكرة: ${product.memory}</p>
-                        <p>السعر: ${product.price}</p>
-                        <button onclick="editProduct(${categories.indexOf(category)}, ${index})">تعديل</button>
-                        <button onclick="deleteProduct(${categories.indexOf(category)}, ${index})">حذف</button>
-                    `;
-                    productsDiv.appendChild(productDiv);
-                });
-
-                categoriesDiv.appendChild(categoryDiv);
+            categories[company].products.push({
+                name: name.trim(),
+                memory: memory.trim(),
+                price: price.trim(),
+                image: image.trim()
             });
-        }
+        });
 
-// دالة لتعديل المنتج
-function editProduct(categoryIndex, productIndex) {
-    const product = categories[categoryIndex].products[productIndex];
-    const newMemory = prompt("تعديل الذاكرة:", product.memory);
-    const newPrice = prompt("تعديل السعر:", product.price);
-
-    if (newMemory && newPrice) {
-        categories[categoryIndex].products[productIndex] = {
-            ...product,
-            memory: newMemory,
-            price: newPrice
-        };
-        saveToLocalStorage();
-        renderCategories();
+        return Object.values(categories); // تحويل القاموس إلى مصفوفة
     }
-}
 
-        // دالة لحذف المنتج
-        function deleteProduct(categoryIndex, productIndex) {
-            categories[categoryIndex].products.splice(productIndex, 1);
-            saveToLocalStorage();
-            renderCategories();
+    // الحصول على صورة الشركة الافتراضية بناءً على الاسم
+    function getCompanyImage(company) {
+        const companyImages = {
+            'Samsung': 'https://static.vecteezy.com/system/resources/previews/020/975/669/non_2x/samsung-logo-samsung-icon-transparent-free-png.png',
+            'Xiaomi': 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Xiaomi_logo.svg/512px-Xiaomi_logo.svg.png',
+            'Apple': 'https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg',
+            'Tecno': 'https://getlogovector.com/wp-content/uploads/2021/05/tecno-mobile-logo-vector.png',
+            'Infinix': 'https://static.vecteezy.com/system/resources/previews/020/927/525/non_2x/infinix-brand-logo-phone-symbol-name-green-design-china-mobile-illustration-free-vector.jpg',
+            'Honor': 'https://logowik.com/content/uploads/images/honor7358.logowik.com.webp',
+            'Others': 'https://media-cdn.tripadvisor.com/media/photo-m/1280/1d/86/21/5d/undefined-primary-logo.jpg'
+        };
+
+        return companyImages[company] || companyImages['Others'];
+    }
+
+    // عرض الأصناف والمنتجات
+    function renderCategories(categories) {
+        const categoriesDiv = document.getElementById('categories');
+        categoriesDiv.innerHTML = '';
+
+        categories.forEach(category => {
+            const categoryDiv = document.createElement('div');
+            categoryDiv.classList.add('category');
+            categoryDiv.innerHTML = `
+                <h2>${category.name}</h2>
+                <img src="${category.image}" alt="${category.name}">
+                <div class="products"></div>
+            `;
+
+            const productsDiv = categoryDiv.querySelector('.products');
+            category.products.forEach(product => {
+                const productDiv = document.createElement('div');
+                productDiv.classList.add('product');
+                productDiv.innerHTML = `
+                    <img src="${product.image}" alt="${product.name}">
+                    <h3>${product.name}</h3>
+                    <p>الذاكرة: ${product.memory}</p>
+                    <p>السعر: ${product.price}</p>
+                `;
+                productsDiv.appendChild(productDiv);
+            });
+
+            categoriesDiv.appendChild(categoryDiv);
+        });
+    }
+
+    // تحميل البيانات وعرضها
+    async function initializeApp() {
+        const categories = await loadDataFromFile();
+        if (categories) {
+            renderCategories(categories);
         }
+    }
 
-        // تحميل البيانات عند فتح الصفحة
-        loadFromLocalStorage();
-        renderCategories();
+    // استدعاء التطبيق عند تحميل الصفحة
+    initializeApp();
+</script>
 
-    </script>   
+<!-- إضافة عنصر لعرض الأصناف -->
+<div id="categories"></div>
+
 </body>
 </html>
