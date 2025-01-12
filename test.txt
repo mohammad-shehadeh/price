@@ -1,7 +1,1 @@
-ip,14,128,3000,https://gadgetgate.de/wp-content/uploads/2023/07/fee_786_587_png-2-36.webp
-sa,S24 ULTRA,256,12,3250,https://sbitany.com/image/cache/catalog/109-634-0049-0369-2024012565120-460x460.jpg
-MI,REDMI NOTE 13,256/8,https://thumb.pccomponentes.com/w-530-530/articles/1080/10804884/1781-xiaomi-redmi-note-13-8-256gb-azul-libre.jpg
-TE,SPARK 20C,256/8,380,https://jormall.net/cdn/shop/files/dz2csXZ_1024x.png?v=1721738484
-Samsung,Galaxy S23,8GB,1200$,https://example.com/s23.png
-Xiaomi,Redmi Note 12,6GB,300$,https://example.com/note12.png
-Apple,iPhone 14,8GB,1000$,https://example.com/iphone14.png
+
