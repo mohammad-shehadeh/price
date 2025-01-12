@@ -12,7 +12,7 @@
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
-        }  
+        }
         header {
             background-color: #031b35;
             color: white;
@@ -76,8 +76,10 @@
     </div>
 
     <script>
-        // قراءة محتوى ملف test.txt
-        fetch('test.txt')
+        // رابط ملف test.txt على GitHub (تأكد من أن الرابط صحيح)
+        const fileUrl = 'https://raw.githubusercontent.com/username/repository/branch/test.txt';
+
+        fetch(fileUrl)
             .then(response => response.text())
             .then(data => {
                 const products = data.split('\n');
