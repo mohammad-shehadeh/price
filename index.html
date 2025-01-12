@@ -152,19 +152,21 @@ p {
         <!-- سيتم إدراج الفئات والمنتجات ديناميكيًا -->
     </div>
 
-<script>
+    <script>
         // تحميل البيانات من ملف test.txt
         async function loadDataFromFile() {
             try {
-                const response = await fetch('test.txt'); // رابط ملف النصوص
+                // التأكد من أن الملف موجود بنفس المسار
+                const response = await fetch('./test.txt'); // يجب أن يكون اسم الملف test.txt
                 if (!response.ok) {
-                    throw new Error('تعذر تحميل الملف، تحقق من وجوده في نفس المجلد.');
+                    throw new Error('تعذر تحميل الملف. تحقق من وجوده في نفس المجلد.');
                 }
-                const data = await response.text();
-                return parseData(data);
+
+                const data = await response.text(); // قراءة محتوى الملف كنص
+                return parseData(data); // تحليل البيانات
             } catch (error) {
                 console.error('خطأ أثناء تحميل الملف:', error);
-                alert('تعذر تحميل البيانات من الملف. تحقق من اسم الملف أو موقعه.');
+                alert('تعذر تحميل البيانات من الملف. تأكد من صحة اسم الملف وموقعه.');
             }
         }
 
