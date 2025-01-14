@@ -36,22 +36,23 @@
     margin-right: auto;  /* توسيط النص أفقيًا */
 }
 
-.products-container {
-    display: flex; /* تفعيل توزيع العناصر */
-    flex-wrap: wrap; /* السماح بانتقال العناصر إلى الصف التالي عند الحاجة */
-    justify-content: space-between; /* توزيع العناصر بمسافات متساوية */
-    gap: 1em; /* مسافة بين العناصر */
-    padding: 2em; /* مسافة داخلية للحاوية */
-}
+        .products-container {
+            display: flex;
+            flex-wrap: wrap; /* السماح بتغيير الصف عند انتهاء العرض */
+            justify-content: center; /* محاذاة العناصر في المنتصف */
+            padding: 2em;
+            gap: 1em; /* إضافة مسافة بين العناصر */
+        }
 
 .product {
-    width: calc(50% - 1em); /* عرض كل عنصر يكون 50% مع خصم المسافة بينهما */
     background-color: white;
-    padding: 1em;
+    width: 300px;
+    margin: 0.7em;
+    padding: 0.7em;
     border-radius: 10px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     text-align: center;
-    margin-bottom: 1em; /* مسافة بين الصفوف */
+    transition: transform 0.3s ease;
 }
 
 /* تصميم مخصص للأجهزة المحمولة */
@@ -592,9 +593,11 @@ function updateQuantity(input, change) {
 // Handle changes to the quantity input directly (when the user modifies it)
 function handleQuantityChange(event) {
     const quantityInput = event.target;
-    const newQuantity = parseInt(quantityInput.value);
+    let newQuantity = parseInt(quantityInput.value);
+
+    // إذا كانت القيمة المدخلة صحيحة
     if (newQuantity >= 1) {
-        const productName = quantityInput.closest('.product').querySelector('strong').textContent;
+        const productName = quantityInput.dataset.product; // استخدام dataset لتحديد المنتج
         const product = cart.find(item => item.name === productName);
         if (product) {
             product.quantity = newQuantity;
@@ -602,9 +605,11 @@ function handleQuantityChange(event) {
             renderCart();
         }
     } else {
-        quantityInput.value = 1; // Ensure minimum value is 1
+        // إذا كانت القيمة المدخلة أقل من 1، إعادة ضبطها إلى 1
+        quantityInput.value = 1;
     }
 }
+
 
 // Remove product from cart
 function removeFromCart(productName) {
@@ -629,10 +634,15 @@ function renderCart() {
 
         const itemDetails = document.createElement('div');
         itemDetails.innerHTML = `
-            <strong>${item.name}</strong><br>
-            Price: ${item.price.toFixed(2)} ₪<br>
-            Quantity: <input type="number" value="${item.quantity}" min="1" class="cart-quantity" data-product="${item.name}">
-        `;
+    <strong>${item.name}</strong><br>
+    Price: ${item.price.toFixed(2)} ₪<br>
+    Quantity: <input 
+        type="number" 
+        value="${item.quantity}" 
+        min="1" 
+        class="cart-quantity" 
+        data-product="${item.name}">
+`;
         cartItemDiv.appendChild(itemDetails);
 
         const removeButton = document.createElement('button');
@@ -652,18 +662,19 @@ function renderCart() {
     // Event listener to handle quantity change in cart
     document.querySelectorAll('.cart-quantity').forEach(input => {
         input.addEventListener('change', (event) => {
-            handleQuantityChange(event);
-        });
+    handleQuantityChange(event);
+});
 
-        input.addEventListener('blur', (event) => {
-            handleQuantityChange(event);
-        });
+input.addEventListener('blur', (event) => {
+    handleQuantityChange(event);
+});
 
-        input.addEventListener('keypress', (event) => {
-            if (event.key === 'Enter') {
-                handleQuantityChange(event);
-            }
-        });
+input.addEventListener('keypress', (event) => {
+    if (event.key === 'Enter') {
+        handleQuantityChange(event);
+    }
+});
+
     });
 }
 
