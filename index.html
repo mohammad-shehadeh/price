@@ -17,7 +17,11 @@
             color: white;
             padding: 1.5em;
             text-align: center;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* إضافة التظليل */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* التظليل */
+            position: fixed; /* يجعل الهيدر ثابتاً */
+            top: 0; /* يبقي الهيدر في أعلى الصفحة */
+            width: 100%; /* يمتد بعرض الصفحة */
+            z-index: 1000; /* لضمان ظهور الهيدر فوق بقية العناصر */
         }
 
         header h1 {
