@@ -1,14 +1,8 @@
-yesido/tws25/35/https://icdn.tradew.com/file/202308/1575939/jpg/8061448.jpg?x-oss-process=image/resize,w_500/quality,Q_90
-yesido/yp50/50/https://icdn.tradew.com/file/202308/1575939/jpg/8143438.jpg?x-oss-process=image/quality,Q_90
-godes/55/55/https://icdn.tradew.com/file/202308/1575939/jpg/8143438.jpg?x-oss-process=image/quality,Q_90
-yesido/KM15/280/https://ls6iibytsc.eu.scalesta-cdn.com/XuzHAMVXhDbnUAodDAUiB2qvD7c=/filters:format(webp):fill(fff):quality(90)/www.yourstoreq8.com/images/detailed/249/G13394.webp
-yesido/kb21/38/https://sc04.alicdn.com/kf/H56230f4ad693450c930425b31fa51161U.jpg
-yesido/km13/55/https://swish.qa/cdn/shop/files/PC2645_1_700x.jpg?v=1730186589
-yesido/km14/70/https://swish.qa/cdn/shop/files/PC2645_1_700x.jpg?v=1730186589
-yesido/mg03/75/https://www.newface.com.tr/img/products/main/yesido-mg03-kablosuz-fonksiyonel-goz-masaj-aleti-siyah-66dfe494e6c2c.jpg
-yesido/sf18/200/https://www.mytrendyphone.eu/images/YESIDO-SF18-3-Axis-Smartphone-Holder-Gimbal-Stabilizer-Face-Tracking-Selfie-StickNone-22042024-00-p.webp
-yesido/sf14/70/https://kimostore.net/cdn/shop/files/yesido-sf14-gimbal-stabilizer-selfie-stick-tripod-kimo-store-1.jpg?v=1715048041
-yesido/tv12/145/https://icdn.tradew.com/file/202308/1575939/jpg/8067715.jpg?x-oss-process=image/resize,w_500/quality,Q_90
-yesido/yp36/140/
-yesido/sf15/70/
-yesido/ysp17/55/
+samsung/S24 ultra 256|12/3250/https://sbitany.com/image/cache/catalog/109-634-0049-0369-2024012565120-460x460.jpg
+samsung/S24 ultra 512|12/3850/https://sbitany.com/image/cache/catalog/109-634-0049-0369-2024012565120-460x460.jpg
+samsung/A55 256|12/1370/https://kaza.com.eg/pub/media/catalog/product/cache/2f071798f77b0deb4c04afd283b2ac15/l/a/layer_2_3.jpg
+samsung/A35 128|8/900/https://961souq.com/cdn/shop/files/SM-A35-iceblue_53ad151b-56aa-476b-a446-c12639b46b75.jpg?v=1710597245
+samsung/A25 128|6/700/https://cdn.mart.ps/244566-thickbox_default/samsung-galaxy-a25-128gb-6gb-ram-%D9%83%D9%81%D8%A7%D9%84%D8%A9-%D8%B3%D9%86%D8%A9.jpg
+samsung/A16 128|6/580/https://econtent.o2.co.uk/o/econtent/media/get/ff0037cf-f7bc-4ca6-bde5-779c9cbb9c2b
+samsung/A16 128|4/550/https://econtent.o2.co.uk/o/econtent/media/get/ff0037cf-f7bc-4ca6-bde5-779c9cbb9c2b
+samsung/ TAP A9 64|4/380/https://oplayce.ci/cdn/shop/files/samsung-galaxy-tab-a9_5_1024x.jpg?v=1717431017
