@@ -645,7 +645,8 @@ function renderCart() {
         const itemDetails = document.createElement('div');
         itemDetails.innerHTML = `
     <strong>${item.name}</strong><br>
-    Price: ${item.price.toFixed(2)} ₪<br>
+    <br>
+     ${item.price.toFixed(2)} ₪<br>
     Quantity: <input 
         type="number" 
         value="${item.quantity}" 
