@@ -512,7 +512,7 @@ function renderCategories() {
             productDiv.appendChild(productImage);
 
             const productDetails = document.createElement('div');
-            productDetails.innerHTML = `<strong>${product.name}</strong><br>Price: ${product.price.toFixed(2)} ₪`;
+            productDetails.innerHTML = `<strong>${product.name}</strong><br> ${product.price.toFixed(2)} ₪`;
             productDiv.appendChild(productDetails);
 
             // Quantity input and control buttons
@@ -645,8 +645,7 @@ function renderCart() {
         const itemDetails = document.createElement('div');
         itemDetails.innerHTML = `
     <strong>${item.name}</strong><br>
-    <br>
-     ${item.price.toFixed(2)} ₪<br>
+    Price: ${item.price.toFixed(2)} ₪<br>
     Quantity: <input 
         type="number" 
         value="${item.quantity}" 
