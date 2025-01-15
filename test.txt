@@ -40,5 +40,27 @@ Tecno/Camon 30 256|16/780/
 Tecno/pova 6 256|16/800/
 Tecno/pova 6 256|24/850/
 Infinix/hot 50pro 256|16/620/
+Infinix/hot 50/256|16/570/
+Infinix/hot 50i 128|8/340/
+Infinix/hot 40i 256|16/400/
 Infinix/smart 9 128|4/310/
 Infinix/smart 9 64|3/280/
+Infinix/Zero 40 512|16/
+Honor/X9b 256|12/1170/
+Honor/X9C 256|12/1350+airpods/
+Honor/X8b 512|8/800/
+Honor/X7b 256|6/600/
+Honor/X6A 128|4/400/
+Honor/X6b 256|6/470/
+Honor/X6b 128|6/420/
+Honor/X5b 128|4/320/
+Honor/X5b 64|4/290/
+N\A/Nokia 105 4G ori/110/
+N\A/oale pop 8 pro 64|7/230/
+N\A/Oscal pad 50 kids 64|2/280/
+N\A/Teclast p30t kids 64|4/320/
+N\A/Teclast 10" 64|4/320/
+N\A/Teclast 8" 64|4/270/
+N\A/Blackview Tap 3 kids 32|2/220/
+N\A/Blackview Tap 6 kids 32|3/
+N\A/Kxd C1 /35/
