@@ -6,33 +6,33 @@ samsung/A25 128|6/700/https://cdn.mart.ps/244566-thickbox_default/samsung-galaxy
 samsung/A16 128|6/580/https://econtent.o2.co.uk/o/econtent/media/get/ff0037cf-f7bc-4ca6-bde5-779c9cbb9c2b
 samsung/A16 128|4/550/https://econtent.o2.co.uk/o/econtent/media/get/ff0037cf-f7bc-4ca6-bde5-779c9cbb9c2b
 samsung/ TAP A9 64|4/380/https://oplayce.ci/cdn/shop/files/samsung-galaxy-tab-a9_5_1024x.jpg?v=1717431017
-samsung/A06 128|4/360/
-samsung/A06 64|4/325/
-samsung/A05 32|3/300/
-samsung/Galaxy Fit 3/200/
-MI/Note 13 pro 512|12/960/
-MI/Note 13 pro 256|12/750/
-MI/Note 13 256|8/560/
-MI/X6 pro 512|12 /1140/
-MI/X6 pro 256|12 /1050/
-MI/A3 pro 128|4/370/
-MI/redmi pad SE 128|6/480/
-MI/14C 256|8/460/
-MI/14C 128|6/420/
-MI/14C 128|4/370/
-MI/redmi 13 256|8/520/
-MI/13C 256|8/450/
-MI/extender AC1200/100/
-Apple/16 pro max 256GB/4900/
-Apple/iphone 16 128GB/3070/
-Apple/iphone 15 128GB/2550/
-Apple/iphone 14 128GB/2150/
-Apple/iphone 13 128GB/1950/
-Apple/ipad 10 256GB/1950/
-Apple/ipad 10 64GB/1300/
-Apple/ipad 9 64GB/940/
-Apple/20W cdata/75/
-Apple/Airpods 2/375/
+samsung/A06 128|4/360/https://m.media-amazon.com/images/I/71tSnRQx11L._AC_UF1000,1000_QL80_.jpg
+samsung/A06 64|4/325/https://m.media-amazon.com/images/I/71tSnRQx11L._AC_UF1000,1000_QL80_.jpg
+samsung/A05 32|3/300/https://zegaarshop.com/wp-content/uploads/2024/06/samsung-smart-galaxy-a05-sm-a055f-464gb-silver-gallery65d07c3c20f05-600x761.jpg
+samsung/Galaxy Fit 3/200/https://www.tmt.my/data/editor/sc-product/15959/SAMSUNG-GALAXY-FIT-3-TMT.jpg
+MI/Note 13 pro 512|12/960/https://cdn.shortpixel.ai/spai/q_glossy+ret_img+to_webp/mobizil.com/wp-content/uploads/2024/01/Xiaomi-Redmi-Note-13-Pro-4G.jpg
+MI/Note 13 pro 256|12/750/https://cdn.shortpixel.ai/spai/q_glossy+ret_img+to_webp/mobizil.com/wp-content/uploads/2024/01/Xiaomi-Redmi-Note-13-Pro-4G.jpg
+MI/Note 13 256|8/560/https://darwishelectronics.jo/media/catalog/product/cache/3699668ed4391f14069233535863035c/s/4/s400874167_1.jpeg
+MI/X6 pro 512|12 /1140/https://dzairtic.dz/wp-content/uploads/2024/06/xiaomi-poco-x6-pro-frandroid-2024-768x768-1.png
+MI/X6 pro 256|12 /1050/https://dzairtic.dz/wp-content/uploads/2024/06/xiaomi-poco-x6-pro-frandroid-2024-768x768-1.png
+MI/A3 pro 128|4/370/https://slot.ng/media/catalog/product/cache/6c9546999eea2989c96b137b8fca9df6/x/i/xiaomi_redmi_a3x_3gb-1.png
+MI/redmi pad SE 128|6/480/https://api.mistore-eg.com/storage/uploads/eng_pl_Tablet-Redmi-Pad-SE-8-7-4G-4-128GB-Sky-Blue-2892_1-1729075248.webp
+MI/14C 256|8/460/https://www.hemfrance.com/39078-thickbox_default/xiaomi-redmi-14c-688-128-gb-6-gb-ram-green.jpg
+MI/14C 128|6/420/https://www.hemfrance.com/39078-thickbox_default/xiaomi-redmi-14c-688-128-gb-6-gb-ram-green.jpg
+MI/14C 128|4/370/https://www.hemfrance.com/39078-thickbox_default/xiaomi-redmi-14c-688-128-gb-6-gb-ram-green.jpg
+MI/redmi 13 256|8/520/https://m.media-amazon.com/images/I/61XgXTkI72L.jpg
+MI/13C 256|8/450/https://m.media-amazon.com/images/I/51O4eb7IRTL._AC_UF1000,1000_QL80_.jpg
+MI/extender AC1200/100/https://www.smartbox.am/webroot/myfiles/images/products/ac1200/3ffafe36-ccb4-4dfe-87db-2f546a39b1b5.png
+Apple/16 pro max 256GB/4900/https://bsimg.nl/images/apple-iphone-16-pro-max-512gb-zwart-eu_1.png/oFI08uUTSjo2O2_rsojqVjv0-Tc%3D/fit-in/257x400/filters%3Aformat%28png%29%3Aupscale%28%29
+Apple/iphone 16 128GB/3070/https://asiamall.asiacell.com/media/catalog/product/l/d/ld0006166708_2.jpg
+Apple/iphone 15 128GB/2550/https://www.phonemart.ng/wp-content/uploads/2024/06/i15yel.jpeg
+Apple/iphone 14 128GB/2150/https://m.media-amazon.com/images/I/61KXZ+vfu3L._AC_UF894,1000_QL80_.jpg
+Apple/iphone 13 128GB/1950/https://files.refurbed.io/ii/iphone-13-1631687203.jpg?t=fitdesign&h=600&w=800
+Apple/ipad 10 256GB/1950/https://realplaza.vtexassets.com/arquivos/ids/33743614-800-auto?v=638265979022630000&width=800&height=auto&aspect=true
+Apple/ipad 10 64GB/1300/https://realplaza.vtexassets.com/arquivos/ids/33743614-800-auto?v=638265979022630000&width=800&height=auto&aspect=true
+Apple/ipad 9 64GB/940/https://cdsassets.apple.com/live/SZLF0YNV/images/sp/111898_sp849-ipad-9gen-480.png
+Apple/20W cdata/75/https://atoz.ps/media/catalog/product/cache/80ae6a42c65321efa11f489c1d538fd0/o/r/original_apple_c-data_20w_charger_1_.jpg
+Apple/Airpods 2/375/https://rptech.qa/cdn/shop/products/MV7N2_04_2048x.jpg?v=1661414544
 Tecno/Camon 20 premier 5G 512|16/950/
 Tecno/spark 20 pro 256|16/550/
 Tecno/spark 20C 256|8/380/
