@@ -470,6 +470,45 @@ div {
     font-weight: bold; /* جعل النص عريضًا */
 }
 
+        /* تصميم زر الصعود والنزول */
+        .scroll-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .scroll-btn button {
+            background-color: #007BFF; /* اللون الأزرق */
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .scroll-btn button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .scroll-btn button:active {
+            transform: scale(1);
+        }
+
+        .scroll-btn button i {
+            font-size: 20px;
+        }
   </style>
 </head>
 <body>
@@ -492,6 +531,15 @@ div {
         <input type="text" id="customer-phone" placeholder="ادخل رقم هاتفك">
         <button id="confirm-button">Confirm</button>
         <button id="cancel-button">Cancel</button>
+    </div>
+
+    <div class="scroll-btn">
+        <button id="scrollUp" title="الصعود للأعلى">
+            ↑
+        </button>
+        <button id="scrollDown" title="النزول للأسفل">
+            ↓
+        </button>
     </div>
 
     <script>
@@ -846,6 +894,22 @@ hideCartButton.onclick = function() {
             }
             lastTouchEnd = now;
         }, { passive: false });
+
+            // وظيفة الصعود للأعلى
+            document.getElementById("scrollUp").addEventListener("click", () => {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        });
+
+        // وظيفة النزول للأسفل
+        document.getElementById("scrollDown").addEventListener("click", () => {
+            window.scrollTo({
+                top: document.body.scrollHeight,
+                behavior: "smooth"
+            });
+        });
  
 </script>
 </body>
