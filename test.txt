@@ -49,7 +49,7 @@ Infinix/hot 50i 128|8/340/https://i0.wp.com/alltech.pk/wp-content/uploads/2024/1
 Infinix/hot 40i 256|16/400/https://mobizil.com/wp-content/uploads/2024/06/Infinix-Hot-40i.jpg
 Infinix/smart 9 128|4/310/https://7lcart.s3.eu-central-1.amazonaws.com/cardnet.sa/6592/conversions/172798721466fefe0e7d6e9-card.jpg
 Infinix/smart 9 64|3/280/https://7lcart.s3.eu-central-1.amazonaws.com/cardnet.sa/6592/conversions/172798721466fefe0e7d6e9-card.jpg
-Infinix/Zero 40 512|16/https://telfonak.com/wp-content/uploads/2024/09/zero40-infinix.webp
+Infinix/Zero 40 512|16https://d32n7g8aqsy2ib.cloudfront.net/images/inventoryImages/H6kHAkR9jfDXnaM31727680959364.webp
 Honor/X9b 256|12/1170/https://yantranepal.com/wp-content/uploads/2024/02/Honor-X9b-5G-Sunrise-Orange-12GB-256GB-1.webp
 Honor/X9C 256|12/1350+airpods/https://mob4g.com/wp-content/uploads/2024/12/Honor-X9c-Smart-2-600x600.webp
 Honor/X8b 512|8/800/https://www.honor.com/content/dam/honor/my/product-list/smartphone/honor-x8b/honor-x8b-green.png
@@ -67,5 +67,5 @@ N\A/Teclast p85 kids 64|4/270/https://en.teclast.com/cdn/shop/files/P85Tkids_2.p
 N\A/Teclast M50 128|8/440/https://en.teclast.com/cdn/shop/files/12_025ea586-e65f-447b-a78a-32f342dc516f.jpg?v=1690282129&width=1500
 N\A/Teclast M50 128|6/350/https://en.teclast.com/cdn/shop/files/12_025ea586-e65f-447b-a78a-32f342dc516f.jpg?v=1690282129&width=1500
 N\A/Blackview Tap 3 kids 32|2/220/https://tigersdeleste.com/wp-content/uploads/2024/08/127585.jpg
-N\A/Blackview Tap 6 kids 32|3/https://estore.jawwal.ps/storage/product/2491/txgDeQjj5qZe9VKYnezQDSu1MXxA4oIaRzkYQPij.jpg
+N\A/Blackview Tap 6 kids 32|3/https://yantranepal.com/wp-content/uploads/2023/08/Blackview-Tab-6-Kids-WiFi-4G-3GB-32GB-The-Ultimate-Educational-Adventure-4.jpg
 N\A/Kxd C1 /35/https://s9.pik.ba/galerija/2021-04/26/06/slika-2830089-6086f09649711-velika.jpg
