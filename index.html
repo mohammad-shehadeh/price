@@ -473,11 +473,12 @@ div {
         /* تصميم زر الصعود والنزول */
         .scroll-btn {
             position: fixed;
-            bottom: 20px;
-            right: 20px;
+            top: 50%; /* وضع الأزرار في منتصف الصفحة عموديًا */
+            left: 10px; /* وضع الأزرار في أقصى يسار الصفحة */
+            transform: translateY(-50%); /* لضمان توسيط الأزرار */
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 20px;
             align-items: center;
             z-index: 1000;
         }
@@ -486,15 +487,16 @@ div {
             background-color: #007BFF; /* اللون الأزرق */
             color: white;
             border: none;
-            border-radius: 50%;
-            width: 50px;
-            height: 50px;
+            border-radius: 25px; /* تعديل الحدود لجعلها مستطيلة مع أطراف مستديرة */
+            width: 25px; /* العرض أقل */
+            height: 70px; /* الطول أكبر */
             display: flex;
             align-items: center;
             justify-content: center;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             cursor: pointer;
             transition: transform 0.3s, box-shadow 0.3s;
+            font-size: 30px; /* تكبير حجم الأسهم */
         }
 
         .scroll-btn button:hover {
@@ -504,10 +506,6 @@ div {
 
         .scroll-btn button:active {
             transform: scale(1);
-        }
-
-        .scroll-btn button i {
-            font-size: 20px;
         }
   </style>
 </head>
