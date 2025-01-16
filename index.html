@@ -194,17 +194,61 @@
 }
 
       .popup {
-          display: none;
-          position: fixed;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          background-color: white;
-          border: 1px solid #ccc;
-          padding: 1em;
-          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-          border-radius: 8px;
-      }
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    border: none; /* إزالة الحدود */
+    padding: 1.5em;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* تحسين الظل */
+    border-radius: 12px; /* زيادة الانحناء */
+    width: 400px; /* العرض الافتراضي */
+    max-width: 90%; /* للتأكد من عدم تخطي العرض على الهواتف */
+    font-family: 'Arial', sans-serif; /* خط أنيق */
+    animation: fadeIn 0.3s ease-in-out; /* تأثير الظهور */
+}
+
+@media (max-width: 768px) {
+    .popup {
+        width: 90%; /* عرض 90% للهواتف */
+        padding: 1em; /* تقليل الحواف */
+    }
+}
+
+/* إضافة زر إغلاق */
+.popup-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #f44336; /* لون أحمر خفيف */
+    border: none;
+    color: #fff;
+    font-size: 1em;
+    padding: 0.5em;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s ease;
+}
+
+.popup-close:hover {
+    background: #d32f2f; /* لون أغمق عند التحويم */
+}
+
+/* تأثير الظهور */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -55%);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+
 
       .popup input {
           margin-bottom: 1em;
