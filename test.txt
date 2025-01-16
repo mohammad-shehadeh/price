@@ -24,14 +24,14 @@ MI/redmi pad SE 128|6/480/https://api.mistore-eg.com/storage/uploads/eng_pl_Tabl
 MI/14C 256|8/460/https://www.hemfrance.com/39078-thickbox_default/xiaomi-redmi-14c-688-128-gb-6-gb-ram-green.jpg
 MI/14C 128|6/420/https://www.hemfrance.com/39078-thickbox_default/xiaomi-redmi-14c-688-128-gb-6-gb-ram-green.jpg
 MI/14C 128|4/370/https://www.hemfrance.com/39078-thickbox_default/xiaomi-redmi-14c-688-128-gb-6-gb-ram-green.jpg
-MI/redmi 13 256|8/520/https://m.media-amazon.com/images/I/61XgXTkI72L.jpg
-MI/13C 256|8/450/https://m.media-amazon.com/images/I/51O4eb7IRTL._AC_UF1000,1000_QL80_.jpg
+MI/redmi 13 256|8/520/https://api.mistore-eg.com/storage/uploads/Redmi-13-Noir-1729150005.png
+MI/13C 256|8/450/https://cdn-iibnp.nitrocdn.com/VjyilAmBtWmZaLojjwWFayaMdinRRPlg/assets/images/optimized/rev-f0d6867/www.ourfriday.co.uk/image/cache/catalog/Xiaomi/xiaomi-redmi-13c-blue-1-800x800h.png
 MI/extender AC1200/100/https://www.smartbox.am/webroot/myfiles/images/products/ac1200/3ffafe36-ccb4-4dfe-87db-2f546a39b1b5.png
-Apple/16 pro max 256GB/4900/https://bsimg.nl/images/apple-iphone-16-pro-max-512gb-zwart-eu_1.png/oFI08uUTSjo2O2_rsojqVjv0-Tc%3D/fit-in/257x400/filters%3Aformat%28png%29%3Aupscale%28%29
+Apple/16 pro max 256GB/4900/https://mac-center.com.pr/cdn/shop/files/iPhone_16_Pro_Max_Desert_Titanium_PDP_Image_Position_1__en-US_bf24ca74-a053-42d3-80e2-3edc40e85c1e.jpg?v=1726226953&width=823
 Apple/iphone 16 128GB/3070/https://asiamall.asiacell.com/media/catalog/product/l/d/ld0006166708_2.jpg
-Apple/iphone 15 128GB/2550/https://www.phonemart.ng/wp-content/uploads/2024/06/i15yel.jpeg
-Apple/iphone 14 128GB/2150/https://m.media-amazon.com/images/I/61KXZ+vfu3L._AC_UF894,1000_QL80_.jpg
-Apple/iphone 13 128GB/1950/https://files.refurbed.io/ii/iphone-13-1631687203.jpg?t=fitdesign&h=600&w=800
+Apple/iphone 15 128GB/2550/https://cdn.shortpixel.ai/spai/q_glossy+ret_img+to_webp/mobizil.com/wp-content/uploads/2023/09/iPhone-15-3.jpg
+Apple/iphone 14 128GB/2150/https://www.phonemart.ng/wp-content/uploads/2023/04/03.jpg.webp
+Apple/iphone 13 128GB/1950/https://m.media-amazon.com/images/I/516QZcrv+dL.jpg
 Apple/ipad 10 256GB/1950/https://realplaza.vtexassets.com/arquivos/ids/33743614-800-auto?v=638265979022630000&width=800&height=auto&aspect=true
 Apple/ipad 10 64GB/1300/https://realplaza.vtexassets.com/arquivos/ids/33743614-800-auto?v=638265979022630000&width=800&height=auto&aspect=true
 Apple/ipad 9 64GB/940/https://cdsassets.apple.com/live/SZLF0YNV/images/sp/111898_sp849-ipad-9gen-480.png
