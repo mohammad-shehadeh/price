@@ -900,13 +900,9 @@ document.getElementById('search-box').addEventListener('input', (event) => {
     renderFilteredProducts(filteredProducts);
 });
 
-// إعادة تهيئة حقل البحث عند الضغط على أي زر من الأزرار في filter-buttons
-document.getElementById('filter-buttons').addEventListener('click', () => {
-    // مسح النص في حقل البحث
-    document.getElementById('search-box').value = '';
-
-    // إعادة عرض جميع المنتجات (بدون تصفية)
-    renderFilteredProducts(products);
+// إعادة تهيئة حقل البحث عند الضغط على "تم" أو فقدان التركيز (blur)
+document.getElementById('search-box').addEventListener('blur', () => {
+    document.getElementById('search-box').value = '';  // مسح النص في الحقل
 });
 
 
