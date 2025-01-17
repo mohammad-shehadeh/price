@@ -805,14 +805,23 @@ function renderFilteredProducts(filteredProducts) {
 document.getElementById('search-box').addEventListener('input', (event) => {
     const searchTerm = event.target.value.toLowerCase().trim();
 
-    // تصفية المنتجات بناءً على الاسم أو الفئة
-    const filteredProducts = products.filter(product => 
-        product.name.toLowerCase().includes(searchTerm) ||
-        product.category.toLowerCase().includes(searchTerm)
-    );
+    // تقسيم النص المدخل إلى كلمات منفصلة وإزالة الفراغات الزائدة بين الكلمات
+    const searchWords = searchTerm.split(/\s+/).filter(word => word.length > 0);
+
+    // تصفية المنتجات بناءً على تطابق جميع الكلمات
+    const filteredProducts = products.filter(product => {
+        const productName = product.name.toLowerCase();
+        const productCategory = product.category.toLowerCase();
+
+        // التأكد من أن جميع الكلمات موجودة في الاسم أو الفئة
+        return searchWords.every(word => 
+            productName.includes(word) || productCategory.includes(word)
+        );
+    });
 
     renderFilteredProducts(filteredProducts);
 });
+
 
 
 // Add product to cart
