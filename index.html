@@ -778,6 +778,7 @@ function filterProducts(category) {
 // إعادة عرض المنتجات بناءً على الفلترة
 function renderFilteredProducts(filteredProducts) {
     categoriesContainer.innerHTML = ''; // مسح المنتجات الحالية
+
     const categories = [...new Set(filteredProducts.map(p => p.category))];
     categories.forEach(category => {
         const categoryDiv = document.createElement('div');
@@ -791,16 +792,45 @@ function renderFilteredProducts(filteredProducts) {
         categoryProducts.forEach(product => {
             const productDiv = document.createElement('div');
             productDiv.className = 'product';
-            productDiv.innerHTML = `
-                <img src="${product.image}" alt="${product.name}" onerror="this.src='default-image.jpg'">
-                <div><strong>${product.name}</strong><br>${product.price.toFixed(2)} ₪</div>
-            `;
+
+            // إضافة الصورة و التفاصيل
+            const productImage = document.createElement('img');
+            productImage.src = product.image;
+            productImage.alt = product.name;
+
+            const productDetails = document.createElement('div');
+            productDetails.innerHTML = `<strong>${product.name}</strong><br><br> ${product.price.toFixed(2)} ₪`;
+            productDiv.appendChild(productImage);
+            productDiv.appendChild(productDetails);
+
+            // زر إضافة للسلة
+            const addToCartButton = document.createElement('button');
+            addToCartButton.textContent = 'إضافة للسلة';
+            addToCartButton.classList.add('add-to-cart-btn');
+
+            // تحديد ما إذا كان المنتج موجودًا في السلة
+            const existingProduct = cart.find(item => item.name === product.name);
+            if (existingProduct) {
+                // إذا كان المنتج موجودًا في السلة، إظهار الكمية
+                addToCartButton.style.display = 'none'; // إخفاء الزر
+            } else {
+                // إظهار زر "إضافة للسلة"
+                addToCartButton.style.display = 'block';
+            }
+
+            // إضافة الحدث عند الضغط على الزر
+            addToCartButton.onclick = () => {
+                addToCart(product, 1);  // إضافة المنتج إلى السلة
+            };
+
+            productDiv.appendChild(addToCartButton);
             categoryDiv.appendChild(productDiv);
         });
 
         categoriesContainer.appendChild(categoryDiv);
     });
 }
+
 
 document.getElementById('search-box').addEventListener('input', (event) => {
     const searchTerm = event.target.value.toLowerCase().trim();
