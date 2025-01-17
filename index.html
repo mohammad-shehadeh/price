@@ -891,9 +891,10 @@ document.getElementById('search-box').addEventListener('input', (event) => {
         const productName = product.name.toLowerCase().replace(/\s+/g, '');  // إزالة جميع الفراغات من الاسم
         const productCategory = product.category.toLowerCase().replace(/\s+/g, '');  // إزالة جميع الفراغات من الفئة
 
-        // التأكد من أن جميع الكلمات الموجودة في البحث موجودة في الاسم أو الفئة بعد إزالة الفراغات
+        // التأكد من أن جميع الكلمات الموجودة في البحث موجودة في الاسم أو الفئة بشكل متطابق
+        // استخدام "includes" للتأكد من أن كل كلمة موجودة بالكامل في الاسم أو الفئة
         return searchWords.every(word => 
-            productName.includes(word) || productCategory.includes(word)
+            productName === word || productCategory === word
         );
     });
 
