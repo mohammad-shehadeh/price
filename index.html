@@ -883,7 +883,7 @@ function renderFilteredProducts(filteredProducts) {
 document.getElementById('search-box').addEventListener('input', (event) => {
     const searchTerm = event.target.value.toLowerCase().trim();
 
-    // إزالة الفراغات الزائدة بين الكلمات في النص المدخل
+    // إزالة الفراغات الزائدة بين الكلمات في النص المدخل (أي تحويل النص إلى شكل بدون فراغات)
     const searchWords = searchTerm.split(/\s+/).join('').split('').filter(word => word.length > 0);
 
     // تصفية المنتجات بناءً على تطابق الكلمات بعد إزالة الفراغات
@@ -891,7 +891,7 @@ document.getElementById('search-box').addEventListener('input', (event) => {
         const productName = product.name.toLowerCase().replace(/\s+/g, '');  // إزالة جميع الفراغات من الاسم
         const productCategory = product.category.toLowerCase().replace(/\s+/g, '');  // إزالة جميع الفراغات من الفئة
 
-        // التأكد من أن جميع الكلمات موجودة في الاسم أو الفئة بعد إزالة الفراغات
+        // التأكد من أن جميع الكلمات الموجودة في البحث موجودة في الاسم أو الفئة بعد إزالة الفراغات
         return searchWords.every(word => 
             productName.includes(word) || productCategory.includes(word)
         );
