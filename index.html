@@ -9,6 +9,7 @@
     <meta property="og:description" content="اسعار الاجهزة اونلاين">
     <meta property="og:image" content="https://img.freepik.com/premium-vector/vector-price-text-logo-design_867743-461.jpg">
     <meta property="og:type" content="website">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <title>Shehadeh Center</title>
     <style>
         body {
@@ -521,6 +522,64 @@ div {
         font-size: 20px; /* تقليل حجم الأسهم */
     }
 }
+/* تصميم عام لأزرار filter-buttons */
+#filter-buttons {
+    display: flex;
+    flex-wrap: wrap; /* لجعل الأزرار تلتف إذا كانت كثيرة */
+    gap: 10px; /* مسافة صغيرة بين الأزرار */
+    margin-bottom: 15px;
+    justify-content: center; /* لمحاذاة الأزرار في المنتصف */
+}
+
+/* تصميم كل زر */
+#filter-buttons .filter-btn {
+    padding: 6px 12px; /* حجم صغير ومضغوط */
+    font-size: 14px; /* حجم نص مناسب */
+    border: 1px solid #ddd; /* إطار خفيف */
+    border-radius: 20px; /* زوايا مستديرة */
+    background-color: #f9f9f9; /* خلفية فاتحة */
+    color: #333; /* لون النص */
+    cursor: pointer;
+    transition: all 0.3s ease; /* تأثير عند التمرير فوق الزر */
+}
+
+#filter-buttons .filter-btn:hover {
+    background-color: #007bff; /* لون خلفية عند التمرير */
+    color: white; /* لون النص عند التمرير */
+}
+
+#filter-buttons .filter-btn.active {
+    background-color: #007bff; /* لون مميز للزر النشط */
+    color: white; /* نص أبيض للزر النشط */
+    border-color: #0056b3; /* إطار أغمق للزر النشط */
+}
+
+/* تصميم مربع البحث */
+#search-box {
+    width: 100%; /* ليكون بعرض الحاوية */
+    max-width: 400px; /* أقصى عرض */
+    margin: 10px auto; /* محاذاة وسط الصفحة */
+    padding: 8px 12px; /* حشوة داخلية */
+    font-size: 16px; /* حجم النص */
+    border: 1px solid #ddd; /* إطار خفيف */
+    border-radius: 20px; /* زوايا مستديرة */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* ظل خفيف */
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+#search-box:focus {
+    border-color: #007bff; /* لون الإطار عند التركيز */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* ظل عند التركيز */
+}
+
+/* جعل الأزرار ومربع البحث ضمن حاوية واحدة */
+.search-filter-container {
+    display: flex;
+    flex-direction: column; /* ترتيب عمودي */
+    align-items: center; /* محاذاة الوسط */
+    gap: 10px; /* مسافة بين العناصر */
+}
 
   </style>
 </head>
@@ -1003,6 +1062,7 @@ hideCartButton.onclick = function() {
                 behavior: "smooth"
             });
         });
+ 
  
 </script>
 </body>
