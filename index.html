@@ -883,22 +883,30 @@ function renderFilteredProducts(filteredProducts) {
 document.getElementById('search-box').addEventListener('input', (event) => {
     const searchTerm = event.target.value.toLowerCase().trim();
 
-    // إزالة الفراغات الزائدة بين الكلمات في النص المدخل (أي تحويل النص إلى شكل بدون فراغات)
+    // إزالة الفراغات الزائدة بين الكلمات في النص المدخل
     const searchWords = searchTerm.split(/\s+/).join('').split('').filter(word => word.length > 0);
 
     // تصفية المنتجات بناءً على تطابق الكلمات بعد إزالة الفراغات
-    const filteredProducts = products.filter(product => {
+    const filteredProducts = products.map(product => {
         const productName = product.name.toLowerCase().replace(/\s+/g, '');  // إزالة جميع الفراغات من الاسم
         const productCategory = product.category.toLowerCase().replace(/\s+/g, '');  // إزالة جميع الفراغات من الفئة
 
-        // التأكد من أن جميع الكلمات الموجودة في البحث موجودة في الاسم أو الفئة بشكل متطابق
-        // استخدام "includes" للتأكد من أن كل كلمة موجودة بالكامل في الاسم أو الفئة
-        return searchWords.every(word => 
-            productName === word || productCategory === word
-        );
+        // حساب عدد الكلمات التي تطابق في الاسم أو الفئة
+        const matchCount = searchWords.reduce((count, word) => {
+            if (productName.includes(word) || productCategory.includes(word)) {
+                return count + 1;
+            }
+            return count;
+        }, 0);
+
+        return { ...product, matchCount };
     });
 
-    renderFilteredProducts(filteredProducts);
+    // فرز المنتجات بناءً على عدد التطابقات
+    const sortedFilteredProducts = filteredProducts.filter(product => product.matchCount > 0)
+                                                    .sort((a, b) => b.matchCount - a.matchCount);
+
+    renderFilteredProducts(sortedFilteredProducts);
 });
 
 // إعادة تهيئة حقل البحث عند الضغط على "تم" أو فقدان التركيز (blur)
