@@ -978,27 +978,77 @@ function renderCart() {
         const cartItemDiv = document.createElement('div');
         cartItemDiv.className = 'cart-item';
 
+        // Display item details and quantity input
         const itemDetails = document.createElement('div');
         itemDetails.innerHTML = `
-    <strong>${item.name}</strong><br>
-    Price: ${item.price.toFixed(2)} ₪<br>
-    Quantity: <input 
-        type="number" 
-        value="${item.quantity}" 
-        min="1" 
-        class="cart-quantity" 
-        data-product="${item.name}">
-`;
+            <strong>${item.name}</strong><br>
+            Price: ${item.price.toFixed(2)} ₪<br>
+            Quantity: <input 
+                type="number" 
+                value="${item.quantity}" 
+                min="1" 
+                class="cart-quantity" 
+                data-product="${item.name}">
+        `;
         cartItemDiv.appendChild(itemDetails);
 
+        // Remove button
         const removeButton = document.createElement('button');
         removeButton.textContent = 'X';
         removeButton.onclick = () => removeFromCart(item.name);
         cartItemDiv.appendChild(removeButton);
 
+        // Add item price to the total
         total += item.price * item.quantity;
+
+        // Append item to the cart
         cartItemsContainer.appendChild(cartItemDiv);
     });
+
+    // Display total price
+    const totalDiv = document.createElement('div');
+    totalDiv.innerHTML = `Total: ${total.toFixed(2)} ₪`;
+    cartItemsContainer.appendChild(totalDiv);
+
+    // Listen for changes in quantity input and update the cart
+    const quantityInputs = document.querySelectorAll('.cart-quantity');
+    quantityInputs.forEach(input => {
+        input.addEventListener('change', (event) => {
+            const productName = event.target.dataset.product;
+            const newQuantity = parseInt(event.target.value, 10);
+            updateQuantity(productName, newQuantity);
+        });
+    });
+}
+
+// Remove product from cart
+function removeFromCart(productName) {
+    // Find the product in the cart
+    const productIndex = cart.findIndex(item => item.name === productName);
+    if (productIndex !== -1) {
+        cart.splice(productIndex, 1); // Remove the product from the cart
+        saveCart(); // Save the updated cart
+        renderCart(); // Re-render the cart
+    }
+}
+
+// Update quantity of a product
+function updateQuantity(productName, newQuantity) {
+    // Find the product in the cart
+    const product = cart.find(item => item.name === productName);
+    if (product) {
+        // Update the quantity
+        product.quantity = newQuantity;
+        saveCart(); // Save the updated cart
+        renderCart(); // Re-render the cart
+    }
+}
+
+// Save the cart (Example function for localStorage or backend API)
+function saveCart() {
+    localStorage.setItem('cart', JSON.stringify(cart)); // Example of saving to localStorage
+}
+
 
     const totalDiv = document.createElement('div');
     totalDiv.className = 'cart-total';
@@ -1022,7 +1072,7 @@ input.addEventListener('keypress', (event) => {
 });
 
     });
-}
+
 
 // Event handler for checkout button
 checkoutButton.onclick = () => {
