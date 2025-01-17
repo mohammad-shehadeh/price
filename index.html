@@ -627,8 +627,8 @@ div {
         <h2>YOUR ID</h2>
         <input type="text" id="customer-name" placeholder="ادخل اسمك">
         <input type="text" id="customer-phone" placeholder="ادخل رقم هاتفك">
-        <button id="confirm-button">Confirm</button>
-        <button id="cancel-button">Cancel</button>
+        <button id="confirm-button">إرسال</button>
+        <button id="cancel-button">ألغاء</button>
     </div>
 
     <div class="scroll-btn">
@@ -899,6 +899,16 @@ document.getElementById('search-box').addEventListener('input', (event) => {
 
     renderFilteredProducts(filteredProducts);
 });
+
+// إعادة تهيئة حقل البحث عند الضغط على أي زر من الأزرار في filter-buttons
+document.getElementById('filter-buttons').addEventListener('click', () => {
+    // مسح النص في حقل البحث
+    document.getElementById('search-box').value = '';
+
+    // إعادة عرض جميع المنتجات (بدون تصفية)
+    renderFilteredProducts(products);
+});
+
 
 
 
