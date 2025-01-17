@@ -881,37 +881,24 @@ function renderFilteredProducts(filteredProducts) {
 }
 
 document.getElementById('search-box').addEventListener('input', (event) => {
-    const searchTerm = event.target.value.toLowerCase().trim();
+    const searchTerm = event.target.value.toLowerCase().trim(); // النص المدخل بعد تحويله إلى حروف صغيرة وإزالة المسافات الزائدة
 
-    // إزالة الفراغات الزائدة بين الكلمات في النص المدخل
-    const searchWords = searchTerm.split(/\s+/).join('').split('').filter(word => word.length > 0);
-
-    // تصفية المنتجات بناءً على تطابق الكلمات بعد إزالة الفراغات
-    const filteredProducts = products.map(product => {
+    // تصفية المنتجات بناءً على تطابق النص الكامل بعد إزالة الفراغات
+    const filteredProducts = products.filter(product => {
         const productName = product.name.toLowerCase().replace(/\s+/g, '');  // إزالة جميع الفراغات من الاسم
         const productCategory = product.category.toLowerCase().replace(/\s+/g, '');  // إزالة جميع الفراغات من الفئة
 
-        // حساب عدد الكلمات التي تطابق في الاسم أو الفئة
-        const matchCount = searchWords.reduce((count, word) => {
-            if (productName.includes(word) || productCategory.includes(word)) {
-                return count + 1;
-            }
-            return count;
-        }, 0);
-
-        return { ...product, matchCount };
+        // التحقق من أن النص المدخل موجود بالكامل في الاسم أو الفئة
+        return productName.includes(searchTerm.replace(/\s+/g, '')) || 
+               productCategory.includes(searchTerm.replace(/\s+/g, ''));
     });
 
-    // فرز المنتجات بناءً على عدد التطابقات
-    const sortedFilteredProducts = filteredProducts.filter(product => product.matchCount > 0)
-                                                    .sort((a, b) => b.matchCount - a.matchCount);
-
-    renderFilteredProducts(sortedFilteredProducts);
+    renderFilteredProducts(filteredProducts); // عرض المنتجات المطابقة
 });
 
-// إعادة تهيئة حقل البحث عند الضغط على "تم" أو فقدان التركيز (blur)
+// إعادة تهيئة حقل البحث عند فقدان التركيز
 document.getElementById('search-box').addEventListener('blur', () => {
-    document.getElementById('search-box').value = '';  // مسح النص في الحقل
+    document.getElementById('search-box').value = ''; // مسح النص في الحقل
 });
 
 
