@@ -531,6 +531,7 @@ div {
             <!-- الأزرار سيتم إنشاؤها ديناميكيًا بواسطة JavaScript -->
         </div>
         <input type="text" id="search-box" placeholder="🔍 ابحث عن منتج" />
+        <div id="filter-buttons"></div>
         <button class="toggle-cart" id="show-cart-button">إظهار الفاتورة</button>
     </header>
     
@@ -580,11 +581,9 @@ fetch('test.txt')
     .then(data => {
         const lines = data.split('\n');
         lines.forEach(line => {
-            // Splitting the line into components and assuming format: category/name/price/image_url
             const parts = line.split('/');
             if (parts.length >= 4) {
-                // Handle image URL with query parameters (e.g., "?x-oss-process=image...")
-                const imageUrl = parts.slice(3).join('/').trim(); // Combine all parts after the 3rd element
+                const imageUrl = parts.slice(3).join('/').trim();
                 products.push({
                     category: parts[0].trim(),
                     name: parts[1].trim(),
@@ -593,10 +592,13 @@ fetch('test.txt')
                 });
             }
         });
-        renderCategories();
-        renderCart();
+
+        renderCategories(); // عرض الفئات والمنتجات
+        createFilterButtons(); // إنشاء أزرار الفلترة
+        renderCart(); // عرض السلة
     })
     .catch(error => console.error('Error loading products:', error));
+
 
 function renderCategories() {
     categoriesContainer.innerHTML = ''; // Clear previous categories
