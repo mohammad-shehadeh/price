@@ -1019,63 +1019,91 @@ confirmButton.onclick = () => {
         return;
     }
 
-// الحصول على التاريخ والوقت الحالي بتنسيق "يوم/شهر/سنة ساعة:دقيقةم اليوم"
-function formatDateTime() {
-    const now = new Date();
-    const day = now.getDate().toString().padStart(2, '0');
-    const month = (now.getMonth() + 1).toString().padStart(2, '0');
-    const year = now.getFullYear();
-    let hours = now.getHours();
-    const minutes = now.getMinutes().toString().padStart(2, '0');
-    const ampm = hours >= 12 ? 'م' : 'ص';
-    hours = hours % 12;
-    hours = hours ? hours : 12; // الساعة 0 تصبح 12
-    const dayOfWeek = ["الأحد", "الاثنين", "الثلاثاء", "الأربعاء", "الخميس", "الجمعة", "السبت"][now.getDay()];
-    return `${day}/${month}/${year} ${hours}:${minutes}${ampm} ${dayOfWeek}`;
-}
+    // الحصول على التاريخ والوقت الحالي بتنسيق "يوم/شهر/سنة ساعة:دقيقةم اليوم"
+    function formatDateTime() {
+        const now = new Date();
+        const day = now.getDate().toString().padStart(2, '0');
+        const month = (now.getMonth() + 1).toString().padStart(2, '0');
+        const year = now.getFullYear();
+        let hours = now.getHours();
+        const minutes = now.getMinutes().toString().padStart(2, '0');
+        const ampm = hours >= 12 ? 'م' : 'ص';
+        hours = hours % 12;
+        hours = hours ? hours : 12; // الساعة 0 تصبح 12
+        const dayOfWeek = ["الأحد", "الاثنين", "الثلاثاء", "الأربعاء", "الخميس", "الجمعة", "السبت"][now.getDay()];
+        return `${day}/${month}/${year} ${hours}:${minutes}${ampm} ${dayOfWeek}`;
+    }
 
-// رقم الفاتورة (ثابت دائمًا ####)
-const invoiceNumber = "####";
+    // رقم الفاتورة (ثابت دائمًا ####)
+    const invoiceNumber = "####";
 
-// إضافة الوقت والتاريخ الحالي إلى الفاتورة
-let text = `⭐️ Shehadeh Centre ⭐️\n`;
-text += `━━━━━━━━━━━━━━━\n`;
-text += `📅 التاريخ: ${formatDateTime()}\n`;
-text += `📄 رقم الفاتورة: ${invoiceNumber}\n`;
-text += `━━━━━━━━━━━━━━━\n\n`;
-text += `👤 اسم العميل: ${customerName}\n`;
-text += `☎️ رقم الهاتف: ${customerPhone}\n`;
-text += `━━━━━━━━━━━━━━━\n\n`;
-text += `🛒 تفاصيل المنتجات:\n`;
+    // إنشاء نص الفاتورة
+    let text = `⭐️ Shehadeh Centre ⭐️\n`;
+    text += `━━━━━━━━━━━━━━━\n`;
+    text += `📅 التاريخ: ${formatDateTime()}\n`;
+    text += `📄 رقم الفاتورة: ${invoiceNumber}\n`;
+    text += `━━━━━━━━━━━━━━━\n\n`;
+    text += `👤 اسم العميل: ${customerName}\n`;
+    text += `☎️ رقم الهاتف: ${customerPhone}\n`;
+    text += `━━━━━━━━━━━━━━━\n\n`;
+    text += `🛒 تفاصيل المنتجات:\n`;
 
-let total = 0;
-cart.forEach(item => {
-    text += `\t${item.name}: ${item.quantity}x${item.price.toFixed(2)}\n`;
-    text += `─ ─ ─ ─ ─ ─ ─ ─ ─ ─\n`;
-    total += item.price * item.quantity;
-});
+    let total = 0;
+    cart.forEach(item => {
+        text += `\t${item.name}: ${item.quantity}x${item.price.toFixed(2)}\n`;
+        text += `─ ─ ─ ─ ─ ─ ─ ─ ─ ─\n`;
+        total += item.price * item.quantity;
+    });
 
-text += `💰 الإجمالي: ${total.toFixed(2)}\n`;
-text += `━━━━━━━━━━━━━━━\n`;
-text += `شكرًا لاختياركم خدماتنا! 🙏`;
+    text += `💰 الإجمالي: ${total.toFixed(2)}\n`;
+    text += `━━━━━━━━━━━━━━━\n`;
+    text += `شكرًا لاختياركم خدماتنا! 🙏`;
 
-// رابط الواتساب مع الرقم المحدد
-const whatsappURL = `https://wa.me/972566888825?text=${encodeURIComponent(text)}`;
-window.open(whatsappURL, '_blank');
+    // رابط الواتساب مع الرقم المحدد
+    const whatsappURL = `https://wa.me/972566888825?text=${encodeURIComponent(text)}`;
+    window.open(whatsappURL, '_blank');
 
-// لتحديث السلة وحفظها
-cart = [];
-saveCart();
-renderCart();
+    // لتحديث السلة وحفظها
+    cart = [];
+    saveCart();
+    renderCart();
 
-// إغلاق النافذة المنبثقة
-popup.style.display = 'none';
+    // إعادة ضبط حالة المنتجات
+    resetProductStates();
 
+    // إغلاق النافذة المنبثقة
+    popup.style.display = 'none';
 };
 
+// دالة لإعادة ضبط حالة المنتجات
+function resetProductStates() {
+    const productsElements = document.querySelectorAll('.product'); // الحصول على جميع العناصر التي تمثل المنتجات
+    productsElements.forEach(productElement => {
+        // إعادة ضبط زر "إضافة للسلة"
+        const addToCartButton = productElement.querySelector('.add-to-cart-btn');
+        if (addToCartButton) {
+            addToCartButton.style.display = 'block'; // إظهار زر "إضافة للسلة"
+        }
+
+        // إعادة ضبط عناصر التحكم في الكمية
+        const quantityDiv = productElement.querySelector('.quantity-controls');
+        if (quantityDiv) {
+            quantityDiv.style.display = 'none'; // إخفاء عناصر التحكم في الكمية
+        }
+
+        // إعادة ضبط حقل الكمية إلى القيمة الافتراضية
+        const quantityInput = productElement.querySelector('input[type="number"]');
+        if (quantityInput) {
+            quantityInput.value = 1; // إعادة تعيين الكمية إلى 1
+        }
+    });
+}
+
+// Event handler for cancel button
 cancelButton.onclick = () => {
     popup.style.display = 'none';
 };
+
 // الحصول على الأزرار الخاصة بإظهار وإخفاء السلة
 const showCartButton = document.getElementById('show-cart-button');
 const hideCartButton = document.getElementById('hide-cart-button');
