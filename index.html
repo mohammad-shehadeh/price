@@ -959,14 +959,34 @@ function handleQuantityChange(event) {
 
 // Remove product from cart
 function removeFromCart(productName) {
+    // Filter the cart to remove the product by name
     cart = cart.filter(item => item.name !== productName);
-    saveCart();
-    renderCart();
+    saveCart(); // Save updated cart
+    renderCart(); // Re-render the cart
 }
 
 // Save the cart to localStorage
 function saveCart() {
-    localStorage.setItem('cart', JSON.stringify(cart));
+    localStorage.setItem('cart', JSON.stringify(cart)); // Save cart as a string in localStorage
+}
+
+// Handle quantity change in cart
+function handleQuantityChange(event) {
+    const productName = event.target.dataset.product; // Get the product name
+    const newQuantity = parseInt(event.target.value, 10); // Get the new quantity
+
+    if (newQuantity < 1) {
+        // If the quantity is less than 1, reset to 1
+        event.target.value = 1;
+        return;
+    }
+
+    const product = cart.find(item => item.name === productName); // Find the product
+    if (product) {
+        product.quantity = newQuantity; // Update the quantity
+        saveCart(); // Save updated cart
+        renderCart(); // Re-render the cart
+    }
 }
 
 // Render the cart
@@ -978,7 +998,6 @@ function renderCart() {
         const cartItemDiv = document.createElement('div');
         cartItemDiv.className = 'cart-item';
 
-        // Display item details and quantity input
         const itemDetails = document.createElement('div');
         itemDetails.innerHTML = `
             <strong>${item.name}</strong><br>
@@ -995,84 +1014,51 @@ function renderCart() {
         // Remove button
         const removeButton = document.createElement('button');
         removeButton.textContent = 'X';
-        removeButton.onclick = () => removeFromCart(item.name);
+        removeButton.onclick = () => removeFromCart(item.name); // Call remove function on click
         cartItemDiv.appendChild(removeButton);
 
         // Add item price to the total
         total += item.price * item.quantity;
 
-        // Append item to the cart
+        // Append the cart item to the container
         cartItemsContainer.appendChild(cartItemDiv);
     });
 
-    // Display total price
-    const totalDiv = document.createElement('div');
-    totalDiv.innerHTML = `Total: ${total.toFixed(2)} ₪`;
-    cartItemsContainer.appendChild(totalDiv);
-
-    // Listen for changes in quantity input and update the cart
-    const quantityInputs = document.querySelectorAll('.cart-quantity');
-    quantityInputs.forEach(input => {
-        input.addEventListener('change', (event) => {
-            const productName = event.target.dataset.product;
-            const newQuantity = parseInt(event.target.value, 10);
-            updateQuantity(productName, newQuantity);
-        });
-    });
-}
-
-// Remove product from cart
-function removeFromCart(productName) {
-    // Find the product in the cart
-    const productIndex = cart.findIndex(item => item.name === productName);
-    if (productIndex !== -1) {
-        cart.splice(productIndex, 1); // Remove the product from the cart
-        saveCart(); // Save the updated cart
-        renderCart(); // Re-render the cart
-    }
-}
-
-// Update quantity of a product
-function updateQuantity(productName, newQuantity) {
-    // Find the product in the cart
-    const product = cart.find(item => item.name === productName);
-    if (product) {
-        // Update the quantity
-        product.quantity = newQuantity;
-        saveCart(); // Save the updated cart
-        renderCart(); // Re-render the cart
-    }
-}
-
-// Save the cart (Example function for localStorage or backend API)
-function saveCart() {
-    localStorage.setItem('cart', JSON.stringify(cart)); // Example of saving to localStorage
-}
-
-
+    // Display the total price
     const totalDiv = document.createElement('div');
     totalDiv.className = 'cart-total';
     totalDiv.innerHTML = `<strong>Total: ${total.toFixed(2)} ₪</strong>`;
     cartItemsContainer.appendChild(totalDiv);
 
-    // Event listener to handle quantity change in cart
+    // Event listeners for handling quantity changes
     document.querySelectorAll('.cart-quantity').forEach(input => {
         input.addEventListener('change', (event) => {
-    handleQuantityChange(event);
-});
+            handleQuantityChange(event); // Call handleQuantityChange on input change
+        });
 
-input.addEventListener('blur', (event) => {
-    handleQuantityChange(event);
-});
+        input.addEventListener('blur', (event) => {
+            handleQuantityChange(event); // Call handleQuantityChange on input blur
+        });
 
-input.addEventListener('keypress', (event) => {
-    if (event.key === 'Enter') {
-        handleQuantityChange(event);
-    }
-});
-
+        input.addEventListener('keypress', (event) => {
+            if (event.key === 'Enter') {
+                handleQuantityChange(event); // Call handleQuantityChange on 'Enter' key press
+            }
+        });
     });
+}
 
+// Initialize the cart by loading it from localStorage
+function loadCart() {
+    const savedCart = JSON.parse(localStorage.getItem('cart'));
+    if (savedCart) {
+        cart = savedCart;
+    }
+    renderCart(); // Render the loaded cart
+}
+
+// Call this function to initialize the cart when the page loads
+loadCart();
 
 // Event handler for checkout button
 checkoutButton.onclick = () => {
