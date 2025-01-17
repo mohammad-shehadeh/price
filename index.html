@@ -959,34 +959,14 @@ function handleQuantityChange(event) {
 
 // Remove product from cart
 function removeFromCart(productName) {
-    // Filter the cart to remove the product by name
     cart = cart.filter(item => item.name !== productName);
-    saveCart(); // Save updated cart
-    renderCart(); // Re-render the cart
+    saveCart();
+    renderCart();
 }
 
 // Save the cart to localStorage
 function saveCart() {
-    localStorage.setItem('cart', JSON.stringify(cart)); // Save cart as a string in localStorage
-}
-
-// Handle quantity change in cart
-function handleQuantityChange(event) {
-    const productName = event.target.dataset.product; // Get the product name
-    const newQuantity = parseInt(event.target.value, 10); // Get the new quantity
-
-    if (newQuantity < 1) {
-        // If the quantity is less than 1, reset to 1
-        event.target.value = 1;
-        return;
-    }
-
-    const product = cart.find(item => item.name === productName); // Find the product
-    if (product) {
-        product.quantity = newQuantity; // Update the quantity
-        saveCart(); // Save updated cart
-        renderCart(); // Re-render the cart
-    }
+    localStorage.setItem('cart', JSON.stringify(cart));
 }
 
 // Render the cart
@@ -1000,65 +980,49 @@ function renderCart() {
 
         const itemDetails = document.createElement('div');
         itemDetails.innerHTML = `
-            <strong>${item.name}</strong><br>
-            Price: ${item.price.toFixed(2)} ₪<br>
-            Quantity: <input 
-                type="number" 
-                value="${item.quantity}" 
-                min="1" 
-                class="cart-quantity" 
-                data-product="${item.name}">
-        `;
+    <strong>${item.name}</strong><br>
+    Price: ${item.price.toFixed(2)} ₪<br>
+    Quantity: <input 
+        type="number" 
+        value="${item.quantity}" 
+        min="1" 
+        class="cart-quantity" 
+        data-product="${item.name}">
+`;
         cartItemDiv.appendChild(itemDetails);
 
-        // Remove button
         const removeButton = document.createElement('button');
         removeButton.textContent = 'X';
-        removeButton.onclick = () => removeFromCart(item.name); // Call remove function on click
+        removeButton.onclick = () => removeFromCart(item.name);
         cartItemDiv.appendChild(removeButton);
 
-        // Add item price to the total
         total += item.price * item.quantity;
-
-        // Append the cart item to the container
         cartItemsContainer.appendChild(cartItemDiv);
     });
 
-    // Display the total price
     const totalDiv = document.createElement('div');
     totalDiv.className = 'cart-total';
     totalDiv.innerHTML = `<strong>Total: ${total.toFixed(2)} ₪</strong>`;
     cartItemsContainer.appendChild(totalDiv);
 
-    // Event listeners for handling quantity changes
+    // Event listener to handle quantity change in cart
     document.querySelectorAll('.cart-quantity').forEach(input => {
         input.addEventListener('change', (event) => {
-            handleQuantityChange(event); // Call handleQuantityChange on input change
-        });
+    handleQuantityChange(event);
+});
 
-        input.addEventListener('blur', (event) => {
-            handleQuantityChange(event); // Call handleQuantityChange on input blur
-        });
+input.addEventListener('blur', (event) => {
+    handleQuantityChange(event);
+});
 
-        input.addEventListener('keypress', (event) => {
-            if (event.key === 'Enter') {
-                handleQuantityChange(event); // Call handleQuantityChange on 'Enter' key press
-            }
-        });
+input.addEventListener('keypress', (event) => {
+    if (event.key === 'Enter') {
+        handleQuantityChange(event);
+    }
+});
+
     });
 }
-
-// Initialize the cart by loading it from localStorage
-function loadCart() {
-    const savedCart = JSON.parse(localStorage.getItem('cart'));
-    if (savedCart) {
-        cart = savedCart;
-    }
-    renderCart(); // Render the loaded cart
-}
-
-// Call this function to initialize the cart when the page loads
-loadCart();
 
 // Event handler for checkout button
 checkoutButton.onclick = () => {
