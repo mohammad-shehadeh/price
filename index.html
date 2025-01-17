@@ -803,34 +803,62 @@ function renderFilteredProducts(filteredProducts) {
             productDiv.appendChild(productImage);
             productDiv.appendChild(productDetails);
 
-            // زر إضافة للسلة
-            const addToCartButton = document.createElement('button');
-            addToCartButton.textContent = 'إضافة للسلة';
-            addToCartButton.classList.add('add-to-cart-btn');
+            // إضافة زر + و - وحقل الكمية
+            const quantityDiv = document.createElement('div');
+            quantityDiv.classList.add('quantity-controls');
 
-            // تحديد ما إذا كان المنتج موجودًا في السلة
+            const quantityInput = document.createElement('input');
+            quantityInput.type = 'number';
+            quantityInput.value = 1;
+            quantityInput.min = 1; // تعيين الحد الأدنى للعدد
+            quantityInput.style.width = '50px';
+            quantityInput.addEventListener('focus', () => quantityInput.select()); // لتحديد النص عند الضغط
+
+            const increaseButton = document.createElement('button');
+            increaseButton.textContent = '+';
+            increaseButton.onclick = () => updateQuantity(quantityInput, 1);
+
+            const decreaseButton = document.createElement('button');
+            decreaseButton.textContent = '−';
+            decreaseButton.onclick = () => updateQuantity(quantityInput, -1);
+
+            quantityDiv.appendChild(decreaseButton);
+            quantityDiv.appendChild(quantityInput);
+            quantityDiv.appendChild(increaseButton);
+
+            // إخفاء/إظهار عناصر الكمية بناءً على حالة المنتج في السلة
             const existingProduct = cart.find(item => item.name === product.name);
             if (existingProduct) {
                 // إذا كان المنتج موجودًا في السلة، إظهار الكمية
-                addToCartButton.style.display = 'none'; // إخفاء الزر
+                quantityDiv.style.display = 'block';
+                quantityInput.value = existingProduct.quantity; // تعيين الكمية من السلة
             } else {
-                // إظهار زر "إضافة للسلة"
-                addToCartButton.style.display = 'block';
+                quantityDiv.style.display = 'none';
             }
 
-            // إضافة الحدث عند الضغط على الزر
+            // إضافة زر "إضافة للسلة"
+            const addToCartButton = document.createElement('button');
+            addToCartButton.textContent = 'إضافة للسلة';
+            addToCartButton.classList.add('add-to-cart-btn');
             addToCartButton.onclick = () => {
                 addToCart(product, 1);  // إضافة المنتج إلى السلة
+                quantityDiv.style.display = 'block';  // إظهار الكمية بعد إضافته
+                addToCartButton.style.display = 'none';  // إخفاء زر "إضافة للسلة"
             };
 
+            // إذا كان المنتج موجودًا في السلة، إخفاء زر "إضافة للسلة"
+            if (existingProduct) {
+                addToCartButton.style.display = 'none';
+            }
+
             productDiv.appendChild(addToCartButton);
+            productDiv.appendChild(quantityDiv);
             categoryDiv.appendChild(productDiv);
         });
 
         categoriesContainer.appendChild(categoryDiv);
     });
 }
-
 
 document.getElementById('search-box').addEventListener('input', (event) => {
     const searchTerm = event.target.value.toLowerCase().trim();
