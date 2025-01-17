@@ -805,15 +805,15 @@ function renderFilteredProducts(filteredProducts) {
 document.getElementById('search-box').addEventListener('input', (event) => {
     const searchTerm = event.target.value.toLowerCase().trim();
 
-    // تقسيم النص المدخل إلى كلمات منفصلة وإزالة الفراغات الزائدة بين الكلمات
-    const searchWords = searchTerm.split(/\s+/).filter(word => word.length > 0);
+    // إزالة الفراغات الزائدة بين الكلمات في النص المدخل
+    const searchWords = searchTerm.split(/\s+/).join('').split('').filter(word => word.length > 0);
 
-    // تصفية المنتجات بناءً على تطابق جميع الكلمات
+    // تصفية المنتجات بناءً على تطابق الكلمات بعد إزالة الفراغات
     const filteredProducts = products.filter(product => {
-        const productName = product.name.toLowerCase();
-        const productCategory = product.category.toLowerCase();
+        const productName = product.name.toLowerCase().replace(/\s+/g, '');  // إزالة جميع الفراغات من الاسم
+        const productCategory = product.category.toLowerCase().replace(/\s+/g, '');  // إزالة جميع الفراغات من الفئة
 
-        // التأكد من أن جميع الكلمات موجودة في الاسم أو الفئة
+        // التأكد من أن جميع الكلمات موجودة في الاسم أو الفئة بعد إزالة الفراغات
         return searchWords.every(word => 
             productName.includes(word) || productCategory.includes(word)
         );
