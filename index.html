@@ -136,11 +136,17 @@ header h1 {
     background-color: white;
     border: 1px solid #ccc;
     padding: 1em;
-    width: 80%;  /* عرض السلة بنسبة 90% من عرض الصفحة */
+    width: 80%;  /* عرض السلة بنسبة 80% من عرض الصفحة */
     height: 90%;
     overflow-y: auto;
     box-shadow: -2px 0px 10px rgba(0, 0, 0, 0.1);
     transition: top 0.3s ease-in-out;  /* إضافة انتقال لتحريك السلة */
+}
+
+.cart .cart-item {
+    font-size: 0.9rem; /* تصغير خط عناصر السلة */
+    margin-bottom: 0.75em; /* مسافة بين كل عنصر */
+    color: #333; /* لون النص */
 }
 
 .cart.hidden {
@@ -213,7 +219,7 @@ header h1 {
     transform: translateY(0);  /* العودة إلى الوضع الطبيعي عند النقر */
 }
 
-      .popup {
+.popup {
     display: none;
     position: fixed;
     top: 50%;
@@ -223,11 +229,50 @@ header h1 {
     border: none; /* إزالة الحدود */
     padding: 1.5em;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* تحسين الظل */
-    border-radius: 12px; /* زيادة الانحناء */
+    border-radius: 16px; /* زيادة الانحناء */
     width: 400px; /* العرض الافتراضي */
     max-width: 90%; /* للتأكد من عدم تخطي العرض على الهواتف */
     font-family: 'Arial', sans-serif; /* خط أنيق */
     animation: fadeIn 0.3s ease-in-out; /* تأثير الظهور */
+}
+
+.popup h2 {
+    font-size: 1.25rem; /* حجم أصغر للعنوان */
+    margin-bottom: 0.5em; /* مسافة صغيرة بين العنوان والمحتوى */
+    color: #333; /* لون جذاب للعنوان */
+}
+
+.popup p {
+    font-size: 1rem; /* حجم النص العادي */
+    color: #555; /* لون هادئ للنص */
+    line-height: 1.5; /* تحسين التباعد بين السطور */
+}
+
+.popup .buttons {
+    margin-top: 1em;
+    display: flex;
+    justify-content: space-around; /* توزيع الأزرار بالتساوي */
+}
+
+.popup button {
+    background-color: #007bff; /* الأزرق */
+    color: #fff; /* النص الأبيض */
+    border: none; /* إزالة الحدود */
+    border-radius: 8px; /* انحناء الأزرار */
+    padding: 0.75em 1.5em; /* حجم أكبر قليلاً */
+    font-size: 1rem; /* حجم النص */
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15); /* ظل للأزرار */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* تحسين الحركة */
+}
+
+.popup button:hover {
+    background-color: #0056b3; /* لون أغمق عند التمرير */
+    transform: scale(1.05); /* تكبير طفيف عند التمرير */
+}
+
+.popup button:active {
+    transform: scale(0.98); /* تصغير طفيف عند النقر */
 }
 
 @media (max-width: 768px) {
@@ -235,7 +280,13 @@ header h1 {
         width: 90%; /* عرض 90% للهواتف */
         padding: 1em; /* تقليل الحواف */
     }
+
+    .popup button {
+        font-size: 0.9rem; /* تصغير النص للأزرار قليلاً على الشاشات الصغيرة */
+        padding: 0.5em 1em; /* تقليل الحواف للأزرار */
+    }
 }
+
 
 /* إضافة زر إغلاق */
 .popup-close {
@@ -609,7 +660,7 @@ div {
         <div id="filter-buttons">
             <!-- الأزرار سيتم إنشاؤها ديناميكيًا بواسطة JavaScript -->
         </div>
-        <input type="text" id="search-box" placeholder="🔍 ابحث عن منتج" />
+        <input type="text" id="search-box" placeholder="🔍 أبحث عن منتج" />
         <div id="filter-buttons"></div>
         <button class="toggle-cart" id="show-cart-button">إظهار الفاتورة</button>
     </header>
@@ -624,7 +675,7 @@ div {
         <button class="toggle-cart" id="hide-cart-button">إخفاء الفاتورة</button>
     </div>
     <div class="popup" id="popup">
-        <h2>YOUR ID</h2>
+        <h2>نموذج إتمام الطلب</h2>
         <input type="text" id="customer-name" placeholder="ادخل اسمك">
         <input type="text" id="customer-phone" placeholder="ادخل رقم هاتفك">
         <button id="confirm-button">إرسال</button>
