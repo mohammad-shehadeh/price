@@ -136,17 +136,11 @@ header h1 {
     background-color: white;
     border: 1px solid #ccc;
     padding: 1em;
-    width: 80%;  /* عرض السلة بنسبة 80% من عرض الصفحة */
+    width: 80%;  /* عرض السلة بنسبة 90% من عرض الصفحة */
     height: 90%;
     overflow-y: auto;
     box-shadow: -2px 0px 10px rgba(0, 0, 0, 0.1);
     transition: top 0.3s ease-in-out;  /* إضافة انتقال لتحريك السلة */
-}
-
-.cart .cart-item {
-    font-size: 0.9rem; /* تصغير خط عناصر السلة */
-    margin-bottom: 0.75em; /* مسافة بين كل عنصر */
-    color: #333; /* لون النص */
 }
 
 .cart.hidden {
@@ -237,10 +231,12 @@ header h1 {
 }
 
 .popup h2 {
-    font-size: 1.25rem; /* حجم أصغر للعنوان */
-    margin-bottom: 0.5em; /* مسافة صغيرة بين العنوان والمحتوى */
-    color: #333; /* لون جذاب للعنوان */
+    font-size: 1.25rem;
+    margin-bottom: 0.5em;
+    color: #333;
+    letter-spacing: normal; /* إلغاء أي تباعد إضافي بين الحروف */
 }
+
 
 .popup p {
     font-size: 1rem; /* حجم النص العادي */
