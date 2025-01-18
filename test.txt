@@ -46,7 +46,7 @@ Tecno/Camon 30 256|16/780/https://d3fyizz0b46qgr.cloudfront.net/global/phones/ca
 Tecno/pova 6 256|16/800/https://telfonak.com/wp-content/uploads/2024/06/pova6-tecno.webp
 Tecno/pova 6 256|24/850/https://telfonak.com/wp-content/uploads/2024/06/pova6-tecno.webp
 Infinix/hot 50pro 256|16/620/https://media.extra.com/i/aurora/100389042_100_01?fmt=auto&w=720
-Infinix/hot 50/256|16/570/https://www.startech.com.bd/image/cache/catalog/mobile/infinix/hot-50/infinix-hot-50-sleek-black-500x500.webp
+Infinix/hot 50 256|16/570/https://www.startech.com.bd/image/cache/catalog/mobile/infinix/hot-50/infinix-hot-50-sleek-black-500x500.webp
 Infinix/hot 50i 128|8/340/https://i0.wp.com/alltech.pk/wp-content/uploads/2024/10/Infinix-Hot-50i-Sleek-Blk.jpg
 Infinix/hot 40i 256|16/400/https://mobizil.com/wp-content/uploads/2024/06/Infinix-Hot-40i.jpg
 Infinix/smart 9 128|4/310/https://7lcart.s3.eu-central-1.amazonaws.com/cardnet.sa/6592/conversions/172798721466fefe0e7d6e9-card.jpg
