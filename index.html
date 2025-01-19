@@ -10,42 +10,20 @@
     <meta property="og:type" content="website">
     <title>Shehadeh Center</title>
     <style>
-            body {
-        font-family: Arial, sans-serif; /* نوع الخط */
-        margin: 0; /* إزالة الهوامش */
-        padding: 0; /* إزالة الحواف */
-        background-color: #f4f4f4; /* لون الخلفية */
-        color: #ffffff; /* لون النص */
-        line-height: 1.6; /* ارتفاع الأسطر لسهولة القراءة */
-    }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .price {
+            display: inline; /* تأكد من أن الأسعار تظهر بشكل طبيعي */
+            transition: opacity 0.3s ease-in-out; /* انتقال سلس عند الإخفاء */
+        }
+        .hidden {
+            opacity: 0; /* إخفاء العنصر تماماً */
+        }
 
-    /* تنسيق النصوص العامة */
-    h1, h2, h3, h4, h5, h6 {
-        color: #222; /* لون النصوص الكبيرة */
-        margin-bottom: 15px; /* مسافة أسفل العناوين */
-    }
-
-    p {
-        margin-bottom: 20px; /* مسافة أسفل الفقرات */
-    }
-
-    /* تخصيص الصور */
-    img {
-        max-width: 100%; /* ضبط عرض الصورة ليكون متجاوباً */
-        height: auto; /* الحفاظ على نسبة الأبعاد */
-        display: block; /* منع الإزاحة حول الصورة */
-        margin: 0 auto; /* توسيط الصور */
-    }
-
-    /* تحسين الروابط */
-    a {
-        color: #007BFF; /* لون أزرق للروابط */
-        text-decoration: none; /* إزالة الخط السفلي الافتراضي */
-    }
-
-    a:hover {
-        text-decoration: underline; /* خط سفلي عند تمرير الفأرة */
-    }
         header {
     background-color: #333;
     color: white;
@@ -713,7 +691,6 @@ div {
             ↓
         </button>
     </div>
-
     <script>
 const categoriesContainer = document.getElementById('categories');
 const cartItemsContainer = document.getElementById('cart-items');
@@ -1279,23 +1256,27 @@ hideCartButton.onclick = function() {
                 behavior: "smooth"
             });
         });
-    // الكشف عن تغيير حالة العرض
-    document.addEventListener("visibilitychange", function() {
+ 
+   // وظيفة لإخفاء الأسعار
+   function hidePrices() {
+            const prices = document.querySelectorAll('.price'); // استهداف العناصر ذات الفئة price
+            prices.forEach(price => price.classList.add('hidden')); // إضافة فئة الإخفاء
+        }
+
+        // وظيفة لإظهار الأسعار
+        function showPrices() {
+            const prices = document.querySelectorAll('.price'); // استهداف العناصر ذات الفئة price
+            prices.forEach(price => price.classList.remove('hidden')); // إزالة فئة الإخفاء
+        }
+
+        // الكشف عن تغيير حالة عرض الصفحة
+        document.addEventListener('visibilitychange', function() {
             if (document.hidden) {
-                // إضافة تأثير التعتيم عند إخفاء الصفحة
-                document.body.classList.add("blur-effect");
+                hidePrices(); // إخفاء الأسعار عند إخفاء الصفحة
             } else {
-                // إزالة تأثير التعتيم عند العودة إلى الصفحة
-                document.body.classList.remove("blur-effect");
+                showPrices(); // إظهار الأسعار عند العودة
             }
         });
-
-        // منع عرض القائمة اليمنى (اختياري)
-        document.addEventListener('contextmenu', function(e) {
-            e.preventDefault();
-            alert('عذرًا، لا يمكن النقر بزر الماوس الأيمن على هذا الموقع.');
-        });
- 
 </script>
 </body>
 </html>
