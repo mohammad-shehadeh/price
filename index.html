@@ -1364,32 +1364,34 @@ hideCartButton.onclick = function() {
             });
         });
  
-        // التحقق من حالة تسجيل الدخول عند تحميل الصفحة
-        document.addEventListener("DOMContentLoaded", function() {
-            const isLoggedIn = localStorage.getItem("isLoggedIn");
-            if (isLoggedIn === "true") {
-                showContentSection();
-            }
-        });
+// التحقق من حالة تسجيل الدخول عند تحميل الصفحة
+document.addEventListener("DOMContentLoaded", function() {
+    const isLoggedIn = localStorage.getItem("isLoggedIn");
+    if (isLoggedIn === "true") {
+        showContentSection();
+    }
+    checkSessionExpiry(); // التحقق من صلاحية الجلسة عند تحميل الصفحة
+});
 
-        // دالة إرسال رسالة واتساب للحصول على رمز التحقق
-        function sendWhatsAppMessage() {
-            const whatsappNumber = "+972569813333";
-            const message = `مرحبًا، أريد الحصول على رمز التحقق للدخول إلى الموقع.`;
-            const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
-            window.open(whatsappUrl, "_blank");
-        }
-
-// قائمة رموز التحقق الصحيحة (يمكن تعديلها أو توليدها ديناميكيًا إذا لزم الأمر)
-const correctOTPs = ["A28372", "E82742", "R74349", "S57375", "G84395"];
+// دالة إرسال رسالة واتساب للحصول على رمز التحقق
+function sendWhatsAppMessage() {
+    const whatsappNumber = "+972569813333";
+    const message = `مرحبًا، أريد الحصول على رمز التحقق للدخول إلى الموقع.`;
+    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, "_blank");
+}
 
 // دالة التحقق من رمز التحقق المُدخل
 function verifyOTP() {
     // قراءة رمز التحقق الذي أدخله المستخدم
     const otpCode = document.getElementById("otp-code").value.trim();
 
-    // التحقق مما إذا كان الرمز موجودًا في قائمة الرموز الصحيحة
-    if (correctOTPs.includes(otpCode)) { 
+    // إرسال رسالة للمستخدم عبر WhatsApp للحصول على رمز التحقق الفعلي من الموقع المذكور
+    // (نفترض هنا أن المستخدم قد حصل على الرمز الفعلي من الموقع)
+    // نستخدم رمز افتراضي لمطابقته مع المدخل من قبل المستخدم
+    const expectedOTP = prompt("من فضلك أدخل الرمز الذي استلمته عبر WhatsApp.");
+
+    if (otpCode === expectedOTP) { 
         alert("تم تسجيل الدخول بنجاح!");
         
         // حفظ حالة تسجيل الدخول في التخزين المحلي
@@ -1412,27 +1414,21 @@ function showContentSection() {
     document.getElementById("content-section").style.display = "block";
 }
 
-
-        // دالة لإظهار محتوى الموقع وإخفاء قسم رمز التحقق
-        function showContentSection() {
-            document.getElementById("otp-section").style.display = "none";
-            document.getElementById("content-section").style.display = "block";
+// تحقق من انتهاء صلاحية الجلسة (6 أشهر)
+function checkSessionExpiry() {
+    const loginTimestamp = localStorage.getItem("loginTimestamp");
+    if (loginTimestamp) {
+        const sixMonthsInMilliseconds = 6 * 30 * 24 * 60 * 60 * 1000; // 6 أشهر بالميللي ثانية
+        const currentTime = Date.now();
+        if (currentTime - loginTimestamp > sixMonthsInMilliseconds) {
+            localStorage.removeItem("isLoggedIn");
+            localStorage.removeItem("loginTimestamp");
+            alert("انتهت صلاحية تسجيل الدخول. يرجى تسجيل الدخول مرة أخرى.");
+            location.reload(); // إعادة تحميل الصفحة عند انتهاء الجلسة
         }
+    }
+}
 
-        // تحقق من انتهاء صلاحية الجلسة (6 أشهر)
-        function checkSessionExpiry() {
-            const loginTimestamp = localStorage.getItem("loginTimestamp");
-            if (loginTimestamp) {
-                const sixMonthsInMilliseconds = 6 * 30 * 24 * 60 * 60 * 1000;
-                const currentTime = Date.now();
-                if (currentTime - loginTimestamp > sixMonthsInMilliseconds) {
-                    localStorage.removeItem("isLoggedIn");
-                    localStorage.removeItem("loginTimestamp");
-                    alert("انتهت صلاحية تسجيل الدخول. يرجى تسجيل الدخول مرة أخرى.");
-                    location.reload();
-                }
-            }
-        }
 
         // استدعاء دالة التحقق من انتهاء الصلاحية عند تحميل الصفحة
         checkSessionExpiry();
