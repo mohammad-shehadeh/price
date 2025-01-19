@@ -2,12 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أسعار الاجهزة أونلاين</title>
     <meta name="description" content="أسعار الأجهزة">
     <meta property="og:title" content="Shehadeh Center">
     <meta property="og:description" content="اسعار الاجهزة اونلاين">
     <meta property="og:image" content="https://img.freepik.com/premium-vector/vector-price-text-logo-design_867743-461.jpg">
     <meta property="og:type" content="website">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
     <title>Shehadeh Center</title>
     <style>
         body {
@@ -15,13 +17,6 @@
             margin: 0;
             padding: 0;
             background-color: #f4f4f4;
-        }
-        .price {
-            display: inline; /* تأكد من أن الأسعار تظهر بشكل طبيعي */
-            transition: opacity 0.3s ease-in-out; /* انتقال سلس عند الإخفاء */
-        }
-        .hidden {
-            opacity: 0; /* إخفاء العنصر تماماً */
         }
 
         header {
@@ -691,6 +686,7 @@ div {
             ↓
         </button>
     </div>
+
     <script>
 const categoriesContainer = document.getElementById('categories');
 const cartItemsContainer = document.getElementById('cart-items');
@@ -1257,26 +1253,7 @@ hideCartButton.onclick = function() {
             });
         });
  
-   // وظيفة لإخفاء الأسعار
-   function hidePrices() {
-            const prices = document.querySelectorAll('.price'); // استهداف العناصر ذات الفئة price
-            prices.forEach(price => price.classList.add('hidden')); // إضافة فئة الإخفاء
-        }
-
-        // وظيفة لإظهار الأسعار
-        function showPrices() {
-            const prices = document.querySelectorAll('.price'); // استهداف العناصر ذات الفئة price
-            prices.forEach(price => price.classList.remove('hidden')); // إزالة فئة الإخفاء
-        }
-
-        // الكشف عن تغيير حالة عرض الصفحة
-        document.addEventListener('visibilitychange', function() {
-            if (document.hidden) {
-                hidePrices(); // إخفاء الأسعار عند إخفاء الصفحة
-            } else {
-                showPrices(); // إظهار الأسعار عند العودة
-            }
-        });
+ 
 </script>
 </body>
 </html>
