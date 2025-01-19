@@ -1364,73 +1364,78 @@ hideCartButton.onclick = function() {
             });
         });
  
-        document.addEventListener("DOMContentLoaded", () => {
-    const userData = JSON.parse(localStorage.getItem("userData"));
-    const expiryDate = new Date(localStorage.getItem("expiryDate"));
+        // التحقق من حالة تسجيل الدخول عند تحميل الصفحة
+        document.addEventListener("DOMContentLoaded", function() {
+            const isLoggedIn = localStorage.getItem("isLoggedIn");
+            if (isLoggedIn === "true") {
+                showContentSection();
+            }
+        });
 
-    if (userData && expiryDate > new Date()) {
-        // إذا كانت البيانات موجودة وصالحة، عرض المحتوى
-        document.getElementById("login-section").style.display = "none";
-        document.getElementById("content-section").style.display = "block";
-    } else {
-        // إذا لم يتم تسجيل الدخول، أظهر قسم تسجيل الدخول
-        localStorage.removeItem("userData");
-        localStorage.removeItem("expiryDate");
-        document.getElementById("login-section").style.display = "block";
-        document.getElementById("content-section").style.display = "none";
-    }
-});
+        // دالة إرسال رسالة واتساب للحصول على رمز التحقق
+        function sendWhatsAppMessage() {
+            const whatsappNumber = "+972569813333";
+            const message = `مرحبًا، أريد الحصول على رمز التحقق للدخول إلى الموقع.`;
+            const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+            window.open(whatsappUrl, "_blank");
+        }
 
-// قائمة الرموز الثابتة
-const validCodes = [
-    "A1B2C", "dt65f", "F6666", "E5555", "D4444",
-    "C3333", "B2222", "A1111",
-];
+// قائمة رموز التحقق الصحيحة (يمكن تعديلها أو توليدها ديناميكيًا إذا لزم الأمر)
+const correctOTPs = ["123456", "654321", "111222", "333444", "555666"];
 
-function sendWhatsAppMessage() {
-    const name = document.getElementById("user-name").value.trim();
-    const phone = document.getElementById("user-phone").value.trim();
-
-    if (!name || !phone.match(/^\d{10}$/)) {
-        alert("يرجى إدخال اسم صحيح ورقم هاتف مكون من 10 أرقام.");
-        return;
-    }
-
-    const whatsappNumber = "+972569813333";
-    const message = `مرحبًا، أنا ${name}. رقم الهاتف: ${phone}. أريد الحصول على رمز التحقق.`;
-
-    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
-    window.open(whatsappUrl, "_blank");
-
-    document.getElementById("otp-section").style.display = "block";
-    document.getElementById("login-section").style.display = "none";
-}
-
+// دالة التحقق من رمز التحقق المُدخل
 function verifyOTP() {
-    const otp = document.getElementById("otp-code").value.trim();
+    // قراءة رمز التحقق الذي أدخله المستخدم
+    const otpCode = document.getElementById("otp-code").value.trim();
 
-    if (!otp) {
-        alert("يرجى إدخال رمز التحقق.");
-        return;
-    }
-
-    if (validCodes.includes(otp)) {
-        alert("تم التحقق بنجاح!");
-
-        // تخزين البيانات في Local Storage
-        const expiryDate = new Date();
-        expiryDate.setMonth(expiryDate.getMonth() + 6);
-
-        localStorage.setItem("userData", JSON.stringify({ otp, loginDate: new Date() }));
-        localStorage.setItem("expiryDate", expiryDate);
-
-        // عرض المحتوى
-        document.getElementById("otp-section").style.display = "none";
-        document.getElementById("content-section").style.display = "block";
+    // التحقق مما إذا كان الرمز موجودًا في قائمة الرموز الصحيحة
+    if (correctOTPs.includes(otpCode)) { 
+        alert("تم تسجيل الدخول بنجاح!");
+        
+        // حفظ حالة تسجيل الدخول في التخزين المحلي
+        localStorage.setItem("isLoggedIn", "true");
+        
+        // حفظ وقت تسجيل الدخول
+        localStorage.setItem("loginTimestamp", Date.now());
+        
+        // عرض محتوى الموقع وإخفاء قسم إدخال رمز التحقق
+        showContentSection();
     } else {
+        // عرض رسالة خطأ إذا كان رمز التحقق غير صحيح
         alert("رمز التحقق غير صحيح. يرجى المحاولة مرة أخرى.");
     }
 }
+
+// دالة لإظهار محتوى الموقع وإخفاء قسم رمز التحقق
+function showContentSection() {
+    document.getElementById("otp-section").style.display = "none";
+    document.getElementById("content-section").style.display = "block";
+}
+
+
+        // دالة لإظهار محتوى الموقع وإخفاء قسم رمز التحقق
+        function showContentSection() {
+            document.getElementById("otp-section").style.display = "none";
+            document.getElementById("content-section").style.display = "block";
+        }
+
+        // تحقق من انتهاء صلاحية الجلسة (6 أشهر)
+        function checkSessionExpiry() {
+            const loginTimestamp = localStorage.getItem("loginTimestamp");
+            if (loginTimestamp) {
+                const sixMonthsInMilliseconds = 6 * 30 * 24 * 60 * 60 * 1000;
+                const currentTime = Date.now();
+                if (currentTime - loginTimestamp > sixMonthsInMilliseconds) {
+                    localStorage.removeItem("isLoggedIn");
+                    localStorage.removeItem("loginTimestamp");
+                    alert("انتهت صلاحية تسجيل الدخول. يرجى تسجيل الدخول مرة أخرى.");
+                    location.reload();
+                }
+            }
+        }
+
+        // استدعاء دالة التحقق من انتهاء الصلاحية عند تحميل الصفحة
+        checkSessionExpiry();
 
 
 </script>
