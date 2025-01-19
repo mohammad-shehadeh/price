@@ -680,25 +680,86 @@ input[type="text"]:focus, input[type="tel"]:focus {
     outline: none;
 }
 
+/* تضمين كافة الأكواد ضمن محدد فريد */
+#otp-section.custom-otp-style {
+    font-family: "Arial", sans-serif;
+    background: linear-gradient(135deg, #f7f7f7, #e3e3e3);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 400px;
+    margin: 50px auto;
+    border: 2px solid #ddd;
+}
+
+#otp-section.custom-otp-style h5 {
+    font-size: 14px;
+    color: #333;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#otp-section.custom-otp-style h2 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #444;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+#otp-section.custom-otp-style input[type="text"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+#otp-section.custom-otp-style button {
+    display: block;
+    width: 100%;
+    background: linear-gradient(135deg, #0066cc, #003399);
+    color: #fff;
+    padding: 10px 0;
+    margin-top: 10px;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+}
+
+#otp-section.custom-otp-style button:hover {
+    background: linear-gradient(135deg, #005bb5, #002f66);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+}
+
+#otp-section.custom-otp-style button:active {
+    background: linear-gradient(135deg, #004080, #001f40);
+    transform: translateY(0);
+}
 
   </style>
 </head>
 <body>
-    <!-- قسم تسجيل الدخول -->
-    <div id="login-section" style="display: none; text-align: center; margin-top: 20px;">
-        <h2>تسجيل الدخول</h2>
-        <h5>سجل دخولك لمرة واحدة للتحقق من انك ضمن اصحاب المحلات و سوف يتم فتح الموقع<br> دائما حيث يتطلب ادخال رمز تحقق لمرة واحدة فقط ولم يتم طلب الرمز او التسجيل مرة أخرى </h5>
-        <input type="text" id="user-name" placeholder="ادخل اسمك" />
-        <input type="text" id="user-phone" placeholder="ادخل رقم هاتفك (10 أرقام)" />
-        <button onclick="sendWhatsAppMessage()">تسجيل الدخول</button>
-    </div>
-
     <!-- قسم إدخال رمز التحقق -->
-    <div id="otp-section" style="display: none; text-align: center; margin-top: 20px;">
+    <div id="otp-section" class="custom-otp-style">
+        <h5>سجل دخولك لمرة واحدة للتحقق من أنك ضمن أصحاب المحلات وسوف يتم فتح الموقع<br>دائمًا حيث يتطلب إدخال رمز تحقق لمرة واحدة فقط ولن يتم طلب الرمز أو التسجيل مرة أخرى.</h5>
+        <button onclick="sendWhatsAppMessage()">الحصول على رمز التحقق</button>
         <h2>إدخال رمز التحقق</h2>
         <input type="text" id="otp-code" placeholder="ادخل رمز التحقق" />
-        <button onclick="verifyOTP()">تحقق</button>
+        <button onclick="verifyOTP()">تسجيل الدخول</button>
     </div>
+    
+</body>
+
 
     <!-- محتوى الموقع -->
     <div id="content-section" style="display: none;">
