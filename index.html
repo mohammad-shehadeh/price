@@ -2,27 +2,50 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>أسعار الاجهزة أونلاين</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1, user-scalable=no">
     <meta name="description" content="أسعار الأجهزة">
     <meta property="og:title" content="Shehadeh Center">
     <meta property="og:description" content="اسعار الاجهزة اونلاين">
     <meta property="og:image" content="https://img.freepik.com/premium-vector/vector-price-text-logo-design_867743-461.jpg">
     <meta property="og:type" content="website">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="mobile-web-app-capable" content="yes">
     <title>Shehadeh Center</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
+            body {
+        font-family: Arial, sans-serif; /* نوع الخط */
+        margin: 0; /* إزالة الهوامش */
+        padding: 0; /* إزالة الحواف */
+        background-color: #f4f4f4; /* لون الخلفية */
+        color: #ffffff; /* لون النص */
+        line-height: 1.6; /* ارتفاع الأسطر لسهولة القراءة */
+    }
 
+    /* تنسيق النصوص العامة */
+    h1, h2, h3, h4, h5, h6 {
+        color: #222; /* لون النصوص الكبيرة */
+        margin-bottom: 15px; /* مسافة أسفل العناوين */
+    }
+
+    p {
+        margin-bottom: 20px; /* مسافة أسفل الفقرات */
+    }
+
+    /* تخصيص الصور */
+    img {
+        max-width: 100%; /* ضبط عرض الصورة ليكون متجاوباً */
+        height: auto; /* الحفاظ على نسبة الأبعاد */
+        display: block; /* منع الإزاحة حول الصورة */
+        margin: 0 auto; /* توسيط الصور */
+    }
+
+    /* تحسين الروابط */
+    a {
+        color: #007BFF; /* لون أزرق للروابط */
+        text-decoration: none; /* إزالة الخط السفلي الافتراضي */
+    }
+
+    a:hover {
+        text-decoration: underline; /* خط سفلي عند تمرير الفأرة */
+    }
         header {
     background-color: #333;
     color: white;
@@ -1256,17 +1279,23 @@ hideCartButton.onclick = function() {
                 behavior: "smooth"
             });
         });
+    // الكشف عن تغيير حالة العرض
+    document.addEventListener("visibilitychange", function() {
+            if (document.hidden) {
+                // إضافة تأثير التعتيم عند إخفاء الصفحة
+                document.body.classList.add("blur-effect");
+            } else {
+                // إزالة تأثير التعتيم عند العودة إلى الصفحة
+                document.body.classList.remove("blur-effect");
+            }
+        });
+
+        // منع عرض القائمة اليمنى (اختياري)
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+            alert('عذرًا، لا يمكن النقر بزر الماوس الأيمن على هذا الموقع.');
+        });
  
-        if (navigator.userAgent.match(/iPhone|iPad|iPod|Android/i)) {
-    document.addEventListener('visibilitychange', function() {
-      if (document.hidden) {
-        // عند محاولة التقاط الشاشة
-        document.body.style.filter = 'blur(10px)';
-      } else {
-        document.body.style.filter = 'none';
-      }
-    });
-  }
 </script>
 </body>
 </html>
