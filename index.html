@@ -10,6 +10,10 @@
     <meta property="og:image" content="https://img.freepik.com/premium-vector/vector-price-text-logo-design_867743-461.jpg">
     <meta property="og:type" content="website">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="mobile-web-app-capable" content="yes">
     <title>Shehadeh Center</title>
     <style>
         body {
@@ -1253,7 +1257,16 @@ hideCartButton.onclick = function() {
             });
         });
  
- 
+        if (navigator.userAgent.match(/iPhone|iPad|iPod|Android/i)) {
+    document.addEventListener('visibilitychange', function() {
+      if (document.hidden) {
+        // عند محاولة التقاط الشاشة
+        document.body.style.filter = 'blur(10px)';
+      } else {
+        document.body.style.filter = 'none';
+      }
+    });
+  }
 </script>
 </body>
 </html>
