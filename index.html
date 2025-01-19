@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,7 +10,6 @@
     <meta property="og:image" content="https://img.freepik.com/premium-vector/vector-price-text-logo-design_867743-461.jpg">
     <meta property="og:type" content="website">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
-    <title>Shehadeh Center</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -651,40 +650,54 @@ div {
   </style>
 </head>
 <body>
-    <header>
-        <h1>Shehadeh Center</h1>
-        <div id="filter-buttons">
-            <!-- الأزرار سيتم إنشاؤها ديناميكيًا بواسطة JavaScript -->
-        </div>
-        <input type="text" id="search-box" placeholder="🔍 أبحث عن منتج" />
-        <div id="filter-buttons"></div>
-        <button class="toggle-cart" id="show-cart-button">إظهار الفاتورة</button>
-    </header>
-    
-    <main>
-        <div id="categories"></div>
-    </main>
-    <div class="cart" id="cart">
-        <div id="cart-items"></div>
-        <button class="share-button" id="checkout-button">ارسال طلبية</button>
-        <br>
-        <button class="toggle-cart" id="hide-cart-button">إخفاء الفاتورة</button>
-    </div>
-    <div class="popup" id="popup">
-        <h2>نموذج إتمام الطلب</h2>
-        <input type="text" id="customer-name" placeholder="ادخل اسمك">
-        <input type="text" id="customer-phone" placeholder="ادخل رقم هاتفك">
-        <button id="confirm-button">إرسال</button>
-        <button id="cancel-button">ألغاء</button>
+    <!-- قسم تسجيل الدخول -->
+    <div id="login-section" style="display: none; text-align: center; margin-top: 20px;">
+        <h2>تسجيل الدخول</h2>
+        <input type="text" id="user-name" placeholder="ادخل اسمك" />
+        <input type="text" id="user-phone" placeholder="ادخل رقم هاتفك (10 أرقام)" />
+        <button onclick="sendWhatsAppMessage()">تسجيل الدخول</button>
     </div>
 
-    <div class="scroll-btn">
-        <button id="scrollUp" title="الصعود للأعلى">
-            ↑
-        </button>
-        <button id="scrollDown" title="النزول للأسفل">
-            ↓
-        </button>
+    <!-- قسم إدخال رمز التحقق -->
+    <div id="otp-section" style="display: none; text-align: center; margin-top: 20px;">
+        <h2>إدخال رمز التحقق</h2>
+        <input type="text" id="otp-code" placeholder="ادخل رمز التحقق" />
+        <button onclick="verifyOTP()">تحقق</button>
+    </div>
+
+    <!-- محتوى الموقع -->
+    <div id="content-section" style="display: none;">
+        <header>
+            <h1>Shehadeh Center</h1>
+            <div id="filter-buttons">
+                <!-- الأزرار سيتم إنشاؤها ديناميكيًا بواسطة JavaScript -->
+            </div>
+            <input type="text" id="search-box" placeholder="🔍 أبحث عن منتج" />
+            <div id="filter-buttons"></div>
+            <button class="toggle-cart" id="show-cart-button">إظهار الفاتورة</button>
+        </header>
+        
+        <main>
+            <div id="categories"></div>
+        </main>
+        <div class="cart" id="cart">
+            <div id="cart-items"></div>
+            <button class="share-button" id="checkout-button">ارسال طلبية</button>
+            <br>
+            <button class="toggle-cart" id="hide-cart-button">إخفاء الفاتورة</button>
+        </div>
+        <div class="popup" id="popup">
+            <h2>نموذج إتمام الطلب</h2>
+            <input type="text" id="customer-name" placeholder="ادخل اسمك">
+            <input type="text" id="customer-phone" placeholder="ادخل رقم هاتفك">
+            <button id="confirm-button">إرسال</button>
+            <button id="cancel-button">ألغاء</button>
+        </div>
+
+        <div class="scroll-btn">
+            <button id="scrollUp" title="الصعود للأعلى">↑</button>
+            <button id="scrollDown" title="النزول للأسفل">↓</button>
+        </div>
     </div>
 
     <script>
@@ -1253,7 +1266,72 @@ hideCartButton.onclick = function() {
             });
         });
  
- 
+        document.addEventListener("DOMContentLoaded", () => {
+            const userData = JSON.parse(localStorage.getItem("userData"));
+            const expiryDate = new Date(localStorage.getItem("expiryDate"));
+
+            if (userData && expiryDate > new Date()) {
+                // إذا كانت البيانات موجودة وصالحة، عرض المحتوى
+                document.getElementById("login-section").style.display = "none";
+                document.getElementById("content-section").style.display = "block";
+            } else {
+                // إذا لم يتم تسجيل الدخول، أظهر قسم تسجيل الدخول
+                localStorage.removeItem("userData");
+                localStorage.removeItem("expiryDate");
+                document.getElementById("login-section").style.display = "block";
+                document.getElementById("content-section").style.display = "none";
+            }
+        });
+
+        function sendWhatsAppMessage() {
+            const name = document.getElementById("user-name").value.trim();
+            const phone = document.getElementById("user-phone").value.trim();
+
+            if (!name || !phone.match(/^\d{10}$/)) {
+                alert("يرجى إدخال اسم صحيح ورقم هاتف مكون من 10 أرقام.");
+                return;
+            }
+
+            const whatsappNumber = "+972569813333";
+            const message = `مرحبًا، أنا ${name}. رقم الهاتف: ${phone}. أريد الحصول على رمز التحقق.`;
+
+            const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+            window.open(whatsappUrl, "_blank");
+
+            document.getElementById("otp-section").style.display = "block";
+            document.getElementById("login-section").style.display = "none";
+        }
+
+        async function verifyOTP() {
+            const otp = document.getElementById("otp-code").value.trim();
+
+            if (!otp) {
+                alert("يرجى إدخال رمز التحقق.");
+                return;
+            }
+
+            try {
+                const response = await fetch("https://raw.githubusercontent.com/username/repository/main/codex1.txt");
+                const validCodes = await response.text();
+
+                if (validCodes.split("\n").map(code => code.trim()).includes(otp)) {
+                    alert("تم التحقق بنجاح!");
+
+                    const expiryDate = new Date();
+                    expiryDate.setMonth(expiryDate.getMonth() + 6);
+
+                    localStorage.setItem("userData", JSON.stringify({ otp, loginDate: new Date() }));
+                    localStorage.setItem("expiryDate", expiryDate);
+
+                    document.getElementById("otp-section").style.display = "none";
+                    document.getElementById("content-section").style.display = "block";
+                } else {
+                    alert("رمز التحقق غير صحيح. يرجى المحاولة مرة أخرى.");
+                }
+            } catch (error) {
+                alert("حدث خطأ أثناء التحقق من الرمز. يرجى المحاولة لاحقًا.");
+            }
+        }
 </script>
 </body>
 </html>
