@@ -755,7 +755,8 @@ input[type="text"]:focus, input[type="tel"]:focus {
     <div id="otp-section" class="custom-otp-style">
         <h5>سجل دخولك لمرة واحدة للتحقق من أنك ضمن أصحاب المحلات وسوف يتم فتح الموقع بشكل دائمًا حيث يتطلب إدخال رمز تحقق لمرة واحدة فقط ولن يتم طلب الرمز أو التسجيل مرة أخرى.</h5>
         <button onclick="sendWhatsAppMessage()">الحصول على رمز التحقق</button>
-        <h2>إدخال رمز التحقق</h2>
+        <h2>إدخال رمز التحقق بعد تسجيل الدخول</h2>
+        <input type="text" id="otp-code" placeholder="ادخل رمز التحقق" style="display: none;" />
         <button onclick="verifyOTP()">تسجيل الدخول</button>
     </div>
     
