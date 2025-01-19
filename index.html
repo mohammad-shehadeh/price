@@ -1303,35 +1303,47 @@ hideCartButton.onclick = function() {
         }
 
         async function verifyOTP() {
-            const otp = document.getElementById("otp-code").value.trim();
+    const otp = document.getElementById("otp-code").value.trim();
 
-            if (!otp) {
-                alert("يرجى إدخال رمز التحقق.");
-                return;
-            }
+    if (!otp) {
+        alert("يرجى إدخال رمز التحقق.");
+        return;
+    }
 
-            try {
-                const response = await fetch("https://raw.githubusercontent.com/username/repository/main/codex1.txt");
-                const validCodes = await response.text();
-
-                if (validCodes.split("\n").map(code => code.trim()).includes(otp)) {
-                    alert("تم التحقق بنجاح!");
-
-                    const expiryDate = new Date();
-                    expiryDate.setMonth(expiryDate.getMonth() + 6);
-
-                    localStorage.setItem("userData", JSON.stringify({ otp, loginDate: new Date() }));
-                    localStorage.setItem("expiryDate", expiryDate);
-
-                    document.getElementById("otp-section").style.display = "none";
-                    document.getElementById("content-section").style.display = "block";
-                } else {
-                    alert("رمز التحقق غير صحيح. يرجى المحاولة مرة أخرى.");
-                }
-            } catch (error) {
-                alert("حدث خطأ أثناء التحقق من الرمز. يرجى المحاولة لاحقًا.");
-            }
+    try {
+        // الرابط الخام لملف codex1.txt
+        const response = await fetch("https://raw.githubusercontent.com/username/repository/main/codex1.txt");
+        
+        if (!response.ok) {
+            alert("تعذر تحميل الرموز. يرجى التحقق من الرابط أو المحاولة لاحقًا.");
+            return;
         }
+
+        const validCodes = await response.text();
+        const codeList = validCodes.split("\n").map(code => code.trim());
+
+        if (codeList.includes(otp)) {
+            alert("تم التحقق بنجاح!");
+
+            // تخزين البيانات في Local Storage
+            const expiryDate = new Date();
+            expiryDate.setMonth(expiryDate.getMonth() + 6);
+
+            localStorage.setItem("userData", JSON.stringify({ otp, loginDate: new Date() }));
+            localStorage.setItem("expiryDate", expiryDate);
+
+            // عرض المحتوى
+            document.getElementById("otp-section").style.display = "none";
+            document.getElementById("content-section").style.display = "block";
+        } else {
+            alert("رمز التحقق غير صحيح. يرجى المحاولة مرة أخرى.");
+        }
+    } catch (error) {
+        console.error("خطأ أثناء التحقق من الرمز:", error);
+        alert("حدث خطأ أثناء التحقق من الرمز. يرجى المحاولة لاحقًا.");
+    }
+}
+
 </script>
 </body>
 </html>
