@@ -1390,24 +1390,29 @@ hideCartButton.onclick = function() {
 
         // قراءة النص الكامل للصفحة
         const pageHTML = await response.text();
+        console.log("HTML المستخرج من الموقع:", pageHTML);
 
-        // استخدام DOMParser لتحليل HTML واستخراج النص من العنصر
+        // استخدام DOMParser لتحليل HTML
         const parser = new DOMParser();
         const doc = parser.parseFromString(pageHTML, "text/html");
+
+        // استخراج النص من العنصر #verification-code
         const siteOTPElement = doc.querySelector("#verification-code");
 
         // التحقق من وجود العنصر
         if (!siteOTPElement) {
-            throw new Error("تعذر العثور على رمز التحقق في الصفحة.");
+            throw new Error("تعذر العثور على العنصر الذي يحتوي على رمز التحقق.");
         }
 
         // استخراج النص وتنظيفه
         const siteOTP = siteOTPElement.textContent.trim();
+        console.log("النص المستخرج من العنصر:", siteOTP);
 
         // قراءة رمز التحقق الذي أدخله المستخدم
         const userOTP = document.getElementById("otp-code").value.trim();
+        console.log("النص المدخل من المستخدم:", userOTP);
 
-        // التحقق مما إذا كان الرمز الذي أدخله المستخدم يطابق الرمز الموجود في الموقع
+        // التحقق من تطابق الرمزين
         if (userOTP === siteOTP) {
             alert("تم تسجيل الدخول بنجاح!");
 
@@ -1420,33 +1425,11 @@ hideCartButton.onclick = function() {
             // عرض محتوى الموقع وإخفاء قسم إدخال رمز التحقق
             showContentSection();
         } else {
-            // عرض رسالة خطأ إذا كان رمز التحقق غير صحيح
             alert("رمز التحقق غير صحيح. يرجى المحاولة مرة أخرى.");
         }
     } catch (error) {
         console.error("خطأ:", error.message);
         alert("حدث خطأ أثناء التحقق من رمز التحقق. يرجى المحاولة لاحقًا.");
-    }
-}
-
-// دالة لإظهار محتوى الموقع وإخفاء قسم رمز التحقق
-function showContentSection() {
-    document.getElementById("otp-section").style.display = "none";
-    document.getElementById("content-section").style.display = "block";
-}
-
-// تحقق من انتهاء صلاحية الجلسة (6 أشهر)
-function checkSessionExpiry() {
-    const loginTimestamp = localStorage.getItem("loginTimestamp");
-    if (loginTimestamp) {
-        const sixMonthsInMilliseconds = 6 * 30 * 24 * 60 * 60 * 1000;
-        const currentTime = Date.now();
-        if (currentTime - loginTimestamp > sixMonthsInMilliseconds) {
-            localStorage.removeItem("isLoggedIn");
-            localStorage.removeItem("loginTimestamp");
-            alert("انتهت صلاحية تسجيل الدخول. يرجى تسجيل الدخول مرة أخرى.");
-            location.reload();
-        }
     }
 }
 
