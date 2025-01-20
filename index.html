@@ -1380,24 +1380,35 @@ hideCartButton.onclick = function() {
             window.open(whatsappUrl, "_blank");
         }
 
-// دالة التحقق من رمز التحقق المُدخل
-async function verifyOTP() {
+        async function verifyOTP() {
     try {
-        // جلب رمز التحقق من الموقع
+        // جلب الصفحة التي تحتوي على رمز التحقق
         const response = await fetch("https://mohammad-shehadeh.github.io/otp/");
         if (!response.ok) {
             throw new Error("فشل في جلب رمز التحقق من الموقع.");
         }
 
-        // قراءة النص من الصفحة
-        const siteOTP = await response.text();
-        const correctOTP = siteOTP.trim(); // إزالة المسافات الإضافية
+        // قراءة النص الكامل للصفحة
+        const pageHTML = await response.text();
+
+        // استخدام DOMParser لتحليل HTML واستخراج النص من العنصر
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(pageHTML, "text/html");
+        const siteOTPElement = doc.querySelector("#verification-code");
+
+        // التحقق من وجود العنصر
+        if (!siteOTPElement) {
+            throw new Error("تعذر العثور على رمز التحقق في الصفحة.");
+        }
+
+        // استخراج النص وتنظيفه
+        const siteOTP = siteOTPElement.textContent.trim();
 
         // قراءة رمز التحقق الذي أدخله المستخدم
         const userOTP = document.getElementById("otp-code").value.trim();
 
         // التحقق مما إذا كان الرمز الذي أدخله المستخدم يطابق الرمز الموجود في الموقع
-        if (userOTP === correctOTP) {
+        if (userOTP === siteOTP) {
             alert("تم تسجيل الدخول بنجاح!");
 
             // حفظ حالة تسجيل الدخول في التخزين المحلي
