@@ -1364,47 +1364,57 @@ hideCartButton.onclick = function() {
             });
         });
  
-// التحقق من حالة تسجيل الدخول عند تحميل الصفحة
-document.addEventListener("DOMContentLoaded", function() {
-    const isLoggedIn = localStorage.getItem("isLoggedIn");
-    if (isLoggedIn === "true") {
-        showContentSection();
-    }
-    checkSessionExpiry(); // التحقق من صلاحية الجلسة عند تحميل الصفحة
-});
+        // التحقق من حالة تسجيل الدخول عند تحميل الصفحة
+        document.addEventListener("DOMContentLoaded", function() {
+            const isLoggedIn = localStorage.getItem("isLoggedIn");
+            if (isLoggedIn === "true") {
+                showContentSection();
+            }
+        });
 
-// دالة إرسال رسالة واتساب للحصول على رمز التحقق
-function sendWhatsAppMessage() {
-    const whatsappNumber = "+972569813333";
-    const message = `مرحبًا، أريد الحصول على رمز التحقق للدخول إلى الموقع.`;
-    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
-    window.open(whatsappUrl, "_blank");
-}
+        // دالة إرسال رسالة واتساب للحصول على رمز التحقق
+        function sendWhatsAppMessage() {
+            const whatsappNumber = "+972569813333";
+            const message = `مرحبًا، أريد الحصول على رمز التحقق للدخول إلى الموقع.`;
+            const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+            window.open(whatsappUrl, "_blank");
+        }
 
 // دالة التحقق من رمز التحقق المُدخل
-function verifyOTP() {
-    // قراءة رمز التحقق الذي أدخله المستخدم
-    const otpCode = document.getElementById("otp-code").value.trim();
+async function verifyOTP() {
+    try {
+        // جلب رمز التحقق من الموقع
+        const response = await fetch("https://mohammad-shehadeh.github.io/otp/");
+        if (!response.ok) {
+            throw new Error("فشل في جلب رمز التحقق من الموقع.");
+        }
 
-    // إرسال رسالة للمستخدم عبر WhatsApp للحصول على رمز التحقق الفعلي من الموقع المذكور
-    // (نفترض هنا أن المستخدم قد حصل على الرمز الفعلي من الموقع)
-    // نستخدم رمز افتراضي لمطابقته مع المدخل من قبل المستخدم
-    const expectedOTP = prompt("من فضلك أدخل الرمز الذي استلمته عبر WhatsApp.");
+        // قراءة النص من الصفحة
+        const siteOTP = await response.text();
+        const correctOTP = siteOTP.trim(); // إزالة المسافات الإضافية
 
-    if (otpCode === expectedOTP) { 
-        alert("تم تسجيل الدخول بنجاح!");
-        
-        // حفظ حالة تسجيل الدخول في التخزين المحلي
-        localStorage.setItem("isLoggedIn", "true");
-        
-        // حفظ وقت تسجيل الدخول
-        localStorage.setItem("loginTimestamp", Date.now());
-        
-        // عرض محتوى الموقع وإخفاء قسم إدخال رمز التحقق
-        showContentSection();
-    } else {
-        // عرض رسالة خطأ إذا كان رمز التحقق غير صحيح
-        alert("رمز التحقق غير صحيح. يرجى المحاولة مرة أخرى.");
+        // قراءة رمز التحقق الذي أدخله المستخدم
+        const userOTP = document.getElementById("otp-code").value.trim();
+
+        // التحقق مما إذا كان الرمز الذي أدخله المستخدم يطابق الرمز الموجود في الموقع
+        if (userOTP === correctOTP) {
+            alert("تم تسجيل الدخول بنجاح!");
+
+            // حفظ حالة تسجيل الدخول في التخزين المحلي
+            localStorage.setItem("isLoggedIn", "true");
+
+            // حفظ وقت تسجيل الدخول
+            localStorage.setItem("loginTimestamp", Date.now());
+
+            // عرض محتوى الموقع وإخفاء قسم إدخال رمز التحقق
+            showContentSection();
+        } else {
+            // عرض رسالة خطأ إذا كان رمز التحقق غير صحيح
+            alert("رمز التحقق غير صحيح. يرجى المحاولة مرة أخرى.");
+        }
+    } catch (error) {
+        console.error("خطأ:", error.message);
+        alert("حدث خطأ أثناء التحقق من رمز التحقق. يرجى المحاولة لاحقًا.");
     }
 }
 
@@ -1418,13 +1428,13 @@ function showContentSection() {
 function checkSessionExpiry() {
     const loginTimestamp = localStorage.getItem("loginTimestamp");
     if (loginTimestamp) {
-        const sixMonthsInMilliseconds = 6 * 30 * 24 * 60 * 60 * 1000; // 6 أشهر بالميللي ثانية
+        const sixMonthsInMilliseconds = 6 * 30 * 24 * 60 * 60 * 1000;
         const currentTime = Date.now();
         if (currentTime - loginTimestamp > sixMonthsInMilliseconds) {
             localStorage.removeItem("isLoggedIn");
             localStorage.removeItem("loginTimestamp");
             alert("انتهت صلاحية تسجيل الدخول. يرجى تسجيل الدخول مرة أخرى.");
-            location.reload(); // إعادة تحميل الصفحة عند انتهاء الجلسة
+            location.reload();
         }
     }
 }
