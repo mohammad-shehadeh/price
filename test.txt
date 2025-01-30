@@ -9,9 +9,8 @@ samsung/A25 128|6/680/https://cdn.mart.ps/244566-thickbox_default/samsung-galaxy
 samsung/A16 128|6/550/https://econtent.o2.co.uk/o/econtent/media/get/ff0037cf-f7bc-4ca6-bde5-779c9cbb9c2b
 samsung/A16 128|4<br>go touch/540/https://econtent.o2.co.uk/o/econtent/media/get/ff0037cf-f7bc-4ca6-bde5-779c9cbb9c2b
 samsung/TAP A9 64|4/380/https://oplayce.ci/cdn/shop/files/samsung-galaxy-tab-a9_5_1024x.jpg?v=1717431017
-samsung/A06 128|4<br>go touch/350/https://m.media-amazon.com/images/I/71tSnRQx11L._AC_UF1000,1000_QL80_.jpg
-samsung/A06 64|4<br>go touch/320/https://m.media-amazon.com/images/I/71tSnRQx11L._AC_UF1000,1000_QL80_.jpg
-samsung/A05 32|3/300/https://zegaarshop.com/wp-content/uploads/2024/06/samsung-smart-galaxy-a05-sm-a055f-464gb-silver-gallery65d07c3c20f05-600x761.jpg
+samsung/A06 128|4<br>go touch/350/https://www.jibalzone.com/media/7389/conversions/6704ddec150e1_193679_2024-slider.jpg
+samsung/A06 64|4<br>go touch/320/https://www.jibalzone.com/media/7389/conversions/6704ddec150e1_193679_2024-slider.jpg
 samsung/Galaxy Fit 3/180/https://www.tmt.my/data/editor/sc-product/15959/SAMSUNG-GALAXY-FIT-3-TMT.jpg
 MI/Note 14 pro 256|8<br>NEW/940/https://www.giztop.com/media/catalog/product/cache/97cc1143d2e20f2b0c8ea91aaa12053c/r/e/redmi_note_14_pro.png
 MI/Note 14 pro 512|12<br>NEW/1110/https://www.giztop.com/media/catalog/product/cache/97cc1143d2e20f2b0c8ea91aaa12053c/r/e/redmi_note_14_pro.png
