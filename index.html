@@ -747,7 +747,20 @@ input[type="text"]:focus, input[type="tel"]:focus {
     background: linear-gradient(135deg, #004080, #001f40);
     transform: translateY(0);
 }
+.red-glow {
+    color: #ff0000;
+    text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000, 0 0 30px #ff0000;
+    animation: glow 1s ease-in-out infinite alternate;
+}
 
+@keyframes glow {
+    from {
+        text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000, 0 0 30px #ff0000;
+    }
+    to {
+        text-shadow: 0 0 20px #ff0000, 0 0 30px #ff0000, 0 0 40px #ff0000;
+    }
+}
   </style>
 </head>
         <header>
@@ -822,8 +835,8 @@ fetch('test.txt')
     .catch(error => console.error('Error loading products:', error));
 
 
-function renderCategories() {
-    categoriesContainer.innerHTML = ''; // Clear previous categories
+    function renderCategories() {
+    categoriesContainer.innerHTML = ''; 
     const categories = [...new Set(products.map(p => p.category))];
     categories.forEach(category => {
         const categoryDiv = document.createElement('div');
@@ -838,21 +851,32 @@ function renderCategories() {
             const productDiv = document.createElement('div');
             productDiv.className = 'product';
 
-            // Creating and adding image element with error handling
             const productImage = document.createElement('img');
             productImage.src = product.image;
-            productImage.alt = product.name; // Adding alt text for better accessibility
-
-            // Error handling for image load failure
+            productImage.alt = product.name;
             productImage.onerror = () => {
-                productImage.src = 'default-image.jpg'; // Use a default image if the image URL is invalid
+                productImage.src = 'default-image.jpg';
             };
-
             productDiv.appendChild(productImage);
 
             const productDetails = document.createElement('div');
-            productDetails.innerHTML = `<strong>${product.name}</strong><br><br> ${product.price.toFixed(2)} ₪`;
+            // تقسيم اسم المنتج وإضافة النمط الأحمر
+            const nameParts = product.name.split('<br>');
+            let nameHtml;
+            if (nameParts.length > 1) {
+                nameHtml = `<strong>${nameParts[0]}<br><span class="red-glow">${nameParts.slice(1).join('<br>')}</span></strong>`;
+            } else {
+                nameHtml = `<strong>${product.name}</strong>`;
+            }
+            productDetails.innerHTML = `${nameHtml}<br><br> ${product.price.toFixed(2)} ₪`;
             productDiv.appendChild(productDetails);
+
+            // ... (بقية الكود كما هو)
+        });
+
+        categoriesContainer.appendChild(categoryDiv);
+    });
+}
 
             // Quantity input and control buttons
             const quantityDiv = document.createElement('div');
@@ -899,11 +923,10 @@ function renderCategories() {
 
             productDiv.appendChild(quantityDiv);
             categoryDiv.appendChild(productDiv);
-        });
+        
 
-        categoriesContainer.appendChild(categoryDiv);
-    });
-}
+
+
 function createFilterButtons() {
     const filterButtonsContainer = document.getElementById('filter-buttons');
     filterButtonsContainer.innerHTML = ''; // تفريغ المحتوى السابق
