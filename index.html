@@ -752,19 +752,16 @@ input[type="text"]:focus, input[type="tel"]:focus {
     font-size: 150%; /* زيادة حجم الخط 50% */
     font-weight: bold;
     color: #ff0000;
-    text-shadow: 0 0 5px #ff4d4d, 0 0 10px #ff3333, 0 0 15px #cc2900, 0 0 20px #aa2200;
-    animation: soft-glow 1.8s ease-in-out infinite alternate;
+    text-shadow: 0 0 0px transparent;
+    animation: smooth-glow 2s ease-in-out infinite alternate;
 }
 
-@keyframes soft-glow {
+@keyframes smooth-glow {
     0% {
-        text-shadow: 0 0 6px #ff6666, 0 0 12px #ff4d4d, 0 0 18px #cc2900, 0 0 24px #aa2200;
-    }
-    50% {
-        text-shadow: 0 0 10px #ff3333, 0 0 18px #cc2900, 0 0 24px #aa2200, 0 0 30px #881800;
+        text-shadow: 0 0 0px transparent;
     }
     100% {
-        text-shadow: 0 0 6px #ff6666, 0 0 12px #ff4d4d, 0 0 18px #cc2900, 0 0 24px #aa2200;
+        text-shadow: 0 0 8px #ff3333, 0 0 16px #ff4d4d, 0 0 24px #cc2900, 0 0 32px #aa2200;
     }
 }
 
