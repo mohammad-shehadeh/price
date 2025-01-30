@@ -147,14 +147,6 @@ header h1 {
     top: -80%;  /* إخفاء السلة عن طريق رفعها فوق الشاشة */
 }
 
-.toggle-cart {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 0.5em;
-    cursor: pointer;
-    margin-top: 1em;
-}  
 .cart-item {
     display: flex;
     align-items: center;
@@ -180,7 +172,6 @@ header h1 {
     font-size: 18px;
     cursor: pointer;
 }
-
 
 /* تصميم زر المشاركة بنفس حجم زر إخفاء السلة */
 .share-button {
@@ -1281,10 +1272,7 @@ function renderCart() {
         const removeButton = document.createElement('button');
         removeButton.className = 'cart-remove btn btn-danger btn-sm ms-2';
         removeButton.innerHTML = '&times;';
-        removeButton.onclick = () => {
-            removeFromCart(item.name);
-            updateCartTotal(); // تحديث المجموع بعد الحذف
-        };
+        removeButton.onclick = () => removeFromCart(item.name);
 
         // 📌 تجميع العناصر داخل العنصر الرئيسي
         cartItemDiv.appendChild(itemImage);
@@ -1296,40 +1284,20 @@ function renderCart() {
         cartItemsContainer.appendChild(cartItemDiv);
     });
 
-    // 🛒 عرض إجمالي السعر في السلة
+    // 🛒 عرض إجمالي السعر
     const totalDiv = document.createElement('div');
     totalDiv.className = 'cart-total text-end mt-3 fw-bold';
     totalDiv.innerHTML = `الإجمالي: ${total.toFixed(2)} ₪`;
     cartItemsContainer.appendChild(totalDiv);
 
-    // 🔄 تحديث إجمالي السعر بجانب أيقونة السلة
-    updateCartTotal();
-
     // 🔄 تحديث الكمية عند التغيير
     document.querySelectorAll('.cart-quantity').forEach(input => {
-        input.addEventListener('change', (event) => {
-            handleQuantityChange(event);
-            updateCartTotal(); // تحديث المجموع عند تغيير الكمية
-        });
-
-        input.addEventListener('blur', (event) => {
-            handleQuantityChange(event);
-            updateCartTotal(); // تحديث المجموع عند فقدان التركيز
-        });
-
+        input.addEventListener('change', handleQuantityChange);
+        input.addEventListener('blur', handleQuantityChange);
         input.addEventListener('keypress', (event) => {
-            if (event.key === 'Enter') {
-                handleQuantityChange(event);
-                updateCartTotal(); // تحديث المجموع عند الضغط على Enter
-            }
+            if (event.key === 'Enter') handleQuantityChange(event);
         });
     });
-}
-
-// ✅ وظيفة تحديث إجمالي السعر بجانب السلة
-function updateCartTotal() {
-    let total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
-    document.getElementById('cart-total').innerHTML = `${total.toFixed(2)} ₪`;
 }
 
 
