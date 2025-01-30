@@ -10,6 +10,7 @@
     <meta property="og:image" content="https://img.freepik.com/premium-vector/vector-price-text-logo-design_867743-461.jpg">
     <meta property="og:type" content="website">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -946,7 +947,7 @@ fetch('test.txt')
 
             // Add To Cart Button
             const addToCartButton = document.createElement('button');
-            addToCartButton.textContent = 'إضافة للسلة';
+            addToCartButton.innerHTML = '<i class="fas fa-shopping-cart"></i> إضافة للسلة';
             addToCartButton.classList.add('add-to-cart-btn');
             addToCartButton.onclick = () => {
                 addToCart(product, quantityInput.value);
