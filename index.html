@@ -748,18 +748,31 @@ input[type="text"]:focus, input[type="tel"]:focus {
     transform: translateY(0);
 }
 
-.red-glow {
-    color: #ff0000;
-    text-shadow: 0 0 10px #ff0000;
-    animation: glow 1s ease-in-out infinite alternate;
+/* تنسيق أزرار الفلترة */
+.filter-btn {
+    background: #333;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.3s;
 }
 
-@keyframes glow {
+/* توهج عند النشط */
+.filter-btn.active {
+    background: #4CAF50;
+    box-shadow: 0 0 15px #4CAF50;
+    animation: filter-glow 1s ease-in-out infinite alternate;
+}
+
+@keyframes filter-glow {
     from {
-        text-shadow: 0 0 5px #ff0000;
+        box-shadow: 0 0 5px #4CAF50;
     }
     to {
-        text-shadow: 0 0 15px #ff0000;
+        box-shadow: 0 0 20px #4CAF50;
     }
 }
   </style>
@@ -932,43 +945,54 @@ fetch('test.txt')
 }
 function createFilterButtons() {
     const filterButtonsContainer = document.getElementById('filter-buttons');
-    filterButtonsContainer.innerHTML = ''; // تفريغ المحتوى السابق
+    filterButtonsContainer.innerHTML = '';
 
-    // إضافة زر "All" الافتراضي
+    // زر ALL الافتراضي
     const allButton = document.createElement('button');
     allButton.textContent = 'ALL';
-    allButton.className = 'filter-btn active'; // الزر الافتراضي نشط
-    allButton.onclick = () => filterProducts('All');
+    allButton.className = 'filter-btn active'; // كلاس active عند التحميل
+    allButton.onclick = () => {
+        filterProducts('All');
+        setActiveButton(allButton); // تحديث النشط
+    };
     filterButtonsContainer.appendChild(allButton);
 
-    // إنشاء أزرار للفئات
+    // أزرار الفئات
     const categories = [...new Set(products.map(p => p.category))];
     categories.forEach(category => {
         const button = document.createElement('button');
         button.textContent = category;
         button.className = 'filter-btn';
-        button.onclick = () => filterProducts(category);
+        button.onclick = () => {
+            filterProducts(category);
+            setActiveButton(button); // تحديث النشط
+        };
         filterButtonsContainer.appendChild(button);
     });
 }
 
-// فلترة المنتجات بناءً على الفئة
+// دالة لتحديث الزر النشط
+function setActiveButton(activeButton) {
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.classList.remove('active');
+    });
+    activeButton.classList.add('active');
+}
+
+// دالة الفلترة المعدلة
 function filterProducts(category) {
-    const filterButtons = document.querySelectorAll('.filter-btn');
-    filterButtons.forEach(btn => btn.classList.remove('active')); // إزالة التنشيط عن جميع الأزرار
-
-    const activeButton = Array.from(filterButtons).find(btn => btn.textContent === category);
-    if (activeButton) activeButton.classList.add('active'); // تنشيط الزر الحالي
-
-    const filteredProducts = category === 'All' ? products : products.filter(p => p.category === category);
+    const filteredProducts = category === 'All' 
+        ? products 
+        : products.filter(p => p.category === category);
+    
+    categoriesContainer.innerHTML = '';
     renderFilteredProducts(filteredProducts);
 }
 
-// إعادة عرض المنتجات بناءً على الفلترة
+// دالة لعرض المنتجات المفلترة
 function renderFilteredProducts(filteredProducts) {
-    categoriesContainer.innerHTML = ''; // مسح المنتجات الحالية
-
     const categories = [...new Set(filteredProducts.map(p => p.category))];
+    
     categories.forEach(category => {
         const categoryDiv = document.createElement('div');
         categoryDiv.className = 'category';
@@ -979,6 +1003,7 @@ function renderFilteredProducts(filteredProducts) {
 
         const categoryProducts = filteredProducts.filter(p => p.category === category);
         categoryProducts.forEach(product => {
+
             const productDiv = document.createElement('div');
             productDiv.className = 'product';
 
