@@ -913,7 +913,10 @@ fetch('test.txt')
                 nameHtml = `<strong>${product.name}</strong>`;
             }
             
-            productDetails.innerHTML = `${nameHtml}<br><br>${product.price.toFixed(2)} ₪`;
+            productDetails.innerHTML = `
+    ${nameHtml}<br><br>
+    <span class="price">${product.price.toFixed(2)} ₪</span>
+`;
             productDiv.appendChild(productDetails);
 
             // Quantity input and control buttons
@@ -1051,7 +1054,10 @@ function renderFilteredProducts(filteredProducts) {
             } else {
                 nameHtml = `<strong>${product.name}</strong>`;
             }
-            productDetails.innerHTML = `${nameHtml}<br><br> ${product.price.toFixed(2)} ₪`;
+            productDetails.innerHTML = `
+    ${nameHtml}<br><br>
+    <span class="price">${product.price.toFixed(2)} ₪</span>
+`;
             productDiv.appendChild(productDetails);
 
             // إعداد عناصر التحكم بالكمية
