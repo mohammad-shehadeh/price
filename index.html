@@ -749,15 +749,22 @@ input[type="text"]:focus, input[type="tel"]:focus {
 }
 
 .red-glow {
+    font-size: 150%; /* زيادة حجم الخط 50% */
+    font-weight: bold;
     color: #ff0000;
-    text-shadow: 0 0 10px #ff0000;
-    animation: glow 1s ease-in-out infinite alternate;
+    text-shadow: 0 0 10px #ff0000, 0 0 20px #ff4d4d, 0 0 30px #ff66b2, 0 0 40px #cc00ff;
+    animation: neon-glow 1.5s ease-in-out infinite alternate;
 }
 
-@keyframes glow {
-    from { text-shadow: 0 0 5px #ff0000; }
-    to { text-shadow: 0 0 15px #ff0000; }
+@keyframes neon-glow {
+    0% {
+        text-shadow: 0 0 8px #ff0000, 0 0 16px #ff4d4d, 0 0 24px #ff66b2, 0 0 32px #cc00ff;
+    }
+    100% {
+        text-shadow: 0 0 12px #ff0000, 0 0 24px #ff4d4d, 0 0 36px #ff66b2, 0 0 48px #cc00ff;
+    }
 }
+
 /* تنسيق أزرار الفلترة */
 .filter-btn {
     background: #333;
