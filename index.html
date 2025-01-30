@@ -748,6 +748,20 @@ input[type="text"]:focus, input[type="tel"]:focus {
     transform: translateY(0);
 }
 
+.red-glow {
+    color: #ff0000;
+    text-shadow: 0 0 10px #ff0000;
+    animation: glow 1s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 5px #ff0000;
+    }
+    to {
+        text-shadow: 0 0 15px #ff0000;
+    }
+}
   </style>
 </head>
         <header>
@@ -822,7 +836,7 @@ fetch('test.txt')
     .catch(error => console.error('Error loading products:', error));
 
 
-function renderCategories() {
+    function renderCategories() {
     categoriesContainer.innerHTML = ''; // Clear previous categories
     const categories = [...new Set(products.map(p => p.category))];
     categories.forEach(category => {
@@ -841,30 +855,42 @@ function renderCategories() {
             // Creating and adding image element with error handling
             const productImage = document.createElement('img');
             productImage.src = product.image;
-            productImage.alt = product.name; // Adding alt text for better accessibility
+            productImage.alt = product.name;
 
-            // Error handling for image load failure
             productImage.onerror = () => {
-                productImage.src = 'default-image.jpg'; // Use a default image if the image URL is invalid
+                productImage.src = 'default-image.jpg';
             };
-
             productDiv.appendChild(productImage);
 
             const productDetails = document.createElement('div');
-            productDetails.innerHTML = `<strong>${product.name}</strong><br><br> ${product.price.toFixed(2)} ₪`;
+            
+            // Split product name by <br> and format
+            const nameParts = product.name.split('<br>');
+            let nameHtml;
+            if (nameParts.length > 1) {
+                // Apply red glow only to text after the first <br>
+                nameHtml = `
+                    <strong>${nameParts[0]}<br>
+                    <span class="red-glow">${nameParts.slice(1).join('<br>')}</span></strong>
+                `;
+            } else {
+                nameHtml = `<strong>${product.name}</strong>`;
+            }
+            
+            productDetails.innerHTML = `${nameHtml}<br><br>${product.price.toFixed(2)} ₪`;
             productDiv.appendChild(productDetails);
 
             // Quantity input and control buttons
             const quantityDiv = document.createElement('div');
             quantityDiv.classList.add('quantity-controls');
-            quantityDiv.style.display = 'none'; // Initially hidden
+            quantityDiv.style.display = 'none';
 
             const quantityInput = document.createElement('input');
             quantityInput.type = 'number';
             quantityInput.value = 1;
-            quantityInput.min = 1; // Minimum quantity is 1
+            quantityInput.min = 1;
             quantityInput.style.width = '50px';
-            quantityInput.addEventListener('focus', () => quantityInput.select()); // Automatically select text when clicked
+            quantityInput.addEventListener('focus', () => quantityInput.select());
 
             const increaseButton = document.createElement('button');
             increaseButton.textContent = '+';
@@ -881,20 +907,20 @@ function renderCategories() {
             // Add To Cart Button
             const addToCartButton = document.createElement('button');
             addToCartButton.textContent = 'إضافة للسلة';
-            addToCartButton.classList.add('add-to-cart-btn'); // Adding a class for better styling
+            addToCartButton.classList.add('add-to-cart-btn');
             addToCartButton.onclick = () => {
                 addToCart(product, quantityInput.value);
-                quantityDiv.style.display = 'block'; // Show quantity controls after adding to cart
-                addToCartButton.style.display = 'none'; // Hide the "Add to Cart" button
+                quantityDiv.style.display = 'block';
+                addToCartButton.style.display = 'none';
             };
             productDiv.appendChild(addToCartButton);
 
-            // Check if the product is already in the cart
+            // Check if product exists in cart
             const existingProduct = cart.find(item => item.name === product.name);
             if (existingProduct) {
-                quantityDiv.style.display = 'block'; // Show quantity controls if the product is already in the cart
-                addToCartButton.style.display = 'none'; // Hide "Add to Cart" button if product is in cart
-                quantityInput.value = existingProduct.quantity; // Set the input to the correct quantity
+                quantityDiv.style.display = 'block';
+                addToCartButton.style.display = 'none';
+                quantityInput.value = existingProduct.quantity;
             }
 
             productDiv.appendChild(quantityDiv);
