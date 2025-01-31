@@ -1277,7 +1277,7 @@ function renderCart() {
         itemDetails.className = 'cart-item-details flex-grow-1 ms-2';
         itemDetails.innerHTML = `
             <strong>${item.name}</strong><br>
-            السعر: ${item.price.toFixed(2)} ₪<br>
+            السعر: ${item.price.toFixed(2)} <br>
             الكمية: <input 
                 type="number" 
                 value="${item.quantity}" 
@@ -1308,7 +1308,7 @@ function renderCart() {
     // 🛒 عرض إجمالي السعر في السلة
     const totalDiv = document.createElement('div');
     totalDiv.className = 'cart-total text-end mt-3 fw-bold';
-    totalDiv.innerHTML = `الإجمالي: ${total.toFixed(2)} ₪`;
+    totalDiv.innerHTML = `الإجمالي: ₪ ${total.toFixed(2)}`;
     cartItemsContainer.appendChild(totalDiv);
 
     // 🔄 تحديث إجمالي السعر بجانب أيقونة السلة
