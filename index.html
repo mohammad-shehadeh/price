@@ -1119,7 +1119,7 @@ function renderFilteredProducts(filteredProducts) {
 
             // إعداد زر الإضافة للسلة
             const addToCartButton = document.createElement('button');
-            addToCartButton.textContent = '<i class="fas fa-shopping-cart me-2"></i> إضافة للسلة';
+            addToCartButton.innerHTML = '<i class="fas fa-shopping-cart me-2"></i> إضافة للسلة';
             addToCartButton.classList.add('add-to-cart-btn');
             addToCartButton.onclick = () => {
                 addToCart(product, quantityInput.value);
