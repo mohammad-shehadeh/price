@@ -525,21 +525,22 @@ header h1 {
 /* تأثير تغيير الألوان بشكل مستمر */
 @keyframes colorChange {
     0% {
-        background-color: #ff0000e7;  /* اللون الأول (أخضر) */
+        background-color: #0033ff;  /* أزرق غامق */
     }
     25% {
-        background-color: #ff9800;  /* اللون الثاني (برتقالي) */
+        background-color: #3366ff;  /* أزرق متوسط */
     }
     50% {
-        background-color: #ff0000;  /* اللون الثالث (أزرق) */
+        background-color: #4883fa;  /* أزرق فاتح */
     }
     75% {
-        background-color: #ffa600;  /* اللون الرابع (أحمر) */
+        background-color: #3366ff;  /* أزرق متوسط */
     }
     100% {
-        background-color: #ff0000;  /* العودة إلى اللون الأول (أخضر) */
+        background-color: #0033ff;  /* العودة إلى الأزرق الغامق */
     }
 }
+
 input[type="number"] {
     pointer-events: none; /* يمنع التفاعل مع العنصر */
     background-color: #f0f0f0; /* لون خلفية اختياري لإظهار أنه غير نشط */
@@ -811,6 +812,11 @@ input[type="text"]:focus, input[type="tel"]:focus {
     font-size: 1.1em;
     text-shadow: 0 0 3px rgba(0, 122, 51, 0.3); /* توهج خفيف أكثر هدوءًا */
 }
+.price-container {
+    direction: ltr;
+    unicode-bidi: embed;
+    display: inline-block;
+}
 
   </style>
 </head>
@@ -823,8 +829,11 @@ input[type="text"]:focus, input[type="tel"]:focus {
             <div id="filter-buttons"></div>
             <button class="toggle-cart d-flex align-items-center gap-2" id="show-cart-button">
                 <i class="fas fa-shopping-cart"></i>
-                <span id="cart-total" class="fw-bold">0.00 ₪</span>
+                <span class="cart-text">سلة التسوق</span>
+                <i class="fas fa-shopping-cart"></i><br>
+                <span id="cart-total" class="fw-bold price-container">0.00 ₪</span>
             </button>
+            
                     </header>
         
         <main>
@@ -1110,7 +1119,7 @@ function renderFilteredProducts(filteredProducts) {
 
             // إعداد زر الإضافة للسلة
             const addToCartButton = document.createElement('button');
-            addToCartButton.textContent = 'إضافة للسلة';
+            addToCartButton.textContent = '<i class="fas fa-shopping-cart me-2"></i> إضافة للسلة';
             addToCartButton.classList.add('add-to-cart-btn');
             addToCartButton.onclick = () => {
                 addToCart(product, quantityInput.value);
