@@ -817,6 +817,9 @@ input[type="text"]:focus, input[type="tel"]:focus {
     unicode-bidi: embed;
     display: inline-block;
 }
+.unavailable {
+    color: red;
+}
 
   </style>
 </head>
@@ -939,10 +942,15 @@ fetch('test.txt')
                 nameHtml = `<strong>${product.name}</strong>`;
             }
             
-            productDetails.innerHTML = `
+            const price = isNaN(product.price) ? "غير متوفر" : product.price.toFixed(2) + " ₪";
+const priceClass = isNaN(product.price) ? "unavailable" : "";
+
+productDetails.innerHTML = `
     ${nameHtml}<br><br>
-    <span class="price">${isNaN(product.price) ? "غير متوفر" : product.price.toFixed(2) + " ₪"}</span>
+    <span class="price ${priceClass}">${price}</span>
 `;
+
+
 
             productDiv.appendChild(productDetails);
 
