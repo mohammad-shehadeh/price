@@ -835,6 +835,9 @@ input[type="text"]:focus, input[type="tel"]:focus {
                 <span class="cart-text">سلة التسوق</span>
                 <i class="fas fa-shopping-cart"></i><br>
                 <span id="cart-total" class="fw-bold price-container">0.00 ₪</span>
+                <div id="file-buttons"></div> <!-- عنصر لعرض الأزرار -->
+<button id="select-file-button">اختيار ملف</button> <!-- زر لاختيار الملف يدويًا -->
+
             </button>
             
                     </header>
@@ -869,39 +872,66 @@ const checkoutButton = document.getElementById('checkout-button');
 const popup = document.getElementById('popup');
 const confirmButton = document.getElementById('confirm-button');
 const cancelButton = document.getElementById('cancel-button');
-
 const customerNameInput = document.getElementById('customer-name');
 const customerPhoneInput = document.getElementById('customer-phone');
+const selectFileButton = document.getElementById('select-file-button'); // زر لاختيار الملف
 
 let products = [];
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-// Load products from test.txt
-fetch('test.txt')
-    .then(response => response.text())
-    .then(data => {
-        const lines = data.split('\n');
-        lines.forEach(line => {
-            const parts = line.split('/');
-            if (parts.length >= 4) {
-                const imageUrl = parts.slice(3).join('/').trim();
-                products.push({
-                    category: parts[0].trim(),
-                    name: parts[1].trim(),
-                    price: parseFloat(parts[2].trim()),
-                    image: imageUrl
-                });
-            }
-        });
+// إضافة أزرار لاختيار الكتالوج
+const fileButtonsContainer = document.getElementById('file-buttons'); // تأكد من وجود عنصر في HTML لعرض الأزرار
+const fileButtons = [
+    { label: 'أسعار الأجهزة', fileName: 'test.txt' },
+    { label: 'أسعار الشاشات', fileName: 'lcd.txt' },
+    { label: 'كتالوج الإكسسوارات', fileName: 'abc.txt' }
+];
 
-        renderCategories(); // عرض الفئات والمنتجات
-        createFilterButtons(); // إنشاء أزرار الفلترة
-        renderCart(); // عرض السلة
-    })
-    .catch(error => console.error('Error loading products:', error));
+fileButtons.forEach(buttonInfo => {
+    const button = document.createElement('button');
+    button.textContent = buttonInfo.label;
+    button.onclick = () => loadProductsFromFile(buttonInfo.fileName); // تحميل البيانات من الملف المحدد
+    fileButtonsContainer.appendChild(button);
+});
 
+// تحميل المنتجات من ملف
+function loadProductsFromFile(fileName) {
+    products = []; // إعادة تعيين المنتجات القديمة
 
-    function renderCategories() {
+    fetch(fileName)
+        .then(response => response.text())
+        .then(data => {
+            const lines = data.split('\n');
+            lines.forEach(line => {
+                const parts = line.split('/');
+                if (parts.length >= 4) {
+                    const imageUrl = parts.slice(3).join('/').trim();
+                    products.push({
+                        category: parts[0].trim(),
+                        name: parts[1].trim(),
+                        price: parseFloat(parts[2].trim()),
+                        image: imageUrl
+                    });
+                }
+            });
+
+            renderCategories(); // عرض الفئات والمنتجات
+            createFilterButtons(); // إنشاء أزرار الفلترة
+            renderCart(); // عرض السلة
+        })
+        .catch(error => console.error('Error loading products:', error));
+}
+
+// عند الضغط على زر "اختيار ملف"
+selectFileButton.onclick = () => {
+    const selectedFile = prompt('أدخل اسم الملف (test.txt أو lcd.txt أو abc.txt):');
+    if (selectedFile) {
+        loadProductsFromFile(selectedFile);
+    }
+};
+
+// دالة لعرض الفئات (مثال)
+function renderCategories() {
     categoriesContainer.innerHTML = ''; // Clear previous categories
     const categories = [...new Set(products.map(p => p.category))];
     categories.forEach(category => {
@@ -917,46 +947,46 @@ fetch('test.txt')
             const productDiv = document.createElement('div');
             productDiv.className = 'product';
 
-// إنشاء وإضافة عنصر الصورة مع التعامل مع الأخطاء
-const productImage = document.createElement('img');
-productImage.src = product.image;
-productImage.alt = product.name;
+            // إنشاء وإضافة عنصر الصورة مع التعامل مع الأخطاء
+            const productImage = document.createElement('img');
+            productImage.src = product.image;
+            productImage.alt = product.name;
 
-productImage.onerror = () => {
-    productImage.src = 'default-image.jpg';
-};
+            productImage.onerror = () => {
+                productImage.src = 'default-image.jpg';
+            };
 
-productDiv.appendChild(productImage);
+            productDiv.appendChild(productImage);
 
-// إنشاء عنصر لعرض الفئة
-const categoryElement = document.createElement('div');
-categoryElement.className = "product-category";
-categoryElement.textContent = product.category; // إضافة اسم الفئة
+            // إنشاء عنصر لعرض الفئة
+            const categoryElement = document.createElement('div');
+            categoryElement.className = "product-category";
+            categoryElement.textContent = product.category; // إضافة اسم الفئة
 
-productDiv.appendChild(categoryElement); // إضافة الفئة أسفل الصورة
+            productDiv.appendChild(categoryElement); // إضافة الفئة أسفل الصورة
 
-const productDetails = document.createElement('div');
+            const productDetails = document.createElement('div');
 
-// تقسيم اسم المنتج عند <br> وتنسيقه
-const nameParts = product.name.split('<br>');
-let nameHtml;
-if (nameParts.length > 1) {
-    // تطبيق تأثير الإضاءة الحمراء فقط على النص بعد أول <br>
-    nameHtml = `
-        <strong>${nameParts[0]}<br>
-        <span class="red-glow">${nameParts.slice(1).join('<br>')}</span></strong>
-    `;
-} else {
-    nameHtml = `<strong>${product.name}</strong>`;
-}
+            // تقسيم اسم المنتج عند <br> وتنسيقه
+            const nameParts = product.name.split('<br>');
+            let nameHtml;
+            if (nameParts.length > 1) {
+                // تطبيق تأثير الإضاءة الحمراء فقط على النص بعد أول <br>
+                nameHtml = `
+                    <strong>${nameParts[0]}<br>
+                    <span class="red-glow">${nameParts.slice(1).join('<br>')}</span></strong>
+                `;
+            } else {
+                nameHtml = `<strong>${product.name}</strong>`;
+            }
 
-const price = isNaN(product.price) ? "غير متوفر" : product.price.toFixed(2) + " ₪";
-const priceClass = isNaN(product.price) ? "unavailable" : "";
+            const price = isNaN(product.price) ? "غير متوفر" : product.price.toFixed(2) + " ₪";
+            const priceClass = isNaN(product.price) ? "unavailable" : "";
 
-productDetails.innerHTML = `
-    ${nameHtml}<br><br>
-    <span class="price ${priceClass}">${price}</span>
-`;
+            productDetails.innerHTML = `
+                ${nameHtml}<br><br>
+                <span class="price ${priceClass}">${price}</span>
+            `;
 
 
             productDiv.appendChild(productDetails);
