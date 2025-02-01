@@ -917,39 +917,46 @@ fetch('test.txt')
             const productDiv = document.createElement('div');
             productDiv.className = 'product';
 
-            // Creating and adding image element with error handling
-            const productImage = document.createElement('img');
-            productImage.src = product.image;
-            productImage.alt = product.name;
+// إنشاء وإضافة عنصر الصورة مع التعامل مع الأخطاء
+const productImage = document.createElement('img');
+productImage.src = product.image;
+productImage.alt = product.name;
 
-            productImage.onerror = () => {
-                productImage.src = 'default-image.jpg';
-            };
-            productDiv.appendChild(productImage);
+productImage.onerror = () => {
+    productImage.src = 'default-image.jpg';
+};
 
-            const productDetails = document.createElement('div');
-            
-            // Split product name by <br> and format
-            const nameParts = product.name.split('<br>');
-            let nameHtml;
-            if (nameParts.length > 1) {
-                // Apply red glow only to text after the first <br>
-                nameHtml = `
-                    <strong>${nameParts[0]}<br>
-                    <span class="red-glow">${nameParts.slice(1).join('<br>')}</span></strong>
-                `;
-            } else {
-                nameHtml = `<strong>${product.name}</strong>`;
-            }
-            
-            const price = isNaN(product.price) ? "غير متوفر" : product.price.toFixed(2) + " ₪";
+productDiv.appendChild(productImage);
+
+// إنشاء عنصر لعرض الفئة
+const categoryElement = document.createElement('div');
+categoryElement.className = "product-category";
+categoryElement.textContent = product.category; // إضافة اسم الفئة
+
+productDiv.appendChild(categoryElement); // إضافة الفئة أسفل الصورة
+
+const productDetails = document.createElement('div');
+
+// تقسيم اسم المنتج عند <br> وتنسيقه
+const nameParts = product.name.split('<br>');
+let nameHtml;
+if (nameParts.length > 1) {
+    // تطبيق تأثير الإضاءة الحمراء فقط على النص بعد أول <br>
+    nameHtml = `
+        <strong>${nameParts[0]}<br>
+        <span class="red-glow">${nameParts.slice(1).join('<br>')}</span></strong>
+    `;
+} else {
+    nameHtml = `<strong>${product.name}</strong>`;
+}
+
+const price = isNaN(product.price) ? "غير متوفر" : product.price.toFixed(2) + " ₪";
 const priceClass = isNaN(product.price) ? "unavailable" : "";
 
 productDetails.innerHTML = `
     ${nameHtml}<br><br>
     <span class="price ${priceClass}">${price}</span>
 `;
-
 
 
             productDiv.appendChild(productDetails);
