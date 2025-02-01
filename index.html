@@ -821,12 +821,41 @@ input[type="text"]:focus, input[type="tel"]:focus {
     color: red;
 }
 
+/* إخفاء زر اختيار الملف */
+input[type="file"] {
+    display: none; /* أو visibility: hidden; */
+}
+
+/* تحسين تصميم الأزرار */
+.file-buttons {
+    background-color: #007bff; /* خلفية زر بألوان جميلة */
+    color: white; /* لون النص */
+    border: 1px solid #0056b3; /* حد الزر */
+    border-radius: 5px; /* جعل الزر ذو زوايا مدورة */
+    padding: 10px 15px; /* تباعد داخلي مناسب */
+    font-size: 16px; /* حجم الخط */
+    cursor: pointer; /* عند المرور على الزر يظهر شكل المؤشر اليدوي */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* تأثير عند المرور */
+    margin-right: 2mm; /* المسافة بين الأزرار */
+}
+
+/* تأثير عند المرور على الأزرار */
+.file-buttons:hover {
+    background-color: #0056b3; /* تغيير اللون عند المرور */
+    transform: scale(1.05); /* تكبير الزر بشكل طفيف */
+}
+
+/* التباعد بين الأزرار بشكل عام */
+.file-buttons:not(:last-child) {
+    margin-right: 2mm; /* المسافة بين الأزرار */
+}
+
   </style>
 </head>
         <header>
             <h1>Shehadeh Center</h1>
-            <!-- فقط عرض الأزرار لاختيار الكتالوج -->
-<div id="file-buttons"></div> <!-- عنصر لعرض الأزرار -->
+            <div id="file-buttons"></div> <!-- عنصر لعرض الأزرار -->
+<button id="select-file-button">اختيار ملف</button> <!-- زر لاختيار الملف يدويًا -->
 
             <div id="filter-buttons">
                 <!-- الأزرار سيتم إنشاؤها ديناميكيًا بواسطة JavaScript -->
