@@ -1409,9 +1409,13 @@ cart.forEach(item => {
     // إزالة كلمة "بار" إذا وُجدت
     cleanName = cleanName.replace(/بار/g, '').trim();
 
-    text += `\t${item.category} - ${cleanName}: ${item.quantity}x${item.price.toFixed(2)}\n`;
+    // حساب إجمالي سعر هذا الصنف
+    let itemTotal = item.price * item.quantity;
+
+    text += `\t${item.category} - ${cleanName}: ${item.quantity}x${item.price.toFixed(2)} = ${itemTotal.toFixed(2)} ₪\n`;
     text += `─ ─ ─ ─ ─ ─ ─ ─ ─ ─\n`;
-    total += item.price * item.quantity;
+    
+    total += itemTotal;
 });
 
     text += `💰 الإجمالي: ${total.toFixed(2)}\n`;
