@@ -1412,9 +1412,15 @@ cart.forEach(item => {
     // حساب إجمالي سعر هذا الصنف
     let itemTotal = item.price * item.quantity;
 
-    text += `\t${item.category} - ${cleanName}: <br> ${item.quantity}x${item.price.toFixed(2)} = ${itemTotal.toFixed(2)} ₪\n`;
+    // كتابة الفئة واسم المنتج في سطر منفصل
+    text += `\t${item.category} - ${cleanName}\n`;
+
+    // كتابة العدد، السعر، والإجمالي في سطر آخر
+    text += `\t${item.quantity} x ${item.price.toFixed(2)} = ${itemTotal.toFixed(2)} ₪\n`;
+
+    // خط فاصل
     text += `─ ─ ─ ─ ─ ─ ─ ─ ─ ─\n`;
-    
+
     total += itemTotal;
 });
 
