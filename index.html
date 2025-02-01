@@ -1402,11 +1402,17 @@ confirmButton.onclick = () => {
     text += `🛒 تفاصيل المنتجات:\n`;
 
     let total = 0;
-    cart.forEach(item => {
-        text += `\t${item.name}: ${item.quantity}x${item.price.toFixed(2)}\n`;
-        text += `─ ─ ─ ─ ─ ─ ─ ─ ─ ─\n`;
-        total += item.price * item.quantity;
-    });
+cart.forEach(item => {
+    // إزالة <br> من اسم المنتج
+    let cleanName = item.name.replace(/<br>/g, ' ');
+
+    // إزالة كلمة "بار" إذا وُجدت
+    cleanName = cleanName.replace(/بار/g, '').trim();
+
+    text += `\t${item.category} - ${cleanName}: ${item.quantity}x${item.price.toFixed(2)}\n`;
+    text += `─ ─ ─ ─ ─ ─ ─ ─ ─ ─\n`;
+    total += item.price * item.quantity;
+});
 
     text += `💰 الإجمالي: ${total.toFixed(2)}\n`;
     text += `━━━━━━━━━━━━━━━\n`;
