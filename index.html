@@ -914,9 +914,10 @@ const fileButtonsContainer = document.getElementById('file-buttons'); // تأك�
 const fileButtons = [
     { label: 'أسعار الأجهزة', fileName: 'test.txt' },
     { label: 'أسعار الشاشات', fileName: 'lcd.txt' },
-    { label: ' الإكسسوارات', fileName: 'abc.txt' }
+    { label: 'الإكسسوارات', fileName: 'abc.txt' }
 ];
 
+// إضافة الأزرار
 fileButtons.forEach(buttonInfo => {
     const button = document.createElement('button');
     button.textContent = buttonInfo.label;
@@ -924,7 +925,12 @@ fileButtons.forEach(buttonInfo => {
     fileButtonsContainer.appendChild(button);
 });
 
-// تحميل المنتجات من ملف
+// تحميل البيانات من الملف الافتراضي عند تحميل الصفحة
+window.addEventListener('load', () => {
+    loadProductsFromFile('test.txt'); // يمكنك تغيير 'test.txt' إلى أي ملف تود تحميله كافتراضي
+});
+
+// دالة لتحميل المنتجات من الملف
 function loadProductsFromFile(fileName) {
     products = []; // إعادة تعيين المنتجات القديمة
 
@@ -951,6 +957,7 @@ function loadProductsFromFile(fileName) {
         })
         .catch(error => console.error('Error loading products:', error));
 }
+
 
 // عند الضغط على زر "اختيار ملف"
 selectFileButton.onclick = () => {
