@@ -1279,29 +1279,28 @@ function renderCart() {
     let total = 0;
 
     cart.forEach(item => {
-        const cartItemDiv = document.createElement('div');
-        cartItemDiv.className = 'cart-item d-flex align-items-center justify-content-between p-2 border-bottom';
+    const cartItemDiv = document.createElement('div');
+    cartItemDiv.className = 'cart-item d-flex align-items-center justify-content-between p-2 border-bottom';
 
-        // 🖼️ عنصر لصورة المنتج
-        const itemImage = document.createElement('img');
-        itemImage.src = item.image; // تأكد من أن كائن المنتج يحتوي على `image`
-        itemImage.alt = item.name;
-        itemImage.className = 'cart-item-img';
+    // 🖼️ عنصر لصورة المنتج
+    const itemImage = document.createElement('img');
+    itemImage.src = item.image; // تأكد من أن كائن المنتج يحتوي على `image`
+    itemImage.alt = item.name;
+    itemImage.className = 'cart-item-img';
 
-        // 📄 تفاصيل المنتج (اسم، سعر، كمية)
-        const itemDetails = document.createElement('div');
-        itemDetails.className = 'cart-item-details flex-grow-1 ms-2';
-        itemDetails.innerHTML = `
-            <strong>${item.name}</strong><br>
-            السعر: ₪ ${item.price.toFixed(2)} <br>
-            الكمية: <input 
-                type="number" 
-                value="${item.quantity}" 
-                min="1" 
-                class="cart-quantity" 
-                data-product="${item.name}">
-        `;
-
+    // 📄 تفاصيل المنتج (اسم الفئة + اسم المنتج، سعر، كمية)
+    const itemDetails = document.createElement('div');
+    itemDetails.className = 'cart-item-details flex-grow-1 ms-2';
+    itemDetails.innerHTML = `
+        <strong>${item.category} - ${item.name}</strong><br>
+        السعر: ₪ ${item.price.toFixed(2)} <br>
+        الكمية: <input 
+            type="number" 
+            value="${item.quantity}" 
+            min="1" 
+            class="cart-quantity" 
+            data-product="${item.name}">
+    `;
         // ❌ زر الحذف
         const removeButton = document.createElement('button');
         removeButton.className = 'cart-remove btn btn-danger btn-sm ms-2';
