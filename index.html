@@ -1096,10 +1096,14 @@ function renderFilteredProducts(filteredProducts) {
             } else {
                 nameHtml = `<strong>${product.name}</strong>`;
             }
-            productDetails.innerHTML = `
+            const price = isNaN(product.price) ? "غير متوفر" : product.price.toFixed(2) + " ₪";
+const priceClass = isNaN(product.price) ? "unavailable" : "";
+
+productDetails.innerHTML = `
     ${nameHtml}<br><br>
-    <span class="price">${product.price.toFixed(2)} ₪</span>
+    <span class="price ${priceClass}">${price}</span>
 `;
+
             productDiv.appendChild(productDetails);
 
             // إعداد عناصر التحكم بالكمية
