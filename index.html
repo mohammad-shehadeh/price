@@ -1150,6 +1150,12 @@ function renderFilteredProducts(filteredProducts) {
             };
             productDiv.appendChild(productImage);
 
+            // إضافة اسم الفئة بين الصورة واسم المنتج
+            const categoryElement = document.createElement('div');
+            categoryElement.className = "product-category";
+            categoryElement.textContent = product.category; // إضافة اسم الفئة
+            productDiv.appendChild(categoryElement); // إضافة الفئة بعد الصورة
+
             // معالجة اسم المنتج مع <br>
             const productDetails = document.createElement('div');
             const nameParts = product.name.split('<br>');
@@ -1162,13 +1168,15 @@ function renderFilteredProducts(filteredProducts) {
             } else {
                 nameHtml = `<strong>${product.name}</strong>`;
             }
-            const price = isNaN(product.price) ? "غير متوفر" : product.price.toFixed(2) + " ₪";
-const priceClass = isNaN(product.price) ? "unavailable" : "";
 
-productDetails.innerHTML = `
-    ${nameHtml}<br><br>
-    <span class="price ${priceClass}">${price}</span>
-`;
+            const price = isNaN(product.price) ? "غير متوفر" : product.price.toFixed(2) + " ₪";
+            const priceClass = isNaN(product.price) ? "unavailable" : "";
+
+            productDetails.innerHTML = `
+                ${nameHtml}<br><br>
+                <span class="price ${priceClass}">${price}</span>
+            `;
+
 
             productDiv.appendChild(productDetails);
 
