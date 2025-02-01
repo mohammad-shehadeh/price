@@ -874,6 +874,10 @@ const confirmButton = document.getElementById('confirm-button');
 const cancelButton = document.getElementById('cancel-button');
 const customerNameInput = document.getElementById('customer-name');
 const customerPhoneInput = document.getElementById('customer-phone');
+const selectFileButton = document.getElementById('select-file-button'); // زر لاختيار الملف
+
+let products = [];
+let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
 // إضافة أزرار لاختيار الكتالوج
 const fileButtonsContainer = document.getElementById('file-buttons'); // تأكد من وجود عنصر في HTML لعرض الأزرار
@@ -917,6 +921,14 @@ function loadProductsFromFile(fileName) {
         })
         .catch(error => console.error('Error loading products:', error));
 }
+
+// عند الضغط على زر "اختيار ملف"
+selectFileButton.onclick = () => {
+    const selectedFile = prompt('أدخل اسم الملف (test.txt أو lcd.txt أو abc.txt):');
+    if (selectedFile) {
+        loadProductsFromFile(selectedFile);
+    }
+};
 
 // دالة لعرض الفئات (مثال)
 function renderCategories() {
@@ -975,7 +987,6 @@ function renderCategories() {
                 ${nameHtml}<br><br>
                 <span class="price ${priceClass}">${price}</span>
             `;
-
 
             productDiv.appendChild(productDetails);
 
