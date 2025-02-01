@@ -55,7 +55,7 @@ Infinix/hot 50i 128|8/330/https://i0.wp.com/alltech.pk/wp-content/uploads/2024/1
 Infinix/hot 40i 256|16/400/https://mobizil.com/wp-content/uploads/2024/06/Infinix-Hot-40i.jpg
 Infinix/smart 9 128|4/310/https://7lcart.s3.eu-central-1.amazonaws.com/cardnet.sa/6592/conversions/172798721466fefe0e7d6e9-card.jpg
 Infinix/smart 9 64|3/275/https://7lcart.s3.eu-central-1.amazonaws.com/cardnet.sa/6592/conversions/172798721466fefe0e7d6e9-card.jpg
-Infinix/Zero 40 512|16/0/https://megaphonecity.com.my/wp-content/uploads/2024/08/zero-40-pink.jpg
+Infinix/Zero 40 512|16/aaa/https://megaphonecity.com.my/wp-content/uploads/2024/08/zero-40-pink.jpg
 Honor/X9b 256|12/1160/https://yantranepal.com/wp-content/uploads/2024/02/Honor-X9b-5G-Sunrise-Orange-12GB-256GB-1.webp
 Honor/X9C 256|12/1320+airpods/https://mob4g.com/wp-content/uploads/2024/12/Honor-X9c-Smart-2-600x600.webp
 Honor/X8b 512|8/800/https://www.honor.com/content/dam/honor/my/product-list/smartphone/honor-x8b/honor-x8b-green.png
