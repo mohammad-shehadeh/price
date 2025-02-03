@@ -7,7 +7,7 @@ samsung/A55 256|8/1240/https://kaza.com.eg/pub/media/catalog/product/cache/2f071
 samsung/A35 128|8/880/https://961souq.com/cdn/shop/files/SM-A35-iceblue_53ad151b-56aa-476b-a446-c12639b46b75.jpg?v=1710597245
 samsung/A25 128|6/680/https://cdn.mart.ps/244566-thickbox_default/samsung-galaxy-a25-128gb-6gb-ram-%D9%83%D9%81%D8%A7%D9%84%D8%A9-%D8%B3%D9%86%D8%A9.jpg
 samsung/A16 128|6/550/https://econtent.o2.co.uk/o/econtent/media/get/ff0037cf-f7bc-4ca6-bde5-779c9cbb9c2b
-samsung/A16 128|4<br>go touch/540/https://econtent.o2.co.uk/o/econtent/media/get/ff0037cf-f7bc-4ca6-bde5-779c9cbb9c2b
+samsung/A16 128|4/540/https://econtent.o2.co.uk/o/econtent/media/get/ff0037cf-f7bc-4ca6-bde5-779c9cbb9c2b
 samsung/TAP A9 64|4/380/https://oplayce.ci/cdn/shop/files/samsung-galaxy-tab-a9_5_1024x.jpg?v=1717431017
 samsung/A06 128|4/350/https://www.jibalzone.com/media/7389/conversions/6704ddec150e1_193679_2024-slider.jpg
 samsung/A06 64|4/320/https://www.jibalzone.com/media/7389/conversions/6704ddec150e1_193679_2024-slider.jpg
