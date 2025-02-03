@@ -1113,6 +1113,56 @@ function setActiveButton(activeButton) {
     activeButton.classList.add('active');
 }
 
+document.getElementById('search-box').addEventListener('input', (event) => {
+    const searchTerm = event.target.value.toLowerCase().trim();
+    const cleanedSearchTerm = searchTerm.replace(/\s+/g, '');
+
+    if (!searchTerm) {
+        renderCategories(); // إعادة عرض جميع الفئات والمنتجات عند إفراغ البحث
+        return;
+    }
+
+    const filteredProducts = products.filter(product => {
+        const productName = product.name.toLowerCase().replace(/\s+/g, '');
+        const productCategory = product.category.toLowerCase().replace(/\s+/g, '');
+        return productName.includes(cleanedSearchTerm) || productCategory.includes(cleanedSearchTerm);
+    });
+
+    // ترتيب النتائج بحيث تكون الأقرب في الأعلى
+    const sortedProducts = filteredProducts.sort((a, b) => {
+        const productNameA = a.name.toLowerCase().replace(/\s+/g, '');
+        const productNameB = b.name.toLowerCase().replace(/\s+/g, '');
+
+        const aExactMatch = productNameA === cleanedSearchTerm ? 1 : 0;
+        const bExactMatch = productNameB === cleanedSearchTerm ? 1 : 0;
+
+        if (aExactMatch !== bExactMatch) {
+            return bExactMatch - aExactMatch;
+        }
+
+        const aIncludes = productNameA.includes(cleanedSearchTerm) ? 1 : 0;
+        const bIncludes = productNameB.includes(cleanedSearchTerm) ? 1 : 0;
+
+        if (aIncludes !== bIncludes) {
+            return bIncludes - aIncludes;
+        }
+
+        return productNameA.length - productNameB.length;
+    });
+
+    if (sortedProducts.length > 0) {
+        renderFilteredProducts(sortedProducts);
+    } else {
+        categoriesContainer.innerHTML = '<p style="text-align: center; font-size: 18px;">لم يتم العثور على نتائج</p>';
+    }
+});
+
+// إعادة تهيئة البحث عند فقدان التركيز
+document.getElementById('search-box').addEventListener('blur', () => {
+    document.getElementById('search-box').value = '';
+});
+
+
 // دالة الفلترة المعدلة
 function filterProducts(category) {
     const filteredProducts = category === 'All' 
@@ -1234,56 +1284,6 @@ function renderFilteredProducts(filteredProducts) {
     });
 }
 
-document.getElementById('search-box').addEventListener('input', (event) => {
-    const searchTerm = event.target.value.toLowerCase().trim();
-    const cleanedSearchTerm = searchTerm.replace(/\s+/g, '');
-
-    if (!searchTerm) {
-        renderCategories(); // إعادة عرض جميع الفئات والمنتجات عند إفراغ البحث
-        return;
-    }
-
-    const filteredProducts = products.filter(product => {
-        const productName = product.name.toLowerCase().replace(/\s+/g, '');
-        const productCategory = product.category.toLowerCase().replace(/\s+/g, '');
-        return productName.includes(cleanedSearchTerm) || productCategory.includes(cleanedSearchTerm);
-    });
-
-    // ترتيب النتائج بحيث تكون الأقرب في الأعلى
-    const sortedProducts = filteredProducts.sort((a, b) => {
-        const productNameA = a.name.toLowerCase().replace(/\s+/g, '');
-        const productNameB = b.name.toLowerCase().replace(/\s+/g, '');
-
-        const aExactMatch = productNameA === cleanedSearchTerm ? 1 : 0;
-        const bExactMatch = productNameB === cleanedSearchTerm ? 1 : 0;
-
-        if (aExactMatch !== bExactMatch) {
-            return bExactMatch - aExactMatch;
-        }
-
-        const aIncludes = productNameA.includes(cleanedSearchTerm) ? 1 : 0;
-        const bIncludes = productNameB.includes(cleanedSearchTerm) ? 1 : 0;
-
-        if (aIncludes !== bIncludes) {
-            return bIncludes - aIncludes;
-        }
-
-        return productNameA.length - productNameB.length;
-    });
-
-    const categoriesContainer = document.getElementById('categories');
-    if (sortedProducts.length > 0) {
-        renderFilteredProducts(sortedProducts);
-    } else {
-        categoriesContainer.innerHTML = '<p style="text-align: center; font-size: 18px;">لم يتم العثور على نتائج</p>';
-    }
-});
-
-// إعادة تهيئة البحث عند فقدان التركيز
-const searchBox = document.getElementById('search-box');
-searchBox.addEventListener('blur', () => {
-    searchBox.value = '';
-});
 
 
 // Add product to cart
