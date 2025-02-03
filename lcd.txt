@@ -26,7 +26,7 @@ iphone/ipad 7,8,9 touch/45/https://mpsmobile.de/data/product/images/detail/norma
 iphone/ipad 7,8,9 LCD/150/https://cellphonepartscanada.com/cdn/shop/products/replacement-lcd-for-ipad-7-ipad-8-ipad-9-lcd-10-2-best-cell-phone-parts-distributor-in-canada-parts-source_2048x2048.jpg?v=1713365081
 iphone/watch S7 44mm/200/https://signalsjo.com/wp-content/uploads/2024/10/AW0160.jpg
 iphone/watch S6 44mm/200/https://signalsjo.com/wp-content/uploads/2024/10/AW0160.jpg
-samsung/A16 oled+f/165/https://cdn.webshopapp.com/shops/15250/files/469217344/lcd-samsung-galaxy-a16-5g-a166b-gh82-36143a-black.jpg
+Samsung/A16 oled+f/165/https://cdn.webshopapp.com/shops/15250/files/469217344/lcd-samsung-galaxy-a16-5g-a166b-gh82-36143a-black.jpg
 Samsung/A15 incell+F/85/https://www.androgeek.es/36917-large_default/pantalla-samsung-a15-4g-a15-5g-incell-con-marco-lcddisplay-digitalizadortactil.jpg
 Samsung/A14 original/50/https://i.ebayimg.com/images/g/UrUAAOSwKDdlSogb/s-l1200.jpg
 Samsung/A14 5G original/55/https://p.globalsources.com/IMAGES/PDT/B1211600708/LCD.png
@@ -46,7 +46,7 @@ Samsung/A04S-A13 5G original/45/https://toolroommexico.mx/cdn/shop/files/lcd-com
 Samsung/A05S original/55/https://i.ebayimg.com/images/g/pmEAAOSwU0ZlShAr/s-l400.png
 Samsung/A05 original/50/https://s.alicdn.com/@sc04/kf/Hb1e6defaa2a84587a6b594ddf36bbca0R.jpg_720x720q50.jpg
 Samsung/A06 original/55/https://i.ebayimg.com/images/g/TlIAAOSwzDxm9Oi6/s-l1200.jpg
-samsung/A25 incell+f/70/https://i.ebayimg.com/images/g/P90AAOSwrolnJhxh/s-l400.png
+Samsung/A25 incell+f/70/https://i.ebayimg.com/images/g/P90AAOSwrolnJhxh/s-l400.png
 Samsung/A24 incell+F/60/https://www.cellspare.com/image/cache/catalog/data/Accessories%20Villa/Product%20image/samsung-galaxy-a24-4g-lcd-screen-with-frame-black-1000x1000.jpeg
 Samsung/A73 incell+F/aaa/https://i.ebayimg.com/images/g/JMwAAOSw9JhirBRg/s-l1200.jpg
 Samsung/A73 olbig+F/180/https://i.ebayimg.com/images/g/JMwAAOSw9JhirBRg/s-l1200.jpg
