@@ -1271,6 +1271,7 @@ document.getElementById('search-box').addEventListener('input', (event) => {
         return productNameA.length - productNameB.length;
     });
 
+    const categoriesContainer = document.getElementById('categories');
     if (sortedProducts.length > 0) {
         renderFilteredProducts(sortedProducts);
     } else {
@@ -1278,6 +1279,11 @@ document.getElementById('search-box').addEventListener('input', (event) => {
     }
 });
 
+// إعادة تهيئة البحث عند فقدان التركيز
+const searchBox = document.getElementById('search-box');
+searchBox.addEventListener('blur', () => {
+    searchBox.value = '';
+});
 
 
 // Add product to cart
