@@ -28,13 +28,13 @@ iphone/watch S7 44mm/200/https://signalsjo.com/wp-content/uploads/2024/10/AW0160
 iphone/watch S6 44mm/200/https://signalsjo.com/wp-content/uploads/2024/10/AW0160.jpg
 samsung/A16 oled+f/165/https://cdn.webshopapp.com/shops/15250/files/469217344/lcd-samsung-galaxy-a16-5g-a166b-gh82-36143a-black.jpg
 Samsung/A15 incell+F/85/https://www.androgeek.es/36917-large_default/pantalla-samsung-a15-4g-a15-5g-incell-con-marco-lcddisplay-digitalizadortactil.jpg
-Samsung/A14 original/55/https://i.ebayimg.com/images/g/UrUAAOSwKDdlSogb/s-l1200.jpg
+Samsung/A14 original/50/https://i.ebayimg.com/images/g/UrUAAOSwKDdlSogb/s-l1200.jpg
 Samsung/A14 5G original/55/https://p.globalsources.com/IMAGES/PDT/B1211600708/LCD.png
 Samsung/A13-A23-M336 original/50/https://i52.psgsm.net/gsm.com/p/910417/799/lcd-compatible-with-samsung-m336-galaxy-m33-black-without-frame-original-prc.jpg?b5752778240000954095d9d408977fc6
 Samsung/A12-A02 original/45/https://sc04.alicdn.com/kf/H59508da4971348319e8423332f2a31f7B.jpg
 Samsung/A11 original/aaa/https://i.ebayimg.com/images/g/AiMAAOSwxhNiKTAa/s-l1200.jpg
 Samsung/A21S original/55/https://m.media-amazon.com/images/I/51gJTVkM0gL.jpg
-Samsung/A03 core/45/https://ae01.alicdn.com/kf/Sf66d722b09c14d73a866de6583251ca52.jpg
+Samsung/A03 core/45/https://kaydenlcds.com/wp-content/uploads/2023/05/Galaxy-A03-Core-A032-2021-LCD.webp
 Samsung/M13/50/https://m.media-amazon.com/images/I/61gSGTU6gXL.jpg
 Samsung/A10S/40/https://m.media-amazon.com/images/I/51zmVAX1swL._AC_UF1000,1000_QL80_.jpg
 Samsung/A10/40/https://www.vopmart.com/media/catalog/product/cache/ee14c5ab36c97d39d331f867fa3bee63/s/p/sp1015994_1.jpg
@@ -65,7 +65,7 @@ Samsung/A52 incell+F/60/https://lcdpartner.com/20109-large_default/samsung-galax
 Samsung/A51 olbig+F/100/https://image.made-in-china.com/2f0j00gqrWoPBkLscd/Mobile-Phone-LCD-Display-for-Samsung-A51-OLED-LCD-with-Frame-Assembly.jpg
 Samsung/A51 incell+F/60/https://image.made-in-china.com/2f0j00gqrWoPBkLscd/Mobile-Phone-LCD-Display-for-Samsung-A51-OLED-LCD-with-Frame-Assembly.jpg
 Samsung/A35 original+F/aaa/https://www.polartech.co.nz/cdn/shop/files/6a0f48436f03bf48e8c7f28f9f150b4c_3d92c065-cca9-4088-8d8c-c6ab4e66331b.png?v=1720165512
-Samsung/A34 original+F/aaahttps://www.cmedistribution.com.my/wp-content/uploads/2023/12/SAM-A34-5G-LCD-ORI-SIZE-OLED-FRM.jpg
+Samsung/A34 original+F/aaa/https://www.cmedistribution.com.my/wp-content/uploads/2023/12/SAM-A34-5G-LCD-ORI-SIZE-OLED-FRM.jpg
 Samsung/A33 olbig+F/120/https://store.fixmobile.gr/wp-content/uploads/1303739_0.jpg
 Samsung/A32 olbig+F/90/https://sparepart.dk/media/cache/fb_image_thumb/product-images/19/58/4/A32%204G%20Display1675868427.8488.png.png?1675868427
 Samsung/A32 incell+F/60/https://sparepart.dk/media/cache/fb_image_thumb/product-images/19/58/4/A32%204G%20Display1675868427.8488.png.png?1675868427
@@ -101,8 +101,8 @@ Mi/10A-9A-9C ORI/45/https://themall.ng/oc-content/uploads/3/1662.webp
 Mi/redmi 8-8A/45/https://img.joomcdn.net/3ed1b58051a85a14752ef1ef95bd5b612aee24fe_original.jpeg
 Mi/A2 plus-A2-A1 plus ORI/45/https://mobisparehub.com/cdn/shop/files/1_7565c358-ece8-4a83-9479-fe43d2c0c3b1.jpg?v=1712157538
 Mi/A3 ORI/50/https://5.imimg.com/data5/ANDROID/Default/2024/12/470192628/KN/KX/HJ/112130644/product-jpeg.jpg
-Mi/11 lite 4G-5G/INCELL/65/https://5.imimg.com/data5/ANDROID/Default/2021/9/QU/NH/XG/112130644/xiomi-mi-11-lite-lcd-screen-with-touch-screen-black-combo-jpg.jpg
-Mi/11 lite 4G-5G/orignal/130/https://5.imimg.com/data5/ANDROID/Default/2021/9/QU/NH/XG/112130644/xiomi-mi-11-lite-lcd-screen-with-touch-screen-black-combo-jpg.jpg
+Mi/11 lite 4G-5G/INCELL/65/https://d57avc95tvxyg.cloudfront.net/images/thumbnails/885/885/detailed/5857/lcd_with_touch_screen_for_xiaomi_mi_11_lite_5g_green_by_maxbhi_com_88810.jpg?t=1731775338
+Mi/11 lite 4G-5G/orignal/130/https://d57avc95tvxyg.cloudfront.net/images/thumbnails/885/885/detailed/5857/lcd_with_touch_screen_for_xiaomi_mi_11_lite_5g_green_by_maxbhi_com_88810.jpg?t=1731775338
 Mi/12T-12T pro orignal/170/https://i.ebayimg.com/images/g/hPUAAOSwoldku6wc/s-l1200.png
 Mi/POCO X6 PRO/AAA/https://www.garantiiletisim.com/resimler/urunler/1280x1280/2_1810425888712115.jpg
 Mi/POCO X5 PRO INCELL/70/https://i82.psgsm.net/gsm.com/p/912047/1065x799/lcd-compatible-with-xiaomi-poco-x5-pro-black-without-frame-original-prc.jpg?5e01d8ed4b78d0da41f748867bfb2e76
@@ -119,7 +119,7 @@ tecno/POVA 2-POVA 3 ORI/55/https://cdn.iserviceindia.in/iservice/image/product/p
 tecno/POVA 4-POVA NEW 2 ORI/55/https://image.made-in-china.com/2f0j00CLlqFSpyfvgt/Original-LCD-for-Infinix-Tecno-Pova-4-Pova-4PRO-LG8n-Touch-Screen-Replacement-Mobile-Phone-LCD-Display.webp
 tecno/CAMON 18P ORI/60/https://www.lucentparts.com/wp-content/uploads/2024/06/camon-18p.webp
 tecno/CAMON 20 PRO incell/75/https://i24.psgsm.net/gsm.com/p/916730/799/lcd-compatible-with-tecno-camon-20-pro-black-without-frame-original-prc-ck7n.jpg?e9f21ac804e74dc8060c0c7340b3e40f
-tecno/CAMON 20 PRO oled/130/https://i24.psgsm.net/gsm.com/p/916730/799/lcd-compatible-with-tecno-camon-20-pro-black-without-frame-original-prc-ck7n.jpg?e9f21ac804e74dc8060c0c7340b3e40f
+tecno/CAMON 20 PRO orignal/130/https://i24.psgsm.net/gsm.com/p/916730/799/lcd-compatible-with-tecno-camon-20-pro-black-without-frame-original-prc-ck7n.jpg?e9f21ac804e74dc8060c0c7340b3e40f
 tecno/pova new ORI/50/https://ph-test-11.slatic.net/p/1bb969ad395c893920659d0d5047d783.jpg_webp
 tecno/pop 5 lite-GO2022 ORI/50/https://i79.psgsm.net/gsm.com/p/911571/1065x799/lcd-compatible-with-tecno-pop-5-lte-black-without-frame-high-copy-bd4-bd4i-bd4a.jpg?ddd2f01f98f18502fbea7c9afede0af7
 tecno/CAMON 19 ORI/60/https://www.kniezon.com/cdn/shop/files/ci6.webp?v=1696833563
@@ -134,17 +134,18 @@ realmi/7i-A53 ORI/50/https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRN_l_
 realmi/9I ORI/60/https://api.powerfix.ph/small/clients/powerfix.ph/uploads/product-1731056111-2.png
 realmi/C11 ORI/50/https://cdn.iserviceindia.in/iservice/image/product/part/28277/realme-c11-rmx2185-lcd-display-combo-folder-image-922303767-1733309804.webp
 realmi/C11 2021 ORI/50/https://www.cellspare.com/image/cache/catalog/data/Accessories%20Villa/Product%20image/realme-c11-2021-lcd-screen-replacement-1000x1000.jpg
-realmi/C12-C15 ORI/50/https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDl1eimuNxINgqEfEireIV9vnRRZTGjwBJ7A&s
+realmi/C12-C15 ORI/50/https://ae01.alicdn.com/kf/H5ba49e88e75c46aeb9a67d119e024e96z.jpg_640x640q90.jpg
 realmi/C25-C21 ORI/50/https://sc04.alicdn.com/kf/H438ee8e4d59b448d8f1784f8b0dbc9d8y.jpg
 realmi/C25Y-C21Y ORI/50/https://down-id.img.susercontent.com/file/sg-11134201-22100-t3389fwed4iv75
-OPPO/A72 ORI/55/https://ae01.alicdn.com/kf/H95844bc9237e4543a85d3615a16b3ca41.jpg_960x960.jpg
+OPPO/A72 ORI/55/https://i.ebayimg.com/images/g/bUQAAOSwteNhlxOn/s-l1200.png
 OPPO/A53 ORI/55/https://i93.psgsm.net/gsm.com/p/913645/799/lcd-compatible-with-oppo-a53-5g-black-without-frame-original-prc-pecm30.jpg?fd92be96d49aeffa369a42fdf28dc304
 OPPO/A52 ORI/55/https://i.ebayimg.com/images/g/DEkAAOSwmCFkciEj/s-l400.jpg
 OPPO/A92 INCELL/55/https://m.media-amazon.com/images/I/61moF0AJkLL.jpg
 INFINEX/HOT 40I/50/https://sc04.alicdn.com/kf/Habc8f725c16e4d9a855b03e701f09647z.jpg
+INFINEX/HOT 30/60/https://sc04.alicdn.com/kf/Haa7d71236c224023b2c5600b91efc91aS.jpg
 INFINEX/SMART 8/50/https://sc04.alicdn.com/kf/Habc8f725c16e4d9a855b03e701f09647z.jpg
 INFINEX/HOT 10/50/https://i.ebayimg.com/images/g/1XIAAOSw14dhXsY3/s-l400.jpg
-INFINEX/SMART 9/50/https://ae01.alicdn.com/kf/Sf968c55239c34bd7a4005932ae067e304.jpg_640x640q90.jpg
+INFINEX/SMART 9/50/https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFnRY3EhPOsvpsRrrkgP0ZJWs0Sqvt6dvoImUGqgFNyILqbz1_tyOsLV1O2WgJe2ok_pw&usqp=CAU
 INFINEX/HOT 50I/50/https://www.cmedistribution.com.my/wp-content/plugins/phastpress/phast.php/c2VydmljZT1pbWFnZXMmc3JjPWh0dHBzJTNBJTJGJTJGd3d3LmNtZWRpc3RyaWJ1dGlvbi5jb20ubXklMkZ3cC1jb250ZW50JTJGdXBsb2FkcyUyRjIwMjQlMkYxMCUyRklORklOSVgtSE9ULTUwLUxDRC1PUkktRlMuanBnJmNhY2hlTWFya2VyPTE3MjkwNjcxNTctMTEyMjk5JnRva2VuPTI4ZjI0MTFjNmVjNmE1MWU.q.jpg
 INFINEX/HOT 50/50/https://img.lazcdn.com/g/p/61c13880fabe3ac1b77de188bfbaae93.jpg_720x720q80.jpg
 HONOR/X9b/250/https://down-ph.img.susercontent.com/file/cn-11134207-7r98o-lz4pawofvvxvb2
