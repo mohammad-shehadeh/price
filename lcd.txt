@@ -101,8 +101,8 @@ Mi/10A-9A-9C ORI/45/https://themall.ng/oc-content/uploads/3/1662.webp
 Mi/redmi 8-8A/45/https://img.joomcdn.net/3ed1b58051a85a14752ef1ef95bd5b612aee24fe_original.jpeg
 Mi/A2 plus-A2-A1 plus ORI/45/https://mobisparehub.com/cdn/shop/files/1_7565c358-ece8-4a83-9479-fe43d2c0c3b1.jpg?v=1712157538
 Mi/A3 ORI/50/https://5.imimg.com/data5/ANDROID/Default/2024/12/470192628/KN/KX/HJ/112130644/product-jpeg.jpg
-Mi/11 lite 4G-5G/INCELL/65/https://d57avc95tvxyg.cloudfront.net/images/thumbnails/885/885/detailed/5857/lcd_with_touch_screen_for_xiaomi_mi_11_lite_5g_green_by_maxbhi_com_88810.jpg?t=1731775338
-Mi/11 lite 4G-5G/orignal/130/https://d57avc95tvxyg.cloudfront.net/images/thumbnails/885/885/detailed/5857/lcd_with_touch_screen_for_xiaomi_mi_11_lite_5g_green_by_maxbhi_com_88810.jpg?t=1731775338
+Mi/11 lite 4G-5G INCELL/65/https://d57avc95tvxyg.cloudfront.net/images/thumbnails/885/885/detailed/5857/lcd_with_touch_screen_for_xiaomi_mi_11_lite_5g_green_by_maxbhi_com_88810.jpg?t=1731775338
+Mi/11 lite 4G-5G orignal/130/https://d57avc95tvxyg.cloudfront.net/images/thumbnails/885/885/detailed/5857/lcd_with_touch_screen_for_xiaomi_mi_11_lite_5g_green_by_maxbhi_com_88810.jpg?t=1731775338
 Mi/12T-12T pro orignal/170/https://i.ebayimg.com/images/g/hPUAAOSwoldku6wc/s-l1200.png
 Mi/POCO X6 PRO/AAA/https://www.garantiiletisim.com/resimler/urunler/1280x1280/2_1810425888712115.jpg
 Mi/POCO X5 PRO INCELL/70/https://i82.psgsm.net/gsm.com/p/912047/1065x799/lcd-compatible-with-xiaomi-poco-x5-pro-black-without-frame-original-prc.jpg?5e01d8ed4b78d0da41f748867bfb2e76
@@ -145,7 +145,7 @@ INFINEX/HOT 40I/50/https://sc04.alicdn.com/kf/Habc8f725c16e4d9a855b03e701f09647z
 INFINEX/HOT 30/60/https://sc04.alicdn.com/kf/Haa7d71236c224023b2c5600b91efc91aS.jpg
 INFINEX/SMART 8/50/https://sc04.alicdn.com/kf/Habc8f725c16e4d9a855b03e701f09647z.jpg
 INFINEX/HOT 10/50/https://i.ebayimg.com/images/g/1XIAAOSw14dhXsY3/s-l400.jpg
-INFINEX/SMART 9/50/https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFnRY3EhPOsvpsRrrkgP0ZJWs0Sqvt6dvoImUGqgFNyILqbz1_tyOsLV1O2WgJe2ok_pw&usqp=CAU
+INFINEX/SMART 9/50/https://down-id.img.susercontent.com/file/id-11134207-7ras8-m3g5i0xmc0z2bc
 INFINEX/HOT 50I/50/https://www.cmedistribution.com.my/wp-content/plugins/phastpress/phast.php/c2VydmljZT1pbWFnZXMmc3JjPWh0dHBzJTNBJTJGJTJGd3d3LmNtZWRpc3RyaWJ1dGlvbi5jb20ubXklMkZ3cC1jb250ZW50JTJGdXBsb2FkcyUyRjIwMjQlMkYxMCUyRklORklOSVgtSE9ULTUwLUxDRC1PUkktRlMuanBnJmNhY2hlTWFya2VyPTE3MjkwNjcxNTctMTEyMjk5JnRva2VuPTI4ZjI0MTFjNmVjNmE1MWU.q.jpg
 INFINEX/HOT 50/50/https://img.lazcdn.com/g/p/61c13880fabe3ac1b77de188bfbaae93.jpg_720x720q80.jpg
 HONOR/X9b/250/https://down-ph.img.susercontent.com/file/cn-11134207-7r98o-lz4pawofvvxvb2
