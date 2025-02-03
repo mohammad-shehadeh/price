@@ -853,24 +853,28 @@ input[type="text"]:focus, input[type="tel"]:focus {
 
 /* تنسيق الزر العادي */
 .add-to-cart-btn {
-    background-color: #ff7f00; /* اللون الافتراضي للزر */
+    background: linear-gradient(90deg, #007bff, #00aaff, #007bff);
     color: white;
+    padding: 11px 24px;
     border: none;
-    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 20px;
     cursor: pointer;
-    font-size: 16px;
-    border-radius: 5px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    margin-top: 20px;
+    width: 100%;
+    text-transform: uppercase;
 }
 
 /* تنسيق الزر عند تعطيله */
-button.disabled, button[disabled], .disabled-button {
-    background-color: #d3d3d3;  /* اللون السكني */
+button.disabled, button[disabled] {
+    background: linear-gradient(90deg, #d3d3d3, #d3d3d3, #d3d3d3);  /* اللون السكني */
     color: #8e8e8e;  /* لون النص عند التعطيل */
     cursor: not-allowed;  /* تغيير شكل المؤشر إلى غير قابل للنقر */
-    border: 1px solid #cccccc;  /* إضافة حدود بلون أفتح */
+    border: none;  /* إزالة الحدود عند تعطيل الزر */
 }
 
-button.disabled i, button[disabled] i, .disabled-button i {
+button.disabled i, button[disabled] i {
     color: #8e8e8e;  /* تغيير لون الأيقونة عند تعطيل الزر */
 }
 
@@ -1083,7 +1087,6 @@ addToCartButton.classList.add('add-to-cart-btn');
 if (isNaN(product.price)) {
     addToCartButton.disabled = true;  // تعطيل الزر
     addToCartButton.classList.add('disabled');  // إضافة فئة CSS لتعطيل الزر
-    addToCartButton.classList.add('disabled-button');  // إضافة فئة لتغيير اللون إلى سكني
 } else {
     addToCartButton.onclick = () => {
         addToCart(product, quantityInput.value);  // إضافة المنتج إلى السلة
