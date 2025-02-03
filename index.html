@@ -1239,8 +1239,9 @@ function renderFilteredProducts(filteredProducts) {
 
             // إضافة زر "إضافة للسلة"
             const addToCartButton = document.createElement('button');
-            addToCartButton.textContent = 'إضافة للسلة';
+            addToCartButton.innerHTML = '<i class="fas fa-shopping-cart me-2"></i> إضافة للسلة';
             addToCartButton.classList.add('add-to-cart-btn');
+            addToCartButton.onclick = () => {
 
             if (isNaN(product.price)) {
     addToCartButton.disabled = true;  // تعطيل الزر
