@@ -1235,17 +1235,18 @@ function renderFilteredProducts(filteredProducts) {
 }
 
 document.getElementById('search-box').addEventListener('input', (event) => {
-    const searchTerm = event.target.value.toLowerCase().trim(); // النص المدخل بعد تحويله إلى حروف صغيرة وإزالة الفراغات الزائدة
-    const cleanedSearchTerm = searchTerm.replace(/\s+/g, ''); // النص المدخل بدون فراغات
+    const searchTerm = event.target.value.toLowerCase().trim();
+    const cleanedSearchTerm = searchTerm.replace(/\s+/g, '');
 
-    // تصفية المنتجات بناءً على وجود النص المدخل في الاسم أو الفئة
+    if (!searchTerm) {
+        renderCategories(); // إعادة عرض جميع الفئات والمنتجات عند إفراغ البحث
+        return;
+    }
+
     const filteredProducts = products.filter(product => {
-        const productName = product.name.toLowerCase().replace(/\s+/g, '');  // إزالة الفراغات من الاسم
-        const productCategory = product.category.toLowerCase().replace(/\s+/g, '');  // إزالة الفراغات من الفئة
-
-        // التحقق من أن النص المدخل موجود في الاسم أو الفئة
-        return productName.includes(cleanedSearchTerm) || 
-               productCategory.includes(cleanedSearchTerm);
+        const productName = product.name.toLowerCase().replace(/\s+/g, '');
+        const productCategory = product.category.toLowerCase().replace(/\s+/g, '');
+        return productName.includes(cleanedSearchTerm) || productCategory.includes(cleanedSearchTerm);
     });
 
     // ترتيب النتائج بحيث تكون الأقرب في الأعلى
@@ -1253,34 +1254,34 @@ document.getElementById('search-box').addEventListener('input', (event) => {
         const productNameA = a.name.toLowerCase().replace(/\s+/g, '');
         const productNameB = b.name.toLowerCase().replace(/\s+/g, '');
 
-        // إذا كان المنتج يحتوي على النص بشكل كامل، نعطيه الأولوية
         const aExactMatch = productNameA === cleanedSearchTerm ? 1 : 0;
         const bExactMatch = productNameB === cleanedSearchTerm ? 1 : 0;
 
         if (aExactMatch !== bExactMatch) {
-            return bExactMatch - aExactMatch; // الأولوية للتطابق الكامل
+            return bExactMatch - aExactMatch;
         }
 
-        // إذا لم يكن هناك تطابق كامل، نرتب حسب قرب التطابق
         const aIncludes = productNameA.includes(cleanedSearchTerm) ? 1 : 0;
         const bIncludes = productNameB.includes(cleanedSearchTerm) ? 1 : 0;
 
         if (aIncludes !== bIncludes) {
-            return bIncludes - aIncludes; // الأولوية للتطابق الجزئي
+            return bIncludes - aIncludes;
         }
 
-        // إذا كان كلاهما يحتوي على النص، نرتب حسب الطول (الأقصر أقرب)
         return productNameA.length - productNameB.length;
     });
 
-    renderFilteredProducts(sortedProducts); // عرض المنتجات المصفاة مرتبة
+    if (sortedProducts.length > 0) {
+        renderFilteredProducts(sortedProducts);
+    } else {
+        categoriesContainer.innerHTML = '<p style="text-align: center; font-size: 18px;">لم يتم العثور على نتائج</p>';
+    }
 });
 
-// إعادة تهيئة حقل البحث عند فقدان التركيز
+// إعادة تهيئة البحث عند فقدان التركيز
 document.getElementById('search-box').addEventListener('blur', () => {
-    document.getElementById('search-box').value = ''; // مسح النص في الحقل
+    document.getElementById('search-box').value = '';
 });
-
 
 
 
