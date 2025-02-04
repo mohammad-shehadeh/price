@@ -896,25 +896,6 @@ button.disabled i, button[disabled] i {
     pointer-events: none;  /* تعطيل تفاعل المستخدم مع الأيقونة */
 }
 
-#installApp {
-        display: none; /* الزر مخفي افتراضيًا حتى يصبح التثبيت ممكنًا */
-        position: fixed;
-        bottom: 20px;
-        left: 50%;
-        transform: translateX(-50%);
-        padding: 12px 24px;
-        font-size: 16px;
-        background: #28a745;
-        color: white;
-        border: none;
-        border-radius: 8px;
-        cursor: pointer;
-        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    }
-
-    #installApp:hover {
-        background: #218838;
-    }
   </style>
 </head>
         <header>
@@ -933,7 +914,7 @@ button.disabled i, button[disabled] i {
                 <i class="fas fa-shopping-cart"></i><br>
                 <span id="cart-total" class="fw-bold price-container">0.00 ₪</span>
             </button>
-            <button id="installApp" style="padding: 10px 20px; font-size: 18px; background-color: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer;">
+            <button id="installApp" style="padding: 12px 24px; font-size: 18px; background-color: #007bff; color: white; border: none; border-radius: 8px; cursor: pointer;">
                 تحميل التطبيق
             </button>
             
@@ -1669,52 +1650,31 @@ hideCartButton.onclick = function() {
             });
         });
  
-
         let deferredPrompt;
 
-// الاستماع لحدث "beforeinstallprompt" (مهم لـ Android)
+// الاستماع لحدث "beforeinstallprompt" لحفظ الحدث للتثبيت لاحقًا
 window.addEventListener("beforeinstallprompt", (event) => {
     event.preventDefault();
     deferredPrompt = event;
-
-    // إظهار الزر عند توفر خيار التثبيت
-    document.getElementById("installApp").style.display = "block";
-
-    document.getElementById("installApp").addEventListener("click", () => {
-        if (deferredPrompt) {
-            deferredPrompt.prompt(); // إظهار نافذة التثبيت
-            deferredPrompt.userChoice.then((choiceResult) => {
-                if (choiceResult.outcome === "accepted") {
-                    console.log("تم تثبيت التطبيق بنجاح!");
-                } else {
-                    console.log("تم إلغاء التثبيت.");
-                }
-                deferredPrompt = null;
-            });
-        }
-    });
 });
 
-// إخفاء الزر إذا تم تثبيت التطبيق مسبقًا
-window.addEventListener("appinstalled", () => {
-    console.log("تم تثبيت التطبيق بالفعل.");
-    document.getElementById("installApp").style.display = "none";
+// عند الضغط على زر "تحميل التطبيق"
+document.getElementById("installApp").addEventListener("click", () => {
+    if (deferredPrompt) {
+        deferredPrompt.prompt(); // إظهار نافذة التثبيت
+        deferredPrompt.userChoice.then((choiceResult) => {
+            if (choiceResult.outcome === "accepted") {
+                console.log("تم تثبيت التطبيق بنجاح!");
+            } else {
+                console.log("تم إلغاء التثبيت.");
+            }
+            deferredPrompt = null;
+        });
+    } else {
+        alert("لإضافة التطبيق إلى الشاشة الرئيسية:\n- على Android: استخدم خيار 'إضافة إلى الشاشة الرئيسية'.\n- على iPhone: اضغط على زر المشاركة ثم 'إضافة إلى الشاشة الرئيسية'.");
+    }
 });
 
-// دعم iPhone (عرض رسالة توضح كيفية التثبيت)
-function isIOS() {
-    return /iPhone|iPad|iPod/.test(navigator.userAgent);
-}
-
-function isSafari() {
-    return /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
-}
-
-if (isIOS() && isSafari()) {
-    document.getElementById("installApp").addEventListener("click", () => {
-        alert("لإضافة التطبيق إلى الشاشة الرئيسية: \n1. اضغط على زر المشاركة (Share). \n2. اختر 'إضافة إلى الشاشة الرئيسية' (Add to Home Screen).");
-    });
-}
 </script>
 </body>
 </html>
