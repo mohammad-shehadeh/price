@@ -1649,32 +1649,34 @@ hideCartButton.onclick = function() {
                 behavior: "smooth"
             });
         });
- 
-        let deferredPrompt;
 
-// الاستماع لحدث "beforeinstallprompt" لحفظ الحدث للتثبيت لاحقًا
-window.addEventListener("beforeinstallprompt", (event) => {
-    event.preventDefault();
-    deferredPrompt = event;
-});
+    let deferredPrompt;
 
-// عند الضغط على زر "تحميل التطبيق"
-document.getElementById("installApp").addEventListener("click", () => {
-    if (deferredPrompt) {
-        deferredPrompt.prompt(); // إظهار نافذة التثبيت
-        deferredPrompt.userChoice.then((choiceResult) => {
-            if (choiceResult.outcome === "accepted") {
-                console.log("تم تثبيت التطبيق بنجاح!");
-            } else {
-                console.log("تم إلغاء التثبيت.");
-            }
-            deferredPrompt = null;
-        });
-    } else {
-        alert("لإضافة التطبيق إلى الشاشة الرئيسية:\n- على Android: استخدم خيار 'إضافة إلى الشاشة الرئيسية'.\n- على iPhone: اضغط على زر المشاركة ثم 'إضافة إلى الشاشة الرئيسية'.");
-    }
-});
+    // الاستماع لحدث "beforeinstallprompt" لتخزينه
+    window.addEventListener("beforeinstallprompt", (event) => {
+        event.preventDefault();
+        deferredPrompt = event;
+    });
 
+    // تثبيت التطبيق تلقائيًا عند الضغط على الزر
+    document.getElementById("installApp").addEventListener("click", () => {
+        if (deferredPrompt) {
+            deferredPrompt.prompt(); // تشغيل نافذة التثبيت مباشرةً
+            deferredPrompt.userChoice.then((choiceResult) => {
+                if (choiceResult.outcome === "accepted") {
+                    console.log("تم تثبيت التطبيق بنجاح!");
+                } else {
+                    console.log("تم إلغاء التثبيت.");
+                }
+                deferredPrompt = null;
+            });
+        } else {
+            // دعم iPhone - عرض رسالة للمستخدم
+            alert("لإضافة التطبيق إلى الشاشة الرئيسية:\n1. اضغط على زر المشاركة (Share).\n2. اختر 'إضافة إلى الشاشة الرئيسية' (Add to Home Screen).");
+        }
+    });
 </script>
+
+
 </body>
 </html>
