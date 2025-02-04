@@ -914,9 +914,6 @@ button.disabled i, button[disabled] i {
                 <i class="fas fa-shopping-cart"></i><br>
                 <span id="cart-total" class="fw-bold price-container">0.00 ₪</span>
             </button>
-            <button id="installApp" style="padding: 12px 24px; font-size: 18px; background-color: #007bff; color: white; border: none; border-radius: 8px; cursor: pointer;">
-                تحميل التطبيق
-            </button>
             
                     </header>
         
@@ -1649,34 +1646,7 @@ hideCartButton.onclick = function() {
                 behavior: "smooth"
             });
         });
-
-    let deferredPrompt;
-
-    // الاستماع لحدث "beforeinstallprompt" لتخزينه
-    window.addEventListener("beforeinstallprompt", (event) => {
-        event.preventDefault();
-        deferredPrompt = event;
-    });
-
-    // تثبيت التطبيق تلقائيًا عند الضغط على الزر
-    document.getElementById("installApp").addEventListener("click", () => {
-        if (deferredPrompt) {
-            deferredPrompt.prompt(); // تشغيل نافذة التثبيت مباشرةً
-            deferredPrompt.userChoice.then((choiceResult) => {
-                if (choiceResult.outcome === "accepted") {
-                    console.log("تم تثبيت التطبيق بنجاح!");
-                } else {
-                    console.log("تم إلغاء التثبيت.");
-                }
-                deferredPrompt = null;
-            });
-        } else {
-            // دعم iPhone - عرض رسالة للمستخدم
-            alert("لإضافة التطبيق إلى الشاشة الرئيسية:\n1. اضغط على زر المشاركة (Share).\n2. اختر 'إضافة إلى الشاشة الرئيسية' (Add to Home Screen).");
-        }
-    });
+ 
 </script>
-
-
 </body>
 </html>
