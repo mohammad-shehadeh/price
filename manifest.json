@@ -1,6 +1,6 @@
 {
   "name": "أسعار الأجهزة",
-  "short_name": "الأجهزة",
+  "short_name": "Shehadeh Center",
   "description": "تطبيق أسعار الأجهزة أونلاين",
   "start_url": "/price/",
   "display": "standalone",
