@@ -32,14 +32,14 @@ MI/redmi 13 256|8/470/https://api.mistore-eg.com/storage/uploads/Redmi-13-Noir-1
 MI/13C 256|8/450/https://cdn-iibnp.nitrocdn.com/VjyilAmBtWmZaLojjwWFayaMdinRRPlg/assets/images/optimized/rev-f0d6867/www.ourfriday.co.uk/image/cache/catalog/Xiaomi/xiaomi-redmi-13c-blue-1-800x800h.png
 MI/extender AC1200/100/https://www.smartbox.am/webroot/myfiles/images/products/ac1200/3ffafe36-ccb4-4dfe-87db-2f546a39b1b5.png
 Apple/16 pro max 256GB/aaa/https://mac-center.com.pr/cdn/shop/files/iPhone_16_Pro_Max_Desert_Titanium_PDP_Image_Position_1__en-US_bf24ca74-a053-42d3-80e2-3edc40e85c1e.jpg?v=1726226953&width=823
-Apple/iphone 16 128GB/3050/https://asiamall.asiacell.com/media/catalog/product/l/d/ld0006166708_2.jpg
-Apple/iphone 15 128GB/2550/https://cdn.shortpixel.ai/spai/q_glossy+ret_img+to_webp/mobizil.com/wp-content/uploads/2023/09/iPhone-15-3.jpg
-Apple/iphone 14 128GB/2150/https://www.phonemart.ng/wp-content/uploads/2023/04/03.jpg.webp
-Apple/iphone 13 128GB/1950/https://m.media-amazon.com/images/I/516QZcrv+dL.jpg
+Apple/iphone 16 128GB/3020/https://asiamall.asiacell.com/media/catalog/product/l/d/ld0006166708_2.jpg
+Apple/iphone 15 128GB/aaa/https://cdn.shortpixel.ai/spai/q_glossy+ret_img+to_webp/mobizil.com/wp-content/uploads/2023/09/iPhone-15-3.jpg
+Apple/iphone 14 128GB/aaa/https://www.phonemart.ng/wp-content/uploads/2023/04/03.jpg.webp
+Apple/iphone 13 128GB/aaa/https://m.media-amazon.com/images/I/516QZcrv+dL.jpg
 Apple/watch S10 46mm/1700/https://shop.ucom.am/media/catalog/product/cache/f0d04c535eae714fecfa8deb2c47c63b/1/a/1apple_watch_series_10_42mm_gps_silver_aluminum_sport_band_denim_1.webp
 Apple/watch S10 42mm/1530/https://d61s2hjse0ytn.cloudfront.net/color/1357/Apple_Watch_Series_10_Silver.webp
 Apple/ipad 10 256GB/nnn/https://realplaza.vtexassets.com/arquivos/ids/33743614-800-auto?v=638265979022630000&width=800&height=auto&aspect=true
-Apple/ipad 10 64GB/1300/https://realplaza.vtexassets.com/arquivos/ids/33743614-800-auto?v=638265979022630000&width=800&height=auto&aspect=true
+Apple/ipad 10 64GB/aaa/https://realplaza.vtexassets.com/arquivos/ids/33743614-800-auto?v=638265979022630000&width=800&height=auto&aspect=true
 Apple/ipad 9 64GB/900/https://cdsassets.apple.com/live/SZLF0YNV/images/sp/111898_sp849-ipad-9gen-480.png
 Apple/20W cdata/75/https://atoz.ps/media/catalog/product/cache/80ae6a42c65321efa11f489c1d538fd0/o/r/original_apple_c-data_20w_charger_1_.jpg
 Apple/Airpods 2/375/https://rptech.qa/cdn/shop/products/MV7N2_04_2048x.jpg?v=1661414544
