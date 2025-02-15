@@ -39,8 +39,8 @@ Apple/iphone 13 128GB/aaa/https://m.media-amazon.com/images/I/516QZcrv+dL.jpg
 Apple/watch S10 46mm/1700/https://shop.ucom.am/media/catalog/product/cache/f0d04c535eae714fecfa8deb2c47c63b/1/a/1apple_watch_series_10_42mm_gps_silver_aluminum_sport_band_denim_1.webp
 Apple/watch S10 42mm/1530/https://d61s2hjse0ytn.cloudfront.net/color/1357/Apple_Watch_Series_10_Silver.webp
 Apple/ipad 10 256GB/nnn/https://realplaza.vtexassets.com/arquivos/ids/33743614-800-auto?v=638265979022630000&width=800&height=auto&aspect=true
-Apple/ipad 10 64GB/aaa/https://realplaza.vtexassets.com/arquivos/ids/33743614-800-auto?v=638265979022630000&width=800&height=auto&aspect=true
-Apple/ipad 9 64GB/900/https://cdsassets.apple.com/live/SZLF0YNV/images/sp/111898_sp849-ipad-9gen-480.png
+Apple/ipad 10 64GB/1300/https://realplaza.vtexassets.com/arquivos/ids/33743614-800-auto?v=638265979022630000&width=800&height=auto&aspect=true
+Apple/ipad 9 64GB/aaa/https://cdsassets.apple.com/live/SZLF0YNV/images/sp/111898_sp849-ipad-9gen-480.png
 Apple/20W cdata/75/https://atoz.ps/media/catalog/product/cache/80ae6a42c65321efa11f489c1d538fd0/o/r/original_apple_c-data_20w_charger_1_.jpg
 Apple/Airpods 2/375/https://rptech.qa/cdn/shop/products/MV7N2_04_2048x.jpg?v=1661414544
 Tecno/Camon 20 premier 5G 512|16/950/https://cdn.mart.ps/247862-thickbox_default/tecno-camon-20-premier-5g-512-8gb.jpg
@@ -52,7 +52,7 @@ Tecno/pova 6 256|24/800/https://telfonak.com/wp-content/uploads/2024/06/pova6-te
 Infinix/hot 50pro 256|16/620/https://media.extra.com/i/aurora/100389042_100_01?fmt=auto&w=720
 Infinix/hot 50 256|16/570/https://www.startech.com.bd/image/cache/catalog/mobile/infinix/hot-50/infinix-hot-50-sleek-black-500x500.webp
 Infinix/hot 50i 128|8/330/https://i0.wp.com/alltech.pk/wp-content/uploads/2024/10/Infinix-Hot-50i-Sleek-Blk.jpg
-Infinix/hot 40i 256|16/400/https://mobizil.com/wp-content/uploads/2024/06/Infinix-Hot-40i.jpg
+Infinix/hot 40i 256|16/aaa/https://mobizil.com/wp-content/uploads/2024/06/Infinix-Hot-40i.jpg
 Infinix/smart 9 128|4/310/https://7lcart.s3.eu-central-1.amazonaws.com/cardnet.sa/6592/conversions/172798721466fefe0e7d6e9-card.jpg
 Infinix/smart 9 64|3/275/https://7lcart.s3.eu-central-1.amazonaws.com/cardnet.sa/6592/conversions/172798721466fefe0e7d6e9-card.jpg
 Infinix/Zero 40 512|16/aaa/https://megaphonecity.com.my/wp-content/uploads/2024/08/zero-40-pink.jpg
