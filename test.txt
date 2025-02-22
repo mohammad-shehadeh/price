@@ -31,7 +31,7 @@ MI/14C 128|4/340/https://www.hemfrance.com/39078-thickbox_default/xiaomi-redmi-1
 MI/redmi 13 256|8/470/https://api.mistore-eg.com/storage/uploads/Redmi-13-Noir-1729150005.png
 MI/13C 256|8/aaa/https://cdn-iibnp.nitrocdn.com/VjyilAmBtWmZaLojjwWFayaMdinRRPlg/assets/images/optimized/rev-f0d6867/www.ourfriday.co.uk/image/cache/catalog/Xiaomi/xiaomi-redmi-13c-blue-1-800x800h.png
 MI/extender AC1200/100/https://www.smartbox.am/webroot/myfiles/images/products/ac1200/3ffafe36-ccb4-4dfe-87db-2f546a39b1b5.png
-Apple/16 pro max 256GB/4650/https://mac-center.com.pr/cdn/shop/files/iPhone_16_Pro_Max_Desert_Titanium_PDP_Image_Position_1__en-US_bf24ca74-a053-42d3-80e2-3edc40e85c1e.jpg?v=1726226953&width=823
+Apple/16 pro max 256GB/4630/https://mac-center.com.pr/cdn/shop/files/iPhone_16_Pro_Max_Desert_Titanium_PDP_Image_Position_1__en-US_bf24ca74-a053-42d3-80e2-3edc40e85c1e.jpg?v=1726226953&width=823
 Apple/iphone 16 128GB/2900/https://asiamall.asiacell.com/media/catalog/product/l/d/ld0006166708_2.jpg
 Apple/iphone 15 128GB/aaa/https://cdn.shortpixel.ai/spai/q_glossy+ret_img+to_webp/mobizil.com/wp-content/uploads/2023/09/iPhone-15-3.jpg
 Apple/iphone 14 128GB/aaa/https://www.phonemart.ng/wp-content/uploads/2023/04/03.jpg.webp
