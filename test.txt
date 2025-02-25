@@ -4,17 +4,17 @@ samsung/S24 ultra 512|12/aaa/https://sbitany.com/image/cache/catalog/109-634-004
 samsung/S23 ultra 256|12/2720/https://media-ik.croma.com/prod/https://media.croma.com/image/upload/v1709103161/Croma%20Assets/Communication/Mobiles/Images/275155_z2t6g2.png?tr=w-600
 samsung/A55 256|12/1270/https://kaza.com.eg/pub/media/catalog/product/cache/2f071798f77b0deb4c04afd283b2ac15/l/a/layer_2_3.jpg
 samsung/A55 256|8/1240/https://kaza.com.eg/pub/media/catalog/product/cache/2f071798f77b0deb4c04afd283b2ac15/l/a/layer_2_3.jpg
-samsung/A35 128|8/880/https://961souq.com/cdn/shop/files/SM-A35-iceblue_53ad151b-56aa-476b-a446-c12639b46b75.jpg?v=1710597245
+samsung/A35 128|8/880/https://m.media-amazon.com/images/I/614c+lTK3iL.jpg
 samsung/A25 128|6/680/https://cdn.mart.ps/244566-thickbox_default/samsung-galaxy-a25-128gb-6gb-ram-%D9%83%D9%81%D8%A7%D9%84%D8%A9-%D8%B3%D9%86%D8%A9.jpg
-samsung/A16 128|6/550/https://econtent.o2.co.uk/o/econtent/media/get/ff0037cf-f7bc-4ca6-bde5-779c9cbb9c2b
+samsung/A16 128|6/540/https://econtent.o2.co.uk/o/econtent/media/get/ff0037cf-f7bc-4ca6-bde5-779c9cbb9c2b
 samsung/A16 128|4/530/https://econtent.o2.co.uk/o/econtent/media/get/ff0037cf-f7bc-4ca6-bde5-779c9cbb9c2b
 samsung/TAP A9 64|4/380/https://oplayce.ci/cdn/shop/files/samsung-galaxy-tab-a9_5_1024x.jpg?v=1717431017
 samsung/A06 128|4/350/https://www.jibalzone.com/media/7389/conversions/6704ddec150e1_193679_2024-slider.jpg
-samsung/A06 64|4/310/https://www.jibalzone.com/media/7389/conversions/6704ddec150e1_193679_2024-slider.jpg
+samsung/A06 64|4/300/https://www.jibalzone.com/media/7389/conversions/6704ddec150e1_193679_2024-slider.jpg
 samsung/Galaxy Fit 3/180/https://www.tmt.my/data/editor/sc-product/15959/SAMSUNG-GALAXY-FIT-3-TMT.jpg
 MI/Note 14 pro 256|8/940/https://www.giztop.com/media/catalog/product/cache/97cc1143d2e20f2b0c8ea91aaa12053c/r/e/redmi_note_14_pro.png
 MI/Note 14 pro 512|12/1110/https://www.giztop.com/media/catalog/product/cache/97cc1143d2e20f2b0c8ea91aaa12053c/r/e/redmi_note_14_pro.png
-MI/Note 14  256|8/630/https://cdn.gadgetbytenepal.com/wp-content/uploads/2025/01/Redmi-Note-14-4G-1.jpg
+MI/Note 14  256|8/610/https://cdn.gadgetbytenepal.com/wp-content/uploads/2025/01/Redmi-Note-14-4G-1.jpg
 MI/poco X7 pro 512|12/1320/https://cdn.shortpixel.ai/spai/q_glossy+ret_img+to_webp/mobizil.com/wp-content/uploads/2025/01/Xiaomi-Poco-X7-Pro.jpg
 MI/Note 13 pro 512|12/960/https://cdn.shortpixel.ai/spai/q_glossy+ret_img+to_webp/mobizil.com/wp-content/uploads/2024/01/Xiaomi-Redmi-Note-13-Pro-4G.jpg
 MI/Note 13 pro PLUS 512|12/1320/https://mobizil.com/wp-content/uploads/2023/11/Xiaomi-Redmi-Note-13-Pro-Plus.jpg
@@ -25,10 +25,11 @@ MI/POCO X6 pro 256|12 /1000/https://dzairtic.dz/wp-content/uploads/2024/06/xiaom
 MI/POCO F6 PRO 512|12 /1780/https://www.phoneshock.it/wp-content/uploads/2024/07/15501222.jpeg
 MI/A3 pro 128|4/350/https://slot.ng/media/catalog/product/cache/6c9546999eea2989c96b137b8fca9df6/x/i/xiaomi_redmi_a3x_3gb-1.png
 MI/redmi pad SE 128|6/470/https://api.mistore-eg.com/storage/uploads/eng_pl_Tablet-Redmi-Pad-SE-8-7-4G-4-128GB-Sky-Blue-2892_1-1729075248.webp
-MI/14C 256|8/410/https://www.hemfrance.com/39078-thickbox_default/xiaomi-redmi-14c-688-128-gb-6-gb-ram-green.jpg
-MI/14C 128|6/390/https://www.hemfrance.com/39078-thickbox_default/xiaomi-redmi-14c-688-128-gb-6-gb-ram-green.jpg
+MI/SE 11" 256|8/600/https://www.celletronic.com/wp-content/uploads/2023/09/xiaomi-redmi-pad-se-11-0-6gb-ram-128gb-wifi-gris.jpg
+MI/14C 256|8/400/https://www.hemfrance.com/39078-thickbox_default/xiaomi-redmi-14c-688-128-gb-6-gb-ram-green.jpg
+MI/14C 128|6/aaa/https://www.hemfrance.com/39078-thickbox_default/xiaomi-redmi-14c-688-128-gb-6-gb-ram-green.jpg
 MI/14C 128|4/340/https://www.hemfrance.com/39078-thickbox_default/xiaomi-redmi-14c-688-128-gb-6-gb-ram-green.jpg
-MI/redmi 13 256|8/470/https://api.mistore-eg.com/storage/uploads/Redmi-13-Noir-1729150005.png
+MI/redmi 13 256|8/460/https://api.mistore-eg.com/storage/uploads/Redmi-13-Noir-1729150005.png
 MI/13C 256|8/aaa/https://cdn-iibnp.nitrocdn.com/VjyilAmBtWmZaLojjwWFayaMdinRRPlg/assets/images/optimized/rev-f0d6867/www.ourfriday.co.uk/image/cache/catalog/Xiaomi/xiaomi-redmi-13c-blue-1-800x800h.png
 MI/extender AC1200/100/https://www.smartbox.am/webroot/myfiles/images/products/ac1200/3ffafe36-ccb4-4dfe-87db-2f546a39b1b5.png
 Apple/16 pro max 256GB/4630/https://mac-center.com.pr/cdn/shop/files/iPhone_16_Pro_Max_Desert_Titanium_PDP_Image_Position_1__en-US_bf24ca74-a053-42d3-80e2-3edc40e85c1e.jpg?v=1726226953&width=823
@@ -43,6 +44,7 @@ Apple/ipad 10 64GB/aaa/https://realplaza.vtexassets.com/arquivos/ids/33743614-80
 Apple/ipad 9 64GB/aaa/https://cdsassets.apple.com/live/SZLF0YNV/images/sp/111898_sp849-ipad-9gen-480.png
 Apple/20W cdata/70/https://atoz.ps/media/catalog/product/cache/80ae6a42c65321efa11f489c1d538fd0/o/r/original_apple_c-data_20w_charger_1_.jpg
 Apple/Airpods 2/375/https://rptech.qa/cdn/shop/products/MV7N2_04_2048x.jpg?v=1661414544
+Tecno/GO 1/64|3/290/https://authentico.pk/cdn/shop/files/tecno_spark_go_1_green.webp?v=1739195433
 Tecno/Camon 20 premier 5G 512|16/950/https://cdn.mart.ps/247862-thickbox_default/tecno-camon-20-premier-5g-512-8gb.jpg
 Tecno/spark 20 pro 256|16/550/https://d3fyizz0b46qgr.cloudfront.net/global/spark-20-pro/product/jin.png
 Tecno/spark 20C 256|8/380/https://tech101.com.ph/wp-content/uploads/2024/01/Black-25.jpg
