@@ -7,7 +7,7 @@
     <style>
         :root {
             --primary-color: #2c3e50;
-            --secondary-color: #3498db;
+            --secondary-color: #27ae60;
         }
 
         * {
@@ -28,7 +28,6 @@
             width: 100%;
         }
 
-        /* قسم المنتجات */
         .products-section {
             flex: 3;
             background: white;
@@ -87,7 +86,6 @@
             margin-bottom: 10px;
         }
 
-        /* قسم الفاتورة */
         .invoice-section {
             flex: 1;
             background: white;
@@ -171,39 +169,45 @@
             <div class="total-section">
                 <div>عدد الاصناف: <span id="totalItems">0</span></div>
                 <div>الكمية الإجمالية: <span id="totalQty">0</span></div>
-                <div>المبلغ الإجمالي: <span id="totalAmount">0.00</span> ر.س</div>
+                <div>المبلغ الإجمالي: <span id="totalAmount">0.00</span> ₪</div>
             </div>
             <button class="print-btn" onclick="printInvoice()">طباعة الفاتورة</button>
         </div>
     </div>
 
     <script>
-        // بيانات الفاتورة
         let invoiceItems = [];
         let products = [];
 
-        // جلب البيانات من GitHub
         async function fetchProducts() {
-            const response = await fetch('https://raw.githubusercontent.com/yourusername/yourrepo/main/test.txt');
-            const data = await response.text();
-            products = data.split('\n').map(line => {
-                const [category, name, price, qty, image] = line.split('|');
-                return {
-                    category,
-                    name,
-                    price: parseFloat(price),
-                    qty: parseInt(qty),
-                    image
-                };
-            });
-            initFilters();
-            showProducts('all');
+            try {
+                const response = await fetch('https://raw.githubusercontent.com/yourusername/yourrepo/main/test.txt');
+                const data = await response.text();
+                products = data.split('\n').map(line => {
+                    const parts = line.split('/');
+                    if(parts.length < 4 || isNaN(parts[2])) return null;
+                    
+                    return {
+                        category: parts[0].trim(),
+                        name: parts[1].trim(),
+                        price: parseFloat(parts[2]),
+                        image: parts[3].trim()
+                    };
+                }).filter(Boolean);
+                
+                initFilters();
+                showProducts('all');
+            } catch (error) {
+                console.error('حدث خطأ في جلب البيانات:', error);
+                alert('تعذر تحميل المنتجات، الرجاء التحقق من اتصال الإنترنت!');
+            }
         }
 
-        // تهيئة الفلاتر
         function initFilters() {
             const categories = [...new Set(products.map(p => p.category))];
             const filtersContainer = document.querySelector('.filters');
+            filtersContainer.innerHTML = '<button class="filter-btn active" data-category="all" onclick="filterProducts(\'all\')">الكل</button>';
+            
             categories.forEach(cat => {
                 const btn = document.createElement('button');
                 btn.className = 'filter-btn';
@@ -214,7 +218,6 @@
             });
         }
 
-        // تصفية المنتجات
         function filterProducts(category) {
             document.querySelectorAll('.filter-btn').forEach(btn => 
                 btn.classList.remove('active'));
@@ -222,7 +225,6 @@
             showProducts(category);
         }
 
-        // عرض المنتجات
         function showProducts(category) {
             const filtered = category === 'all' ? products : products.filter(p => p.category === category);
             const grid = document.querySelector('.products-grid');
@@ -230,13 +232,11 @@
                 <div class="product-card" onclick="addToInvoice(${JSON.stringify(product)})">
                     <img src="${product.image}" class="product-image" alt="${product.name}">
                     <h3>${product.name}</h3>
-                    <p>السعر: ${product.price} ر.س</p>
-                    <p>المتوفر: ${product.qty}</p>
+                    <p>السعر: ${product.price.toFixed(2)} ₪</p>
                 </div>
             `).join('');
         }
 
-        // إضافة إلى الفاتورة
         function addToInvoice(product) {
             const existing = invoiceItems.find(item => item.name === product.name);
             if (existing) {
@@ -247,40 +247,38 @@
             updateInvoice();
         }
 
-        // تحديث الفاتورة
         function updateInvoice() {
             const itemsContainer = document.querySelector('.invoice-items');
             itemsContainer.innerHTML = invoiceItems.map(item => `
                 <div class="invoice-item">
                     <div>${item.name}</div>
-                    <div>${item.qty} × ${item.price} ر.س</div>
-                    <div>${(item.qty * item.price).toFixed(2)} ر.س</div>
+                    <div>${item.qty} × ${item.price.toFixed(2)} ₪</div>
+                    <div>${(item.qty * item.price).toFixed(2)} ₪</div>
                 </div>
             `).join('');
 
             document.getElementById('totalItems').textContent = invoiceItems.length;
             document.getElementById('totalQty').textContent = invoiceItems.reduce((sum, item) => sum + item.qty, 0);
             document.getElementById('totalAmount').textContent = 
-                invoiceItems.reduce((sum, item) => sum + (item.qty * item.price), 0).toFixed(2);
+                invoiceItems.reduce((sum, item) => sum + (item.qty * item.price), 0).toFixed(2) + ' ₪';
         }
 
-        // طباعة الفاتورة
         function printInvoice() {
             const printContent = `
                 <div class="invoice-print" style="width:80mm; padding:10px;">
                     <h2 style="text-align:center">شركة المبيعات الحديثة</h2>
-                    <div style="text-align:center">${new Date().toLocaleDateString('ar-SA')}</div>
+                    <div style="text-align:center">${new Date().toLocaleDateString('ar-IL')}</div>
                     <hr>
                     ${invoiceItems.map(item => `
                         <div style="display:flex; justify-content:space-between; margin:5px 0;">
                             <div>${item.name}</div>
-                            <div>${item.qty} × ${item.price}</div>
-                            <div>${(item.qty * item.price).toFixed(2)} ر.س</div>
+                            <div>${item.qty} × ${item.price.toFixed(2)} ₪</div>
+                            <div>${(item.qty * item.price).toFixed(2)} ₪</div>
                         </div>
                     `).join('')}
                     <hr>
                     <div style="text-align:center; margin-top:10px;">
-                        الإجمالي: ${document.getElementById('totalAmount').textContent} ر.س
+                        الإجمالي: ${document.getElementById('totalAmount').textContent}
                     </div>
                 </div>
             `;
@@ -291,19 +289,19 @@
             printWindow.print();
         }
 
-        // تحديث التاريخ والوقت
         function updateDateTime() {
             const options = { 
                 weekday: 'long', 
                 year: 'numeric', 
                 month: 'long', 
-                day: 'numeric' 
+                day: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit'
             };
             document.getElementById('datetime').textContent = 
-                new Date().toLocaleDateString('ar-SA', options);
+                new Date().toLocaleDateString('ar-IL', options);
         }
 
-        // التشغيل الأولي
         fetchProducts();
         updateDateTime();
         setInterval(updateDateTime, 1000);
