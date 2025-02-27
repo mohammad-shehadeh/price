@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>نظام نقاط البيع المتكامل</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+        }
+
+        * {
+            box-sizing: border-box;
+            font-family: 'Tajawal', sans-serif;
+        }
+
+        body {
+            margin: 0;
+            padding: 20px;
+            background: #f5f6fa;
+            display: flex;
+        }
+
+        .container {
+            display: flex;
+            gap: 20px;
+            width: 100%;
+        }
+
+        /* قسم المنتجات */
+        .products-section {
+            flex: 3;
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+        }
+
+        .filters {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 8px 20px;
+            border: none;
+            border-radius: 25px;
+            background: #ecf0f1;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .filter-btn.active {
+            background: var(--secondary-color);
+            color: white;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+
+        .product-card {
+            border: 1px solid #ddd;
+            border-radius: 12px;
+            padding: 15px;
+            text-align: center;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 150px;
+            object-fit: contain;
+            margin-bottom: 10px;
+        }
+
+        /* قسم الفاتورة */
+        .invoice-section {
+            flex: 1;
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+            min-width: 400px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .invoice-header {
+            text-align: center;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 15px;
+            margin-bottom: 15px;
+        }
+
+        .invoice-items {
+            flex: 1;
+            overflow-y: auto;
+            margin-bottom: 15px;
+        }
+
+        .invoice-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .total-section {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: auto;
+        }
+
+        .print-btn {
+            background: var(--secondary-color);
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            width: 100%;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 15px;
+        }
+
+        @media print {
+            body *:not(.invoice-print) {
+                display: none;
+            }
+
+            .invoice-print {
+                width: 80mm !important;
+                font-size: 12px;
+                padding: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- قسم المنتجات -->
+        <div class="products-section">
+            <div class="filters">
+                <button class="filter-btn active" data-category="all">الكل</button>
+            </div>
+            <div class="products-grid"></div>
+        </div>
+
+        <!-- قسم الفاتورة -->
+        <div class="invoice-section">
+            <div class="invoice-header">
+                <h2>فاتورة البيع</h2>
+                <div id="datetime"></div>
+            </div>
+            <div class="invoice-items"></div>
+            <div class="total-section">
+                <div>عدد الاصناف: <span id="totalItems">0</span></div>
+                <div>الكمية الإجمالية: <span id="totalQty">0</span></div>
+                <div>المبلغ الإجمالي: <span id="totalAmount">0.00</span> ر.س</div>
+            </div>
+            <button class="print-btn" onclick="printInvoice()">طباعة الفاتورة</button>
+        </div>
+    </div>
+
+    <script>
+        // بيانات الفاتورة
+        let invoiceItems = [];
+        let products = [];
+
+        // جلب البيانات من GitHub
+        async function fetchProducts() {
+            const response = await fetch('https://raw.githubusercontent.com/yourusername/yourrepo/main/test.txt');
+            const data = await response.text();
+            products = data.split('\n').map(line => {
+                const [category, name, price, qty, image] = line.split('|');
+                return {
+                    category,
+                    name,
+                    price: parseFloat(price),
+                    qty: parseInt(qty),
+                    image
+                };
+            });
+            initFilters();
+            showProducts('all');
+        }
+
+        // تهيئة الفلاتر
+        function initFilters() {
+            const categories = [...new Set(products.map(p => p.category))];
+            const filtersContainer = document.querySelector('.filters');
+            categories.forEach(cat => {
+                const btn = document.createElement('button');
+                btn.className = 'filter-btn';
+                btn.textContent = cat;
+                btn.dataset.category = cat;
+                btn.onclick = () => filterProducts(cat);
+                filtersContainer.appendChild(btn);
+            });
+        }
+
+        // تصفية المنتجات
+        function filterProducts(category) {
+            document.querySelectorAll('.filter-btn').forEach(btn => 
+                btn.classList.remove('active'));
+            document.querySelector(`[data-category="${category}"]`).classList.add('active');
+            showProducts(category);
+        }
+
+        // عرض المنتجات
+        function showProducts(category) {
+            const filtered = category === 'all' ? products : products.filter(p => p.category === category);
+            const grid = document.querySelector('.products-grid');
+            grid.innerHTML = filtered.map(product => `
+                <div class="product-card" onclick="addToInvoice(${JSON.stringify(product)})">
+                    <img src="${product.image}" class="product-image" alt="${product.name}">
+                    <h3>${product.name}</h3>
+                    <p>السعر: ${product.price} ر.س</p>
+                    <p>المتوفر: ${product.qty}</p>
+                </div>
+            `).join('');
+        }
+
+        // إضافة إلى الفاتورة
+        function addToInvoice(product) {
+            const existing = invoiceItems.find(item => item.name === product.name);
+            if (existing) {
+                existing.qty++;
+            } else {
+                invoiceItems.push({...product, qty: 1});
+            }
+            updateInvoice();
+        }
+
+        // تحديث الفاتورة
+        function updateInvoice() {
+            const itemsContainer = document.querySelector('.invoice-items');
+            itemsContainer.innerHTML = invoiceItems.map(item => `
+                <div class="invoice-item">
+                    <div>${item.name}</div>
+                    <div>${item.qty} × ${item.price} ر.س</div>
+                    <div>${(item.qty * item.price).toFixed(2)} ر.س</div>
+                </div>
+            `).join('');
+
+            document.getElementById('totalItems').textContent = invoiceItems.length;
+            document.getElementById('totalQty').textContent = invoiceItems.reduce((sum, item) => sum + item.qty, 0);
+            document.getElementById('totalAmount').textContent = 
+                invoiceItems.reduce((sum, item) => sum + (item.qty * item.price), 0).toFixed(2);
+        }
+
+        // طباعة الفاتورة
+        function printInvoice() {
+            const printContent = `
+                <div class="invoice-print" style="width:80mm; padding:10px;">
+                    <h2 style="text-align:center">شركة المبيعات الحديثة</h2>
+                    <div style="text-align:center">${new Date().toLocaleDateString('ar-SA')}</div>
+                    <hr>
+                    ${invoiceItems.map(item => `
+                        <div style="display:flex; justify-content:space-between; margin:5px 0;">
+                            <div>${item.name}</div>
+                            <div>${item.qty} × ${item.price}</div>
+                            <div>${(item.qty * item.price).toFixed(2)} ر.س</div>
+                        </div>
+                    `).join('')}
+                    <hr>
+                    <div style="text-align:center; margin-top:10px;">
+                        الإجمالي: ${document.getElementById('totalAmount').textContent} ر.س
+                    </div>
+                </div>
+            `;
+
+            const printWindow = window.open('', '_blank');
+            printWindow.document.write(printContent);
+            printWindow.document.close();
+            printWindow.print();
+        }
+
+        // تحديث التاريخ والوقت
+        function updateDateTime() {
+            const options = { 
+                weekday: 'long', 
+                year: 'numeric', 
+                month: 'long', 
+                day: 'numeric' 
+            };
+            document.getElementById('datetime').textContent = 
+                new Date().toLocaleDateString('ar-SA', options);
+        }
+
+        // التشغيل الأولي
+        fetchProducts();
+        updateDateTime();
+        setInterval(updateDateTime, 1000);
+    </script>
+</body>
+</html>
