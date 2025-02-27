@@ -58,7 +58,7 @@
     <script>
         async function fetchProducts() {
             const response = await fetch('https://raw.githubusercontent.com/username/repository/main/test.txt');
-            const data = await response.text();
+            const data = await response.text.txt();
             const lines = data.split('\n');
             const productList = document.getElementById('product-list');
             
