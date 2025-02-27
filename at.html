@@ -97,13 +97,6 @@
             flex-direction: column;
         }
 
-        .invoice-header {
-            text-align: center;
-            border-bottom: 2px solid #eee;
-            padding-bottom: 15px;
-            margin-bottom: 15px;
-        }
-
         .invoice-items {
             flex: 1;
             overflow-y: auto;
@@ -123,30 +116,6 @@
             border-radius: 10px;
             margin-top: auto;
         }
-
-        .print-btn {
-            background: var(--secondary-color);
-            color: white;
-            padding: 12px;
-            border: none;
-            border-radius: 8px;
-            width: 100%;
-            cursor: pointer;
-            font-size: 16px;
-            margin-top: 15px;
-        }
-
-        @media print {
-            body *:not(.invoice-print) {
-                display: none;
-            }
-
-            .invoice-print {
-                width: 80mm !important;
-                font-size: 12px;
-                padding: 5px;
-            }
-        }
     </style>
 </head>
 <body>
@@ -155,18 +124,15 @@
             <div class="filters"></div>
             <div class="products-grid"></div>
         </div>
+
         <div class="invoice-section">
-            <div class="invoice-header">
-                <h2>فاتورة البيع</h2>
-                <div id="datetime"></div>
-            </div>
+            <h2>فاتورة البيع</h2>
             <div class="invoice-items"></div>
             <div class="total-section">
-                <div>عدد الاصناف: <span id="totalItems">0</span></div>
+                <div>عدد الأصناف: <span id="totalItems">0</span></div>
                 <div>الكمية الإجمالية: <span id="totalQty">0</span></div>
                 <div>المبلغ الإجمالي: <span id="totalAmount">0.00</span> ₪</div>
             </div>
-            <button class="print-btn" onclick="printInvoice()">طباعة الفاتورة</button>
         </div>
     </div>
 
@@ -174,39 +140,66 @@
         let products = [];
         let invoiceItems = [];
 
-        window.onload = () => {
-            loadProductsFromFile('test.txt');
-        };
-
-        function loadProductsFromFile(fileName) {
-            fetch(fileName)
+        window.addEventListener('load', () => {
+            fetch('test.txt')
                 .then(response => response.text())
                 .then(data => {
-                    products = data.split('\n').map(line => {
+                    products = data.trim().split('\n').map(line => {
                         let parts = line.split('/');
-                        return { category: parts[0].trim(), name: parts[1].trim(), price: parseFloat(parts[2].trim()), image: parts.slice(3).join('/').trim() };
+                        return { category: parts[0], name: parts[1], price: parseFloat(parts[2]), image: parts.slice(3).join('/') };
                     });
                     initFilters();
                     showProducts('all');
-                });
+                })
+                .catch(error => console.error('Error:', error));
+        });
+
+        function initFilters() {
+            const categories = [...new Set(products.map(p => p.category))];
+            const filtersContainer = document.querySelector('.filters');
+            filtersContainer.innerHTML = '<button class="filter-btn active" onclick="showProducts(\'all\')">الكل</button>';
+            categories.forEach(cat => {
+                let btn = document.createElement('button');
+                btn.className = 'filter-btn';
+                btn.textContent = cat;
+                btn.onclick = () => showProducts(cat);
+                filtersContainer.appendChild(btn);
+            });
         }
 
         function showProducts(category) {
+            const filtered = category === 'all' ? products : products.filter(p => p.category === category);
             const grid = document.querySelector('.products-grid');
-            grid.innerHTML = products.filter(p => category === 'all' || p.category === category).map(product => `
-                <div class="product-card" data-name="${product.name}" data-price="${product.price}" onclick="addToInvoice(this)">
-                    <img src="${product.image}" class="product-image" alt="${product.name}">
-                    <h3>${product.name}</h3>
-                    <p>السعر: ${product.price.toFixed(2)} ₪</p>
+            grid.innerHTML = filtered.map(p => `
+                <div class="product-card" onclick='addToInvoice(${JSON.stringify(p)})'>
+                    <img src="${p.image}" class="product-image" alt="${p.name}">
+                    <h3>${p.name}</h3>
+                    <p>السعر: ${p.price.toFixed(2)} ₪</p>
                 </div>
             `).join('');
         }
 
-        function addToInvoice(element) {
-            let name = element.getAttribute('data-name');
-            let price = parseFloat(element.getAttribute('data-price'));
-            invoiceItems.push({ name, price, quantity: 1 });
-            console.log(invoiceItems);
+        function addToInvoice(product) {
+            let item = invoiceItems.find(i => i.name === product.name);
+            if (item) {
+                item.qty++;
+            } else {
+                invoiceItems.push({ ...product, qty: 1 });
+            }
+            updateInvoice();
+        }
+
+        function updateInvoice() {
+            const container = document.querySelector('.invoice-items');
+            container.innerHTML = invoiceItems.map(item => `
+                <div class="invoice-item">
+                    <span>${item.name} (x${item.qty})</span>
+                    <span>${(item.qty * item.price).toFixed(2)} ₪</span>
+                </div>
+            `).join('');
+            document.getElementById('totalItems').textContent = invoiceItems.length;
+            document.getElementById('totalQty').textContent = invoiceItems.reduce((sum, i) => sum + i.qty, 0);
+            document.getElementById('totalAmount').textContent = invoiceItems.reduce((sum, i) => sum + i.qty * i.price, 0).toFixed(2);
         }
     </script>
 </body>
