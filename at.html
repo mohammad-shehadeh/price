@@ -110,6 +110,13 @@
             margin-bottom: 15px;
         }
 
+        .invoice-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+
         .total-section {
             background: #f8f9fa;
             padding: 15px;
@@ -130,18 +137,14 @@
         }
 
         @media print {
-            body * {
+            body *:not(.invoice-print) {
                 display: none;
             }
-            .invoice-section {
-                display: block !important;
-                width: 80mm;
+
+            .invoice-print {
+                width: 80mm !important;
                 font-size: 12px;
                 padding: 5px;
-                text-align: right;
-            }
-            .print-btn {
-                display: none;
             }
         }
     </style>
@@ -159,50 +162,51 @@
             </div>
             <div class="invoice-items"></div>
             <div class="total-section">
-                <div>عدد الأصناف: <span id="totalItems">0</span></div>
+                <div>عدد الاصناف: <span id="totalItems">0</span></div>
                 <div>الكمية الإجمالية: <span id="totalQty">0</span></div>
                 <div>المبلغ الإجمالي: <span id="totalAmount">0.00</span> ₪</div>
             </div>
             <button class="print-btn" onclick="printInvoice()">طباعة الفاتورة</button>
         </div>
     </div>
+
     <script>
         let products = [];
-        document.addEventListener('DOMContentLoaded', () => {
-            fetch('test.txt')
+        let invoiceItems = [];
+
+        window.onload = () => {
+            loadProductsFromFile('test.txt');
+        };
+
+        function loadProductsFromFile(fileName) {
+            fetch(fileName)
                 .then(response => response.text())
                 .then(data => {
                     products = data.split('\n').map(line => {
-                        const parts = line.split('/').map(p => p.trim());
-                        return parts.length >= 4 ? {
-                            category: parts[0],
-                            name: parts[1],
-                            price: parseFloat(parts[2]),
-                            image: parts.slice(3).join('/')
-                        } : null;
-                    }).filter(p => p);
+                        let parts = line.split('/');
+                        return { category: parts[0].trim(), name: parts[1].trim(), price: parseFloat(parts[2].trim()), image: parts.slice(3).join('/').trim() };
+                    });
                     initFilters();
                     showProducts('all');
                 });
-        });
-        function initFilters() {
-            const categories = ['الكل', ...new Set(products.map(p => p.category))];
-            document.querySelector('.filters').innerHTML = categories.map(cat => 
-                `<button class="filter-btn" onclick="showProducts('${cat}')">${cat}</button>`
-            ).join('');
         }
+
         function showProducts(category) {
-            const filtered = category === 'الكل' ? products : products.filter(p => p.category === category);
-            document.querySelector('.products-grid').innerHTML = filtered.map(product => 
-                `<div class="product-card">
-                    <img src="${product.image}" class="product-image">
+            const grid = document.querySelector('.products-grid');
+            grid.innerHTML = products.filter(p => category === 'all' || p.category === category).map(product => `
+                <div class="product-card" data-name="${product.name}" data-price="${product.price}" onclick="addToInvoice(this)">
+                    <img src="${product.image}" class="product-image" alt="${product.name}">
                     <h3>${product.name}</h3>
                     <p>السعر: ${product.price.toFixed(2)} ₪</p>
-                </div>`
-            ).join('');
+                </div>
+            `).join('');
         }
-        function printInvoice() {
-            window.print();
+
+        function addToInvoice(element) {
+            let name = element.getAttribute('data-name');
+            let price = parseFloat(element.getAttribute('data-price'));
+            invoiceItems.push({ name, price, quantity: 1 });
+            console.log(invoiceItems);
         }
     </script>
 </body>
