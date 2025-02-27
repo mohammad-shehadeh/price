@@ -110,13 +110,6 @@
             margin-bottom: 15px;
         }
 
-        .invoice-item {
-            display: flex;
-            justify-content: space-between;
-            padding: 10px 0;
-            border-bottom: 1px solid #eee;
-        }
-
         .total-section {
             background: #f8f9fa;
             padding: 15px;
@@ -137,29 +130,28 @@
         }
 
         @media print {
-            body *:not(.invoice-print) {
+            body * {
                 display: none;
             }
-
-            .invoice-print {
-                width: 80mm !important;
+            .invoice-section {
+                display: block !important;
+                width: 80mm;
                 font-size: 12px;
                 padding: 5px;
+                text-align: right;
+            }
+            .print-btn {
+                display: none;
             }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <!-- قسم المنتجات -->
         <div class="products-section">
-            <div class="filters">
-                <button class="filter-btn active" data-category="all">الكل</button>
-            </div>
+            <div class="filters"></div>
             <div class="products-grid"></div>
         </div>
-
-        <!-- قسم الفاتورة -->
         <div class="invoice-section">
             <div class="invoice-header">
                 <h2>فاتورة البيع</h2>
@@ -167,94 +159,51 @@
             </div>
             <div class="invoice-items"></div>
             <div class="total-section">
-                <div>عدد الاصناف: <span id="totalItems">0</span></div>
+                <div>عدد الأصناف: <span id="totalItems">0</span></div>
                 <div>الكمية الإجمالية: <span id="totalQty">0</span></div>
                 <div>المبلغ الإجمالي: <span id="totalAmount">0.00</span> ₪</div>
             </div>
             <button class="print-btn" onclick="printInvoice()">طباعة الفاتورة</button>
         </div>
     </div>
-
     <script>
-        let invoiceItems = [];
         let products = [];
-
-        // تحميل المنتجات عند بدء التشغيل
-        window.addEventListener('load', () => {
-            loadProductsFromFile('test.txt');
-        });
-
-        function loadProductsFromFile(fileName) {
-            fetch(fileName)
-                .then(response => {
-                    if (!response.ok) throw new Error('فشل تحميل الملف');
-                    return response.text();
-                })
+        document.addEventListener('DOMContentLoaded', () => {
+            fetch('test.txt')
+                .then(response => response.text())
                 .then(data => {
-                    products = [];
-                    const lines = data.split('\n');
-                    
-                    lines.forEach(line => {
-                        if (line.trim() === '') return;
-                        const parts = line.split('/');
-                        
-                        if (parts.length >= 4) {
-                            const imageUrl = parts.slice(3).join('/').trim();
-                            products.push({
-                                category: parts[0].trim(),
-                                name: parts[1].trim(),
-                                price: parseFloat(parts[2].trim()),
-                                image: imageUrl
-                            });
-                        }
-                    });
-
+                    products = data.split('\n').map(line => {
+                        const parts = line.split('/').map(p => p.trim());
+                        return parts.length >= 4 ? {
+                            category: parts[0],
+                            name: parts[1],
+                            price: parseFloat(parts[2]),
+                            image: parts.slice(3).join('/')
+                        } : null;
+                    }).filter(p => p);
                     initFilters();
                     showProducts('all');
-                })
-                .catch(error => {
-                    console.error('Error:', error);
-                    alert('حدث خطأ في تحميل البيانات!');
                 });
-        }
-
-        // بقية الدوال بدون تغيير (initFilters, filterProducts, showProducts, etc.)
-
+        });
         function initFilters() {
-            const categories = [...new Set(products.map(p => p.category))];
-            const filtersContainer = document.querySelector('.filters');
-            filtersContainer.innerHTML = '<button class="filter-btn active" data-category="all" onclick="filterProducts(\'all\')">الكل</button>';
-            
-            categories.forEach(cat => {
-                const btn = document.createElement('button');
-                btn.className = 'filter-btn';
-                btn.textContent = cat;
-                btn.dataset.category = cat;
-                btn.onclick = () => filterProducts(cat);
-                filtersContainer.appendChild(btn);
-            });
+            const categories = ['الكل', ...new Set(products.map(p => p.category))];
+            document.querySelector('.filters').innerHTML = categories.map(cat => 
+                `<button class="filter-btn" onclick="showProducts('${cat}')">${cat}</button>`
+            ).join('');
         }
-
-        function filterProducts(category) {
-            document.querySelectorAll('.filter-btn').forEach(btn => 
-                btn.classList.remove('active'));
-            document.querySelector(`[data-category="${category}"]`).classList.add('active');
-            showProducts(category);
-        }
-
         function showProducts(category) {
-            const filtered = category === 'all' ? products : products.filter(p => p.category === category);
-            const grid = document.querySelector('.products-grid');
-            grid.innerHTML = filtered.map(product => `
-                <div class="product-card" onclick="addToInvoice(${JSON.stringify(product)})">
-                    <img src="${product.image}" class="product-image" alt="${product.name}">
+            const filtered = category === 'الكل' ? products : products.filter(p => p.category === category);
+            document.querySelector('.products-grid').innerHTML = filtered.map(product => 
+                `<div class="product-card">
+                    <img src="${product.image}" class="product-image">
                     <h3>${product.name}</h3>
                     <p>السعر: ${product.price.toFixed(2)} ₪</p>
-                </div>
-            `).join('');
+                </div>`
+            ).join('');
         }
-
-        // ... بقية الدوال كما هي (addToInvoice, updateInvoice, printInvoice, etc.)
+        function printInvoice() {
+            window.print();
+        }
     </script>
 </body>
 </html>
