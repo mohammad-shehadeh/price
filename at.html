@@ -208,7 +208,7 @@ async function fetchProducts() {
                     name,
                     price: parseFloat(price),
                     image,
-                    barcodes: JSON.parse(localStorage.getItem(name) || '[]')
+                    barcodes: JSON.parse(localStorage.getItem(name) || []
                 };
             });
 
