@@ -94,45 +94,28 @@
       display: flex;
       justify-content: space-between;
       padding: 12px 0;
-      border-bottom: 1px solid rgba(255,255,255,0.1);
+      border-bottom: 1px solid rgba(0,0,0,0.1);
     }
     .stats-box {
-      background: rgba(255,255,255,0.1);
+      background: rgba(0,0,0,0.05);
       padding: 15px;
       border-radius: 10px;
       margin: 10px 0;
     }
-    .barcode-item {
-      display: flex;
-      justify-content: space-between;
-      margin: 5px 0;
-      padding: 5px;
-      background: rgba(255,255,255,0.1);
-      border-radius: 5px;
-    }
-    #barcodeModal {
-      display: none;
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      background: white;
-      padding: 20px;
+    /* بسيط لعرض الأصناف السريعة */
+    .quick-items {
+      margin-top: 20px;
+      padding: 10px;
+      border: 1px solid #ddd;
       border-radius: 10px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.2);
-      z-index: 1000;
-      width: 300px;
+      background: #fff;
     }
-    /* تغطية الخلفية للمودال */
-    #modalOverlay {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: rgba(0, 0, 0, 0.3);
-      z-index: 900;
+    .quick-item {
+      padding: 5px 0;
+      border-bottom: 1px solid #eee;
+    }
+    .quick-item:last-child {
+      border-bottom: none;
     }
     button {
       cursor: pointer;
@@ -173,25 +156,17 @@
       </select>
     </div>
     <div class="products-grid" id="productsContainer"></div>
-  </div>
-
-  <!-- تغطية خلفية للمودال -->
-  <div id="modalOverlay" onclick="closeModal()"></div>
-
-  <!-- مودال إدارة الباركودات -->
-  <div id="barcodeModal">
-    <h3>إدارة الباركودات</h3>
-    <div id="barcodeList"></div>
-    <input type="text" id="newBarcode" placeholder="إضافة باركود جديد">
-    <button onclick="addBarcode()">➕ إضافة</button>
-    <button onclick="closeModal()">إغلاق</button>
+    <!-- منطقة لعرض الأصناف السريعة -->
+    <div class="quick-items" id="quickItems">
+      <h3>الأصناف السريعة</h3>
+      <!-- سيتم إدراج الأصناف هنا -->
+    </div>
   </div>
 
   <script>
     let cart = [];
     let products = [];
     let categories = new Set();
-    let currentProduct = null;
 
     // إظهار الصفحات
     function showPage(pageId) {
@@ -199,40 +174,49 @@
       document.getElementById(pageId).classList.add('active-page');
     }
 
-    // جلب المنتجات من ملف test.txt
+    // تعديل دالة جلب المنتجات وفقًا للمطلوب
     async function fetchProducts() {
       try {
+        // تغيير مسار الملف إلى الملف المحلي
         const response = await fetch('test.txt');
         if (!response.ok) throw new Error('فشل في جلب الملف');
+        
         const data = await response.text();
-        // تنظيف المنتجات وإزالة الأسطر الفارغة
         products = data.split('\n')
-          .filter(line => line.trim() !== '')
+          .filter(line => line.trim() !== '') // تجاهل الأسطر الفارغة
           .map(line => {
-            const parts = line.split('/');
-            if(parts.length < 4) return null; // التأكد من صحة البيانات
-            let [category, name, price, image] = parts.map(item => item.trim());
-            categories.add(category);
+            const [category, name, price, image] = line.split('/').map(item => item.trim());
+            
+            // التحقق من صحة البيانات
+            if (!category || !name || isNaN(price) || !image) {
+              console.error('بيانات غير صالحة في السطر:', line);
+              return null;
+            }
+            
+            // تخزين الباركود كنص (إذا كان موجودًا في localStorage)
             return {
               category,
               name,
               price: parseFloat(price),
               image,
-              barcodes: JSON.parse(localStorage.getItem(name) || '[]')
+              barcode: localStorage.getItem(name) || ''
             };
           })
-          .filter(item => item !== null);
+          .filter(product => product !== null); // تجاهل المنتجات غير الصالحة
+
+        renderProducts();
+        renderQuickItems();
         updateCategoryFilter();
-        filterProducts();
       } catch (error) {
         console.error('حدث خطأ في جلب البيانات:', error);
-        alert('خطأ في تحميل البيانات! تأكد من وجود ملف test.txt وبنيته صحيحة.');
+        alert('خطأ في تحميل البيانات! تأكد من وجود ملف test.txt');
       }
     }
 
     // تحديث قائمة الفئات
     function updateCategoryFilter() {
       const filter = document.getElementById('categoryFilter');
+      // إعادة إنشاء القائمة بناءً على الأصناف الموجودة
       filter.innerHTML = `<option value="">جميع الفئات</option>` +
         Array.from(categories).map(cat => `<option value="${cat}">${cat}</option>`).join('');
     }
@@ -241,17 +225,20 @@
     function filterProducts() {
       const searchTerm = document.getElementById('searchInput').value.toLowerCase();
       const selectedCategory = document.getElementById('categoryFilter').value;
+      
       const filtered = products.filter(product => {
+        // إضافة الفئة إلى مجموعة الفئات
+        categories.add(product.category);
         const matchesSearch = product.name.toLowerCase().includes(searchTerm) ||
-                              product.barcodes.some(b => b.toLowerCase().includes(searchTerm));
+                              product.barcode.toLowerCase().includes(searchTerm);
         const matchesCategory = !selectedCategory || product.category === selectedCategory;
         return matchesSearch && matchesCategory;
       });
       renderProducts(filtered);
     }
 
-    // عرض المنتجات في الصفحة
-    function renderProducts(productsToShow) {
+    // عرض المنتجات في صفحة إدارة المنتجات
+    function renderProducts(productsToShow = products) {
       const container = document.getElementById('productsContainer');
       container.innerHTML = productsToShow.map(product => `
         <div class="product-card">
@@ -259,58 +246,27 @@
           <h3>${product.name}</h3>
           <p>الفئة: ${product.category}</p>
           <p>السعر: ${product.price.toFixed(2)} ₪</p>
-          <div class="barcode-list">
-            ${product.barcodes.map(b => `<div class="barcode-item">${b}</div>`).join('')}
-          </div>
-          <button onclick="showBarcodeManager('${product.name}')">📊 إدارة الباركودات</button>
+          <p>الباركود: ${product.barcode || 'غير متوفر'}</p>
           <button onclick="addToCart(product)">➕ إضافة إلى السلة</button>
         </div>
       `).join('');
     }
 
-    // إدارة الباركودات
-    function showBarcodeManager(productName) {
-      currentProduct = products.find(p => p.name === productName);
-      if(!currentProduct) return;
-      const modal = document.getElementById('barcodeModal');
-      document.getElementById('barcodeList').innerHTML = currentProduct.barcodes.map(barcode => `
-        <div class="barcode-item">
-          <span>${barcode}</span>
-          <button onclick="removeBarcode('${barcode}')">🗑️</button>
-        </div>
-      `).join('');
-      // عرض المودال مع تغطية الخلفية
-      document.getElementById('modalOverlay').style.display = 'block';
-      modal.style.display = 'block';
-    }
-
-    function addBarcode() {
-      const newBarcode = document.getElementById('newBarcode').value.trim();
-      if (!newBarcode) return;
-      if (!currentProduct.barcodes.includes(newBarcode)) {
-        currentProduct.barcodes.push(newBarcode);
-        localStorage.setItem(currentProduct.name, JSON.stringify(currentProduct.barcodes));
-        showBarcodeManager(currentProduct.name);
-      }
-      document.getElementById('newBarcode').value = '';
-    }
-
-    function removeBarcode(barcode) {
-      currentProduct.barcodes = currentProduct.barcodes.filter(b => b !== barcode);
-      localStorage.setItem(currentProduct.name, JSON.stringify(currentProduct.barcodes));
-      showBarcodeManager(currentProduct.name);
-    }
-
-    function closeModal() {
-      document.getElementById('barcodeModal').style.display = 'none';
-      document.getElementById('modalOverlay').style.display = 'none';
-      filterProducts();
+    // عرض الأصناف السريعة في قسم منفصل (مثال بسيط)
+    function renderQuickItems() {
+      const container = document.getElementById('quickItems');
+      container.innerHTML = `<h3>الأصناف السريعة</h3>` +
+        products.map(product => `
+          <div class="quick-item">
+            <strong>${product.name}</strong> - ${product.price.toFixed(2)} ₪
+          </div>
+        `).join('');
     }
 
     // نظام السلة
     function addToCart(product) {
       const existingItem = cart.find(item => item.name === product.name);
-      if(existingItem) {
+      if (existingItem) {
         existingItem.quantity++;
       } else {
         cart.push({ ...product, quantity: 1 });
@@ -354,11 +310,11 @@
       document.getElementById('total').textContent = subtotal.toFixed(2);
     }
 
-    // نظام المسح الضوئي للباركود
+    // نظام المسح الضوئي للباركود في صفحة نقطة البيع
     document.getElementById('barcodeScanner').addEventListener('keypress', (e) => {
       if (e.key === 'Enter') {
         const barcode = e.target.value.trim();
-        const product = products.find(p => p.barcodes.includes(barcode));
+        const product = products.find(p => p.barcode === barcode);
         if (product) {
           addToCart(product);
         } else {
