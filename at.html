@@ -157,12 +157,21 @@ async function fetchProducts() {
             .filter(line => line.trim() !== '')
             .map(line => {
                 const [category, name, price, image] = line.split('/').map(item => item.trim());
+                
+                // جلب الباركودات من التخزين المحلي
+                let storedBarcodes = localStorage.getItem(name);
+                try {
+                    storedBarcodes = storedBarcodes ? JSON.parse(storedBarcodes) : [];
+                } catch {
+                    storedBarcodes = storedBarcodes ? [storedBarcodes] : [];
+                }
+                
                 return {
                     category,
                     name,
                     price: parseFloat(price),
                     image,
-                    barcode: localStorage.getItem(name) || ''
+                    barcodes: storedBarcodes
                 };
             });
 
@@ -185,13 +194,38 @@ function renderProducts() {
             <img src="${product.image}" alt="${product.name}" style="height:120px">
             <h3>${product.name}</h3>
             <p>السعر: ${product.price.toFixed(2)} ₪</p>
-            <input type="text" value="${product.barcode}" 
-                   onchange="updateBarcode('${product.name}', this.value)"
-                   placeholder="باركود">
+            <input type="text" value="${product.barcodes.join(', ')}" 
+                   onchange="updateBarcodes('${product.name}', this.value)"
+                   placeholder="أدخل الباركودات مفصولة بفواصل">
         `;
         container.appendChild(card);
     });
 }
+
+// تحديث الباركودات في التخزين المحلي
+function updateBarcodes(productName, barcodesStr) {
+    const barcodes = barcodesStr.split(',')
+        .map(b => b.trim())
+        .filter(b => b !== '');
+    
+    localStorage.setItem(productName, JSON.stringify(barcodes));
+    
+    const product = products.find(p => p.name === productName);
+    if (product) {
+        product.barcodes = barcodes;
+    }
+}
+
+// نظام المسح الضوئي (يدعم عدة باركودات)
+document.getElementById('barcodeScanner').addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') {
+        const barcode = e.target.value;
+        const product = products.find(p => p.barcodes.includes(barcode));
+        product ? addToCart(product) : alert('الباركود غير مسجل!');
+        e.target.value = '';
+    }
+});
+
 
 // إدارة السلة
 function addToCart(product) {
