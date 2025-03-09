@@ -8,17 +8,20 @@
             --primary-color: #2c3e50;
             --secondary-color: #27ae60;
         }
+
         body {
             font-family: 'Arial Arabic', Tahoma;
             margin: 0;
             padding: 20px;
             background: #f5f6fa;
         }
+
         .nav-bar {
             display: flex;
             gap: 15px;
             margin-bottom: 20px;
         }
+
         .nav-btn {
             padding: 12px 25px;
             border-radius: 25px;
@@ -27,6 +30,7 @@
             border: none;
             cursor: pointer;
         }
+
         .container {
             display: grid;
             grid-template-columns: 65% 35%;
@@ -34,6 +38,7 @@
             max-width: 1400px;
             margin: 0 auto;
         }
+
         .page {
             display: none;
             background: white;
@@ -41,45 +46,53 @@
             border-radius: 15px;
             box-shadow: 0 0 15px rgba(0,0,0,0.1);
         }
+
         .active-page {
             display: block;
         }
+
         .products-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
             gap: 15px;
             margin-top: 20px;
         }
+
         .product-card {
             border: 1px solid #ddd;
             border-radius: 10px;
             padding: 15px;
             transition: transform 0.2s;
         }
+
         .pos-interface {
             background: var(--primary-color);
             padding: 20px;
             border-radius: 15px;
             color: white;
         }
+
         .cart-item {
             display: flex;
             justify-content: space-between;
             padding: 12px 0;
             border-bottom: 1px solid rgba(255,255,255,0.1);
         }
+
         input, button {
             margin: 5px 0;
             padding: 8px;
             border-radius: 5px;
             border: 1px solid #ddd;
         }
+
         button {
             background: var(--secondary-color);
             color: white;
             border: none;
             cursor: pointer;
         }
+
         .stats-box {
             background: rgba(255,255,255,0.1);
             padding: 15px;
@@ -144,17 +157,15 @@ async function fetchProducts() {
             .filter(line => line.trim() !== '')
             .map(line => {
                 const [category, name, price, image] = line.split('/').map(item => item.trim());
-                // استرجاع مصفوفة الباركودات من localStorage أو تهيئتها كمصفوفة فارغة
-                let storedBarcodes = localStorage.getItem(name);
-                let barcodes = storedBarcodes ? JSON.parse(storedBarcodes) : [];
                 return {
                     category,
                     name,
                     price: parseFloat(price),
                     image,
-                    barcodes
+                    barcode: localStorage.getItem(name) || ''
                 };
             });
+
         renderProducts();
     } catch (error) {
         console.error('حدث خطأ في جلب البيانات:', error);
@@ -174,9 +185,9 @@ function renderProducts() {
             <img src="${product.image}" alt="${product.name}" style="height:120px">
             <h3>${product.name}</h3>
             <p>السعر: ${product.price.toFixed(2)} ₪</p>
-            <input type="text" value="${product.barcodes.join(',')}" 
+            <input type="text" value="${product.barcode}" 
                    onchange="updateBarcode('${product.name}', this.value)"
-                   placeholder="باركود (أكثر من واحد مفصول بفاصلة)">
+                   placeholder="باركود">
         `;
         container.appendChild(card);
     });
@@ -223,24 +234,19 @@ function adjustQuantity(productName, change) {
     updateCartDisplay();
 }
 
-// تحديث الباركودات (يمكن تخزين أكثر من باركود مفصول بفاصلة)
-function updateBarcode(productName, barcodeInput) {
-    let barcodes = barcodeInput.split(',').map(b => b.trim()).filter(b => b !== '');
-    localStorage.setItem(productName, JSON.stringify(barcodes));
+// نظام الباركود
+function updateBarcode(productName, barcode) {
+    localStorage.setItem(productName, barcode);
     const product = products.find(p => p.name === productName);
-    if (product) product.barcodes = barcodes;
+    if (product) product.barcode = barcode;
 }
 
-// نظام المسح الضوئي للباركود: البحث عن المنتج الذي يحتوي على الباركود ضمن مصفوفة الباركودات
+// نظام المسح الضوئي
 document.getElementById('barcodeScanner').addEventListener('keypress', (e) => {
     if (e.key === 'Enter') {
-        const barcode = e.target.value.trim();
-        const product = products.find(p => p.barcodes.includes(barcode));
-        if (product) {
-            addToCart(product);
-        } else {
-            alert('الباركود غير مسجل!');
-        }
+        const barcode = e.target.value;
+        const product = products.find(p => p.barcode === barcode);
+        product ? addToCart(product) : alert('الباركود غير مسجل!');
         e.target.value = '';
     }
 });
