@@ -202,18 +202,16 @@ async function fetchProducts() {
             .filter(line => line.trim() !== '')
             .map(line => {
                 const [category, name, price, image] = line.split('/').map(item => item.trim());
-                categories.add(category);
                 return {
                     category,
                     name,
                     price: parseFloat(price),
                     image,
-                    barcodes: JSON.parse(localStorage.getItem(name) || []
+                    barcode: localStorage.getItem(name) || ''
                 };
             });
 
-        updateCategoryFilter();
-        filterProducts();
+        renderProducts();
     } catch (error) {
         console.error('حدث خطأ في جلب البيانات:', error);
         alert('خطأ في تحميل البيانات! تأكد من وجود ملف test.txt');
