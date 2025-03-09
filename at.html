@@ -1,406 +1,425 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <title>نظام نقاط البيع المتكامل</title>
-    <style>
-        :root {
-            --primary-color: #2c3e50;
-            --secondary-color: #27ae60;
-        }
-
-        body {
-            font-family: 'Arial Arabic', Tahoma;
-            margin: 0;
-            padding: 20px;
-            background: #f5f6fa;
-        }
-
-        .nav-bar {
-            display: flex;
-            gap: 15px;
-            margin-bottom: 20px;
-        }
-
-        .nav-btn {
-            padding: 12px 25px;
-            border-radius: 25px;
-            background: var(--secondary-color);
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
-
-        .container {
-            display: grid;
-            grid-template-columns: 65% 35%;
-            gap: 20px;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .page {
-            display: none;
-            background: white;
-            padding: 20px;
-            border-radius: 15px;
-            box-shadow: 0 0 15px rgba(0,0,0,0.1);
-        }
-
-        .active-page {
-            display: block;
-        }
-
-        .search-filter {
-            margin-bottom: 20px;
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-        }
-
-        .search-input {
-            flex: 1;
-            padding: 8px;
-            border-radius: 25px;
-            border: 1px solid #ddd;
-            min-width: 250px;
-        }
-
-        .filter-select {
-            padding: 8px;
-            border-radius: 25px;
-            border: 1px solid #ddd;
-            background: white;
-        }
-
-        .products-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-            gap: 15px;
-            margin-top: 20px;
-        }
-
-        .product-card {
-            border: 1px solid #ddd;
-            border-radius: 10px;
-            padding: 15px;
-            transition: transform 0.2s;
-        }
-
-        .pos-interface {
-            background: var(--primary-color);
-            padding: 20px;
-            border-radius: 15px;
-            color: white;
-        }
-
-        .cart-item {
-            display: flex;
-            justify-content: space-between;
-            padding: 12px 0;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-        }
-
-        .stats-box {
-            background: rgba(255,255,255,0.1);
-            padding: 15px;
-            border-radius: 10px;
-            margin: 10px 0;
-        }
-
-        .barcode-item {
-            display: flex;
-            justify-content: space-between;
-            margin: 5px 0;
-            padding: 5px;
-            background: rgba(255,255,255,0.1);
-            border-radius: 5px;
-        }
-
-        #barcodeModal {
-            display: none;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 20px rgba(0,0,0,0.2);
-            z-index: 1000;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <title>نظام نقاط البيع المتكامل</title>
+  <style>
+    :root {
+      --primary-color: #2c3e50;
+      --secondary-color: #27ae60;
+    }
+    body {
+      font-family: 'Arial Arabic', Tahoma;
+      margin: 0;
+      padding: 20px;
+      background: #f5f6fa;
+    }
+    .nav-bar {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+    .nav-btn {
+      padding: 12px 25px;
+      border-radius: 25px;
+      background: var(--secondary-color);
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    .container {
+      display: grid;
+      grid-template-columns: 65% 35%;
+      gap: 20px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+    .page {
+      display: none;
+      background: white;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+    .active-page {
+      display: block;
+    }
+    .search-filter {
+      margin-bottom: 20px;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .search-input {
+      flex: 1;
+      padding: 8px;
+      border-radius: 25px;
+      border: 1px solid #ddd;
+      min-width: 250px;
+    }
+    .filter-select {
+      padding: 8px;
+      border-radius: 25px;
+      border: 1px solid #ddd;
+      background: white;
+    }
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 15px;
+      margin-top: 20px;
+    }
+    .product-card {
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 15px;
+      transition: transform 0.2s;
+    }
+    .product-card:hover {
+      transform: scale(1.02);
+    }
+    .product-card img {
+      width: 100%;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 5px;
+    }
+    .pos-interface {
+      background: var(--primary-color);
+      padding: 20px;
+      border-radius: 15px;
+      color: white;
+    }
+    .cart-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    .stats-box {
+      background: rgba(255,255,255,0.1);
+      padding: 15px;
+      border-radius: 10px;
+      margin: 10px 0;
+    }
+    .barcode-item {
+      display: flex;
+      justify-content: space-between;
+      margin: 5px 0;
+      padding: 5px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 5px;
+    }
+    #barcodeModal {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.2);
+      z-index: 1000;
+      width: 300px;
+    }
+    /* تغطية الخلفية للمودال */
+    #modalOverlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.3);
+      z-index: 900;
+    }
+    button {
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
-    <div class="nav-bar">
-        <button class="nav-btn" onclick="showPage('pos')">نقطة البيع</button>
-        <button class="nav-btn" onclick="showPage('products')">إدارة المنتجات</button>
-    </div>
+  <div class="nav-bar">
+    <button class="nav-btn" onclick="showPage('pos')">نقطة البيع</button>
+    <button class="nav-btn" onclick="showPage('products')">إدارة المنتجات</button>
+  </div>
 
-    <!-- صفحة نقطة البيع -->
-    <div id="pos" class="page active-page">
-        <div class="container">
-            <div>
-                <h2>💵 نقطة البيع</h2>
-                <input type="text" id="customerName" placeholder="اسم الزبون">
-                <input type="text" class="search-input" placeholder="مسح الباركود..." id="barcodeScanner">
-                
-                <div id="cartItems" style="max-height: 400px; overflow-y: auto;"></div>
-                
-                <div class="stats-box">
-                    <p>عدد الأصناف: <span id="totalItems">0</span></p>
-                    <p>إجمالي الكميات: <span id="totalQuantities">0</span></p>
-                    <p>المجموع النهائي: <span id="total">0.00</span> ₪</p>
-                </div>
-
-                <button onclick="printInvoice()">🖨️ طباعة الفاتورة</button>
-                <button onclick="clearCart()">🗑️ إفراغ السلة</button>
-            </div>
+  <!-- صفحة نقطة البيع -->
+  <div id="pos" class="page active-page">
+    <div class="container">
+      <div>
+        <h2>💵 نقطة البيع</h2>
+        <input type="text" id="customerName" placeholder="اسم الزبون">
+        <input type="text" class="search-input" placeholder="مسح الباركود..." id="barcodeScanner">
+        <div id="cartItems" style="max-height: 400px; overflow-y: auto;"></div>
+        <div class="stats-box">
+          <p>عدد الأصناف: <span id="totalItems">0</span></p>
+          <p>إجمالي الكميات: <span id="totalQuantities">0</span></p>
+          <p>المجموع النهائي: <span id="total">0.00</span> ₪</p>
         </div>
+        <button onclick="printInvoice()">🖨️ طباعة الفاتورة</button>
+        <button onclick="clearCart()">🗑️ إفراغ السلة</button>
+      </div>
     </div>
+  </div>
 
-    <!-- صفحة إدارة المنتجات -->
-    <div id="products" class="page">
-        <div class="search-filter">
-            <input type="text" class="search-input" id="searchInput" placeholder="بحث بالاسم أو الباركود...">
-            <select class="filter-select" id="categoryFilter" onchange="filterProducts()">
-                <option value="">جميع الفئات</option>
-            </select>
-        </div>
-        <div class="products-grid" id="productsContainer"></div>
+  <!-- صفحة إدارة المنتجات -->
+  <div id="products" class="page">
+    <div class="search-filter">
+      <input type="text" class="search-input" id="searchInput" placeholder="بحث بالاسم أو الباركود...">
+      <select class="filter-select" id="categoryFilter" onchange="filterProducts()">
+        <option value="">جميع الفئات</option>
+      </select>
     </div>
+    <div class="products-grid" id="productsContainer"></div>
+  </div>
 
-    <!-- مودال إدارة الباركودات -->
-    <div id="barcodeModal">
-        <h3>إدارة الباركودات</h3>
-        <div id="barcodeList"></div>
-        <input type="text" id="newBarcode" placeholder="إضافة باركود جديد">
-        <button onclick="addBarcode()">➕ إضافة</button>
-        <button onclick="closeModal()">إغلاق</button>
-    </div>
+  <!-- تغطية خلفية للمودال -->
+  <div id="modalOverlay" onclick="closeModal()"></div>
 
-<script>
-let cart = [];
-let products = [];
-let categories = new Set();
-let currentProduct = null;
+  <!-- مودال إدارة الباركودات -->
+  <div id="barcodeModal">
+    <h3>إدارة الباركودات</h3>
+    <div id="barcodeList"></div>
+    <input type="text" id="newBarcode" placeholder="إضافة باركود جديد">
+    <button onclick="addBarcode()">➕ إضافة</button>
+    <button onclick="closeModal()">إغلاق</button>
+  </div>
 
-// إظهار الصفحات
-function showPage(pageId) {
-    document.querySelectorAll('.page').forEach(p => p.classList.remove('active-page'));
-    document.getElementById(pageId).classList.add('active-page');
-}
+  <script>
+    let cart = [];
+    let products = [];
+    let categories = new Set();
+    let currentProduct = null;
 
-// جلب المنتجات
-async function fetchProducts() {
-    try {
+    // إظهار الصفحات
+    function showPage(pageId) {
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active-page'));
+      document.getElementById(pageId).classList.add('active-page');
+    }
+
+    // جلب المنتجات من ملف test.txt
+    async function fetchProducts() {
+      try {
         const response = await fetch('test.txt');
         if (!response.ok) throw new Error('فشل في جلب الملف');
-        
         const data = await response.text();
+        // تنظيف المنتجات وإزالة الأسطر الفارغة
         products = data.split('\n')
-            .filter(line => line.trim() !== '')
-            .map(line => {
-                const [category, name, price, image] = line.split('/').map(item => item.trim());
-                return {
-                    category,
-                    name,
-                    price: parseFloat(price),
-                    image,
-                    barcode: localStorage.getItem(name) || ''
-                };
-            });
-
-        renderProducts();
-    } catch (error) {
+          .filter(line => line.trim() !== '')
+          .map(line => {
+            const parts = line.split('/');
+            if(parts.length < 4) return null; // التأكد من صحة البيانات
+            let [category, name, price, image] = parts.map(item => item.trim());
+            categories.add(category);
+            return {
+              category,
+              name,
+              price: parseFloat(price),
+              image,
+              barcodes: JSON.parse(localStorage.getItem(name) || '[]')
+            };
+          })
+          .filter(item => item !== null);
+        updateCategoryFilter();
+        filterProducts();
+      } catch (error) {
         console.error('حدث خطأ في جلب البيانات:', error);
-        alert('خطأ في تحميل البيانات! تأكد من وجود ملف test.txt');
+        alert('خطأ في تحميل البيانات! تأكد من وجود ملف test.txt وبنيته صحيحة.');
+      }
     }
-}
 
-// تحديث قائمة الفئات
-function updateCategoryFilter() {
-    const filter = document.getElementById('categoryFilter');
-    filter.innerHTML = `<option value="">جميع الفئات</option>${
-        Array.from(categories).map(cat => 
-            `<option value="${cat}">${cat}</option>`
-        ).join('')
-    }`;
-}
+    // تحديث قائمة الفئات
+    function updateCategoryFilter() {
+      const filter = document.getElementById('categoryFilter');
+      filter.innerHTML = `<option value="">جميع الفئات</option>` +
+        Array.from(categories).map(cat => `<option value="${cat}">${cat}</option>`).join('');
+    }
 
-// تصفية المنتجات
-function filterProducts() {
-    const searchTerm = document.getElementById('searchInput').value.toLowerCase();
-    const selectedCategory = document.getElementById('categoryFilter').value;
-    
-    const filtered = products.filter(product => {
+    // تصفية المنتجات بناءً على البحث والفئة
+    function filterProducts() {
+      const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+      const selectedCategory = document.getElementById('categoryFilter').value;
+      const filtered = products.filter(product => {
         const matchesSearch = product.name.toLowerCase().includes(searchTerm) ||
-                             product.barcodes.some(b => b.includes(searchTerm));
+                              product.barcodes.some(b => b.toLowerCase().includes(searchTerm));
         const matchesCategory = !selectedCategory || product.category === selectedCategory;
         return matchesSearch && matchesCategory;
-    });
-    
-    renderProducts(filtered);
-}
+      });
+      renderProducts(filtered);
+    }
 
-// عرض المنتجات
-function renderProducts(productsToShow) {
-    const container = document.getElementById('productsContainer');
-    container.innerHTML = productsToShow.map(product => `
+    // عرض المنتجات في الصفحة
+    function renderProducts(productsToShow) {
+      const container = document.getElementById('productsContainer');
+      container.innerHTML = productsToShow.map(product => `
         <div class="product-card">
-            <img src="${product.image}" alt="${product.name}" style="height:120px">
-            <h3>${product.name}</h3>
-            <p>الفئة: ${product.category}</p>
-            <p>السعر: ${product.price.toFixed(2)} ₪</p>
-            <div class="barcode-list">
-                ${product.barcodes.map(b => `<div class="barcode-item">${b}</div>`).join('')}
-            </div>
-            <button onclick="showBarcodeManager('${product.name}')">📊 إدارة الباركودات</button>
+          <img src="${product.image}" alt="${product.name}">
+          <h3>${product.name}</h3>
+          <p>الفئة: ${product.category}</p>
+          <p>السعر: ${product.price.toFixed(2)} ₪</p>
+          <div class="barcode-list">
+            ${product.barcodes.map(b => `<div class="barcode-item">${b}</div>`).join('')}
+          </div>
+          <button onclick="showBarcodeManager('${product.name}')">📊 إدارة الباركودات</button>
+          <button onclick="addToCart(product)">➕ إضافة إلى السلة</button>
         </div>
-    `).join('');
-}
+      `).join('');
+    }
 
-// إدارة الباركودات
-function showBarcodeManager(productName) {
-    currentProduct = products.find(p => p.name === productName);
-    const modal = document.getElementById('barcodeModal');
-    modal.style.display = 'block';
-    
-    document.getElementById('barcodeList').innerHTML = currentProduct.barcodes.map(barcode => `
+    // إدارة الباركودات
+    function showBarcodeManager(productName) {
+      currentProduct = products.find(p => p.name === productName);
+      if(!currentProduct) return;
+      const modal = document.getElementById('barcodeModal');
+      document.getElementById('barcodeList').innerHTML = currentProduct.barcodes.map(barcode => `
         <div class="barcode-item">
-            <span>${barcode}</span>
-            <button onclick="removeBarcode('${barcode}')">🗑️</button>
+          <span>${barcode}</span>
+          <button onclick="removeBarcode('${barcode}')">🗑️</button>
         </div>
-    `).join('');
-}
+      `).join('');
+      // عرض المودال مع تغطية الخلفية
+      document.getElementById('modalOverlay').style.display = 'block';
+      modal.style.display = 'block';
+    }
 
-function addBarcode() {
-    const newBarcode = document.getElementById('newBarcode').value.trim();
-    if (!newBarcode) return;
-    
-    if (!currentProduct.barcodes.includes(newBarcode)) {
+    function addBarcode() {
+      const newBarcode = document.getElementById('newBarcode').value.trim();
+      if (!newBarcode) return;
+      if (!currentProduct.barcodes.includes(newBarcode)) {
         currentProduct.barcodes.push(newBarcode);
         localStorage.setItem(currentProduct.name, JSON.stringify(currentProduct.barcodes));
         showBarcodeManager(currentProduct.name);
+      }
+      document.getElementById('newBarcode').value = '';
     }
-    document.getElementById('newBarcode').value = '';
-}
 
-function removeBarcode(barcode) {
-    currentProduct.barcodes = currentProduct.barcodes.filter(b => b !== barcode);
-    localStorage.setItem(currentProduct.name, JSON.stringify(currentProduct.barcodes));
-    showBarcodeManager(currentProduct.name);
-}
+    function removeBarcode(barcode) {
+      currentProduct.barcodes = currentProduct.barcodes.filter(b => b !== barcode);
+      localStorage.setItem(currentProduct.name, JSON.stringify(currentProduct.barcodes));
+      showBarcodeManager(currentProduct.name);
+    }
 
-function closeModal() {
-    document.getElementById('barcodeModal').style.display = 'none';
-    filterProducts();
-}
+    function closeModal() {
+      document.getElementById('barcodeModal').style.display = 'none';
+      document.getElementById('modalOverlay').style.display = 'none';
+      filterProducts();
+    }
 
-// نظام السلة
-function addToCart(product) {
-    const existingItem = cart.find(item => item.name === product.name);
-    existingItem ? existingItem.quantity++ : cart.push({...product, quantity: 1});
-    updateCartDisplay();
-}
+    // نظام السلة
+    function addToCart(product) {
+      const existingItem = cart.find(item => item.name === product.name);
+      if(existingItem) {
+        existingItem.quantity++;
+      } else {
+        cart.push({ ...product, quantity: 1 });
+      }
+      updateCartDisplay();
+    }
 
-function updateCartDisplay() {
-    const container = document.getElementById('cartItems');
-    container.innerHTML = cart.map(item => `
+    function updateCartDisplay() {
+      const container = document.getElementById('cartItems');
+      container.innerHTML = cart.map(item => `
         <div class="cart-item">
-            <div>
-                <span>${item.name}</span>
-                <button onclick="adjustQuantity('${item.name}', -1)">➖</button>
-                <span style="margin: 0 10px">x${item.quantity}</span>
-                <button onclick="adjustQuantity('${item.name}', 1)">➕</button>
-            </div>
-            <span>${(item.price * item.quantity).toFixed(2)} ₪</span>
+          <div>
+            <span>${item.name}</span>
+            <button onclick="adjustQuantity('${item.name}', -1)">➖</button>
+            <span style="margin: 0 10px">x${item.quantity}</span>
+            <button onclick="adjustQuantity('${item.name}', 1)">➕</button>
+          </div>
+          <span>${(item.price * item.quantity).toFixed(2)} ₪</span>
         </div>
-    `).join('');
-    
-    updateTotals();
-}
-
-function adjustQuantity(productName, change) {
-    const item = cart.find(item => item.name === productName);
-    if (item) {
-        item.quantity += change;
-        if (item.quantity <= 0) cart = cart.filter(i => i !== item);
-        updateCartDisplay();
+      `).join('');
+      updateTotals();
     }
-}
 
-function updateTotals() {
-    const totalItems = cart.length;
-    const totalQuantities = cart.reduce((sum, item) => sum + item.quantity, 0);
-    const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-    
-    document.getElementById('totalItems').textContent = totalItems;
-    document.getElementById('totalQuantities').textContent = totalQuantities;
-    document.getElementById('total').textContent = subtotal.toFixed(2);
-}
+    function adjustQuantity(productName, change) {
+      const item = cart.find(item => item.name === productName);
+      if (item) {
+        item.quantity += change;
+        if (item.quantity <= 0) {
+          cart = cart.filter(i => i !== item);
+        }
+        updateCartDisplay();
+      }
+    }
 
-// نظام المسح الضوئي
-document.getElementById('barcodeScanner').addEventListener('keypress', (e) => {
-    if (e.key === 'Enter') {
+    function updateTotals() {
+      const totalItems = cart.length;
+      const totalQuantities = cart.reduce((sum, item) => sum + item.quantity, 0);
+      const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+      document.getElementById('totalItems').textContent = totalItems;
+      document.getElementById('totalQuantities').textContent = totalQuantities;
+      document.getElementById('total').textContent = subtotal.toFixed(2);
+    }
+
+    // نظام المسح الضوئي للباركود
+    document.getElementById('barcodeScanner').addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') {
         const barcode = e.target.value.trim();
         const product = products.find(p => p.barcodes.includes(barcode));
-        product ? addToCart(product) : alert('الباركود غير مسجل!');
+        if (product) {
+          addToCart(product);
+        } else {
+          alert('الباركود غير مسجل!');
+        }
         e.target.value = '';
-    }
-});
+      }
+    });
 
-// نظام الطباعة
-function printInvoice() {
-    const printContent = `
+    // نظام الطباعة
+    function printInvoice() {
+      const printContent = `
         <style>
-            @media print {
-                @page { size: 80mm; margin: 0; }
-                body { width: 80mm; font-size: 14px; }
-                * { margin: 0; padding: 0; }
-                .header { text-align: center; padding: 10px; }
-                .item { display: flex; justify-content: space-between; margin: 5px 0; }
-                hr { border-top: 1px dashed #000; margin: 10px 0; }
-            }
+          @media print {
+            @page { size: 80mm; margin: 0; }
+            body { width: 80mm; font-size: 14px; }
+            * { margin: 0; padding: 0; }
+            .header { text-align: center; padding: 10px; }
+            .item { display: flex; justify-content: space-between; margin: 5px 0; }
+            hr { border-top: 1px dashed #000; margin: 10px 0; }
+          }
         </style>
         <div class="header">
-            <h2>فاتورة بيع</h2>
-            <p>الزبون: ${document.getElementById('customerName').value || 'غير محدد'}</p>
-            <p>التاريخ: ${new Date().toLocaleString()}</p>
+          <h2>فاتورة بيع</h2>
+          <p>الزبون: ${document.getElementById('customerName').value || 'غير محدد'}</p>
+          <p>التاريخ: ${new Date().toLocaleString()}</p>
         </div>
         <hr>
         ${cart.map(item => `
-            <div class="item">
-                <span>${item.name} x${item.quantity}</span>
-                <span>${(item.price * item.quantity).toFixed(2)} ₪</span>
-            </div>
+          <div class="item">
+            <span>${item.name} x${item.quantity}</span>
+            <span>${(item.price * item.quantity).toFixed(2)} ₪</span>
+          </div>
         `).join('')}
         <hr>
         <div class="item">
-            <strong>المجموع النهائي:</strong>
-            <strong>${document.getElementById('total').textContent} ₪</strong>
+          <strong>المجموع النهائي:</strong>
+          <strong>${document.getElementById('total').textContent} ₪</strong>
         </div>
         <div class="item">
-            <p>عدد الأصناف: ${document.getElementById('totalItems').textContent}</p>
-            <p>إجمالي الكميات: ${document.getElementById('totalQuantities').textContent}</p>
+          <p>عدد الأصناف: ${document.getElementById('totalItems').textContent}</p>
+          <p>إجمالي الكميات: ${document.getElementById('totalQuantities').textContent}</p>
         </div>
-    `;
+      `;
+      const printWindow = window.open('', '_blank');
+      printWindow.document.write(printContent);
+      printWindow.document.close();
+      printWindow.print();
+    }
 
-    const printWindow = window.open('', '_blank');
-    printWindow.document.write(printContent);
-    printWindow.document.close();
-    printWindow.print();
-}
+    function clearCart() {
+      cart = [];
+      document.getElementById('customerName').value = '';
+      updateCartDisplay();
+    }
 
-function clearCart() {
-    cart = [];
-    document.getElementById('customerName').value = '';
-    updateCartDisplay();
-}
+    // ربط أحداث البحث عند الكتابة
+    document.getElementById('searchInput').addEventListener('input', filterProducts);
 
-// الأحداث
-document.getElementById('searchInput').addEventListener('input', filterProducts);
-document.addEventListener('DOMContentLoaded', fetchProducts);
-</script>
+    // جلب المنتجات بعد تحميل الصفحة
+    document.addEventListener('DOMContentLoaded', fetchProducts);
+  </script>
 </body>
 </html>
