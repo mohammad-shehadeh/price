@@ -219,12 +219,18 @@ function updateBarcodes(productName, barcodesStr) {
 // نظام المسح الضوئي (يدعم عدة باركودات)
 document.getElementById('barcodeScanner').addEventListener('keypress', (e) => {
     if (e.key === 'Enter') {
-        const barcode = e.target.value;
+        // التأكد من إزالة المسافات الزائدة
+        const barcode = e.target.value.trim();
         const product = products.find(p => p.barcodes.includes(barcode));
-        product ? addToCart(product) : alert('الباركود غير مسجل!');
+        if (product) {
+            addToCart(product);
+        } else {
+            alert('الباركود غير مسجل!');
+        }
         e.target.value = '';
     }
 });
+
 
 
 // إدارة السلة
