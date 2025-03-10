@@ -204,60 +204,95 @@ function renderProducts() {
     container.innerHTML = '';
     
     products.forEach(product => {
-        // استبدال المسافات في الاسم لتكوين معرف صالح
         const productId = product.name.replace(/\s+/g, '-');
-        const barcodeInputs = product.barcodes.map((barcode, index) => 
-            `<input type="text" value="${barcode}" 
-                    onchange="updateBarcodeField('${product.name}', ${index}, this.value)" 
-                    placeholder="باركود ${index+1}">`
-        ).join('');
-        
         const card = document.createElement('div');
         card.className = 'product-card';
         card.innerHTML = `
             <img src="${product.image}" alt="${product.name}" style="height:120px">
             <h3>${product.name}</h3>
             <p>السعر: ${product.price.toFixed(2)} ₪</p>
-            <div id="barcodes-container-${productId}">
-                ${barcodeInputs}
+            <div id="barcodes-container-${productId}" style="display: none;">
+                <!-- سيتم عرض حقول الباركود هنا -->
             </div>
-            <button onclick="addBarcodeField('${product.name}')">أضف باركود</button>
+            <button onclick="toggleBarcodeContainer('${product.name}')">أضف/عرض الباركود</button>
+            <button onclick="addBarcodeField('${product.name}')">أضف باركود جديد</button>
         `;
         container.appendChild(card);
     });
 }
 
-// دالة لتحديث قيمة حقل باركود محدد
-function updateBarcodeField(productName, index, newValue) {
+// دالة لإعادة رسم حاوية الباركودات لمنتج معين
+function renderBarcodeContainer(productName) {
     const product = products.find(p => p.name === productName);
-    if (product) {
-        product.barcodes[index] = newValue.trim();
-        // حفظ التغييرات في التخزين المحلي
-        localStorage.setItem(productName, JSON.stringify(product.barcodes));
+    if (!product) return;
+    const productId = product.name.replace(/\s+/g, '-');
+    const container = document.getElementById(`barcodes-container-${productId}`);
+    container.innerHTML = product.barcodes.map((barcode, index) =>
+        `<input type="text" value="${barcode}" 
+           onchange="updateBarcodeField('${productName}', ${index}, this.value)" 
+           placeholder="باركود ${index+1}">`
+    ).join('');
+}
+
+// دالة لتبديل عرض حاوية الباركودات
+function toggleBarcodeContainer(productName) {
+    const productId = productName.replace(/\s+/g, '-');
+    const container = document.getElementById(`barcodes-container-${productId}`);
+    if (container.style.display === 'none' || container.style.display === '') {
+        container.style.display = 'block';
+        renderBarcodeContainer(productName);
+    } else {
+        container.style.display = 'none';
     }
 }
 
-// دالة لإضافة حقل باركود جديد
+// دالة تحديث قيمة حقل الباركود مع منع الحقول الفارغة والتكرار
+function updateBarcodeField(productName, index, newValue) {
+    newValue = newValue.trim();
+    const product = products.find(p => p.name === productName);
+    if (!product) return;
+    
+    // إذا كان الحقل فارغاً، قم بحذفه من المصفوفة
+    if (!newValue) {
+        product.barcodes.splice(index, 1);
+        localStorage.setItem(productName, JSON.stringify(product.barcodes));
+        renderBarcodeContainer(productName);
+        return;
+    }
+    
+    // التأكد من عدم تكرار الباركود (باستثناء الحقل نفسه)
+    if (product.barcodes.some((bc, i) => i !== index && bc === newValue)) {
+        alert('هذا الباركود موجود بالفعل!');
+        renderBarcodeContainer(productName);
+        return;
+    }
+    
+    // تحديث القيمة وحفظها
+    product.barcodes[index] = newValue;
+    localStorage.setItem(productName, JSON.stringify(product.barcodes));
+}
+
+// دالة إضافة حقل باركود جديد
 function addBarcodeField(productName) {
     const product = products.find(p => p.name === productName);
-    if (product) {
-        // إضافة قيمة فارغة كحقل جديد
-        product.barcodes.push('');
-        // حفظ التغييرات
-        localStorage.setItem(productName, JSON.stringify(product.barcodes));
-        
-        // تحديث واجهة المستخدم لحذف وإضافة حقل جديد
-        const productId = product.name.replace(/\s+/g, '-');
-        const container = document.getElementById(`barcodes-container-${productId}`);
-        const newIndex = product.barcodes.length - 1;
-        const newInput = document.createElement('input');
-        newInput.type = 'text';
-        newInput.placeholder = `باركود ${newIndex + 1}`;
-        newInput.onchange = function() {
-            updateBarcodeField(productName, newIndex, this.value);
-        };
-        container.appendChild(newInput);
+    if (!product) return;
+    
+    // إذا كان الحقل الأخير فارغاً بالفعل فلا نضيف جديد
+    if (product.barcodes.length > 0 && product.barcodes[product.barcodes.length - 1] === '') {
+        return;
     }
+    
+    product.barcodes.push('');
+    localStorage.setItem(productName, JSON.stringify(product.barcodes));
+    
+    // إذا كانت الحاوية غير ظاهرة، عرضها
+    const productId = product.name.replace(/\s+/g, '-');
+    const container = document.getElementById(`barcodes-container-${productId}`);
+    if (container.style.display === 'none' || container.style.display === '') {
+        container.style.display = 'block';
+    }
+    
+    renderBarcodeContainer(productName);
 }
 
 document.getElementById('barcodeScanner').addEventListener('keydown', (e) => {
@@ -413,7 +448,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
       });
     });
-
+    
 // التهيئة الأولية
 fetchProducts();
 </script>
