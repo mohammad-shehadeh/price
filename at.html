@@ -216,17 +216,20 @@ function updateBarcodes(productName, barcodesStr) {
     }
 }
 
-// نظام المسح الضوئي (يدعم عدة باركودات)
-document.getElementById('barcodeScanner').addEventListener('keypress', (e) => {
-    if (e.key === 'Enter') {
-        // التأكد من إزالة المسافات الزائدة
+document.getElementById('barcodeScanner').addEventListener('keydown', (e) => {
+    // التحقق من الضغط على مفتاح Enter وعدم تكرار الحدث
+    if (e.key === 'Enter' && !e.repeat) {
+        e.preventDefault(); // منع تنفيذ الحدث الافتراضي
+
         const barcode = e.target.value.trim();
         const product = products.find(p => p.barcodes.includes(barcode));
+        
         if (product) {
             addToCart(product);
         } else {
             alert('الباركود غير مسجل!');
         }
+        
         e.target.value = '';
     }
 });
