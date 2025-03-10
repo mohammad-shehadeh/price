@@ -12,6 +12,7 @@ samsung/TAP A9 64|4/380/https://oplayce.ci/cdn/shop/files/samsung-galaxy-tab-a9_
 samsung/A06 128|4/350/https://www.jibalzone.com/media/7389/conversions/6704ddec150e1_193679_2024-slider.jpg
 samsung/A06 64|4/300/https://www.jibalzone.com/media/7389/conversions/6704ddec150e1_193679_2024-slider.jpg
 samsung/Galaxy Fit 3/180/https://www.tmt.my/data/editor/sc-product/15959/SAMSUNG-GALAXY-FIT-3-TMT.jpg
+MI/Note 14 pro plus 5G/1450/https://fonexpress.net/wp-content/uploads/2025/01/Xiaomi-Redmi-Note-14-Pro-Plus.webp
 MI/Note 14 pro 256|8/940/https://www.giztop.com/media/catalog/product/cache/97cc1143d2e20f2b0c8ea91aaa12053c/r/e/redmi_note_14_pro.png
 MI/Note 14 pro 512|12/1110/https://www.giztop.com/media/catalog/product/cache/97cc1143d2e20f2b0c8ea91aaa12053c/r/e/redmi_note_14_pro.png
 MI/Note 14  256|8/615/https://cdn.gadgetbytenepal.com/wp-content/uploads/2025/01/Redmi-Note-14-4G-1.jpg
@@ -19,7 +20,8 @@ MI/poco X7 pro 512|12/1320/https://cdn.shortpixel.ai/spai/q_glossy+ret_img+to_we
 MI/Note 13 pro 512|12/960/https://cdn.shortpixel.ai/spai/q_glossy+ret_img+to_webp/mobizil.com/wp-content/uploads/2024/01/Xiaomi-Redmi-Note-13-Pro-4G.jpg
 MI/Note 13 pro PLUS 512|12/1320/https://mobizil.com/wp-content/uploads/2023/11/Xiaomi-Redmi-Note-13-Pro-Plus.jpg
 MI/Note 13 pro 256|8/aaa/https://cdn.shortpixel.ai/spai/q_glossy+ret_img+to_webp/mobizil.com/wp-content/uploads/2024/01/Xiaomi-Redmi-Note-13-Pro-4G.jpg
-MI/Note 13 256|8/540/https://darwishelectronics.jo/media/catalog/product/cache/3699668ed4391f14069233535863035c/s/4/s400874167_1.jpeg
+MI/Note 13 256|8/AAA/https://darwishelectronics.jo/media/catalog/product/cache/3699668ed4391f14069233535863035c/s/4/s400874167_1.jpeg
+MI/Note 13 512|8/600/https://darwishelectronics.jo/media/catalog/product/cache/3699668ed4391f14069233535863035c/s/4/s400874167_1.jpeg
 MI/POCO X6 pro 512|12 /1080/https://dzairtic.dz/wp-content/uploads/2024/06/xiaomi-poco-x6-pro-frandroid-2024-768x768-1.png
 MI/POCO X6 pro 256|12 /1000/https://dzairtic.dz/wp-content/uploads/2024/06/xiaomi-poco-x6-pro-frandroid-2024-768x768-1.png
 MI/POCO F6 PRO 512|12 /1780/https://www.phoneshock.it/wp-content/uploads/2024/07/15501222.jpeg
