@@ -99,6 +99,22 @@
             border-radius: 10px;
             margin: 10px 0;
         }
+
+            /* تنسيق الحقل مع انتقال سلس */
+    .scanner-input {
+      transition: box-shadow 0.3s ease;
+      padding: 8px;
+      font-size: 16px;
+      outline: none;
+    }
+    /* تأثير التوهج الأخضر عند التركيز */
+    .scanner-input.focused {
+      box-shadow: 0 0 5px 2px green;
+    }
+    /* تأثير التوهج الأحمر عند عدم التركيز */
+    .scanner-input.not-focused {
+      box-shadow: 0 0 5px 2px red;
+    }
     </style>
 </head>
 <body>
@@ -342,6 +358,34 @@ function clearCart() {
     updateCartDisplay();
 }
 
+document.addEventListener('DOMContentLoaded', function() {
+      const barcodeInput = document.getElementById('barcodeScanner');
+      
+      // تركيز الحقل فور تحميل الصفحة وتطبيق الكلاس المناسب
+      barcodeInput.focus();
+      barcodeInput.classList.add('focused');
+      barcodeInput.classList.remove('not-focused');
+
+      // عند الحصول على التركيز
+      barcodeInput.addEventListener('focus', () => {
+        barcodeInput.classList.add('focused');
+        barcodeInput.classList.remove('not-focused');
+      });
+      
+      // عند فقدان التركيز
+      barcodeInput.addEventListener('blur', () => {
+        barcodeInput.classList.add('not-focused');
+        barcodeInput.classList.remove('focused');
+      });
+      
+      // عند النقر على أي مكان في الصفحة (ما عدا الحقول الأخرى)
+      document.addEventListener('click', (e) => {
+        if (e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA') {
+          barcodeInput.focus();
+        }
+      });
+    });
+    
 // التهيئة الأولية
 fetchProducts();
 </script>
