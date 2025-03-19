@@ -4,8 +4,8 @@ samsung/S24 ultra 512|12/aaa/https://sbitany.com/image/cache/catalog/109-634-004
 samsung/S23 ultra 256|12/2700/https://media-ik.croma.com/prod/https://media.croma.com/image/upload/v1709103161/Croma%20Assets/Communication/Mobiles/Images/275155_z2t6g2.png?tr=w-600
 samsung/A55 256|12/aaa/https://kaza.com.eg/pub/media/catalog/product/cache/2f071798f77b0deb4c04afd283b2ac15/l/a/layer_2_3.jpg
 samsung/A55 256|8/aaa/https://kaza.com.eg/pub/media/catalog/product/cache/2f071798f77b0deb4c04afd283b2ac15/l/a/layer_2_3.jpg
-samsung/A35 128|8/880/https://m.media-amazon.com/images/I/614c+lTK3iL.jpg
-samsung/A25 128|6/680/https://cdn.mart.ps/244566-thickbox_default/samsung-galaxy-a25-128gb-6gb-ram-%D9%83%D9%81%D8%A7%D9%84%D8%A9-%D8%B3%D9%86%D8%A9.jpg
+samsung/A35 128|8/aaa/https://m.media-amazon.com/images/I/614c+lTK3iL.jpg
+samsung/A25 128|6/aaa/https://cdn.mart.ps/244566-thickbox_default/samsung-galaxy-a25-128gb-6gb-ram-%D9%83%D9%81%D8%A7%D9%84%D8%A9-%D8%B3%D9%86%D8%A9.jpg
 samsung/A16 128|8/580/https://econtent.o2.co.uk/o/econtent/media/get/ff0037cf-f7bc-4ca6-bde5-779c9cbb9c2b
 samsung/A16 128|6/540/https://econtent.o2.co.uk/o/econtent/media/get/ff0037cf-f7bc-4ca6-bde5-779c9cbb9c2b
 samsung/A16 128|4/510/https://econtent.o2.co.uk/o/econtent/media/get/ff0037cf-f7bc-4ca6-bde5-779c9cbb9c2b
