@@ -33,7 +33,7 @@
         }
 
         header {
-    background-color: #333;
+    background: linear-gradient(135deg, #333 25%, #444 50%, #222 75%);
     color: white;
     padding: 1.5em;
     text-align: center;
@@ -521,38 +521,80 @@ header h1 {
   float: left;
 }
 /* تصميم الأزرار */
+/* تحسين تصميم زر التبديل بنفس تصميم زر file-buttons ثلاثي الأبعاد */
 .toggle-cart {
     padding: 10px 20px;  /* المسافة الداخلية داخل الزر */
     font-size: 16px;  /* حجم الخط */
     font-weight: bold;  /* جعل الخط سميكًا */
     border: none;  /* إزالة الحدود */
-    border-radius: 8px;  /* حواف دائرية للزر */
-    color: white;  /* لون النص */
+    border-radius: 15px;  /* حواف دائرية للزر */
+    color: #ffffff;  /* لون النص الأبيض */
     cursor: pointer;  /* تغيير المؤشر عند المرور على الزر */
-    transition: transform 0.2s;  /* تأثير الانتقال */
+    transition: transform 0.2s, box-shadow 0.3s;  /* تأثير الانتقال */
     width: 200px;  /* عرض الزر */
     margin-bottom: 10px;  /* مسافة بين الأزرار */
-    animation: colorChange 5s infinite;  /* تطبيق تأثير التغيير اللوني */
+    background: #3a3a3a;  /* لون الزر الداكن */
+    box-shadow: 8px 8px 16px #2e2e2e, -8px -8px 16px #444444; /* تأثير ثلاثي الأبعاد */
+    position: relative;
+    text-transform: uppercase;
 }
 
 /* تأثير تغيير الألوان بشكل مستمر */
 @keyframes colorChange {
     0% {
-        background-color: #ff0000e7;  /* اللون الأول (أخضر) */
+        background-color: #ff0000e7;  /* اللون الأول (أحمر) */
     }
     25% {
         background-color: #ff9800;  /* اللون الثاني (برتقالي) */
     }
     50% {
-        background-color: #ff0000;  /* اللون الثالث (أزرق) */
+        background-color: #ff0000;  /* اللون الثالث (أحمر) */
     }
     75% {
-        background-color: #ffa600;  /* اللون الرابع (أحمر) */
+        background-color: #ffa600;  /* اللون الرابع (أصفر) */
     }
     100% {
-        background-color: #ff0000;  /* العودة إلى اللون الأول (أخضر) */
+        background-color: #ff0000;  /* العودة إلى اللون الأول (أحمر) */
     }
 }
+
+/* تأثير التوهج الأحمر المتحرك حول الزر */
+.toggle-cart::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 15px;
+    background: none;
+    border: 2px solid #ff0000;  /* الخط الأحمر */
+    animation: glowing 1.5s infinite alternate; /* التوهج المتحرك */
+    z-index: -1;  /* جعل الخط خلف الزر */
+}
+
+/* تأثير التوهج المتحرك */
+@keyframes glowing {
+    0% {
+        box-shadow: 0 0 5px #ff0000, 0 0 10px #ff0000, 0 0 15px #ff0000;
+    }
+    100% {
+        box-shadow: 0 0 20px #ff0000, 0 0 30px #ff0000, 0 0 40px #ff0000;
+    }
+}
+
+/* تأثير عند التمرير */
+.toggle-cart:hover {
+    box-shadow: 12px 12px 24px #2e2e2e, -12px -12px 24px #444444; /* زيادة تأثير الظل عند التمرير */
+    transform: translateY(-4px);  /* رفع الزر عند التمرير */
+}
+
+/* تأثير عند الضغط */
+.toggle-cart:active {
+    transform: translateY(2px);  /* تأثير الضغط ليبدو كأنه يتم الضغط عليه */
+    box-shadow: inset 8px 8px 16px #2e2e2e, inset -8px -8px 16px #444444; /* تأثير الظل الداخلي */
+}
+
 
 input[type="number"] {
     pointer-events: none; /* يمنع التفاعل مع العنصر */
@@ -839,30 +881,39 @@ input[type="text"]:focus, input[type="tel"]:focus {
     display: none; /* إخفاء الزر */
 }
 
-/* تحسين تصميم الأزرار */
+/* تحسين تصميم الأزرار بنمط النمورفيزم ثلاثي الأبعاد لواجهة داكنة */
+#file-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    width: 320px;
+    margin: 50px auto;
+}
+
 #file-buttons button {
-    background-color: white; /* خلفية الزر باللون الأبيض */
-    color: black; /* لون النص بالأسود */
-    font-weight: bold; /* جعل النص عريض */
-    border: 1px solid #ccc; /* حد الزر بلون رمادي فاتح */
-    border-radius: 25px; /* جعل الحواف بيضاوية */
-    padding: 8px 12px; /* تقليل التباعد الداخلي لجعل الزر أصغر */
-    font-size: 14px; /* تقليل حجم الخط */
-    cursor: pointer; /* عند المرور على الزر يظهر شكل المؤشر اليدوي */
-    transition: background-color 0.3s ease, transform 0.3s ease; /* تأثير عند المرور */
-    margin-right: 2mm; /* المسافة بين الأزرار */
+    background: #3a3a3a; /* لون خلفية الزر الداكن */
+    color: #00ffff;    /* لون النص الليزري (أزرق فاتح) */
+    font-weight: bold;
+    border: none;
+    border-radius: 15px;
+    padding: 12px 30px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 8px 8px 16px #2e2e2e, -8px -8px 16px #444444; /* تأثير ثلاثي الأبعاد من كل الجهات */
+    text-transform: uppercase;
+    margin: 10px;
 }
 
-/* تأثير عند المرور على الأزرار */
 #file-buttons button:hover {
-    background-color: #f1f1f1; /* تغيير اللون عند المرور */
-    transform: scale(1.05); /* تكبير الزر بشكل طفيف */
+    box-shadow: inset 8px 8px 16px #2e2e2e, inset -8px -8px 16px #444444;
 }
 
-/* التباعد بين الأزرار بشكل عام */
-#file-buttons button:not(:last-child) {
-    margin-right: 2mm; /* المسافة بين الأزرار */
+#file-buttons button:active {
+    transform: translateY(3px);
 }
+
 
 /* تنسيق الزر العادي */
 .add-to-cart-btn {
@@ -924,7 +975,8 @@ button.disabled i, button[disabled] i {
             <div id="cart-items"></div>
             <button class="share-button" id="checkout-button">ارسال طلبية</button>
             <br>
-            <button class="toggle-cart" id="hide-cart-button">إخفاء الفاتورة</button>
+<!-- زر إخفاء الفاتورة مع نفس تصميم زر ارسال طلبية -->
+<button class="share-button" id="hide-cart-button">إخفاء الفاتورة</button>
         </div>
         <div class="popup" id="popup">
             <h2>نموذج إتمام الطلب</h2>
