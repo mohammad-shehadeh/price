@@ -948,10 +948,21 @@ button.disabled i, button[disabled] i {
 }
 
   </style>
-</head>
-        <header>
-            <h1>Shehadeh Center</h1>
-            <div id="file-buttons"></div> <!-- عنصر لعرض الأزرار -->
+<body>
+    <div id="login-container">
+      <input type="email" id="email" placeholder="أدخل البريد الإلكتروني">
+      <input type="password" id="password" placeholder="أدخل كلمة المرور">
+      <button id="login-button">تسجيل الدخول</button>
+      <div class="error-message" id="email-error" style="display: none;"></div>
+    </div>
+  
+    <div id="main-content" style="display: none;">
+      <header>
+        <h1>Shehadeh Center</h1>
+        <div id="file-buttons"></div>
+        <button id="select-file-button">اختيار ملف</button>
+        <br>
+        <div id="filter-buttons"></div>
 <button id="select-file-button">اختيار ملف</button> <!-- زر لاختيار الملف يدويًا -->
 <br>
             <div id="filter-buttons">
