@@ -1841,6 +1841,25 @@ document.addEventListener("DOMContentLoaded", function () {
     }, 2000); // 2000 مللي ثانية = 3 ثوانٍ
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+    let loginContainer = document.getElementById("login-container");
+    let loadingScreen = document.getElementById("loading-screen");
+
+    // مراقبة تغييرات عرض شاشة تسجيل الدخول
+    let observer = new MutationObserver(function (mutations) {
+        mutations.forEach(function (mutation) {
+            if (mutation.attributeName === "style") {
+                let isHidden = window.getComputedStyle(loginContainer).display === "none";
+                if (isHidden) {
+                    loadingScreen.style.display = "none"; // إخفاء شاشة التحميل
+                }
+            }
+        });
+    });
+
+    // بدء المراقبة على تغييرات الـ style في loginContainer
+    observer.observe(loginContainer, { attributes: true });
+});
 </script>
 <script type="module" src="login.js"></script>
 </body>
