@@ -71,6 +71,7 @@ Honor/X6b 128|6/420/https://skymil-informatique.com/50645-large_default/smartpho
 Honor/X5b 128|4/320/https://www.honor.com/content/dam/honor/sa-ar/product-list/smartphone/honor-x5b-plus/honor-x5b-list.png
 Honor/X5b 64|4/270/https://www.honor.com/content/dam/honor/sa-ar/product-list/smartphone/honor-x5b-plus/honor-x5b-list.png
 N\A/Nokia 105 4G ori/110/https://celloplanet.com/wp-content/uploads/2024/01/Nokia-105-2023-500x500-1.jpg
+ZTE/A35e 64|4//240/https://bsimg.nl/images/zte-blade-a35e-2gb-64gb-grijs_8.png/pcK1-vuM-9fwX0kS0o7DSJ-xGYQ%3D/fit-in/0x0/filters%3Aupscale%28%29
 ZTE/A75 256|14/390/https://m.media-amazon.com/images/I/81lUzTar8HL.jpg
 ZTE/A55 256|12/300/https://media.zid.store/b74f2313-1275-4caa-abca-b5ece66cb8bd/e64dbe11-465b-499d-8fa6-b7ca47ecb1d6.png
 ZTE/A35 64|12/270/https://cdn.salla.sa/vzoPn/3e76ec41-f0fc-4349-a7b2-f5f6ef94390d-1000x1000-c7ZnhNfHRihxRTwVSwrnTq3pnLjbywUwvD15sDd3.png
