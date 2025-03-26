@@ -8,7 +8,7 @@ samsung/A36 128|8/1130/https://media-ik.croma.com/prod/https://media.croma.com/i
 samsung/A55 256|12/aaa/https://kaza.com.eg/pub/media/catalog/product/cache/2f071798f77b0deb4c04afd283b2ac15/l/a/layer_2_3.jpg
 samsung/A55 256|8/aaa/https://kaza.com.eg/pub/media/catalog/product/cache/2f071798f77b0deb4c04afd283b2ac15/l/a/layer_2_3.jpg
 samsung/A35 128|8/aaa/https://m.media-amazon.com/images/I/614c+lTK3iL.jpg
-samsung/A16 128|8/580/https://econtent.o2.co.uk/o/econtent/media/get/ff0037cf-f7bc-4ca6-bde5-779c9cbb9c2b
+samsung/A16 128|8/570/https://econtent.o2.co.uk/o/econtent/media/get/ff0037cf-f7bc-4ca6-bde5-779c9cbb9c2b
 samsung/A16 128|6/540/https://econtent.o2.co.uk/o/econtent/media/get/ff0037cf-f7bc-4ca6-bde5-779c9cbb9c2b
 samsung/A16 128|4/490/https://econtent.o2.co.uk/o/econtent/media/get/ff0037cf-f7bc-4ca6-bde5-779c9cbb9c2b
 samsung/TAP A9 64|4/380/https://oplayce.ci/cdn/shop/files/samsung-galaxy-tab-a9_5_1024x.jpg?v=1717431017
@@ -20,10 +20,10 @@ MI/Note 14 pro 256|8/870/https://www.giztop.com/media/catalog/product/cache/97cc
 MI/Note 14 pro 512|12/1050/https://www.giztop.com/media/catalog/product/cache/97cc1143d2e20f2b0c8ea91aaa12053c/r/e/redmi_note_14_pro.png
 MI/Note 14 256|8/610/https://cdn.gadgetbytenepal.com/wp-content/uploads/2025/01/Redmi-Note-14-4G-1.jpg
 MI/poco X7 pro 512|12/1290/https://cdn.shortpixel.ai/spai/q_glossy+ret_img+to_webp/mobizil.com/wp-content/uploads/2025/01/Xiaomi-Poco-X7-Pro.jpg
-MI/Note 13 pro 512|12/950/https://cdn.shortpixel.ai/spai/q_glossy+ret_img+to_webp/mobizil.com/wp-content/uploads/2024/01/Xiaomi-Redmi-Note-13-Pro-4G.jpg
+MI/Note 13 pro 512|12/930/https://cdn.shortpixel.ai/spai/q_glossy+ret_img+to_webp/mobizil.com/wp-content/uploads/2024/01/Xiaomi-Redmi-Note-13-Pro-4G.jpg
 MI/Note 13 pro PLUS 512|12/1320/https://mobizil.com/wp-content/uploads/2023/11/Xiaomi-Redmi-Note-13-Pro-Plus.jpg
-MI/Note 13 256|8/AAA/https://darwishelectronics.jo/media/catalog/product/cache/3699668ed4391f14069233535863035c/s/4/s400874167_1.jpeg
-MI/Note 13 512|8/590/https://darwishelectronics.jo/media/catalog/product/cache/3699668ed4391f14069233535863035c/s/4/s400874167_1.jpeg
+MI/Note 13 256|8/AAA/https://cdn.webshopapp.com/shops/256009/files/447245727/xiaomi-xiaomi-redmi-note-13-4g-6gb-128gb.jpg
+MI/Note 13 512|8/590/https://cdn.webshopapp.com/shops/256009/files/447245727/xiaomi-xiaomi-redmi-note-13-4g-6gb-128gb.jpg
 MI/POCO X6 pro 512|12 /AAA/https://dzairtic.dz/wp-content/uploads/2024/06/xiaomi-poco-x6-pro-frandroid-2024-768x768-1.png
 MI/POCO X6 pro 256|12 /1000/https://dzairtic.dz/wp-content/uploads/2024/06/xiaomi-poco-x6-pro-frandroid-2024-768x768-1.png
 MI/POCO F6 PRO 512|12 /1750/https://www.phoneshock.it/wp-content/uploads/2024/07/15501222.jpeg
@@ -61,15 +61,15 @@ Infinix/smart 9 64|3/275/https://7lcart.s3.eu-central-1.amazonaws.com/cardnet.sa
 Infinix/Zero 40 512|16/aaa/https://megaphonecity.com.my/wp-content/uploads/2024/08/zero-40-pink.jpg
 Honor/X9b 256|12/1160/https://yantranepal.com/wp-content/uploads/2024/02/Honor-X9b-5G-Sunrise-Orange-12GB-256GB-1.webp
 Honor/X9C 256|12/1320/https://mob4g.com/wp-content/uploads/2024/12/Honor-X9c-Smart-2-600x600.webp
-Honor/X8b 512|8/800/https://www.honor.com/content/dam/honor/my/product-list/smartphone/honor-x8b/honor-x8b-green.png
-Honor/X7b 256|6/600/https://estore.jawwal.ps/storage/product/12925/CFAGcGMpZ1uppGi00Vq1nrtcFddAY6LG4hnOpT9c.webp
+Honor/X8b 512|8/AAA/https://www.honor.com/content/dam/honor/my/product-list/smartphone/honor-x8b/honor-x8b-green.png
+Honor/X7b 256|6/550/https://estore.jawwal.ps/storage/product/12925/CFAGcGMpZ1uppGi00Vq1nrtcFddAY6LG4hnOpT9c.webp
 Honor/X6A 128|4/400/https://www.honor.com/content/dam/honor/uk/product-list/smartphone/honor-x6a/honor-x6a-cyan-list.png
-Honor/X6b 256|6/460/https://skymil-informatique.com/50645-large_default/smartphone-honor-x6b-6go-128go-vert-.jpg
+Honor/X6b 256|6/450/https://skymil-informatique.com/50645-large_default/smartphone-honor-x6b-6go-128go-vert-.jpg
 Honor/X6b 128|6/420/https://skymil-informatique.com/50645-large_default/smartphone-honor-x6b-6go-128go-vert-.jpg
 Honor/X5b 128|4/320/https://www.honor.com/content/dam/honor/sa-ar/product-list/smartphone/honor-x5b-plus/honor-x5b-list.png
 Honor/X5b 64|4/270/https://www.honor.com/content/dam/honor/sa-ar/product-list/smartphone/honor-x5b-plus/honor-x5b-list.png
 N\A/Nokia 105 4G ori/110/https://celloplanet.com/wp-content/uploads/2024/01/Nokia-105-2023-500x500-1.jpg
-ZTE/A35e 64|4//240/https://bsimg.nl/images/zte-blade-a35e-2gb-64gb-grijs_8.png/pcK1-vuM-9fwX0kS0o7DSJ-xGYQ%3D/fit-in/0x0/filters%3Aupscale%28%29
+ZTE/A35e 64|4/240/https://bsimg.nl/images/zte-blade-a35e-2gb-64gb-grijs_8.png/pcK1-vuM-9fwX0kS0o7DSJ-xGYQ%3D/fit-in/0x0/filters%3Aupscale%28%29
 ZTE/A75 256|14/390/https://m.media-amazon.com/images/I/81lUzTar8HL.jpg
 ZTE/A55 256|12/300/https://media.zid.store/b74f2313-1275-4caa-abca-b5ece66cb8bd/e64dbe11-465b-499d-8fa6-b7ca47ecb1d6.png
 ZTE/A35 64|12/270/https://cdn.salla.sa/vzoPn/3e76ec41-f0fc-4349-a7b2-f5f6ef94390d-1000x1000-c7ZnhNfHRihxRTwVSwrnTq3pnLjbywUwvD15sDd3.png
