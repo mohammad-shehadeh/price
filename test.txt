@@ -57,6 +57,7 @@ Tecno/spark 20C 256|8/380/https://tech101.com.ph/wp-content/uploads/2024/01/Blac
 Tecno/Camon 30 256|16/780/https://d3fyizz0b46qgr.cloudfront.net/global/phones/camon30/30premier/800/20231034.png
 Tecno/pova 6 256|16/750/https://telfonak.com/wp-content/uploads/2024/06/pova6-tecno.webp
 Tecno/pova 6 256|24/800/https://telfonak.com/wp-content/uploads/2024/06/pova6-tecno.webp
+Infinix/smart 9 HD 64|4/270/https://img.drz.lazcdn.com/static/pk/p/b4e1caad1e69f3f555ca52b5bc6b00a7.png_960x960q80.png_.webp
 Infinix/hot 50pro 256|16/620/https://media.extra.com/i/aurora/100389042_100_01?fmt=auto&w=720
 Infinix/hot 50 256|16/570/https://www.startech.com.bd/image/cache/catalog/mobile/infinix/hot-50/infinix-hot-50-sleek-black-500x500.webp
 Infinix/hot 50i 128|8/330/https://i0.wp.com/alltech.pk/wp-content/uploads/2024/10/Infinix-Hot-50i-Sleek-Blk.jpg
