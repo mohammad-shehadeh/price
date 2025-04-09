@@ -374,8 +374,14 @@ th {
     const numbers = nameParts.filter(part => !isNaN(part));
     const text = nameParts.filter(part => isNaN(part));
 
-    // دمج الأرقام والنصوص بحيث الأرقام تظهر أولًا
-    const formattedName = [...numbers, ...text].join(' ');
+    // إذا كانت الأرقام في بداية النص، نبقي ترتيبها كما هو
+    let formattedName = '';
+
+    if (numbers.length > 0 && text.length > 0) {
+        formattedName = `${numbers[0]} ${text.join(' ')} ${numbers.slice(1).join(' ')}`;
+    } else {
+        formattedName = product.name; // إذا لم يكن هناك فصل، نترك الاسم كما هو
+    }
 
     row.innerHTML = `<td>${formattedName}</td><td>${isNaN(product.price) ? 'غير متوفر' : product.price.toFixed(2)}</td>`;
     tbody.appendChild(row);
