@@ -332,7 +332,7 @@
             }
         };
 
-function renderCategories() {
+        function renderCategories() {
     categoriesContainer.innerHTML = '';
     const categories = [...new Set(products.map(p => p.category))];
 
@@ -355,9 +355,19 @@ function renderCategories() {
 
         const tbody = document.createElement('tbody');
         const categoryProducts = products.filter(p => p.category === category);
+
         categoryProducts.forEach(product => {
             const row = document.createElement('tr');
-            row.innerHTML = `<td>${product.name}</td><td>${isNaN(product.price) ? 'غير متوفر' : product.price.toFixed(2)}</td>`;
+
+            // فصل الأرقام عن النصوص
+            const nameParts = product.name.split(' ');
+            const numbers = nameParts.filter(part => !isNaN(part));
+            const text = nameParts.filter(part => isNaN(part));
+
+            // دمج الأرقام والنصوص بحيث الأرقام تظهر أولًا
+            const formattedName = [...numbers, ...text].join(' ');
+
+            row.innerHTML = `<td>${formattedName}</td><td>${isNaN(product.price) ? 'غير متوفر' : product.price.toFixed(2)}</td>`;
             tbody.appendChild(row);
         });
 
@@ -367,6 +377,7 @@ function renderCategories() {
         categoriesContainer.appendChild(categoryWrapper);
     });
 }
+
 
     </script>
 
