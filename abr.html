@@ -166,11 +166,21 @@
         }
 
         th, td {
-            padding: 16px;
-            border: 1px solid #e0e0e0;
-            font-size: 18px;
-            text-align: center;
-        }
+    padding: 16px;
+    border: 1px solid #e0e0e0;
+    font-size: 18px;
+    text-align: center;
+    white-space: nowrap;
+}
+
+td {
+    direction: ltr; /* محاذاة الأرقام على اليسار */
+}
+
+th {
+    direction: rtl; /* محاذاة العناوين على اليمين */
+}
+
 
         th {
             background-color: var(--dark-color);
@@ -357,19 +367,20 @@
         const categoryProducts = products.filter(p => p.category === category);
 
         categoryProducts.forEach(product => {
-            const row = document.createElement('tr');
+    const row = document.createElement('tr');
 
-            // فصل الأرقام عن النصوص
-            const nameParts = product.name.split(' ');
-            const numbers = nameParts.filter(part => !isNaN(part));
-            const text = nameParts.filter(part => isNaN(part));
+    // فصل الأرقام عن النصوص
+    const nameParts = product.name.split(' ');
+    const numbers = nameParts.filter(part => !isNaN(part));
+    const text = nameParts.filter(part => isNaN(part));
 
-            // دمج الأرقام والنصوص بحيث الأرقام تظهر أولًا
-            const formattedName = [...numbers, ...text].join(' ');
+    // دمج الأرقام والنصوص بحيث الأرقام تظهر أولًا
+    const formattedName = [...numbers, ...text].join(' ');
 
-            row.innerHTML = `<td>${formattedName}</td><td>${isNaN(product.price) ? 'غير متوفر' : product.price.toFixed(2)}</td>`;
-            tbody.appendChild(row);
-        });
+    row.innerHTML = `<td>${formattedName}</td><td>${isNaN(product.price) ? 'غير متوفر' : product.price.toFixed(2)}</td>`;
+    tbody.appendChild(row);
+});
+
 
         table.appendChild(tbody);
         categoryWrapper.appendChild(table);
