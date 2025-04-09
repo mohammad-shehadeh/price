@@ -268,6 +268,10 @@ th {
   display: none;
 }
 
+.red-text {
+    color: red;
+}
+
     </style>
 </head>
 <body>
@@ -373,7 +377,7 @@ th {
     const nameParts = product.name.split(' ');
     let formattedName = nameParts.join(' '); // نترك النص كما هو دون تغييره
 
-    row.innerHTML = `<td>${formattedName}</td><td>${isNaN(product.price) ? 'غير متوفر' : product.price.toFixed(2)}</td>`;
+    row.innerHTML = `<td>${formattedName}</td><td class="${isNaN(product.price) ? 'red-text' : ''}">${isNaN(product.price) ? 'غير متوفر' : product.price.toFixed(2)}</td>`;
     tbody.appendChild(row);
 });
 
