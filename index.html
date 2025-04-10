@@ -1875,9 +1875,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
   if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('/service-worker.js')
+    navigator.serviceWorker.register('/sw.js')
       .then(() => console.log('Service Worker تم التسجيل بنجاح'))
-      .catch(err => console.log('فشل في تسجيل Service Worker:', err));
+      .catch(err => console.error('فشل في تسجيل Service Worker:', err));
   }
 </script>
 <script type="module" src="login.js"></script>
