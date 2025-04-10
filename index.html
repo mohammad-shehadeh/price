@@ -1882,6 +1882,26 @@ document.addEventListener("DOMContentLoaded", function () {
     // بدء المراقبة على تغييرات الـ style في loginContainer
     observer.observe(loginContainer, { attributes: true });
 });
+
+
+ if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/price/sw.js')
+                    .then(registration => {
+                        console.log('ServiceWorker registration successful');
+                    })
+                    .catch(err => {
+                        console.log('ServiceWorker registration failed: ', err);
+                    });
+            });
+        }
+
+        // Install Prompt Handling
+        let deferredPrompt;
+        const installButton = document.createElement('button');
+        
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
 </script>
 <script type="module" src="login.js"></script>
 </body>
