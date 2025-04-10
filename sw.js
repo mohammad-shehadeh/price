@@ -5,6 +5,7 @@ const urlsToCache = [
   '/',
   '/index.html',
   '/offline.html',
+   '/abr.html',
   '/style.css', // أضف باقي الملفات التي تريد تخزينها
 ];
 
