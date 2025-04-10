@@ -1,52 +1,34 @@
-const CACHE_NAME = 'shehadeh-v3';
-const OFFLINE_URL = '/price/offline.html';
-const PRECACHE_ASSETS = [
-  '/price/',
-  '/price/index.html',
-  '/price/styles.css',
-  '/price/app.js',
-  '/price/img/icon-512x512.png',
-  '/price/img/icon-192x192.png',
-  '/price/manifest.json'
+// service-worker.js
+
+const CACHE_NAME = 'my-site-cache-v1';
+const OFFLINE_URL = 'offline.html';
+
+const urlsToCache = [
+  '/',
+  '/index.html',
+  '/offline.html',
+  '/style.css', // أضف ملفات أخرى حسب حاجتك
 ];
 
-// Installation
-self.addEventListener('install', (event) => {
+// عند التثبيت، خزّن الملفات
+self.addEventListener('install', event => {
   event.waitUntil(
     caches.open(CACHE_NAME)
-      .then((cache) => {
-        return cache.addAll(PRECACHE_ASSETS);
-      })
-      .then(() => self.skipWaiting())
+      .then(cache => cache.addAll(urlsToCache))
   );
+  self.skipWaiting();
 });
 
-// Activation
-self.addEventListener('activate', (event) => {
-  event.waitUntil(
-    caches.keys().then((cacheNames) => {
-      return Promise.all(
-        cacheNames.map((cache) => {
-          if (cache !== CACHE_NAME) {
-            return caches.delete(cache);
-          }
-        })
-      );
+// عند الطلب
+self.addEventListener('fetch', event => {
+  event.respondWith(
+    fetch(event.request).catch(() => {
+      return caches.match(event.request).then(response => {
+        if (response) return response;
+        if (event.request.mode === 'navigate') {
+          return caches.match(OFFLINE_URL);
+        }
+      });
     })
   );
-});
-
-// Fetching
-self.addEventListener('fetch', (event) => {
-  if (event.request.mode === 'navigate') {
-    event.respondWith(
-      fetch(event.request)
-        .catch(() => caches.match(OFFLINE_URL))
-    );
-  } else {
-    event.respondWith(
-      caches.match(event.request)
-        .then((response) => response || fetch(event.request))
-    );
-  }
 });
