@@ -4,19 +4,56 @@
   <meta charset="UTF-8">
   <title>محرر كاتالوج جدولي</title>
   <style>
-    body { font-family: sans-serif; margin: 20px; direction: rtl; }
-    table { width: 100%; border-collapse: collapse; margin-bottom: 10px; }
-    th, td { border: 1px solid #ccc; padding: 8px; text-align: center; }
-    th { background-color: #f0f0f0; }
-    td[contenteditable] { background-color: #fffbe6; }
-    button { margin: 5px; padding: 5px 10px; }
-    textarea { width: 100%; height: 150px; direction: ltr; }
+    body {
+      font-family: sans-serif;
+      margin: 20px;
+      direction: rtl;
+    }
+    select, button {
+      margin: 5px;
+      padding: 5px 10px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 10px;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 8px;
+      text-align: center;
+    }
+    th {
+      background-color: #f0f0f0;
+    }
+    td[contenteditable] {
+      background-color: #fffbe6;
+    }
+    textarea {
+      width: 100%;
+      height: 150px;
+      direction: ltr;
+    }
   </style>
 </head>
 <body>
 
   <h3>محرر كاتالوج</h3>
+  
+  <!-- قائمة اختيار للملف المطلوب -->
+  <label for="fileSelect">اختر الملف:</label>
+  <select id="fileSelect">
+    <option value="test.md" selected>test.md (افتراضي)</option>
+    <option value="abc.md">abc.md</option>
+    <option value="lcd.md">lcd.md</option>
+  </select>
+  
+  <!-- أزرار لتحميل الملف، إضافة صف وحفظ التعديلات -->
+  <button onclick="loadSelectedFile()">تحميل الملف</button>
+  <button onclick="addRow()">إضافة صف جديد</button>
+  <button onclick="saveMarkdown()">حفظ التعديلات</button>
 
+  <!-- جدول تحرير المنتجات -->
   <table id="catalogTable">
     <thead>
       <tr>
@@ -28,51 +65,97 @@
       </tr>
     </thead>
     <tbody id="tableBody">
-      <!-- الصفوف تُضاف ديناميكياً -->
+      <!-- سيتم إدخال الصفوف هنا عند تحميل الملف أو إضافتها -->
     </tbody>
   </table>
 
-  <button onclick="addRow()">إضافة صف جديد</button>
-
+  <!-- عرض الناتج النهائي بصيغة Markdown -->
   <h4>الناتج بصيغة Markdown:</h4>
   <textarea id="outputText" readonly></textarea>
 
   <script>
     const tableBody = document.getElementById("tableBody");
     const outputText = document.getElementById("outputText");
+    const fileSelect = document.getElementById("fileSelect");
 
-    function addRow(category = "", item = "", price = "", link = "") {
-      const row = document.createElement("tr");
-
-      row.innerHTML = `
-        <td contenteditable="true">${category}</td>
-        <td contenteditable="true">${item}</td>
-        <td contenteditable="true">${price}</td>
-        <td contenteditable="true">${link}</td>
-        <td><button onclick="this.closest('tr').remove(); updateOutput();">حذف</button></td>
-      `;
-
-      tableBody.appendChild(row);
-      updateOutput();
-    }
-
+    // تحديث الناتج بحيث يتم تحويل محتوى الجدول إلى صيغة Markdown
     function updateOutput() {
       let lines = [];
+      // نمر على كل صف ونستخرج محتويات أول 4 خلايا
       for (let row of tableBody.rows) {
         const cells = row.querySelectorAll("td");
         const values = Array.from(cells).slice(0, 4).map(td => td.innerText.trim());
-        if (values.some(val => val)) {
+        // نتأكد أن الصف غير فارغ
+        if (values.some(val => val !== "")) {
           lines.push(values.join("/"));
         }
       }
       outputText.value = lines.join("\n");
     }
 
-    // تحديث الناتج عند أي تعديل
-    tableBody.addEventListener("input", updateOutput);
+    // دالة لإضافة صف جديد. تُقبل القيم الاختيارية بحيث تُستخدم عند تحميل الملف.
+    function addRow(category = "", item = "", price = "", link = "") {
+      const row = document.createElement("tr");
+      row.innerHTML = `
+        <td contenteditable="true">${category}</td>
+        <td contenteditable="true">${item}</td>
+        <td contenteditable="true">${price}</td>
+        <td contenteditable="true">${link}</td>
+        <td><button onclick="removeRow(this)">حذف</button></td>
+      `;
+      // إضافة حدث تحديث تلقائي عند إدخال نص في الخلايا
+      row.querySelectorAll("td[contenteditable]").forEach(cell => {
+        cell.addEventListener("input", updateOutput);
+      });
+      tableBody.appendChild(row);
+      updateOutput();
+    }
 
-    // إضافة صف افتراضي عند التشغيل
-    addRow("الكترونيات", "كاميرا", "250", "https://link.to/image.jpg");
+    // إزالة صف من الجدول
+    function removeRow(button) {
+      const row = button.closest("tr");
+      row.remove();
+      updateOutput();
+    }
+
+    // تحميل محتوى الملف المختار وتحويل الأسطر إلى صفوف بالجدول
+    function loadSelectedFile() {
+      tableBody.innerHTML = ""; // تنظيف الجدول
+      const filename = fileSelect.value;
+      fetch(filename)
+        .then(res => res.text())
+        .then(text => {
+          // يفترض أن الملف يحتوي على أسطر بصيغة: Category/Item/Price/Image Link
+          const lines = text.trim().split("\n");
+          for (let line of lines) {
+            const parts = line.split("/");
+            if (parts.length >= 4) {
+              addRow(parts[0].trim(), parts[1].trim(), parts[2].trim(), parts[3].trim());
+            }
+          }
+          updateOutput();
+        })
+        .catch(() => {
+          alert("تعذر تحميل الملف " + filename);
+        });
+    }
+
+    // حفظ الناتج الحالي إلى ملف Markdown
+    function saveMarkdown() {
+      const markdownData = outputText.value;
+      const filename = fileSelect.value; // سيتم الحفظ بنفس اسم الملف المحدد
+      const blob = new Blob([markdownData], {type: "text/markdown;charset=utf-8"});
+      const linkElement = document.createElement("a");
+      linkElement.href = URL.createObjectURL(blob);
+      linkElement.download = filename;
+      linkElement.style.display = "none";
+      document.body.appendChild(linkElement);
+      linkElement.click();
+      document.body.removeChild(linkElement);
+    }
+
+    // تحميل الملف الافتراضي عند بدء الصفحة
+    window.onload = loadSelectedFile;
   </script>
 
 </body>
