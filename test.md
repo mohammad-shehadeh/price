@@ -1,4 +1,4 @@
-samsung/S25 ultra 256|12/aaa/https:
+samsung/S25 ultra 256|12/aaa/https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6612/6612723_sd.jpg;maxHeight=640;maxWidth=550;format=webp
 samsung/S24 ultra 256|12/aaa/https:
 samsung/S24 ultra 512|12/aaa/https:
 samsung/S23 ultra 256|12/2700/https:
