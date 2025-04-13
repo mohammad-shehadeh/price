@@ -36,6 +36,28 @@
     }
     
     
+    
+    /* تحديث CSS لخلايا الروابط */
+td:nth-child(4) {  /* العمود الرابع (رابط الصورة) */
+  max-width: 300px;  /* تحديد عرض مناسب */
+  word-wrap: break-word;  /* يسمح بكسر الكلمات الطويلة */
+  overflow-wrap: break-word;  /* بديل حديث لـ word-wrap */
+  white-space: pre-wrap;  /* يحافظ على المسافات ويسمح بالتغليف */
+  overflow: auto;  /* إضافة شريط تمرير عند الحاجة */
+  text-align: left;  /* محاذاة النص لليسار للروابط */
+  direction: ltr;  /* اتجاه النص من اليسار لليمين للروابط */
+}
+
+/* تحسين مظهر شريط التمرير */
+td:nth-child(4)::-webkit-scrollbar {
+  height: 5px;  /* ارتفاع شريط التمرير الأفقي */
+  width: 5px;   /* عرض شريط التمرير العمودي */
+}
+
+td:nth-child(4)::-webkit-scrollbar-thumb {
+  background: #888;  /* لون شريط التمرير */
+  border-radius: 5px;  /* زوايا مدورة */
+}
   </style>
 </head>
 <body>
