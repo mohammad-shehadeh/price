@@ -35,13 +35,7 @@
       direction: ltr;
     }
     
-    td[contenteditable] {
-  background-color: #fffbe6;
-  word-break: break-all;
-  white-space: pre-wrap;
-  direction: ltr;
-  text-align: left;
-}
+    
   </style>
 </head>
 <body>
@@ -86,16 +80,22 @@
     const fileSelect = document.getElementById("fileSelect");
 
     function updateOutput() {
-      let lines = [];
-      for (let row of tableBody.rows) {
-        const cells = row.querySelectorAll("td");
-        const values = Array.from(cells).slice(0, 4).map(td => td.innerText.trim());
-        if (values.some(val => val !== "")) {
-          lines.push(values.join("/"));
-        }
+  let lines = [];
+  for (let row of tableBody.rows) {
+    const cells = row.querySelectorAll("td");
+    const values = Array.from(cells).slice(0, 4).map(td => {
+      // معالجة خاصة لعمود رابط الصورة (العمود الرابع)
+      if (cells[3] === td) {
+        return td.textContent.trim(); // استخدام textContent بدلاً من innerText للحصول على المحتوى الكامل
       }
-      outputText.value = lines.join("\n");
+      return td.innerText.trim();
+    });
+    if (values.some(val => val !== "")) {
+      lines.push(values.join("/"));
     }
+  }
+  outputText.value = lines.join("\n");
+}
 
     function addRow(category = "", item = "", price = "", link = "") {
       const row = document.createElement("tr");
