@@ -2,13 +2,15 @@
 <html lang="ar">
 <head>
   <meta charset="UTF-8">
-  <title>محرر Markdown</title>
-  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <title>محرر كاتالوج</title>
   <style>
     body { font-family: sans-serif; margin: 20px; direction: rtl; }
-    select { margin-bottom: 10px; padding: 5px; }
-    textarea { width: 45%; height: 80vh; float: right; }
-    #preview { width: 50%; height: 80vh; float: left; padding: 10px; border: 1px solid #ccc; background: #f9f9f9; overflow-y: auto; }
+    select, button { margin-bottom: 10px; padding: 5px; }
+    textarea { width: 45%; height: 80vh; float: right; direction: ltr; }
+    #preview { width: 50%; height: 80vh; float: left; padding: 10px; border: 1px solid #ccc; background: #f9f9f9; overflow-y: auto; direction: rtl; }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { border: 1px solid #ccc; padding: 8px; text-align: center; }
+    th { background-color: #f0f0f0; }
   </style>
 </head>
 <body>
@@ -22,7 +24,7 @@
 
   <br>
 
-  <textarea id="editor" placeholder="تحميل الملف..."></textarea>
+  <textarea id="editor" placeholder="Category/Item/Price/Image Link"></textarea>
   <div id="preview"></div>
 
   <script>
@@ -44,7 +46,37 @@
     }
 
     function updatePreview() {
-      preview.innerHTML = marked.parse(editor.value);
+      const lines = editor.value.trim().split("\n");
+      let tableHTML = `
+        <table>
+          <thead>
+            <tr>
+              <th>الفئة</th>
+              <th>الصنف</th>
+              <th>السعر</th>
+              <th>الصورة</th>
+            </tr>
+          </thead>
+          <tbody>
+      `;
+
+      for (let line of lines) {
+        const parts = line.split("/");
+        if (parts.length >= 4) {
+          const [category, item, price, link] = parts;
+          tableHTML += `
+            <tr>
+              <td>${category.trim()}</td>
+              <td>${item.trim()}</td>
+              <td>${price.trim()}</td>
+              <td><a href="${link.trim()}" target="_blank">عرض</a></td>
+            </tr>
+          `;
+        }
+      }
+
+      tableHTML += "</tbody></table>";
+      preview.innerHTML = tableHTML;
     }
 
     editor.addEventListener("input", updatePreview);
