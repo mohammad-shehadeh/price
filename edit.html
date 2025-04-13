@@ -5,26 +5,42 @@
   <title>محرر كاتالوج</title>
   <style>
     body {
-      font-family: sans-serif;
+      font-family: Arial, sans-serif;
       margin: 20px;
-      direction: rtr;
+      direction: rtl;
+      background-color: #f5f5f5;
     }
     select, button {
       margin: 5px;
-      padding: 5px 10px;
+      padding: 8px 15px;
+      border-radius: 4px;
+      border: 1px solid #ddd;
+    }
+    button {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    button:hover {
+      background-color: #45a049;
     }
     table {
       width: 100%;
       border-collapse: collapse;
-      margin-bottom: 10px;
+      margin: 20px 0;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
     }
     th, td {
-      border: 1px solid #ccc;
-      padding: 8px;
+      border: 1px solid #ddd;
+      padding: 12px;
       text-align: center;
     }
     th {
-      background-color: #f0f0f0;
+      background-color: #4CAF50;
+      color: white;
+      font-weight: bold;
     }
     td[contenteditable] {
       background-color: #fffbe6;
@@ -33,31 +49,24 @@
       width: 100%;
       height: 150px;
       direction: ltr;
+      padding: 10px;
+      border-radius: 4px;
+      border: 1px solid #ddd;
+      margin-top: 10px;
     }
     
-    /* تحديث CSS لخلايا الروابط */
-    td:nth-child(4) {  /* العمود الرابع (رابط الصورة) */
-      max-width: 300px;  /* تحديد عرض مناسب */
-      word-wrap: break-word;  /* يسمح بكسر الكلمات الطويلة */
-      overflow-wrap: break-word;  /* بديل حديث لـ word-wrap */
-      white-space: pre-wrap;  /* يحافظ على المسافات ويسمح بالتغليف */
-      overflow: auto;  /* إضافة شريط تمرير عند الحاجة */
-      text-align: left;  /* محاذاة النص لليسار للروابط */
-      direction: ltr;  /* اتجاه النص من اليسار لليمين للروابط */
+    /* تنسيق خلايا الروابط */
+    td:nth-child(4) {
+      max-width: 300px;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+      white-space: pre-wrap;
+      overflow: auto;
+      text-align: left;
+      direction: ltr;
     }
 
-    /* تحسين مظهر شريط التمرير */
-    td:nth-child(4)::-webkit-scrollbar {
-      height: 5px;  /* ارتفاع شريط التمرير الأفقي */
-      width: 5px;   /* عرض شريط التمرير العمودي */
-    }
-
-    td:nth-child(4)::-webkit-scrollbar-thumb {
-      background: #888;  /* لون شريط التمرير */
-      border-radius: 5px;  /* زوايا مدورة */
-    }
-    
-    /* تنسيق خلايا القوائم المنسدلة */
+    /* تنسيق القوائم المنسدلة */
     .category-cell {
       padding: 0;
     }
@@ -67,23 +76,34 @@
       border: none;
       background: transparent;
       text-align: center;
+      padding: 8px;
+    }
+    
+    /* زر الحذف */
+    .delete-btn {
+      background-color: #f44336;
+    }
+    .delete-btn:hover {
+      background-color: #d32f2f;
     }
   </style>
 </head>
 <body>
 
-  <h3>محرر كاتالوج</h3>
+  <h2>محرر كاتالوج المنتجات</h2>
 
-  <label for="fileSelect">اختر الملف:</label>
-  <select id="fileSelect">
-    <option value="test.md" selected>test.md (افتراضي)</option>
-    <option value="abc.md">abc.md</option>
-    <option value="lcd.md">lcd.md</option>
-  </select>
+  <div class="controls">
+    <label for="fileSelect">اختر الملف:</label>
+    <select id="fileSelect">
+      <option value="test.md" selected>test.md (افتراضي)</option>
+      <option value="abc.md">abc.md</option>
+      <option value="lcd.md">lcd.md</option>
+    </select>
 
-  <button onclick="loadSelectedFile()">تحميل الملف</button>
-  <button onclick="addRow()">إضافة صف جديد</button>
-  <button onclick="saveMarkdown()">حفظ التعديلات</button>
+    <button onclick="loadSelectedFile()">تحميل الملف</button>
+    <button onclick="addNewRow()">إضافة صف جديد (في الأعلى)</button>
+    <button onclick="saveMarkdown()">حفظ التعديلات</button>
+  </div>
 
   <table id="catalogTable">
     <thead>
@@ -98,10 +118,9 @@
     <tbody id="tableBody"></tbody>
   </table>
 
-  <h4>الناتج بصيغة Markdown:</h4>
+  <h3>الناتج بصيغة Markdown:</h3>
   <textarea id="outputText" readonly></textarea>
 
-  <!-- تحميل التوكن -->
   <script src="config.js"></script>
 
   <script>
@@ -111,7 +130,7 @@
     const outputText = document.getElementById("outputText");
     const fileSelect = document.getElementById("fileSelect");
 
-    // تعريف الخيارات لكل ملف
+    // خيارات الفئات لكل ملف
     const fileOptions = {
       "test.md": ["Samsung", "MI", "Apple", "Tecno", "Infinix", "Honor", "ZTE", "N/A"],
       "abc.md": ["Option1", "Option2", "Option3", "Other"],
@@ -123,14 +142,10 @@
       for (let row of tableBody.rows) {
         const cells = row.querySelectorAll("td");
         const values = Array.from(cells).slice(0, 4).map((td, index) => {
-          // معالجة خاصة لعمود رابط الصورة (العمود الرابع)
-          if (index === 3) {
-            return td.textContent.trim();
-          }
-          // معالجة خاصة لعمود الفئة (العمود الأول)
+          if (index === 3) return td.textContent.trim(); // رابط الصورة
           if (index === 0) {
             const select = td.querySelector('select');
-            return select ? select.value : td.textContent.trim();
+            return select ? select.value : td.textContent.trim(); // الفئة
           }
           return td.innerText.trim();
         });
@@ -155,14 +170,12 @@
       emptyOption.textContent = "اختر الفئة";
       select.appendChild(emptyOption);
       
-      // إضافة الخيارات المحددة للملف
+      // إضافة خيارات الفئة
       options.forEach(option => {
         const opt = document.createElement("option");
         opt.value = option;
         opt.textContent = option;
-        if (option === selectedValue) {
-          opt.selected = true;
-        }
+        if (option === selectedValue) opt.selected = true;
         select.appendChild(opt);
       });
       
@@ -174,14 +187,11 @@
       
       // خلية الفئة
       const categoryCell = document.createElement("td");
-      
       if (isNewRow) {
-        // للصف الجديد: نستخدم قائمة منسدلة
         categoryCell.className = "category-cell";
         const categorySelect = createCategorySelect(category);
         categoryCell.appendChild(categorySelect);
       } else {
-        // للبيانات القديمة: نستخدم نص عادي
         categoryCell.textContent = category;
         categoryCell.contentEditable = "true";
         categoryCell.addEventListener("input", updateOutput);
@@ -192,25 +202,32 @@
         <td contenteditable="true">${item}</td>
         <td contenteditable="true">${price}</td>
         <td contenteditable="true">${link}</td>
-        <td><button onclick="removeRow(this)">حذف</button></td>
+        <td><button class="delete-btn" onclick="removeRow(this)">حذف</button></td>
       `;
       
       // إدراج خلية الفئة في بداية الصف
       row.insertBefore(categoryCell, row.firstChild);
       
-      // إضافة مستمعات الأحداث للخلايا القابلة للتحرير
+      // إضافة مستمعات الأحداث
       row.querySelectorAll("td[contenteditable]").forEach(cell => {
         cell.addEventListener("input", updateOutput);
       });
       
-      tableBody.appendChild(row);
+      // إضافة الصف في بداية الجدول (أعلى الجدول)
+      if (tableBody.firstChild) {
+        tableBody.insertBefore(row, tableBody.firstChild);
+      } else {
+        tableBody.appendChild(row);
+      }
+      
       updateOutput();
     }
 
     function removeRow(button) {
-      const row = button.closest("tr");
-      row.remove();
-      updateOutput();
+      if (confirm("هل أنت متأكد من حذف هذا الصف؟")) {
+        button.closest("tr").remove();
+        updateOutput();
+      }
     }
 
     function loadSelectedFile() {
@@ -221,18 +238,15 @@
         .then(text => {
           const lines = text.trim().split("\n");
           for (let line of lines) {
-            // تقسيم السطر مع الحفاظ على رابط الصورة
-            const firstSlash = line.indexOf('/');
-            const secondSlash = line.indexOf('/', firstSlash + 1);
-            const thirdSlash = line.indexOf('/', secondSlash + 1);
-            
-            if (thirdSlash > -1) {
-              const category = line.substring(0, firstSlash).trim();
-              const model = line.substring(firstSlash + 1, secondSlash).trim();
-              const price = line.substring(secondSlash + 1, thirdSlash).trim();
-              const imageUrl = line.substring(thirdSlash + 1).trim();
-              
-              addRow(category, model, price, imageUrl, false);
+            const parts = line.split('/');
+            if (parts.length >= 4) {
+              addRow(
+                parts[0].trim(), 
+                parts[1].trim(), 
+                parts[2].trim(), 
+                parts.slice(3).join('/').trim(), 
+                false
+              );
             }
           }
           updateOutput();
@@ -242,9 +256,16 @@
         });
     }
 
-    // تعديل دالة addRow الافتراضية لتكون للصف الجديد فقط
     function addNewRow() {
       addRow("", "", "", "", true);
+      // وضع التركيز على خلية الصنف بعد الإضافة
+      setTimeout(() => {
+        const firstRow = tableBody.querySelector('tr');
+        if (firstRow) {
+          const itemCell = firstRow.querySelectorAll('td')[1];
+          if (itemCell) itemCell.focus();
+        }
+      }, 50);
     }
 
     async function saveMarkdown() {
@@ -252,42 +273,38 @@
       const path = fileSelect.value;
       const url = `https://api.github.com/repos/${owner}/${repo}/contents/${path}`;
 
-      // أولاً، نحتاج إلى الحصول على sha للملف الحالي
-      const shaRes = await fetch(url, {
-        headers: { Authorization: `token ${GITHUB_TOKEN}` }
-      });
-      const shaData = await shaRes.json();
-      const sha = shaData.sha;
+      try {
+        const shaRes = await fetch(url, {
+          headers: { Authorization: `token ${GITHUB_TOKEN}` }
+        });
+        const shaData = await shaRes.json();
+        const sha = shaData.sha;
 
-      fetch(url, {
-        method: "PUT",
-        headers: {
-          "Authorization": `token ${GITHUB_TOKEN}`,
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-          message: "تحديث من المحرر",
-          content: content,
-          sha: sha
-        })
-      })
-      .then(res => res.json())
-      .then(data => {
+        const saveRes = await fetch(url, {
+          method: "PUT",
+          headers: {
+            "Authorization": `token ${GITHUB_TOKEN}`,
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+            message: "تحديث من المحرر",
+            content: content,
+            sha: sha
+          })
+        });
+        
+        const data = await saveRes.json();
         if (data.content) {
           alert("تم حفظ التعديلات بنجاح!");
         } else {
           console.error(data);
           alert("حدث خطأ أثناء الحفظ.");
         }
-      })
-      .catch(err => {
+      } catch (err) {
         console.error(err);
         alert("فشل الاتصال بواجهة GitHub.");
-      });
+      }
     }
-
-    // تحديث زر الإضافة لاستخدام addNewRow بدلاً من addRow
-    document.querySelector("button[onclick='addRow()']").onclick = addNewRow;
 
     window.onload = loadSelectedFile;
   </script>
