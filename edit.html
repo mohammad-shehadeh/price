@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>تعديل abc.md</title>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <style>
+    body { display: flex; gap: 20px; font-family: sans-serif; direction: rtl; }
+    textarea { width: 45%; height: 90vh; }
+    #preview { width: 50%; padding: 10px; border: 1px solid #ccc; background: #f8f8f8; overflow-y: auto; }
+  </style>
+</head>
+<body>
+
+  <textarea id="editor" placeholder="تحميل abc.md..."></textarea>
+  <div id="preview"></div>
+
+  <script>
+    const editor = document.getElementById("editor");
+    const preview = document.getElementById("preview");
+
+    // تحميل محتوى abc.md
+    fetch("abc.md")
+      .then(res => res.text())
+      .then(text => {
+        editor.value = text;
+        updatePreview();
+      });
+
+    // تحديث المعاينة
+    function updatePreview() {
+      preview.innerHTML = marked.parse(editor.value);
+    }
+
+    editor.addEventListener("input", updatePreview);
+  </script>
+
+</body>
+</html>
