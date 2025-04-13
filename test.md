@@ -1,4 +1,4 @@
-samsung/S25 ultra 256|12/30/https:
+samsung/S25 ultra 256|12/aaa/https:
 samsung/S24 ultra 256|12/aaa/https:
 samsung/S24 ultra 512|12/aaa/https:
 samsung/S23 ultra 256|12/2700/https:
