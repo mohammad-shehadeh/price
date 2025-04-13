@@ -7,7 +7,7 @@
     body {
       font-family: sans-serif;
       margin: 20px;
-      direction: rtl;
+      direction: rtr;
     }
     select, button {
       margin: 5px;
@@ -169,14 +169,23 @@
       return select;
     }
 
-    function addRow(category = "", item = "", price = "", link = "") {
+    function addRow(category = "", item = "", price = "", link = "", isNewRow = false) {
       const row = document.createElement("tr");
       
-      // خلية الفئة مع القائمة المنسدلة
+      // خلية الفئة
       const categoryCell = document.createElement("td");
-      categoryCell.className = "category-cell";
-      const categorySelect = createCategorySelect(category);
-      categoryCell.appendChild(categorySelect);
+      
+      if (isNewRow) {
+        // للصف الجديد: نستخدم قائمة منسدلة
+        categoryCell.className = "category-cell";
+        const categorySelect = createCategorySelect(category);
+        categoryCell.appendChild(categorySelect);
+      } else {
+        // للبيانات القديمة: نستخدم نص عادي
+        categoryCell.textContent = category;
+        categoryCell.contentEditable = "true";
+        categoryCell.addEventListener("input", updateOutput);
+      }
       
       // بقية الخلايا
       row.innerHTML = `
@@ -223,7 +232,7 @@
               const price = line.substring(secondSlash + 1, thirdSlash).trim();
               const imageUrl = line.substring(thirdSlash + 1).trim();
               
-              addRow(category, model, price, imageUrl);
+              addRow(category, model, price, imageUrl, false);
             }
           }
           updateOutput();
@@ -231,6 +240,11 @@
         .catch(() => {
           alert("تعذر تحميل الملف " + filename);
         });
+    }
+
+    // تعديل دالة addRow الافتراضية لتكون للصف الجديد فقط
+    function addNewRow() {
+      addRow("", "", "", "", true);
     }
 
     async function saveMarkdown() {
@@ -271,6 +285,9 @@
         alert("فشل الاتصال بواجهة GitHub.");
       });
     }
+
+    // تحديث زر الإضافة لاستخدام addNewRow بدلاً من addRow
+    document.querySelector("button[onclick='addRow()']").onclick = addNewRow;
 
     window.onload = loadSelectedFile;
   </script>
