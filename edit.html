@@ -76,28 +76,41 @@ async function saveFile() {
   const filename = document.getElementById("fileSelect").value;
   const url = `https://api.github.com/repos/${username}/${repo}/contents/${filename}`;
   const newContent = getMarkdownFromTable();
-  const res = await fetch(url, { headers: { Authorization: `token ${token}` } });
-  const data = await res.json();
 
-  const saveRes = await fetch(url, {
-    method: "PUT",
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: `token ${token}`
-    },
-    body: JSON.stringify({
-      message: "تحديث من المحرر الجدولي",
-      content: btoa(unescape(encodeURIComponent(newContent))),
-      sha: data.sha
-    })
-  });
+  try {
+    const res = await fetch(url, { headers: { Authorization: `token ${token}` } });
+    const data = await res.json();
 
-  if (saveRes.ok) {
-    alert("✅ تم حفظ التعديلات!");
-  } else {
-    alert("❌ حدث خطأ أثناء الحفظ.");
+    if (!res.ok) {
+      throw new Error(`خطأ في تحميل الملف:\n${data.message}`);
+    }
+
+    const saveRes = await fetch(url, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `token ${token}`
+      },
+      body: JSON.stringify({
+        message: "تحديث من المحرر الجدولي",
+        content: btoa(unescape(encodeURIComponent(newContent))),
+        sha: data.sha
+      })
+    });
+
+    const saveResult = await saveRes.json();
+
+    if (saveRes.ok) {
+      alert("✅ تم حفظ التعديلات!");
+    } else {
+      console.error("تفاصيل الخطأ:", saveResult);
+      alert(`❌ فشل الحفظ: ${saveResult.message}`);
+    }
+  } catch (err) {
+    alert("❌ خطأ: " + err.message);
   }
 }
+
 
 // تحميل الملف الافتراضي عند بداية التشغيل
 window.onload = loadFile;
