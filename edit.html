@@ -35,29 +35,39 @@
       direction: ltr;
     }
     
-    
-    
     /* تحديث CSS لخلايا الروابط */
-td:nth-child(4) {  /* العمود الرابع (رابط الصورة) */
-  max-width: 300px;  /* تحديد عرض مناسب */
-  word-wrap: break-word;  /* يسمح بكسر الكلمات الطويلة */
-  overflow-wrap: break-word;  /* بديل حديث لـ word-wrap */
-  white-space: pre-wrap;  /* يحافظ على المسافات ويسمح بالتغليف */
-  overflow: auto;  /* إضافة شريط تمرير عند الحاجة */
-  text-align: left;  /* محاذاة النص لليسار للروابط */
-  direction: ltr;  /* اتجاه النص من اليسار لليمين للروابط */
-}
+    td:nth-child(4) {  /* العمود الرابع (رابط الصورة) */
+      max-width: 300px;  /* تحديد عرض مناسب */
+      word-wrap: break-word;  /* يسمح بكسر الكلمات الطويلة */
+      overflow-wrap: break-word;  /* بديل حديث لـ word-wrap */
+      white-space: pre-wrap;  /* يحافظ على المسافات ويسمح بالتغليف */
+      overflow: auto;  /* إضافة شريط تمرير عند الحاجة */
+      text-align: left;  /* محاذاة النص لليسار للروابط */
+      direction: ltr;  /* اتجاه النص من اليسار لليمين للروابط */
+    }
 
-/* تحسين مظهر شريط التمرير */
-td:nth-child(4)::-webkit-scrollbar {
-  height: 5px;  /* ارتفاع شريط التمرير الأفقي */
-  width: 5px;   /* عرض شريط التمرير العمودي */
-}
+    /* تحسين مظهر شريط التمرير */
+    td:nth-child(4)::-webkit-scrollbar {
+      height: 5px;  /* ارتفاع شريط التمرير الأفقي */
+      width: 5px;   /* عرض شريط التمرير العمودي */
+    }
 
-td:nth-child(4)::-webkit-scrollbar-thumb {
-  background: #888;  /* لون شريط التمرير */
-  border-radius: 5px;  /* زوايا مدورة */
-}
+    td:nth-child(4)::-webkit-scrollbar-thumb {
+      background: #888;  /* لون شريط التمرير */
+      border-radius: 5px;  /* زوايا مدورة */
+    }
+    
+    /* تنسيق خلايا القوائم المنسدلة */
+    .category-cell {
+      padding: 0;
+    }
+    .category-select {
+      width: 100%;
+      height: 100%;
+      border: none;
+      background: transparent;
+      text-align: center;
+    }
   </style>
 </head>
 <body>
@@ -101,36 +111,89 @@ td:nth-child(4)::-webkit-scrollbar-thumb {
     const outputText = document.getElementById("outputText");
     const fileSelect = document.getElementById("fileSelect");
 
+    // تعريف الخيارات لكل ملف
+    const fileOptions = {
+      "test.md": ["Samsung", "MI", "Apple", "Tecno", "Infinix", "Honor", "ZTE", "N/A"],
+      "abc.md": ["Option1", "Option2", "Option3", "Other"],
+      "lcd.md": ["LCD1", "LCD2", "LCD3", "LCD4", "Generic"]
+    };
+
     function updateOutput() {
-  let lines = [];
-  for (let row of tableBody.rows) {
-    const cells = row.querySelectorAll("td");
-    const values = Array.from(cells).slice(0, 4).map(td => {
-      // معالجة خاصة لعمود رابط الصورة (العمود الرابع)
-      if (cells[3] === td) {
-        return td.textContent.trim(); // استخدام textContent بدلاً من innerText للحصول على المحتوى الكامل
+      let lines = [];
+      for (let row of tableBody.rows) {
+        const cells = row.querySelectorAll("td");
+        const values = Array.from(cells).slice(0, 4).map((td, index) => {
+          // معالجة خاصة لعمود رابط الصورة (العمود الرابع)
+          if (index === 3) {
+            return td.textContent.trim();
+          }
+          // معالجة خاصة لعمود الفئة (العمود الأول)
+          if (index === 0) {
+            const select = td.querySelector('select');
+            return select ? select.value : td.textContent.trim();
+          }
+          return td.innerText.trim();
+        });
+        if (values.some(val => val !== "")) {
+          lines.push(values.join("/"));
+        }
       }
-      return td.innerText.trim();
-    });
-    if (values.some(val => val !== "")) {
-      lines.push(values.join("/"));
+      outputText.value = lines.join("\n");
     }
-  }
-  outputText.value = lines.join("\n");
-}
+
+    function createCategorySelect(selectedValue = "") {
+      const filename = fileSelect.value;
+      const options = fileOptions[filename] || [];
+      
+      const select = document.createElement("select");
+      select.className = "category-select";
+      select.onchange = updateOutput;
+      
+      // إضافة خيار فارغ
+      const emptyOption = document.createElement("option");
+      emptyOption.value = "";
+      emptyOption.textContent = "اختر الفئة";
+      select.appendChild(emptyOption);
+      
+      // إضافة الخيارات المحددة للملف
+      options.forEach(option => {
+        const opt = document.createElement("option");
+        opt.value = option;
+        opt.textContent = option;
+        if (option === selectedValue) {
+          opt.selected = true;
+        }
+        select.appendChild(opt);
+      });
+      
+      return select;
+    }
 
     function addRow(category = "", item = "", price = "", link = "") {
       const row = document.createElement("tr");
+      
+      // خلية الفئة مع القائمة المنسدلة
+      const categoryCell = document.createElement("td");
+      categoryCell.className = "category-cell";
+      const categorySelect = createCategorySelect(category);
+      categoryCell.appendChild(categorySelect);
+      
+      // بقية الخلايا
       row.innerHTML = `
-        <td contenteditable="true">${category}</td>
         <td contenteditable="true">${item}</td>
         <td contenteditable="true">${price}</td>
         <td contenteditable="true">${link}</td>
         <td><button onclick="removeRow(this)">حذف</button></td>
       `;
+      
+      // إدراج خلية الفئة في بداية الصف
+      row.insertBefore(categoryCell, row.firstChild);
+      
+      // إضافة مستمعات الأحداث للخلايا القابلة للتحرير
       row.querySelectorAll("td[contenteditable]").forEach(cell => {
         cell.addEventListener("input", updateOutput);
       });
+      
       tableBody.appendChild(row);
       updateOutput();
     }
@@ -142,33 +205,33 @@ td:nth-child(4)::-webkit-scrollbar-thumb {
     }
 
     function loadSelectedFile() {
-  tableBody.innerHTML = "";
-  const filename = fileSelect.value;
-  fetch(`https://raw.githubusercontent.com/${owner}/${repo}/main/${filename}`)
-    .then(res => res.text())
-    .then(text => {
-      const lines = text.trim().split("\n");
-      for (let line of lines) {
-        // تقسيم السطر مع الحفاظ على رابط الصورة
-        const firstSlash = line.indexOf('/');
-        const secondSlash = line.indexOf('/', firstSlash + 1);
-        const thirdSlash = line.indexOf('/', secondSlash + 1);
-        
-        if (thirdSlash > -1) {
-          const category = line.substring(0, firstSlash).trim();
-          const model = line.substring(firstSlash + 1, secondSlash).trim();
-          const price = line.substring(secondSlash + 1, thirdSlash).trim();
-          const imageUrl = line.substring(thirdSlash + 1).trim();
-          
-          addRow(category, model, price, imageUrl);
-        }
-      }
-      updateOutput();
-    })
-    .catch(() => {
-      alert("تعذر تحميل الملف " + filename);
-    });
-}
+      tableBody.innerHTML = "";
+      const filename = fileSelect.value;
+      fetch(`https://raw.githubusercontent.com/${owner}/${repo}/main/${filename}`)
+        .then(res => res.text())
+        .then(text => {
+          const lines = text.trim().split("\n");
+          for (let line of lines) {
+            // تقسيم السطر مع الحفاظ على رابط الصورة
+            const firstSlash = line.indexOf('/');
+            const secondSlash = line.indexOf('/', firstSlash + 1);
+            const thirdSlash = line.indexOf('/', secondSlash + 1);
+            
+            if (thirdSlash > -1) {
+              const category = line.substring(0, firstSlash).trim();
+              const model = line.substring(firstSlash + 1, secondSlash).trim();
+              const price = line.substring(secondSlash + 1, thirdSlash).trim();
+              const imageUrl = line.substring(thirdSlash + 1).trim();
+              
+              addRow(category, model, price, imageUrl);
+            }
+          }
+          updateOutput();
+        })
+        .catch(() => {
+          alert("تعذر تحميل الملف " + filename);
+        });
+    }
 
     async function saveMarkdown() {
       const content = btoa(unescape(encodeURIComponent(outputText.value)));
@@ -211,6 +274,5 @@ td:nth-child(4)::-webkit-scrollbar-thumb {
 
     window.onload = loadSelectedFile;
   </script>
-
 </body>
 </html>
