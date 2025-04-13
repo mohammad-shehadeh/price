@@ -1,4 +1,3 @@
-
 N\A/Kxd C1/35/https://s9.pik.ba/galerija/2021-04/26/06/slika-2830089-6086f09649711-velika.jpg
 N\A/Blackview Tap 6 kids 32|3/360/https://aio.lv/img/cache/product/4808273/56079125_extra_large.webp
 N\A/Blackview Tap 3 kids 32|2/220/https://tigersdeleste.com/wp-content/uploads/2024/08/127585.jpg
@@ -36,11 +35,10 @@ Tecno/Camon 30 256|16/780/https://d3fyizz0b46qgr.cloudfront.net/global/phones/ca
 Tecno/spark 20 pro 256|16/550/https://d3fyizz0b46qgr.cloudfront.net/global/spark-20-pro/product/jin.png
 Tecno/Camon 20 premier 5G 512|16/850/https://cdn.mart.ps/247862-thickbox_default/tecno-camon-20-premier-5g-512-8gb.jpg
 Tecno/GO 1 64|3/290/https://static.reach-tele.com/uploads/thumbs/55/5512810686892b375ab5043332011747.png
-Apple/Airpods 2/AAA/https://rptech.qa/cdn/shop/products/MV7N2_04_2048x.jpg?v=1661414544
 Apple/20W cdata/70/https://atoz.ps/media/catalog/product/cache/80ae6a42c65321efa11f489c1d538fd0/o/r/original_apple_c-data_20w_charger_1_.jpg
 Apple/ipad 9 64GB/aaa/https://cdsassets.apple.com/live/SZLF0YNV/images/sp/111898_sp849-ipad-9gen-480.png
-Apple/ipad 10 64GB/1300/https://realplaza.vtexassets.com/arquivos/ids/33743614-800-auto?v=638265979022630000&width=800&height=auto&aspect=true
-Apple/ipad 10 256GB/1820/https://realplaza.vtexassets.com/arquivos/ids/33743614-800-auto?v=638265979022630000&width=800&height=auto&aspect=true
+Apple/ipad 10 64GB/Aaa/https://realplaza.vtexassets.com/arquivos/ids/33743614-800-auto?v=638265979022630000&width=800&height=auto&aspect=true
+Apple/ipad 10 256GB/Aaa/https://realplaza.vtexassets.com/arquivos/ids/33743614-800-auto?v=638265979022630000&width=800&height=auto&aspect=true
 Apple/watch S10 42mm/1450/https://d61s2hjse0ytn.cloudfront.net/color/1357/Apple_Watch_Series_10_Silver.webp
 Apple/watch S10 46mm/1570/https://shop.ucom.am/media/catalog/product/cache/f0d04c535eae714fecfa8deb2c47c63b/1/a/1apple_watch_series_10_42mm_gps_silver_aluminum_sport_band_denim_1.webp
 Apple/iphone 13 128GB/1850/https://m.media-amazon.com/images/I/516QZcrv+dL.jpg
