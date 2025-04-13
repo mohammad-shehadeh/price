@@ -35,7 +35,14 @@
       direction: ltr;
     }
     
-    
+    td[contenteditable] {
+  background-color: #fffbe6;
+  white-space: nowrap;       /* يمنع الانتقال إلى سطر جديد */
+  overflow: visible;         /* يسمح بعرض المحتوى حتى لو تجاوز الخلية */
+  text-overflow: clip;       /* يمنع إظهار ... عند تجاوز النص */
+  max-width: none;           /* يزيل أي تحديد للعرض الأقصى */
+  word-break: keep-all;      /* يمنع كسر الكلمات الطويلة */
+}
   </style>
 </head>
 <body>
