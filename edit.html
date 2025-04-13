@@ -2,83 +2,38 @@
 <html lang="ar">
 <head>
   <meta charset="UTF-8">
-  <title>حفظ التعديلات على GitHub</title>
+  <title>تعديل abc.md</title>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   <style>
-    /* تنسيقات بسيطة كما في النسخ السابقة */
+    body { display: flex; gap: 20px; font-family: sans-serif; direction: rtl; }
+    textarea { width: 45%; height: 90vh; }
+    #preview { width: 50%; padding: 10px; border: 1px solid #ccc; background: #f8f8f8; overflow-y: auto; }
   </style>
 </head>
 <body>
-  <!-- باقي محتوى الصفحة كما في النسخة السابقة -->
-  <button onclick="saveToGitHub()">حفظ التعديلات</button>
-  <textarea id="outputText" readonly></textarea>
+
+  <textarea id="editor" placeholder="تحميل abc.md..."></textarea>
+  <div id="preview"></div>
 
   <script>
-    // يجب تعديل هذه البيانات لتتناسب مع بياناتك الخاصة
-    const githubUsername = "اسم_المستخدم_هنا";
-    const repoName = "اسم_المستودع_هنا";
-    const filePath = fileSelect.value;  // مثلاً "test.md" حسب الملف المختار
-    const commitMessage = "تحديث الكاتالوج من محرر الويب";
-    
-    // رمز الوصول يجب أن يكون مخزنًا بشكل آمن ولا ينصح بتضمينه مباشرة في الكود
-    const accessToken = "YOUR_GITHUB_PERSONAL_ACCESS_TOKEN";
+    const editor = document.getElementById("editor");
+    const preview = document.getElementById("preview");
 
-    // الحصول على محتوى الملف الحالي مع الـ SHA الخاص به (مطلوب للتحديث)
-    async function getFileInfo() {
-      const url = `https://api.github.com/repos/${githubUsername}/${repoName}/contents/${filePath}`;
-      const response = await fetch(url, {
-        headers: {
-          "Authorization": `token ${accessToken}`,
-          "Accept": "application/vnd.github.v3+json"
-        }
-      });
-      if (!response.ok) {
-        throw new Error("فشل جلب معلومات الملف من GitHub.");
-      }
-      return response.json();  // يتضمن: content (base64) و sha
-    }
-
-    // تحديث الملف في GitHub
-    async function updateFile(sha) {
-      const url = `https://api.github.com/repos/${githubUsername}/${repoName}/contents/${filePath}`;
-      // المحتوى الجديد يجب تحويله إلى base64
-      const newContent = btoa(unescape(encodeURIComponent(outputText.value)));
-      
-      const data = {
-        message: commitMessage,
-        content: newContent,
-        sha: sha
-      };
-
-      const response = await fetch(url, {
-        method: "PUT",
-        headers: {
-          "Authorization": `token ${accessToken}`,
-          "Accept": "application/vnd.github.v3+json",
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(data)
+    // تحميل محتوى abc.md
+    fetch("abc.md")
+      .then(res => res.text())
+      .then(text => {
+        editor.value = text;
+        updatePreview();
       });
 
-      if (!response.ok) {
-        const errorData = await response.json();
-        throw new Error("فشل تحديث الملف: " + (errorData.message || ""));
-      }
-      
-      return response.json();
+    // تحديث المعاينة
+    function updatePreview() {
+      preview.innerHTML = marked.parse(editor.value);
     }
 
-    async function saveToGitHub() {
-      try {
-        // الحصول على بيانات الملف الحالي
-        const fileInfo = await getFileInfo();
-        // تحديث الملف
-        const result = await updateFile(fileInfo.sha);
-        alert("تم حفظ التعديلات بنجاح على GitHub!");
-      } catch (error) {
-        console.error(error);
-        alert("حدث خطأ أثناء حفظ الملف: " + error.message);
-      }
-    }
+    editor.addEventListener("input", updatePreview);
   </script>
+
 </body>
 </html>
