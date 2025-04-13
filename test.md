@@ -1,7 +1,7 @@
 samsung/S25 ultra 256|12/aaa/https://assets.mmsrg.com/isr/166325/c1/-/ASSET_MMS_149453259/fee_786_587_png
 samsung/S24 ultra 256|12/aaa/https://sbitany.com/image/cache/catalog/109-634-0049-0369-2024012565120-460x460.jpg
 samsung/S24 ultra 512|12/aaa/https://sbitany.com/image/cache/catalog/109-634-0049-0369-2024012565120-460x460.jpg
-samsung/S23 ultra 256|12/2700/https://media-ik.croma.com/prod/https://media.croma.com/image/upload/v1709103161/Croma%20Assets/Communication/Mobiles/Images/275155_z2t6g2.png?tr=w-600
+samsung/S23 ultra 256|12/aaa/https://media-ik.croma.com/prod/https://media.croma.com/image/upload/v1709103161/Croma%20Assets/Communication/Mobiles/Images/275155_z2t6g2.png?tr=w-600
 samsung/A56 256|8/1460/https://gsmarena.com.in/front/images/product_images/large/95637.gif
 samsung/A36 256|8/1230/https://media-ik.croma.com/prod/https://media.croma.com/image/upload/v1741009141/Croma%20Assets/Communication/Mobiles/Images/314440_0_g3jqt5.png
 samsung/A36 128|8/1140/https://media-ik.croma.com/prod/https://media.croma.com/image/upload/v1741009141/Croma%20Assets/Communication/Mobiles/Images/314440_0_g3jqt5.png
@@ -25,9 +25,9 @@ MI/Note 13 pro 512|12/930/https://cdn.shortpixel.ai/spai/q_glossy+ret_img+to_web
 MI/Note 13 pro PLUS 512|12/1320/https://mobizil.com/wp-content/uploads/2023/11/Xiaomi-Redmi-Note-13-Pro-Plus.jpg
 MI/Note 13 256|8/AAA/https://cdn.webshopapp.com/shops/256009/files/447245727/xiaomi-xiaomi-redmi-note-13-4g-6gb-128gb.jpg
 MI/Note 13 512|8/590/https://cdn.webshopapp.com/shops/256009/files/447245727/xiaomi-xiaomi-redmi-note-13-4g-6gb-128gb.jpg
-MI/POCO X6 pro 512|12 /AAA/https://dzairtic.dz/wp-content/uploads/2024/06/xiaomi-poco-x6-pro-frandroid-2024-768x768-1.png
-MI/POCO X6 pro 256|12 /1000/https://dzairtic.dz/wp-content/uploads/2024/06/xiaomi-poco-x6-pro-frandroid-2024-768x768-1.png
-MI/POCO F6 PRO 512|12 /1750/https://www.phoneshock.it/wp-content/uploads/2024/07/15501222.jpeg
+MI/POCO X6 pro 512|12/AAA/https://dzairtic.dz/wp-content/uploads/2024/06/xiaomi-poco-x6-pro-frandroid-2024-768x768-1.png
+MI/POCO X6 pro 256|12/1000/https://dzairtic.dz/wp-content/uploads/2024/06/xiaomi-poco-x6-pro-frandroid-2024-768x768-1.png
+MI/POCO F6 PRO 512|12/1750/https://www.phoneshock.it/wp-content/uploads/2024/07/15501222.jpeg
 MI/redmi pad SE 128|6/aaa/https://api.mistore-eg.com/storage/uploads/eng_pl_Tablet-Redmi-Pad-SE-8-7-4G-4-128GB-Sky-Blue-2892_1-1729075248.webp
 MI/SE 11" 256|8/630/https://www.celletronic.com/wp-content/uploads/2023/09/xiaomi-redmi-pad-se-11-0-6gb-ram-128gb-wifi-gris.jpg
 MI/14C 256|8/400/https://www.hemfrance.com/39078-thickbox_default/xiaomi-redmi-14c-688-128-gb-6-gb-ram-green.jpg
@@ -84,4 +84,4 @@ N\A/Teclast M50 128|8/440/https://en.teclast.com/cdn/shop/files/12_025ea586-e65f
 N\A/Teclast M50 128|6/350/https://en.teclast.com/cdn/shop/files/12_025ea586-e65f-447b-a78a-32f342dc516f.jpg?v=1690282129&width=1500
 N\A/Blackview Tap 3 kids 32|2/220/https://tigersdeleste.com/wp-content/uploads/2024/08/127585.jpg
 N\A/Blackview Tap 6 kids 32|3/360/https://aio.lv/img/cache/product/4808273/56079125_extra_large.webp
-N\A/Kxd C1 /35/https://s9.pik.ba/galerija/2021-04/26/06/slika-2830089-6086f09649711-velika.jpg
+N\A/Kxd C1/35/https://s9.pik.ba/galerija/2021-04/26/06/slika-2830089-6086f09649711-velika.jpg
