@@ -2,211 +2,106 @@
 <html lang="ar">
 <head>
   <meta charset="UTF-8">
-  <title>محرر كاتالوج جدولي - تحديث GitHub</title>
+  <title>محرر كاتالوج GitHub</title>
   <style>
-    body {
-      font-family: sans-serif;
-      margin: 20px;
-      direction: rtl;
-    }
-    select, button {
-      margin: 5px;
-      padding: 5px 10px;
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-bottom: 10px;
-    }
-    th, td {
-      border: 1px solid #ccc;
-      padding: 8px;
-      text-align: center;
-    }
-    th {
-      background-color: #f0f0f0;
-    }
-    td[contenteditable] {
-      background-color: #fffbe6;
-    }
-    textarea {
-      width: 100%;
-      height: 150px;
-      direction: ltr;
-    }
+    body { font-family: sans-serif; direction: rtl; margin: 20px; }
+    table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+    th, td { border: 1px solid #ccc; padding: 8px; text-align: center; }
+    th { background: #eee; }
+    td[contenteditable] { background-color: #fff8dc; }
+    button, select { padding: 6px 12px; margin: 5px; }
   </style>
 </head>
 <body>
 
-  <h3>محرر كاتالوج</h3>
-  
-  <!-- قائمة اختيار للملف المطلوب -->
-  <label for="fileSelect">اختر الملف:</label>
-  <select id="fileSelect">
-    <option value="test.md" selected>test.md (افتراضي)</option>
-    <option value="abc.md">abc.md</option>
-    <option value="lcd.md">lcd.md</option>
-  </select>
-  
-  <!-- أزرار لتحميل الملف، إضافة صف وحفظ التعديلات -->
-  <button onclick="loadSelectedFile()">تحميل الملف</button>
-  <button onclick="addRow()">إضافة صف جديد</button>
-  <button onclick="saveToGitHub()">حفظ التعديلات على GitHub</button>
+<h2>📋 محرر كاتالوج GitHub</h2>
 
-  <!-- جدول تحرير المنتجات -->
-  <table id="catalogTable">
-    <thead>
-      <tr>
-        <th>الفئة</th>
-        <th>الصنف</th>
-        <th>السعر</th>
-        <th>رابط الصورة</th>
-        <th>حذف</th>
-      </tr>
-    </thead>
-    <tbody id="tableBody">
-      <!-- سيتم إدخال الصفوف هنا عند تحميل الملف أو إضافتها -->
-    </tbody>
-  </table>
+<label>اختر الملف:</label>
+<select id="fileSelect">
+  <option value="test.md">test.md (افتراضي)</option>
+  <option value="abc.md">abc.md</option>
+  <option value="lcd.md">lcd.md</option>
+</select>
+<button onclick="loadFile()">📥 تحميل</button>
+<button onclick="addRow()">➕ إضافة صف</button>
+<button onclick="saveFile()">💾 حفظ التعديلات</button>
 
-  <!-- عرض الناتج النهائي بصيغة Markdown -->
-  <h4>الناتج بصيغة Markdown:</h4>
-  <textarea id="outputText" readonly></textarea>
+<table id="catalogTable">
+  <thead>
+    <tr><th>الفئة</th><th>الصنف</th><th>السعر</th><th>رابط الصورة</th><th>حذف</th></tr>
+  </thead>
+  <tbody id="tableBody"></tbody>
+</table>
 
-  <script>
-    const tableBody = document.getElementById("tableBody");
-    const outputText = document.getElementById("outputText");
-    const fileSelect = document.getElementById("fileSelect");
+<script>
+const username = "mohammad-shehadeh";
+const repo = "price";
+const token = "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"; // ⚠️ عدّله لاحقًا
 
-    // *** إعدادات GitHub API *** 
-    // ضع بياناتك هنا:
-    const githubUsername = "USERNAME_HERE";  // استبدل باسم المستخدم الخاص بك
-    const repoName = "REPO_NAME_HERE";         // استبدل باسم المستودع
-    let filePath = "";                        // سيتم تحديده بناءً على اختيار المستخدم
-    const commitMessage = "تحديث الكاتالوج من محرر الويب";
-    // رمز الوصول الشخصي، يجب أن يتم تخزينه بأمان، هنا للعرض فقط
-    const accessToken = "YOUR_PERSONAL_ACCESS_TOKEN";
+function addRow(c = "", i = "", p = "", l = "") {
+  const row = document.createElement("tr");
+  row.innerHTML = `
+    <td contenteditable="true">${c}</td>
+    <td contenteditable="true">${i}</td>
+    <td contenteditable="true">${p}</td>
+    <td contenteditable="true">${l}</td>
+    <td><button onclick="this.closest('tr').remove();">🗑️</button></td>
+  `;
+  document.getElementById("tableBody").appendChild(row);
+}
 
-    // تحديث الناتج بحيث يتم تحويل محتوى الجدول إلى صيغة Markdown
-    function updateOutput() {
-      let lines = [];
-      // نمر على كل صف ونستخرج محتويات أول 4 خلايا
-      for (let row of tableBody.rows) {
-        const cells = row.querySelectorAll("td");
-        const values = Array.from(cells).slice(0, 4).map(td => td.innerText.trim());
-        if (values.some(val => val !== "")) {
-          lines.push(values.join("/"));
-        }
-      }
-      outputText.value = lines.join("\n");
-    }
+function getMarkdownFromTable() {
+  const rows = document.querySelectorAll("#tableBody tr");
+  return Array.from(rows).map(row => {
+    return Array.from(row.querySelectorAll("td")).slice(0, 4)
+      .map(cell => cell.innerText.trim()).join("/");
+  }).join("\n");
+}
 
-    // دالة لإضافة صف جديد مع قيم اختيارية
-    function addRow(category = "", item = "", price = "", link = "") {
-      const row = document.createElement("tr");
-      row.innerHTML = `
-        <td contenteditable="true">${category}</td>
-        <td contenteditable="true">${item}</td>
-        <td contenteditable="true">${price}</td>
-        <td contenteditable="true">${link}</td>
-        <td><button onclick="removeRow(this)">حذف</button></td>
-      `;
-      row.querySelectorAll("td[contenteditable]").forEach(cell => {
-        cell.addEventListener("input", updateOutput);
-      });
-      tableBody.appendChild(row);
-      updateOutput();
-    }
+async function loadFile() {
+  const filename = document.getElementById("fileSelect").value;
+  const url = `https://api.github.com/repos/${username}/${repo}/contents/${filename}`;
+  const res = await fetch(url, { headers: { Authorization: `token ${token}` } });
+  const data = await res.json();
+  const content = atob(data.content);
 
-    // إزالة صف من الجدول
-    function removeRow(button) {
-      const row = button.closest("tr");
-      row.remove();
-      updateOutput();
-    }
+  document.getElementById("tableBody").innerHTML = "";
+  content.trim().split("\n").forEach(line => {
+    const [c, i, p, l] = line.split("/");
+    addRow(c || "", i || "", p || "", l || "");
+  });
+}
 
-    // تحميل محتوى الملف المختار وتحويل الأسطر إلى صفوف بالجدول
-    function loadSelectedFile() {
-      tableBody.innerHTML = "";
-      filePath = fileSelect.value;
-      fetch(filePath)
-        .then(res => res.text())
-        .then(text => {
-          const lines = text.trim().split("\n");
-          for (let line of lines) {
-            const parts = line.split("/");
-            if (parts.length >= 4) {
-              addRow(parts[0].trim(), parts[1].trim(), parts[2].trim(), parts[3].trim());
-            }
-          }
-          updateOutput();
-        })
-        .catch(() => {
-          alert("تعذر تحميل الملف " + filePath);
-        });
-    }
+async function saveFile() {
+  const filename = document.getElementById("fileSelect").value;
+  const url = `https://api.github.com/repos/${username}/${repo}/contents/${filename}`;
+  const newContent = getMarkdownFromTable();
+  const res = await fetch(url, { headers: { Authorization: `token ${token}` } });
+  const data = await res.json();
 
-    // دالة للحصول على معلومات الملف من GitHub (بما في ذلك SHA)
-    async function getFileInfo() {
-      const url = `https://api.github.com/repos/${githubUsername}/${repoName}/contents/${filePath}`;
-      const response = await fetch(url, {
-        headers: {
-          "Authorization": `token ${accessToken}`,
-          "Accept": "application/vnd.github.v3+json"
-        }
-      });
-      if (!response.ok) {
-        throw new Error("فشل جلب معلومات الملف من GitHub.");
-      }
-      return response.json(); // يتضمن content (base64) و sha
-    }
+  const saveRes = await fetch(url, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `token ${token}`
+    },
+    body: JSON.stringify({
+      message: "تحديث من المحرر الجدولي",
+      content: btoa(unescape(encodeURIComponent(newContent))),
+      sha: data.sha
+    })
+  });
 
-    // دالة لتحديث الملف في GitHub
-    async function updateFile(sha) {
-      const url = `https://api.github.com/repos/${githubUsername}/${repoName}/contents/${filePath}`;
-      // تحويل المحتوى إلى base64 (تأكد من أن المحتوى بصيغة UTF-8)
-      const contentToSave = unescape(encodeURIComponent(outputText.value));
-      const newContent = btoa(contentToSave);
-      
-      const data = {
-        message: commitMessage,
-        content: newContent,
-        sha: sha
-      };
+  if (saveRes.ok) {
+    alert("✅ تم حفظ التعديلات!");
+  } else {
+    alert("❌ حدث خطأ أثناء الحفظ.");
+  }
+}
 
-      const response = await fetch(url, {
-        method: "PUT",
-        headers: {
-          "Authorization": `token ${accessToken}`,
-          "Accept": "application/vnd.github.v3+json",
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(data)
-      });
-
-      if (!response.ok) {
-        const errorData = await response.json();
-        throw new Error("فشل تحديث الملف: " + (errorData.message || ""));
-      }
-      return response.json();
-    }
-
-    // الدالة الرئيسية لحفظ الملف على GitHub
-    async function saveToGitHub() {
-      try {
-        filePath = fileSelect.value; // تحديد الملف الحالي
-        const fileInfo = await getFileInfo();
-        const result = await updateFile(fileInfo.sha);
-        alert("تم حفظ التعديلات بنجاح على GitHub!");
-      } catch (error) {
-        console.error(error);
-        alert("حدث خطأ أثناء حفظ الملف: " + error.message);
-      }
-    }
-
-    // تحميل الملف الافتراضي عند بدء الصفحة
-    window.onload = loadSelectedFile;
-  </script>
+// تحميل الملف الافتراضي عند بداية التشغيل
+window.onload = loadFile;
+</script>
 
 </body>
 </html>
