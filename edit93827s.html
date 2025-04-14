@@ -268,21 +268,19 @@
       }
     }
     
-    .img-preview {
+ .img-preview {
   width: 70px;
   height: 70px;
   object-fit: cover;
   border-radius: 4px;
-  margin-right: 10px;
-  vertical-align: middle;
   border: 1px solid #ddd;
+  margin-left: 10px; /* مسافة بين الصورة والنص */
 }
 
 .link-container {
   display: flex;
   align-items: center;
-  justify-content: flex-start; /* يدفع المحتوى لليسار */
-  direction: ltr; /* يجعل اتجاه العناصر من اليسار لليمين */
+  justify-content: flex-start; /* يدفع المحتوى إلى أقصى اليسار */
 }
 
   </style>
@@ -437,8 +435,8 @@
   const linkText = document.createElement("span");
   linkText.textContent = link;
   
-  linkContainer.appendChild(linkText);
 linkContainer.appendChild(imgPreview);
+linkContainer.appendChild(linkText);
   linkCell.appendChild(linkContainer);
   
   // بقية الخلايا
