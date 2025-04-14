@@ -350,22 +350,28 @@
       "lcd.md": ["LCD1", "LCD2", "LCD3", "LCD4", "Generic"]
     };
 
-    function updateOutput() {
+   function updateOutput() {
   let lines = [];
   for (let row of tableBody.rows) {
     const cells = row.querySelectorAll("td");
-    const values = Array.from(cells).slice(0, 4).map((td, index) => {
-      if (index === 3) {
-        // استخراج نص الرابط فقط (بدون معاينة الصورة)
-        const linkSpan = td.querySelector('span');
-        return linkSpan ? linkSpan.textContent.trim() : '';
+    const values = [];
+    
+    for (let i = 0; i < 4; i++) {
+      const cell = cells[i];
+      
+      if (i === 0) { // خلية الفئة
+        const select = cell.querySelector('select');
+        values.push(select ? select.value : cell.textContent.trim());
+      } 
+      else if (i === 3) { // خلية رابط الصورة
+        const linkSpan = cell.querySelector('span');
+        values.push(linkSpan ? linkSpan.textContent.trim() : cell.textContent.trim());
       }
-      if (index === 0) {
-        const select = td.querySelector('select');
-        return select ? select.value : td.textContent.trim();
+      else { // الخلايا الأخرى
+        values.push(cell.textContent.trim());
       }
-      return td.innerText.trim();
-    });
+    }
+    
     if (values.some(val => val !== "")) {
       lines.push(values.join("/"));
     }
@@ -402,11 +408,12 @@
     function addRow(category = "", item = "", price = "", link = "", isNewRow = false) {
   const row = document.createElement("tr");
   
-  // خلية الفئة
+  // 1. خلية الفئة
   const categoryCell = document.createElement("td");
   if (isNewRow) {
     categoryCell.className = "category-cell";
     const categorySelect = createCategorySelect(category);
+    categorySelect.addEventListener("change", updateOutput);
     categoryCell.appendChild(categorySelect);
   } else {
     categoryCell.textContent = category;
@@ -414,16 +421,34 @@
     categoryCell.addEventListener("input", updateOutput);
   }
   
-  // خلية رابط الصورة
+  // 2. خلية الصنف
+  const itemCell = document.createElement("td");
+  itemCell.contentEditable = "true";
+  itemCell.textContent = item;
+  itemCell.addEventListener("input", updateOutput);
+  
+  // 3. خلية السعر
+  const priceCell = document.createElement("td");
+  priceCell.contentEditable = "true";
+  priceCell.textContent = price;
+  priceCell.addEventListener("input", updateOutput);
+  
+  // 4. خلية رابط الصورة (معدلة)
   const linkCell = document.createElement("td");
   linkCell.contentEditable = "true";
   
   const linkContainer = document.createElement("div");
   linkContainer.className = "link-container";
   
+  const linkText = document.createElement("span");
+  linkText.className = "link-text";
+  linkText.textContent = link;
+  
   const imgPreview = document.createElement("img");
   imgPreview.className = "img-preview";
-  imgPreview.onerror = function() { this.style.display = 'none'; };
+  imgPreview.onerror = function() { 
+    this.style.display = 'none'; 
+  };
   
   if (link) {
     imgPreview.src = link;
@@ -432,44 +457,44 @@
     imgPreview.style.display = 'none';
   }
   
-  const linkText = document.createElement("span");
-  linkText.textContent = link;
-  
-linkContainer.appendChild(imgPreview);
-linkContainer.appendChild(linkText);
+  // ترتيب العناصر: الصورة ثم النص
+  linkContainer.appendChild(imgPreview);
+  linkContainer.appendChild(linkText);
   linkCell.appendChild(linkContainer);
   
-  // بقية الخلايا
-  row.innerHTML = `
-    <td contenteditable="true">${item}</td>
-    <td contenteditable="true">${price}</td>
-    <td><button class="delete-btn" onclick="removeRow(this)">حذف</button></td>
-  `;
+  // 5. خلية الإجراءات
+  const actionCell = document.createElement("td");
+  const deleteBtn = document.createElement("button");
+  deleteBtn.className = "delete-btn";
+  deleteBtn.textContent = "حذف";
+  deleteBtn.onclick = function() { removeRow(this); };
+  actionCell.appendChild(deleteBtn);
   
-  // إدراج الخلايا المخصصة
-  row.insertBefore(categoryCell, row.firstChild);
-  row.insertBefore(linkCell, row.children[3]);
+  // إضافة جميع الخلايا إلى الصف
+  row.appendChild(categoryCell);
+  row.appendChild(itemCell);
+  row.appendChild(priceCell);
+  row.appendChild(linkCell);
+  row.appendChild(actionCell);
   
-  // تحديث معاينة الصورة عند التعديل
-  linkCell.addEventListener("input", function() {
-    const newLink = this.textContent.trim();
-    const img = this.querySelector('.img-preview');
-    if (newLink) {
-      img.src = newLink;
-      img.style.display = 'inline-block';
+  // معالجة تحديثات رابط الصورة
+  linkCell.addEventListener("input", function(e) {
+    const newText = this.textContent.trim();
+    linkText.textContent = newText;
+    
+    if (newText) {
+      imgPreview.src = newText;
+      imgPreview.style.display = 'inline-block';
     } else {
-      img.style.display = 'none';
+      imgPreview.style.display = 'none';
     }
+    
     updateOutput();
   });
   
-  // إضافة الصف
+  // إضافة الصف إلى الجدول
   if (isNewRow) {
-    if (tableBody.firstChild) {
-      tableBody.insertBefore(row, tableBody.firstChild);
-    } else {
-      tableBody.appendChild(row);
-    }
+    tableBody.insertBefore(row, tableBody.firstChild);
   } else {
     tableBody.appendChild(row);
   }
