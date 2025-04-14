@@ -39,7 +39,6 @@ Apple/16 pro max 256GB/4650/https://mac-center.com.pr/cdn/shop/files/iPhone_16_P
 Apple/15 pro max 512GB/4100/https://www.apollo.pl/gfx/apollo/userfiles/_public/opisy/apple/195949019036/195949019036_5.jpg
 Apple/iphone 16 128GB/AAA/https://asiamall.asiacell.com/media/catalog/product/l/d/ld0006166708_2.jpg
 Apple/iphone 15 128GB/2380/https://cdn.shortpixel.ai/spai/q_glossy+ret_img+to_webp/mobizil.com/wp-content/uploads/2023/09/iPhone-15-3.jpg
-Apple/iphone 14 128GB/aaa/https://www.phonemart.ng/wp-content/uploads/2023/04/03.jpg.webp
 Apple/iphone 13 128GB/1850/https://m.media-amazon.com/images/I/516QZcrv+dL.jpg
 Apple/watch S10 46mm/1570/https://shop.ucom.am/media/catalog/product/cache/f0d04c535eae714fecfa8deb2c47c63b/1/a/1apple_watch_series_10_42mm_gps_silver_aluminum_sport_band_denim_1.webp
 Apple/watch S10 42mm/1450/https://i.postimg.cc/cH6Mc0rP/IMG-7141.png
