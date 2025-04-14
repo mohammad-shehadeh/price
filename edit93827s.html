@@ -268,12 +268,12 @@
       }
     }
     
- .img-preview {
-  width: 30px;
-  height: 30px;
+    .img-preview {
+  width: 40px;
+  height: 40px;
   object-fit: cover;
   border-radius: 4px;
-  margin-left: 10px;  /* تغيير margin-right إلى margin-left */
+  margin-right: 10px;
   vertical-align: middle;
   border: 1px solid #ddd;
 }
@@ -281,7 +281,8 @@
 .link-container {
   display: flex;
   align-items: center;
-  direction: ltr;  /* نحتفظ بهذا للروابط الإنجليزية */
+  justify-content: flex-end;
+  direction: ltr;
 }
 
   </style>
@@ -419,27 +420,19 @@
   const linkCell = document.createElement("td");
   linkCell.contentEditable = "true";
   
-  // داخل دالة addRow، في جزء إنشاء linkContainer:
-const linkContainer = document.createElement("div");
-linkContainer.className = "link-container";
-
-const imgPreview = document.createElement("img");
-imgPreview.className = "img-preview";
-imgPreview.onerror = function() { this.style.display = 'none'; };
-
-const linkText = document.createElement("span");
-linkText.textContent = link;
-
-// تغيير ترتيب الإضافة:
-linkContainer.appendChild(linkText);  // النص أولاً
-linkContainer.appendChild(imgPreview); // ثم الصورة
-
-if (link) {
-  imgPreview.src = link;
-  imgPreview.style.display = 'inline-block';
-} else {
-  imgPreview.style.display = 'none';
-}
+  const linkContainer = document.createElement("div");
+  linkContainer.className = "link-container";
+  
+  const imgPreview = document.createElement("img");
+  imgPreview.className = "img-preview";
+  imgPreview.onerror = function() { this.style.display = 'none'; };
+  
+  if (link) {
+    imgPreview.src = link;
+    imgPreview.style.display = 'inline-block';
+  } else {
+    imgPreview.style.display = 'none';
+  }
   
   const linkText = document.createElement("span");
   linkText.textContent = link;
@@ -461,16 +454,16 @@ if (link) {
   
   // تحديث معاينة الصورة عند التعديل
   linkCell.addEventListener("input", function() {
-  const newLink = this.textContent.trim();
-  const img = this.querySelector('.img-preview');
-  if (newLink) {
-    img.src = newLink;
-    img.style.display = 'inline-block';
-  } else {
-    img.style.display = 'none';
-  }
-  updateOutput();
-});
+    const newLink = this.textContent.trim();
+    const img = this.querySelector('.img-preview');
+    if (newLink) {
+      img.src = newLink;
+      img.style.display = 'inline-block';
+    } else {
+      img.style.display = 'none';
+    }
+    updateOutput();
+  });
   
   // إضافة الصف
   if (isNewRow) {
