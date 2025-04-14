@@ -269,8 +269,8 @@
     }
     
     .img-preview {
-  width: 40px;
-  height: 40px;
+  width: 70px;
+  height: 70px;
   object-fit: cover;
   border-radius: 4px;
   margin-right: 10px;
@@ -281,7 +281,7 @@
 .link-container {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: center;
   direction: ltr;
 }
 
@@ -437,8 +437,8 @@
   const linkText = document.createElement("span");
   linkText.textContent = link;
   
-  linkContainer.appendChild(imgPreview);
   linkContainer.appendChild(linkText);
+linkContainer.appendChild(imgPreview);
   linkCell.appendChild(linkContainer);
   
   // بقية الخلايا
