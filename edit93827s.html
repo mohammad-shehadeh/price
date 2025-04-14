@@ -412,7 +412,7 @@
     cell.addEventListener("input", updateOutput);
   });
   
-  // إضافة الصف في بداية الجدول (أعلى الجدول) - للصفوف الجديدة فقط
+  // إضافة الصف في بداية الجدول (أعلى الجدول) للصفوف الجديدة فقط
   if (isNewRow) {
     if (tableBody.firstChild) {
       tableBody.insertBefore(row, tableBody.firstChild);
@@ -440,9 +440,8 @@
     .then(res => res.text())
     .then(text => {
       const lines = text.trim().split("\n");
-      // تحميل البيانات بالترتيب العكسي (الأقدم أولاً)
-      for (let i = lines.length - 1; i >= 0; i--) {
-        const line = lines[i];
+      // تحميل البيانات بالترتيب الأصلي (بدون عكس)
+      for (let line of lines) {
         const parts = line.split('/');
         if (parts.length >= 4) {
           addRow(
@@ -460,6 +459,7 @@
       alert("تعذر تحميل الملف " + filename);
     });
 }
+
 
     function addNewRow() {
   addRow("", "", "", "", true);
