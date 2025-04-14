@@ -461,16 +461,16 @@ if (link) {
   
   // تحديث معاينة الصورة عند التعديل
   linkCell.addEventListener("input", function() {
-    const newLink = this.textContent.trim();
-    const img = this.querySelector('.img-preview');
-    if (newLink) {
-      img.src = newLink;
-      img.style.display = 'inline-block';
-    } else {
-      img.style.display = 'none';
-    }
-    updateOutput();
-  });
+  const newLink = this.textContent.trim();
+  const img = this.querySelector('.img-preview');
+  if (newLink) {
+    img.src = newLink;
+    img.style.display = 'inline-block';
+  } else {
+    img.style.display = 'none';
+  }
+  updateOutput();
+});
   
   // إضافة الصف
   if (isNewRow) {
