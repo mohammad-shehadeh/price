@@ -356,9 +356,6 @@
     const cells = row.querySelectorAll("td");
     const values = Array.from(cells).slice(0, 4).map((td, index) => {
       if (index === 3) {
-  const span = td.querySelector('span');
-  return span ? span.textContent.trim() : '';
-}
         // استخراج نص الرابط فقط (بدون معاينة الصورة)
         const linkSpan = td.querySelector('span');
         return linkSpan ? linkSpan.textContent.trim() : '';
@@ -412,10 +409,9 @@
     const categorySelect = createCategorySelect(category);
     categoryCell.appendChild(categorySelect);
   } else {
-  categoryCell.textContent = category;
-  categoryCell.contentEditable = "true";
-  categoryCell.addEventListener("input", updateOutput); // هذا السطر موجود
-} updateOutput);
+    categoryCell.textContent = category;
+    categoryCell.contentEditable = "true";
+    categoryCell.addEventListener("input", updateOutput);
   }
   
   // خلية رابط الصورة
