@@ -42,7 +42,7 @@ Apple/iphone 15 128GB/2380/https://cdn.shortpixel.ai/spai/q_glossy+ret_img+to_we
 Apple/iphone 14 128GB/aaa/https://www.phonemart.ng/wp-content/uploads/2023/04/03.jpg.webp
 Apple/iphone 13 128GB/1850/https://m.media-amazon.com/images/I/516QZcrv+dL.jpg
 Apple/watch S10 46mm/1570/https://shop.ucom.am/media/catalog/product/cache/f0d04c535eae714fecfa8deb2c47c63b/1/a/1apple_watch_series_10_42mm_gps_silver_aluminum_sport_band_denim_1.webp
-Apple/watch S10 42mm/1450/https://d61s2hjse0ytn.cloudfront.net/color/1357/Apple_Watch_Series_10_Silver.webp
+Apple/watch S10 42mm/1450/https://i.postimg.cc/cH6Mc0rP/IMG-7141.png
 Apple/ipad 10 256GB/Aaa/https://realplaza.vtexassets.com/arquivos/ids/33743614-800-auto?v=638265979022630000&width=800&height=auto&aspect=true
 Apple/ipad 10 64GB/Aaa/https://realplaza.vtexassets.com/arquivos/ids/33743614-800-auto?v=638265979022630000&width=800&height=auto&aspect=true
 Apple/ipad 9 64GB/aaa/https://cdsassets.apple.com/live/SZLF0YNV/images/sp/111898_sp849-ipad-9gen-480.png
