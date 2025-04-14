@@ -382,45 +382,49 @@
     }
 
     function addRow(category = "", item = "", price = "", link = "", isNewRow = false) {
-      const row = document.createElement("tr");
-      
-      // خلية الفئة
-      const categoryCell = document.createElement("td");
-      if (isNewRow) {
-        categoryCell.className = "category-cell";
-        const categorySelect = createCategorySelect(category);
-        categoryCell.appendChild(categorySelect);
-      } else {
-        categoryCell.textContent = category;
-        categoryCell.contentEditable = "true";
-        categoryCell.addEventListener("input", updateOutput);
-      }
-      
-      // بقية الخلايا
-      row.innerHTML = `
-        <td contenteditable="true">${item}</td>
-        <td contenteditable="true">${price}</td>
-        <td contenteditable="true">${link}</td>
-        <td><button class="delete-btn" onclick="removeRow(this)">حذف</button></td>
-      `;
-      
-      // إدراج خلية الفئة في بداية الصف
-      row.insertBefore(categoryCell, row.firstChild);
-      
-      // إضافة مستمعات الأحداث
-      row.querySelectorAll("td[contenteditable]").forEach(cell => {
-        cell.addEventListener("input", updateOutput);
-      });
-      
-      // إضافة الصف في بداية الجدول (أعلى الجدول)
-      if (tableBody.firstChild) {
-        tableBody.insertBefore(row, tableBody.firstChild);
-      } else {
-        tableBody.appendChild(row);
-      }
-      
-      updateOutput();
+  const row = document.createElement("tr");
+  
+  // خلية الفئة
+  const categoryCell = document.createElement("td");
+  if (isNewRow) {
+    categoryCell.className = "category-cell";
+    const categorySelect = createCategorySelect(category);
+    categoryCell.appendChild(categorySelect);
+  } else {
+    categoryCell.textContent = category;
+    categoryCell.contentEditable = "true";
+    categoryCell.addEventListener("input", updateOutput);
+  }
+  
+  // بقية الخلايا
+  row.innerHTML = `
+    <td contenteditable="true">${item}</td>
+    <td contenteditable="true">${price}</td>
+    <td contenteditable="true">${link}</td>
+    <td><button class="delete-btn" onclick="removeRow(this)">حذف</button></td>
+  `;
+  
+  // إدراج خلية الفئة في بداية الصف
+  row.insertBefore(categoryCell, row.firstChild);
+  
+  // إضافة مستمعات الأحداث
+  row.querySelectorAll("td[contenteditable]").forEach(cell => {
+    cell.addEventListener("input", updateOutput);
+  });
+  
+  // إضافة الصف في بداية الجدول (أعلى الجدول) - للصفوف الجديدة فقط
+  if (isNewRow) {
+    if (tableBody.firstChild) {
+      tableBody.insertBefore(row, tableBody.firstChild);
+    } else {
+      tableBody.appendChild(row);
     }
+  } else {
+    tableBody.appendChild(row);
+  }
+  
+  updateOutput();
+}
 
     function removeRow(button) {
       if (confirm("هل أنت متأكد من حذف هذا الصف؟")) {
@@ -430,42 +434,44 @@
     }
 
     function loadSelectedFile() {
-      tableBody.innerHTML = "";
-      const filename = fileSelect.value;
-      fetch(`https://raw.githubusercontent.com/${owner}/${repo}/main/${filename}`)
-        .then(res => res.text())
-        .then(text => {
-          const lines = text.trim().split("\n");
-          for (let line of lines) {
-            const parts = line.split('/');
-            if (parts.length >= 4) {
-              addRow(
-                parts[0].trim(), 
-                parts[1].trim(), 
-                parts[2].trim(), 
-                parts.slice(3).join('/').trim(), 
-                false
-              );
-            }
-          }
-          updateOutput();
-        })
-        .catch(() => {
-          alert("تعذر تحميل الملف " + filename);
-        });
-    }
+  tableBody.innerHTML = "";
+  const filename = fileSelect.value;
+  fetch(`https://raw.githubusercontent.com/${owner}/${repo}/main/${filename}`)
+    .then(res => res.text())
+    .then(text => {
+      const lines = text.trim().split("\n");
+      // تحميل البيانات بالترتيب العكسي (الأقدم أولاً)
+      for (let i = lines.length - 1; i >= 0; i--) {
+        const line = lines[i];
+        const parts = line.split('/');
+        if (parts.length >= 4) {
+          addRow(
+            parts[0].trim(), 
+            parts[1].trim(), 
+            parts[2].trim(), 
+            parts.slice(3).join('/').trim(), 
+            false
+          );
+        }
+      }
+      updateOutput();
+    })
+    .catch(() => {
+      alert("تعذر تحميل الملف " + filename);
+    });
+}
 
     function addNewRow() {
-      addRow("", "", "", "", true);
-      // وضع التركيز على خلية الصنف بعد الإضافة
-      setTimeout(() => {
-        const firstRow = tableBody.querySelector('tr');
-        if (firstRow) {
-          const itemCell = firstRow.querySelectorAll('td')[1];
-          if (itemCell) itemCell.focus();
-        }
-      }, 50);
+  addRow("", "", "", "", true);
+  // وضع التركيز على خلية الصنف بعد الإضافة
+  setTimeout(() => {
+    const firstRow = tableBody.querySelector('tr');
+    if (firstRow) {
+      const itemCell = firstRow.querySelectorAll('td')[1];
+      if (itemCell) itemCell.focus();
     }
+  }, 50);
+}
 
     async function saveMarkdown() {
       const content = btoa(unescape(encodeURIComponent(outputText.value)));
