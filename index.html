@@ -661,36 +661,93 @@ div {
         font-size: 10px; /* تقليل حجم الأسهم */
     }
 }
-/* تصميم عام لأزرار filter-buttons */
-#filter-buttons {
+/* تصميم عام لأزرار filter-buttons */#filter-buttons {
     display: flex;
-    flex-wrap: wrap; /* لجعل الأزرار تلتف إذا كانت كثيرة */
-    gap: 10px; /* مسافة صغيرة بين الأزرار */
-    margin-bottom: 15px;
-    justify-content: center; /* لمحاذاة الأزرار في المنتصف */
+    flex-wrap: wrap;
+    gap: 6px; /* تقليل المسافة بين الأزرار أكثر */
+    justify-content: center;
+    align-items: center;
+    padding: 12px;
+    margin-bottom: 20px;
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(8px);
+    border-radius: 16px;
+    width: fit-content;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
-/* تصميم كل زر */
+/* تصميم الأزرار الأساسي */
 #filter-buttons .filter-btn {
-    padding: 6px 12px; /* حجم صغير ومضغوط */
-    font-size: 14px; /* حجم نص مناسب */
-    border: 1px solid #ddd; /* إطار خفيف */
-    border-radius: 20px; /* زوايا مستديرة */
-    background-color: #f9f9f9; /* خلفية فاتحة */
-    color: #333; /* لون النص */
+    padding: 8px 16px;
+    font-size: 14px;
+    border: none;
+    border-radius: 20px;
+    background: linear-gradient(145deg, #f5f5f5, #e0e0e0);
+    color: #333;
     cursor: pointer;
-    transition: all 0.3s ease; /* تأثير عند التمرير فوق الزر */
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    min-width: 70px;
+    text-align: center;
+    font-weight: 500;
 }
 
+/* تأثير التحويم */
 #filter-buttons .filter-btn:hover {
-    background-color: #007bff; /* لون خلفية عند التمرير */
-    color: white; /* لون النص عند التمرير */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    color: #007bff;
 }
 
+/* تأثير النشط */
 #filter-buttons .filter-btn.active {
-    background-color: #007bff; /* لون مميز للزر النشط */
-    color: white; /* نص أبيض للزر النشط */
-    border-color: #0056b3; /* إطار أغمق للزر النشط */
+    background: linear-gradient(145deg, #0066ff, #0052cc);
+    color: white;
+    box-shadow: 0 4px 12px rgba(0, 102, 255, 0.3),
+                inset 0 1px 1px rgba(255, 255, 255, 0.2);
+    font-weight: 600;
+}
+
+/* تأثير النشط عند التحويم */
+#filter-buttons .filter-btn.active:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(0, 102, 255, 0.4),
+                inset 0 1px 1px rgba(255, 255, 255, 0.2);
+}
+
+/* تأثير الضغط */
+#filter-buttons .filter-btn:active {
+    transform: translateY(1px) !important;
+}
+
+/* تأثير إضافي للأزرار النشطة */
+#filter-buttons .filter-btn.active::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.2) 0%,
+        rgba(255, 255, 255, 0) 50%,
+        rgba(255, 255, 255, 0.2) 100%
+    );
+    z-index: -1;
+    border-radius: 20px;
+}
+
+/* تأثير عند التركيز */
+#filter-buttons .filter-btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
 }
 
 /* تصميم مربع البحث */
