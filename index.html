@@ -815,33 +815,32 @@ div {
     display: none; /* لإخفاء شريط التمرير في Chrome/Safari */
 }
 
-/* تصميم مربع البحث */###search-box {
-    width: 100%;
-    max-width: 280px; /* تقليل العرض الأقصى */
-    margin: 8px auto;
-    padding: 6px 12px;
-    font-size: 15px;
-    border: 1px solid #ccc;
-    border-radius: 25px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+
+#search-box {
+    width: 99%; /* ليكون بعرض الحاوية */
+    max-width: 300px; /* أقصى عرض */
+    margin: 10px auto; /* محاذاة وسط الصفحة */
+    padding: 8px 12px; /* حشوة داخلية */
+    font-size: 16px; /* حجم النص */
+    border: 1px solid #ddd; /* إطار خفيف */
+    border-radius: 20px; /* زوايا مستديرة */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* ظل خفيف */
     outline: none;
     transition: all 0.3s ease;
-    background-color: #fff;
 }
 
 #search-box:focus {
-    border-color: #00aaff;
-    box-shadow: 0 0 6px rgba(0, 170, 255, 0.4);
+    border-color: #007bff; /* لون الإطار عند التركيز */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* ظل عند التركيز */
 }
 
-/* الحاوية التي تضم مربع البحث والأزرار */
+/* جعل الأزرار ومربع البحث ضمن حاوية واحدة */
 .search-filter-container {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
-    padding: 10px;
-}
+    flex-direction: column; /* ترتيب عمودي */
+    align-items: center; /* محاذاة الوسط */
+    gap: 10px; /* مسافة بين العناصر */
+}  
 
 
 /* الحاوية الرئيسية */
