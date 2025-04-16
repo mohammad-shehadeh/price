@@ -721,93 +721,58 @@
 </style>
 
 <body>
-    <!-- Loading Screen -->
     <div id="loading-screen">
         <div class="loader"></div>
     </div>
-
-    <!-- Header Section -->
+  
     <header>
-        <div class="header-content">
-            <h1>Shehadeh Center</h1>
-            
-            <!-- Floating Menu Button -->
-            <button class="floating-button" onclick="window.location.href='abr.html'">
-                <i class="fas fa-list"></i>
-            </button>
-            
-            <!-- Hidden File Buttons -->
-            <div id="file-buttons"></div>
-            <button id="select-file-button">اختيار ملف</button>
-            
-            <!-- Search Box -->
-            <input type="text" id="search-box" placeholder="🔍 ابحث عن منتج" />
-            
-            <!-- Filter Buttons -->
-            <div id="filter-buttons"></div>
-            
-            <!-- Cart Toggle Button -->
-            <button class="toggle-cart" id="show-cart-button">
-                <i class="fas fa-shopping-cart"></i>
-                <span class="cart-text">سلة التسوق</span>
-                <span id="cart-total" class="price-container">0.00 ₪</span>
-            </button>
-        </div>
+        <h1>Shehadeh Center</h1>
+        <button class="floating-button" onclick="window.location.href='abr.html'">
+            <i class="fas fa-list"></i>
+        </button>
+        <div id="file-buttons"></div>
+        <button id="select-file-button">اختيار ملف</button>
+        <br>
+        <div id="filter-buttons"></div>
+        <input type="text" id="search-box" placeholder="🔍 أبحث عن منتج" />
+        <div id="filter-buttons"></div>
+        <button class="toggle-cart d-flex align-items-center gap-2" id="show-cart-button">
+            <i class="fas fa-shopping-cart"></i>
+            <span class="cart-text">سلة التسوق</span>
+            <i class="fas fa-shopping-cart"></i><br>
+            <span id="cart-total" class="fw-bold price-container">0.00 ₪</span>
+        </button>
     </header>
-
-    <!-- Main Content -->
+    
     <main>
+        <div id="categories"></div>
         <div class="products-container" id="products-container">
-            <!-- Products will be dynamically inserted here -->
+            <!-- سيتم إضافة المنتجات هنا ديناميكيًا -->
         </div>
     </main>
-
-    <!-- Shopping Cart -->
-    <div class="cart" id="cart">
-        <div class="cart-header">
-            <h2 class="cart-title">سلة التسوق</h2>
-            <button class="close-cart" id="hide-cart-button">&times;</button>
-        </div>
-        
-        <div class="cart-items-container" id="cart-items">
-            <!-- Cart items will be dynamically inserted here -->
-        </div>
-        
-        <div class="cart-footer">
-            <div class="cart-total">
-                <span>المجموع:</span>
-                <span class="price-container" id="cart-summary-total">0.00 ₪</span>
-            </div>
-            
-            <div class="cart-actions">
-                <button class="checkout-btn" id="checkout-button">إرسال الطلبية</button>
-                <button class="hide-cart-btn" id="hide-cart-button-2">إخفاء الفاتورة</button>
-            </div>
+    
+    <div class="cart hidden" id="cart">
+        <div id="cart-items"></div>
+        <button class="share-button" id="checkout-button">ارسال طلبية</button>
+        <br>
+        <button class="share-button" id="hide-cart-button">إخفاء الفاتورة</button>
+    </div>
+    
+    <div class="popup" id="popup">
+        <button class="popup-close" id="popup-close">&times;</button>
+        <h2>نموذج إتمام الطلب</h2>
+        <input type="text" id="customer-name" placeholder="ادخل اسمك">
+        <input type="text" id="customer-phone" placeholder="ادخل رقم هاتفك">
+        <div class="buttons">
+            <button id="confirm-button">إرسال</button>
+            <button id="cancel-button">ألغاء</button>
         </div>
     </div>
 
-    <!-- Order Confirmation Popup -->
-    <div class="popup-overlay" id="popup-overlay">
-        <div class="popup">
-            <h2>نموذج إتمام الطلب</h2>
-            <input type="text" id="customer-name" class="popup-input" placeholder="ادخل اسمك">
-            <input type="text" id="customer-phone" class="popup-input" placeholder="ادخل رقم هاتفك">
-            
-            <div class="popup-buttons">
-                <button class="popup-btn confirm-btn" id="confirm-button">إرسال</button>
-                <button class="popup-btn cancel-btn" id="cancel-button">إلغاء</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Scroll Buttons -->
     <div class="scroll-btn">
         <button id="scrollUp" title="الصعود للأعلى">↑</button>
         <button id="scrollDown" title="النزول للأسفل">↓</button>
     </div>
-
-    <!-- Categories Container -->
-    <div id="categories" style="display: none;"></div>
 </body>
 
     <script>
