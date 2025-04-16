@@ -815,7 +815,7 @@ div {
     display: none; /* لإخفاء شريط التمرير في Chrome/Safari */
 }
 
-/* تصميم مربع البحث */##search-box {#search-box {
+/* تصميم مربع البحث */###search-box {
     width: 100%;
     max-width: 280px; /* تقليل العرض الأقصى */
     margin: 8px auto;
@@ -1080,68 +1080,37 @@ input[type="text"]:focus, input[type="tel"]:focus {
 }
 
 
-/* تنسيق الزر العادي */.add-to-cart-btn {
-    background: linear-gradient(90deg, #0066ff, #00ccff);
+/* تنسيق الزر العادي */
+.add-to-cart-btn {
+    background: linear-gradient(90deg, #007bff, #00aaff, #007bff);
     color: white;
-    padding: 12px 28px;
+    padding: 11px 24px;
     border: none;
-    border-radius: 30px;
-    font-size: 18px;
-    font-weight: 600;
+    border-radius: 25px;
+    font-size: 20px;
     cursor: pointer;
-    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition: transform 0.3s ease, background-color 0.3s ease;
     margin-top: 20px;
     width: 100%;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
-    box-shadow: 0 4px 15px rgba(0, 118, 255, 0.2);
-    position: relative;
-    overflow: hidden;
 }
 
-.add-to-cart-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(0, 118, 255, 0.3);
-    background: linear-gradient(90deg, #0055ee, #00bbee);
+/* تنسيق الزر عند تعطيله *//* تنسيق الزر عند تعطيله */
+button.disabled, button[disabled] {
+    background: linear-gradient(90deg, #d3d3d3, #d3d3d3, #d3d3d3);  /* اللون السكني */
+    color: #8e8e8e;  /* لون النص عند التعطيل */
+    cursor: not-allowed;  /* تغيير شكل المؤشر إلى غير قابل للنقر */
+    border: none;  /* إزالة الحدود عند تعطيل الزر */
+    opacity: 0.6;  /* تقليل شفافية الزر لإظهاره كمعطل */
+    pointer-events: none;  /* تعطيل جميع أحداث المؤشر مثل النقر والتحويم */
+    user-select: none;  /* منع تحديد النص داخل الزر */
 }
 
-.add-to-cart-btn:active {
-    transform: translateY(0);
-    box-shadow: 0 3px 10px rgba(0, 118, 255, 0.2);
+/* تعطيل الأيقونة داخل الزر عند التعطيل */
+button.disabled i, button[disabled] i {
+    color: #8e8e8e;  /* تغيير لون الأيقونة عند تعطيل الزر */
+    pointer-events: none;  /* تعطيل تفاعل المستخدم مع الأيقونة */
 }
-
-/* تنسيق الزر عند تعطيله */
-.add-to-cart-btn.disabled, 
-.add-to-cart-btn[disabled] {
-    background: linear-gradient(90deg, #e0e0e0, #f0f0f0);
-    color: #a0a0a0;
-    cursor: not-allowed;
-    box-shadow: none;
-    transform: none;
-    position: relative;
-}
-
-/* تأثير بسيط عند التعطيل */
-.add-to-cart-btn.disabled::after,
-.add-to-cart-btn[disabled]::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(255, 255, 255, 0.5);
-    border-radius: 30px;
-}
-
-/* أيقونة الزر المعطل */
-.add-to-cart-btn.disabled i, 
-.add-to-cart-btn[disabled] i {
-    opacity: 0.7;
-    filter: grayscale(70%);
-}
-
-
 #login-container {
   background: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(10px);
