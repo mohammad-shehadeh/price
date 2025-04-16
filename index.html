@@ -815,31 +815,98 @@ div {
     display: none; /* لإخفاء شريط التمرير في Chrome/Safari */
 }
 
-/* تصميم مربع البحث */
-#search-box {
-    width: 100%; /* ليكون بعرض الحاوية */
-    max-width: 350px; /* أقصى عرض */
-    margin: 10px auto; /* محاذاة وسط الصفحة */
-    padding: 8px 12px; /* حشوة داخلية */
-    font-size: 16px; /* حجم النص */
-    border: 1px solid #ddd; /* إطار خفيف */
-    border-radius: 20px; /* زوايا مستديرة */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* ظل خفيف */
+/* تصميم مربع البحث */#search-box {
+    width: 100%;
+    max-width: 400px;
+    margin: 15px auto;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    border: none;
+    border-radius: 30px;
+    background: linear-gradient(145deg, #f5f7fa, #ffffff);
+    box-shadow:  5px 5px 10px #d9d9d9, 
+                -5px -5px 10px #ffffff;
     outline: none;
-    transition: all 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    color: #333;
+}
+
+#search-box::placeholder {
+    color: #aaa;
+    font-weight: 300;
 }
 
 #search-box:focus {
-    border-color: #007bff; /* لون الإطار عند التركيز */
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* ظل عند التركيز */
+    transform: scale(1.02);
+    box-shadow:  8px 8px 16px #d9d9d9, 
+                -8px -8px 16px #ffffff;
+    background: linear-gradient(145deg, #ffffff, #f5f7fa);
+    border: 1px solid rgba(0, 123, 255, 0.2);
 }
 
-/* جعل الأزرار ومربع البحث ضمن حاوية واحدة */
 .search-filter-container {
     display: flex;
-    flex-direction: column; /* ترتيب عمودي */
-    align-items: center; /* محاذاة الوسط */
-    gap: 10px; /* مسافة بين العناصر */
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 15px;
+    max-width: 500px;
+    margin: 30px auto;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+/* إضافة أيقونة بحث داخل المربع */
+.search-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+}
+
+.search-wrapper::before {
+    content: "🔍";
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0.5;
+    z-index: 1;
+}
+
+#search-box {
+    padding-left: 40px;
+}
+
+/* تأثيرات حركية عند التفاعل */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.03); }
+    100% { transform: scale(1); }
+}
+
+.search-filter-container:hover {
+    animation: pulse 2s infinite;
+}
+
+/* تصميم عصري للزر لو أردت إضافته */
+.search-button {
+    padding: 12px 30px;
+    background: linear-gradient(135deg, #6e8efb, #a777e3);
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.search-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    background: linear-gradient(135deg, #a777e3, #6e8efb);
 }
 
 /* الحاوية الرئيسية */
