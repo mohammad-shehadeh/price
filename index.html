@@ -815,87 +815,32 @@ div {
     display: none; /* لإخفاء شريط التمرير في Chrome/Safari */
 }
 
-/* تصميم مربع البحث */##search-box {
+/* تصميم مربع البحث */##search-box {#search-box {
     width: 100%;
-    max-width: 280px;
-    padding: 8px 15px;
-    font-size: 14px;
-    font-family: 'Segoe UI', Arial, sans-serif;
-    border: 1px solid #e0e0e0;
-    border-radius: 18px;
-    background-color: #fff;
+    max-width: 280px; /* تقليل العرض الأقصى */
+    margin: 8px auto;
+    padding: 6px 12px;
+    font-size: 15px;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
     outline: none;
-    transition: all 0.2s ease;
-    color: #333;
-    box-shadow: none;
-}
-
-#search-box::placeholder {
-    color: #999;
-    font-weight: 300;
+    transition: all 0.3s ease;
+    background-color: #fff;
 }
 
 #search-box:focus {
-    border-color: #a0a0a0;
-    box-shadow: none;
+    border-color: #00aaff;
+    box-shadow: 0 0 6px rgba(0, 170, 255, 0.4);
 }
 
+/* الحاوية التي تضم مربع البحث والأزرار */
 .search-filter-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 12px;
-    padding: 15px;
-    background-color: transparent;
-    border-radius: 0;
-    max-width: 320px;
-    margin: 20px auto;
-    box-shadow: none;
-}
-
-.search-wrapper {
-    position: relative;
-    width: 100%;
-    max-width: 280px;
-}
-
-.search-wrapper::before {
-    content: "🔍";
-    position: absolute;
-    left: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    opacity: 0.5;
-    font-size: 12px;
-}
-
-#search-box {
-    padding-left: 30px;
-}
-
-/* تصميم بديل أنيق */
-.alternative-design #search-box {
-    border: none;
-    border-bottom: 1px solid #e0e0e0;
-    border-radius: 0;
-    padding-left: 25px;
-    background-color: transparent;
-}
-
-.alternative-design .search-wrapper::before {
-    left: 5px;
-}
-
-/* تصميم بسيط مع ظل خفيف */
-.simple-shadow #search-box {
-    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-    border: 1px solid #f0f0f0;
-}
-
-/* تصميم بحدود دائرية ناعمة */
-.soft-rounded #search-box {
-    border-radius: 12px;
-    border: 1px solid #e8e8e8;
+    gap: 8px;
+    padding: 10px;
 }
 
 
@@ -1135,37 +1080,68 @@ input[type="text"]:focus, input[type="tel"]:focus {
 }
 
 
-/* تنسيق الزر العادي */
-.add-to-cart-btn {
-    background: linear-gradient(90deg, #007bff, #00aaff, #007bff);
+/* تنسيق الزر العادي */.add-to-cart-btn {
+    background: linear-gradient(90deg, #0066ff, #00ccff);
     color: white;
-    padding: 11px 24px;
+    padding: 12px 28px;
     border: none;
-    border-radius: 25px;
-    font-size: 20px;
+    border-radius: 30px;
+    font-size: 18px;
+    font-weight: 600;
     cursor: pointer;
-    transition: transform 0.3s ease, background-color 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
     margin-top: 20px;
     width: 100%;
     text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 15px rgba(0, 118, 255, 0.2);
+    position: relative;
+    overflow: hidden;
 }
 
-/* تنسيق الزر عند تعطيله *//* تنسيق الزر عند تعطيله */
-button.disabled, button[disabled] {
-    background: linear-gradient(90deg, #d3d3d3, #d3d3d3, #d3d3d3);  /* اللون السكني */
-    color: #8e8e8e;  /* لون النص عند التعطيل */
-    cursor: not-allowed;  /* تغيير شكل المؤشر إلى غير قابل للنقر */
-    border: none;  /* إزالة الحدود عند تعطيل الزر */
-    opacity: 0.6;  /* تقليل شفافية الزر لإظهاره كمعطل */
-    pointer-events: none;  /* تعطيل جميع أحداث المؤشر مثل النقر والتحويم */
-    user-select: none;  /* منع تحديد النص داخل الزر */
+.add-to-cart-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 118, 255, 0.3);
+    background: linear-gradient(90deg, #0055ee, #00bbee);
 }
 
-/* تعطيل الأيقونة داخل الزر عند التعطيل */
-button.disabled i, button[disabled] i {
-    color: #8e8e8e;  /* تغيير لون الأيقونة عند تعطيل الزر */
-    pointer-events: none;  /* تعطيل تفاعل المستخدم مع الأيقونة */
+.add-to-cart-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 3px 10px rgba(0, 118, 255, 0.2);
 }
+
+/* تنسيق الزر عند تعطيله */
+.add-to-cart-btn.disabled, 
+.add-to-cart-btn[disabled] {
+    background: linear-gradient(90deg, #e0e0e0, #f0f0f0);
+    color: #a0a0a0;
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+    position: relative;
+}
+
+/* تأثير بسيط عند التعطيل */
+.add-to-cart-btn.disabled::after,
+.add-to-cart-btn[disabled]::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 30px;
+}
+
+/* أيقونة الزر المعطل */
+.add-to-cart-btn.disabled i, 
+.add-to-cart-btn[disabled] i {
+    opacity: 0.7;
+    filter: grayscale(70%);
+}
+
+
 #login-container {
   background: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(10px);
