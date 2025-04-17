@@ -1,5 +1,5 @@
 samsung/S25 ultra 256|12/aaa/https://assets.mmsrg.com/isr/166325/c1/-/ASSET_MMS_149453259/fee_786_587_png
-samsung/S24 ultra 256|12/3150/https://sbitany.com/image/cache/catalog/109-634-0049-0369-2024012565120-460x460.jpg
+samsung/S24 ultra 256|12/aaa/https://sbitany.com/image/cache/catalog/109-634-0049-0369-2024012565120-460x460.jpg
 samsung/S24 ultra 512|12/aaa/https://sbitany.com/image/cache/catalog/109-634-0049-0369-2024012565120-460x460.jpg
 samsung/S23 ultra 256|12/aaa/https://media-ik.croma.com/prod/https://media.croma.com/image/upload/v1709103161/Croma%20Assets/Communication/Mobiles/Images/275155_z2t6g2.png?tr=w-600
 samsung/A56 256|8/1460/https://gsmarena.com.in/front/images/product_images/large/95637.gif
