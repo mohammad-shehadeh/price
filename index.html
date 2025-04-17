@@ -821,31 +821,70 @@ div {
 }
 
 
-#search-box {
-    width: 99%; /* ليكون بعرض الحاوية */
-    max-width: 300px; /* أقصى عرض */
-    margin: 10px auto; /* محاذاة وسط الصفحة */
-    padding: 8px 12px; /* حشوة داخلية */
-    font-size: 16px; /* حجم النص */
-    border: 1px solid #ddd; /* إطار خفيف */
-    border-radius: 20px; /* زوايا مستديرة */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* ظل خفيف */
-    outline: none;
-    transition: all 0.3s ease;
-}
-
-#search-box:focus {
-    border-color: #007bff; /* لون الإطار عند التركيز */
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* ظل عند التركيز */
-}
-
-/* جعل الأزرار ومربع البحث ضمن حاوية واحدة */
 .search-filter-container {
     display: flex;
-    flex-direction: column; /* ترتيب عمودي */
-    align-items: center; /* محاذاة الوسط */
-    gap: 10px; /* مسافة بين العناصر */
-}  
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.search-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+#search-box {
+    width: 40px;
+    height: 40px;
+    padding: 10px 15px 10px 40px;
+    font-size: 16px;
+    border: 2px solid #00D3C6;
+    border-radius: 20px;
+    outline: none;
+    background: transparent;
+    transition: all 0.5s ease;
+    opacity: 0;
+    cursor: pointer;
+}
+
+#search-box:focus,
+#search-box:not(:placeholder-shown) {
+    width: 200px;
+    opacity: 1;
+    cursor: text;
+}
+
+.search-icon-btn {
+    position: absolute;
+    left: 0;
+    width: 40px;
+    height: 40px;
+    background: white;
+    border: 2px solid #00D3C6;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 1;
+}
+
+.search-icon-btn:hover {
+    background: #f0f8f7;
+}
+
+.search-icon {
+    width: 20px;
+    height: 20px;
+}
+
+#search-box:focus + .search-icon-btn,
+#search-box:not(:placeholder-shown) + .search-icon-btn {
+    transform: translateX(5px);
+    background: #f0f8f7;
+}
 
 
 /* الحاوية الرئيسية */
@@ -1266,9 +1305,17 @@ button.disabled i, button[disabled] i {
 <br>
             <div id="filter-buttons">
                 <!-- الأزرار سيتم إنشاؤها ديناميكيًا بواسطة JavaScript -->
-            </div>
-            <input type="text" id="search-box" placeholder="🔍 أبحث عن منتج" />
-            <div id="filter-buttons"></div>
+            <div class="search-filter-container">
+    <div class="search-wrapper">
+        <input type="text" id="search-box" placeholder="ابحث عن منتج..." />
+        <button class="search-icon-btn">
+            <svg class="search-icon" viewBox="0 0 24 24" width="24" height="24">
+                <path fill="#00D3C6" d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 0 0 1.48-5.34c-.47-2.78-2.79-5-5.59-5.34a6.505 6.505 0 0 0-7.27 7.27c.34 2.8 2.56 5.12 5.34 5.59a6.5 6.5 0 0 0 5.34-1.48l.27.28v.79l4.25 4.25c.41.41 1.08.41 1.49 0 .41-.41.41-1.08 0-1.49L15.5 14zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+            </svg>
+        </button>
+    </div>
+    <div id="filter-buttons"></div>
+</div>
             <button class="toggle-cart d-flex align-items-center gap-2" id="show-cart-button">
                 <i class="fas fa-shopping-cart"></i>
                 <span class="cart-text">سلة التسوق</span>
