@@ -736,54 +736,61 @@ div {
         font-size: 20px;
     }
 }
- #filter-buttons {
-display: flex;
-flex-wrap: nowrap; /* منع التفاف الأزرار */
-    gap: 0; /* إزالة الفراغ بين الأزرار */
+/* حاوية الأزرار */
+#filter-buttons {
+    display: flex;
+    flex-wrap: nowrap; /* منع التفاف الأزرار */
     justify-content: flex-start;
     align-items: stretch;
+    gap: 0;
     padding: 0;
     margin: 0 auto 25px;
     background: #2a2a2a;
+    border: 1px solid #404040;
     border-radius: 30px;
     width: fit-content;
     max-width: 100%;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-    overflow: hidden;
     position: relative;
-    border: 1px solid #404040;
+    overflow-x: auto; /* للسحب الأفقي عند الحاجة */
+    scrollbar-width: none; /* إخفاء الشريط في Firefox */
 }
 
-/* تصميم الأزرار المدمجة */
+/* إخفاء شريط التمرير في Chrome/Safari */
+#filter-buttons::-webkit-scrollbar {
+    display: none;
+}
+
+/* الأزرار */
 #filter-buttons .filter-btn {
+    flex: 1;
+    min-width: 0;
     padding: 12px 24px;
     font-size: 20px;
+    font-weight: 500;
     border: none;
+    border-right: 1px solid #404040;
     background: transparent;
     color: #b0b0b0;
     cursor: pointer;
     transition: all 0.4s ease;
-    position: relative;
     white-space: nowrap;
-    font-weight: 500;
-    border-right: 1px solid #404040;
-    flex: 1;
-    min-width: 0;
     text-align: center;
+    position: relative;
 }
 
-/* إزالة الحدود من آخر زر */
+/* إزالة الحد من آخر زر */
 #filter-buttons .filter-btn:last-child {
     border-right: none;
 }
 
-/* تأثير التحويم */
+/* التأثير عند التحويم */
 #filter-buttons .filter-btn:hover {
     color: #ffffff;
     background: rgba(255, 255, 255, 0.05);
 }
 
-/* تأثير النشط */
+/* الزر النشط */
 #filter-buttons .filter-btn.active {
     color: #ffffff;
     background: linear-gradient(135deg, #6e45e2, #88d3ce);
@@ -791,12 +798,17 @@ flex-wrap: nowrap; /* منع التفاف الأزرار */
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
-/* تأثير النشط عند التحويم */
+/* النشط مع التحويم */
 #filter-buttons .filter-btn.active:hover {
     background: linear-gradient(135deg, #7d55f0, #98e3de);
 }
 
-/* مؤشر الحركة */
+/* تأثير الضغط */
+#filter-buttons .filter-btn:active {
+    transform: scale(0.98);
+}
+
+/* مؤشر زخرفي أسفل الأزرار */
 #filter-buttons::before {
     content: '';
     position: absolute;
@@ -806,21 +818,6 @@ flex-wrap: nowrap; /* منع التفاف الأزرار */
     width: 100%;
     background: linear-gradient(90deg, #6e45e2, #88d3ce);
     opacity: 0.3;
-}
-
-/* تأثير الضغط */
-#filter-buttons .filter-btn:active {
-    transform: scale(0.98);
-}
-
-/* شريط تمرير عند الحاجة */
-#filter-buttons {
-    overflow-x: auto;
-    scrollbar-width: none; /* لإخفاء شريط التمرير في Firefox */
-}
-
-#filter-buttons::-webkit-scrollbar {
-    display: none; /* لإخفاء شريط التمرير في Chrome/Safari */
 }
 
 
