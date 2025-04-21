@@ -1,3 +1,11 @@
+iphone/12 pro original/250/https://i.ebayimg.com/images/g/bkoAAOSwD7JkJcH9/s-l400.jpg
+iphone/12 pro BYH/65/https://i.ebayimg.com/images/g/bkoAAOSwD7JkJcH9/s-l400.jpg
+Samsung/Tap A9/110/
+OPPO/A96=9i/60/
+INFINEX/Hot 30/50/
+INFINEX/Smart 8HD/50/
+iphone/11 pro max original/230/https://media.s-bol.com/qMnRoDk56x7R/kZKjVG5/550x518.jpgG
+iphone/XS max original/200/https://roadieshub.com/wp-content/uploads/2023/12/I-PHONE-LCD-UNIT-XS-1.jpg
 Samsung/A16 oled+f/165/https://cdn.webshopapp.com/shops/15250/files/469217344/lcd-samsung-galaxy-a16-5g-a166b-gh82-36143a-black.jpg
 Samsung/A15 incell+F/85/https://www.androgeek.es/36917-large_default/pantalla-samsung-a15-4g-a15-5g-incell-con-marco-lcddisplay-digitalizadortactil.jpg
 Samsung/A14 original/50/https://i.ebayimg.com/images/g/UrUAAOSwKDdlSogb/s-l1200.jpg
@@ -44,23 +52,23 @@ Samsung/A32 incell+F/60/https://sparepart.dk/media/cache/fb_image_thumb/product-
 Samsung/A31 oled+F/90/https://http2.mlstatic.com/D_NQ_NP_610365-CBT79190514219_092024-O.webp
 Samsung/A31 incell+F/55/https://http2.mlstatic.com/D_NQ_NP_610365-CBT79190514219_092024-O.webp
 iphone/15 pro max orignal/1250/https://i.ebayimg.com/images/g/cH4AAOSwjT1lMP7i/s-l1200.jpg
- iphone/14 pro max orignal/650/https://www.mytrendyphone.eu/images/iPhone-14-Pro-Max-LCD-Display-Black-Original-Quality-07032023-01-p.webp
-iphone/14 pro max oled/500/https://i.ebayimg.com/images/g/l-kAAOSw4qtjnBqB/s-l1200.jpg
-iphone/14 pro max incell/350/https://gsmok.pl/pliki_opis/norm_wyswietlacz-lcd-do-apple-iphone-14-pro-max-incell-1080p-fhd-ic-removable-jh-a115707-5767-1.JPG
+iphone/14 pro max orignal/650/https://www.mytrendyphone.eu/images/iPhone-14-Pro-Max-LCD-Display-Black-Original-Quality-07032023-01-p.webp
+iphone/14 pro max oled/450/https://i.ebayimg.com/images/g/l-kAAOSw4qtjnBqB/s-l1200.jpg
+iphone/14 pro max incell/Aaa/https://gsmok.pl/pliki_opis/norm_wyswietlacz-lcd-do-apple-iphone-14-pro-max-incell-1080p-fhd-ic-removable-jh-a115707-5767-1.JPG
 iphone/13pro max orignal/650/https://www.cmedistribution.com.my/wp-content/uploads/2023/06/IPHONE-13-PRO-MAX-LCD-ORI-scaled-1.jpg
 iphone/13 pro max oled/430/https://i.ebayimg.com/images/g/8fcAAOSwAEhioeAc/s-l400.jpg
-iphone/13 pro max incell/330/https://image.made-in-china.com/2f0j00sTOcgQAJnRqp/Factory-Wholesale-for-iPhone-13-Screen-for-iPhone-13-PRO-Max-Display-for-iPhone-13-LCD-for-iPhone-13-PRO-Max-LCD.webp
-iphone/13 pro incell/350/https://img.rewa.tech/mars/product/watermark/20240428112342-.jpg
+iphone/13 pro max incell/Aaa/https://image.made-in-china.com/2f0j00sTOcgQAJnRqp/Factory-Wholesale-for-iPhone-13-Screen-for-iPhone-13-PRO-Max-Display-for-iPhone-13-LCD-for-iPhone-13-PRO-Max-LCD.webp
+iphone/13 pro incell/300/https://img.rewa.tech/mars/product/watermark/20240428112342-.jpg
 iphone/12 pro max orignal/350/https://www.mytrendyphone.eu/images/iPhone-12-Pro-Max-LCD-OLED-Display-Original-Quality-OEM-11052021-1-p.webp
 iphone/12 pro max oled/220/https://i.ebayimg.com/images/g/bkoAAOSwD7JkJcH9/s-l400.jpg
-iphone/12 pro max incell/80/https://mengtor.com/uploadfile/goods/202303/202303012305293569.jpg
-iphone/11 pro max moche/65/https://media.s-bol.com/qMnRoDk56x7R/kZKjVG5/550x518.jpg
+iphone/12 pro max BYH/80/https://mengtor.com/uploadfile/goods/202303/202303012305293569.jpg
+iphone/11 pro max BYH/65/https://media.s-bol.com/qMnRoDk56x7R/kZKjVG5/550x518.jpg
 iphone/11 orignal/100/https://www.cmedistribution.com.my/wp-content/plugins/phastpress/phast.php/c2VydmljZT1pbWFnZXMmc3JjPWh0dHBzJTNBJTJGJTJGd3d3LmNtZWRpc3RyaWJ1dGlvbi5jb20ubXklMkZ3cC1jb250ZW50JTJGdXBsb2FkcyUyRjIwMjMlMkYwNiUyRklNR182NjQ2LXNjYWxlZC0xLmpwZyZjYWNoZU1hcmtlcj0xNzAyMDI5MTQzLTIxMDEwNyZ0b2tlbj05NzQ3MTMyNjc0YTFiNTBl.q.jpg
 iphone/11 moche/55/https://www.cmedistribution.com.my/wp-content/plugins/phastpress/phast.php/c2VydmljZT1pbWFnZXMmc3JjPWh0dHBzJTNBJTJGJTJGd3d3LmNtZWRpc3RyaWJ1dGlvbi5jb20ubXklMkZ3cC1jb250ZW50JTJGdXBsb2FkcyUyRjIwMjMlMkYwNiUyRklNR182NjQ2LXNjYWxlZC0xLmpwZyZjYWNoZU1hcmtlcj0xNzAyMDI5MTQzLTIxMDEwNyZ0b2tlbj05NzQ3MTMyNjc0YTFiNTBl.q.jpg
-iphone/xs max moche/65/https://m.media-amazon.com/images/I/61LlML7zbqL._AC_UL400_.jpg
+iphone/xs max BYH/65/https://m.media-amazon.com/images/I/61LlML7zbqL._AC_UL400_.jpg
 iphone/xr moche/55/https://fmmall.my/wp-content/uploads/2022/12/cS6lpryeeE16XwmZrZc3DRq8tH5e6oJg6c4YIZak.jpg
-iphone/xs moche/55/https://roadieshub.com/wp-content/uploads/2023/12/I-PHONE-LCD-UNIT-XS-1.jpg
-iphone/x moche/55/https://roadieshub.com/wp-content/uploads/2023/12/I-PHONE-LCD-UNIT-XS-1.jpg
+iphone/xs BYH/55/https://roadieshub.com/wp-content/uploads/2023/12/I-PHONE-LCD-UNIT-XS-1.jpg
+iphone/x BYH/55/https://roadieshub.com/wp-content/uploads/2023/12/I-PHONE-LCD-UNIT-XS-1.jpg
 iphone/8 plus orignal/80/https://fmmall.my/wp-content/uploads/2022/12/kKL6jMqMSdEiex8Im1XlyxAlRmNl8pXhMvL0Y65D.jpg
 iphone/8 plus AAA/45/https://cellphoneandparts.com/cdn/shop/products/LCD-FOR-IP8-PLUS-BLACK.jpg?v=1623164128
 iphone/8G/35/https://cellphoneandparts.com/cdn/shop/products/LCD-IP8-BLACK_96cdb274-32fe-4ba6-84ce-2565a1697220.jpg?v=1623164126
@@ -80,9 +88,9 @@ Mi/Note 12 incell/50/https://cdn.webshopapp.com/shops/15250/files/434015821/lcd-
 Mi/Note 11 pro-Note10 pro-poco X4 pro/55/https://phoner.in/wp-content/uploads/2023/04/Mi-Redmi-Note-10-Pro-Lcd-Display-Folder-Phoner.in-1-1.jpg
 Mi/Note 11-note 11S-Note 12S INCELL/55/https://i64.psgsm.net/gsm.com/p/907848/1065x799/lcd-compatible-with-xiaomi-redmi-note-11-black-without-frame-original-prc.jpg?af4b48df5a676bf9c78ce9cb5446bdf2
 Mi/Note 11-note 11S-Note 12S OLED/100/https://i64.psgsm.net/gsm.com/p/907848/1065x799/lcd-compatible-with-xiaomi-redmi-note-11-black-without-frame-original-prc.jpg?af4b48df5a676bf9c78ce9cb5446bdf2
-Mi/Note 10-note 10S original /170/https://i94.psgsm.net/gsm.com/p/905412/799/lcd-compatible-with-xiaomi-redmi-note-10-redmi-note-10s-black-without-frame-high-copy-oled-m2101k7ai-m2101k7ag.jpg?20609a872a5eec7f0f56fab685451d2d
-Mi/Note 10-note 10S oled /100/https://i94.psgsm.net/gsm.com/p/905412/799/lcd-compatible-with-xiaomi-redmi-note-10-redmi-note-10s-black-without-frame-high-copy-oled-m2101k7ai-m2101k7ag.jpg?20609a872a5eec7f0f56fab685451d2d
-Mi/Note 10-note 10S incell /55/https://i94.psgsm.net/gsm.com/p/905412/799/lcd-compatible-with-xiaomi-redmi-note-10-redmi-note-10s-black-without-frame-high-copy-oled-m2101k7ai-m2101k7ag.jpg?20609a872a5eec7f0f56fab685451d2d
+Mi/Note 10-note 10S original/170/https://i94.psgsm.net/gsm.com/p/905412/799/lcd-compatible-with-xiaomi-redmi-note-10-redmi-note-10s-black-without-frame-high-copy-oled-m2101k7ai-m2101k7ag.jpg?20609a872a5eec7f0f56fab685451d2d
+Mi/Note 10-note 10S oled/100/https://i94.psgsm.net/gsm.com/p/905412/799/lcd-compatible-with-xiaomi-redmi-note-10-redmi-note-10s-black-without-frame-high-copy-oled-m2101k7ai-m2101k7ag.jpg?20609a872a5eec7f0f56fab685451d2d
+Mi/Note 10-note 10S incell/55/https://i94.psgsm.net/gsm.com/p/905412/799/lcd-compatible-with-xiaomi-redmi-note-10-redmi-note-10s-black-without-frame-high-copy-oled-m2101k7ai-m2101k7ag.jpg?20609a872a5eec7f0f56fab685451d2d
 Mi/Note 9 pro-Note 9 pro HI/50/https://cdn.webshopapp.com/shops/15250/files/338244763/lcd-for-xiaomi-redmi-note-9-pro-note-9-pro-2020-oe.jpg
 Mi/Note 9 HI/50/https://vip.jzpal.com/image/cache/catalog/LCD/REDMI%20LCD/sp1017117-700x700.jpg
 Mi/Note 8 pro HI/50/https://m.media-amazon.com/images/I/51vtZ059b2L._AC_UF1000,1000_QL80_.jpg
