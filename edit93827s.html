@@ -347,44 +347,15 @@
     const cloudName = 'dygc5b8cn';
     const uploadPreset = 'Shehadeh';
     
-    // تخزين الفئات وترتيبها
+    // تخزين الفئات
     let fileCategories = {};
-    let categoryOrder = {};
 
     function updateOutput() {
-      const filename = fileSelect.value;
-      const currentOrder = categoryOrder[filename] || [];
-      
-      // إنشاء محتوى الملف مع قسم الفئات والبيانات
-      let categoriesSection = "";
-      if (currentOrder.length > 0) {
-        categoriesSection = `<!-- CATEGORIES:\n${currentOrder.join(", ")}\n-->\n\n`;
-      }
-      
-      const dataLines = [];
       const rows = Array.from(tableBody.rows);
+      const categories = {};
       
-      // فرز الصفوف حسب ترتيب الفئات
-      const sortedRows = rows.sort((a, b) => {
-        const categoryA = a.cells[0].querySelector('select') 
-          ? a.cells[0].querySelector('select').value 
-          : a.cells[0].textContent.trim();
-        
-        const categoryB = b.cells[0].querySelector('select') 
-          ? b.cells[0].querySelector('select').value 
-          : b.cells[0].textContent.trim();
-        
-        const indexA = currentOrder.indexOf(categoryA);
-        const indexB = currentOrder.indexOf(categoryB);
-        
-        if (indexA !== -1 && indexB !== -1) return indexA - indexB;
-        if (indexA !== -1) return -1;
-        if (indexB !== -1) return 1;
-        return categoryA.localeCompare(categoryB);
-      });
-      
-      // إنشاء سطور البيانات
-      for (let row of sortedRows) {
+      // تجميع المنتجات حسب الفئات
+      rows.forEach(row => {
         const category = row.cells[0].querySelector('select') 
           ? row.cells[0].querySelector('select').value 
           : row.cells[0].textContent.trim();
@@ -395,19 +366,49 @@
         const img = row.cells[3].querySelector('img.preview-image');
         const image = img ? img.dataset.url : '';
         
-        if (category || product || price || image) {
-          dataLines.push(`${category}/${product}/${price}/${image}`);
+        if (!categories[category]) {
+          categories[category] = [];
         }
-      }
+        
+        if (product || price || image) {
+          categories[category].push(`${category}/${product}/${price}/${image}`);
+        }
+      });
       
-      // دمج المحتوى النهائي
-      outputText.value = categoriesSection + dataLines.join("\n");
+      // فرز الفئات حسب الترتيب المطلوب
+      const predefinedOrder = [
+        'Samsung', 'MI', 'Apple', 'Infinix', 
+        'Tecno', 'Honor', 'Realme', 'OPPO', 'Huawei'
+      ];
+      
+      // فرز الفئات
+      const sortedCategories = Object.keys(categories).sort((a, b) => {
+        const indexA = predefinedOrder.indexOf(a);
+        const indexB = predefinedOrder.indexOf(b);
+        
+        if (indexA !== -1 && indexB !== -1) return indexA - indexB;
+        if (indexA !== -1) return -1;
+        if (indexB !== -1) return 1;
+        return a.localeCompare(b); // الترتيب الأبجدي للفئات الأخرى
+      });
+      
+      // فرز المنتجات داخل كل فئة (من الأطول إلى الأقصر)
+      const outputLines = [];
+      sortedCategories.forEach(category => {
+        categories[category].sort((a, b) => {
+          const productA = a.split('/')[1];
+          const productB = b.split('/')[1];
+          return productB.length - productA.length; // من الأطول إلى الأقصر
+        });
+        outputLines.push(...categories[category]);
+      });
+      
+      outputText.value = outputLines.join("\n");
     }
 
     function createCategorySelect(selectedValue = "") {
       const filename = fileSelect.value;
       const categories = fileCategories[filename] || [];
-      const order = categoryOrder[filename] || [];
       
       const select = document.createElement("select");
       select.className = "category-select";
@@ -418,8 +419,13 @@
       emptyOption.textContent = "اختر الفئة";
       select.appendChild(emptyOption);
       
-      // إضافة الفئات حسب الترتيب المحدد
-      order.forEach(category => {
+      // إضافة الفئات المحددة مسبقاً أولاً
+      const predefinedCategories = [
+        'Samsung', 'MI', 'Apple', 'Infinix', 
+        'Tecno', 'Honor', 'Realme', 'OPPO', 'Huawei'
+      ];
+      
+      predefinedCategories.forEach(category => {
         if (categories.includes(category)) {
           const opt = document.createElement("option");
           opt.value = category;
@@ -431,7 +437,7 @@
       
       // إضافة الفئات الأخرى
       categories.forEach(category => {
-        if (!order.includes(category)) {
+        if (!predefinedCategories.includes(category)) {
           const opt = document.createElement("option");
           opt.value = category;
           opt.textContent = category;
@@ -451,37 +457,20 @@
         const res = await fetch(`https://raw.githubusercontent.com/${owner}/${repo}/main/${filename}`);
         const text = await res.text();
         
-        // تحليل الملف لاستخراج الفئات والبيانات
         const lines = text.trim().split("\n");
-        let categories = [];
-        let order = [];
+        const categories = new Set();
         const dataLines = [];
         
-        // البحث عن قسم الفئات
-        const categoriesStart = lines.findIndex(line => line.startsWith("<!-- CATEGORIES:"));
-        if (categoriesStart !== -1) {
-          const categoriesEnd = lines.findIndex((line, i) => i > categoriesStart && line.includes("-->"));
-          const categoryLines = lines.slice(categoriesStart + 1, categoriesEnd);
-          const categoryText = categoryLines.join("\n").replace(/-->/g, "").trim();
-          order = categoryText.split(",").map(c => c.trim()).filter(c => c);
-        }
-        
-        // استخراج البيانات
         lines.forEach(line => {
-          if (line.includes('/') && !line.startsWith("<!--")) {
+          if (line.includes('/')) {
             dataLines.push(line);
             const category = line.split('/')[0].trim();
-            if (!categories.includes(category)) {
-              categories.push(category);
-            }
+            categories.add(category);
           }
         });
         
-        // حفظ الفئات وترتيبها
-        fileCategories[filename] = categories;
-        categoryOrder[filename] = order;
+        fileCategories[filename] = Array.from(categories);
         
-        // إضافة البيانات إلى الجدول
         dataLines.forEach(line => {
           const parts = line.split('/');
           if (parts.length >= 4) {
@@ -624,20 +613,18 @@
     }
 
     async function saveMarkdown() {
-      updateOutput(); // تأكيد تحديث المحتوى قبل الحفظ
+      updateOutput();
       
       const filename = fileSelect.value;
       const content = btoa(unescape(encodeURIComponent(outputText.value)));
       const url = `https://api.github.com/repos/${owner}/${repo}/contents/${filename}`;
 
       try {
-        // الحصول على SHA للملف الحالي
         const shaRes = await fetch(url, {
           headers: { Authorization: `token ${GITHUB_TOKEN}` }
         });
         const shaData = await shaRes.json();
         
-        // رفع التحديثات
         const saveRes = await fetch(url, {
           method: "PUT",
           headers: {
@@ -645,7 +632,7 @@
             "Content-Type": "application/json"
           },
           body: JSON.stringify({
-            message: "تم التحديث مع الفرز التلقائي",
+            message: "تم التحديث مع الفرز التلقائي للمنتجات",
             content: content,
             sha: shaData.sha
           })
@@ -678,25 +665,6 @@
     window.onload = function() {
       fileSelect.addEventListener('change', loadSelectedFile);
       loadSelectedFile();
-      
-      // إضافة زر لإدارة الفئات
-      const header = document.querySelector('header') || document.body;
-      const editBtn = document.createElement('button');
-      editBtn.textContent = 'إدارة ترتيب الفئات';
-      editBtn.className = 'edit-categories-btn';
-      editBtn.onclick = () => {
-        const filename = fileSelect.value;
-        const currentOrder = categoryOrder[filename] || [];
-        const newOrder = prompt(
-          "عدل ترتيب الفئات (افصل بينها بفاصلة):",
-          currentOrder.join(", ")
-        );
-        if (newOrder !== null) {
-          categoryOrder[filename] = newOrder.split(',').map(c => c.trim()).filter(c => c);
-          updateOutput();
-        }
-      };
-      header.prepend(editBtn);
     };
 </script>
 </body>
