@@ -2,11 +2,6 @@
 Samsung, MI, iPhone, Tecno, Infinix, Honor, Realme, OPPO, Huawei
 -->
 
-Samsung/Galaxy S23/1200/image1.jpg
-MI/Redmi Note 12/800/image2.jpg
-
-Samsung/Galaxy S23/1200/image1.jpg
-MI/Redmi Note 12/800/image2.jpg
 Apple/16 pro max 256GB/4650/https://mac-center.com.pr/cdn/shop/files/iPhone_16_Pro_Max_Desert_Titanium_PDP_Image_Position_1__en-US_bf24ca74-a053-42d3-80e2-3edc40e85c1e.jpg?v=1726226953&width=823
 Apple/15 pro max 512GB/4100/https://www.apollo.pl/gfx/apollo/userfiles/_public/opisy/apple/195949019036/195949019036_5.jpg
 Apple/iphone 16 128GB/AAA/https://asiamall.asiacell.com/media/catalog/product/l/d/ld0006166708_2.jpg
