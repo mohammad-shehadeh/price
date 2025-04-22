@@ -356,7 +356,37 @@
 
     function updateOutput() {
       let lines = [];
-      for (let row of tableBody.rows) {
+      const rows = Array.from(tableBody.rows);
+      
+      // فرز الصفوف حسب الأولوية المطلوبة
+      const sortedRows = rows.sort((a, b) => {
+        const itemA = a.cells[1].textContent.trim().toUpperCase();
+        const itemB = b.cells[1].textContent.trim().toUpperCase();
+        
+        // تحديد أولوية الحرف الأول
+        const getPriority = (char) => {
+          const priorityOrder = {'S': 1, 'A': 2, 'N': 3, 'R': 4, 'P': 5};
+          return priorityOrder[char] || 6; // أي حرف آخر يأتي بعد P
+        };
+        
+        // الحصول على الحرف الأول من اسم الصنف
+        const firstCharA = itemA.charAt(0);
+        const firstCharB = itemB.charAt(0);
+        
+        const priorityA = getPriority(firstCharA);
+        const priorityB = getPriority(firstCharB);
+        
+        // إذا كانت الأولوية مختلفة، نرتب حسب الأولوية
+        if (priorityA !== priorityB) {
+          return priorityA - priorityB;
+        }
+        
+        // إذا كانت الأولوية متساوية، نرتب حسب طول اسم الصنف (من الأطول إلى الأقصر)
+        return itemB.length - itemA.length;
+      });
+      
+      // إنشاء المخرجات من الصفوف المرتبة
+      for (let row of sortedRows) {
         const cells = row.querySelectorAll("td");
         const values = [];
         
@@ -380,6 +410,7 @@
           lines.push(values.join("/"));
         }
       }
+      
       outputText.value = lines.join("\n");
     }
 
@@ -565,9 +596,20 @@
 
     function addNewRow() {
       addRow("", "", "", "", true);
+      // وضع التركيز على خلية الصنف بعد الإضافة
+      setTimeout(() => {
+        const firstRow = tableBody.querySelector('tr');
+        if (firstRow) {
+          const itemCell = firstRow.querySelectorAll('td')[1];
+          if (itemCell) itemCell.focus();
+        }
+      }, 50);
     }
 
     async function saveMarkdown() {
+      // نضمن أن المخرجات محدثة ومرتبة قبل الحفظ
+      updateOutput();
+      
       const content = btoa(unescape(encodeURIComponent(outputText.value)));
       const path = fileSelect.value;
       const url = `https://api.github.com/repos/${owner}/${repo}/contents/${path}`;
@@ -586,7 +628,7 @@
             "Content-Type": "application/json"
           },
           body: JSON.stringify({
-            message: "تحديث من المحرر",
+            message: "تحديث من المحرر مع الفرز التلقائي",
             content: content,
             sha: sha
           })
@@ -594,7 +636,7 @@
         
         const data = await saveRes.json();
         if (data.content) {
-          alert("تم حفظ التعديلات بنجاح!");
+          alert("تم حفظ التعديلات بنجاح مع الفرز التلقائي!");
         } else {
           console.error(data);
           alert("حدث خطأ أثناء الحفظ.");
