@@ -343,6 +343,10 @@
     const outputText = document.getElementById("outputText");
     const fileSelect = document.getElementById("fileSelect");
 
+    // Cloudinary configuration
+    const cloudName = 'dygc5b8cn';
+    const uploadPreset = 'Shehadeh';
+    
     // خيارات الفئات لكل ملف
     const fileOptions = {
       "test.md": ["samsung", "MI", "Apple", "Tecno", "Infinix", "Honor", "ZTE", "N/A"],
@@ -350,34 +354,34 @@
       "lcd.md": ["Samsung", "iphone", "Mi", "tecno", "realmi", "INFINEX", "OPPO", "HONOR"]
     };
 
-   function updateOutput() {
-  let lines = [];
-  for (let row of tableBody.rows) {
-    const cells = row.querySelectorAll("td");
-    const values = [];
-    
-    for (let i = 0; i < 4; i++) {
-      const cell = cells[i];
-      
-      if (i === 0) { // خلية الفئة
-        const select = cell.querySelector('select');
-        values.push(select ? select.value : cell.textContent.trim());
-      } 
-      else if (i === 3) { // خلية رابط الصورة
-        const linkSpan = cell.querySelector('span');
-        values.push(linkSpan ? linkSpan.textContent.trim() : cell.textContent.trim());
+    function updateOutput() {
+      let lines = [];
+      for (let row of tableBody.rows) {
+        const cells = row.querySelectorAll("td");
+        const values = [];
+        
+        for (let i = 0; i < 4; i++) {
+          const cell = cells[i];
+          
+          if (i === 0) { // خلية الفئة
+            const select = cell.querySelector('select');
+            values.push(select ? select.value : cell.textContent.trim());
+          } 
+          else if (i === 3) { // خلية الصورة
+            const img = cell.querySelector('img.preview-image');
+            values.push(img ? img.dataset.url : '');
+          }
+          else { // الخلايا الأخرى
+            values.push(cell.textContent.trim());
+          }
+        }
+        
+        if (values.some(val => val !== "")) {
+          lines.push(values.join("/"));
+        }
       }
-      else { // الخلايا الأخرى
-        values.push(cell.textContent.trim());
-      }
+      outputText.value = lines.join("\n");
     }
-    
-    if (values.some(val => val !== "")) {
-      lines.push(values.join("/"));
-    }
-  }
-  outputText.value = lines.join("\n");
-}
 
     function createCategorySelect(selectedValue = "") {
       const filename = fileSelect.value;
@@ -405,102 +409,126 @@
       return select;
     }
 
-    function addRow(category = "", item = "", price = "", link = "", isNewRow = false) {
-  const row = document.createElement("tr");
-  
-  // 1. خلية الفئة
-  const categoryCell = document.createElement("td");
-  if (isNewRow) {
-    categoryCell.className = "category-cell";
-    const categorySelect = createCategorySelect(category);
-    categorySelect.addEventListener("change", updateOutput);
-    categoryCell.appendChild(categorySelect);
-  } else {
-    categoryCell.textContent = category;
-    categoryCell.contentEditable = "true";
-    categoryCell.addEventListener("input", updateOutput);
-  }
-  
-  // 2. خلية الصنف
-  const itemCell = document.createElement("td");
-  itemCell.contentEditable = "true";
-  itemCell.textContent = item;
-  itemCell.addEventListener("input", updateOutput);
-  
-  // 3. خلية السعر
-  const priceCell = document.createElement("td");
-  priceCell.contentEditable = "true";
-  priceCell.textContent = price;
-  priceCell.addEventListener("input", updateOutput);
-  
-  // 4. خلية رابط الصورة (معدلة)
-  const linkCell = document.createElement("td");
-  linkCell.contentEditable = "true";
-  
-  const linkContainer = document.createElement("div");
-  linkContainer.className = "link-container";
-  
-  const linkText = document.createElement("span");
-  linkText.className = "link-text";
-  linkText.textContent = link;
-  
-  const imgPreview = document.createElement("img");
-  imgPreview.className = "img-preview";
-  imgPreview.onerror = function() { 
-    this.style.display = 'none'; 
-  };
-  
-  if (link) {
-    imgPreview.src = link;
-    imgPreview.style.display = 'inline-block';
-  } else {
-    imgPreview.style.display = 'none';
-  }
-  
-  // ترتيب العناصر: الصورة ثم النص
-  linkContainer.appendChild(imgPreview);
-  linkContainer.appendChild(linkText);
-  linkCell.appendChild(linkContainer);
-  
-  // 5. خلية الإجراءات
-  const actionCell = document.createElement("td");
-  const deleteBtn = document.createElement("button");
-  deleteBtn.className = "delete-btn";
-  deleteBtn.textContent = "حذف";
-  deleteBtn.onclick = function() { removeRow(this); };
-  actionCell.appendChild(deleteBtn);
-  
-  // إضافة جميع الخلايا إلى الصف
-  row.appendChild(categoryCell);
-  row.appendChild(itemCell);
-  row.appendChild(priceCell);
-  row.appendChild(linkCell);
-  row.appendChild(actionCell);
-  
-  // معالجة تحديثات رابط الصورة
-  linkCell.addEventListener("input", function(e) {
-    const newText = this.textContent.trim();
-    linkText.textContent = newText;
-    
-    if (newText) {
-      imgPreview.src = newText;
-      imgPreview.style.display = 'inline-block';
-    } else {
-      imgPreview.style.display = 'none';
+    async function uploadImage(file) {
+      const formData = new FormData();
+      formData.append('file', file);
+      formData.append('upload_preset', uploadPreset);
+      
+      try {
+        const response = await fetch(`https://api.cloudinary.com/v1_1/${cloudName}/image/upload`, {
+          method: 'POST',
+          body: formData
+        });
+        
+        const data = await response.json();
+        return data.secure_url;
+      } catch (error) {
+        console.error('Error uploading image:', error);
+        return null;
+      }
     }
-    
-    updateOutput();
-  });
-  
-  // إضافة الصف إلى الجدول
-  if (isNewRow) {
-    tableBody.insertBefore(row, tableBody.firstChild);
-  } else {
-    tableBody.appendChild(row);
-  }
-  
-  updateOutput();
-}
+
+    function addRow(category = "", item = "", price = "", imageUrl = "", isNewRow = false) {
+      const row = document.createElement("tr");
+      
+      // 1. خلية الفئة
+      const categoryCell = document.createElement("td");
+      if (isNewRow) {
+        categoryCell.className = "category-cell";
+        const categorySelect = createCategorySelect(category);
+        categorySelect.addEventListener("change", updateOutput);
+        categoryCell.appendChild(categorySelect);
+      } else {
+        categoryCell.textContent = category;
+        categoryCell.contentEditable = "true";
+        categoryCell.addEventListener("input", updateOutput);
+      }
+      
+      // 2. خلية الصنف
+      const itemCell = document.createElement("td");
+      itemCell.contentEditable = "true";
+      itemCell.textContent = item;
+      itemCell.addEventListener("input", updateOutput);
+      
+      // 3. خلية السعر
+      const priceCell = document.createElement("td");
+      priceCell.contentEditable = "true";
+      priceCell.textContent = price;
+      priceCell.addEventListener("input", updateOutput);
+      
+      // 4. خلية الصورة
+      const imageCell = document.createElement("td");
+      
+      const imageContainer = document.createElement("div");
+      imageContainer.className = "image-container";
+      
+      const imagePreview = document.createElement("img");
+      imagePreview.className = "preview-image";
+      imagePreview.style.maxWidth = "100px";
+      imagePreview.style.maxHeight = "100px";
+      
+      if (imageUrl) {
+        imagePreview.src = imageUrl;
+        imagePreview.dataset.url = imageUrl;
+      } else {
+        imagePreview.style.display = 'none';
+      }
+      
+      const uploadButton = document.createElement("button");
+      uploadButton.className = "upload-btn";
+      uploadButton.textContent = "اختر صورة";
+      
+      const fileInput = document.createElement("input");
+      fileInput.type = "file";
+      fileInput.accept = "image/*";
+      fileInput.style.display = "none";
+      
+      fileInput.addEventListener("change", async (e) => {
+        const file = e.target.files[0];
+        if (file) {
+          const imageUrl = await uploadImage(file);
+          if (imageUrl) {
+            imagePreview.src = imageUrl;
+            imagePreview.dataset.url = imageUrl;
+            imagePreview.style.display = 'inline-block';
+            updateOutput();
+          }
+        }
+      });
+      
+      uploadButton.addEventListener("click", () => {
+        fileInput.click();
+      });
+      
+      imageContainer.appendChild(imagePreview);
+      imageContainer.appendChild(uploadButton);
+      imageContainer.appendChild(fileInput);
+      imageCell.appendChild(imageContainer);
+      
+      // 5. خلية الإجراءات
+      const actionCell = document.createElement("td");
+      const deleteBtn = document.createElement("button");
+      deleteBtn.className = "delete-btn";
+      deleteBtn.textContent = "حذف";
+      deleteBtn.onclick = function() { removeRow(this); };
+      actionCell.appendChild(deleteBtn);
+      
+      // إضافة جميع الخلايا إلى الصف
+      row.appendChild(categoryCell);
+      row.appendChild(itemCell);
+      row.appendChild(priceCell);
+      row.appendChild(imageCell);
+      row.appendChild(actionCell);
+      
+      // إضافة الصف إلى الجدول
+      if (isNewRow) {
+        tableBody.insertBefore(row, tableBody.firstChild);
+      } else {
+        tableBody.appendChild(row);
+      }
+      
+      updateOutput();
+    }
 
     function removeRow(button) {
       if (confirm("هل أنت متأكد من حذف هذا الصف؟")) {
@@ -510,44 +538,34 @@
     }
 
     function loadSelectedFile() {
-  tableBody.innerHTML = "";
-  const filename = fileSelect.value;
-  fetch(`https://raw.githubusercontent.com/${owner}/${repo}/main/${filename}`)
-    .then(res => res.text())
-    .then(text => {
-      const lines = text.trim().split("\n");
-      // تحميل البيانات بالترتيب الأصلي (بدون عكس)
-      for (let line of lines) {
-        const parts = line.split('/');
-        if (parts.length >= 4) {
-          addRow(
-            parts[0].trim(), 
-            parts[1].trim(), 
-            parts[2].trim(), 
-            parts.slice(3).join('/').trim(), 
-            false
-          );
-        }
-      }
-      updateOutput();
-    })
-    .catch(() => {
-      alert("تعذر تحميل الملف " + filename);
-    });
-}
-
+      tableBody.innerHTML = "";
+      const filename = fileSelect.value;
+      fetch(`https://raw.githubusercontent.com/${owner}/${repo}/main/${filename}`)
+        .then(res => res.text())
+        .then(text => {
+          const lines = text.trim().split("\n");
+          for (let line of lines) {
+            const parts = line.split('/');
+            if (parts.length >= 4) {
+              addRow(
+                parts[0].trim(), 
+                parts[1].trim(), 
+                parts[2].trim(), 
+                parts.slice(3).join('/').trim(), 
+                false
+              );
+            }
+          }
+          updateOutput();
+        })
+        .catch(() => {
+          alert("تعذر تحميل الملف " + filename);
+        });
+    }
 
     function addNewRow() {
-  addRow("", "", "", "", true);
-  // وضع التركيز على خلية الصنف بعد الإضافة
-  setTimeout(() => {
-    const firstRow = tableBody.querySelector('tr');
-    if (firstRow) {
-      const itemCell = firstRow.querySelectorAll('td')[1];
-      if (itemCell) itemCell.focus();
+      addRow("", "", "", "", true);
     }
-  }, 50);
-}
 
     async function saveMarkdown() {
       const content = btoa(unescape(encodeURIComponent(outputText.value)));
@@ -588,6 +606,6 @@
     }
 
     window.onload = loadSelectedFile;
-  </script>
+</script>
 </body>
 </html>
