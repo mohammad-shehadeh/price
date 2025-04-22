@@ -336,7 +336,7 @@
 
   <script src="config.js"></script>
 
-  <script>
+<script>
     const owner = "mohammad-shehadeh";
     const repo = "price";
     const tableBody = document.getElementById("tableBody");
@@ -347,12 +347,29 @@
     const cloudName = 'dygc5b8cn';
     const uploadPreset = 'Shehadeh';
     
-    // خيارات الفئات لكل ملف
-    const fileOptions = {
-      "test.md": ["samsung", "MI", "Apple", "Tecno", "Infinix", "Honor", "ZTE", "N/A"],
-      "abc.md": ["Option1", "Option2", "Option3", "Other"],
-      "lcd.md": ["Samsung", "iphone", "Mi", "tecno", "realmi", "INFINEX", "OPPO", "HONOR"]
+    // خيارات الفئات لكل ملف (يمكن توسيعها حسب الحاجة)
+    const fileCategories = {
+      "test.txt": ["Samsung", "MI", "iPhone", "Tecno", "Infinix", "Honor", "Realme", "OPPO", "Huawei"],
+      "lcd.txt": ["Samsung", "MI", "iPhone", "A1", "A2", "A3"],
+      "abc.txt": ["Y1", "M1", "K2", "O7", "W2"],
+      // يمكن إضافة المزيد من الملفات والفئات هنا
     };
+
+    // دالة لتحميل الفئات من localStorage إذا كانت موجودة
+    function loadCustomCategories() {
+      const savedCategories = localStorage.getItem('fileCategories');
+      if (savedCategories) {
+        Object.assign(fileCategories, JSON.parse(savedCategories));
+      }
+    }
+
+    // دالة لحفظ الفئات المخصصة في localStorage
+    function saveCustomCategories() {
+      localStorage.setItem('fileCategories', JSON.stringify(fileCategories));
+    }
+
+    // تحميل الفئات المخصصة عند البدء
+    loadCustomCategories();
 
     function updateOutput() {
       let lines = [];
@@ -366,26 +383,22 @@
         // تحديد أولوية الحرف الأول
         const getPriority = (char) => {
           const priorityOrder = {'S': 1, 'A': 2, 'N': 3, 'R': 4, 'P': 5};
-          return priorityOrder[char] || 6; // أي حرف آخر يأتي بعد P
+          return priorityOrder[char] || 6;
         };
         
-        // الحصول على الحرف الأول من اسم الصنف
         const firstCharA = itemA.charAt(0);
         const firstCharB = itemB.charAt(0);
         
         const priorityA = getPriority(firstCharA);
         const priorityB = getPriority(firstCharB);
         
-        // إذا كانت الأولوية مختلفة، نرتب حسب الأولوية
         if (priorityA !== priorityB) {
           return priorityA - priorityB;
         }
         
-        // إذا كانت الأولوية متساوية، نرتب حسب طول اسم الصنف (من الأطول إلى الأقصر)
         return itemB.length - itemA.length;
       });
       
-      // إنشاء المخرجات من الصفوف المرتبة
       for (let row of sortedRows) {
         const cells = row.querySelectorAll("td");
         const values = [];
@@ -393,15 +406,15 @@
         for (let i = 0; i < 4; i++) {
           const cell = cells[i];
           
-          if (i === 0) { // خلية الفئة
+          if (i === 0) {
             const select = cell.querySelector('select');
             values.push(select ? select.value : cell.textContent.trim());
           } 
-          else if (i === 3) { // خلية الصورة
+          else if (i === 3) {
             const img = cell.querySelector('img.preview-image');
             values.push(img ? img.dataset.url : '');
           }
-          else { // الخلايا الأخرى
+          else {
             values.push(cell.textContent.trim());
           }
         }
@@ -416,28 +429,56 @@
 
     function createCategorySelect(selectedValue = "") {
       const filename = fileSelect.value;
-      const options = fileOptions[filename] || [];
+      const categories = fileCategories[filename] || [];
       
       const select = document.createElement("select");
       select.className = "category-select";
       select.onchange = updateOutput;
       
-      // إضافة خيار فارغ
       const emptyOption = document.createElement("option");
       emptyOption.value = "";
       emptyOption.textContent = "اختر الفئة";
       select.appendChild(emptyOption);
       
-      // إضافة خيارات الفئة
-      options.forEach(option => {
+      categories.forEach(category => {
         const opt = document.createElement("option");
-        opt.value = option;
-        opt.textContent = option;
-        if (option === selectedValue) opt.selected = true;
+        opt.value = category;
+        opt.textContent = category;
+        if (category === selectedValue) opt.selected = true;
         select.appendChild(opt);
+      });
+
+      // إضافة زر لتعديل الفئات
+      if (categories.length > 0) {
+        const editOption = document.createElement("option");
+        editOption.value = "EDIT";
+        editOption.textContent = "تعديل الفئات...";
+        select.appendChild(editOption);
+      }
+      
+      select.addEventListener('change', function() {
+        if (this.value === "EDIT") {
+          editCategories();
+          this.value = "";
+        }
       });
       
       return select;
+    }
+
+    function editCategories() {
+      const filename = fileSelect.value;
+      const currentCategories = fileCategories[filename] || [];
+      const newCategories = prompt(
+        "عدل الفئات لهذا الملف (افصل بين الفئات بفاصلة):",
+        currentCategories.join(",")
+      );
+      
+      if (newCategories !== null) {
+        fileCategories[filename] = newCategories.split(',').map(c => c.trim()).filter(c => c);
+        saveCustomCategories();
+        loadSelectedFile(); // إعادة تحميل الملف لتطبيق التغييرات
+      }
     }
 
     async function uploadImage(file) {
@@ -462,34 +503,32 @@
     function addRow(category = "", item = "", price = "", imageUrl = "", isNewRow = false) {
       const row = document.createElement("tr");
       
-      // 1. خلية الفئة
+      // خلية الفئة
       const categoryCell = document.createElement("td");
       if (isNewRow) {
         categoryCell.className = "category-cell";
         const categorySelect = createCategorySelect(category);
-        categorySelect.addEventListener("change", updateOutput);
         categoryCell.appendChild(categorySelect);
       } else {
         categoryCell.textContent = category;
         categoryCell.contentEditable = "true";
-        categoryCell.addEventListener("input", updateOutput);
       }
+      categoryCell.addEventListener("input", updateOutput);
       
-      // 2. خلية الصنف
+      // خلية الصنف
       const itemCell = document.createElement("td");
       itemCell.contentEditable = "true";
       itemCell.textContent = item;
       itemCell.addEventListener("input", updateOutput);
       
-      // 3. خلية السعر
+      // خلية السعر
       const priceCell = document.createElement("td");
       priceCell.contentEditable = "true";
       priceCell.textContent = price;
       priceCell.addEventListener("input", updateOutput);
       
-      // 4. خلية الصورة
+      // خلية الصورة
       const imageCell = document.createElement("td");
-      
       const imageContainer = document.createElement("div");
       imageContainer.className = "image-container";
       
@@ -527,24 +566,22 @@
         }
       });
       
-      uploadButton.addEventListener("click", () => {
-        fileInput.click();
-      });
+      uploadButton.addEventListener("click", () => fileInput.click());
       
       imageContainer.appendChild(imagePreview);
       imageContainer.appendChild(uploadButton);
       imageContainer.appendChild(fileInput);
       imageCell.appendChild(imageContainer);
       
-      // 5. خلية الإجراءات
+      // خلية الإجراءات
       const actionCell = document.createElement("td");
       const deleteBtn = document.createElement("button");
       deleteBtn.className = "delete-btn";
       deleteBtn.textContent = "حذف";
-      deleteBtn.onclick = function() { removeRow(this); };
+      deleteBtn.onclick = () => removeRow(deleteBtn);
       actionCell.appendChild(deleteBtn);
       
-      // إضافة جميع الخلايا إلى الصف
+      // إضافة الخلايا إلى الصف
       row.appendChild(categoryCell);
       row.appendChild(itemCell);
       row.appendChild(priceCell);
@@ -596,7 +633,6 @@
 
     function addNewRow() {
       addRow("", "", "", "", true);
-      // وضع التركيز على خلية الصنف بعد الإضافة
       setTimeout(() => {
         const firstRow = tableBody.querySelector('tr');
         if (firstRow) {
@@ -607,7 +643,6 @@
     }
 
     async function saveMarkdown() {
-      // نضمن أن المخرجات محدثة ومرتبة قبل الحفظ
       updateOutput();
       
       const content = btoa(unescape(encodeURIComponent(outputText.value)));
@@ -636,7 +671,7 @@
         
         const data = await saveRes.json();
         if (data.content) {
-          alert("تم حفظ التعديلات بنجاح مع الفرز التلقائي!");
+          alert("تم حفظ التعديلات بنجاح!");
         } else {
           console.error(data);
           alert("حدث خطأ أثناء الحفظ.");
@@ -647,7 +682,21 @@
       }
     }
 
-    window.onload = loadSelectedFile;
+    // تهيئة أولية
+    window.onload = function() {
+      loadCustomCategories();
+      loadSelectedFile();
+      
+      // إضافة زر لإدارة الفئات
+      const header = document.querySelector('header');
+      if (header) {
+        const editBtn = document.createElement('button');
+        editBtn.textContent = 'إدارة الفئات';
+        editBtn.className = 'edit-categories-btn';
+        editBtn.onclick = editCategories;
+        header.appendChild(editBtn);
+      }
+    };
 </script>
 </body>
 </html>
