@@ -1,4 +1,3 @@
-samsung/Ap/30/https://res.cloudinary.com/dygc5b8cn/image/upload/v1745340480/b8r8e7flp3lwfmqlilbu.jpg
 samsung/S25 ultra 256|12/aaa/https://assets.mmsrg.com/isr/166325/c1/-/ASSET_MMS_149453259/fee_786_587_png
 samsung/S24 ultra 256|12/aaa/https://sbitany.com/image/cache/catalog/109-634-0049-0369-2024012565120-460x460.jpg
 samsung/S24 ultra 512|12/aaa/https://sbitany.com/image/cache/catalog/109-634-0049-0369-2024012565120-460x460.jpg
