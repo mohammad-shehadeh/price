@@ -1,6 +1,6 @@
 Samsung
 MI
-iPhone
+Apple
 Tecno
 Infinix
 Honor
