@@ -354,43 +354,20 @@
       "lcd.md": ["Samsung", "iphone", "Mi", "tecno", "realmi", "INFINEX", "OPPO", "HONOR"]
     };
 
-    // أولوية الفئات حسب الأحرف الأولى
-    const categoryPriority = {
-      'Samsung': 1,
-      'Mi': 2,
-      'Apple': 3,
-      'Infinix': 4,
-      'Tecno': 5,
-      'Honor': 6,
-      'ZTE': 7,
-      'N\A': 8,
-      'realmi': 9,
-      'oppo': 10
-    };
-
-    function getCategoryPriority(category) {
-  if (!category) return 999; // الفئات غير المعرفة في الأسفل
-  const lowerCategory = category.toLowerCase();
-  return categoryPriority[lowerCategory] || 999;
-}
-
     function updateOutput() {
       let lines = [];
       for (let row of tableBody.rows) {
         const cells = row.querySelectorAll("td");
         const values = [];
         
-        for (let i = 0; i < 5; i++) {
+        for (let i = 0; i < 4; i++) {
           const cell = cells[i];
           
-          if (i === 0) { // خلية الترتيب
-            values.push(cell.textContent.trim());
-          }
-          else if (i === 1) { // خلية الفئة
+          if (i === 0) { // خلية الفئة
             const select = cell.querySelector('select');
             values.push(select ? select.value : cell.textContent.trim());
           } 
-          else if (i === 4) { // خلية الصورة
+          else if (i === 3) { // خلية الصورة
             const img = cell.querySelector('img.preview-image');
             values.push(img ? img.dataset.url : '');
           }
@@ -451,17 +428,10 @@
       }
     }
 
-    function addRow(order = "", category = "", item = "", price = "", imageUrl = "", isNewRow = false) {
+    function addRow(category = "", item = "", price = "", imageUrl = "", isNewRow = false) {
       const row = document.createElement("tr");
       
-      // 1. خلية الترتيب
-      const orderCell = document.createElement("td");
-      orderCell.contentEditable = "true";
-      orderCell.textContent = order;
-      orderCell.addEventListener("input", updateOutput);
-      orderCell.style.textAlign = "center";
-      
-      // 2. خلية الفئة
+      // 1. خلية الفئة
       const categoryCell = document.createElement("td");
       if (isNewRow) {
         categoryCell.className = "category-cell";
@@ -474,19 +444,19 @@
         categoryCell.addEventListener("input", updateOutput);
       }
       
-      // 3. خلية الصنف
+      // 2. خلية الصنف
       const itemCell = document.createElement("td");
       itemCell.contentEditable = "true";
       itemCell.textContent = item;
       itemCell.addEventListener("input", updateOutput);
       
-      // 4. خلية السعر
+      // 3. خلية السعر
       const priceCell = document.createElement("td");
       priceCell.contentEditable = "true";
       priceCell.textContent = price;
       priceCell.addEventListener("input", updateOutput);
       
-      // 5. خلية الصورة
+      // 4. خلية الصورة
       const imageCell = document.createElement("td");
       
       const imageContainer = document.createElement("div");
@@ -535,7 +505,7 @@
       imageContainer.appendChild(fileInput);
       imageCell.appendChild(imageContainer);
       
-      // 6. خلية الإجراءات
+      // 5. خلية الإجراءات
       const actionCell = document.createElement("td");
       const deleteBtn = document.createElement("button");
       deleteBtn.className = "delete-btn";
@@ -544,7 +514,6 @@
       actionCell.appendChild(deleteBtn);
       
       // إضافة جميع الخلايا إلى الصف
-      row.appendChild(orderCell);
       row.appendChild(categoryCell);
       row.appendChild(itemCell);
       row.appendChild(priceCell);
@@ -577,13 +546,12 @@
           const lines = text.trim().split("\n");
           for (let line of lines) {
             const parts = line.split('/');
-            if (parts.length >= 5) {
+            if (parts.length >= 4) {
               addRow(
-                parts[0].trim(), // الترتيب
-                parts[1].trim(), // الفئة
-                parts[2].trim(), // الصنف
-                parts[3].trim(), // السعر
-                parts.slice(4).join('/').trim(), // الصورة
+                parts[0].trim(), 
+                parts[1].trim(), 
+                parts[2].trim(), 
+                parts.slice(3).join('/').trim(), 
                 false
               );
             }
@@ -596,16 +564,10 @@
     }
 
     function addNewRow() {
-      // عند إضافة صف جديد، نعطيه رقم ترتيب عالي ليظهر في الأسفل
-      const rows = tableBody.rows;
-      const lastOrder = rows.length > 0 ? parseInt(rows[rows.length-1].cells[0].textContent) || 0 : 0;
-      addRow(lastOrder + 10, "", "", "", "", true);
+      addRow("", "", "", "", true);
     }
 
     async function saveMarkdown() {
-      // فرز الجدول حسب أولوية الفئات قبل الحفظ
-      autoSortByCategory();
-      
       const content = btoa(unescape(encodeURIComponent(outputText.value)));
       const path = fileSelect.value;
       const url = `https://api.github.com/repos/${owner}/${repo}/contents/${path}`;
@@ -643,94 +605,7 @@
       }
     }
 
-    // دالة لفرز الجدول حسب الأرقام الترتيبية
-    function sortTable() {
-      const rows = Array.from(tableBody.rows);
-      
-      rows.sort((a, b) => {
-        const aOrder = parseInt(a.cells[0].textContent) || 0;
-        const bOrder = parseInt(b.cells[0].textContent) || 0;
-        return aOrder - bOrder;
-      });
-      
-      // إزالة جميع الصفوف
-      while (tableBody.firstChild) {
-        tableBody.removeChild(tableBody.firstChild);
-      }
-      
-      // إضافة الصفوف مرتبة
-      rows.forEach(row => {
-        tableBody.appendChild(row);
-      });
-      
-      updateOutput();
-    }
-
-    // دالة للفرز التلقائي حسب أولوية الفئات
-    function autoSortByCategory() {
-      const rows = Array.from(tableBody.rows);
-      
-      // تجميع الصفوف حسب الفئات
-      const categories = {};
-      rows.forEach(row => {
-        const categoryCell = row.cells[1];
-        let category = '';
-        
-        if (categoryCell.querySelector('select')) {
-          category = categoryCell.querySelector('select').value;
-        } else {
-          category = categoryCell.textContent.trim();
-        }
-        
-        if (!categories[category]) {
-          categories[category] = [];
-        }
-        categories[category].push(row);
-      });
-      
-      // فرز الفئات حسب الأولوية
-      const sortedCategories = Object.keys(categories).sort((a, b) => {
-        const aPriority = getCategoryPriority(a);
-        const bPriority = getCategoryPriority(b);
-        return aPriority - bPriority;
-      });
-      
-      // إزالة جميع الصفوف
-      while (tableBody.firstChild) {
-        tableBody.removeChild(tableBody.firstChild);
-      }
-      
-      // إضافة الصفوف مرتبة حسب الفئات مع الحفاظ على الترتيب الداخلي
-      sortedCategories.forEach(category => {
-        categories[category].forEach(row => {
-          tableBody.appendChild(row);
-        });
-      });
-      
-      updateOutput();
-    }
-
-    window.onload = function() {
-      loadSelectedFile();
-      
-      // إضافة زر الفرز إذا لم يكن موجودًا
-      if (!document.getElementById('sortButton')) {
-        const sortButton = document.createElement('button');
-        sortButton.id = 'sortButton';
-        sortButton.textContent = 'فرز حسب الترتيب';
-        sortButton.onclick = sortTable;
-        document.querySelector('.controls').appendChild(sortButton);
-      }
-      
-      // إضافة زر فرز حسب الفئة إذا لم يكن موجودًا
-      if (!document.getElementById('sortCategoryButton')) {
-        const sortCategoryButton = document.createElement('button');
-        sortCategoryButton.id = 'sortCategoryButton';
-        sortCategoryButton.textContent = 'فرز حسب الفئة';
-        sortCategoryButton.onclick = autoSortByCategory;
-        document.querySelector('.controls').appendChild(sortCategoryButton);
-      }
-    };
+    window.onload = loadSelectedFile;
 </script>
 </body>
 </html>
