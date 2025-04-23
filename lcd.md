@@ -144,7 +144,7 @@ iphone/xs max BYH/65/https://m.media-amazon.com/images/I/61LlML7zbqL._AC_UL400_.
 iphone/8 plus AAA/45/https://cellphoneandparts.com/cdn/shop/products/LCD-FOR-IP8-PLUS-BLACK.jpg?v=1623164128
 realmi/7i-A53 ORI/50/https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRN_l_tJcAUcwt2msqr6EBfmP2sVvznY3CjaQ&s
 iphone/11 moche/55/https://www.cmedistribution.com.my/wp-content/plugins/phastpress/phast.php/c2VydmljZT1pbWFnZXMmc3JjPWh0dHBzJTNBJTJGJTJGd3d3LmNtZWRpc3RyaWJ1dGlvbi5jb20ubXklMkZ3cC1jb250ZW50JTJGdXBsb2FkcyUyRjIwMjMlMkYwNiUyRklNR182NjQ2LXNjYWxlZC0xLmpwZyZjYWNoZU1hcmtlcj0xNzAyMDI5MTQzLTIxMDEwNyZ0b2tlbj05NzQ3MTMyNjc0YTFiNTBl.q.jpg
-iphone/xr moche/55/https://fmmall.my/wp-content/uploads/2022/12/cS6lpryeeE16XwmZrZc3DRq8tH5e6oJg6c4YIZak.jpg
+iphone/xr moche/55/https://res.cloudinary.com/dygc5b8cn/image/upload/v1745401739/fakyioorijh4zcgkfwpx.jpg
 Samsung/J4+-J6+/45/https://i.ebayimg.com/images/g/8GAAAOSwWGdiFImo/s-l1200.jpg
 realmi/C11 ORI/50/https://cdn.iserviceindia.in/iservice/image/product/part/28277/realme-c11-rmx2185-lcd-display-combo-folder-image-922303767-1733309804.webp
 INFINEX/HOT 40I/50/https://sc04.alicdn.com/kf/Habc8f725c16e4d9a855b03e701f09647z.jpg
