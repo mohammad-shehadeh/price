@@ -347,178 +347,118 @@
     const cloudName = 'dygc5b8cn';
     const uploadPreset = 'Shehadeh';
     
-    // تخزين الفئات
-    let fileCategories = {};
+    // خيارات الفئات لكل ملف
+    const fileOptions = {
+      "test.md": ["samsung", "MI", "Apple", "Tecno", "Infinix", "Honor", "ZTE", "N/A"],
+      "abc.md": ["Option1", "Option2", "Option3", "Other"],
+      "lcd.md": ["Samsung", "iphone", "Mi", "tecno", "realmi", "INFINEX", "OPPO", "HONOR"]
+    };
 
     function updateOutput() {
-      const rows = Array.from(tableBody.rows);
-      const categories = {};
-      
-      // تجميع المنتجات حسب الفئات
-      rows.forEach(row => {
-        const category = row.cells[0].querySelector('select') 
-          ? row.cells[0].querySelector('select').value 
-          : row.cells[0].textContent.trim();
+      let lines = [];
+      for (let row of tableBody.rows) {
+        const cells = row.querySelectorAll("td");
+        const values = [];
         
-        const product = row.cells[1].textContent.trim();
-        const price = row.cells[2].textContent.trim();
-        
-        const img = row.cells[3].querySelector('img.preview-image');
-        const image = img ? img.dataset.url : '';
-        
-        if (!categories[category]) {
-          categories[category] = [];
+        for (let i = 0; i < 4; i++) {
+          const cell = cells[i];
+          
+          if (i === 0) { // خلية الفئة
+            const select = cell.querySelector('select');
+            values.push(select ? select.value : cell.textContent.trim());
+          } 
+          else if (i === 3) { // خلية الصورة
+            const img = cell.querySelector('img.preview-image');
+            values.push(img ? img.dataset.url : '');
+          }
+          else { // الخلايا الأخرى
+            values.push(cell.textContent.trim());
+          }
         }
         
-        if (product || price || image) {
-          categories[category].push(`${category}/${product}/${price}/${image}`);
+        if (values.some(val => val !== "")) {
+          lines.push(values.join("/"));
         }
-      });
-      
-      // فرز الفئات حسب الترتيب المطلوب
-      const predefinedOrder = [
-        'Samsung', 'MI', 'Apple', 'Infinix', 
-        'Tecno', 'Honor', 'Realme', 'OPPO', 'Huawei'
-      ];
-      
-      // فرز الفئات
-      const sortedCategories = Object.keys(categories).sort((a, b) => {
-        const indexA = predefinedOrder.indexOf(a);
-        const indexB = predefinedOrder.indexOf(b);
-        
-        if (indexA !== -1 && indexB !== -1) return indexA - indexB;
-        if (indexA !== -1) return -1;
-        if (indexB !== -1) return 1;
-        return a.localeCompare(b); // الترتيب الأبجدي للفئات الأخرى
-      });
-      
-      // فرز المنتجات داخل كل فئة (من الأطول إلى الأقصر)
-      const outputLines = [];
-      sortedCategories.forEach(category => {
-        categories[category].sort((a, b) => {
-          const productA = a.split('/')[1];
-          const productB = b.split('/')[1];
-          return productB.length - productA.length; // من الأطول إلى الأقصر
-        });
-        outputLines.push(...categories[category]);
-      });
-      
-      outputText.value = outputLines.join("\n");
+      }
+      outputText.value = lines.join("\n");
     }
 
     function createCategorySelect(selectedValue = "") {
       const filename = fileSelect.value;
-      const categories = fileCategories[filename] || [];
+      const options = fileOptions[filename] || [];
       
       const select = document.createElement("select");
       select.className = "category-select";
       select.onchange = updateOutput;
       
+      // إضافة خيار فارغ
       const emptyOption = document.createElement("option");
       emptyOption.value = "";
       emptyOption.textContent = "اختر الفئة";
       select.appendChild(emptyOption);
       
-      // إضافة الفئات المحددة مسبقاً أولاً
-      const predefinedCategories = [
-        'Samsung', 'MI', 'Apple', 'Infinix', 
-        'Tecno', 'Honor', 'Realme', 'OPPO', 'Huawei'
-      ];
-      
-      predefinedCategories.forEach(category => {
-        if (categories.includes(category)) {
-          const opt = document.createElement("option");
-          opt.value = category;
-          opt.textContent = category;
-          if (category === selectedValue) opt.selected = true;
-          select.appendChild(opt);
-        }
-      });
-      
-      // إضافة الفئات الأخرى
-      categories.forEach(category => {
-        if (!predefinedCategories.includes(category)) {
-          const opt = document.createElement("option");
-          opt.value = category;
-          opt.textContent = category;
-          if (category === selectedValue) opt.selected = true;
-          select.appendChild(opt);
-        }
+      // إضافة خيارات الفئة
+      options.forEach(option => {
+        const opt = document.createElement("option");
+        opt.value = option;
+        opt.textContent = option;
+        if (option === selectedValue) opt.selected = true;
+        select.appendChild(opt);
       });
       
       return select;
     }
 
-    async function loadSelectedFile() {
-      tableBody.innerHTML = "";
-      const filename = fileSelect.value;
+    async function uploadImage(file) {
+      const formData = new FormData();
+      formData.append('file', file);
+      formData.append('upload_preset', uploadPreset);
       
       try {
-        const res = await fetch(`https://raw.githubusercontent.com/${owner}/${repo}/main/${filename}`);
-        const text = await res.text();
-        
-        const lines = text.trim().split("\n");
-        const categories = new Set();
-        const dataLines = [];
-        
-        lines.forEach(line => {
-          if (line.includes('/')) {
-            dataLines.push(line);
-            const category = line.split('/')[0].trim();
-            categories.add(category);
-          }
+        const response = await fetch(`https://api.cloudinary.com/v1_1/${cloudName}/image/upload`, {
+          method: 'POST',
+          body: formData
         });
         
-        fileCategories[filename] = Array.from(categories);
-        
-        dataLines.forEach(line => {
-          const parts = line.split('/');
-          if (parts.length >= 4) {
-            addRow(
-              parts[0].trim(),
-              parts[1].trim(),
-              parts[2].trim(),
-              parts.slice(3).join('/').trim(),
-              false
-            );
-          }
-        });
-        
-        updateOutput();
-      } catch (err) {
-        alert("تعذر تحميل الملف " + filename);
+        const data = await response.json();
+        return data.secure_url;
+      } catch (error) {
+        console.error('Error uploading image:', error);
+        return null;
       }
     }
 
-    function addRow(category = "", product = "", price = "", imageUrl = "", isNewRow = false) {
+    function addRow(category = "", item = "", price = "", imageUrl = "", isNewRow = false) {
       const row = document.createElement("tr");
       
-      // خلية الفئة
+      // 1. خلية الفئة
       const categoryCell = document.createElement("td");
       if (isNewRow) {
         categoryCell.className = "category-cell";
         const categorySelect = createCategorySelect(category);
+        categorySelect.addEventListener("change", updateOutput);
         categoryCell.appendChild(categorySelect);
       } else {
         categoryCell.textContent = category;
         categoryCell.contentEditable = "true";
+        categoryCell.addEventListener("input", updateOutput);
       }
-      categoryCell.addEventListener("input", updateOutput);
       
-      // خلية المنتج
-      const productCell = document.createElement("td");
-      productCell.contentEditable = "true";
-      productCell.textContent = product;
-      productCell.addEventListener("input", updateOutput);
+      // 2. خلية الصنف
+      const itemCell = document.createElement("td");
+      itemCell.contentEditable = "true";
+      itemCell.textContent = item;
+      itemCell.addEventListener("input", updateOutput);
       
-      // خلية السعر
+      // 3. خلية السعر
       const priceCell = document.createElement("td");
       priceCell.contentEditable = "true";
       priceCell.textContent = price;
       priceCell.addEventListener("input", updateOutput);
       
-      // خلية الصورة
+      // 4. خلية الصورة
       const imageCell = document.createElement("td");
+      
       const imageContainer = document.createElement("div");
       imageContainer.className = "image-container";
       
@@ -526,19 +466,17 @@
       imagePreview.className = "preview-image";
       imagePreview.style.maxWidth = "100px";
       imagePreview.style.maxHeight = "100px";
-      imagePreview.onerror = () => imagePreview.style.display = 'none';
       
       if (imageUrl) {
         imagePreview.src = imageUrl;
         imagePreview.dataset.url = imageUrl;
-        imagePreview.style.display = 'inline-block';
       } else {
         imagePreview.style.display = 'none';
       }
       
       const uploadButton = document.createElement("button");
       uploadButton.className = "upload-btn";
-      uploadButton.textContent = "رفع صورة";
+      uploadButton.textContent = "اختر صورة";
       
       const fileInput = document.createElement("input");
       fileInput.type = "file";
@@ -558,31 +496,35 @@
         }
       });
       
-      uploadButton.addEventListener("click", () => fileInput.click());
+      uploadButton.addEventListener("click", () => {
+        fileInput.click();
+      });
       
       imageContainer.appendChild(imagePreview);
       imageContainer.appendChild(uploadButton);
       imageContainer.appendChild(fileInput);
       imageCell.appendChild(imageContainer);
       
-      // خلية الإجراءات
+      // 5. خلية الإجراءات
       const actionCell = document.createElement("td");
       const deleteBtn = document.createElement("button");
       deleteBtn.className = "delete-btn";
       deleteBtn.textContent = "حذف";
-      deleteBtn.onclick = () => removeRow(deleteBtn);
+      deleteBtn.onclick = function() { removeRow(this); };
       actionCell.appendChild(deleteBtn);
       
-      // إضافة الصف إلى الجدول
+      // إضافة جميع الخلايا إلى الصف
       row.appendChild(categoryCell);
-      row.appendChild(productCell);
+      row.appendChild(itemCell);
       row.appendChild(priceCell);
       row.appendChild(imageCell);
       row.appendChild(actionCell);
       
-      tableBody.appendChild(row);
+      // إضافة الصف إلى الجدول
       if (isNewRow) {
         tableBody.insertBefore(row, tableBody.firstChild);
+      } else {
+        tableBody.appendChild(row);
       }
       
       updateOutput();
@@ -595,36 +537,48 @@
       }
     }
 
-    async function uploadImage(file) {
-      const formData = new FormData();
-      formData.append('file', file);
-      formData.append('upload_preset', uploadPreset);
-      
-      try {
-        const response = await fetch(`https://api.cloudinary.com/v1_1/${cloudName}/image/upload`, {
-          method: 'POST',
-          body: formData
+    function loadSelectedFile() {
+      tableBody.innerHTML = "";
+      const filename = fileSelect.value;
+      fetch(`https://raw.githubusercontent.com/${owner}/${repo}/main/${filename}`)
+        .then(res => res.text())
+        .then(text => {
+          const lines = text.trim().split("\n");
+          for (let line of lines) {
+            const parts = line.split('/');
+            if (parts.length >= 4) {
+              addRow(
+                parts[0].trim(), 
+                parts[1].trim(), 
+                parts[2].trim(), 
+                parts.slice(3).join('/').trim(), 
+                false
+              );
+            }
+          }
+          updateOutput();
+        })
+        .catch(() => {
+          alert("تعذر تحميل الملف " + filename);
         });
-        return await response.json().then(data => data.secure_url);
-      } catch (error) {
-        console.error('Error uploading image:', error);
-        return null;
-      }
+    }
+
+    function addNewRow() {
+      addRow("", "", "", "", true);
     }
 
     async function saveMarkdown() {
-      updateOutput();
-      
-      const filename = fileSelect.value;
       const content = btoa(unescape(encodeURIComponent(outputText.value)));
-      const url = `https://api.github.com/repos/${owner}/${repo}/contents/${filename}`;
+      const path = fileSelect.value;
+      const url = `https://api.github.com/repos/${owner}/${repo}/contents/${path}`;
 
       try {
         const shaRes = await fetch(url, {
           headers: { Authorization: `token ${GITHUB_TOKEN}` }
         });
         const shaData = await shaRes.json();
-        
+        const sha = shaData.sha;
+
         const saveRes = await fetch(url, {
           method: "PUT",
           headers: {
@@ -632,40 +586,26 @@
             "Content-Type": "application/json"
           },
           body: JSON.stringify({
-            message: "تم التحديث مع الفرز التلقائي للمنتجات",
+            message: "تحديث من المحرر",
             content: content,
-            sha: shaData.sha
+            sha: sha
           })
         });
         
         const data = await saveRes.json();
         if (data.content) {
-          alert("تم الحفظ بنجاح مع تطبيق الفرز التلقائي!");
+          alert("تم حفظ التعديلات بنجاح!");
         } else {
-          throw new Error("Failed to save");
+          console.error(data);
+          alert("حدث خطأ أثناء الحفظ.");
         }
       } catch (err) {
         console.error(err);
-        alert("حدث خطأ أثناء الحفظ: " + err.message);
+        alert("فشل الاتصال بواجهة GitHub.");
       }
     }
 
-    function addNewRow() {
-      addRow("", "", "", "", true);
-      setTimeout(() => {
-        const firstRow = tableBody.querySelector('tr');
-        if (firstRow) {
-          const productCell = firstRow.querySelectorAll('td')[1];
-          if (productCell) productCell.focus();
-        }
-      }, 50);
-    }
-
-    // التهيئة الأولية
-    window.onload = function() {
-      fileSelect.addEventListener('change', loadSelectedFile);
-      loadSelectedFile();
-    };
+    window.onload = loadSelectedFile;
 </script>
 </body>
 </html>
