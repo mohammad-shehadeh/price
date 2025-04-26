@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shehadeh Center - بوابتك التقنية الشاملة</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        /* أساسيات التصميم */
+        :root {
+            --primary-color: #0F3460;
+            --secondary-color: #00A8CC;
+            --accent-color: #E94560;
+            --light-color: #F5F5F5;
+            --dark-color: #1A1A2E;
+            --gray-color: #8B8B8B;
+            --dark-bg: #0a192f;
+            --dark-text: #e6f1ff;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Tajawal', 'Poppins', sans-serif;
+        }
+        
+        body {
+            background-color: var(--light-color);
+            color: var(--dark-color);
+            overflow-x: hidden;
+            transition: all 0.5s ease;
+        }
+        
+        body.dark-theme {
+            background-color: var(--dark-bg);
+            color: var(--dark-text);
+        }
+        
+        /* شريط التنبيهات العلوي */
+        .alert-bar {
+            background: linear-gradient(90deg, var(--accent-color), #ff6b6b);
+            color: white;
+            text-align: center;
+            padding: 0.8rem;
+            font-size: 0.9rem;
+            position: relative;
+            margin-top: 80px;
+        }
+        
+        .alert-bar a {
+            color: white;
+            font-weight: bold;
+            text-decoration: underline;
+            margin-right: 0.5rem;
+        }
+        
+        .close-alert {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: white;
+            cursor: pointer;
+        }
+        
+        /* شريط التنقل */
+        .glass-navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 5%;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .dark-theme .glass-navbar {
+            background: rgba(10, 25, 47, 0.85);
+            border-bottom: 1px solid rgba(100, 255, 218, 0.1);
+        }
+        
+        /* باقي الأنماط السابقة... (يجب الحفاظ عليها) */
+        
+        /* قسم تحميل التطبيق الجديد */
+        .app-download {
+            padding: 5rem 5%;
+            background: linear-gradient(135deg, var(--primary-color), var(--dark-bg));
+            color: white;
+            text-align: center;
+        }
+        
+        .app-download h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .app-download p {
+            max-width: 700px;
+            margin: 0 auto 2.5rem;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        .download-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .download-btn {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            background: white;
+            color: var(--primary-color);
+            padding: 1rem 2rem;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        
+        .download-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+        
+        .download-btn i {
+            font-size: 2rem;
+        }
+        
+        .btn-text {
+            text-align: right;
+        }
+        
+        .btn-text span {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: normal;
+            color: var(--gray-color);
+        }
+        
+        .app-screenshot {
+            margin-top: 3rem;
+            position: relative;
+        }
+        
+        .app-screenshot img {
+            max-width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+            transition: all 0.5s ease;
+        }
+        
+        .app-screenshot img:hover {
+            transform: scale(1.03);
+        }
+        
+        /* مؤشر التحميل */
+        .loader-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--primary-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            z-index: 9999;
+            transition: opacity 0.5s ease;
+        }
+        
+        .loader {
+            width: 80px;
+            height: 80px;
+            border: 8px solid rgba(255, 255, 255, 0.1);
+            border-top-color: var(--secondary-color);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-bottom: 2rem;
+        }
+        
+        .loader-text {
+            color: white;
+            font-size: 1.2rem;
+            margin-top: 1rem;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        /* تحسينات للوضع الليلي */
+        .dark-theme .service-card,
+        .dark-theme .deal-card,
+        .dark-theme .warranty-card {
+            background: rgba(30, 30, 60, 0.8);
+            color: var(--dark-text);
+        }
+        
+        .dark-theme .service-card p,
+        .dark-theme .deal-info h3,
+        .dark-theme .warranty-card p {
+            color: rgba(230, 241, 255, 0.8);
+        }
+        
+        /* تأثيرات حركية إضافية */
+        .float-animation {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .pulse-animation {
+            animation: pulse 2s infinite;
+        }
+        
+        .shake-animation:hover {
+            animation: shake 0.5s;
+        }
+        
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+            20%, 40%, 60%, 80% { transform: translateX(5px); }
+        }
+        
+        /* تحسينات للهواتف */
+        @media (max-width: 768px) {
+            .download-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .download-btn {
+                width: 80%;
+                justify-content: center;
+            }
+            
+            .app-download h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- مؤشر التحميل -->
+    <div class="loader-container" id="loader">
+        <div class="loader"></div>
+        <div class="loader-text">جاري تحميل Shehadeh Center...</div>
+    </div>
+    
+    <!-- شريط التنقل العلوي -->
+    <nav class="glass-navbar">
+        <!-- ... (نفس شريط التنقل السابق) ... -->
+    </nav>
+    
+    <!-- شريط التنبيهات -->
+    <div class="alert-bar animate__animated animate__fadeInDown">
+        <button class="close-alert" id="closeAlert">&times;</button>
+        <a href="#app-download">حمل تطبيقنا الجديد الآن!</a> واحصل على خصم 1% على أول عملية شراء من خلال التطبيق
+    </div>
+    
+    <!-- ... (الأقسام السابقة: Hero, Services, Deals, Warranty) ... -->
+    
+    <!-- قسم تحميل التطبيق الجديد -->
+    <section class="app-download" id="app-download">
+        <h2 class="animate__animated animate__fadeInUp">حمل تطبيق Shehadeh Center الآن</h2>
+        <p class="animate__animated animate__fadeInUp animate__delay-1s">استمتع بتجربة أسرع وأكثر سلاسة مع إشعارات فورية بأسعار الأجهزة والعروض الحصرية فقط لمستخدمي التطبيق</p>
+        
+        <div class="download-buttons animate__animated animate__fadeInUp animate__delay-2s">
+            <a href="https://play.google.com/store/apps/details?id=com.Shehadeh Center" class="download-btn shake-animation">
+                <i class="fab fa-google-play"></i>
+                <div class="btn-text">
+                    متوفر على
+                    <span>Google Play</span>
+                </div>
+            </a>
+            
+            <a href="https://apps.apple.com/sa/app/Shehadeh Center/id123456789" class="download-btn shake-animation">
+                <i class="fab fa-apple"></i>
+                <div class="btn-text">
+                    تنزيل من
+                    <span>App Store</span>
+                </div>
+            </a>
+        </div>
+        
+        <div class="app-screenshot animate__animated animate__fadeIn animate__delay-3s">
+            <img src="https://via.placeholder.com/800x500" alt="تطبيق Shehadeh Center" class="float-animation">
+        </div>
+    </section>
+    
+    <!-- ... (تذييل الصفحة السابق) ... -->
+    
+    <script>
+        // مؤشر التحميل
+        window.addEventListener('load', function() {
+            const loader = document.getElementById('loader');
+            setTimeout(() => {
+                loader.style.opacity = '0';
+                setTimeout(() => {
+                    loader.style.display = 'none';
+                }, 500);
+            }, 1500);
+        });
+        
+        // إغلاق شريط التنبيهات
+        document.getElementById('closeAlert').addEventListener('click', function() {
+            const alertBar = document.querySelector('.alert-bar');
+            alertBar.style.display = 'none';
+            document.querySelector('.hero').style.marginTop = '80px';
+        });
+        
+        // نظام الثيم المتكامل مع تحسينات
+class ThemeManager {
+  constructor() {
+    this.themeToggle = document.querySelector('.theme-toggle');
+    this.body = document.body;
+    this.navbar = document.querySelector('.glass-navbar');
+    this.themeIcon = this.themeToggle.querySelector('i');
+    this.darkThemeClass = 'dark-theme';
+    this.init();
+  }
+
+  init() {
+    this.loadTheme();
+    this.setupEventListeners();
+  }
+
+  loadTheme() {
+    const savedTheme = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    
+    // الأولوية للثيم المحفوظ، ثم تفضيلات النظام
+    if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+      this.enableDarkMode();
+    } else {
+      this.enableLightMode();
+    }
+  }
+
+  setupEventListeners() {
+    this.themeToggle.addEventListener('click', () => this.toggleTheme());
+    
+    // متابعة تغيير تفضيلات النظام
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+      if (!localStorage.getItem('theme')) {
+        e.matches ? this.enableDarkMode() : this.enableLightMode();
+      }
+    });
+  }
+
+  toggleTheme() {
+    this.body.classList.contains(this.darkThemeClass) 
+      ? this.enableLightMode() 
+      : this.enableDarkMode();
+  }
+
+  enableDarkMode() {
+    this.body.classList.add(this.darkThemeClass);
+    this.themeIcon.classList.replace('fa-moon', 'fa-sun');
+    localStorage.setItem('theme', 'dark');
+    this.updateNavbarStyle(true);
+  }
+
+  enableLightMode() {
+    this.body.classList.remove(this.darkThemeClass);
+    this.themeIcon.classList.replace('fa-sun', 'fa-moon');
+    localStorage.setItem('theme', 'light');
+    this.updateNavbarStyle(false);
+  }
+
+  updateNavbarStyle(isDark) {
+    if (!this.navbar) return;
+    
+    const scrollPosition = window.scrollY;
+    const opacity = scrollPosition > 100 ? 0.95 : 0.85;
+    
+    if (isDark) {
+      this.navbar.style.background = `rgba(10, 25, 47, ${opacity})`;
+      this.navbar.style.color = '#e6f1ff';
+    } else {
+      this.navbar.style.background = `rgba(255, 255, 255, ${opacity})`;
+      this.navbar.style.color = '#333';
+    }
+  }
+}
+
+// نظام الرسوم المتحركة عند التمرير
+class ScrollAnimator {
+  constructor() {
+    this.animateElements = document.querySelectorAll('.animate-on-scroll');
+    this.init();
+  }
+
+  init() {
+    this.checkElements();
+    window.addEventListener('scroll', () => this.checkElements());
+  }
+
+  checkElements() {
+    const screenPosition = window.innerHeight / 1.3;
+    
+    this.animateElements.forEach(element => {
+      const elementPosition = element.getBoundingClientRect().top;
+      
+      if (elementPosition < screenPosition) {
+        element.classList.add('animate__animated', 'animate__fadeInUp');
+      }
+    });
+  }
+}
+
+// تهيئة الأنظمة عند تحميل الصفحة
+document.addEventListener('DOMContentLoaded', () => {
+  // تهيئة مدير الثيم
+  const themeManager = new ThemeManager();
+  
+  // تهيئة الرسوم المتحركة
+  document.querySelectorAll('section').forEach(section => {
+    section.classList.add('animate-on-scroll');
+  });
+  new ScrollAnimator();
+  
+  // تحديث النافبار عند التمرير
+  window.addEventListener('scroll', () => {
+    themeManager.updateNavbarStyle(themeManager.body.classList.contains(themeManager.darkThemeClass));
+  });
+});
+    </script>
+</body>
+</html>
