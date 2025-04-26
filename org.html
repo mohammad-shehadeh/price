@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TechPortal - بوابتك التقنية الشاملة</title>
+    <title>Shehadeh Center - نظام أسعار الجملة</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         /* أساسيات التصميم */
         :root {
-            --primary-color: #0F3460;
-            --secondary-color: #00A8CC;
-            --accent-color: #E94560;
-            --light-color: #F5F5F5;
+            --primary-color: #2C3E50;
+            --secondary-color: #3498DB;
+            --accent-color: #E74C3C;
+            --light-color: #F9F9F9;
             --dark-color: #1A1A2E;
-            --gray-color: #8B8B8B;
+            --gray-color: #7F8C8D;
         }
         
         * {
@@ -30,20 +30,17 @@
         }
         
         /* شريط التنقل */
-        .glass-navbar {
+        .navbar {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1.5rem 5%;
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            padding: 1.2rem 5%;
+            background: var(--primary-color);
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
         }
         
         .logo {
@@ -52,7 +49,7 @@
             gap: 10px;
             font-weight: 700;
             font-size: 1.5rem;
-            color: var(--primary-color);
+            color: white;
         }
         
         .logo img {
@@ -66,47 +63,56 @@
         
         .nav-links a {
             text-decoration: none;
-            color: var(--dark-color);
+            color: rgba(255, 255, 255, 0.9);
             font-weight: 500;
             position: relative;
             transition: all 0.3s ease;
+            padding: 0.5rem 0;
         }
         
         .nav-links a:hover {
-            color: var(--secondary-color);
+            color: white;
         }
         
         .nav-links a.active {
-            color: var(--secondary-color);
+            color: white;
+            font-weight: 600;
         }
         
         .nav-links a.active::after {
             content: '';
             position: absolute;
-            bottom: -5px;
+            bottom: 0;
             left: 0;
             width: 100%;
-            height: 2px;
+            height: 3px;
             background-color: var(--secondary-color);
         }
         
         .nav-actions {
             display: flex;
             gap: 1rem;
+            align-items: center;
         }
         
-        .search-btn, .theme-toggle {
-            background: none;
-            border: none;
-            font-size: 1.2rem;
-            color: var(--dark-color);
-            cursor: pointer;
-            transition: all 0.3s ease;
+        .user-info {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: white;
+            font-weight: 500;
         }
         
-        .search-btn:hover, .theme-toggle:hover {
-            color: var(--secondary-color);
-            transform: scale(1.1);
+        .user-avatar {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            background-color: var(--secondary-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
         }
         
         /* قسم البطل */
@@ -115,8 +121,9 @@
             justify-content: space-between;
             align-items: center;
             padding: 8rem 5% 5rem;
-            margin-top: 80px;
-            background: linear-gradient(135deg, rgba(15, 52, 96, 0.1) 0%, rgba(0, 168, 204, 0.1) 100%);
+            margin-top: 70px;
+            background: linear-gradient(135deg, rgba(44, 62, 80, 0.1) 0%, rgba(52, 152, 219, 0.1) 100%);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
         }
         
         .hero-content {
@@ -125,10 +132,10 @@
         }
         
         .hero-content h1 {
-            font-size: 3rem;
+            font-size: 2.8rem;
             margin-bottom: 1.5rem;
             color: var(--primary-color);
-            line-height: 1.2;
+            line-height: 1.3;
         }
         
         .hero-content p {
@@ -144,28 +151,29 @@
         }
         
         .primary-btn, .secondary-btn {
-            padding: 0.8rem 1.5rem;
-            border-radius: 50px;
+            padding: 0.8rem 1.8rem;
+            border-radius: 6px;
             font-weight: 600;
             cursor: pointer;
             transition: all 0.3s ease;
             border: none;
+            font-size: 1rem;
         }
         
         .primary-btn {
             background-color: var(--secondary-color);
             color: white;
-            box-shadow: 0 4px 15px rgba(0, 168, 204, 0.3);
+            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
         }
         
         .primary-btn:hover {
-            background-color: var(--primary-color);
+            background-color: #2980B9;
             transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(0, 168, 204, 0.4);
+            box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
         }
         
         .secondary-btn {
-            background-color: transparent;
+            background-color: white;
             color: var(--secondary-color);
             border: 2px solid var(--secondary-color);
         }
@@ -181,99 +189,127 @@
             flex: 1;
             display: flex;
             justify-content: center;
+            align-items: center;
         }
         
         .hero-image img {
             max-width: 100%;
             height: auto;
+            max-height: 400px;
+            border-radius: 10px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
             animation: float 6s ease-in-out infinite;
         }
         
-        .floating-tag {
+        .exclusive-badge {
             position: absolute;
             top: 20px;
             right: 20px;
             background-color: var(--accent-color);
             color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 50px;
+            padding: 0.5rem 1.2rem;
+            border-radius: 6px;
             font-weight: 600;
-            animation: pulse 2s infinite;
+            font-size: 0.9rem;
+            box-shadow: 0 4px 10px rgba(231, 76, 60, 0.3);
         }
         
         /* بطاقات الخدمات */
         .services {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
             padding: 5rem 5%;
         }
         
         .service-card {
             background: white;
-            border-radius: 15px;
+            border-radius: 10px;
             padding: 2rem;
             text-align: center;
             transition: all 0.3s ease;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
             position: relative;
             overflow: hidden;
             cursor: pointer;
+            border: 1px solid rgba(0, 0, 0, 0.05);
         }
         
         .service-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
-        }
-        
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 5px;
-            background: linear-gradient(90deg, var(--secondary-color), var(--primary-color));
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            border-color: var(--secondary-color);
         }
         
         .icon-circle {
             width: 80px;
             height: 80px;
             background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
-            border-radius: 50%;
+            border-radius: 10px;
             display: flex;
             justify-content: center;
             align-items: center;
             margin: 0 auto 1.5rem;
             color: white;
             font-size: 1.8rem;
+            transition: all 0.3s ease;
+        }
+        
+        .service-card:hover .icon-circle {
+            transform: rotate(10deg) scale(1.1);
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.4);
         }
         
         .service-card h3 {
             margin-bottom: 1rem;
             color: var(--primary-color);
+            font-size: 1.3rem;
         }
         
         .service-card p {
             color: var(--gray-color);
             margin-bottom: 1.5rem;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
+            line-height: 1.6;
         }
         
-        .live-badge {
-            display: inline-block;
-            background-color: var(--accent-color);
+        .view-modes {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        
+        .view-btn {
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            background-color: white;
+            color: var(--dark-color);
+        }
+        
+        .view-btn:hover {
+            background-color: var(--secondary-color);
             color: white;
-            padding: 0.3rem 0.8rem;
-            border-radius: 50px;
-            font-size: 0.8rem;
-            font-weight: 600;
+            border-color: var(--secondary-color);
+        }
+        
+        .view-btn.active {
+            background-color: var(--secondary-color);
+            color: white;
+            border-color: var(--secondary-color);
         }
         
         /* قسم العروض */
         .deals-section {
             padding: 3rem 5%;
             background-color: white;
+            border-top: 1px solid rgba(0, 0, 0, 0.05);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
         }
         
         .section-header {
@@ -284,8 +320,20 @@
         }
         
         .section-header h2 {
-            font-size: 2rem;
+            font-size: 1.8rem;
             color: var(--primary-color);
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        
+        .section-header h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 60px;
+            height: 3px;
+            background-color: var(--secondary-color);
         }
         
         .view-all {
@@ -295,6 +343,7 @@
             text-decoration: none;
             color: var(--secondary-color);
             font-weight: 600;
+            font-size: 0.95rem;
         }
         
         .deals-carousel {
@@ -307,7 +356,7 @@
         }
         
         .deals-carousel::-webkit-scrollbar {
-            height: 8px;
+            height: 6px;
         }
         
         .deals-carousel::-webkit-scrollbar-track {
@@ -323,28 +372,30 @@
         .deal-card {
             min-width: 280px;
             background: white;
-            border-radius: 15px;
+            border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
             transition: all 0.3s ease;
             position: relative;
+            border: 1px solid rgba(0, 0, 0, 0.05);
         }
         
         .deal-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            border-color: var(--secondary-color);
         }
         
         .deal-badge {
             position: absolute;
             top: 10px;
-            left: 10px;
+            right: 10px;
             background-color: var(--accent-color);
             color: white;
             padding: 0.3rem 0.8rem;
-            border-radius: 50px;
+            border-radius: 6px;
             font-weight: 600;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             z-index: 1;
         }
         
@@ -352,8 +403,9 @@
             width: 100%;
             height: 180px;
             object-fit: contain;
-            padding: 1rem;
+            padding: 1.5rem;
             background-color: var(--light-color);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
         }
         
         .deal-info {
@@ -363,17 +415,20 @@
         .deal-info h3 {
             margin-bottom: 0.5rem;
             color: var(--primary-color);
+            font-size: 1.1rem;
         }
         
         .price {
             margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
         }
         
         .old-price {
             text-decoration: line-through;
             color: var(--gray-color);
             font-size: 0.9rem;
-            margin-left: 0.5rem;
         }
         
         .new-price {
@@ -384,40 +439,53 @@
         
         .deal-btn {
             width: 100%;
-            padding: 0.6rem;
+            padding: 0.7rem;
             background-color: var(--secondary-color);
             color: white;
             border: none;
-            border-radius: 5px;
+            border-radius: 6px;
             font-weight: 600;
             cursor: pointer;
             transition: all 0.3s ease;
         }
         
         .deal-btn:hover {
-            background-color: var(--primary-color);
+            background-color: #2980B9;
         }
         
         /* قسم الضمان */
         .warranty-section {
             padding: 5rem 5%;
-            background: linear-gradient(135deg, rgba(15, 52, 96, 0.1) 0%, rgba(0, 168, 204, 0.1) 100%);
+            background: linear-gradient(135deg, rgba(44, 62, 80, 0.05) 0%, rgba(52, 152, 219, 0.05) 100%);
         }
         
         .warranty-card {
             background: white;
-            border-radius: 15px;
+            border-radius: 10px;
             padding: 3rem;
             text-align: center;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
             max-width: 800px;
             margin: 0 auto;
+            border: 1px solid rgba(0, 0, 0, 0.05);
         }
         
         .warranty-card h2 {
-            font-size: 2rem;
+            font-size: 1.8rem;
             color: var(--primary-color);
             margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .warranty-card h2::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            right: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--secondary-color);
         }
         
         .warranty-card p {
@@ -426,6 +494,7 @@
             max-width: 600px;
             margin-left: auto;
             margin-right: auto;
+            line-height: 1.6;
         }
         
         .warranty-actions {
@@ -436,31 +505,32 @@
         }
         
         .warranty-btn, .complaint-btn {
-            padding: 0.8rem 1.5rem;
-            border-radius: 50px;
+            padding: 0.8rem 1.8rem;
+            border-radius: 6px;
             font-weight: 600;
             cursor: pointer;
             transition: all 0.3s ease;
             display: flex;
             align-items: center;
             gap: 0.5rem;
+            font-size: 0.95rem;
         }
         
         .warranty-btn {
             background-color: var(--primary-color);
             color: white;
             border: none;
-            box-shadow: 0 4px 15px rgba(15, 52, 96, 0.3);
+            box-shadow: 0 4px 15px rgba(44, 62, 80, 0.2);
         }
         
         .warranty-btn:hover {
-            background-color: var(--secondary-color);
+            background-color: #1E2B38;
             transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(15, 52, 96, 0.4);
+            box-shadow: 0 6px 20px rgba(44, 62, 80, 0.3);
         }
         
         .complaint-btn {
-            background-color: transparent;
+            background-color: white;
             color: var(--primary-color);
             border: 2px solid var(--primary-color);
         }
@@ -476,10 +546,12 @@
             justify-content: center;
             gap: 3rem;
             margin-top: 2rem;
+            flex-wrap: wrap;
         }
         
         .stat-item {
             text-align: center;
+            min-width: 120px;
         }
         
         .stat-number {
@@ -498,14 +570,14 @@
         footer {
             background-color: var(--primary-color);
             color: white;
-            padding: 4rem 5% 2rem;
+            padding: 3rem 5% 2rem;
         }
         
         .footer-content {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 2rem;
-            margin-bottom: 3rem;
+            margin-bottom: 2rem;
         }
         
         .footer-column h3 {
@@ -513,14 +585,15 @@
             margin-bottom: 1.5rem;
             position: relative;
             padding-bottom: 0.5rem;
+            color: white;
         }
         
         .footer-column h3::after {
             content: '';
             position: absolute;
             bottom: 0;
-            left: 0;
-            width: 50px;
+            right: 0;
+            width: 40px;
             height: 2px;
             background-color: var(--secondary-color);
         }
@@ -537,6 +610,8 @@
             color: rgba(255, 255, 255, 0.8);
             text-decoration: none;
             transition: all 0.3s ease;
+            font-size: 0.9rem;
+            display: block;
         }
         
         .footer-column ul li a:hover {
@@ -544,35 +619,12 @@
             padding-right: 5px;
         }
         
-        .social-links {
-            display: flex;
-            gap: 1rem;
-            margin-top: 1rem;
-        }
-        
-        .social-links a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            color: white;
-            transition: all 0.3s ease;
-        }
-        
-        .social-links a:hover {
-            background-color: var(--secondary-color);
-            transform: translateY(-3px);
-        }
-        
         .footer-bottom {
             text-align: center;
             padding-top: 2rem;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             color: rgba(255, 255, 255, 0.6);
-            font-size: 0.9rem;
+            font-size: 0.85rem;
         }
         
         /* تأثيرات الحركة */
@@ -593,7 +645,7 @@
             .hero {
                 flex-direction: column;
                 text-align: center;
-                padding-top: 6rem;
+                padding-top: 5rem;
             }
             
             .hero-buttons {
@@ -616,7 +668,7 @@
         }
         
         @media (max-width: 768px) {
-            .glass-navbar {
+            .navbar {
                 padding: 1rem 5%;
             }
             
@@ -632,49 +684,55 @@
                 flex-direction: column;
                 gap: 1.5rem;
             }
+            
+            .service-card {
+                padding: 1.5rem;
+            }
+            
+            .warranty-card {
+                padding: 2rem 1.5rem;
+            }
         }
     </style>
 </head>
 <body>
     <!-- شريط التنقل العلوي -->
-    <nav class="glass-navbar">
+    <nav class="navbar">
         <div class="logo">
-            <img src="https://via.placeholder.com/40x40" alt="TechPortal Logo">
-            <span>TechPortal</span>
+            <img src="https://via.placeholder.com/40x40" alt="Shehadeh Center Logo">
+            <span>Shehadeh Center</span>
         </div>
         
         <div class="nav-links">
             <a href="#" class="active">الرئيسية</a>
-            <a href="#">عروض اليوم</a>
-            <a href="#">الشكاوى</a>
-            <a href="#">الدعم</a>
+            <a href="#">عروض الجملة</a>
+            <a href="#">متحرك الأسعار</a>
+            <a href="#">إدارة الطلبات</a>
         </div>
         
         <div class="nav-actions">
-            <button class="search-btn">
-                <i class="fas fa-search"></i>
-            </button>
-            <button class="theme-toggle">
-                <i class="fas fa-moon"></i>
-            </button>
+            <div class="user-info">
+                <div class="user-avatar">م</div>
+                <span>محمد أحمد</span>
+            </div>
         </div>
     </nav>
     
     <!-- قسم البطل -->
     <section class="hero">
         <div class="hero-content">
-            <h1>بوابتك الشاملة لعالم التقنية</h1>
-            <p>أحدث الأسعار، العروض الحصرية، وخدمات الضمان والفحص الموثوقة</p>
+            <h1>نظام أسعار الجملة من Shehadeh Center</h1>
+            <p>أحدث أسعار الجملة للأجهزة التقنية والإكسسوارات، متابعة فورية للطلبات وإدارة المخزون</p>
             
             <div class="hero-buttons">
                 <button class="primary-btn" onclick="location.href='prices.html'">استعراض الأسعار</button>
-                <button class="secondary-btn" onclick="location.href='imei.html'">فحص IMEI الآن</button>
+                <button class="secondary-btn" onclick="location.href='orders.html'">إدارة الطلبات</button>
             </div>
         </div>
         
         <div class="hero-image">
             <img src="https://via.placeholder.com/600x400" alt="أجهزة تقنية">
-            <div class="floating-tag">عروض حصرية!</div>
+            <div class="exclusive-badge">أسعار حصرية لتجار الجملة</div>
         </div>
     </section>
     
@@ -685,8 +743,16 @@
                 <i class="fas fa-chart-line"></i>
             </div>
             <h3>متحرّك أسعار الأجهزة</h3>
-            <p>تتبع أحدث التغيرات في أسعار الأجهزة لحظة بلحظة</p>
-            <div class="live-badge">مباشر</div>
+            <p>تتبع أحدث التغيرات في أسعار الجملة للأجهزة التقنية لحظة بلحظة</p>
+            
+            <div class="view-modes">
+                <button class="view-btn active" onclick="event.stopPropagation(); setViewMode('store')">
+                    <i class="fas fa-store"></i> عرض المتجر
+                </button>
+                <button class="view-btn" onclick="event.stopPropagation(); setViewMode('list')">
+                    <i class="fas fa-list"></i> عرض القائمة
+                </button>
+            </div>
         </div>
         
         <div class="service-card" onclick="location.href='screens.html'">
@@ -694,7 +760,7 @@
                 <i class="fas fa-tv"></i>
             </div>
             <h3>أسعار الشاشات</h3>
-            <p>قارن بين أفضل الشاشات وأحدث العروض</p>
+            <p>قارن بين أفضل الشاشات وأحدث العروض لكميات الجملة</p>
         </div>
         
         <div class="service-card" onclick="location.href='accessories.html'">
@@ -702,60 +768,59 @@
                 <i class="fas fa-headphones"></i>
             </div>
             <h3>أسعار الإكسسوارات</h3>
-            <p>اكتشف أفضل الإكسسوارات بأسعار تنافسية</p>
+            <p>اكتشف أفضل الإكسسوارات بأسعار الجملة التنافسية</p>
         </div>
         
-        <div class="service-card" onclick="location.href='imei.html'">
+        <div class="service-card" onclick="location.href='orders.html'">
             <div class="icon-circle">
-                <i class="fas fa-mobile-alt"></i>
+                <i class="fas fa-clipboard-list"></i>
             </div>
-            <h3>فحص رقم IMEI</h3>
-            <p>تحقق من صلاحية جهازك ومعلومات الضمان</p>
+            <h3>إدارة الطلبات</h3>
+            <p>تابع طلباتك السابقة وأنشئ طلبات جديدة بسهولة</p>
         </div>
     </section>
     
-  <!-- قسم العروض والتخفيضات -->
-<section class="deals-section">
-    <div class="section-header">
-        <h2>عروض وتخفيضات اليوم</h2>
-        <a href="/price/sale.html" class="view-all">عرض الكل <i class="fas fa-chevron-left"></i></a>
-    </div>
+    <!-- قسم العروض والتخفيضات -->
+    <section class="deals-section">
+        <div class="section-header">
+            <h2>عروض الجملة الحصرية</h2>
+            <a href="wholesale-deals.html" class="view-all">عرض الكل <i class="fas fa-chevron-left"></i></a>
+        </div>
+        
+        <div class="deals-carousel" id="deals-container">
+            <!-- سيتم ملء هذا القسم ديناميكيًا من خلال JavaScript -->
+        </div>
+    </section>
     
-    <div class="deals-carousel" id="deals-container">
-        <!-- سيتم ملء هذا القسم ديناميكيًا من خلال JavaScript -->
-    </div>
-</section>
-
-    
-    <!-- قسم فحص الضمان والشكاوى -->
+    <!-- قسم إدارة الطلبات -->
     <section class="warranty-section">
         <div class="warranty-card">
-            <h2>خدمات الضمان والشكاوى</h2>
-            <p>تحقق من حالة الضمان أو قدم شكوى بخصوص جهازك</p>
+            <h2>إدارة الطلبات والمخزون</h2>
+            <p>تابع طلبات الجملة الخاصة بك وتحقق من توفر المنتجات في المخزون</p>
             
             <div class="warranty-actions">
-                <button class="warranty-btn" onclick="location.href='warranty.html'">
-                    <i class="fas fa-shield-alt"></i>
-                    تحقق من الضمان
+                <button class="warranty-btn" onclick="location.href='new-order.html'">
+                    <i class="fas fa-plus-circle"></i>
+                    طلب جديد
                 </button>
-                <button class="complaint-btn" onclick="location.href='complaint.html'">
-                    <i class="fas fa-comment-alt"></i>
-                    تقديم شكوى
+                <button class="complaint-btn" onclick="location.href='orders.html'">
+                    <i class="fas fa-clipboard-list"></i>
+                    الطلبات السابقة
                 </button>
             </div>
             
             <div class="stats">
                 <div class="stat-item">
-                    <div class="stat-number">15,872</div>
-                    <div class="stat-label">فحص ضمان</div>
+                    <div class="stat-number" id="pending-orders">24</div>
+                    <div class="stat-label">طلبات قيد المعالجة</div>
                 </div>
                 <div class="stat-item">
-                    <div class="stat-number">98%</div>
-                    <div class="stat-label">رضا العملاء</div>
+                    <div class="stat-number" id="completed-orders">128</div>
+                    <div class="stat-label">طلبات مكتملة</div>
                 </div>
                 <div class="stat-item">
-                    <div class="stat-number">2,453</div>
-                    <div class="stat-label">شكوى معالجة</div>
+                    <div class="stat-number" id="available-products">342</div>
+                    <div class="stat-label">منتج متوفر</div>
                 </div>
             </div>
         </div>
@@ -765,144 +830,127 @@
     <footer>
         <div class="footer-content">
             <div class="footer-column">
-                <h3>عن TechPortal</h3>
-                <p>بوابتك الشاملة لجميع خدمات التقنية، الأسعار، الضمان والشكاوى. نقدم أحدث المعلومات وأدق التفاصيل لمساعدتك في اتخاذ أفضل القرارات.</p>
-                <div class="social-links">
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-youtube"></i></a>
-                </div>
+                <h3>Shehadeh Center</h3>
+                <p style="color: rgba(255, 255, 255, 0.7); font-size: 0.9rem; line-height: 1.6;">
+                    نظام إدارة أسعار الجملة وتتبع الطلبات حصريًا لتجار الجملة المعتمدين
+                </p>
             </div>
             
             <div class="footer-column">
                 <h3>الخدمات</h3>
                 <ul>
-                    <li><a href="prices.html">أسعار الأجهزة</a></li>
-                    <li><a href="screens.html">أسعار الشاشات</a></li>
-                    <li><a href="accessories.html">أسعار الإكسسوارات</a></li>
-                    <li><a href="imei.html">فحص IMEI</a></li>
-                    <li><a href="warranty.html">فحص الضمان</a></li>
+                    <li><a href="prices.html">أسعار الجملة</a></li>
+                    <li><a href="screens.html">الشاشات</a></li>
+                    <li><a href="accessories.html">الإكسسوارات</a></li>
+                    <li><a href="orders.html">إدارة الطلبات</a></li>
                 </ul>
             </div>
             
             <div class="footer-column">
-                <h3>الدعم</h3>
+                <h3>المساعدة</h3>
                 <ul>
-                    <li><a href="complaint.html">تقديم شكوى</a></li>
-                    <li><a href="#">الأسئلة الشائعة</a></li>
-                    <li><a href="#">سياسة الخصوصية</a></li>
-                    <li><a href="#">شروط الاستخدام</a></li>
-                    <li><a href="#">اتصل بنا</a></li>
+                    <li><a href="guide.html">دليل الاستخدام</a></li>
+                    <li><a href="terms.html">الشروط والأحكام</a></li>
                 </ul>
             </div>
         </div>
         
         <div class="footer-bottom">
-            <p>© 2023 TechPortal. جميع الحقوق محفوظة.</p>
+            <p>© 2023 Shehadeh Center. جميع الحقوق محفوظة لتجار الجملة المعتمدين.</p>
         </div>
     </footer>
     
-    <script src="sale.js"></script>
     <script>
-        // تبديل الوضع الليلي
-        const themeToggle = document.querySelector('.theme-toggle');
-        const body = document.body;
+        // بيانات العروض
+        const saleItems = [
+            "هاتف XYZ Pro/1624/2499/35%/https://via.placeholder.com/280x180",
+            "شاشة Ultra HD 32 بوصة/1349/1799/25%/https://via.placeholder.com/280x180",
+            "سماعات لاسلكية/359/599/40%/https://via.placeholder.com/280x180",
+            "لابتوب فائق السرعة/3599/4299/16%/https://via.placeholder.com/280x180",
+            "جهاز لوحي/899/1199/25%/https://via.placeholder.com/280x180",
+            "كاميرا احترافية/2199/2799/21%/https://via.placeholder.com/280x180"
+        ];
         
-        themeToggle.addEventListener('click', () => {
-            body.classList.toggle('dark-theme');
-            const icon = themeToggle.querySelector('i');
+        // دالة لتحميل العروض
+        function loadDeals() {
+            const dealsContainer = document.getElementById('deals-container');
             
-            if (body.classList.contains('dark-theme')) {
-                icon.classList.remove('fa-moon');
-                icon.classList.add('fa-sun');
-                // يمكنك هنا إضافة متغيرات الألوان للوضع الليلي
-            } else {
-                icon.classList.remove('fa-sun');
-                icon.classList.add('fa-moon');
-            }
-        });
-        
-        // تأثيرات عند التمرير
-        window.addEventListener('scroll', () => {
-            const navbar = document.querySelector('.glass-navbar');
-            if (window.scrollY > 50) {
-                navbar.style.boxShadow = '0 4px 30px rgba(0, 0, 0, 0.2)';
-            } else {
-                navbar.style.boxShadow = '0 4px 30px rgba(0, 0, 0, 0.1)';
-            }
-        });
-        
-        // يمكنك إضافة المزيد من الوظائف هنا حسب الحاجة
-
-        // بيانات العروض (يمكن استبدالها باستيراد من ملف sale.js)
-// ملف sale.js يجب أن يحتوي على مصفوفة تسمى saleItems بالشكل التالي:
-/*
-const saleItems = [
-    "هاتف XYZ Pro/1624/2499/35%/https://example.com/phone.jpg",
-    "شاشة Ultra HD 32 بوصة/1349/1799/25%/https://example.com/monitor.jpg",
-    "سماعات لاسلكية/359/599/40%/https://example.com/headphones.jpg",
-    "لابتوب فائق السرعة/3599/4299/16%/https://example.com/laptop.jpg"
-];
-*/
-
-// دالة لتحميل العروض
-function loadDeals() {
-    const dealsContainer = document.getElementById('deals-container');
-    
-    // مسح المحتوى الحالي
-    dealsContainer.innerHTML = '';
-    
-    // معالجة كل عنصر في مصفوفة العروض
-    saleItems.forEach((item, index) => {
-        const parts = item.split('/');
-        if (parts.length >= 5) {
-            const name = parts[0];
-            const currentPrice = parts[1];
-            const oldPrice = parts[2];
-            const discount = parts[3];
-            const imageUrl = parts[4];
+            // مسح المحتوى الحالي
+            dealsContainer.innerHTML = '';
             
-            // إنشاء بطاقة العرض
-            const dealCard = document.createElement('div');
-            dealCard.className = 'deal-card';
-            dealCard.onclick = function() {
-                location.href = `deal${index + 1}.html`;
-            };
-            
-            // إضافة محتوى البطاقة
-            dealCard.innerHTML = `
-                <div class="deal-badge">${discount.includes('%') ? 'خصم ' + discount : discount}</div>
-                <img src="${imageUrl}" alt="${name}" onerror="this.src='https://via.placeholder.com/280x180'">
-                <div class="deal-info">
-                    <h3>${name}</h3>
-                    <div class="price">
-                        <span class="old-price">${formatPrice(oldPrice)} ر.س</span>
-                        <span class="new-price">${formatPrice(currentPrice)} ر.س</span>
-                    </div>
-                    <button class="deal-btn">استفد الآن</button>
-                </div>
-            `;
-            
-            dealsContainer.appendChild(dealCard);
+            // معالجة كل عنصر في مصفوفة العروض
+            saleItems.forEach((item, index) => {
+                const parts = item.split('/');
+                if (parts.length >= 5) {
+                    const name = parts[0];
+                    const currentPrice = parts[1];
+                    const oldPrice = parts[2];
+                    const discount = parts[3];
+                    const imageUrl = parts[4];
+                    
+                    // إنشاء بطاقة العرض
+                    const dealCard = document.createElement('div');
+                    dealCard.className = 'deal-card';
+                    dealCard.onclick = function() {
+                        location.href = `deal${index + 1}.html`;
+                    };
+                    
+                    // إضافة محتوى البطاقة
+                    dealCard.innerHTML = `
+                        <div class="deal-badge">خصم ${discount}</div>
+                        <img src="${imageUrl}" alt="${name}" onerror="this.src='https://via.placeholder.com/280x180'">
+                        <div class="deal-info">
+                            <h3>${name}</h3>
+                            <div class="price">
+                                <span class="new-price">${formatPrice(currentPrice)} ر.س</span>
+                                <span class="old-price">${formatPrice(oldPrice)} ر.س</span>
+                            </div>
+                            <button class="deal-btn">طلب كمية</button>
+                        </div>
+                    `;
+                    
+                    dealsContainer.appendChild(dealCard);
+                }
+            });
         }
-    });
-}
-
-// دالة لتهيئة الأسعار (إضافة فواصل الآلاف)
-function formatPrice(price) {
-    return parseFloat(price).toLocaleString('ar-SA');
-}
-
-// تحميل العروض عند تحميل الصفحة
-document.addEventListener('DOMContentLoaded', function() {
-    // يمكن استبدال هذا بجلب البيانات من ملف sale.js
-    // إذا كان الملف مستوردًا بشكل صحيح، سيتم تحميل البيانات تلقائيًا
-    if (typeof saleItems !== 'undefined') {
-        loadDeals();
-    } else {
-        console.error('لم يتم العثور على بيانات العروض saleItems');
-    }
-});
+        
+        // دالة لتهيئة الأسعار (إضافة فواصل الآلاف)
+        function formatPrice(price) {
+            return parseFloat(price).toLocaleString('ar-SA');
+        }
+        
+        // دالة لتحديد طريقة العرض (متجر/قائمة)
+        function setViewMode(mode) {
+            const storeBtn = document.querySelector('.view-btn:nth-child(1)');
+            const listBtn = document.querySelector('.view-btn:nth-child(2)');
+            
+            if (mode === 'store') {
+                storeBtn.classList.add('active');
+                listBtn.classList.remove('active');
+                // كود لتغيير طريقة العرض إلى متجر
+                console.log('تم تغيير طريقة العرض إلى متجر');
+            } else {
+                storeBtn.classList.remove('active');
+                listBtn.classList.add('active');
+                // كود لتغيير طريقة العرض إلى قائمة
+                console.log('تم تغيير طريقة العرض إلى قائمة');
+            }
+        }
+        
+        // تحميل العروض عند تحميل الصفحة
+        document.addEventListener('DOMContentLoaded', function() {
+            loadDeals();
+            
+            // يمكن إضافة جلب البيانات الحقيقية من الخادم هنا
+            fetch('https://api.example.com/wholesale-deals')
+                .then(response => response.json())
+                .then(data => {
+                    // معالجة البيانات هنا
+                })
+                .catch(error => {
+                    console.error('Error fetching data:', error);
+                });
+        });
     </script>
 </body>
 </html>
