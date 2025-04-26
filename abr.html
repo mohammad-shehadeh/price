@@ -4,22 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>عرض الأصناف حسب الفئة</title>
-<style>
+    <style>
         :root {
-            --primary-color: #8e44ad; /* لون بنفسجي ناعم */
-            --secondary-color: #9b59b6;
-            --accent-color: #a569bd;
-            --dark-color: #f5f5f5; /* خلفية فاتحة */
-            --darker-color: #e0e0e0; /* أكثر بياضاً */
-            --light-color: #333; /* نص غامق */
-            --success-color: #27ae60; /* أخضر ناعم */
-            --featured-color: #8e44ad; /* بنفسجي */
-            --featured-hover: #9b59b6;
+            --primary-color: #4361ee;
+            --secondary-color: #3f37c9;
+            --accent-color: #4895ef;
+            --dark-color: #2b2d42;
+            --light-color: #f8f9fa;
+            --success-color: #4cc9f0;
+            --featured-color: #7209b7;
+            --featured-hover: #560bad;
             --border-radius: 12px;
             --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            --featured-shadow: 0 4px 15px rgba(142, 68, 173, 0.2);
+            --featured-shadow: 0 4px 15px rgba(114, 9, 183, 0.3);
             --transition: all 0.3s ease;
-            --neon-glow: none; /* إزالة التأثيرات الفسفورية */
         }
         
         body {
@@ -27,10 +25,9 @@
             direction: rtl;
             text-align: center;
             padding: 20px;
-            background: #f9f9f9; /* خلفية بيضاء ناعمة */
-            color: var(--light-color); /* نص غامق */
+            background-color: #f5f7ff;
+            color: #333;
             line-height: 1.6;
-            text-shadow: none; /* إزالة الظلال من النص */
         }
 
         .container {
@@ -63,24 +60,47 @@
             border: none;
             border-radius: var(--border-radius);
             background-color: var(--featured-color);
-            color: white; /* نص أبيض على الأزرار */
+            color: white;
             font-weight: 700;
             transition: var(--transition);
-            box-shadow: var(--box-shadow);
+            box-shadow: var(--featured-shadow);
             display: inline-flex;
             align-items: center;
             justify-content: center;
             margin-bottom: 20px;
             position: relative;
             overflow: hidden;
-            border: 1px solid rgba(142, 68, 173, 0.3);
         }
 
         .featured-btn:hover {
             background-color: var(--featured-hover);
             transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(142, 68, 173, 0.3);
-            color: white;
+            box-shadow: 0 8px 20px rgba(114, 9, 183, 0.4);
+        }
+
+        .featured-btn:active {
+            transform: translateY(1px);
+        }
+
+        .featured-btn::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                to bottom right,
+                rgba(255, 255, 255, 0.3),
+                rgba(255, 255, 255, 0.1),
+                transparent
+            );
+            transform: rotate(30deg);
+            transition: var(--transition);
+        }
+
+        .featured-btn:hover::after {
+            transform: rotate(30deg) translate(10%, 10%);
         }
 
         button {
@@ -89,22 +109,24 @@
             cursor: pointer;
             border: none;
             border-radius: var(--border-radius);
-            background-color: var(--darker-color);
-            color: var(--primary-color);
+            background-color: var(--primary-color);
+            color: white;
             font-weight: 600;
             transition: var(--transition);
             box-shadow: var(--box-shadow);
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            border: 1px solid rgba(0, 0, 0, 0.1);
         }
 
         button:hover {
-            background-color: #d5d5d5;
+            background-color: var(--secondary-color);
             transform: translateY(-2px);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-            color: var(--primary-color);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        button:active {
+            transform: translateY(0);
         }
 
         #file-buttons {
@@ -116,25 +138,21 @@
         }
 
         #file-buttons button {
-            background-color: var(--darker-color);
-            color: var(--primary-color);
+            background-color: var(--accent-color);
             font-size: 16px;
             padding: 10px 18px;
         }
 
         #file-buttons button:hover {
-            background-color: #d5d5d5;
-            color: var(--primary-color);
+            background-color: var(--secondary-color);
         }
 
         #select-file-button {
             background-color: var(--success-color);
-            color: white;
         }
 
         #select-file-button:hover {
-            background-color: #2ecc71;
-            color: white;
+            background-color: #3a86ff;
         }
 
         table {
@@ -145,43 +163,45 @@
             overflow: hidden;
             box-shadow: var(--box-shadow);
             background-color: white;
-            border: 1px solid rgba(0, 0, 0, 0.1);
         }
 
         th, td {
-            padding: 16px;
-            border: 1px solid rgba(0, 0, 0, 0.1);
-            font-size: 20px;
-            font-weight: 700;
-            text-align: center;
-            color: var(--light-color);
-        }
+    padding: 16px;
+    border: 1px solid #e0e0e0;
+    font-size: 20px;  /* زيادة حجم النص إلى 20px */
+    font-weight: 700;  /* جعل النص عريضًا */
+    text-align: center;
+}
 
-        td {
-            direction: ltr;
-        }
+td {
+    direction: ltr; /* محاذاة الأرقام على اليسار */
+}
+
+th {
+    direction: rtl; /* محاذاة العناوين على اليمين */
+}
+
 
         th {
-            direction: rtl;
-            background-color: var(--primary-color);
+            background-color: var(--dark-color);
             color: white;
             font-weight: 600;
             font-size: 20px;
         }
 
         tr:nth-child(even) {
-            background-color: rgba(142, 68, 173, 0.05);
+            background-color: #f8f9fa;
         }
 
         tr:hover {
-            background-color: rgba(142, 68, 173, 0.1);
+            background-color: #f1f3ff;
             transition: var(--transition);
         }
 
         .category-title {
             font-size: 32px;
             font-weight: 700;
-            color: var(--primary-color);
+            color: var(--dark-color);
             margin: 40px 0 20px;
             position: relative;
             display: inline-block;
@@ -193,8 +213,8 @@
             bottom: -10px;
             right: 0;
             width: 60%;
-            height: 2px;
-            background: linear-gradient(to right, var(--primary-color), transparent);
+            height: 4px;
+            background: linear-gradient(to right, var(--primary-color), var(--success-color));
             border-radius: 2px;
         }
 
@@ -245,27 +265,21 @@
         }
 
         #select-file-button {
-            display: none;
-        }
+  display: none;
+}
 
-        .red-text {
-            color: #e74c3c;
-        }
+.red-text {
+    color: red;
+}
 
-        /* إزالة التأثيرات الزائدة */
-        .container::before, .container::after {
-            display: none;
-        }
-
-
-    #file-buttons button:nth-child(3) {
+#file-buttons button:nth-child(3) {
     pointer-events: none;
     opacity: 0.6;
     cursor: not-allowed;
     background-color: #e0e0e0;
     color: #888;
 }
-</style>
+    </style>
 </head>
 <body>
     <div class="container">
@@ -283,7 +297,6 @@
         </div>
 
         <div id="categories"></div>
-    </div>
 
 
     <script>
