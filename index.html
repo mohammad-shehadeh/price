@@ -1370,7 +1370,7 @@ function loadProductsFromFile(fileName) {
                     products.push({
                         category: parts[0].trim(),
                         name: parts[1].trim(),
-                        price: parseFloat(parts[2].trim()),
+                        price: parts[2].trim()
                         image: imageUrl
                     });
                 }
@@ -1445,14 +1445,14 @@ function renderCategories() {
             let priceText = "";
 let priceClass = "";
 
-if (product.price === undefined || product.price === null || product.price === "") {
+if (product.price === "") {
     priceText = "soon"; // السعر فاضي → نكتب soon
     priceClass = "coming-soon";
-} else if (isNaN(product.price)) {
-    priceText = "غير متوفر"; // السعر موجود لكنه نص غير مفهوم → نكتب غير متوفر
+} else if (isNaN(parseFloat(product.price))) {
+    priceText = "غير متوفر"; // السعر موجود بس غير رقمي → نكتب غير متوفر
     priceClass = "unavailable";
 } else {
-    priceText = product.price.toFixed(2) + " ₪"; // السعر صحيح → نكتب السعر مع الرمز
+    priceText = parseFloat(product.price).toFixed(2) + " ₪"; // السعر صحيح
     priceClass = "";
 }
 
@@ -1492,7 +1492,7 @@ addToCartButton.innerHTML = '<i class="fas fa-shopping-cart me-2"></i> إضاف�
 addToCartButton.classList.add('add-to-cart-btn');
 
 // تحقق من السعر، وإذا كان غير متوفر، تعطيل الزر وتغيير لونه
-if (isNaN(product.price)) {
+if (product.price === "" || isNaN(parseFloat(product.price))) {
     addToCartButton.disabled = true;  // تعطيل الزر
     addToCartButton.classList.add('disabled');  // إضافة فئة CSS لتعطيل الزر
 } else {
@@ -1645,7 +1645,7 @@ function renderFilteredProducts(filteredProducts) {
              addToCartButton.innerHTML = '<i class="fas fa-shopping-cart me-2"></i> إضافة للسلة';
             addToCartButton.classList.add('add-to-cart-btn');
 
-            if (isNaN(product.price)) {
+            if (product.price === "" || isNaN(parseFloat(product.price))) {
     addToCartButton.disabled = true;  // تعطيل الزر
 } else {
     addToCartButton.onclick = () => {
