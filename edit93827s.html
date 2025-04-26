@@ -283,6 +283,28 @@
   justify-content: flex-start; /* يدفع المحتوى إلى أقصى اليسار */
 }
 
+
+  /* تحديد عرض خاص لكل عمود حسب الترتيب */
+  th:nth-child(1), td:nth-child(1) {
+    width: 100px; /* الفئة */
+  }
+  
+  th:nth-child(2), td:nth-child(2) {
+    width: 100px; /* الصنف */
+  }
+  
+  th:nth-child(3), td:nth-child(3) {
+    width: 70px; /* السعر */
+  }
+  
+  th:nth-child(4), td:nth-child(4) {
+    width: 70px; /* الصورة */
+  }
+  
+  th:nth-child(5), td:nth-child(5) {
+    width: 20px; /* الإجراءات */
+  }
+
   </style>
 </head>
 <body>
