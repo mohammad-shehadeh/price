@@ -284,8 +284,17 @@
 }
 
 
-  /* تحديد عرض خاص لكل عمود حسب الترتيب */table {
+  /* تحديد عرض خاص لكل عمود حسب الترتيب */table {table {
   table-layout: fixed;
+  width: 100%;
+}
+
+th, td {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 14px; /* تصغير الخط داخل الجدول */
+  padding: 10px;   /* تخفيف المسافة الداخلية */
 }
 
 th:nth-child(1), td:nth-child(1) {
@@ -293,7 +302,7 @@ th:nth-child(1), td:nth-child(1) {
 }
 
 th:nth-child(2), td:nth-child(2) {
-  width: 60px; /* الصنف */
+  width: 150px; /* الصنف */
 }
 
 th:nth-child(3), td:nth-child(3) {
@@ -305,13 +314,44 @@ th:nth-child(4), td:nth-child(4) {
 }
 
 th:nth-child(5), td:nth-child(5) {
-  width: 60px; /* الإجراءات */
+  width: 80px; /* الإجراءات */
 }
 
-td, th {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+/* تحسين زر رفع الصور */
+.image-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.preview-image {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+/* تحسين زر الحذف */
+.delete-btn {
+  background-color: var(--danger-color);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.delete-btn:hover {
+  background-color: #d1146a;
+}
+
+/* تصغير حجم السلكت (القائمة المنسدلة) للفئات */
+.category-select {
+  font-size: 13px;
+  padding: 5px;
 }
 
   </style>
