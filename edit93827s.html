@@ -300,10 +300,17 @@ th, td {
   font-size: 14px;
 }
 
-th:nth-child(1), td:nth-child(1) { width: 30px; } /* الفئة أو الصورة */
-th:nth-child(2), td:nth-child(2) { width: 50px; } /* الصنف */
-th:nth-child(3), td:nth-child(3) { width: 20px; } /* السعر */
+th, td {
+  white-space: normal; /* السماح بالتفاف النص */
+  word-break: break-word; /* كسر الكلمة إذا كانت طويلة */
+  overflow-wrap: break-word; /* دعم إضافي للمتصفحات */
+}
 
+th:nth-child(1), td:nth-child(1) { width: 100px; } /* الفئة أو الصورة */
+th:nth-child(2), td:nth-child(2) { width: 100px; } /* الصنف */
+th:nth-child(3), td:nth-child(3) { width: 60px; } /* السعر */
+th:nth-child(4), td:nth-child(4) { width: 80px; } /* السعر */
+th:nth-child(5), td:nth-child(5) { width: 40px; } /* السعر */
 /* تصغير الصورة داخل الجدول */
 
 
