@@ -1370,7 +1370,7 @@ function loadProductsFromFile(fileName) {
                     products.push({
                         category: parts[0].trim(),
                         name: parts[1].trim(),
-                        price: parts[2].trim()
+                        price: parseFloat(parts[2].trim()),
                         image: imageUrl
                     });
                 }
@@ -1442,24 +1442,14 @@ function renderCategories() {
                 nameHtml = `<strong>${product.name}</strong>`;
             }
 
-            let priceText = "";
-let priceClass = "";
+            const price = isNaN(product.price) ? "غير متوفر" : product.price.toFixed(2) + " ₪";
+            const priceClass = isNaN(product.price) ? "unavailable" : "";
 
-if (product.price === "") {
-    priceText = "soon"; // السعر فاضي → نكتب soon
-    priceClass = "coming-soon";
-} else if (isNaN(parseFloat(product.price))) {
-    priceText = "غير متوفر"; // السعر موجود بس غير رقمي → نكتب غير متوفر
-    priceClass = "unavailable";
-} else {
-    priceText = parseFloat(product.price).toFixed(2) + " ₪"; // السعر صحيح
-    priceClass = "";
-}
+            productDetails.innerHTML = `
+                ${nameHtml}<br><br>
+                <span class="price ${priceClass}">${price}</span>
+            `;
 
-productDetails.innerHTML = `
-    ${nameHtml}<br><br>
-    <span class="price ${priceClass}">${priceText}</span>
-`;
             productDiv.appendChild(productDetails);
 
             // Quantity input and control buttons
@@ -1492,7 +1482,7 @@ addToCartButton.innerHTML = '<i class="fas fa-shopping-cart me-2"></i> إضاف�
 addToCartButton.classList.add('add-to-cart-btn');
 
 // تحقق من السعر، وإذا كان غير متوفر، تعطيل الزر وتغيير لونه
-if (product.price === "" || isNaN(parseFloat(product.price))) {
+if (isNaN(product.price)) {
     addToCartButton.disabled = true;  // تعطيل الزر
     addToCartButton.classList.add('disabled');  // إضافة فئة CSS لتعطيل الزر
 } else {
