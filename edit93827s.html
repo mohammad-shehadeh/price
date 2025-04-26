@@ -284,75 +284,34 @@
 }
 
 
-  /* تحديد عرض خاص لكل عمود حسب الترتيب */table {table {
+
+table {
   table-layout: fixed;
   width: 100%;
+  border-collapse: collapse;
 }
 
 th, td {
+  text-align: center;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  font-size: 14px; /* تصغير الخط داخل الجدول */
-  padding: 10px;   /* تخفيف المسافة الداخلية */
-}
-
-th:nth-child(1), td:nth-child(1) {
-  width: 80px; /* الفئة */
-}
-
-th:nth-child(2), td:nth-child(2) {
-  width: 150px; /* الصنف */
-}
-
-th:nth-child(3), td:nth-child(3) {
-  width: 70px; /* السعر */
-}
-
-th:nth-child(4), td:nth-child(4) {
-  width: 100px; /* الصورة */
-}
-
-th:nth-child(5), td:nth-child(5) {
-  width: 80px; /* الإجراءات */
-}
-
-/* تحسين زر رفع الصور */
-.image-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 5px;
-}
-
-.preview-image {
-  width: 60px;
-  height: 60px;
-  object-fit: cover;
-  border-radius: 4px;
-}
-
-/* تحسين زر الحذف */
-.delete-btn {
-  background-color: var(--danger-color);
-  color: white;
-  border: none;
-  border-radius: 50%;
-  width: 30px;
-  height: 30px;
+  padding: 8px;
   font-size: 14px;
-  cursor: pointer;
 }
 
-.delete-btn:hover {
-  background-color: #d1146a;
+th:nth-child(1), td:nth-child(1) { width: 20%; } /* الفئة أو الصورة */
+th:nth-child(2), td:nth-child(2) { width: 50%; } /* الصنف */
+th:nth-child(3), td:nth-child(3) { width: 30%; } /* السعر */
+
+/* تصغير الصورة داخل الجدول */
+.preview-image {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 6px;
 }
 
-/* تصغير حجم السلكت (القائمة المنسدلة) للفئات */
-.category-select {
-  font-size: 13px;
-  padding: 5px;
-}
 
   </style>
 </head>
