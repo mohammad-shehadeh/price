@@ -1442,14 +1442,24 @@ function renderCategories() {
                 nameHtml = `<strong>${product.name}</strong>`;
             }
 
-            const price = isNaN(product.price) ? "غير متوفر" : product.price.toFixed(2) + " ₪";
-            const priceClass = isNaN(product.price) ? "unavailable" : "";
+            let priceText = "";
+let priceClass = "";
 
-            productDetails.innerHTML = `
-                ${nameHtml}<br><br>
-                <span class="price ${priceClass}">${price}</span>
-            `;
+if (product.price === undefined || product.price === null || product.price === "") {
+    priceText = "قريباً!";
+    priceClass = "coming-soon"; // بإمكانك تحديد ستايل خاص لهذه الحالة لو أردت
+} else if (isNaN(product.price)) {
+    priceText = "غير متوفر";
+    priceClass = "unavailable";
+} else {
+    priceText = product.price.toFixed(2) + " ₪";
+    priceClass = "";
+}
 
+productDetails.innerHTML = `
+    ${nameHtml}<br><br>
+    <span class="price ${priceClass}">${priceText}</span>
+`;
             productDiv.appendChild(productDetails);
 
             // Quantity input and control buttons
