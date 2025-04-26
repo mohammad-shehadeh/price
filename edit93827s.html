@@ -284,26 +284,35 @@
 }
 
 
-  /* تحديد عرض خاص لكل عمود حسب الترتيب */
-  th:nth-child(1), td:nth-child(1) {
-    width: 100px; /* الفئة */
-  }
-  
-  th:nth-child(2), td:nth-child(2) {
-    width: 30px; /* الصنف */
-  }
-  
-  th:nth-child(3), td:nth-child(3) {
-    width: 70px; /* السعر */
-  }
-  
-  th:nth-child(4), td:nth-child(4) {
-    width: 70px; /* الصورة */
-  }
-  
-  th:nth-child(5), td:nth-child(5) {
-    width: 20px; /* الإجراءات */
-  }
+  /* تحديد عرض خاص لكل عمود حسب الترتيب */table {
+  table-layout: fixed;
+}
+
+th:nth-child(1), td:nth-child(1) {
+  width: 80px; /* الفئة */
+}
+
+th:nth-child(2), td:nth-child(2) {
+  width: 60px; /* الصنف */
+}
+
+th:nth-child(3), td:nth-child(3) {
+  width: 70px; /* السعر */
+}
+
+th:nth-child(4), td:nth-child(4) {
+  width: 100px; /* الصورة */
+}
+
+th:nth-child(5), td:nth-child(5) {
+  width: 60px; /* الإجراءات */
+}
+
+td, th {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
 
   </style>
 </head>
