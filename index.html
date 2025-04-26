@@ -1447,7 +1447,7 @@ let priceClass = "";
 
 if (product.price === undefined || product.price === null || product.price === "") {
     priceText = "قريباً!";
-    priceClass = "coming-soon"; // بإمكانك تحديد ستايل خاص لهذه الحالة لو أردت
+    priceClass = "coming-soon";
 } else if (isNaN(product.price)) {
     priceText = "غير متوفر";
     priceClass = "unavailable";
