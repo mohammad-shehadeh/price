@@ -1446,13 +1446,13 @@ function renderCategories() {
 let priceClass = "";
 
 if (product.price === undefined || product.price === null || product.price === "") {
-    priceText = "قريباً!";
+    priceText = "soon"; // السعر فاضي → نكتب soon
     priceClass = "coming-soon";
 } else if (isNaN(product.price)) {
-    priceText = "غير متوفر";
+    priceText = "غير متوفر"; // السعر موجود لكنه نص غير مفهوم → نكتب غير متوفر
     priceClass = "unavailable";
 } else {
-    priceText = product.price.toFixed(2) + " ₪";
+    priceText = product.price.toFixed(2) + " ₪"; // السعر صحيح → نكتب السعر مع الرمز
     priceClass = "";
 }
 
