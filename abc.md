@@ -24,14 +24,13 @@ LELISU/LS-239//https://res.cloudinary.com/dygc5b8cn/image/upload/v1745684666/gw8
 LELISU/LS-252//https://res.cloudinary.com/dygc5b8cn/image/upload/v1745684612/tuvl7ytcnq2zj5dzgju4.png
 LELISU/LS-251//https://res.cloudinary.com/dygc5b8cn/image/upload/v1745684546/szp5bxec6jxu4c4ollzj.png
 yesido/tws25/AAA/https://icdn.tradew.com/file/202308/1575939/jpg/8061448.jpg?x-oss-process=image/resize,w_500/quality,Q_90
-yesido/yp50/50/https://icdn.tradew.com/file/202308/1575939/jpg/8143438.jpg?x-oss-process=image/quality,Q_90
-yesido/KM15/280/https://ls6iibytsc.eu.scalesta-cdn.com/XuzHAMVXhDbnUAodDAUiB2qvD7c=/filters:format(webp):fill(fff):quality(90)/www.yourstoreq8.com/images/detailed/249/G13394.webp
+yesido/KM15/240/https://ls6iibytsc.eu.scalesta-cdn.com/XuzHAMVXhDbnUAodDAUiB2qvD7c=/filters:format(webp):fill(fff):quality(90)/www.yourstoreq8.com/images/detailed/249/G13394.webp
 yesido/kb21/38/https://sc04.alicdn.com/kf/H56230f4ad693450c930425b31fa51161U.jpg
 yesido/km13/55/https://swish.qa/cdn/shop/files/PC2645_1_700x.jpg?v=1730186589
 yesido/km14/70/https://swish.qa/cdn/shop/files/PC2645_1_700x.jpg?v=1730186589
 yesido/mg03/75/https://www.newface.com.tr/img/products/main/yesido-mg03-kablosuz-fonksiyonel-goz-masaj-aleti-siyah-66dfe494e6c2c.jpg
-yesido/sf18/200/https://www.mytrendyphone.eu/images/YESIDO-SF18-3-Axis-Smartphone-Holder-Gimbal-Stabilizer-Face-Tracking-Selfie-StickNone-22042024-00-p.webp
-yesido/sf14/70/https://kimostore.net/cdn/shop/files/yesido-sf14-gimbal-stabilizer-selfie-stick-tripod-kimo-store-1.jpg?v=1715048041
+yesido/sf18/170/https://www.mytrendyphone.eu/images/YESIDO-SF18-3-Axis-Smartphone-Holder-Gimbal-Stabilizer-Face-Tracking-Selfie-StickNone-22042024-00-p.webp
+yesido/sf14/60/https://kimostore.net/cdn/shop/files/yesido-sf14-gimbal-stabilizer-selfie-stick-tripod-kimo-store-1.jpg?v=1715048041
 yesido/tv12/145/https://icdn.tradew.com/file/202308/1575939/jpg/8067715.jpg?x-oss-process=image/resize,w_500/quality,Q_90
 yesido/yp36/140/https://ls6iibytsc.eu.scalesta-cdn.com/zyPKWc0waqQIsSXHyrr02iEnM3w=/filters:format(webp):fill(fff):quality(90)/www.tnateeshq8.com/images/detailed/216/webp.jpg
 yesido/sf15/70/https://m.media-amazon.com/images/I/61-UqcZyAAL.jpg
