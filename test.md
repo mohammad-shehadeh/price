@@ -40,13 +40,13 @@ Apple/15 pro max 512GB/4050/https://www.apollo.pl/gfx/apollo/userfiles/_public/o
 Apple/iphone 16 128GB/AAA/https://asiamall.asiacell.com/media/catalog/product/l/d/ld0006166708_2.jpg
 Apple/iphone 15 128GB/2380/https://cdn.shortpixel.ai/spai/q_glossy+ret_img+to_webp/mobizil.com/wp-content/uploads/2023/09/iPhone-15-3.jpg
 Apple/iphone 13 128GB/1850/https://m.media-amazon.com/images/I/516QZcrv+dL.jpg
-Apple/watch S10 46mm/1570/https://shop.ucom.am/media/catalog/product/cache/f0d04c535eae714fecfa8deb2c47c63b/1/a/1apple_watch_series_10_42mm_gps_silver_aluminum_sport_band_denim_1.webp
-Apple/watch S10 42mm/1450/https://i.postimg.cc/cH6Mc0rP/IMG-7141.png
+Apple/watch S10 46mm/1500/https://shop.ucom.am/media/catalog/product/cache/f0d04c535eae714fecfa8deb2c47c63b/1/a/1apple_watch_series_10_42mm_gps_silver_aluminum_sport_band_denim_1.webp
+Apple/watch S10 42mm/1380/https://i.postimg.cc/cH6Mc0rP/IMG-7141.png
 Apple/ipad 10 256GB/Aaa/https://realplaza.vtexassets.com/arquivos/ids/33743614-800-auto?v=638265979022630000&width=800&height=auto&aspect=true
 Apple/ipad 10 64GB/1250/https://realplaza.vtexassets.com/arquivos/ids/33743614-800-auto?v=638265979022630000&width=800&height=auto&aspect=true
 Apple/ipad 9 64GB/aaa/https://cdsassets.apple.com/live/SZLF0YNV/images/sp/111898_sp849-ipad-9gen-480.png
 Apple/20W cdata/70/https://atoz.ps/media/catalog/product/cache/80ae6a42c65321efa11f489c1d538fd0/o/r/original_apple_c-data_20w_charger_1_.jpg
-Tecno/GO 1 64|3/290/https://static.reach-tele.com/uploads/thumbs/55/5512810686892b375ab5043332011747.png
+Tecno/GO 1 64|3/270/https://static.reach-tele.com/uploads/thumbs/55/5512810686892b375ab5043332011747.png
 Tecno/Camon 20 premier 5G 512|16/850/https://cdn.mart.ps/247862-thickbox_default/tecno-camon-20-premier-5g-512-8gb.jpg
 Tecno/spark 20 pro 256|16/500/https://d3fyizz0b46qgr.cloudfront.net/global/spark-20-pro/product/jin.png
 Tecno/Camon 30 256|16/780/https://d3fyizz0b46qgr.cloudfront.net/global/phones/camon30/30premier/800/20231034.png
