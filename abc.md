@@ -1,4 +1,4 @@
-///
+Mixoria/مبرد GT31/25/
 Mixoria/مبرد X94/25/
 Mixoria/اصابع ببجي/1/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746005941/jjbin5xmchovdvsdfco9.jpg
 Mixoria/CC-480  3in1/290/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746005772/hmhn8uznp0vsrye4tthi.jpg
