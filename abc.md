@@ -113,7 +113,6 @@ yesido/tws16/75/https://icdn.tradew.com/file/202308/1575939/jpg/8057297.jpg?x-os
 yesido/tws11/85/https://icdn.tradew.com/file/202308/1575939/jpg/8057874.jpg?x-oss-process=image/quality,Q_90
 yesido/TWS18/32/https://garmade.com/cdn/shop/files/IP6D8334_7.jpg?v=1716463154
 yesido/TWS21/35/https://i.ebayimg.com/images/g/ZaIAAOSwDs9nIlW5/s-l1200.jpg
-yesido/TWS22/43/https://a.allegroimg.com/original/116602/01817163433fa6cffe41ab4f22c1/SLUCHAWKI-BEZPRZEWODOWE-DOUSZNE-do-na-iPhone-12-13-14-15-16-PRO-MAX-PLUS-Marka-bez-marki
 yesido/TWS26/33/https://icdn.tradew.com/file/202308/1575939/png/8150264.png?x-oss-process=image/quality,Q_90
 yesido/TWS24/57/https://icdn.tradew.com/file/202308/1575939/jpg/8061417.jpg?x-oss-process=image/quality,Q_90
 yesido/JB20/32/https://icdn.tradew.com/file/202308/1575939/png/8058139.png?x-oss-process=image/quality,Q_90
