@@ -1,4 +1,34 @@
-Mixoria/مبرد GT31/25/
+Mixoria/تيربوا X3/90/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746009332/oks54v7vp1kgrmynta8t.jpg
+Mixoria/تيربوا  X6/85/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746009480/dlmnldviu7i29ygutkhw.jpg
+Mixoria/تيربوا X3 mini/58/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746009635/qptzurrmnoaksdsrknsh.jpg
+Mixoria/تيربوا X3-1/65/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746009671/e1gzzzf9znjae9onyqcs.jpg
+Mixoria/LED COB/7/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746008842/vfts0ofj4f5ulrogbnhs.jpg
+Mixoria/LED A3/50/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746008805/asz1bmq9qlz73qyuf84m.jpg
+Mixoria/LED M11/24/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746008748/mpgjwwrgyib0m7ttyyxb.jpg
+Mixoria/4G GPS2/220/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746008697/xdg62dsjh6w3xyeeyhx9.jpg
+Mixoria/4G GPS1/270/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746008656/ot2r3tibjqpc8l3nlyry.jpg
+Mixoria/GPS app-1/25/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746008606/qk3sel8wb5s7tueldr3y.jpg
+Mixoria/GameRS36 max/165/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746008533/o4qfuzubavbbj2shs90n.jpg
+Mixoria/Game RS36s/145/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746008553/p2pkxqabhtpqxgyrphs8.jpg
+Mixoria/Game M18/210/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746008431/pfdfee5ygo32negqzano.jpg
+Mixoria/P15 mine/25/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746008346/ocxsuuk6p9weuz2xifny.jpg
+Mixoria/Camera 850/175/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746008301/co7ysozxdppcdhngoxx3.jpg
+Mixoria/Camera Q6TA/150/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746008226/x2ylmyxtsmitmqgl5dnj.jpg
+Mixoria/SR-56/36/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746008139/rscgrwbsps0e4tdlhc1i.png
+Mixoria/BH-05/8/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746008103/hbrndzcpsqiznoh1mete.png
+Mixoria/Camera V39 4G/150/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746008031/icyhqnsrhkwqwjng5qac.jpg
+Mixoria/4G GPS Camera/365/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746007916/q8mcxxixydkhxgwmukrf.jpg
+Mixoria/Wifi 600mbps/15/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746007847/msj5b1wqov8kdfxeigpz.jpg
+Mixoria/MT-75/25/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746007643/klwyofysllfwn43xs7ep.png
+Mixoria/MW-15/70/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746007574/pn46woulkbavw2vsulwj.png
+Mixoria/MW-16/80/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746007499/s1zp6af0coher4trsbbp.png
+Mixoria/MF-8/85/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746007395/bpfb6wzb0xsqzotzvlx3.png
+Mixoria/MF-5/45/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746007340/c4u9lmzvztwwsi5mb0p6.png
+Mixoria/مبرد SL-03/45/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746007286/kge4liwrc6fuccujygsl.jpg
+Mixoria/مبرد DY88/34/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746007221/supmuirwzabihzoiz7mi.jpg
+Mixoria/مبرد DY58/35/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746007162/wcab12qck2anhtw21qty.jpg
+Mixoria/مبرد FS03/25/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746007098/tqxh0c1z9tpv4hieurpz.jpg
+Mixoria/مبرد GT31/25/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746007034/zbhdhn4dplxgbh17uw15.jpg
 Mixoria/مبرد X94/25/
 Mixoria/اصابع ببجي/1/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746005941/jjbin5xmchovdvsdfco9.jpg
 Mixoria/CC-480  3in1/290/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746005772/hmhn8uznp0vsrye4tthi.jpg
@@ -120,7 +150,7 @@ yesido/C150/12/https://i.postimg.cc/hjjtSNMj/IMG-6707.jpg
 yesido/C85/13/https://i.postimg.cc/5NcQ3NnS/IMG-6796.jpg
 yesido/DS28/50/https://i.postimg.cc/5y4FYKQL/IMG-6683.png
 yesido/DS27/57/https://i.postimg.cc/CLKqwtgV/IMG-6722.png
-yesido/DS26/57/https://i.postimg.cc/YC5GfCmp/IMG-6667.png
+yesido/DS27/57/https://i.postimg.cc/YC5GfCmp/IMG-6667.png
 yesido/DS26/60/https://i.postimg.cc/pTZmHQcT/IMG-6625.png
 yesido/DS22/85/https://i.postimg.cc/d14VXsDZ/IMG-6735.png
 yesido/DS23/85/https://i.postimg.cc/QxBd4rDV/IMG-6700.png
