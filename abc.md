@@ -1,3 +1,18 @@
+Mixoria/3D Hologram fan 42cm(风扇屏）/100/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746012895/e0tqooyyfvveey5skonc.jpg
+Mixoria/LED DANCING /LASER LAMP/40/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746012840/eaoqwhyffbjmxegtqxgu.jpg
+Mixoria/LED EMERGENCY LAMP"STAND'/70/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746012529/pj27nxihruilzfsy6j7r.jpg
+Mixoria/LED EMERGENCY LAMP 2/30/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746012423/g7gfau77ywhputwbapm8.png
+Mixoria/LED EMERGENCY LAMP 1/50/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746012351/el9w57iy06uukc6g33bj.jpg
+Mixoria/LED SIGN Flex/125/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746012258/rsmcl8dmekge9kml1yrr.png
+Mixoria/3D Hologram fan 28cm(风扇屏）/180/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746012176/c7mdzidwihyvc73v1xio.jpg
+Mixoria/led sign"COFFEE"/50/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746011061/qalbqaa8m5vasrwinvzr.jpg
+Mixoria/led sign"HAPPY-"/52/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746011139/zjucmmdxon81ztugkcar.jpg
+Mixoria/led sign"OPEN "FLASH/60/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746011013/xvbbqb1s2lkjhiyu89ad.jpg
+Mixoria/led sign"WELCOME"FLASH/65/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746010863/gicaegfupbyiownzpc5s.jpg
+Mixoria/Soft screen 软显示屏（plus)/145/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746010390/gy4oj6gsmzyrbdsmebky.png
+Mixoria/Soft screen 软显示屏（595MM)/100/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746010363/wksv2tnr0ts6vgel16u4.png
+Mixoria/Soft screen 软显示屏（372MM)/60/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746010347/j225nfdicm1mcfmmjvvo.png
+Mixoria/P3 screen/145/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746010192/wh1kflfzmwvawxsladvr.png
 Mixoria/تيربوا X3/90/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746009332/oks54v7vp1kgrmynta8t.jpg
 Mixoria/تيربوا  X6/85/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746009480/dlmnldviu7i29ygutkhw.jpg
 Mixoria/تيربوا X3 mini/58/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746009635/qptzurrmnoaksdsrknsh.jpg
@@ -136,7 +151,7 @@ yesido/C294/25/https://i.postimg.cc/YqXLYfGT/IMG-6650.png
 yesido/C291/35/https://i.postimg.cc/Jzfn5T1Y/IMG-6615.png
 yesido/C264/19/https://i.postimg.cc/cHmLZ0fP/IMG-6751.png
 yesido/C250/13/https://i.postimg.cc/mkpZzjXw/IMG-6684.png
-yesido/C243/aaa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1745950492/pxzb0htfn1h4eudrksyt.jpg
+yesido/C243/15/https://res.cloudinary.com/dygc5b8cn/image/upload/v1745950492/pxzb0htfn1h4eudrksyt.jpg
 yesido/C220/11/https://i.postimg.cc/L6rRcnrn/IMG-6640.png
 yesido/C217/23/https://i.postimg.cc/fT0QfMJZ/IMG-6710.png
 yesido/C216/8/https://i.postimg.cc/90RKbBX1/IMG-6681.png
@@ -289,7 +304,7 @@ yesido/MG11/150/https://i.postimg.cc/5t7qtCB6/IMG-6672.png
 yesido/MG06/50/https://i.postimg.cc/cHPRRG5W/IMG-6637.png
 yesido/MG05/45/https://i.postimg.cc/GtYkzgZy/IMG-6644.png
 yesido/KM20/80/https://i.postimg.cc/0QzGKynZ/IMG-6720.png
-yesido/MG16/110/https://i.postimg.cc/Y248hbyk/IMG-6781.png
+yesido/KM16/110/https://i.postimg.cc/Y248hbyk/IMG-6781.png
 yesido/IO29/80/https://i.postimg.cc/1RLB6wLF/IMG-6686.png
 yesido/IO28/95/https://i.postimg.cc/P5MQBcNb/IMG-6761.png
 yesido/IO27/80/https://i.postimg.cc/6pKhbw65/IMG-6679.png
