@@ -1,5 +1,6 @@
+Mixoria/Laser DISCO/45/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746093053/eeejbwzarnaicqpillkp.jpg
 Mixoria/3D Hologram fan 42cm(风扇屏）/100/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746012895/e0tqooyyfvveey5skonc.jpg
-Mixoria/LED DANCING /LASER LAMP/40/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746012840/eaoqwhyffbjmxegtqxgu.jpg
+Mixoria/LED DANCING/LASER LAMP/40/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746012840/eaoqwhyffbjmxegtqxgu.jpg
 Mixoria/LED EMERGENCY LAMP"STAND'/70/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746012529/pj27nxihruilzfsy6j7r.jpg
 Mixoria/LED EMERGENCY LAMP 2/30/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746012423/g7gfau77ywhputwbapm8.png
 Mixoria/LED EMERGENCY LAMP 1/50/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746012351/el9w57iy06uukc6g33bj.jpg
@@ -82,7 +83,7 @@ LELISU/LS-19/25/https://res.cloudinary.com/dygc5b8cn/image/upload/v1745685182/n7
 LELISU/LS-517/18/https://res.cloudinary.com/dygc5b8cn/image/upload/v1745685139/n8cmiz7psb3leam0w5cm.png
 LELISU/LS-521/20/https://res.cloudinary.com/dygc5b8cn/image/upload/v1745685082/pcqc3btshjopd1oa2jpe.png
 LELISU/LS-520/20/https://res.cloudinary.com/dygc5b8cn/image/upload/v1745685040/jklomqjcvqckssgmmh53.png
-LELISU/LS-518/20/https://res.cloudinary.com/dygc5b8cn/image/upload/v1745684993/paamk8lvvmsk7nriuthp.png
+LELISU/LS-518/23/https://res.cloudinary.com/dygc5b8cn/image/upload/v1745684993/paamk8lvvmsk7nriuthp.png
 LELISU/LS-519/20/https://res.cloudinary.com/dygc5b8cn/image/upload/v1745684948/icahmvbemvggbqehpcei.png
 LELISU/LS-839/13/https://res.cloudinary.com/dygc5b8cn/image/upload/v1745684910/cmdew0eijadtornsdypu.png
 LELISU/LS-835/13/https://res.cloudinary.com/dygc5b8cn/image/upload/v1745684852/lzyeqjfb5wjmlavjbsib.png
