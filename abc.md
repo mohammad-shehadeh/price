@@ -13,7 +13,7 @@ Mixoria/3D Hologram fan 42cm(风扇屏）/100/https://res.cloudinary.com/dygc5b8
 Mixoria/LED DANCING/LASER LAMP/40/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746012840/eaoqwhyffbjmxegtqxgu.jpg
 Mixoria/LED EMERGENCY LAMP"STAND'/70/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746012529/pj27nxihruilzfsy6j7r.jpg
 Mixoria/LED EMERGENCY LAMP 2/30/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746012423/g7gfau77ywhputwbapm8.png
-Mixoria/LED EMERGENCY LAMP 1/50/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746012351/el9w57iy06uukc6g33bj.jpg
+Mixoria/LED EMERGENCY LAMP 1/60/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746012351/el9w57iy06uukc6g33bj.jpg
 Mixoria/LED SIGN Flex/125/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746260232/njcmukjdvakkbtggij61.jpg
 Mixoria/3D Hologram fan 28cm(风扇屏）/180/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746012176/c7mdzidwihyvc73v1xio.jpg
 Mixoria/led sign"COFFEE"/50/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746011061/qalbqaa8m5vasrwinvzr.jpg
