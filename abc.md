@@ -55,7 +55,7 @@ Mixoria/مبرد DY88/34/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746
 Mixoria/مبرد DY58/35/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746007162/wcab12qck2anhtw21qty.jpg
 Mixoria/مبرد FS03/25/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746007098/tqxh0c1z9tpv4hieurpz.jpg
 Mixoria/مبرد GT31/25/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746007034/zbhdhn4dplxgbh17uw15.jpg
-Mixoria/مبرد X94/25/
+Mixoria/مبرد X94/25/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746256276/kksegmkvxoqqox6m5ucm.jpg
 Mixoria/اصابع ببجي/1/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746005941/jjbin5xmchovdvsdfco9.jpg
 Mixoria/CC-480  3in1/290/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746005772/hmhn8uznp0vsrye4tthi.jpg
 Mixoria/PT-389/150/
