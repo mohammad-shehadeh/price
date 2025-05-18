@@ -19,7 +19,7 @@ MI/redmi A5 128|4/300/https://media.ldlc.com/r1600/ld/products/00/06/22/87/LD000
 MI/Note 14 pro plus 5G/1390/https://fonexpress.net/wp-content/uploads/2025/01/Xiaomi-Redmi-Note-14-Pro-Plus.webp
 MI/Note 14 pro 256|8/830/https://www.giztop.com/media/catalog/product/cache/97cc1143d2e20f2b0c8ea91aaa12053c/r/e/redmi_note_14_pro.png
 MI/Note 14 pro 512|12/1000/https://www.giztop.com/media/catalog/product/cache/97cc1143d2e20f2b0c8ea91aaa12053c/r/e/redmi_note_14_pro.png
-MI/Note 14 256|8/590/https://cdn.gadgetbytenepal.com/wp-content/uploads/2025/01/Redmi-Note-14-4G-1.jpg
+MI/Note 14 256|8/580/https://cdn.gadgetbytenepal.com/wp-content/uploads/2025/01/Redmi-Note-14-4G-1.jpg
 MI/poco X7 pro 512|12/1270/https://cdn.shortpixel.ai/spai/q_glossy+ret_img+to_webp/mobizil.com/wp-content/uploads/2025/01/Xiaomi-Poco-X7-Pro.jpg
 MI/Note 13 pro 512|12/930/https://cdn.shortpixel.ai/spai/q_glossy+ret_img+to_webp/mobizil.com/wp-content/uploads/2024/01/Xiaomi-Redmi-Note-13-Pro-4G.jpg
 MI/Note 13 pro PLUS 512|12/1320/https://mobizil.com/wp-content/uploads/2023/11/Xiaomi-Redmi-Note-13-Pro-Plus.jpg
