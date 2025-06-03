@@ -1,5 +1,5 @@
 Honor/X9C Smart/900/https://res.cloudinary.com/dygc5b8cn/image/upload/v1748939036/fmnbqj4pn9g6a759fwja.jpg
-samsung/A26/800/https://res.cloudinary.com/dygc5b8cn/image/upload/v1747478968/m8ckbi5uatn8p2qcarzi.jpg
+samsung/A26/760/https://res.cloudinary.com/dygc5b8cn/image/upload/v1747478968/m8ckbi5uatn8p2qcarzi.jpg
 MI/Redmi A5 64|3/250/https://res.cloudinary.com/dygc5b8cn/image/upload/v1745846501/huvlm2coxnrudfzwmhtm.jpg
 samsung/S25 ultra 256|12/3600/https://assets.mmsrg.com/isr/166325/c1/-/ASSET_MMS_149453259/fee_786_587_png
 samsung/S24 ultra 256|12/aaa/https://sbitany.com/image/cache/catalog/109-634-0049-0369-2024012565120-460x460.jpg
@@ -10,8 +10,8 @@ samsung/A55 256|12/aaa/https://kaza.com.eg/pub/media/catalog/product/cache/2f071
 samsung/A55 256|8/aaa/https://kaza.com.eg/pub/media/catalog/product/cache/2f071798f77b0deb4c04afd283b2ac15/l/a/layer_2_3.jpg
 samsung/A35 128|8/aaa/https://m.media-amazon.com/images/I/614c+lTK3iL.jpg
 samsung/A16 128|8/Aa/https://econtent.o2.co.uk/o/econtent/media/get/ff0037cf-f7bc-4ca6-bde5-779c9cbb9c2b
-samsung/A16 128|6/500/https://econtent.o2.co.uk/o/econtent/media/get/ff0037cf-f7bc-4ca6-bde5-779c9cbb9c2b
-samsung/A16 128|4/470/https://econtent.o2.co.uk/o/econtent/media/get/ff0037cf-f7bc-4ca6-bde5-779c9cbb9c2b
+samsung/A16 128|6/480/https://econtent.o2.co.uk/o/econtent/media/get/ff0037cf-f7bc-4ca6-bde5-779c9cbb9c2b
+samsung/A16 128|4/460/https://econtent.o2.co.uk/o/econtent/media/get/ff0037cf-f7bc-4ca6-bde5-779c9cbb9c2b
 samsung/TAP A9 64|4/370/https://oplayce.ci/cdn/shop/files/samsung-galaxy-tab-a9_5_1024x.jpg?v=1717431017
 samsung/A06 128|4/330/https://www.jibalzone.com/media/7389/conversions/6704ddec150e1_193679_2024-slider.jpg
 samsung/A06 64|4/290/https://www.jibalzone.com/media/7389/conversions/6704ddec150e1_193679_2024-slider.jpg
