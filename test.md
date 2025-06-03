@@ -1,5 +1,5 @@
 ///
-samsung/A56 256/1290/1290/https://res.cloudinary.com/dygc5b8cn/image/upload/v1748962568/apquh5pojxc1din4hslg.webp
+samsung/A56 256/1290/https://res.cloudinary.com/dygc5b8cn/image/upload/v1748962856/wzywkmotcdusglpfcptt.webp
 Honor/X9C Smart/900/https://res.cloudinary.com/dygc5b8cn/image/upload/v1748939036/fmnbqj4pn9g6a759fwja.jpg
 samsung/A26/760/https://res.cloudinary.com/dygc5b8cn/image/upload/v1747478968/m8ckbi5uatn8p2qcarzi.jpg
 MI/Redmi A5 64|3/250/https://res.cloudinary.com/dygc5b8cn/image/upload/v1745846501/huvlm2coxnrudfzwmhtm.jpg
