@@ -164,11 +164,11 @@ INFINEX/HOT 10/50/https://i.ebayimg.com/images/g/1XIAAOSw14dhXsY3/s-l400.jpg
 INFINEX/HOT 50/50/https://img.lazcdn.com/g/p/61c13880fabe3ac1b77de188bfbaae93.jpg_720x720q80.jpg
 iphone/x BYH/55/https://roadieshub.com/wp-content/uploads/2023/12/I-PHONE-LCD-UNIT-XS-1.jpg
 Samsung/M13/50/https://m.media-amazon.com/images/I/61gSGTU6gXL.jpg
-HONOR/X9b/250/https://down-ph.img.susercontent.com/file/cn-11134207-7r98o-lz4pawofvvxvb2
+HONOR/X9b/225/https://down-ph.img.susercontent.com/file/cn-11134207-7r98o-lz4pawofvvxvb2
 HONOR/X9C/AAA/https://ae01.alicdn.com/kf/Sb62818af6fa84e479a8be5c87dce803bi.jpg
-HONOR/X8b/130/https://www.vopmart.com/media/catalog/product/cache/fba01159e823484c6e3d091a338cccb0/s/p/sp1021679.jpg
-HONOR/X7b/80/https://http2.mlstatic.com/D_NQ_NP_695266-MLA75802206247_042024-O.webp
-HONOR/X6b/80/https://img.tvcmall.com/dynamic/uploads/details/740x740_6601118008A-1.webp
-HONOR/X6a/80/https://ae01.alicdn.com/kf/Scb9654cd3cd74c1ba9292d1abf514403P.jpg
-HONOR/X5b/70/https://i.ebayimg.com/images/g/lMoAAOSwWWxkJ~at/s-l400.jpg
+HONOR/X8b/120/https://www.vopmart.com/media/catalog/product/cache/fba01159e823484c6e3d091a338cccb0/s/p/sp1021679.jpg
+HONOR/X7b/70/https://http2.mlstatic.com/D_NQ_NP_695266-MLA75802206247_042024-O.webp
+HONOR/X6b/65/https://img.tvcmall.com/dynamic/uploads/details/740x740_6601118008A-1.webp
+HONOR/X6a/65/https://ae01.alicdn.com/kf/Scb9654cd3cd74c1ba9292d1abf514403P.jpg
+HONOR/X5b/60/https://i.ebayimg.com/images/g/lMoAAOSwWWxkJ~at/s-l400.jpg
 iphone/8G/35/https://cellphoneandparts.com/cdn/shop/products/LCD-IP8-BLACK_96cdb274-32fe-4ba6-84ce-2565a1697220.jpg?v=1623164126
