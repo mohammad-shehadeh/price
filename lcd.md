@@ -22,7 +22,7 @@ Samsung/A04E original/45/https://i11.psgsm.net/gsm.com/p/912485/1065x799/lcd-com
 Samsung/A05S original/55/https://i.ebayimg.com/images/g/pmEAAOSwU0ZlShAr/s-l400.png
 Samsung/A15 incell+F/85/https://www.androgeek.es/36917-large_default/pantalla-samsung-a15-4g-a15-5g-incell-con-marco-lcddisplay-digitalizadortactil.jpg
 Samsung/A14 original/50/https://i.ebayimg.com/images/g/UrUAAOSwKDdlSogb/s-l1200.jpg
-Samsung/A11 original/aaa/https://i.ebayimg.com/images/g/AiMAAOSwxhNiKTAa/s-l1200.jpg
+Samsung/A11 original/50/https://i.ebayimg.com/images/g/AiMAAOSwxhNiKTAa/s-l1200.jpg
 Samsung/A04 original/45/https://www.kniezon.com/cdn/shop/files/images-2023-11-30T182039.299.jpg?v=1701357697
 Samsung/A05 original/50/https://s.alicdn.com/@sc04/kf/Hb1e6defaa2a84587a6b594ddf36bbca0R.jpg_720x720q50.jpg
 Samsung/A06 original/55/https://i.ebayimg.com/images/g/TlIAAOSwzDxm9Oi6/s-l1200.jpg
