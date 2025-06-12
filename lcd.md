@@ -1,3 +1,7 @@
+tecno/Spark Go1/55/
+iphone/Ip 11 byh/55/
+Samsung/A53 +f/65/https://res.cloudinary.com/dygc5b8cn/image/upload/v1749718443/n1avfz6yrzrawxk2zirr.webp
+Samsung/A33 +f/65/https://res.cloudinary.com/dygc5b8cn/image/upload/v1749718421/dmrjujitr5k4oowvnp5v.jpg
 tecno/spark 10-10C-GO 2023 ORI/50/https://image.made-in-china.com/2f0j00tHlqhopdbCgk/Original-LCD-for-Infinix-Tecno-Spark-10-Kl5q-Kl5K-Touch-Screen-Replacement-Mobile-Phone-LCD-Display.webp
 tecno/spark 20C-GO 2024 ORI/50/https://sc04.alicdn.com/kf/Habc8f725c16e4d9a855b03e701f09647z.jpg
 tecno/spark 10 pro-pova5/60/https://sc04.alicdn.com/kf/Haa7d71236c224023b2c5600b91efc91aS.jpg
