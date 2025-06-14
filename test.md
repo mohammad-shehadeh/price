@@ -1,4 +1,4 @@
-Honor/400 512|12/1400/https://res.cloudinary.com/dygc5b8cn/image/upload/v1749889552/nyczttxwl1r6gxzzzbnt.jpg
+Honor/400 512|12/1400/https://res.cloudinary.com/dygc5b8cn/image/upload/v1749890166/zudnes5gdxiihzll14p1.jpg
 Honor/400 pro 512|12/2250/https://res.cloudinary.com/dygc5b8cn/image/upload/v1749889558/fmzaah1o7lludxn31jts.jpg
 samsung/A56 256|12/1390/https://res.cloudinary.com/dygc5b8cn/image/upload/v1749459188/y0z6o06cd6vd4duldj4x.webp
 Honor/X9C Smart/900/https://res.cloudinary.com/dygc5b8cn/image/upload/v1748939036/fmnbqj4pn9g6a759fwja.jpg
