@@ -1,3 +1,4 @@
+INFINEX/S5 pro/50/
 tecno/Spark Go1/55/
 iphone/Ip 11 byh/55/
 Samsung/A53 +f/65/https://res.cloudinary.com/dygc5b8cn/image/upload/v1749718443/n1avfz6yrzrawxk2zirr.webp
