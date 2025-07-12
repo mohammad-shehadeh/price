@@ -7,7 +7,7 @@ tecno/spark 10-10C-GO 2023 ORI/50/https://image.made-in-china.com/2f0j00tHlqhopd
 tecno/spark 20C-GO 2024 ORI/50/https://sc04.alicdn.com/kf/Habc8f725c16e4d9a855b03e701f09647z.jpg
 tecno/spark 10 pro-pova5/60/https://sc04.alicdn.com/kf/Haa7d71236c224023b2c5600b91efc91aS.jpg
 tecno/spark 8C-9T-8T ORI/50/https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNYvDd81uMVXkLKb0fS86lLuUeOEw9h9ER4g&s
-tecno/SPARK 20 ORI/55/https://down-br.img.susercontent.com/file/br-11134207-7r98o-lwqnqnzdrdle81
+tecno/SPARK 20 ORI/50/https://down-br.img.susercontent.com/file/br-11134207-7r98o-lwqnqnzdrdle81
 INFINEX/Smart 8HD/50/
 INFINEX/SMART 8/50/https://sc04.alicdn.com/kf/Habc8f725c16e4d9a855b03e701f09647z.jpg
 INFINEX/SMART 9/50/https://down-id.img.susercontent.com/file/id-11134207-7ras8-m3g5i0xmc0z2bc
@@ -22,9 +22,9 @@ Samsung/A54 original+F/280/https://primemobile.se/media/catalog/product/cache/10
 Samsung/A52 original+F/260/https://lcdpartner.com/20109-large_default/samsung-galaxy-a52-sm-a525f-a52-5g-sm-a526b-lcd-touch-screen-front-panel-black-original.jpg
 Samsung/A35 original+F/aaa/https://www.polartech.co.nz/cdn/shop/files/6a0f48436f03bf48e8c7f28f9f150b4c_3d92c065-cca9-4088-8d8c-c6ab4e66331b.png?v=1720165512
 Samsung/A34 original+F/aaa/https://www.cmedistribution.com.my/wp-content/uploads/2023/12/SAM-A34-5G-LCD-ORI-SIZE-OLED-FRM.jpg
-Samsung/A21S original/55/https://m.media-amazon.com/images/I/51gJTVkM0gL.jpg
+Samsung/A21S hi/50/https://m.media-amazon.com/images/I/51gJTVkM0gL.jpg
 Samsung/A04E original/45/https://i11.psgsm.net/gsm.com/p/912485/1065x799/lcd-compatible-with-samsung-a042-galaxy-a04e-black-without-frame-original-prc-original-glass.jpg?40784e0f7e91221dcaa2ff4892ee7ea7
-Samsung/A05S original/55/https://i.ebayimg.com/images/g/pmEAAOSwU0ZlShAr/s-l400.png
+Samsung/A05S original/50/https://i.ebayimg.com/images/g/pmEAAOSwU0ZlShAr/s-l400.png
 Samsung/A15 incell+F/85/https://www.androgeek.es/36917-large_default/pantalla-samsung-a15-4g-a15-5g-incell-con-marco-lcddisplay-digitalizadortactil.jpg
 Samsung/A14 original/50/https://i.ebayimg.com/images/g/UrUAAOSwKDdlSogb/s-l1200.jpg
 Samsung/A11 original/50/https://i.ebayimg.com/images/g/AiMAAOSwxhNiKTAa/s-l1200.jpg
@@ -67,13 +67,13 @@ Mi/Note 11-note 11S-Note 12S OLED/100/https://i64.psgsm.net/gsm.com/p/907848/106
 Mi/Note 8-Note 8 2021 original/50/https://i60.psgsm.net/gsm.com/p/908104/799/lcd-compatible-with-xiaomi-redmi-note-8-2021-black-without-frame-original-prc.jpg?a1cf5652ffbc107afffb97eeeab7fa2f
 Mi/Note 10-note 10S original/170/https://i94.psgsm.net/gsm.com/p/905412/799/lcd-compatible-with-xiaomi-redmi-note-10-redmi-note-10s-black-without-frame-high-copy-oled-m2101k7ai-m2101k7ag.jpg?20609a872a5eec7f0f56fab685451d2d
 Mi/Note 9 pro-Note 9 pro HI/50/https://cdn.webshopapp.com/shops/15250/files/338244763/lcd-for-xiaomi-redmi-note-9-pro-note-9-pro-2020-oe.jpg
-Mi/Note 10-note 10S incell/55/https://i94.psgsm.net/gsm.com/p/905412/799/lcd-compatible-with-xiaomi-redmi-note-10-redmi-note-10s-black-without-frame-high-copy-oled-m2101k7ai-m2101k7ag.jpg?20609a872a5eec7f0f56fab685451d2d
+Mi/Note 10-note 10S incell/50/https://i94.psgsm.net/gsm.com/p/905412/799/lcd-compatible-with-xiaomi-redmi-note-10-redmi-note-10s-black-without-frame-high-copy-oled-m2101k7ai-m2101k7ag.jpg?20609a872a5eec7f0f56fab685451d2d
 Mi/Note 10-note 10S oled/100/https://i94.psgsm.net/gsm.com/p/905412/799/lcd-compatible-with-xiaomi-redmi-note-10-redmi-note-10s-black-without-frame-high-copy-oled-m2101k7ai-m2101k7ag.jpg?20609a872a5eec7f0f56fab685451d2d
 Mi/Note 13 pro incell/65/https://cdn.webshopapp.com/shops/15250/files/465710382/lcd-for-xiaomi-redmi-note-13-pro-4g-mt-tech.jpg
-Mi/Note 12 pro incell/60/https://i.ebayimg.com/images/g/QAwAAOSwxFtldtVx/s-l1200.jpg
+Mi/Note 12 pro incell/55/https://i.ebayimg.com/images/g/QAwAAOSwxFtldtVx/s-l1200.jpg
 Mi/Note 13 original/130/https://roadieshub.com/wp-content/uploads/2024/10/Xiaomi-Redmi-Note-13-4G-LCD-Panel-Price-In-Pakistan.jpg
 Mi/Note 13 incell/65/https://roadieshub.com/wp-content/uploads/2024/10/Xiaomi-Redmi-Note-13-4G-LCD-Panel-Price-In-Pakistan.jpg
-Mi/Note 12 incell/50/https://cdn.webshopapp.com/shops/15250/files/434015821/lcd-mt-tech-for-xiaomi-redmi-note-12.jpg
+Mi/Note 12 incell/55/https://cdn.webshopapp.com/shops/15250/files/434015821/lcd-mt-tech-for-xiaomi-redmi-note-12.jpg
 Mi/Note 8 pro HI/50/https://m.media-amazon.com/images/I/51vtZ059b2L._AC_UF1000,1000_QL80_.jpg
 Mi/Note 12 oled/100/https://cdn.webshopapp.com/shops/15250/files/434015821/lcd-mt-tech-for-xiaomi-redmi-note-12.jpg
 Mi/Note 9 HI/50/https://vip.jzpal.com/image/cache/catalog/LCD/REDMI%20LCD/sp1017117-700x700.jpg
@@ -86,16 +86,16 @@ Mi/redmi 9 ORI/50/https://www.vopmart.com/media/catalog/product/cache/ee14c5ab36
 Mi/redmi 9T-M3/50/https://ae01.alicdn.com/kf/S25572c23fa1b45f9b586d6e6db079775D.jpg
 Mi/redmi 8-8A/45/https://img.joomcdn.net/3ed1b58051a85a14752ef1ef95bd5b612aee24fe_original.jpeg
 Mi/redmi 14C/aaa/https://www.cellspare.com/image/cache/catalog/data/Accessories%20Villa/Product%20image/redmi-14c-lcd_1_-1000x1000.jpg
-Mi/redmi 13/60/https://ae01.alicdn.com/kf/S823c95625e884781a434ba4df3201baaW.jpg
-Mi/redmi 12/55/https://www.cellspare.com/image/cache/catalog/data/Accessories%20Villa/Product%20image/redmi-12-lcd_1_-678x749.jpg
-Mi/redmi 10/55/https://mobisparehub.com/cdn/shop/files/1_f53d5e79-e639-451c-a7ae-a8ece3530113.jpg?v=1690169454
-tecno/POVA 4-POVA NEW 2 ORI/55/https://image.made-in-china.com/2f0j00CLlqFSpyfvgt/Original-LCD-for-Infinix-Tecno-Pova-4-Pova-4PRO-LG8n-Touch-Screen-Replacement-Mobile-Phone-LCD-Display.webp
+Mi/redmi 13/50/https://ae01.alicdn.com/kf/S823c95625e884781a434ba4df3201baaW.jpg
+Mi/redmi 12/50/https://www.cellspare.com/image/cache/catalog/data/Accessories%20Villa/Product%20image/redmi-12-lcd_1_-678x749.jpg
+Mi/redmi 10/50/https://mobisparehub.com/cdn/shop/files/1_f53d5e79-e639-451c-a7ae-a8ece3530113.jpg?v=1690169454
+tecno/POVA 4-POVA NEW 2 ORI/50/https://image.made-in-china.com/2f0j00CLlqFSpyfvgt/Original-LCD-for-Infinix-Tecno-Pova-4-Pova-4PRO-LG8n-Touch-Screen-Replacement-Mobile-Phone-LCD-Display.webp
 tecno/pop 5 lite-GO2022 ORI/50/https://i79.psgsm.net/gsm.com/p/911571/1065x799/lcd-compatible-with-tecno-pop-5-lte-black-without-frame-high-copy-bd4-bd4i-bd4a.jpg?ddd2f01f98f18502fbea7c9afede0af7
 Mi/POCO X5 PRO INCELL/70/https://i82.psgsm.net/gsm.com/p/912047/1065x799/lcd-compatible-with-xiaomi-poco-x5-pro-black-without-frame-original-prc.jpg?5e01d8ed4b78d0da41f748867bfb2e76
 Mi/POCO X4 PRO INCELL/60/https://i94.psgsm.net/gsm.com/p/908640/799/lcd-compatible-with-xiaomi-poco-x4-pro-5g-black-without-frame-original-prc.jpg?adfa264d644189af10db1ba80a6c053c
 tecno/POVA 2-POVA 3 ORI/55/https://cdn.iserviceindia.in/iservice/image/product/part/21309/tecno-pova-2-le7-lcd-display-combo-folder-image-34120370-1732365327.webp
 Mi/POCO X4 PRO OLED/120/https://i94.psgsm.net/gsm.com/p/908640/799/lcd-compatible-with-xiaomi-poco-x4-pro-5g-black-without-frame-original-prc.jpg?adfa264d644189af10db1ba80a6c053c
-Mi/POCO X3 orignal/60/https://i.ebayimg.com/images/g/oqwAAOSwNE9kRDHF/s-l400.png
+Mi/POCO X3 orignal/50/https://i.ebayimg.com/images/g/oqwAAOSwNE9kRDHF/s-l400.png
 tecno/pova new ORI/50/https://ph-test-11.slatic.net/p/1bb969ad395c893920659d0d5047d783.jpg_webp
 Mi/POCO X6 PRO/AAA/https://www.garantiiletisim.com/resimler/urunler/1280x1280/2_1810425888712115.jpg
 tecno/POVA 1 ORI/55/https://s.alicdn.com/@sc04/kf/H14276f76407e4428bb2d005d3867498dz.png_720x720q50.png
@@ -110,7 +110,7 @@ Mi/11 lite 4G-5G INCELL/65/https://d57avc95tvxyg.cloudfront.net/images/thumbnail
 tecno/CAMON 20 PRO orignal/130/https://i24.psgsm.net/gsm.com/p/916730/799/lcd-compatible-with-tecno-camon-20-pro-black-without-frame-original-prc-ck7n.jpg?e9f21ac804e74dc8060c0c7340b3e40f
 iphone/11 pro max original/230/https://media.s-bol.com/qMnRoDk56x7R/kZKjVG5/550x518.jpgG
 Mi/12T-12T pro orignal/170/https://i.ebayimg.com/images/g/hPUAAOSwoldku6wc/s-l1200.png
-tecno/CAMON 20 PRO incell/75/https://i24.psgsm.net/gsm.com/p/916730/799/lcd-compatible-with-tecno-camon-20-pro-black-without-frame-original-prc-ck7n.jpg?e9f21ac804e74dc8060c0c7340b3e40f
+tecno/CAMON 20 PRO incell/70/https://i24.psgsm.net/gsm.com/p/916730/799/lcd-compatible-with-tecno-camon-20-pro-black-without-frame-original-prc-ck7n.jpg?e9f21ac804e74dc8060c0c7340b3e40f
 iphone/15 pro max orignal/1250/https://i.ebayimg.com/images/g/cH4AAOSwjT1lMP7i/s-l1200.jpg
 iphone/14 pro max orignal/650/https://www.mytrendyphone.eu/images/iPhone-14-Pro-Max-LCD-Display-Black-Original-Quality-07032023-01-p.webp
 iphone/12 pro max orignal/350/https://www.mytrendyphone.eu/images/iPhone-12-Pro-Max-LCD-OLED-Display-Original-Quality-OEM-11052021-1-p.webp
