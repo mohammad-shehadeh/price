@@ -1,9 +1,9 @@
 MI/Redmi 13X/000/https://res.cloudinary.com/dygc5b8cn/image/upload/v1752479932/o15ify22gys6rzvi2bcv.webp
-N\A/Nokia 108/70/70/https://res.cloudinary.com/dygc5b8cn/image/upload/v1751890269/gubix3upttuhrz5y7gxm.jpg
-N\A/Pad 50 kids 64|2/240/240/https://res.cloudinary.com/dygc5b8cn/image/upload/v1751890187/oy87yjjt6zln8qu7cz21.jpg
-N\A/Pad 5 kids/370/370/https://res.cloudinary.com/dygc5b8cn/image/upload/v1751890058/nlafdz4fsrxjtbcpezqt.jpg
-N\A/Pad 60 kids 128|8/350/350/https://res.cloudinary.com/dygc5b8cn/image/upload/v1751890041/r4eaq4are5z25deyfaib.webp
-N\A/Pad 30 wifi 128|8/320/320/https://res.cloudinary.com/dygc5b8cn/image/upload/v1751890033/r6jbwv5uir9dapr7gqre.webp
+N\A/Nokia 108/70/https://res.cloudinary.com/dygc5b8cn/image/upload/v1751890269/gubix3upttuhrz5y7gxm.jpg
+N\A/Pad 50 kids 64|2/240/https://res.cloudinary.com/dygc5b8cn/image/upload/v1751890187/oy87yjjt6zln8qu7cz21.jpg
+N\A/Pad 5 kids/370/https://res.cloudinary.com/dygc5b8cn/image/upload/v1751890058/nlafdz4fsrxjtbcpezqt.jpg
+N\A/Pad 60 kids 128|8/350/https://res.cloudinary.com/dygc5b8cn/image/upload/v1751890041/r4eaq4are5z25deyfaib.webp
+N\A/Pad 30 wifi 128|8/320/https://res.cloudinary.com/dygc5b8cn/image/upload/v1751890033/r6jbwv5uir9dapr7gqre.webp
 MI/Poco C71 128|4/300/https://res.cloudinary.com/dygc5b8cn/image/upload/v1750582480/ebptkxi7lmsbq7p4yrpv.jpg
 MI/Poco C71 64|3/260/https://res.cloudinary.com/dygc5b8cn/image/upload/v1750581670/wxxkgvgnsvxgpwnonhap.jpg
 Honor/400 512|12/1400/https://res.cloudinary.com/dygc5b8cn/image/upload/v1749890166/zudnes5gdxiihzll14p1.jpg
