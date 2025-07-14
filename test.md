@@ -1,3 +1,4 @@
+MI/Redmi 13X/000/https://res.cloudinary.com/dygc5b8cn/image/upload/v1752479932/o15ify22gys6rzvi2bcv.webp
 N\A/Nokia 108/70/70/https://res.cloudinary.com/dygc5b8cn/image/upload/v1751890269/gubix3upttuhrz5y7gxm.jpg
 N\A/Pad 50 kids 64|2/240/240/https://res.cloudinary.com/dygc5b8cn/image/upload/v1751890187/oy87yjjt6zln8qu7cz21.jpg
 N\A/Pad 5 kids/370/370/https://res.cloudinary.com/dygc5b8cn/image/upload/v1751890058/nlafdz4fsrxjtbcpezqt.jpg
