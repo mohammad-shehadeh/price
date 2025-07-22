@@ -1,11 +1,11 @@
-MI/Redmi 13X/410/https://res.cloudinary.com/dygc5b8cn/image/upload/v1752479932/o15ify22gys6rzvi2bcv.webp
+MI/Redmi 13X/Aa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1752479932/o15ify22gys6rzvi2bcv.webp
 N\A/Nokia 108/70/https://res.cloudinary.com/dygc5b8cn/image/upload/v1751890269/gubix3upttuhrz5y7gxm.jpg
 N\A/Pad 50 kids 64|2/240/https://res.cloudinary.com/dygc5b8cn/image/upload/v1751890187/oy87yjjt6zln8qu7cz21.jpg
 N\A/Pad 5 kids/370/https://res.cloudinary.com/dygc5b8cn/image/upload/v1751890058/nlafdz4fsrxjtbcpezqt.jpg
 N\A/Pad 60 kids 128|8/350/https://res.cloudinary.com/dygc5b8cn/image/upload/v1751890041/r4eaq4are5z25deyfaib.webp
 N\A/Pad 30 wifi 128|8/320/https://res.cloudinary.com/dygc5b8cn/image/upload/v1751890033/r6jbwv5uir9dapr7gqre.webp
-MI/Poco C71 128|4/300/https://res.cloudinary.com/dygc5b8cn/image/upload/v1750582480/ebptkxi7lmsbq7p4yrpv.jpg
-MI/Poco C71 64|3/260/https://res.cloudinary.com/dygc5b8cn/image/upload/v1750581670/wxxkgvgnsvxgpwnonhap.jpg
+MI/Poco C71 128|4/295/https://res.cloudinary.com/dygc5b8cn/image/upload/v1750582480/ebptkxi7lmsbq7p4yrpv.jpg
+MI/Poco C71 64|3/255/https://res.cloudinary.com/dygc5b8cn/image/upload/v1750581670/wxxkgvgnsvxgpwnonhap.jpg
 Honor/400 512|12/1450/https://res.cloudinary.com/dygc5b8cn/image/upload/v1749890166/zudnes5gdxiihzll14p1.jpg
 Honor/400 pro 512|12/2300/https://res.cloudinary.com/dygc5b8cn/image/upload/v1749889558/fmzaah1o7lludxn31jts.jpg
 samsung/A56 256|12/1310/https://res.cloudinary.com/dygc5b8cn/image/upload/v1749459188/y0z6o06cd6vd4duldj4x.webp
@@ -42,7 +42,7 @@ MI/POCO X6 pro 256|12/1000/https://dzairtic.dz/wp-content/uploads/2024/06/xiaomi
 MI/POCO F6 PRO 512|12/1750/https://www.phoneshock.it/wp-content/uploads/2024/07/15501222.jpeg
 MI/redmi pad SE 128|6/aaa/https://api.mistore-eg.com/storage/uploads/eng_pl_Tablet-Redmi-Pad-SE-8-7-4G-4-128GB-Sky-Blue-2892_1-1729075248.webp
 MI/SE 11" 256|8/600/https://www.celletronic.com/wp-content/uploads/2023/09/xiaomi-redmi-pad-se-11-0-6gb-ram-128gb-wifi-gris.jpg
-MI/14C 256|8/400/https://www.hemfrance.com/39078-thickbox_default/xiaomi-redmi-14c-688-128-gb-6-gb-ram-green.jpg
+MI/14C 256|8/390/https://www.hemfrance.com/39078-thickbox_default/xiaomi-redmi-14c-688-128-gb-6-gb-ram-green.jpg
 MI/14C 128|4/300/https://www.hemfrance.com/39078-thickbox_default/xiaomi-redmi-14c-688-128-gb-6-gb-ram-green.jpg
 MI/redmi 13 256|8/Aa/https://api.mistore-eg.com/storage/uploads/Redmi-13-Noir-1729150005.png
 MI/A3 128|4/275/https://signalsjo.com/wp-content/uploads/2024/07/d657af9c90ed969dcc5677a47ede538d86670a92f452ff8aae769f2d655bce1d.jpeg
