@@ -1,5 +1,6 @@
-/HONOR X7c 256/8/500/https://res.cloudinary.com/dygc5b8cn/image/upload/v1753187892/fs85akzqezzgepq33ymt.jpg
-/HONOR X6c 128/6/370/https://res.cloudinary.com/dygc5b8cn/image/upload/v1753187718/umzkodtdxse2ykhcfcaz.webp
+Honor/X7C 256|8/0/https://res.cloudinary.com/dygc5b8cn/image/upload/v1753694752/kw0rwr4ygtl6vcsorjhv.webp
+Honor/X6C 128|6/0/https://res.cloudinary.com/dygc5b8cn/image/upload/v1753694659/qgw3j4v8b2byfx3zp99s.jpg
+samsung/Tap A9+  5G 128|8/0/https://res.cloudinary.com/dygc5b8cn/image/upload/v1753694538/hof796y09s8x8ovvttwp.jpg
 MI/Redmi 13X/Aa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1752479932/o15ify22gys6rzvi2bcv.webp
 N\A/Nokia 108/70/https://res.cloudinary.com/dygc5b8cn/image/upload/v1751890269/gubix3upttuhrz5y7gxm.jpg
 N\A/Pad 50 kids 64|2/240/https://res.cloudinary.com/dygc5b8cn/image/upload/v1751890187/oy87yjjt6zln8qu7cz21.jpg
