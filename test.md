@@ -20,9 +20,6 @@ samsung/S24 ultra 256|12/2700/https://sbitany.com/image/cache/catalog/109-634-00
 samsung/A56 256|8/1330/https://gsmarena.com.in/front/images/product_images/large/95637.gif
 samsung/A36 256|8/Aa/https://media-ik.croma.com/prod/https://media.croma.com/image/upload/v1741009141/Croma%20Assets/Communication/Mobiles/Images/314440_0_g3jqt5.png
 samsung/A36 128|8/1000/https://media-ik.croma.com/prod/https://media.croma.com/image/upload/v1741009141/Croma%20Assets/Communication/Mobiles/Images/314440_0_g3jqt5.png
-samsung/A55 256|12/aaa/https://kaza.com.eg/pub/media/catalog/product/cache/2f071798f77b0deb4c04afd283b2ac15/l/a/layer_2_3.jpg
-samsung/A55 256|8/aaa/https://kaza.com.eg/pub/media/catalog/product/cache/2f071798f77b0deb4c04afd283b2ac15/l/a/layer_2_3.jpg
-samsung/A35 128|8/aaa/https://m.media-amazon.com/images/I/614c+lTK3iL.jpg
 samsung/A16 128|8/Aa/https://econtent.o2.co.uk/o/econtent/media/get/ff0037cf-f7bc-4ca6-bde5-779c9cbb9c2b
 samsung/A16 128|6/Aa/https://econtent.o2.co.uk/o/econtent/media/get/ff0037cf-f7bc-4ca6-bde5-779c9cbb9c2b
 samsung/A16 128|4/450/https://econtent.o2.co.uk/o/econtent/media/get/ff0037cf-f7bc-4ca6-bde5-779c9cbb9c2b
@@ -31,10 +28,10 @@ samsung/A06 128|4/320/https://www.jibalzone.com/media/7389/conversions/6704ddec1
 samsung/A06 64|4/290/https://www.jibalzone.com/media/7389/conversions/6704ddec150e1_193679_2024-slider.jpg
 samsung/Galaxy Fit 3/170/https://www.tmt.my/data/editor/sc-product/15959/SAMSUNG-GALAXY-FIT-3-TMT.jpg
 MI/redmi A5 128|4/280/https://media.ldlc.com/r1600/ld/products/00/06/22/87/LD0006228768.jpg
-MI/Note 14 pro plus 5G/1350/https://fonexpress.net/wp-content/uploads/2025/01/Xiaomi-Redmi-Note-14-Pro-Plus.webp
-MI/Note 14 pro 256|8/790/https://www.giztop.com/media/catalog/product/cache/97cc1143d2e20f2b0c8ea91aaa12053c/r/e/redmi_note_14_pro.png
-MI/Note 14 pro 512|12/955/https://www.giztop.com/media/catalog/product/cache/97cc1143d2e20f2b0c8ea91aaa12053c/r/e/redmi_note_14_pro.png
-MI/Note 14 256|8/570/https://cdn.gadgetbytenepal.com/wp-content/uploads/2025/01/Redmi-Note-14-4G-1.jpg
+MI/Note 14 pro plus 5G/Aaa/https://fonexpress.net/wp-content/uploads/2025/01/Xiaomi-Redmi-Note-14-Pro-Plus.webp
+MI/Note 14 pro 256|8/730/https://www.giztop.com/media/catalog/product/cache/97cc1143d2e20f2b0c8ea91aaa12053c/r/e/redmi_note_14_pro.png
+MI/Note 14 pro 512|12/900/https://www.giztop.com/media/catalog/product/cache/97cc1143d2e20f2b0c8ea91aaa12053c/r/e/redmi_note_14_pro.png
+MI/Note 14 256|8/560/https://cdn.gadgetbytenepal.com/wp-content/uploads/2025/01/Redmi-Note-14-4G-1.jpg
 MI/poco X7 pro 512|12/1180/https://cdn.shortpixel.ai/spai/q_glossy+ret_img+to_webp/mobizil.com/wp-content/uploads/2025/01/Xiaomi-Poco-X7-Pro.jpg
 MI/Note 13 pro 512|12/Aa/https://cdn.shortpixel.ai/spai/q_glossy+ret_img+to_webp/mobizil.com/wp-content/uploads/2024/01/Xiaomi-Redmi-Note-13-Pro-4G.jpg
 MI/Note 13 pro PLUS 512|12/1280/https://mobizil.com/wp-content/uploads/2023/11/Xiaomi-Redmi-Note-13-Pro-Plus.jpg
