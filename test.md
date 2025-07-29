@@ -66,8 +66,8 @@ Apple/ipad 9 64GB |/aaa/https://cdsassets.apple.com/live/SZLF0YNV/images/sp/1118
 Apple/20W cdata |/70/https://atoz.ps/media/catalog/product/cache/80ae6a42c65321efa11f489c1d538fd0/o/r/original_apple_c-data_20w_charger_1_.jpg
 Tecno/GO 1 64|6/240/https://static.reach-tele.com/uploads/thumbs/55/5512810686892b375ab5043332011747.png
 Tecno/Camon 20 premier 5G 512|16/800/https://cdn.mart.ps/247862-thickbox_default/tecno-camon-20-premier-5g-512-8gb.jpg
-Tecno/spark 20 pro 256|16/500/https://d3fyizz0b46qgr.cloudfront.net/global/spark-20-pro/product/jin.png
-Tecno/Camon 30 256|16/780/https://d3fyizz0b46qgr.cloudfront.net/global/phones/camon30/30premier/800/20231034.png
+Tecno/spark 20 pro 256|16/500/https://res.cloudinary.com/dygc5b8cn/image/upload/v1753781519/a1eybgvkn6y37whl495z.png
+Tecno/Camon 30 256|16/780/https://res.cloudinary.com/dygc5b8cn/image/upload/v1753781521/hfaislrvycqic6fu9jag.png
 Infinix/smart 9 HD 64|4/Aaa/https://img.drz.lazcdn.com/static/pk/p/b4e1caad1e69f3f555ca52b5bc6b00a7.png_960x960q80.png_.webp
 Infinix/hot 50pro 256|16/aaa/https://media.extra.com/i/aurora/100389042_100_01?fmt=auto&w=720
 Infinix/hot 50 128|16/420/https://www.startech.com.bd/image/cache/catalog/mobile/infinix/hot-50/infinix-hot-50-sleek-black-500x500.webp
