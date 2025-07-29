@@ -1,5 +1,3 @@
-/ |//undefined
-/ |//undefined
 Tecno/Camon 40 Pro 256|16/870/https://res.cloudinary.com/dygc5b8cn/image/upload/v1753778548/vvgtuupv7cjnok1bk0xn.jpg
 Tecno/POVA 7 256|16/620/https://res.cloudinary.com/dygc5b8cn/image/upload/v1753778442/gy0m4h8sjnuloar9avmw.jpg
 Tecno/Spark 30C 256|16/400/https://res.cloudinary.com/dygc5b8cn/image/upload/v1753778370/sp6c0p34w1ngaj0kb8yw.jpg
