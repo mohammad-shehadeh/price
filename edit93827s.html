@@ -268,77 +268,85 @@
       }
     }
     
- .img-preview {
-  width: 70px;
-  height: 70px;
-  object-fit: cover;
-  border-radius: 4px;
-  border: 1px solid #ffff;
-  margin-left: 10px; /* مسافة بين الصورة والنص */
-}
+    .img-preview {
+      width: 70px;
+      height: 70px;
+      object-fit: cover;
+      border-radius: 4px;
+      border: 1px solid #ffff;
+      margin-left: 10px;
+    }
 
-.link-container {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start; /* يدفع المحتوى إلى أقصى اليسار */
-}
+    .link-container {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+    }
 
+    table {
+      table-layout: fixed;
+      width: 100%;
+      border-collapse: collapse;
+    }
 
+    th, td {
+      text-align: center;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      padding: 8px;
+      font-size: 14px;
+    }
 
-table {
-  table-layout: fixed;
-  width: 100%;
-  border-collapse: collapse;
-}
+    th, td {
+      white-space: normal;
+      word-break: break-word;
+      overflow-wrap: break-word;
+    }
 
-th, td {
-  text-align: center;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  padding: 8px;
-  font-size: 14px;
-}
+    th:nth-child(1), td:nth-child(1) { width: 90px; }
+    th:nth-child(2), td:nth-child(2) { width: 100px; }
+    th:nth-child(3), td:nth-child(3) { width: 60px; }
+    th:nth-child(4), td:nth-child(4) { width: 60px; }
+    th:nth-child(5), td:nth-child(5) { width: 100px; }
+    th:nth-child(6), td:nth-child(6) { width: 60px; }
 
-th, td {
-  white-space: normal; /* السماح بالتفاف النص */
-  word-break: break-word; /* كسر الكلمة إذا كانت طويلة */
-  overflow-wrap: break-word; /* دعم إضافي للمتصفحات */
-}
+    button.delete-btn {
+      padding: 2px 4px;
+      font-size: 14px;
+      width: auto;
+      height: auto;
+      border-radius: 4px;
+      cursor: pointer;
+    }
 
-th:nth-child(1), td:nth-child(1) { width: 90px; } /* الفئة أو الصورة */
-th:nth-child(2), td:nth-child(2) { width: 100px; } /* الصنف */
-th:nth-child(3), td:nth-child(3) { width: 60px; } /* السعر */
-th:nth-child(4), td:nth-child(4) { width: 100px; } /* السعر */
-th:nth-child(5), td:nth-child(5) { width: 60px; } /* السعر */
-/* تصغير الصورة داخل الجدول */
+    button.delete-btn:hover {
+      background-color: #f44336;
+      color: white;
+    }
 
-button.delete-btn {
-  padding: 2px 4px;  /* تقليل الحشوة حول النص */
-  font-size: 14px;    /* تقليل حجم الخط */
-  width: auto;        /* تحديد العرض التلقائي بناءً على المحتوى */
-  height: auto;       /* تحديد الارتفاع التلقائي بناءً على المحتوى */
-  border-radius: 4px; /* جعل الزر بزاويا مدورة */
-  cursor: pointer;    /* تغيير شكل المؤشر عند المرور فوق الزر */
-}
+    .upload-btn {
+      padding: 5px 10px;
+      font-size: 14px;
+      border-radius: 4px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+      width: 10;
+      overflow: hidden;
+    }
 
-button.delete-btn:hover {
-  background-color: #f44336; /* تغيير اللون عند التمرير */
-  color: white;              /* تغيير اللون النص عند التمرير */
-}
+    .filter-container {
+      margin-bottom: 15px;
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
 
-.upload-btn {
-  padding: 5px 10px;     /* تصغير الحواف الداخلية */
-  font-size: 14px;       /* تصغير الخط */
-  border-radius: 4px;    /* تقريب الزوايا قليلاً */
-  background-color: #4CAF50; /* لون الخلفية */
-  color: white;          /* لون النص */
-  border: none;          /* إزالة الإطار */
-  cursor: pointer;       /* شكل المؤشر */
-  width: 10;               /* تصفير عرض الزر */
-  overflow: hidden;       /* إخفاء أي محتوى زائد */
-}
-
+    .filter-container label {
+      margin-left: 10px;
+    }
   </style>
 </head>
 <body>
@@ -369,18 +377,27 @@ button.delete-btn:hover {
       <button class="btn-primary" onclick="saveMarkdown()">
         <i class="fas fa-save"></i> حفظ التعديلات
       </button>
-    </div> 
+    </div>
+
+    <div class="filter-container">
+      <label for="categoryFilter">تصفية حسب الفئة:</label>
+      <select id="categoryFilter" onchange="filterByCategory()">
+        <option value="">عرض الكل</option>
+      </select>
+    </div>
     
     <div class="table-container">
       <table id="catalogTable">
         <thead>
-         <tr>
-  <th>الفئة</th>
-  <th>الصنف</th>
-  <th>السعر</th>
-  <th>الصورة</th>
-  <th>إجراءات</th>
-</tr>
+          <tr>
+            <th>الفئة</th>
+            <th>الصنف</th>
+            <th>الروم</th>
+            <th>الرام</th>
+            <th>الصورة</th>
+            <th>السعر</th>
+            <th>إجراءات</th>
+          </tr>
         </thead>
         <tbody id="tableBody"></tbody>
       </table>
@@ -389,15 +406,18 @@ button.delete-btn:hover {
     <div class="output-container">
       <h3><i class="fas fa-code"></i> الناتج بصيغة Markdown:</h3>
       <textarea id="outputText" readonly></textarea>
+    </div>
+  </div>
 
   <script src="config.js"></script>
 
-<script>
+  <script>
     const owner = "mohammad-shehadeh";
     const repo = "price";
     const tableBody = document.getElementById("tableBody");
     const outputText = document.getElementById("outputText");
     const fileSelect = document.getElementById("fileSelect");
+    const categoryFilter = document.getElementById("categoryFilter");
 
     // Cloudinary configuration
     const cloudName = 'dygc5b8cn';
@@ -405,7 +425,14 @@ button.delete-btn:hover {
     
     // خيارات الفئات لكل ملف
     const fileOptions = {
-      "test.md": ["samsung", "MI", "Apple", "Tecno", "Infinix", "Honor", "ZTE", "N/A"],
+      "test.md": ["Samsung", "MI", "Honor", "Tecno", "Apple", "Infinix", "ZTE", "N/A"],
+      "abc.md": ["yesido", "LELISU", "UNIPRO", "Mixoria", "VEN-DENS", "Reshurk"],
+      "lcd.md": ["Samsung", "iphone", "Mi", "tecno", "realmi", "INFINEX", "OPPO", "HONOR"]
+    };
+
+    // ترتيب الفئات حسب الأولوية
+    const categoryOrder = {
+      "test.md": ["Samsung", "MI", "Honor", "Tecno", "Apple", "Infinix", "ZTE", "N/A"],
       "abc.md": ["yesido", "LELISU", "UNIPRO", "Mixoria", "VEN-DENS", "Reshurk"],
       "lcd.md": ["Samsung", "iphone", "Mi", "tecno", "realmi", "INFINEX", "OPPO", "HONOR"]
     };
@@ -416,14 +443,14 @@ button.delete-btn:hover {
         const cells = row.querySelectorAll("td");
         const values = [];
         
-        for (let i = 0; i < 4; i++) {
+        for (let i = 0; i < 6; i++) {
           const cell = cells[i];
           
           if (i === 0) { // خلية الفئة
             const select = cell.querySelector('select');
             values.push(select ? select.value : cell.textContent.trim());
           } 
-          else if (i === 3) { // خلية الصورة
+          else if (i === 4) { // خلية الصورة
             const img = cell.querySelector('img.preview-image');
             values.push(img ? img.dataset.url : '');
           }
@@ -433,7 +460,9 @@ button.delete-btn:hover {
         }
         
         if (values.some(val => val !== "")) {
-          lines.push(values.join("/"));
+          // دمج اسم المنتج مع الروم والرام
+          const productName = `${values[1]} ${values[2]}|${values[3]}`;
+          lines.push(`${values[0]}/${productName}/${values[5]}/${values[4]}`);
         }
       }
       outputText.value = lines.join("\n");
@@ -441,11 +470,14 @@ button.delete-btn:hover {
 
     function createCategorySelect(selectedValue = "") {
       const filename = fileSelect.value;
-      const options = fileOptions[filename] || [];
+      const options = categoryOrder[filename] || [];
       
       const select = document.createElement("select");
       select.className = "category-select";
-      select.onchange = updateOutput;
+      select.onchange = function() {
+        updateOutput();
+        updateCategoryFilter();
+      };
       
       // إضافة خيار فارغ
       const emptyOption = document.createElement("option");
@@ -453,7 +485,7 @@ button.delete-btn:hover {
       emptyOption.textContent = "اختر الفئة";
       select.appendChild(emptyOption);
       
-      // إضافة خيارات الفئة
+      // إضافة خيارات الفئة حسب الترتيب المحدد
       options.forEach(option => {
         const opt = document.createElement("option");
         opt.value = option;
@@ -463,6 +495,46 @@ button.delete-btn:hover {
       });
       
       return select;
+    }
+
+    function updateCategoryFilter() {
+      const filename = fileSelect.value;
+      const currentCategories = new Set();
+      
+      // جمع الفئات الموجودة في الجدول
+      tableBody.querySelectorAll('tr').forEach(row => {
+        const categoryCell = row.querySelector('td:first-child');
+        const category = categoryCell.querySelector('select') ? 
+                        categoryCell.querySelector('select').value : 
+                        categoryCell.textContent.trim();
+        if (category) currentCategories.add(category);
+      });
+      
+      // إضافة الفئات من الترتيب المحدد
+      const orderedCategories = categoryOrder[filename] || [];
+      
+      // تحديث قائمة التصفية
+      categoryFilter.innerHTML = '<option value="">عرض الكل</option>';
+      
+      // إضافة الفئات المرتبة أولاً
+      orderedCategories.forEach(category => {
+        if (currentCategories.has(category)) {
+          const option = document.createElement("option");
+          option.value = category;
+          option.textContent = category;
+          categoryFilter.appendChild(option);
+        }
+      });
+      
+      // إضافة أي فئات أخرى غير موجودة في القائمة المرتبة
+      currentCategories.forEach(category => {
+        if (!orderedCategories.includes(category)) {
+          const option = document.createElement("option");
+          option.value = category;
+          option.textContent = category;
+          categoryFilter.appendChild(option);
+        }
+      });
     }
 
     async function uploadImage(file) {
@@ -484,7 +556,7 @@ button.delete-btn:hover {
       }
     }
 
-    function addRow(category = "", item = "", price = "", imageUrl = "", isNewRow = false) {
+    function addRow(category = "", item = "", rom = "", ram = "", imageUrl = "", price = "", isNewRow = false) {
       const row = document.createElement("tr");
       
       // 1. خلية الفئة
@@ -492,12 +564,18 @@ button.delete-btn:hover {
       if (isNewRow) {
         categoryCell.className = "category-cell";
         const categorySelect = createCategorySelect(category);
-        categorySelect.addEventListener("change", updateOutput);
+        categorySelect.addEventListener("change", function() {
+          updateOutput();
+          updateCategoryFilter();
+        });
         categoryCell.appendChild(categorySelect);
       } else {
         categoryCell.textContent = category;
         categoryCell.contentEditable = "true";
-        categoryCell.addEventListener("input", updateOutput);
+        categoryCell.addEventListener("input", function() {
+          updateOutput();
+          updateCategoryFilter();
+        });
       }
       
       // 2. خلية الصنف
@@ -506,13 +584,19 @@ button.delete-btn:hover {
       itemCell.textContent = item;
       itemCell.addEventListener("input", updateOutput);
       
-      // 3. خلية السعر
-      const priceCell = document.createElement("td");
-      priceCell.contentEditable = "true";
-      priceCell.textContent = price;
-      priceCell.addEventListener("input", updateOutput);
+      // 3. خلية الروم
+      const romCell = document.createElement("td");
+      romCell.contentEditable = "true";
+      romCell.textContent = rom;
+      romCell.addEventListener("input", updateOutput);
       
-      // 4. خلية الصورة
+      // 4. خلية الرام
+      const ramCell = document.createElement("td");
+      ramCell.contentEditable = "true";
+      ramCell.textContent = ram;
+      ramCell.addEventListener("input", updateOutput);
+      
+      // 5. خلية الصورة
       const imageCell = document.createElement("td");
       
       const imageContainer = document.createElement("div");
@@ -561,7 +645,13 @@ button.delete-btn:hover {
       imageContainer.appendChild(fileInput);
       imageCell.appendChild(imageContainer);
       
-      // 5. خلية الإجراءات
+      // 6. خلية السعر
+      const priceCell = document.createElement("td");
+      priceCell.contentEditable = "true";
+      priceCell.textContent = price;
+      priceCell.addEventListener("input", updateOutput);
+      
+      // 7. خلية الإجراءات
       const actionCell = document.createElement("td");
       const deleteBtn = document.createElement("button");
       deleteBtn.className = "delete-btn";
@@ -572,8 +662,10 @@ button.delete-btn:hover {
       // إضافة جميع الخلايا إلى الصف
       row.appendChild(categoryCell);
       row.appendChild(itemCell);
-      row.appendChild(priceCell);
+      row.appendChild(romCell);
+      row.appendChild(ramCell);
       row.appendChild(imageCell);
+      row.appendChild(priceCell);
       row.appendChild(actionCell);
       
       // إضافة الصف إلى الجدول
@@ -584,13 +676,33 @@ button.delete-btn:hover {
       }
       
       updateOutput();
+      updateCategoryFilter();
     }
 
     function removeRow(button) {
       if (confirm("هل أنت متأكد من حذف هذا الصف؟")) {
         button.closest("tr").remove();
         updateOutput();
+        updateCategoryFilter();
       }
+    }
+
+    function filterByCategory() {
+      const selectedCategory = categoryFilter.value;
+      const rows = tableBody.querySelectorAll("tr");
+      
+      rows.forEach(row => {
+        const categoryCell = row.querySelector("td:first-child");
+        const category = categoryCell.querySelector("select") ? 
+                       categoryCell.querySelector("select").value : 
+                       categoryCell.textContent.trim();
+        
+        if (!selectedCategory || category === selectedCategory) {
+          row.style.display = "";
+        } else {
+          row.style.display = "none";
+        }
+      });
     }
 
     function loadSelectedFile() {
@@ -603,16 +715,34 @@ button.delete-btn:hover {
           for (let line of lines) {
             const parts = line.split('/');
             if (parts.length >= 4) {
+              // تحليل اسم المنتج لاستخراج الروم والرام
+              const productParts = parts[1].trim().split(' ');
+              const romRam = productParts[productParts.length - 1].split('|');
+              
+              let itemName = productParts.slice(0, -1).join(' ');
+              let rom = romRam[0] || "";
+              let ram = romRam[1] || "";
+              
+              // إذا لم يكن هناك | في الاسم، نعتبره اسم فقط بدون روم ورام
+              if (productParts[productParts.length - 1].indexOf('|') === -1) {
+                itemName = parts[1].trim();
+                rom = "";
+                ram = "";
+              }
+              
               addRow(
                 parts[0].trim(), 
-                parts[1].trim(), 
-                parts[2].trim(), 
+                itemName,
+                rom,
+                ram,
                 parts.slice(3).join('/').trim(), 
+                parts[2].trim(),
                 false
               );
             }
           }
           updateOutput();
+          updateCategoryFilter();
         })
         .catch(() => {
           alert("تعذر تحميل الملف " + filename);
@@ -620,7 +750,7 @@ button.delete-btn:hover {
     }
 
     function addNewRow() {
-      addRow("", "", "", "", true);
+      addRow("", "", "", "", "", "", true);
     }
 
     async function saveMarkdown() {
@@ -661,7 +791,12 @@ button.delete-btn:hover {
       }
     }
 
-    window.onload = loadSelectedFile;
-</script>
+    window.onload = function() {
+      loadSelectedFile();
+      fileSelect.addEventListener("change", function() {
+        updateCategoryFilter();
+      });
+    };
+  </script>
 </body>
 </html>
