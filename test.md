@@ -1,11 +1,11 @@
 / |//undefined
 / |//undefined
-/Camon 40 Pro 256|16//https://res.cloudinary.com/dygc5b8cn/image/upload/v1753778548/vvgtuupv7cjnok1bk0xn.jpg
-/POVA 7 256|16//https://res.cloudinary.com/dygc5b8cn/image/upload/v1753778442/gy0m4h8sjnuloar9avmw.jpg
-/Spark 30C 256|16//https://res.cloudinary.com/dygc5b8cn/image/upload/v1753778370/sp6c0p34w1ngaj0kb8yw.jpg
-/Go2 128|8//https://res.cloudinary.com/dygc5b8cn/image/upload/v1753777890/pnir0njijadnn5r09v5i.jpg
-/Go2 64|6//https://res.cloudinary.com/dygc5b8cn/image/upload/v1753777830/x9ncq6ozpitqppwqmu87.jpg
-/Go1 128|8//https://res.cloudinary.com/dygc5b8cn/image/upload/v1753777748/hfymoxudmn6gt41pqhoi.jpg
+Tecno/Camon 40 Pro 256|16/870/https://res.cloudinary.com/dygc5b8cn/image/upload/v1753778548/vvgtuupv7cjnok1bk0xn.jpg
+Tecno/POVA 7 256|16/620/https://res.cloudinary.com/dygc5b8cn/image/upload/v1753778442/gy0m4h8sjnuloar9avmw.jpg
+Tecno/Spark 30C 256|16/400/https://res.cloudinary.com/dygc5b8cn/image/upload/v1753778370/sp6c0p34w1ngaj0kb8yw.jpg
+Tecno/Go2 128|8/310/https://res.cloudinary.com/dygc5b8cn/image/upload/v1753777890/pnir0njijadnn5r09v5i.jpg
+Tecno/Go2 64|6/280/https://res.cloudinary.com/dygc5b8cn/image/upload/v1753777830/x9ncq6ozpitqppwqmu87.jpg
+Tecno/Go1 128|8/280/https://res.cloudinary.com/dygc5b8cn/image/upload/v1753777748/hfymoxudmn6gt41pqhoi.jpg
 Honor/X7C 256|8/0/https://res.cloudinary.com/dygc5b8cn/image/upload/v1753694752/kw0rwr4ygtl6vcsorjhv.webp
 Honor/X6C 128|6/0/https://res.cloudinary.com/dygc5b8cn/image/upload/v1753694659/qgw3j4v8b2byfx3zp99s.jpg
 samsung/Tap A9+  5G 128|8/670/https://res.cloudinary.com/dygc5b8cn/image/upload/v1753694538/hof796y09s8x8ovvttwp.jpg
@@ -66,7 +66,7 @@ Apple/ipad 10 256GB |/Aaa/https://realplaza.vtexassets.com/arquivos/ids/33743614
 Apple/ipad 10 64GB |/Aaa/https://realplaza.vtexassets.com/arquivos/ids/33743614-800-auto?v=638265979022630000&width=800&height=auto&aspect=true
 Apple/ipad 9 64GB |/aaa/https://cdsassets.apple.com/live/SZLF0YNV/images/sp/111898_sp849-ipad-9gen-480.png
 Apple/20W cdata |/70/https://atoz.ps/media/catalog/product/cache/80ae6a42c65321efa11f489c1d538fd0/o/r/original_apple_c-data_20w_charger_1_.jpg
-Tecno/GO 1 64|6/Aa/https://static.reach-tele.com/uploads/thumbs/55/5512810686892b375ab5043332011747.png
+Tecno/GO 1 64|6/240/https://static.reach-tele.com/uploads/thumbs/55/5512810686892b375ab5043332011747.png
 Tecno/Camon 20 premier 5G 512|16/800/https://cdn.mart.ps/247862-thickbox_default/tecno-camon-20-premier-5g-512-8gb.jpg
 Tecno/spark 20 pro 256|16/500/https://d3fyizz0b46qgr.cloudfront.net/global/spark-20-pro/product/jin.png
 Tecno/Camon 30 256|16/780/https://d3fyizz0b46qgr.cloudfront.net/global/phones/camon30/30premier/800/20231034.png
