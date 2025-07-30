@@ -4,7 +4,7 @@ Honor/X8C 512|8/760/https://res.cloudinary.com/dygc5b8cn/image/upload/v175378262
 Tecno/Camon 40 Pro 256|16/870/https://res.cloudinary.com/dygc5b8cn/image/upload/v1753778548/vvgtuupv7cjnok1bk0xn.jpg
 Tecno/POVA 7 256|16/635/https://res.cloudinary.com/dygc5b8cn/image/upload/v1753778442/gy0m4h8sjnuloar9avmw.jpg
 Tecno/Spark 30C 256|16/400/https://res.cloudinary.com/dygc5b8cn/image/upload/v1753778370/sp6c0p34w1ngaj0kb8yw.jpg
-Tecno/Go2 128|8/310/https://res.cloudinary.com/dygc5b8cn/image/upload/v1753777890/pnir0njijadnn5r09v5i.jpg
+Tecno/Go2 128|8/315/https://res.cloudinary.com/dygc5b8cn/image/upload/v1753777890/pnir0njijadnn5r09v5i.jpg
 Tecno/Go2 64|6/280/https://res.cloudinary.com/dygc5b8cn/image/upload/v1753777830/x9ncq6ozpitqppwqmu87.jpg
 Tecno/Go1 128|8/280/https://res.cloudinary.com/dygc5b8cn/image/upload/v1753777748/hfymoxudmn6gt41pqhoi.jpg
 Honor/X7C 256|8/500/https://res.cloudinary.com/dygc5b8cn/image/upload/v1753694752/kw0rwr4ygtl6vcsorjhv.webp
