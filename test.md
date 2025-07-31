@@ -51,8 +51,8 @@ MI/POCO X6 pro 256|12/950/https://dzairtic.dz/wp-content/uploads/2024/06/xiaomi-
 MI/POCO F6 PRO 512|12/1750/https://www.phoneshock.it/wp-content/uploads/2024/07/15501222.jpeg
 MI/redmi pad SE 128|6/aaa/https://api.mistore-eg.com/storage/uploads/eng_pl_Tablet-Redmi-Pad-SE-8-7-4G-4-128GB-Sky-Blue-2892_1-1729075248.webp
 MI/SE 11" 256|8/600/https://www.celletronic.com/wp-content/uploads/2023/09/xiaomi-redmi-pad-se-11-0-6gb-ram-128gb-wifi-gris.jpg
-MI/14C 256|8/390/https://www.hemfrance.com/39078-thickbox_default/xiaomi-redmi-14c-688-128-gb-6-gb-ram-green.jpg
-MI/14C 128|4/300/https://www.hemfrance.com/39078-thickbox_default/xiaomi-redmi-14c-688-128-gb-6-gb-ram-green.jpg
+MI/14C 256|8/400/https://www.hemfrance.com/39078-thickbox_default/xiaomi-redmi-14c-688-128-gb-6-gb-ram-green.jpg
+MI/14C 128|4/310/https://www.hemfrance.com/39078-thickbox_default/xiaomi-redmi-14c-688-128-gb-6-gb-ram-green.jpg
 MI/redmi 13 256|8/Aa/https://api.mistore-eg.com/storage/uploads/Redmi-13-Noir-1729150005.png
 MI/A3 128|4/270/https://signalsjo.com/wp-content/uploads/2024/07/d657af9c90ed969dcc5677a47ede538d86670a92f452ff8aae769f2d655bce1d.jpeg
 MI/extender AC1200 |/100/https://www.smartbox.am/webroot/myfiles/images/products/ac1200/3ffafe36-ccb4-4dfe-87db-2f546a39b1b5.png
