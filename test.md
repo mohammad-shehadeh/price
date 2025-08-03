@@ -1,9 +1,9 @@
 Honor/X6C 256|6/420/https://res.cloudinary.com/dygc5b8cn/image/upload/v1753782712/dps4kgccnmz4xh7zxxm7.jpg
 Honor/X8C 256|8/660/https://res.cloudinary.com/dygc5b8cn/image/upload/v1753782673/tcqjqve8dkgphgpp7wvj.jpg
 Honor/X8C 512|8/760/https://res.cloudinary.com/dygc5b8cn/image/upload/v1753782620/keu8xfmhscfqyjh8vric.webp
-Tecno/Camon 40 Pro 256|16/870/https://res.cloudinary.com/dygc5b8cn/image/upload/v1753778548/vvgtuupv7cjnok1bk0xn.jpg
+Tecno/Camon 40 Pro 256|16/880/https://res.cloudinary.com/dygc5b8cn/image/upload/v1753778548/vvgtuupv7cjnok1bk0xn.jpg
 Tecno/POVA 7 256|16/635/https://res.cloudinary.com/dygc5b8cn/image/upload/v1753778442/gy0m4h8sjnuloar9avmw.jpg
-Tecno/Spark 30C 256|16/400/https://res.cloudinary.com/dygc5b8cn/image/upload/v1753778370/sp6c0p34w1ngaj0kb8yw.jpg
+Tecno/Spark 30C 256|16/410/https://res.cloudinary.com/dygc5b8cn/image/upload/v1753778370/sp6c0p34w1ngaj0kb8yw.jpg
 Tecno/Go2 128|8/315/https://res.cloudinary.com/dygc5b8cn/image/upload/v1753777890/pnir0njijadnn5r09v5i.jpg
 Tecno/Go2 64|6/280/https://res.cloudinary.com/dygc5b8cn/image/upload/v1753777830/x9ncq6ozpitqppwqmu87.jpg
 Tecno/Go1 128|8/280/https://res.cloudinary.com/dygc5b8cn/image/upload/v1753777748/hfymoxudmn6gt41pqhoi.jpg
