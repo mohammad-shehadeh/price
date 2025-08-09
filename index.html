@@ -1,4 +1,5 @@
-<!DOCTYPE html> 
+
+<!DOCTYPE html>
 <html lang="ar">
 <head>
     <meta charset="UTF-8">
@@ -19,14 +20,7 @@
     <link rel="apple-touch-icon" sizes="180x180" href="https://i.postimg.cc/VNssYbVS/IMG-1002.jpg">
 
     <!-- Web App Manifest (لتحويل الموقع إلى تطبيق) -->
-    <link rel="manifest" href="manifest.json">
-
-    <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="manifest" href="/price/manifest.json">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-        <link rel="manifest" href="/manifest.json">
-
+    <link rel="manifest" href="/manifest.json">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         body {
@@ -1253,38 +1247,56 @@ button.disabled i, button[disabled] i {
         
         
 
-  </style>
+  
+/* Dark mode styles (non-destructive) */
+:root {
+    --bg: #f4f4f4;
+    --card: #ffffff;
+    --text: #111;
+    --muted: #666;
+}
+.dark-mode {
+    --bg: #0b1220;
+    --card: #0f1724;
+    --text: #e6eef8;
+    --muted: #9aa8bf;
+    background-color: var(--bg) !important;
+    color: var(--text) !important;
+}
+.dark-mode .product, .dark-mode .cart, .dark-mode #login-container, .dark-mode #otp-section {
+    background: var(--card) !important;
+    color: var(--text) !important;
+    box-shadow: none !important;
+}
+.dark-mode header {
+    background: linear-gradient(135deg,#111827 25%,#0f1724 75%);
+}
+.dark-mode .add-to-cart-btn { color: #fff; }
+</style>
 <body>
   
       <header>
-        <h1>Shehadeh Center</h1>
-        <button class="floating-button" onclick="window.location.href='abr.html'">
+        <h1 data-text="Shehadeh Center">Shehadeh Center</h1>
+        <button class="floating-button" onclick="window.location.href='abr.html'" aria-label="قائمة">
             <i class="fas fa-list"></i>
         </button>
-        <div id="file-buttons"></div>
-        <button id="select-file-button">اختيار ملف</button>
-        <br>
-        <div id="filter-buttons"></div>
-<button id="select-file-button">اختيار ملف</button> <!-- زر لاختيار الملف يدويًا -->
-<br>
-            <div id="filter-buttons">
-                <!-- الأزرار سيتم إنشاؤها ديناميكيًا بواسطة JavaScript -->
-            </div>
-            <input type="text" id="search-box" placeholder="🔍 أبحث عن منتج" />
-            <div id="filter-buttons"></div>
-            <button class="toggle-cart d-flex align-items-center gap-2" id="show-cart-button">
-                <i class="fas fa-shopping-cart"></i>
-                <span class="cart-text">سلة التسوق</span>
-                <i class="fas fa-shopping-cart"></i><br>
-                <span id="cart-total" class="fw-bold price-container">0.00 ₪</span>
-            </button>
-            
-                    </header>
-        
-        <main>
+
+        <div id="file-buttons" aria-label="قائمة الملفات"></div>
+        <button id="select-file-button" class="file-select" aria-label="اختيار ملف">اختيار ملف</button>
+
+        <div id="filter-buttons" role="tablist" aria-label="أزرار الفلتر"></div>
+        <input type="text" id="search-box" placeholder="🔍 أبحث عن منتج" aria-label="بحث عن منتج" />
+
+        <button class="toggle-cart d-flex align-items-center gap-2" id="show-cart-button" aria-expanded="false">
+            <i class="fas fa-shopping-cart" aria-hidden="true"></i>
+            <span class="cart-text">سلة التسوق</span>
+            <span id="cart-total" class="fw-bold price-container" aria-live="polite">0.00 ₪</span>
+        </button>
+    </header>
+    <main<main>
             <div id="categories"></div>
         </main>
-        <div class="cart" id="cart">
+        <div class="cart" id="cart">            <div style="display:flex;gap:8px;align-items:center;margin-bottom:10px;">              <button id="toggle-dark-mode" class="share-button" title="تبديل الوضع الليلي">وضع ليلي</button>              <button id="export-cart-btn" class="share-button" title="تنزيل محتوى السلة">تحميل السلة</button>            </div>
             <div id="cart-items"></div>
             <button class="share-button" id="checkout-button">ارسال طلبية</button>
             <br>
@@ -2061,6 +2073,48 @@ document.addEventListener("DOMContentLoaded", function () {
       });
   }
 </script>
-<script type="module" src="login.js"></script>
+<script type="module" src="login.js">
+/* === إضافات غير مدمرة: وضع ليلي و تنزيل السلة === */
+
+// Dark mode toggle (non-destructive)
+const toggleDarkModeBtn = document.getElementById('toggle-dark-mode');
+toggleDarkModeBtn && toggleDarkModeBtn.addEventListener('click', () => {
+    document.documentElement.classList.toggle('dark-mode');
+    const enabled = document.documentElement.classList.contains('dark-mode');
+    toggleDarkModeBtn.textContent = enabled ? 'وضع نهاري' : 'وضع ليلي';
+});
+
+// Export cart as JSON (download)
+const exportCartBtn = document.getElementById('export-cart-btn');
+exportCartBtn && exportCartBtn.addEventListener('click', () => {
+    const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(cart, null, 2));
+    const dlAnchor = document.createElement('a');
+    dlAnchor.setAttribute('href', dataStr);
+    dlAnchor.setAttribute('download', 'cart.json');
+    document.body.appendChild(dlAnchor);
+    dlAnchor.click();
+    dlAnchor.remove();
+});
+
+// Improve cart toggle accessibility
+const showCartButton = document.getElementById('show-cart-button');
+const cartElement = document.getElementById('cart');
+if (showCartButton && cartElement) {
+    showCartButton.addEventListener('click', () => {
+        cartElement.classList.toggle('hidden');
+        const expanded = showCartButton.getAttribute('aria-expanded') === 'true';
+        showCartButton.setAttribute('aria-expanded', (!expanded).toString());
+    });
+}
+
+// Close popup when clicking cancel or outside
+document.getElementById('cancel-button')?.addEventListener('click', () => {
+    popup.style.display = 'none';
+});
+// click outside popup to close
+window.addEventListener('click', (e) => {
+    if (e.target === popup) popup.style.display = 'none';
+});
+</script>
 </body>
 </html>
