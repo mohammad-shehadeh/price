@@ -1,10 +1,12 @@
 <!doctype html>
 <html lang="ar" dir="rtl">
 <head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Shehadeh Center — أسعار الأجهزة</title>
 
-<!-- Added modern fonts and viewport tweaks -->
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
-<meta name="theme-color" content="#007bff">
+
 <style>
 :root{
   --bg: #f5f7fb;
@@ -15,33 +17,31 @@
   --danger: #ef4444;
   --radius: 14px;
   --shadow: 0 8px 24px rgba(16,24,40,0.08);
-  --glass: rgba(255,255,255,0.6);
 }
-
-/* Reset & base */
 *{box-sizing:border-box}
 html,body{height:100%;margin:0;padding:0;background:var(--bg);font-family:'Cairo',sans-serif;color:#0f1724}
-a{color:inherit}
+a{color:inherit;text-decoration:none}
 
-/* Topbar / Header */
-.topbar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 20px;background:linear-gradient(90deg,#072b6b, #0b78ff);color:white;box-shadow:var(--shadow)}
+/* Topbar */
+.topbar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 20px;background:linear-gradient(90deg,#072b6b,#0b78ff);color:white;box-shadow:var(--shadow);position:sticky;top:0;z-index:40}
 .brand{display:flex;align-items:center;gap:12px}
 .brand img{width:44px;height:44px;border-radius:8px;object-fit:cover}
-.brand h1{margin:0;font-size:18px;font-weight:700;letter-spacing:0.6px}
+.brand h1{margin:0;font-size:18px;font-weight:700}
 .controls{display:flex;align-items:center;gap:8px}
 .btn{background:transparent;border:none;color:inherit;padding:8px 12px;border-radius:10px;cursor:pointer;font-weight:600}
 .btn.primary{background:white;color:var(--accent);padding:10px 14px;box-shadow:0 6px 18px rgba(11,120,255,0.12)}
 .search{position:relative}
 #search-box{width:280px;padding:10px 12px;border-radius:12px;border:none;background:linear-gradient(180deg,#f1f5f9,#eef2ff);outline:none}
-.search-suggestions{position:absolute;right:0;top:44px;background:white;box-shadow:var(--shadow);border-radius:10px;overflow:hidden;display:none;z-index:50;max-width:360px}
+.search-suggestions{position:absolute;right:0;top:44px;background:white;box-shadow:var(--shadow);border-radius:10px;overflow:hidden;display:none;z-index:50;max-width:380px}
 .search-suggestions div{padding:8px 10px;cursor:pointer}
 .search-suggestions div:hover{background:#f1f5f9}
 
 /* Layout */
 .container{display:grid;grid-template-columns:1fr 380px;gap:20px;padding:22px;max-width:1200px;margin:20px auto}
+@media(max-width:980px){.container{grid-template-columns:1fr 320px}}
+@media(max-width:880px){.container{grid-template-columns:1fr;padding:12px}#search-box{width:100%}}
 
-/* Main product area */
-.main-card{background:transparent;padding:0}
+/* Panels */
 .panel{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px}
 .categories{display:flex;flex-direction:column;gap:18px}
 .category h2{margin:0 0 8px 0;font-size:18px;color:var(--accent)}
@@ -72,32 +72,37 @@ a{color:inherit}
 .cart-footer{margin-top:auto;display:flex;flex-direction:column;gap:8px}
 .small{font-size:12px;color:var(--muted)}
 
-/* Utility & responsive */
+/* Utilities */
 .hidden{display:none!important}
-@media(max-width:980px){container-grid:unset;grid-template-columns:1fr}
-@media(max-width:880px){.container{grid-template-columns:1fr;padding:12px}#search-box{width:100%}}
+#back-to-top{position:fixed;right:20px;bottom:20px;background:var(--accent);color:white;border:none;border-radius:50%;width:45px;height:45px;display:none;align-items:center;justify-content:center;z-index:60;cursor:pointer;box-shadow:var(--shadow)}
+label.small{font-size:13px;color:var(--muted)}
+.input-pill{padding:8px;border-radius:10px;border:1px solid #eef2ff}
+
+/* responsive product width */
+@media(max-width:700px){.product{width:100%}}
 </style>
 </head>
 <body>
+
 <!-- Topbar -->
 <div class="topbar" role="banner">
   <div class="brand">
     <img src="https://i.postimg.cc/VNssYbVS/IMG-1002.jpg" alt="logo">
     <div>
       <h1>Shehadeh Center</h1>
-      <div class="small">Ø£Ø³Ø¹Ø§Ø± Ø§ÙØ£Ø¬ÙØ²Ø© - ÙØªØ¬Ø± Ø¥ÙÙØªØ±ÙÙÙ Ø¨Ø³ÙØ·</div>
+      <div class="small">أسعار الأجهزة — تحديث عصري</div>
     </div>
   </div>
 
   <div class="controls">
     <div class="search" role="search">
-      <input id="search-box" type="search" placeholder="Ø§Ø¨Ø­Ø« Ø¹Ù ÙÙØªØ¬ Ø£Ù ÙØ¦Ø©..." aria-label="Ø¨Ø­Ø«">
+      <input id="search-box" type="search" placeholder="ابحث عن منتج أو فئة..." aria-label="بحث">
       <div class="search-suggestions" id="search-suggestions"></div>
     </div>
 
-    <div id="file-buttons" class="file-buttons" aria-label="ÙØ§Ø¦ÙØ© Ø§ÙÙØªØ§ÙÙØ¬Ø§Øª"></div>
-    <button id="toggle-dark" class="btn" title="ØªØ¨Ø¯ÙÙ Ø§ÙÙØ¶Ø¹">ð</button>
-    <button id="show-cart-button" class="btn primary" aria-expanded="false">Ø³ÙØ© (<span id="cart-total-top">0.00 âª</span>)</button>
+    <div id="file-buttons" class="file-buttons" aria-label="قائمة الكتالوجات"></div>
+    <button id="toggle-dark" class="btn" title="تبديل الوضع">🌙</button>
+    <button id="show-cart-button" class="btn primary" aria-expanded="false">سلة (<span id="cart-total-top">0.00 ₪</span>)</button>
   </div>
 </div>
 
@@ -105,13 +110,14 @@ a{color:inherit}
 <div class="container">
   <main class="main-card">
     <div class="panel">
-      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
-        <h2 style="margin:0">Ø§ÙÙÙØªØ¬Ø§Øª</h2>
-        <div style="display:flex;gap:8px;align-items:center">
-          <label class="small">ÙÙØªØ± Ø³Ø¹Ø±:</label>
-          <input id="price-min" type="number" placeholder="Ø£Ø¯ÙÙ" style="width:80px;padding:6px;border-radius:8px;border:1px solid #e6eefb">
-          <input id="price-max" type="number" placeholder="Ø£Ø¹ÙÙ" style="width:80px;padding:6px;border-radius:8px;border:1px solid #e6eefb">
-          <button id="apply-price-filter" class="btn">ØªØ·Ø¨ÙÙ</button>
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;gap:12px;flex-wrap:wrap">
+        <h2 style="margin:0">المنتجات</h2>
+        <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">
+          <label class="small">فلتر سعر:</label>
+          <input id="price-min" class="input-pill" type="number" placeholder="أدنى" style="width:90px">
+          <input id="price-max" class="input-pill" type="number" placeholder="أعلى" style="width:90px">
+          <button id="apply-price-filter" class="btn">تطبيق</button>
+          <button id="clear-filters" class="btn">إعادة</button>
         </div>
       </div>
 
@@ -123,13 +129,13 @@ a{color:inherit}
     <div class="cart-box panel">
       <div class="cart-header">
         <div>
-          <strong>Ø³ÙØ© Ø§ÙÙØ´ØªØ±ÙØ§Øª</strong>
-          <div class="small">Ø¹ÙØ§ØµØ± ÙØ­ÙÙØ¸Ø© ÙØ­ÙÙÙØ§</div>
+          <strong>سلة المشتريات</strong>
+          <div class="small">محفوظة في المتصفح</div>
         </div>
         <div style="display:flex;gap:8px;align-items:center">
-          <button id="export-cart-btn" class="btn">ØªØ­ÙÙÙ</button>
-          <button id="print-cart-btn" class="btn">Ø·Ø¨Ø§Ø¹Ø©</button>
-          <button id="clear-cart-btn" class="btn" title="ØªÙØ±ÙØº Ø§ÙØ³ÙØ©">â</button>
+          <button id="export-cart-btn" class="btn" title="تحميل محتوى السلة">تحميل</button>
+          <button id="print-cart-btn" class="btn" title="طباعة الفاتورة">طباعة</button>
+          <button id="clear-cart-btn" class="btn" title="تفريغ السلة">✖</button>
         </div>
       </div>
 
@@ -137,104 +143,39 @@ a{color:inherit}
 
       <div class="cart-footer">
         <div style="display:flex;justify-content:space-between;align-items:center">
-          <div class="small">Ø§ÙØ¥Ø¬ÙØ§ÙÙ</div>
-          <div id="cart-total" style="font-weight:800;color:var(--accent)">âª 0.00</div>
+          <div class="small">الإجمالي</div>
+          <div id="cart-total" style="font-weight:800;color:var(--accent)">₪ 0.00</div>
         </div>
-        <button id="checkout-button" class="add-to-cart-btn">Ø¥Ø±Ø³Ø§Ù Ø§ÙØ·ÙØ¨ Ø¹Ø¨Ø± ÙØ§ØªØ³Ø§Ø¨</button>
-        <button id="hide-cart-button" class="btn">Ø¥Ø®ÙØ§Ø¡</button>
+        <div style="display:flex;gap:8px">
+          <button id="checkout-button" class="add-to-cart-btn" style="flex:1">إرسال الطلب عبر واتساب</button>
+          <button id="hide-cart-button" class="btn">إخفاء</button>
+        </div>
       </div>
     </div>
   </aside>
 </div>
 
 <!-- Back to top -->
-<button id="back-to-top" class="btn hidden" title="Ø§ÙØ¹ÙØ¯Ø© ÙÙØ£Ø¹ÙÙ">â¬</button>
+<button id="back-to-top" title="العودة للأعلى">⬆</button>
 
 <!-- Popup (order form) -->
-<div class="popup" id="popup" style="display:none;z-index:9999">
-  <div class="panel" style="max-width:420px;margin:40px auto">
-    <h3>Ø¥ØªÙØ§Ù Ø§ÙØ·ÙØ¨</h3>
-    <input id="customer-name" type="text" placeholder="Ø§ÙØ§Ø³Ù" style="width:100%;padding:10px;margin:8px 0;border-radius:8px;border:1px solid #eef2fb">
-    <input id="customer-phone" type="text" placeholder="Ø§ÙÙØ§ØªÙ" style="width:100%;padding:10px;margin:8px 0;border-radius:8px;border:1px solid #eef2fb">
+<div class="popup" id="popup" style="display:none;z-index:9999;position:fixed;inset:0;align-items:center;justify-content:center;">
+  <div class="panel" style="max-width:420px;margin:0 auto">
+    <h3>إتمام الطلب</h3>
+    <input id="customer-name" type="text" placeholder="الاسم" style="width:100%;padding:10px;margin:8px 0;border-radius:8px;border:1px solid #eef2fb">
+    <input id="customer-phone" type="text" placeholder="الهاتف" style="width:100%;padding:10px;margin:8px 0;border-radius:8px;border:1px solid #eef2fb">
     <div style="display:flex;gap:8px;justify-content:flex-end">
-      <button id="confirm-button" class="add-to-cart-btn">Ø¥Ø±Ø³Ø§Ù</button>
-      <button id="cancel-button" class="btn">Ø¥ÙØºØ§Ø¡</button>
+      <button id="confirm-button" class="add-to-cart-btn">إرسال</button>
+      <button id="cancel-button" class="btn">إلغاء</button>
     </div>
   </div>
 </div>
 
-<!-- Include original scripts to preserve functionality -->
+<!-- small default image (data URI) to avoid broken images -->
+<img id="__default_img" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='400' height='300'><rect width='100%' height='100%' fill='%23f3f4f6'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' fill='%23888' font-size='18'>صورة افتراضية</text></svg>" style="display:none">
+
 <script>
-/* ========== START - small compatibility shims & helpers ========== */
-// Helper: format price number to "X.00 âª"
-function formatPrice(num){ return (isNaN(num)? 'ØºÙØ± ÙØªÙÙØ±' : (num.toFixed(2) + ' âª')); }
-/* ========== END helpers ========== */
-
-/* Inserted UI behavior and features (non-destructive) */
-
-// Dark mode toggle
-const toggleDark = document.getElementById('toggle-dark');
-toggleDark.addEventListener('click', ()=>{
-  document.documentElement.classList.toggle('dark-mode');
-  if(document.documentElement.classList.contains('dark-mode')){
-    document.documentElement.style.setProperty('--bg','#061226');
-    document.documentElement.style.setProperty('--card','#071127');
-    document.documentElement.style.setProperty('--text','#e6eef8');
-    toggleDark.textContent = 'âï¸';
-  } else {
-    document.documentElement.style.setProperty('--bg','#f5f7fb');
-    document.documentElement.style.setProperty('--card','#ffffff');
-    document.documentElement.style.setProperty('--text','#0f1724');
-    toggleDark.textContent = 'ð';
-  }
-});
-
-// Back to top
-const backBtn = document.getElementById('back-to-top');
-window.addEventListener('scroll', ()=>{
-  if(window.scrollY>300) backBtn.classList.remove('hidden'); else backBtn.classList.add('hidden');
-});
-backBtn.addEventListener('click', ()=> window.scrollTo({top:0,behavior:'smooth'}));
-
-// Search suggestions & live filter
-const searchBox = document.getElementById('search-box');
-const suggestions = document.getElementById('search-suggestions');
-searchBox.addEventListener('input', ()=>{
-  const q = searchBox.value.toLowerCase().trim();
-  suggestions.innerHTML = '';
-  if(q.length<1){ suggestions.style.display='none'; showAllProducts(); return; }
-  const matches = products.filter(p => (p.name + ' ' + p.category).toLowerCase().includes(q)).slice(0,8);
-  matches.forEach(m => {
-    const el = document.createElement('div');
-    el.textContent = m.name + ' â ' + (isNaN(m.price)? 'ØºÙØ± ÙØªÙÙØ±' : m.price.toFixed(2) + ' âª');
-    el.onclick = ()=>{ searchBox.value = m.name; suggestions.style.display='none'; renderFilteredProducts([m]); };
-    suggestions.appendChild(el);
-  });
-  suggestions.style.display = matches.length? 'block':'none';
-});
-
-function showAllProducts(){ renderFilteredProducts(products); searchBox.value=''; suggestions.style.display='none'; }
-
-// Price filter
-document.getElementById('apply-price-filter').addEventListener('click', ()=>{
-  const min = parseFloat(document.getElementById('price-min').value || 0);
-  const max = parseFloat(document.getElementById('price-max').value || Infinity);
-  const filtered = products.filter(p => !isNaN(p.price) && p.price>=min && p.price<=max);
-  renderFilteredProducts(filtered.length? filtered : products);
-});
-
-// Export cart (download JSON)
-document.getElementById('export-cart-btn').addEventListener('click', ()=>{
-  const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(cart,null,2));
-  const a = document.createElement('a'); a.href = dataStr; a.download='cart.json'; document.body.appendChild(a); a.click(); a.remove();
-});
-
-# Now write final file
-
-
-<!-- Original scripts preserved below -->
-<script>
-
+/* ---------- بيانات وتهيئة ---------- */
 const categoriesContainer = document.getElementById('categories');
 const cartItemsContainer = document.getElementById('cart-items');
 const checkoutButton = document.getElementById('checkout-button');
@@ -243,760 +184,378 @@ const confirmButton = document.getElementById('confirm-button');
 const cancelButton = document.getElementById('cancel-button');
 const customerNameInput = document.getElementById('customer-name');
 const customerPhoneInput = document.getElementById('customer-phone');
-const selectFileButton = document.getElementById('select-file-button'); // Ø²Ø± ÙØ§Ø®ØªÙØ§Ø± Ø§ÙÙÙÙ
 
 let products = [];
-let cart = JSON.parse(localStorage.getItem('cart')) || [];
+let cart = JSON.parse(localStorage.getItem('cart') || '[]');
 
-// Ø¥Ø¶Ø§ÙØ© Ø£Ø²Ø±Ø§Ø± ÙØ§Ø®ØªÙØ§Ø± Ø§ÙÙØªØ§ÙÙØ¬
-const fileButtonsContainer = document.getElementById('file-buttons'); // ØªØ£ÙØ¯ ÙÙ ÙØ¬ÙØ¯ Ø¹ÙØµØ± ÙÙ HTML ÙØ¹Ø±Ø¶ Ø§ÙØ£Ø²Ø±Ø§Ø±
+/* ---------- أزرار اختيار الملفات (كتالوجات) ---------- */
+const fileButtonsContainer = document.getElementById('file-buttons');
 const fileButtons = [
-    { label: 'Ø£Ø³Ø¹Ø§Ø± Ø§ÙØ£Ø¬ÙØ²Ø©', fileName: 'test.md' },
-    { label: 'Ø£Ø³Ø¹Ø§Ø± Ø§ÙØ´Ø§Ø´Ø§Øª', fileName: 'lcd.md' },
-    { label: 'Ø£Ø³Ø¹Ø§Ø± Ø§ÙØ³Ø³ÙØ§Ø±Ø§Øª', fileName: 'abc.md' }
+  { label: 'أسعار الأجهزة', fileName: 'test.md' },
+  { label: 'أسعار الشاشات', fileName: 'lcd.md' },
+  { label: 'أسعار الاكسسوارات', fileName: 'abc.md' }
 ];
-
-// Ø¥Ø¶Ø§ÙØ© Ø§ÙØ£Ø²Ø±Ø§Ø±
-fileButtons.forEach(buttonInfo => {
-    const button = document.createElement('button');
-    button.textContent = buttonInfo.label;
-    button.onclick = () => loadProductsFromFile(buttonInfo.fileName); // ØªØ­ÙÙÙ Ø§ÙØ¨ÙØ§ÙØ§Øª ÙÙ Ø§ÙÙÙÙ Ø§ÙÙØ­Ø¯Ø¯
-    fileButtonsContainer.appendChild(button);
+fileButtons.forEach(b => {
+  const btn = document.createElement('button');
+  btn.className = 'btn';
+  btn.textContent = b.label;
+  btn.onclick = () => loadProductsFromFile(b.fileName);
+  fileButtonsContainer.appendChild(btn);
 });
 
-// ØªØ­ÙÙÙ Ø§ÙØ¨ÙØ§ÙØ§Øª ÙÙ Ø§ÙÙÙÙ Ø§ÙØ§ÙØªØ±Ø§Ø¶Ù Ø¹ÙØ¯ ØªØ­ÙÙÙ Ø§ÙØµÙØ­Ø©
-window.addEventListener('load', () => {
-    loadProductsFromFile('test.md'); // ÙÙÙÙÙ ØªØºÙÙØ± 'test.txt' Ø¥ÙÙ Ø£Ù ÙÙÙ ØªÙØ¯ ØªØ­ÙÙÙÙ ÙØ§ÙØªØ±Ø§Ø¶Ù
-});
+/* تحميل مبدئي */
+window.addEventListener('load', () => loadProductsFromFile('test.md'));
 
-// Ø¯Ø§ÙØ© ÙØªØ­ÙÙÙ Ø§ÙÙÙØªØ¬Ø§Øª ÙÙ Ø§ÙÙÙÙ
-function loadProductsFromFile(fileName) {
-    products = []; // Ø¥Ø¹Ø§Ø¯Ø© ØªØ¹ÙÙÙ Ø§ÙÙÙØªØ¬Ø§Øª Ø§ÙÙØ¯ÙÙØ©
-
-    fetch(fileName)
-        .then(response => response.text())
-        .then(data => {
-            const lines = data.split('\n');
-            lines.forEach(line => {
-                const parts = line.split('/');
-                if (parts.length >= 4) {
-                    const imageUrl = parts.slice(3).join('/').trim();
-                    products.push({
-                        category: parts[0].trim(),
-                        name: parts[1].trim(),
-                        price: parseFloat(parts[2].trim()),
-                        image: imageUrl
-                    });
-                }
-            });
-
-            renderCategories(); // Ø¹Ø±Ø¶ Ø§ÙÙØ¦Ø§Øª ÙØ§ÙÙÙØªØ¬Ø§Øª
-            createFilterButtons(); // Ø¥ÙØ´Ø§Ø¡ Ø£Ø²Ø±Ø§Ø± Ø§ÙÙÙØªØ±Ø©
-            renderCart(); // Ø¹Ø±Ø¶ Ø§ÙØ³ÙØ©
-        })
-        .catch(error => console.error('Error loading products:', error));
-}
-
-
-// Ø¹ÙØ¯ Ø§ÙØ¶ØºØ· Ø¹ÙÙ Ø²Ø± "Ø§Ø®ØªÙØ§Ø± ÙÙÙ"
-selectFileButton.onclick = () => {
-    const selectedFile = prompt('Ø£Ø¯Ø®Ù Ø§Ø³Ù Ø§ÙÙÙÙ (test.txt Ø£Ù lcd.txt Ø£Ù abc.txt):');
-    if (selectedFile) {
-        loadProductsFromFile(selectedFile);
-    }
-};
-
-// Ø¯Ø§ÙØ© ÙØ¹Ø±Ø¶ Ø§ÙÙØ¦Ø§Øª (ÙØ«Ø§Ù)
-function renderCategories() {
-    categoriesContainer.innerHTML = ''; // Clear previous categories
-    const categories = [...new Set(products.map(p => p.category))];
-    categories.forEach(category => {
-        const categoryDiv = document.createElement('div');
-        categoryDiv.className = 'category';
-
-        const categoryTitle = document.createElement('h2');
-        categoryTitle.textContent = category;
-        categoryDiv.appendChild(categoryTitle);
-
-        const categoryProducts = products.filter(p => p.category === category);
-        categoryProducts.forEach(product => {
-            const productDiv = document.createElement('div');
-            productDiv.className = 'product';
-
-            // Ø¥ÙØ´Ø§Ø¡ ÙØ¥Ø¶Ø§ÙØ© Ø¹ÙØµØ± Ø§ÙØµÙØ±Ø© ÙØ¹ Ø§ÙØªØ¹Ø§ÙÙ ÙØ¹ Ø§ÙØ£Ø®Ø·Ø§Ø¡
-            const productImage = document.createElement('img');
-            productImage.src = product.image;
-            productImage.alt = product.name;
-
-            productImage.onerror = () => {
-                productImage.src = 'default-image.jpg';
-            };
-
-            productDiv.appendChild(productImage);
-
-            // Ø¥ÙØ´Ø§Ø¡ Ø¹ÙØµØ± ÙØ¹Ø±Ø¶ Ø§ÙÙØ¦Ø©
-            const categoryElement = document.createElement('div');
-            categoryElement.className = "product-category";
-            categoryElement.textContent = product.category; // Ø¥Ø¶Ø§ÙØ© Ø§Ø³Ù Ø§ÙÙØ¦Ø©
-
-            productDiv.appendChild(categoryElement); // Ø¥Ø¶Ø§ÙØ© Ø§ÙÙØ¦Ø© Ø£Ø³ÙÙ Ø§ÙØµÙØ±Ø©
-
-            const productDetails = document.createElement('div');
-
-            // ØªÙØ³ÙÙ Ø§Ø³Ù Ø§ÙÙÙØªØ¬ Ø¹ÙØ¯ <br> ÙØªÙØ³ÙÙÙ
-            const nameParts = product.name.split('<br>');
-            let nameHtml;
-            if (nameParts.length > 1) {
-                // ØªØ·Ø¨ÙÙ ØªØ£Ø«ÙØ± Ø§ÙØ¥Ø¶Ø§Ø¡Ø© Ø§ÙØ­ÙØ±Ø§Ø¡ ÙÙØ· Ø¹ÙÙ Ø§ÙÙØµ Ø¨Ø¹Ø¯ Ø£ÙÙ <br>
-                nameHtml = `
-                    <strong>${nameParts[0]}<br>
-                    <span class="red-glow">${nameParts.slice(1).join('<br>')}</span></strong>
-                `;
-            } else {
-                nameHtml = `<strong>${product.name}</strong>`;
-            }
-
-            const price = isNaN(product.price) ? "ØºÙØ± ÙØªÙÙØ±" : product.price.toFixed(2) + " âª";
-            const priceClass = isNaN(product.price) ? "unavailable" : "";
-
-            productDetails.innerHTML = `
-                ${nameHtml}<br><br>
-                <span class="price ${priceClass}">${price}</span>
-            `;
-
-            productDiv.appendChild(productDetails);
-
-            // Quantity input and control buttons
-            const quantityDiv = document.createElement('div');
-            quantityDiv.classList.add('quantity-controls');
-            quantityDiv.style.display = 'none';
-
-            const quantityInput = document.createElement('input');
-            quantityInput.type = 'number';
-            quantityInput.value = 1;
-            quantityInput.min = 1;
-            quantityInput.style.width = '50px';
-            quantityInput.addEventListener('focus', () => quantityInput.select());
-
-            const increaseButton = document.createElement('button');
-            increaseButton.textContent = '+';
-            increaseButton.onclick = () => updateQuantity(quantityInput, 1);
-
-            const decreaseButton = document.createElement('button');
-            decreaseButton.textContent = 'â';
-            decreaseButton.onclick = () => updateQuantity(quantityInput, -1);
-
-            quantityDiv.appendChild(decreaseButton);
-            quantityDiv.appendChild(quantityInput);
-            quantityDiv.appendChild(increaseButton);
-
-// Add To Cart Button
-const addToCartButton = document.createElement('button');
-addToCartButton.innerHTML = '<i class="fas fa-shopping-cart me-2"></i> Ø¥Ø¶Ø§ÙØ© ÙÙØ³ÙØ©';
-addToCartButton.classList.add('add-to-cart-btn');
-
-// ØªØ­ÙÙ ÙÙ Ø§ÙØ³Ø¹Ø±Ø ÙØ¥Ø°Ø§ ÙØ§Ù ØºÙØ± ÙØªÙÙØ±Ø ØªØ¹Ø·ÙÙ Ø§ÙØ²Ø± ÙØªØºÙÙØ± ÙÙÙÙ
-if (isNaN(product.price)) {
-    addToCartButton.disabled = true;  // ØªØ¹Ø·ÙÙ Ø§ÙØ²Ø±
-    addToCartButton.classList.add('disabled');  // Ø¥Ø¶Ø§ÙØ© ÙØ¦Ø© CSS ÙØªØ¹Ø·ÙÙ Ø§ÙØ²Ø±
-} else {
-    addToCartButton.onclick = () => {
-        addToCart(product, quantityInput.value);  // Ø¥Ø¶Ø§ÙØ© Ø§ÙÙÙØªØ¬ Ø¥ÙÙ Ø§ÙØ³ÙØ©
-        quantityDiv.style.display = 'block';
-        addToCartButton.style.display = 'none';
-    };
-}
-
-// Ø¥Ø¶Ø§ÙØ© Ø§ÙØ²Ø± Ø¥ÙÙ Ø§ÙÙÙØªØ¬
-productDiv.appendChild(addToCartButton);
-
-// ØªØ­ÙÙ Ø¥Ø°Ø§ ÙØ§Ù Ø§ÙÙÙØªØ¬ ÙÙØ¬ÙØ¯ÙØ§ ÙÙ Ø§ÙØ³ÙØ©
-const existingProduct = cart.find(item => item.name === product.name);
-if (existingProduct) {
-    quantityDiv.style.display = 'block';
-    addToCartButton.style.display = 'none';
-    quantityInput.value = existingProduct.quantity;
-}
-
-productDiv.appendChild(quantityDiv);
-categoryDiv.appendChild(productDiv);
-
-        });
-
-        categoriesContainer.appendChild(categoryDiv);
-    });
-}
-function createFilterButtons() {
-    const filterButtonsContainer = document.getElementById('filter-buttons');
-    filterButtonsContainer.innerHTML = '';
-
-    // Ø²Ø± ALL Ø§ÙØ§ÙØªØ±Ø§Ø¶Ù
-    const allButton = document.createElement('button');
-    allButton.textContent = 'ALL';
-    allButton.className = 'filter-btn active'; // ÙÙØ§Ø³ active Ø¹ÙØ¯ Ø§ÙØªØ­ÙÙÙ
-    allButton.onclick = () => {
-        filterProducts('All');
-        setActiveButton(allButton); // ØªØ­Ø¯ÙØ« Ø§ÙÙØ´Ø·
-    };
-    filterButtonsContainer.appendChild(allButton);
-
-    // Ø£Ø²Ø±Ø§Ø± Ø§ÙÙØ¦Ø§Øª
-    const categories = [...new Set(products.map(p => p.category))];
-    categories.forEach(category => {
-        const button = document.createElement('button');
-        button.textContent = category;
-        button.className = 'filter-btn';
-        button.onclick = () => {
-            filterProducts(category);
-            setActiveButton(button); // ØªØ­Ø¯ÙØ« Ø§ÙÙØ´Ø·
-        };
-        filterButtonsContainer.appendChild(button);
-    });
-}
-
-// Ø¯Ø§ÙØ© ÙØªØ­Ø¯ÙØ« Ø§ÙØ²Ø± Ø§ÙÙØ´Ø·
-function setActiveButton(activeButton) {
-    document.querySelectorAll('.filter-btn').forEach(btn => {
-        btn.classList.remove('active');
-    });
-    activeButton.classList.add('active');
-}
-
-// Ø¯Ø§ÙØ© Ø§ÙÙÙØªØ±Ø© Ø§ÙÙØ¹Ø¯ÙØ©
-function filterProducts(category) {
-    const filteredProducts = category === 'All' 
-        ? products 
-        : products.filter(p => p.category === category);
-    
-    categoriesContainer.innerHTML = '';
-    renderFilteredProducts(filteredProducts);
-}
-
-// Ø¥Ø¹Ø§Ø¯Ø© Ø¹Ø±Ø¶ Ø§ÙÙÙØªØ¬Ø§Øª Ø¨ÙØ§Ø¡Ù Ø¹ÙÙ Ø§ÙÙÙØªØ±Ø©
-function renderFilteredProducts(filteredProducts) {
-    categoriesContainer.innerHTML = ''; // ÙØ³Ø­ Ø§ÙÙÙØªØ¬Ø§Øª Ø§ÙØ­Ø§ÙÙØ©
-
-    const categories = [...new Set(filteredProducts.map(p => p.category))];
-    categories.forEach(category => {
-        const categoryDiv = document.createElement('div');
-        categoryDiv.className = 'category';
-
-        const categoryTitle = document.createElement('h2');
-        categoryTitle.textContent = category;
-        categoryDiv.appendChild(categoryTitle);
-
-        const categoryProducts = filteredProducts.filter(p => p.category === category);
-        categoryProducts.forEach(product => {
-            const productDiv = document.createElement('div');
-            productDiv.className = 'product';
-
-            // Ø¥Ø¶Ø§ÙØ© Ø§ÙØµÙØ±Ø©
-            const productImage = document.createElement('img');
-            productImage.src = product.image;
-            productImage.alt = product.name;
-
-            // Ø¥Ø¶Ø§ÙØ© Ø§Ø³Ù Ø§ÙÙØ¦Ø© Ø¨ÙÙ Ø§ÙØµÙØ±Ø© ÙØ§Ø³Ù Ø§ÙÙÙØªØ¬
-            const categoryElement = document.createElement('div');
-            categoryElement.className = "product-category";
-            categoryElement.textContent = product.category; // Ø¥Ø¶Ø§ÙØ© Ø§Ø³Ù Ø§ÙÙØ¦Ø©
-            productDiv.appendChild(productImage);
-            productDiv.appendChild(categoryElement); // Ø¥Ø¶Ø§ÙØ© Ø§ÙÙØ¦Ø© Ø¨Ø¹Ø¯ Ø§ÙØµÙØ±Ø©
-
-            // Ø­Ø³Ø§Ø¨ Ø§ÙØ³Ø¹Ø± ÙØ¹Ø±Ø¶Ù
-            const price = isNaN(product.price) ? "ØºÙØ± ÙØªÙÙØ±" : product.price.toFixed(2) + " âª";
-            const priceClass = isNaN(product.price) ? "unavailable" : "";
-
-            // Ø¥Ø¶Ø§ÙØ© Ø§ÙØªÙØ§ØµÙÙ (Ø§Ø³Ù Ø§ÙÙÙØªØ¬ ÙØ§ÙØ³Ø¹Ø±)
-            const productDetails = document.createElement('div');
-            productDetails.innerHTML = `<strong>${product.name}</strong><br><br> <span class="${priceClass}">${price}</span>`;
-            productDiv.appendChild(productDetails);
-
-            // Ø¥Ø¶Ø§ÙØ© Ø²Ø± + Ù - ÙØ­ÙÙ Ø§ÙÙÙÙØ©
-            const quantityDiv = document.createElement('div');
-            quantityDiv.classList.add('quantity-controls');
-
-            const quantityInput = document.createElement('input');
-            quantityInput.type = 'number';
-            quantityInput.value = 1;
-            quantityInput.min = 1; // ØªØ¹ÙÙÙ Ø§ÙØ­Ø¯ Ø§ÙØ£Ø¯ÙÙ ÙÙØ¹Ø¯Ø¯
-            quantityInput.style.width = '50px';
-            quantityInput.addEventListener('focus', () => quantityInput.select()); // ÙØªØ­Ø¯ÙØ¯ Ø§ÙÙØµ Ø¹ÙØ¯ Ø§ÙØ¶ØºØ·
-
-            const increaseButton = document.createElement('button');
-            increaseButton.textContent = '+';
-            increaseButton.onclick = () => updateQuantity(quantityInput, 1);
-
-            const decreaseButton = document.createElement('button');
-            decreaseButton.textContent = 'â';
-            decreaseButton.onclick = () => updateQuantity(quantityInput, -1);
-
-            quantityDiv.appendChild(decreaseButton);
-            quantityDiv.appendChild(quantityInput);
-            quantityDiv.appendChild(increaseButton);
-
-            // Ø¥Ø®ÙØ§Ø¡/Ø¥Ø¸ÙØ§Ø± Ø¹ÙØ§ØµØ± Ø§ÙÙÙÙØ© Ø¨ÙØ§Ø¡Ù Ø¹ÙÙ Ø­Ø§ÙØ© Ø§ÙÙÙØªØ¬ ÙÙ Ø§ÙØ³ÙØ©
-            const existingProduct = cart.find(item => item.name === product.name);
-            if (existingProduct) {
-                // Ø¥Ø°Ø§ ÙØ§Ù Ø§ÙÙÙØªØ¬ ÙÙØ¬ÙØ¯ÙØ§ ÙÙ Ø§ÙØ³ÙØ©Ø Ø¥Ø¸ÙØ§Ø± Ø§ÙÙÙÙØ©
-                quantityDiv.style.display = 'block';
-                quantityInput.value = existingProduct.quantity; // ØªØ¹ÙÙÙ Ø§ÙÙÙÙØ© ÙÙ Ø§ÙØ³ÙØ©
-            } else {
-                quantityDiv.style.display = 'none';
-            }
-
-            // Ø¥Ø¶Ø§ÙØ© Ø²Ø± "Ø¥Ø¶Ø§ÙØ© ÙÙØ³ÙØ©"           // Ø¥Ø¶Ø§ÙØ© Ø²Ø± "Ø¥Ø¶Ø§ÙØ© ÙÙØ³ÙØ©"
-            const addToCartButton = document.createElement('button');
-             addToCartButton.innerHTML = '<i class="fas fa-shopping-cart me-2"></i> Ø¥Ø¶Ø§ÙØ© ÙÙØ³ÙØ©';
-            addToCartButton.classList.add('add-to-cart-btn');
-
-            if (isNaN(product.price)) {
-    addToCartButton.disabled = true;  // ØªØ¹Ø·ÙÙ Ø§ÙØ²Ø±
-} else {
-    addToCartButton.onclick = () => {
-        addToCart(product, 1);  // Ø¥Ø¶Ø§ÙØ© Ø§ÙÙÙØªØ¬ Ø¥ÙÙ Ø§ÙØ³ÙØ©
-        quantityDiv.style.display = 'block';  // Ø¥Ø¸ÙØ§Ø± Ø§ÙÙÙÙØ© Ø¨Ø¹Ø¯ Ø¥Ø¶Ø§ÙØªÙ
-        addToCartButton.style.display = 'none';  // Ø¥Ø®ÙØ§Ø¡ Ø²Ø± "Ø¥Ø¶Ø§ÙØ© ÙÙØ³ÙØ©"
-    };
-}
-
-
-            productDiv.appendChild(addToCartButton);
-            productDiv.appendChild(quantityDiv);
-            categoryDiv.appendChild(productDiv);
-        });
-
-        categoriesContainer.appendChild(categoryDiv);
-    });
-}
-
-
-document.getElementById('search-box').addEventListener('input', (event) => {
-    const searchTerm = event.target.value.toLowerCase().trim(); // Ø§ÙÙØµ Ø§ÙÙØ¯Ø®Ù Ø¨Ø¹Ø¯ ØªØ­ÙÙÙÙ Ø¥ÙÙ Ø­Ø±ÙÙ ØµØºÙØ±Ø© ÙØ¥Ø²Ø§ÙØ© Ø§ÙÙØ±Ø§ØºØ§Øª Ø§ÙØ²Ø§Ø¦Ø¯Ø©
-    const cleanedSearchTerm = searchTerm.replace(/\s+/g, ''); // Ø§ÙÙØµ Ø§ÙÙØ¯Ø®Ù Ø¨Ø¯ÙÙ ÙØ±Ø§ØºØ§Øª
-
-    // ØªØµÙÙØ© Ø§ÙÙÙØªØ¬Ø§Øª Ø¨ÙØ§Ø¡Ù Ø¹ÙÙ ÙØ¬ÙØ¯ Ø§ÙÙØµ Ø§ÙÙØ¯Ø®Ù ÙÙ Ø§ÙØ§Ø³Ù Ø£Ù Ø§ÙÙØ¦Ø©
-    const filteredProducts = products.filter(product => {
-        const productName = product.name.toLowerCase().replace(/\s+/g, '');  // Ø¥Ø²Ø§ÙØ© Ø§ÙÙØ±Ø§ØºØ§Øª ÙÙ Ø§ÙØ§Ø³Ù
-        const productCategory = product.category.toLowerCase().replace(/\s+/g, '');  // Ø¥Ø²Ø§ÙØ© Ø§ÙÙØ±Ø§ØºØ§Øª ÙÙ Ø§ÙÙØ¦Ø©
-
-        // Ø§ÙØªØ­ÙÙ ÙÙ Ø£Ù Ø§ÙÙØµ Ø§ÙÙØ¯Ø®Ù ÙÙØ¬ÙØ¯ ÙÙ Ø§ÙØ§Ø³Ù Ø£Ù Ø§ÙÙØ¦Ø©
-        return productName.includes(cleanedSearchTerm) || 
-               productCategory.includes(cleanedSearchTerm);
-    });
-
-    // ØªØ±ØªÙØ¨ Ø§ÙÙØªØ§Ø¦Ø¬ Ø¨Ø­ÙØ« ØªÙÙÙ Ø§ÙØ£ÙØ±Ø¨ ÙÙ Ø§ÙØ£Ø¹ÙÙ
-    const sortedProducts = filteredProducts.sort((a, b) => {
-        const productNameA = a.name.toLowerCase().replace(/\s+/g, '');
-        const productNameB = b.name.toLowerCase().replace(/\s+/g, '');
-
-        // Ø¥Ø°Ø§ ÙØ§Ù Ø§ÙÙÙØªØ¬ ÙØ­ØªÙÙ Ø¹ÙÙ Ø§ÙÙØµ Ø¨Ø´ÙÙ ÙØ§ÙÙØ ÙØ¹Ø·ÙÙ Ø§ÙØ£ÙÙÙÙØ©
-        const aExactMatch = productNameA === cleanedSearchTerm ? 1 : 0;
-        const bExactMatch = productNameB === cleanedSearchTerm ? 1 : 0;
-
-        if (aExactMatch !== bExactMatch) {
-            return bExactMatch - aExactMatch; // Ø§ÙØ£ÙÙÙÙØ© ÙÙØªØ·Ø§Ø¨Ù Ø§ÙÙØ§ÙÙ
+/* ---------- دالة تحميل المنتجات من ملف نصي (خطك الأصلي) ---------- */
+/*
+  يفترض أن كل سطر في الملف بالشكل:
+  الفئة/اسم المنتج/السعر/رابط الصورة أو مسار الصورة
+  مثل: موبايل/Samsung A14/599.00/https://...
+*/
+function loadProductsFromFile(fileName){
+  products = [];
+  fetch(fileName)
+    .then(r => {
+      if(!r.ok) throw new Error('file not found');
+      return r.text();
+    })
+    .then(data => {
+      const lines = data.split(/\r?\n/);
+      lines.forEach(line => {
+        if(!line.trim()) return;
+        const parts = line.split('/');
+        // دعم الأسماء التي تحتوي "/" بباقي الأجزاء كصورة
+        if(parts.length >= 3){
+          const category = (parts[0] || '').trim();
+          const name = (parts[1] || '').trim();
+          const priceRaw = (parts[2] || '').trim();
+          let price = parseFloat(priceRaw);
+          if(isNaN(price)) price = NaN;
+          // الصورة إن وجدت تكون من الجزء 3 فصاعداً
+          const image = parts.slice(3).join('/').trim() || '';
+          products.push({ category, name, price, image });
         }
-
-        // Ø¥Ø°Ø§ ÙÙ ÙÙÙ ÙÙØ§Ù ØªØ·Ø§Ø¨Ù ÙØ§ÙÙØ ÙØ±ØªØ¨ Ø­Ø³Ø¨ ÙØ±Ø¨ Ø§ÙØªØ·Ø§Ø¨Ù
-        const aIncludes = productNameA.includes(cleanedSearchTerm) ? 1 : 0;
-        const bIncludes = productNameB.includes(cleanedSearchTerm) ? 1 : 0;
-
-        if (aIncludes !== bIncludes) {
-            return bIncludes - aIncludes; // Ø§ÙØ£ÙÙÙÙØ© ÙÙØªØ·Ø§Ø¨Ù Ø§ÙØ¬Ø²Ø¦Ù
-        }
-
-        // Ø¥Ø°Ø§ ÙØ§Ù ÙÙØ§ÙÙØ§ ÙØ­ØªÙÙ Ø¹ÙÙ Ø§ÙÙØµØ ÙØ±ØªØ¨ Ø­Ø³Ø¨ Ø§ÙØ·ÙÙ (Ø§ÙØ£ÙØµØ± Ø£ÙØ±Ø¨)
-        return productNameA.length - productNameB.length;
-    });
-
-    renderFilteredProducts(sortedProducts); // Ø¹Ø±Ø¶ Ø§ÙÙÙØªØ¬Ø§Øª Ø§ÙÙØµÙØ§Ø© ÙØ±ØªØ¨Ø©
-});
-
-// Ø¥Ø¹Ø§Ø¯Ø© ØªÙÙØ¦Ø© Ø­ÙÙ Ø§ÙØ¨Ø­Ø« Ø¹ÙØ¯ ÙÙØ¯Ø§Ù Ø§ÙØªØ±ÙÙØ²
-document.getElementById('search-box').addEventListener('blur', () => {
-    document.getElementById('search-box').value = ''; // ÙØ³Ø­ Ø§ÙÙØµ ÙÙ Ø§ÙØ­ÙÙ
-});
-
-
-
-
-// Add product to cart
-function addToCart(product, quantity) {
-    quantity = parseInt(quantity);
-    const existingProduct = cart.find(item => item.name === product.name);
-    if (existingProduct) {
-        existingProduct.quantity += quantity; // Update quantity if product already exists
-    } else {
-        cart.push({ ...product, quantity });
-    }
-    saveCart();
-    renderCart();
-}
-
-// Update product quantity in cart (interactive)
-function updateQuantity(input, change) {
-    let newQuantity = parseInt(input.value) + change;
-    if (newQuantity >= 1) { // Ensure quantity doesn't go below 1
-        input.value = newQuantity;
-    }
-    const productName = input.closest('.product').querySelector('strong').textContent;
-    const product = cart.find(item => item.name === productName);
-    if (product) {
-        product.quantity = newQuantity;
-        if (newQuantity === 0) {
-            removeFromCart(productName); // Remove product if quantity is zero
-            input.closest('.quantity-controls').style.display = 'none'; // Hide quantity controls
-            input.closest('.product').querySelector('button').style.display = 'block'; // Show "Add to Cart" button again
-        } else {
-            saveCart();
-            renderCart();
-        }
-    }
-}
-
-// Handle changes to the quantity input directly (when the user modifies it)
-function handleQuantityChange(event) {
-    const quantityInput = event.target;
-    let newQuantity = parseInt(quantityInput.value);
-
-    // Ø¥Ø°Ø§ ÙØ§ÙØª Ø§ÙÙÙÙØ© Ø§ÙÙØ¯Ø®ÙØ© ØµØ­ÙØ­Ø©
-    if (newQuantity >= 1) {
-        const productName = quantityInput.dataset.product; // Ø§Ø³ØªØ®Ø¯Ø§Ù dataset ÙØªØ­Ø¯ÙØ¯ Ø§ÙÙÙØªØ¬
-        const product = cart.find(item => item.name === productName);
-        if (product) {
-            product.quantity = newQuantity;
-            saveCart();
-            renderCart();
-        }
-    } else {
-        // Ø¥Ø°Ø§ ÙØ§ÙØª Ø§ÙÙÙÙØ© Ø§ÙÙØ¯Ø®ÙØ© Ø£ÙÙ ÙÙ 1Ø Ø¥Ø¹Ø§Ø¯Ø© Ø¶Ø¨Ø·ÙØ§ Ø¥ÙÙ 1
-        quantityInput.value = 1;
-    }
-}
-
-
-// Remove product from cart
-function removeFromCart(productName) {
-    cart = cart.filter(item => item.name !== productName);
-    saveCart();
-    renderCart();
-}
-
-// Save the cart to localStorage
-function saveCart() {
-    localStorage.setItem('cart', JSON.stringify(cart));
-}
-
-// Render the cart
-function renderCart() {
-    cartItemsContainer.innerHTML = ''; // ÙØ³Ø­ Ø§ÙÙØ­ØªÙÙ Ø§ÙØ³Ø§Ø¨Ù ÙÙØ³ÙØ©
-    let total = 0;
-
-    cart.forEach(item => {
-    const cartItemDiv = document.createElement('div');
-    cartItemDiv.className = 'cart-item d-flex align-items-center justify-content-between p-2 border-bottom';
-
-    // ð¼ï¸ Ø¹ÙØµØ± ÙØµÙØ±Ø© Ø§ÙÙÙØªØ¬
-    const itemImage = document.createElement('img');
-    itemImage.src = item.image; // ØªØ£ÙØ¯ ÙÙ Ø£Ù ÙØ§Ø¦Ù Ø§ÙÙÙØªØ¬ ÙØ­ØªÙÙ Ø¹ÙÙ `image`
-    itemImage.alt = item.name;
-    itemImage.className = 'cart-item-img';
-
-    // ð ØªÙØ§ØµÙÙ Ø§ÙÙÙØªØ¬ (Ø§Ø³Ù Ø§ÙÙØ¦Ø© + Ø§Ø³Ù Ø§ÙÙÙØªØ¬Ø Ø³Ø¹Ø±Ø ÙÙÙØ©)
-    const itemDetails = document.createElement('div');
-    itemDetails.className = 'cart-item-details flex-grow-1 ms-2';
-    itemDetails.innerHTML = `
-        <strong>${item.category} - ${item.name}</strong><br>
-        Ø§ÙØ³Ø¹Ø±: âª ${item.price.toFixed(2)} <br>
-        Ø§ÙÙÙÙØ©: <input 
-            type="number" 
-            value="${item.quantity}" 
-            min="1" 
-            class="cart-quantity" 
-            data-product="${item.name}">
-    `;
-        // â Ø²Ø± Ø§ÙØ­Ø°Ù
-        const removeButton = document.createElement('button');
-        removeButton.className = 'cart-remove btn btn-danger btn-sm ms-2';
-        removeButton.innerHTML = '&times;';
-        removeButton.onclick = () => {
-            removeFromCart(item.name);
-            updateCartTotal(); // ØªØ­Ø¯ÙØ« Ø§ÙÙØ¬ÙÙØ¹ Ø¨Ø¹Ø¯ Ø§ÙØ­Ø°Ù
-        };
-
-        // ð ØªØ¬ÙÙØ¹ Ø§ÙØ¹ÙØ§ØµØ± Ø¯Ø§Ø®Ù Ø§ÙØ¹ÙØµØ± Ø§ÙØ±Ø¦ÙØ³Ù
-        cartItemDiv.appendChild(itemImage);
-        cartItemDiv.appendChild(itemDetails);
-        cartItemDiv.appendChild(removeButton);
-
-        // Ø­Ø³Ø§Ø¨ Ø§ÙØ¥Ø¬ÙØ§ÙÙ
-        total += item.price * item.quantity;
-        cartItemsContainer.appendChild(cartItemDiv);
-    });
-
-    // ð Ø¹Ø±Ø¶ Ø¥Ø¬ÙØ§ÙÙ Ø§ÙØ³Ø¹Ø± ÙÙ Ø§ÙØ³ÙØ©
-    const totalDiv = document.createElement('div');
-    totalDiv.className = 'cart-total text-end mt-3 fw-bold';
-    totalDiv.innerHTML = `Ø§ÙØ¥Ø¬ÙØ§ÙÙ: âª ${total.toFixed(2)}`;
-    cartItemsContainer.appendChild(totalDiv);
-
-    // ð ØªØ­Ø¯ÙØ« Ø¥Ø¬ÙØ§ÙÙ Ø§ÙØ³Ø¹Ø± Ø¨Ø¬Ø§ÙØ¨ Ø£ÙÙÙÙØ© Ø§ÙØ³ÙØ©
-    updateCartTotal();
-
-    // ð ØªØ­Ø¯ÙØ« Ø§ÙÙÙÙØ© Ø¹ÙØ¯ Ø§ÙØªØºÙÙØ±
-    document.querySelectorAll('.cart-quantity').forEach(input => {
-        input.addEventListener('change', (event) => {
-            handleQuantityChange(event);
-            updateCartTotal(); // ØªØ­Ø¯ÙØ« Ø§ÙÙØ¬ÙÙØ¹ Ø¹ÙØ¯ ØªØºÙÙØ± Ø§ÙÙÙÙØ©
-        });
-
-        input.addEventListener('blur', (event) => {
-            handleQuantityChange(event);
-            updateCartTotal(); // ØªØ­Ø¯ÙØ« Ø§ÙÙØ¬ÙÙØ¹ Ø¹ÙØ¯ ÙÙØ¯Ø§Ù Ø§ÙØªØ±ÙÙØ²
-        });
-
-        input.addEventListener('keypress', (event) => {
-            if (event.key === 'Enter') {
-                handleQuantityChange(event);
-                updateCartTotal(); // ØªØ­Ø¯ÙØ« Ø§ÙÙØ¬ÙÙØ¹ Ø¹ÙØ¯ Ø§ÙØ¶ØºØ· Ø¹ÙÙ Enter
-            }
-        });
-    });
-}
-
-// â ÙØ¸ÙÙØ© ØªØ­Ø¯ÙØ« Ø¥Ø¬ÙØ§ÙÙ Ø§ÙØ³Ø¹Ø± Ø¨Ø¬Ø§ÙØ¨ Ø§ÙØ³ÙØ©
-function updateCartTotal() {
-    let total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
-    document.getElementById('cart-total').innerHTML = `${total.toFixed(2)} âª`;
-}
-
-
-// Event handler for checkout button
-checkoutButton.onclick = () => {
-    popup.style.display = 'block';
-};
-
-// Event handler for confirm button
-confirmButton.onclick = () => {
-    const customerName = customerNameInput.value;
-    const customerPhone = customerPhoneInput.value;
-
-    if (!customerName || !customerPhone) {
-        alert('Ø§ÙØ±Ø¬Ø§Ø¡ Ø§Ø¯Ø®Ø§Ù Ø§ÙØ£Ø³Ù Ù Ø±ÙÙ Ø§ÙÙØ§ØªÙ.');
-        return;
-    }
-
-    // Ø§ÙØ­ØµÙÙ Ø¹ÙÙ Ø§ÙØªØ§Ø±ÙØ® ÙØ§ÙÙÙØª Ø§ÙØ­Ø§ÙÙ Ø¨ØªÙØ³ÙÙ "ÙÙÙ/Ø´ÙØ±/Ø³ÙØ© Ø³Ø§Ø¹Ø©:Ø¯ÙÙÙØ©Ù Ø§ÙÙÙÙ"
-    function formatDateTime() {
-        const now = new Date();
-        const day = now.getDate().toString().padStart(2, '0');
-        const month = (now.getMonth() + 1).toString().padStart(2, '0');
-        const year = now.getFullYear();
-        let hours = now.getHours();
-        const minutes = now.getMinutes().toString().padStart(2, '0');
-        const ampm = hours >= 12 ? 'Ù' : 'Øµ';
-        hours = hours % 12;
-        hours = hours ? hours : 12; // Ø§ÙØ³Ø§Ø¹Ø© 0 ØªØµØ¨Ø­ 12
-        const dayOfWeek = ["Ø§ÙØ£Ø­Ø¯", "Ø§ÙØ§Ø«ÙÙÙ", "Ø§ÙØ«ÙØ§Ø«Ø§Ø¡", "Ø§ÙØ£Ø±Ø¨Ø¹Ø§Ø¡", "Ø§ÙØ®ÙÙØ³", "Ø§ÙØ¬ÙØ¹Ø©", "Ø§ÙØ³Ø¨Øª"][now.getDay()];
-        return `${day}/${month}/${year} ${hours}:${minutes}${ampm} ${dayOfWeek}`;
-    }
-
-    // Ø±ÙÙ Ø§ÙÙØ§ØªÙØ±Ø© (Ø«Ø§Ø¨Øª Ø¯Ø§Ø¦ÙÙØ§ ####)
-    const invoiceNumber = "####";
-
-    // Ø¥ÙØ´Ø§Ø¡ ÙØµ Ø§ÙÙØ§ØªÙØ±Ø©
-    let text = `â­ï¸ Shehadeh Centre â­ï¸\n`;
-    text += `âââââââââââââââ\n`;
-    text += `ð Ø§ÙØªØ§Ø±ÙØ®: ${formatDateTime()}\n`;
-    text += `ð Ø±ÙÙ Ø§ÙÙØ§ØªÙØ±Ø©: ${invoiceNumber}\n`;
-    text += `âââââââââââââââ\n\n`;
-    text += `ð¤ Ø§Ø³Ù Ø§ÙØ¹ÙÙÙ: ${customerName}\n`;
-    text += `âï¸ Ø±ÙÙ Ø§ÙÙØ§ØªÙ: ${customerPhone}\n`;
-    text += `âââââââââââââââ\n\n`;
-    text += `ð ØªÙØ§ØµÙÙ Ø§ÙÙÙØªØ¬Ø§Øª:\n`;
-
-    let total = 0;
-cart.forEach(item => {
-    // Ø¥Ø²Ø§ÙØ© <br> ÙÙ Ø§Ø³Ù Ø§ÙÙÙØªØ¬
-    let cleanName = item.name.replace(/<br>/g, ' ');
-
-    // Ø¥Ø²Ø§ÙØ© ÙÙÙØ© "Ø¨Ø§Ø±" Ø¥Ø°Ø§ ÙÙØ¬Ø¯Øª
-    cleanName = cleanName.replace(/Ø¨Ø§Ø±/g, '').trim();
-
-    // Ø­Ø³Ø§Ø¨ Ø¥Ø¬ÙØ§ÙÙ Ø³Ø¹Ø± ÙØ°Ø§ Ø§ÙØµÙÙ
-    let itemTotal = item.price * item.quantity;
-
-    // ÙØªØ§Ø¨Ø© Ø§ÙÙØ¦Ø© ÙØ§Ø³Ù Ø§ÙÙÙØªØ¬ ÙÙ Ø³Ø·Ø± ÙÙÙØµÙ
-    text += `\t${item.category} - ${cleanName}\n`;
-
-    // ÙØªØ§Ø¨Ø© Ø§ÙØ¹Ø¯Ø¯Ø Ø§ÙØ³Ø¹Ø±Ø ÙØ§ÙØ¥Ø¬ÙØ§ÙÙ ÙÙ Ø³Ø·Ø± Ø¢Ø®Ø±
-    text += `\t${item.quantity} x ${item.price.toFixed(2)} = ${itemTotal.toFixed(2)} âª\n`;
-
-    // Ø®Ø· ÙØ§ØµÙ
-    text += `â â â â â â â â â â\n`;
-
-    total += itemTotal;
-});
-
-    text += `ð° Ø§ÙØ¥Ø¬ÙØ§ÙÙ: ${total.toFixed(2)}\n`;
-    text += `âââââââââââââââ\n`;
-    text += `Ø´ÙØ±ÙØ§ ÙØ§Ø®ØªÙØ§Ø±ÙÙ Ø®Ø¯ÙØ§ØªÙØ§! ð`;
-
-    // Ø±Ø§Ø¨Ø· Ø§ÙÙØ§ØªØ³Ø§Ø¨ ÙØ¹ Ø§ÙØ±ÙÙ Ø§ÙÙØ­Ø¯Ø¯
-    const whatsappURL = `https://wa.me/972566888825?text=${encodeURIComponent(text)}`;
-    window.open(whatsappURL, '_blank');
-
-    // ÙØªØ­Ø¯ÙØ« Ø§ÙØ³ÙØ© ÙØ­ÙØ¸ÙØ§
-    cart = [];
-    saveCart();
-    renderCart();
-
-    // Ø¥Ø¹Ø§Ø¯Ø© Ø¶Ø¨Ø· Ø­Ø§ÙØ© Ø§ÙÙÙØªØ¬Ø§Øª
-    resetProductStates();
-
-    // Ø¥ØºÙØ§Ù Ø§ÙÙØ§ÙØ°Ø© Ø§ÙÙÙØ¨Ø«ÙØ©
-    popup.style.display = 'none';
-};
-
-// Ø¯Ø§ÙØ© ÙØ¥Ø¹Ø§Ø¯Ø© Ø¶Ø¨Ø· Ø­Ø§ÙØ© Ø§ÙÙÙØªØ¬Ø§Øª
-function resetProductStates() {
-    const productsElements = document.querySelectorAll('.product'); // Ø§ÙØ­ØµÙÙ Ø¹ÙÙ Ø¬ÙÙØ¹ Ø§ÙØ¹ÙØ§ØµØ± Ø§ÙØªÙ ØªÙØ«Ù Ø§ÙÙÙØªØ¬Ø§Øª
-    productsElements.forEach(productElement => {
-        // Ø¥Ø¹Ø§Ø¯Ø© Ø¶Ø¨Ø· Ø²Ø± "Ø¥Ø¶Ø§ÙØ© ÙÙØ³ÙØ©"
-        const addToCartButton = productElement.querySelector('.add-to-cart-btn');
-        if (addToCartButton) {
-            addToCartButton.style.display = 'block'; // Ø¥Ø¸ÙØ§Ø± Ø²Ø± "Ø¥Ø¶Ø§ÙØ© ÙÙØ³ÙØ©"
-        }
-
-        // Ø¥Ø¹Ø§Ø¯Ø© Ø¶Ø¨Ø· Ø¹ÙØ§ØµØ± Ø§ÙØªØ­ÙÙ ÙÙ Ø§ÙÙÙÙØ©
-        const quantityDiv = productElement.querySelector('.quantity-controls');
-        if (quantityDiv) {
-            quantityDiv.style.display = 'none'; // Ø¥Ø®ÙØ§Ø¡ Ø¹ÙØ§ØµØ± Ø§ÙØªØ­ÙÙ ÙÙ Ø§ÙÙÙÙØ©
-        }
-
-        // Ø¥Ø¹Ø§Ø¯Ø© Ø¶Ø¨Ø· Ø­ÙÙ Ø§ÙÙÙÙØ© Ø¥ÙÙ Ø§ÙÙÙÙØ© Ø§ÙØ§ÙØªØ±Ø§Ø¶ÙØ©
-        const quantityInput = productElement.querySelector('input[type="number"]');
-        if (quantityInput) {
-            quantityInput.value = 1; // Ø¥Ø¹Ø§Ø¯Ø© ØªØ¹ÙÙÙ Ø§ÙÙÙÙØ© Ø¥ÙÙ 1
-        }
-    });
-}
-
-// Event handler for cancel button
-cancelButton.onclick = () => {
-    popup.style.display = 'none';
-};
-
-// Ø§ÙØ­ØµÙÙ Ø¹ÙÙ Ø§ÙØ£Ø²Ø±Ø§Ø± Ø§ÙØ®Ø§ØµØ© Ø¨Ø¥Ø¸ÙØ§Ø± ÙØ¥Ø®ÙØ§Ø¡ Ø§ÙØ³ÙØ©
-const showCartButton = document.getElementById('show-cart-button');
-const hideCartButton = document.getElementById('hide-cart-button');
-const cartElement = document.getElementById('cart');
-
-// Ø¥Ø®ÙØ§Ø¡ Ø§ÙØ³ÙØ© Ø¹ÙØ¯ ØªØ­ÙÙÙ Ø§ÙØµÙØ­Ø©
-cartElement.style.display = 'none';
-
-// Ø¹ÙØ¯ Ø§ÙÙÙØ± Ø¹ÙÙ Ø²Ø± Ø¥Ø¸ÙØ§Ø± Ø§ÙØ³ÙØ©
-showCartButton.onclick = function() {
-    cartElement.style.display = 'block';  // Ø¥Ø¸ÙØ§Ø± Ø§ÙØ³ÙØ©
-    showCartButton.style.display = 'none';  // Ø¥Ø®ÙØ§Ø¡ Ø²Ø± Ø§ÙØ¥Ø¸ÙØ§Ø±
-    hideCartButton.style.display = 'inline-block';  // Ø¥Ø¸ÙØ§Ø± Ø²Ø± Ø§ÙØ¥Ø®ÙØ§Ø¡
-};
-
-// Ø¹ÙØ¯ Ø§ÙÙÙØ± Ø¹ÙÙ Ø²Ø± Ø¥Ø®ÙØ§Ø¡ Ø§ÙØ³ÙØ©
-hideCartButton.onclick = function() {
-    cartElement.style.display = 'none';  // Ø¥Ø®ÙØ§Ø¡ Ø§ÙØ³ÙØ©
-    showCartButton.style.display = 'inline-block';  // Ø¥Ø¸ÙØ§Ø± Ø²Ø± Ø§ÙØ¥Ø¸ÙØ§Ø±
-    hideCartButton.style.display = 'none';  // Ø¥Ø®ÙØ§Ø¡ Ø²Ø± Ø§ÙØ¥Ø®ÙØ§Ø¡
-};
-        // ÙÙØ¹ Ø§ÙØªÙØ¨ÙØ± Ø¹Ø¨Ø± Ø§ÙÙÙØ³ Ø¹ÙÙ Ø§ÙÙØ§ØªÙ
-        document.addEventListener('touchstart', function (event) {
-            if (event.touches.length > 1) {
-                event.preventDefault();
-            }
-        }, { passive: false });
-
-        // ÙÙØ¹ Ø§ÙØªÙØ¨ÙØ± Ø¨Ø§ÙÙÙØ± ÙØ±ØªÙÙ
-        let lastTouchEnd = 0;
-        document.addEventListener('touchend', function (event) {
-            let now = (new Date()).getTime();
-            if (now - lastTouchEnd <= 100) { // 300ms ÙÙ Ø§ÙÙØ§ØµÙ Ø§ÙØ²ÙÙÙ ÙÙÙÙØ± Ø§ÙÙØ²Ø¯ÙØ¬
-                event.preventDefault();
-            }
-            lastTouchEnd = now;
-        }, { passive: false });
-
-            // ÙØ¸ÙÙØ© Ø§ÙØµØ¹ÙØ¯ ÙÙØ£Ø¹ÙÙ
-            document.getElementById("scrollUp").addEventListener("click", () => {
-            window.scrollTo({
-                top: 0,
-                behavior: "smooth"
-            });
-        });
-
-        // ÙØ¸ÙÙØ© Ø§ÙÙØ²ÙÙ ÙÙØ£Ø³ÙÙ
-        document.getElementById("scrollDown").addEventListener("click", () => {
-            window.scrollTo({
-                top: document.body.scrollHeight,
-                behavior: "smooth"
-            });
-        });
-
-// Ø¹Ø±Ø¶ Ø´Ø§Ø´Ø© Ø§ÙØªØ­ÙÙÙ Ø¹ÙØ¯ ØªØ­ÙÙÙ Ø§ÙØµÙØ­Ø©
-document.addEventListener("DOMContentLoaded", function () {
-    const loadingScreen = document.getElementById("loading-screen");
-
-    // Ø¥Ø®ÙØ§Ø¡ Ø´Ø§Ø´Ø© Ø§ÙØªØ­ÙÙÙ Ø¨Ø¹Ø¯ 3 Ø«ÙØ§ÙÙ
-    setTimeout(function () {
-        loadingScreen.style.display = "none";
-    }, 2500); // 2000 ÙÙÙÙ Ø«Ø§ÙÙØ© = 3 Ø«ÙØ§ÙÙ
-});
-
-document.addEventListener("DOMContentLoaded", function () {
-    let loginContainer = document.getElementById("login-container");
-    let loadingScreen = document.getElementById("loading-screen");
-
-    // ÙØ±Ø§ÙØ¨Ø© ØªØºÙÙØ±Ø§Øª Ø¹Ø±Ø¶ Ø´Ø§Ø´Ø© ØªØ³Ø¬ÙÙ Ø§ÙØ¯Ø®ÙÙ
-    let observer = new MutationObserver(function (mutations) {
-        mutations.forEach(function (mutation) {
-            if (mutation.attributeName === "style") {
-                let isHidden = window.getComputedStyle(loginContainer).display === "none";
-                if (isHidden) {
-                    loadingScreen.style.display = "none"; // Ø¥Ø®ÙØ§Ø¡ Ø´Ø§Ø´Ø© Ø§ÙØªØ­ÙÙÙ
-                }
-            }
-        });
-    });
-
-    // Ø¨Ø¯Ø¡ Ø§ÙÙØ±Ø§ÙØ¨Ø© Ø¹ÙÙ ØªØºÙÙØ±Ø§Øª Ø§ÙÙ style ÙÙ loginContainer
-    observer.observe(loginContainer, { attributes: true });
-});
-
-
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('/sw.js')
-      .then(function(reg) {
-        console.log('Service Worker registered with scope:', reg.scope);
-      })
-      .catch(function(error) {
-        console.error('Service Worker registration failed:', error);
       });
-  }
+      renderCategories();
+      createFilterButtons();
+      renderCart();
+      markScreensCategory(); // تصنيف الشاشات فوراً
+    })
+    .catch(err => {
+      console.error('خطأ عند تحميل الملف:', err);
+      // رسالة للمستخدم بسيطة
+      categoriesContainer.innerHTML = '<div class="panel">فشل تحميل الملف. تأكد من وجود الملف على نفس المسار.</div>';
+    });
+}
 
+/* ---------- عرض الفئات والمنتجات ---------- */
+function renderCategories(){
+  categoriesContainer.innerHTML = '';
+  const categories = [...new Set(products.map(p => p.category))];
+  categories.forEach(category => {
+    const catDiv = document.createElement('div');
+    catDiv.className = 'category panel';
+    const title = document.createElement('h2');
+    title.textContent = category;
+    catDiv.appendChild(title);
 
+    const grid = document.createElement('div');
+    grid.className = 'products-grid';
 
-</script>
+    const catProducts = products.filter(p => p.category === category);
+    catProducts.forEach(prod => {
+      const card = document.createElement('div');
+      card.className = 'product';
 
-<!-- Extra small script to mark screens categories -->
-<script>
+      // الصورة
+      const img = document.createElement('img');
+      img.alt = prod.name;
+      img.src = prod.image || document.getElementById('__default_img').src;
+      img.onerror = () => { img.src = document.getElementById('__default_img').src; };
+      card.appendChild(img);
+
+      // اسم وسعر
+      const meta = document.createElement('div');
+      meta.className = 'meta';
+      const name = document.createElement('div');
+      name.innerHTML = `<div class="name">${prod.name}</div>`;
+      const price = document.createElement('div');
+      price.innerHTML = `<div class="price">${isNaN(prod.price) ? 'غير متوفر' : prod.price.toFixed(2) + ' ₪'}</div>`;
+      meta.appendChild(name);
+      meta.appendChild(price);
+      card.appendChild(meta);
+
+      // زر إضافة / أدوات كمية
+      const qtyControls = document.createElement('div');
+      qtyControls.className = 'quantity-controls';
+      qtyControls.style.display = 'none';
+      qtyControls.style.marginTop = '6px';
+
+      const dec = document.createElement('button'); dec.textContent='−'; dec.className='btn';
+      const input = document.createElement('input'); input.type='number'; input.min='1'; input.value='1'; input.style.width='60px'; input.style.padding='8px'; input.style.borderRadius='8px';
+      const inc = document.createElement('button'); inc.textContent='+'; inc.className='btn';
+      dec.onclick = ()=> changeLocalQuantity(input, -1);
+      inc.onclick = ()=> changeLocalQuantity(input, 1);
+
+      qtyControls.appendChild(dec); qtyControls.appendChild(input); qtyControls.appendChild(inc);
+
+      const addBtn = document.createElement('button');
+      addBtn.className = 'add-to-cart-btn';
+      addBtn.textContent = 'إضافة للسلة';
+      if(isNaN(prod.price)) {
+        addBtn.disabled = true;
+        addBtn.style.opacity = '0.6';
+      } else {
+        addBtn.onclick = () => { addToCart(prod, parseInt(input.value || 1)); qtyControls.style.display = 'flex'; addBtn.style.display='none'; };
+      }
+
+      // تحقق إن المنتج موجود في السلة من قبل
+      const existed = cart.find(i=> i.name === prod.name);
+      if(existed){ qtyControls.style.display='flex'; addBtn.style.display='none'; input.value = existed.quantity; }
+
+      card.appendChild(qtyControls);
+      card.appendChild(addBtn);
+
+      grid.appendChild(card);
+    });
+
+    catDiv.appendChild(grid);
+    categoriesContainer.appendChild(catDiv);
+  });
+
+  // بعد العرض، علّم فئات الشاشات
+  markScreensCategory();
+}
+
+/* ---------- فلتر / أزرار الفئات ---------- */
+function createFilterButtons(){
+  // هذه وظيفة بسيطة: لنغير المحتوى العلوي إن أردنا لاحقاً
+  // (إبقيتها سهلة للتعديل)
+}
+
+/* ---------- بحث ذكي مع اقتراحات ---------- */
+const searchBox = document.getElementById('search-box');
+const suggestions = document.getElementById('search-suggestions');
+searchBox.addEventListener('input', ()=>{
+  const q = searchBox.value.toLowerCase().trim();
+  suggestions.innerHTML = '';
+  if(q.length < 1){ suggestions.style.display = 'none'; renderCategories(); return; }
+  const matches = products.filter(p => (p.name + ' ' + p.category).toLowerCase().includes(q)).slice(0,8);
+  matches.forEach(m => {
+    const e = document.createElement('div'); e.textContent = `${m.name} — ${isNaN(m.price)? 'غير متوفر' : m.price.toFixed(2) + ' ₪'}`;
+    e.onclick = () => { searchBox.value = m.name; suggestions.style.display='none'; renderFilteredProducts([m]); };
+    suggestions.appendChild(e);
+  });
+  suggestions.style.display = matches.length ? 'block' : 'none';
+});
+
+function renderFilteredProducts(list){
+  // عرض قائمة المنتجات المعطاة (بناءً على renderCategories لكنه أبسط)
+  categoriesContainer.innerHTML = '';
+  // نجمع حسب الفئة
+  const cats = [...new Set(list.map(p=>p.category))];
+  cats.forEach(category=>{
+    const catDiv = document.createElement('div'); catDiv.className='category panel';
+    const title = document.createElement('h2'); title.textContent = category; catDiv.appendChild(title);
+    const grid = document.createElement('div'); grid.className='products-grid';
+    list.filter(p=>p.category===category).forEach(prod=>{
+      const card = document.createElement('div'); card.className='product';
+      const img = document.createElement('img'); img.alt = prod.name; img.src = prod.image || document.getElementById('__default_img').src;
+      img.onerror = ()=> img.src = document.getElementById('__default_img').src;
+      card.appendChild(img);
+      const meta = document.createElement('div'); meta.className='meta';
+      meta.innerHTML = `<div class="name">${prod.name}</div><div class="price">${isNaN(prod.price)? 'غير متوفر' : prod.price.toFixed(2) + ' ₪'}</div>`;
+      card.appendChild(meta);
+      // simplified add button
+      const addBtn = document.createElement('button'); addBtn.className='add-to-cart-btn'; addBtn.textContent='إضافة للسلة';
+      if(isNaN(prod.price)) addBtn.disabled=true; else addBtn.onclick = ()=> { addToCart(prod,1); renderCart(); };
+      card.appendChild(addBtn);
+      grid.appendChild(card);
+    });
+    catDiv.appendChild(grid);
+    categoriesContainer.appendChild(catDiv);
+  });
+}
+
+/* ---------- فلتر بالسعر ---------- */
+document.getElementById('apply-price-filter').addEventListener('click', ()=>{
+  const min = parseFloat(document.getElementById('price-min').value || 0);
+  const maxVal = document.getElementById('price-max').value;
+  const max = maxVal === '' ? Infinity : parseFloat(maxVal);
+  const filtered = products.filter(p => !isNaN(p.price) && p.price >= min && p.price <= max);
+  if(filtered.length) renderFilteredProducts(filtered);
+  else renderCategories();
+});
+document.getElementById('clear-filters').addEventListener('click', ()=>{ document.getElementById('price-min').value=''; document.getElementById('price-max').value=''; renderCategories(); });
+
+/* ---------- تعديل كمية محلية (±) ---------- */
+function changeLocalQuantity(input, delta){
+  let n = parseInt(input.value || 1) + delta;
+  if(n < 1) n = 1;
+  input.value = n;
+}
+
+/* ---------- سلة الشراء: إضافة/حذف/تحديث ---------- */
+function addToCart(product, quantity){
+  quantity = parseInt(quantity) || 1;
+  const exist = cart.find(i => i.name === product.name);
+  if(exist){ exist.quantity += quantity; }
+  else { cart.push({...product, quantity}); }
+  saveCart(); renderCart();
+}
+
+function removeFromCart(productName){
+  cart = cart.filter(i => i.name !== productName);
+  saveCart(); renderCart();
+}
+
+function saveCart(){
+  localStorage.setItem('cart', JSON.stringify(cart));
+}
+
+function renderCart(){
+  cartItemsContainer.innerHTML = '';
+  let total = 0;
+  cart.forEach(item=>{
+    const itm = document.createElement('div'); itm.className = 'cart-item';
+    const left = document.createElement('div'); left.style.display='flex'; left.style.alignItems='center'; left.style.gap='8px';
+    const img = document.createElement('img'); img.src = item.image || document.getElementById('__default_img').src; img.onerror = ()=> img.src = document.getElementById('__default_img').src;
+    const txt = document.createElement('div'); txt.innerHTML = `<div style="font-weight:700">${item.name}</div><div class="small">${item.category}</div>`;
+    left.appendChild(img); left.appendChild(txt);
+
+    const right = document.createElement('div'); right.style.textAlign='right';
+    const qtyInput = document.createElement('input'); qtyInput.type='number'; qtyInput.value = item.quantity; qtyInput.min = 1; qtyInput.style.width='70px'; qtyInput.addEventListener('change', (e)=> {
+      const val = parseInt(e.target.value) || 1;
+      item.quantity = val; saveCart(); renderCart();
+    });
+    const priceText = document.createElement('div'); priceText.innerHTML = `₪ ${(item.price * item.quantity).toFixed(2)}`;
+    const removeBtn = document.createElement('button'); removeBtn.className='btn'; removeBtn.innerHTML='حذف'; removeBtn.onclick = ()=> removeFromCart(item.name);
+    right.appendChild(priceText); right.appendChild(qtyInput); right.appendChild(removeBtn);
+
+    itm.appendChild(left); itm.appendChild(right);
+    cartItemsContainer.appendChild(itm);
+
+    total += (isNaN(item.price)? 0 : item.price * item.quantity);
+  });
+
+  document.getElementById('cart-total').textContent = `₪ ${total.toFixed(2)}`;
+  document.getElementById('cart-total-top').textContent = `${total.toFixed(2)} ₪`;
+}
+
+/* ---------- تحديث الكاتيجوري شاشات (إخفاء الصور) ---------- */
 function markScreensCategory(){
   document.querySelectorAll('.category').forEach(cat=>{
     const title = cat.querySelector('h2')?.textContent?.trim() || '';
-    if(title.includes('Ø´Ø§Ø´') || title.includes('Ø´Ø§Ø´Ø©') || title.toLowerCase().includes('screens')){
+    if(title.includes('شاش') || title.includes('شاشة') || title.toLowerCase().includes('screens')) {
       cat.classList.add('category-screens');
+    } else {
+      cat.classList.remove('category-screens');
     }
   });
 }
-setInterval(markScreensCategory,800);
+
+/* ---------- حفظ حالة السلة فور التحميل ---------- */
+renderCart();
+
+/* ---------- زر العودة للأعلى ---------- */
+const backBtn = document.getElementById('back-to-top');
+window.addEventListener('scroll', ()=> {
+  if(window.scrollY > 300) backBtn.style.display = 'flex'; else backBtn.style.display = 'none';
+});
+backBtn.addEventListener('click', ()=> window.scrollTo({top:0,behavior:'smooth'}));
+
+/* ---------- تصدير السلة كـ JSON ---------- */
+document.getElementById('export-cart-btn').addEventListener('click', ()=>{
+  const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(cart,null,2));
+  const a = document.createElement('a'); a.href = dataStr; a.download='cart.json'; document.body.appendChild(a); a.click(); a.remove();
+});
+
+/* ---------- طباعة الفاتورة ---------- */
+document.getElementById('print-cart-btn').addEventListener('click', ()=>{
+  let html = '<h3>فاتورة طلب</h3><hr>';
+  cart.forEach(i => { html += `<div>${i.name} x ${i.quantity} = ₪ ${ (i.price*i.quantity).toFixed(2) }</div>`; });
+  html += `<hr><div><strong>الإجمالي: ₪ ${cart.reduce((s,i)=>s + (i.price * i.quantity || 0),0).toFixed(2)}</strong></div>`;
+  const w = window.open('','print'); w.document.write('<meta charset="utf-8"><title>فاتورة</title>' + html); w.document.close(); w.print();
+});
+
+/* ---------- تفريغ السلة ---------- */
+document.getElementById('clear-cart-btn').addEventListener('click', ()=>{
+  if(confirm('هل تريد تفريغ السلة؟')){ cart = []; saveCart(); renderCart(); }
+});
+
+/* ---------- البوب أب لإرسال الطلب عبر واتساب ---------- */
+document.getElementById('show-cart-button').addEventListener('click', ()=> {
+  // افتح/اغلق صندوق البوب أب
+  popup.style.display = 'flex';
+});
+
+// إظهار البوب أب عند الضغط زر "إرسال الطلب"
+checkoutButton.addEventListener('click', ()=> { popup.style.display = 'flex'; });
+
+confirmButton.addEventListener('click', ()=> {
+  const customerName = customerNameInput.value.trim();
+  const customerPhone = customerPhoneInput.value.trim();
+  if(!customerName || !customerPhone){ alert('الرجاء إدخال الاسم ورقم الهاتف.'); return; }
+
+  // تجميع نص الفاتورة
+  let text = `⭐️ Shehadeh Centre — طلبية ⭐️\n`;
+  text += `-------------------------\n`;
+  text += `العميل: ${customerName}\n`;
+  text += `الهاتف: ${customerPhone}\n`;
+  text += `-------------------------\n`;
+  let total = 0;
+  cart.forEach(i=>{
+    const itemTotal = (i.price || 0) * (i.quantity || 1);
+    total += itemTotal;
+    text += `${i.category} - ${i.name}\n${i.quantity} x ${ (i.price || 0).toFixed(2) } = ${ itemTotal.toFixed(2) } ₪\n`;
+    text += '-------------------------\n';
+  });
+  text += `الإجمالي: ${total.toFixed(2)} ₪\n`;
+  text += `شكراً لاختياركم!\n`;
+
+  // افتح واتساب مع رقمك (عدّل الرقم إلى رقمك)
+  const phoneNumber = '972566888825'; // إذا أردت تغييره
+  const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(text)}`;
+  window.open(url, '_blank');
+
+  // مسح السلة بعد الإرسال
+  cart = []; saveCart(); renderCart();
+  popup.style.display = 'none';
+});
+
+// إغلاق البوب أب
+cancelButton.addEventListener('click', ()=> popup.style.display = 'none');
+window.addEventListener('click', (e)=> { if(e.target === popup) popup.style.display = 'none'; });
+
+/* ---------- وضع ليلي بسيط ---------- */
+document.getElementById('toggle-dark').addEventListener('click', function(){
+  document.documentElement.classList.toggle('dark-mode');
+  if(document.documentElement.classList.contains('dark-mode')){
+    document.documentElement.style.setProperty('--bg','#061226');
+    document.documentElement.style.setProperty('--card','#071127');
+    document.documentElement.style.setProperty('--muted','#9aa8bf');
+    document.documentElement.style.setProperty('--accent','#7dd3fc');
+    this.textContent = '☀️';
+  } else {
+    document.documentElement.style.setProperty('--bg','#f5f7fb');
+    document.documentElement.style.setProperty('--card','#ffffff');
+    document.documentElement.style.setProperty('--muted','#6b7280');
+    document.documentElement.style.setProperty('--accent','#0b78ff');
+    this.textContent = '🌙';
+  }
+});
+
+/* ---------- استدعاءات وفحص تلقائي لتعليم شاشات ---------- */
+function ensureMarkScreensLater(){ setTimeout(markScreensCategory, 300); }
+setInterval(markScreensCategory, 900);
+
+/* ---------- ملاحظة للمستخدم ---------- */
+/*
+  - هذا الملف يعتمد على وجود ملفات النص (test.md, lcd.md, abc.md) في نفس المجلد.
+  - صيغة كل سطر: الفئة/الاسم/السعر/رابط_الصورة
+  - إذا أردت أضع لك مثال للملفات الثلاثة أيضاً أرسله لك.
+*/
+
 </script>
 </body>
 </html>
