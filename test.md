@@ -1,3 +1,4 @@
+samsung/Tap A9+  5G 128|8/670/https://res.cloudinary.com/dygc5b8cn/image/upload/v1753694538/hof796y09s8x8ovvttwp.jpg
 Honor/X6C 256|6/420/https://res.cloudinary.com/dygc5b8cn/image/upload/v1753782712/dps4kgccnmz4xh7zxxm7.jpg
 Honor/X8C 256|8/660/https://res.cloudinary.com/dygc5b8cn/image/upload/v1753782673/tcqjqve8dkgphgpp7wvj.jpg
 Honor/X8C 512|8/760/https://res.cloudinary.com/dygc5b8cn/image/upload/v1753782620/keu8xfmhscfqyjh8vric.webp
@@ -9,7 +10,6 @@ Tecno/Go2 64|6/280/https://res.cloudinary.com/dygc5b8cn/image/upload/v1753777830
 Tecno/Go1 128|8/280/https://res.cloudinary.com/dygc5b8cn/image/upload/v1753777748/hfymoxudmn6gt41pqhoi.jpg
 Honor/X7C 256|8/500/https://res.cloudinary.com/dygc5b8cn/image/upload/v1753694752/kw0rwr4ygtl6vcsorjhv.webp
 Honor/X6C 128|6/370/https://res.cloudinary.com/dygc5b8cn/image/upload/v1753694659/qgw3j4v8b2byfx3zp99s.jpg
-samsung/Tap A9+  5G 128|8/670/https://res.cloudinary.com/dygc5b8cn/image/upload/v1753694538/hof796y09s8x8ovvttwp.jpg
 MI/Redmi 13X 256|8/400/https://res.cloudinary.com/dygc5b8cn/image/upload/v1753791535/a13rrdzxc1i0gtxd5b6f.png
 N\A/Nokia 108 |/70/https://res.cloudinary.com/dygc5b8cn/image/upload/v1751890269/gubix3upttuhrz5y7gxm.jpg
 N\A/Pad 50 kids 64|2/240/https://res.cloudinary.com/dygc5b8cn/image/upload/v1751890187/oy87yjjt6zln8qu7cz21.jpg
