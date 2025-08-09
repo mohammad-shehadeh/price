@@ -287,10 +287,22 @@
         }
         
         .product-img-container {
-            height: 200px;
-            overflow: hidden;
-            position: relative;
-        }
+    position: relative;
+    overflow: hidden;
+    width: 100%; /* يأخذ العرض الكامل للعنصر الأب */
+    height: auto; /* الارتفاع يتكيف مع نسبة الصورة */
+    padding-top: 75%; /* نسبة العرض إلى الارتفاع (4:3) - يمكن تعديلها حسب حاجتك */
+}
+
+.product-img-container img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
         
         .product img {
             width: 100%;
@@ -921,7 +933,7 @@
         <div class="logo-container">
             <img src="https://i.postimg.cc/VNssYbVS/IMG-1002.jpg" alt="Shehadeh Center Logo" class="logo-img">
         </div>
-        <h1> SHEHADEH CENTER   </h1>
+        <h1>SHEHADEH CENTER</h1>
         
         <!-- File Buttons -->
         <div id="file-buttons"></div>
