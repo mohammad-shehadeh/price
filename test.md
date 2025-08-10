@@ -27,7 +27,7 @@ samsung/A26 |/740/https://res.cloudinary.com/dygc5b8cn/image/upload/v1747478968/
 MI/Redmi A5 64|3/240/https://res.cloudinary.com/dygc5b8cn/image/upload/v1745846501/huvlm2coxnrudfzwmhtm.jpg
 samsung/S25 ultra 256|12/3300/https://assets.mmsrg.com/isr/166325/c1/-/ASSET_MMS_149453259/fee_786_587_png
 samsung/S24 ultra 256|12/2650/https://sbitany.com/image/cache/catalog/109-634-0049-0369-2024012565120-460x460.jpg
-samsung/A56 256|8/1330/https://gsmarena.com.in/front/images/product_images/large/95637.gif
+samsung/A56 256|8/1230/https://res.cloudinary.com/dygc5b8cn/image/upload/v1754820726/old4z9el309kurxmnjsi.jpg
 samsung/A36 256|8/Aa/https://media-ik.croma.com/prod/https://media.croma.com/image/upload/v1741009141/Croma%20Assets/Communication/Mobiles/Images/314440_0_g3jqt5.png
 samsung/A36 128|8/900/https://media-ik.croma.com/prod/https://media.croma.com/image/upload/v1741009141/Croma%20Assets/Communication/Mobiles/Images/314440_0_g3jqt5.png
 samsung/A16 128|8/Aa/https://econtent.o2.co.uk/o/econtent/media/get/ff0037cf-f7bc-4ca6-bde5-779c9cbb9c2b
