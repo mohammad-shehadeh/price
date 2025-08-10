@@ -1325,36 +1325,51 @@
             cartElement.classList.toggle('open');
         }
         
-        function addToCart(product, quantity) {
-            quantity = parseInt(quantity);
-            const existingProduct = cart.find(item => item.name === product.name);
-            
-            if (existingProduct) {
-                existingProduct.quantity += quantity;
-            } else {
-                cart.push({ ...product, quantity });
-            }
-            
-            saveCart();
-            renderCart();
-            updateCartCount();
+function addToCart(product, quantity) {
+    quantity = parseInt(quantity);
+    const existingProduct = cart.find(item => item.name === product.name);
+    
+    if (existingProduct) {
+        existingProduct.quantity += quantity;
+    } else {
+        cart.push({ ...product, quantity });
+    }
+    
+    saveCart();
+    renderCart();
+    updateCartCount();
+    refreshProductUI(product.name); // تحديث الواجهة فورًا
+}
+
+function updateQuantity(product, change) {
+    const existingProduct = cart.find(item => item.name === product.name);
+    if (existingProduct) {
+        existingProduct.quantity += change;
+        if (existingProduct.quantity <= 0) {
+            cart = cart.filter(item => item.name !== product.name);
         }
-        
-        function updateQuantity(product, change) {
-            const existingProduct = cart.find(item => item.name === product.name);
-            
-            if (existingProduct) {
-                existingProduct.quantity += change;
-                
-                if (existingProduct.quantity <= 0) {
-                    removeFromCart(product.name);
-                } else {
-                    saveCart();
-                    renderCart();
-                    updateCartCount();
-                }
-            }
-        }
+        saveCart();
+        renderCart();
+        updateCartCount();
+        refreshProductUI(product.name); // تحديث الواجهة فورًا
+    }
+}
+
+// تحديث واجهة المنتج المحدد فقط
+function refreshProductUI(productName) {
+    const product = products.find(p => p.name === productName);
+    if (!product) return;
+
+    // البحث عن العنصر في الصفحة واستبداله
+    const oldElement = [...categoriesContainer.children].find(el =>
+        el.querySelector('.product-name strong')?.innerText.includes(productName)
+    );
+    if (oldElement) {
+        const newElement = createProductElement(product);
+        categoriesContainer.replaceChild(newElement, oldElement);
+    }
+}
+
         
         function removeFromCart(productName) {
             cart = cart.filter(item => item.name !== productName);
