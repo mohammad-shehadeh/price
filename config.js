@@ -1,3 +1,3 @@
-const TOKEN_PART1 = "ghp_C3Ow2K6KRxrPzU5EYKP";
-const TOKEN_PART2 = "ws6wsIF0tPq1BzSj1";
+const TOKEN_PART1 = "ghp_eiG7dzoWlGnpAXlQxLAM";
+const TOKEN_PART2 = "zDyU7yRw073FQlnR";
 const GITHUB_TOKEN = TOKEN_PART1 + TOKEN_PART2;
