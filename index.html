@@ -1022,33 +1022,33 @@
 }
 
 
-/* إخفاء الصور عند النقر على زر الشاشات (الزر الثاني) */
-#file-buttons button:nth-child(2).active ~ * .product-img-container,
-#file-buttons button:nth-child(2).active ~ * .product .product-img-container,
-body.screens-mode .product-img-container {
+/* إخفاء صور جميع المنتجات باستخدام child 3 */
+.products-container > .product:nth-child(3n) .product-img-container {
     display: none !important;
 }
 
-/* تصميم بديل للشاشات بدون صور */
-#file-buttons button:nth-child(2).active ~ * .product-content,
-#file-buttons button:nth-child(2).active ~ * .product .product-content,
-body.screens-mode .product-content {
+/* تصميم بديل للمنتجات بدون صور */
+.products-container > .product:nth-child(3n) .product-content {
     padding-top: 1.8rem;
     border-top: 3px solid var(--primary-color);
     margin-top: 0.5rem;
 }
 
-/* تأثير خاص للشاشات بدون صور */
-#file-buttons button:nth-child(2).active ~ * .product,
-body.screens-mode .product {
+/* تأثير خاص للمنتجات المخفية صورها */
+.products-container > .product:nth-child(3n) {
     background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
     border-left: 4px solid var(--primary-color);
 }
 
-/* إضافة أيقونة للشاشات */
-#file-buttons button:nth-child(2).active ~ * .product::before,
-body.screens-mode .product::before {
-    content: "🖥️";
+/* تعديل التظليل للعناصر بدون صور */
+.products-container > .product:nth-child(3n):hover {
+    box-shadow: 0 8px 20px rgba(11, 181, 176, 0.15);
+    transform: translateY(-5px);
+}
+
+/* إضافة أيقونة للمنتجات بدون صور */
+.products-container > .product:nth-child(3n)::before {
+    content: "📱";
     position: absolute;
     top: 15px;
     left: 15px;
@@ -1066,13 +1066,16 @@ body.screens-mode .product::before {
 
 /* تحسين المظهر للأجهزة المحمولة */
 @media (max-width: 768px) {
-    #file-buttons button:nth-child(2).active ~ * .product::before,
-    body.screens-mode .product::before {
+    .products-container > .product:nth-child(3n)::before {
         width: 35px;
         height: 35px;
         font-size: 18px;
         top: 10px;
         left: 10px;
+    }
+    
+    .products-container > .product:nth-child(3n) .product-content {
+        padding-top: 1.2rem;
     }
 }
     </style>
