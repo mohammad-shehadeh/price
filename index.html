@@ -1302,95 +1302,19 @@
         }
         
         // Render Categories and Products
-// ===== دوال مساعدة =====
-function cleanNameForPrefix(name) {
-    // ازالة HTML tags (مثل <br>) و &nbsp;
-    let s = (name || '').replace(/<[^>]*>/g, ' ').replace(/&nbsp;/g, ' ');
-    // احتفظ بالحروف اللاتينية و العربية و الأرقام والمسافات، وحوّل الفواصل والشرط لفراغ
-    s = s.replace(/[^\w\s\u0600-\u06FF\-]/g, ' ');
-    s = s.replace(/[_\-]+/g, ' ');
-    // إذا كان الاسم مكتوب مثل "ip11" نحاول نفصل الحروف عن الأرقام -> "ip 11"
-    s = s.replace(/([^\s\d])(\d)/g, '$1 $2').replace(/(\d)([^\s\d])/g, '$1 $2');
-    // ضغط المسافات
-    s = s.replace(/\s+/g, ' ').trim();
-    return s;
-}
-
-function getPrefixFromName(name, prefixWords = 2) {
-    const cleaned = cleanNameForPrefix(name).toLowerCase();
-    if (!cleaned) return '';
-    const words = cleaned.split(' ').filter(Boolean);
-    // لو الاسم قصير نرجع كله، else نرجع أول n كلمات
-    return words.slice(0, Math.max(1, Math.min(prefixWords, words.length))).join(' ');
-}
-
-// ===== تجميع حسب الفئة ثم حسب البادئة =====
-function groupByCategoryThenPrefix(productsArray, prefixWords = 2) {
-    // نحافظ على ترتيب الفئات كما ظهرت
-    const categories = Array.from(new Set(productsArray.map(p => p.category)));
-    const result = []; // [{ category, groups: Map(prefix => [products]) }, ...]
-    
-    categories.forEach(category => {
-        const catProducts = productsArray.filter(p => p.category === category);
-        const groups = new Map();
-        catProducts.forEach(p => {
-            const prefix = getPrefixFromName(p.name, prefixWords) || 'غير محدد';
-            if (!groups.has(prefix)) groups.set(prefix, []);
-            groups.get(prefix).push(p);
-        });
-        result.push({ category, groups });
-    });
-    return result;
-}
-
-// ===== دالة عرض عامة تستخدمها لكل الحالات =====
-function renderProductsGrouped(productsArray, options = { prefixWords: 2, showCategoryTitle: true, showPrefixTitle: true }) {
-    categoriesContainer.innerHTML = '';
-    const grouped = groupByCategoryThenPrefix(productsArray, options.prefixWords);
-
-    grouped.forEach(section => {
-        const { category, groups } = section;
-
-        // عنوان الفئة (اختياري)
-        if (options.showCategoryTitle) {
-            const catHeader = document.createElement('h2');
-            catHeader.className = 'category-header';
-            catHeader.textContent = category;
-            categoriesContainer.appendChild(catHeader);
-        }
-
-        // لكل مجموعة بادئة (ترتيب الالتزام بترتيب الMap)
-        groups.forEach((items, prefix) => {
-            // عنوان البادئة (اختياري)
-            if (options.showPrefixTitle) {
-                const prefixHeader = document.createElement('h3');
-                prefixHeader.className = 'prefix-header';
-                prefixHeader.textContent = prefix;
-                categoriesContainer.appendChild(prefixHeader);
-            }
-
-            // عرض المنتجات في نفس ترتيب ورودها في الملف
-            items.forEach(product => {
-                const productElement = createProductElement(product);
-                categoriesContainer.appendChild(productElement);
+        function renderCategories() {
+            categoriesContainer.innerHTML = '';
+            const categories = [...new Set(products.map(p => p.category))];
+            
+            categories.forEach(category => {
+                const categoryProducts = products.filter(p => p.category === category);
+                
+                categoryProducts.forEach(product => {
+                    const productElement = createProductElement(product);
+                    categoriesContainer.appendChild(productElement);
+                });
             });
-        });
-    });
-}
-
-// ===== استبدال renderCategories =====
-function renderCategories() {
-    // هنا نعرض كل المنتجات مجمعة حسب الفئة ثم البادئة
-    renderProductsGrouped(products, { prefixWords: 2, showCategoryTitle: true, showPrefixTitle: true });
-}
-
-// ===== استبدال renderFilteredProducts =====
-function renderFilteredProducts(filteredProducts) {
-    // عند البحث/التصفية قد نحصل على منتجات عبر فئات عدة -> نستخدم نفس التجميع
-    // لو كنت تريد عند التصفية إخفاء عناوين الفئة اضبط showCategoryTitle: false
-    renderProductsGrouped(filteredProducts, { prefixWords: 2, showCategoryTitle: true, showPrefixTitle: true });
-}
-
+        }
         
         // Create Product Element
         function createProductElement(product) {
