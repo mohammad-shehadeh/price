@@ -1302,19 +1302,31 @@
         }
         
         // Render Categories and Products
-        function renderCategories() {
-            categoriesContainer.innerHTML = '';
-            const categories = [...new Set(products.map(p => p.category))];
-            
-            categories.forEach(category => {
-                const categoryProducts = products.filter(p => p.category === category);
-                
-                categoryProducts.forEach(product => {
-                    const productElement = createProductElement(product);
-                    categoriesContainer.appendChild(productElement);
-                });
-            });
+// Render Categories and Products (Grouped by Prefix)
+function renderCategories() {
+    categoriesContainer.innerHTML = '';
+
+    // استخراج المجموعات حسب بداية الاسم
+    const groupedProducts = {};
+    products.forEach(product => {
+        // ناخذ أول كلمتين مثلاً كأساس (ممكن تعدل حسب الحاجة)
+        const prefix = product.name.split(' ').slice(0, 2).join(' ').toLowerCase();
+        
+        if (!groupedProducts[prefix]) {
+            groupedProducts[prefix] = [];
         }
+        groupedProducts[prefix].push(product);
+    });
+
+    // عرض المجموعات بشكل مرتب
+    Object.keys(groupedProducts).forEach(prefix => {
+        groupedProducts[prefix].forEach(product => {
+            const productElement = createProductElement(product);
+            categoriesContainer.appendChild(productElement);
+        });
+    });
+}
+
         
         // Create Product Element
         function createProductElement(product) {
