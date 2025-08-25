@@ -1263,45 +1263,29 @@
         }
         
         // Load Products from File
-       // Load Products from File
-function loadProductsFromFile(fileName) {
-    // تحديد الصورة الافتراضية بناءً على نوع الملف
-    let defaultImage = 'https://via.placeholder.com/300x200/0bb5b0/ffffff?text=No+Image';
-    
-    if (fileName === 'lcd.md') {
-        defaultImage = 'https://m.media-amazon.com/images/I/71scen43HCL._UF350,350_QL80_.jpg'; // رابط الصورة الافتراضية للشاشات
-    } else if (fileName === 'abc.md') {
-        defaultImage = 'https://www.shutterstock.com/image-vector/no-image-available-icon-flat-260nw-1240855801.jpg'; // رابط الصورة الافتراضية للإكسسوارات
-    } else {
-        defaultImage = 'https://img.freepik.com/free-vector/smart-phone-flat-style_78370-4084.jpg'; // رابط الصورة الافتراضية العامة
-    }
-
-    fetch(fileName)
-        .then(response => response.text())
-        .then(data => {
-            products = [];
-            const lines = data.split('\n');
-            lines.forEach(line => {
-                const parts = line.split('/');
-                if (parts.length >= 4) {
-                    const imageUrl = parts.slice(3).join('/').trim();
-                    
-                    // استخدام الصورة الافتراضية إذا كان رابط الصورة فارغاً أو غير صالح
-                    const finalImageUrl = imageUrl && imageUrl !== '' ? imageUrl : defaultImage;
-                    
-                    products.push({
-                        category: parts[0].trim(),
-                        name: parts[1].trim(),
-                        price: parseFloat(parts[2].trim()),
-                        image: finalImageUrl
+        function loadProductsFromFile(fileName) {
+            fetch(fileName)
+                .then(response => response.text())
+                .then(data => {
+                    products = [];
+                    const lines = data.split('\n');
+                    lines.forEach(line => {
+                        const parts = line.split('/');
+                        if (parts.length >= 4) {
+                            const imageUrl = parts.slice(3).join('/').trim();
+                            products.push({
+                                category: parts[0].trim(),
+                                name: parts[1].trim(),
+                                price: parseFloat(parts[2].trim()),
+                                image: imageUrl
+                            });
+                        }
                     });
-                }
-            });
-            renderCategories();
-            createFilterButtons();
-        })
-        .catch(error => console.error('Error loading products:', error));
-}
+                    renderCategories();
+                    createFilterButtons();
+                })
+                .catch(error => console.error('Error loading products:', error));
+        }
         
         // Render Categories and Products
         function renderCategories() {
