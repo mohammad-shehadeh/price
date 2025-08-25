@@ -1021,6 +1021,17 @@
     margin-left: 0.5rem;
 }
 
+
+
+/* إخفاء صور أول 10 منتجات (افتراضاً أنها الشاشات) */
+.products-container .product:nth-child(-n+10) .product-img-container {
+    display: none !important;
+}
+
+/* أو إخفاء الصور في قسم معين */
+.products-container > div:first-child .product-img-container {
+    display: none !important;
+}
     </style>
 </head>
 <body>
@@ -1206,29 +1217,45 @@
         }
         
         // Load Products from File
-        function loadProductsFromFile(fileName) {
-            fetch(fileName)
-                .then(response => response.text())
-                .then(data => {
-                    products = [];
-                    const lines = data.split('\n');
-                    lines.forEach(line => {
-                        const parts = line.split('/');
-                        if (parts.length >= 4) {
-                            const imageUrl = parts.slice(3).join('/').trim();
-                            products.push({
-                                category: parts[0].trim(),
-                                name: parts[1].trim(),
-                                price: parseFloat(parts[2].trim()),
-                                image: imageUrl
-                            });
-                        }
+       // Load Products from File
+function loadProductsFromFile(fileName) {
+    // تحديد الصورة الافتراضية بناءً على نوع الملف
+    let defaultImage = 'https://via.placeholder.com/300x200/0bb5b0/ffffff?text=No+Image';
+    
+    if (fileName === 'lcd.md') {
+        defaultImage = 'https://i.postimg.cc/8zJ8g6Z0/default-lcd.jpg'; // رابط الصورة الافتراضية للشاشات
+    } else if (fileName === 'abc.md') {
+        defaultImage = 'https://i.postimg.cc/8zJ8g6Z0/default-accessories.jpg'; // رابط الصورة الافتراضية للإكسسوارات
+    } else {
+        defaultImage = 'https://i.postimg.cc/8zJ8g6Z0/default-electronics.jpg'; // رابط الصورة الافتراضية العامة
+    }
+
+    fetch(fileName)
+        .then(response => response.text())
+        .then(data => {
+            products = [];
+            const lines = data.split('\n');
+            lines.forEach(line => {
+                const parts = line.split('/');
+                if (parts.length >= 4) {
+                    const imageUrl = parts.slice(3).join('/').trim();
+                    
+                    // استخدام الصورة الافتراضية إذا كان رابط الصورة فارغاً أو غير صالح
+                    const finalImageUrl = imageUrl && imageUrl !== '' ? imageUrl : defaultImage;
+                    
+                    products.push({
+                        category: parts[0].trim(),
+                        name: parts[1].trim(),
+                        price: parseFloat(parts[2].trim()),
+                        image: finalImageUrl
                     });
-                    renderCategories();
-                    createFilterButtons();
-                })
-                .catch(error => console.error('Error loading products:', error));
-        }
+                }
+            });
+            renderCategories();
+            createFilterButtons();
+        })
+        .catch(error => console.error('Error loading products:', error));
+}
         
         // Render Categories and Products
         function renderCategories() {
