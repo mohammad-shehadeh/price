@@ -1022,33 +1022,43 @@
 }
 
 
-/* إخفاء صور جميع المنتجات باستخدام child 3 */
-.products-container > .product:nth-child(3n) .product-img-container {
+/* إخفاء حاوية الصورة عندما لا تتوفر صورة للمنتج */
+.product-img-container:empty,
+.product-img-container:has(img[src*="placeholder"]),
+.product-img-container:has(img[src=""]) {
     display: none !important;
 }
 
 /* تصميم بديل للمنتجات بدون صور */
-.products-container > .product:nth-child(3n) .product-content {
+.product:has(.product-img-container:empty) .product-content,
+.product:has(.product-img-container:has(img[src*="placeholder"])) .product-content,
+.product:has(.product-img-container:has(img[src=""])) .product-content {
     padding-top: 1.8rem;
     border-top: 3px solid var(--primary-color);
     margin-top: 0.5rem;
 }
 
 /* تأثير خاص للمنتجات المخفية صورها */
-.products-container > .product:nth-child(3n) {
+.product:has(.product-img-container:empty),
+.product:has(.product-img-container:has(img[src*="placeholder"])),
+.product:has(.product-img-container:has(img[src=""])) {
     background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
     border-left: 4px solid var(--primary-color);
 }
 
 /* تعديل التظليل للعناصر بدون صور */
-.products-container > .product:nth-child(3n):hover {
+.product:has(.product-img-container:empty):hover,
+.product:has(.product-img-container:has(img[src*="placeholder"])):hover,
+.product:has(.product-img-container:has(img[src=""])):hover {
     box-shadow: 0 8px 20px rgba(11, 181, 176, 0.15);
     transform: translateY(-5px);
 }
 
 /* إضافة أيقونة للمنتجات بدون صور */
-.products-container > .product:nth-child(3n)::before {
-    content: "📱";
+.product:has(.product-img-container:empty)::before,
+.product:has(.product-img-container:has(img[src*="placeholder"]))::before,
+.product:has(.product-img-container:has(img[src=""]))::before {
+    content: "📦";
     position: absolute;
     top: 15px;
     left: 15px;
@@ -1066,7 +1076,9 @@
 
 /* تحسين المظهر للأجهزة المحمولة */
 @media (max-width: 768px) {
-    .products-container > .product:nth-child(3n)::before {
+    .product:has(.product-img-container:empty)::before,
+    .product:has(.product-img-container:has(img[src*="placeholder"]))::before,
+    .product:has(.product-img-container:has(img[src=""]))::before {
         width: 35px;
         height: 35px;
         font-size: 18px;
@@ -1074,7 +1086,9 @@
         left: 10px;
     }
     
-    .products-container > .product:nth-child(3n) .product-content {
+    .product:has(.product-img-container:empty) .product-content,
+    .product:has(.product-img-container:has(img[src*="placeholder"])) .product-content,
+    .product:has(.product-img-container:has(img[src=""])) .product-content {
         padding-top: 1.2rem;
     }
 }
