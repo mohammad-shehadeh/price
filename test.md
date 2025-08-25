@@ -87,12 +87,7 @@ ZTE/nubia Music 128 |/330/https://promart.vteximg.com.br/arquivos/ids/8633792-10
 ZTE/nubia V60 design 256|16/410/https://www.innwa.com.mm/storage/product/1430/202408181124zte-blade-v60-design-blue.webp
 ZTE/nubia V60 256|20/510/https://www.innwa.com.mm/storage/product/1430/202408181124zte-blade-v60-design-blue.webp
 N\A/Nokia 105 4G ori |/110/https://celloplanet.com/wp-content/uploads/2024/01/Nokia-105-2023-500x500-1.jpg
-N\A/oale pop 8 pro 64|7/230/https://cdn.salla.sa/vzoPn/88b46b5c-b59d-498b-bb59-368172ce8a19-876.57430730479x1000-1rVObW6AnOwsebkxfkuDUUiLdpV1GVDXqbyEYkhd.png
 N\A/Oscal pad 50 kids 64|2/280/https://skyelectronicsmw.com/wp-content/uploads/2024/11/Oscal-Pad-50-Kids-Blue-510x510-1.jpg
-N\A/Teclast p30t kids 64|4/320/https://en.teclast.com/cdn/shop/files/P30TKids_3.jpg?v=1713948318&width=2000
 N\A/Teclast p85 kids 64|4/270/https://en.teclast.com/cdn/shop/files/P85Tkids_2.png?v=1713948270&width=1000
 N\A/Teclast M50 128|8/440/https://en.teclast.com/cdn/shop/files/12_025ea586-e65f-447b-a78a-32f342dc516f.jpg?v=1690282129&width=1500
-N\A/Teclast M50 128|6/350/https://en.teclast.com/cdn/shop/files/12_025ea586-e65f-447b-a78a-32f342dc516f.jpg?v=1690282129&width=1500
-N\A/Blackview Tap 3 kids 32|2/220/https://tigersdeleste.com/wp-content/uploads/2024/08/127585.jpg
-N\A/Blackview Tap 6 kids 32|3/360/https://aio.lv/img/cache/product/4808273/56079125_extra_large.webp
 N\A/H2163 |/35/https://s9.pik.ba/galerija/2021-04/26/06/slika-2830089-6086f09649711-velika.jpg
