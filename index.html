@@ -1022,15 +1022,61 @@
 }
 
 
-
-/* إخفاء صور أول 10 منتجات (افتراضاً أنها الشاشات) */
-.products-container .product:nth-child(-n+10) .product-img-container {
+/* إخفاء صور جميع المنتجات باستخدام child 3 */
+.products-container > .product:nth-child(3n) .product-img-container {
     display: none !important;
 }
 
-/* أو إخفاء الصور في قسم معين */
-.products-container > div:first-child .product-img-container {
-    display: none !important;
+/* تصميم بديل للمنتجات بدون صور */
+.products-container > .product:nth-child(3n) .product-content {
+    padding-top: 1.8rem;
+    border-top: 3px solid var(--primary-color);
+    margin-top: 0.5rem;
+}
+
+/* تأثير خاص للمنتجات المخفية صورها */
+.products-container > .product:nth-child(3n) {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-left: 4px solid var(--primary-color);
+}
+
+/* تعديل التظليل للعناصر بدون صور */
+.products-container > .product:nth-child(3n):hover {
+    box-shadow: 0 8px 20px rgba(11, 181, 176, 0.15);
+    transform: translateY(-5px);
+}
+
+/* إضافة أيقونة للمنتجات بدون صور */
+.products-container > .product:nth-child(3n)::before {
+    content: "📱";
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    font-size: 24px;
+    background: rgba(11, 181, 176, 0.9);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* تحسين المظهر للأجهزة المحمولة */
+@media (max-width: 768px) {
+    .products-container > .product:nth-child(3n)::before {
+        width: 35px;
+        height: 35px;
+        font-size: 18px;
+        top: 10px;
+        left: 10px;
+    }
+    
+    .products-container > .product:nth-child(3n) .product-content {
+        padding-top: 1.2rem;
+    }
 }
     </style>
 </head>
@@ -1223,11 +1269,11 @@ function loadProductsFromFile(fileName) {
     let defaultImage = 'https://via.placeholder.com/300x200/0bb5b0/ffffff?text=No+Image';
     
     if (fileName === 'lcd.md') {
-        defaultImage = 'https://i.postimg.cc/8zJ8g6Z0/default-lcd.jpg'; // رابط الصورة الافتراضية للشاشات
+        defaultImage = 'https://m.media-amazon.com/images/I/71scen43HCL._UF350,350_QL80_.jpg'; // رابط الصورة الافتراضية للشاشات
     } else if (fileName === 'abc.md') {
-        defaultImage = 'https://i.postimg.cc/8zJ8g6Z0/default-accessories.jpg'; // رابط الصورة الافتراضية للإكسسوارات
+        defaultImage = 'https://www.shutterstock.com/image-vector/no-image-available-icon-flat-260nw-1240855801.jpg'; // رابط الصورة الافتراضية للإكسسوارات
     } else {
-        defaultImage = 'https://i.postimg.cc/8zJ8g6Z0/default-electronics.jpg'; // رابط الصورة الافتراضية العامة
+        defaultImage = 'https://img.freepik.com/free-vector/smart-phone-flat-style_78370-4084.jpg'; // رابط الصورة الافتراضية العامة
     }
 
     fetch(fileName)
