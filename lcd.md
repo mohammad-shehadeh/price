@@ -1,3 +1,4 @@
+Mi/Note 13 OLED |/120/https://res.cloudinary.com/dygc5b8cn/image/upload/v1757233454/iitgzgsf8ushpmodjbrp.jpg
 Samsung/A24 OLBIG |/100/https://res.cloudinary.com/dygc5b8cn/image/upload/v1756904890/guyjrnm93d3yimyrwada.jpg
 Samsung/A24 OLED |/140/https://res.cloudinary.com/dygc5b8cn/image/upload/v1756904863/bapexn1j4fp8wfmjgl9k.jpg
 INFINEX/S5 pro |/50/undefined
