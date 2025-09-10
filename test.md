@@ -1,6 +1,6 @@
 MI/Redmi 15C 128|6/410/https://res.cloudinary.com/dygc5b8cn/image/upload/v1757324301/ilyhjiezyfz5khp30p5e.webp
 MI/Redmi 15C 256|8/460/https://res.cloudinary.com/dygc5b8cn/image/upload/v1757324304/mijovlzrsdbgsxgcl1lf.webp
-Apple/Ipad 11 128|كفالة ضفة/1260/https://res.cloudinary.com/dygc5b8cn/image/upload/v1756986041/ajb0lks9smgql3bccyjx.webp
+Apple/Ipad 11 128|كفالة ضفة |/1260/https://res.cloudinary.com/dygc5b8cn/image/upload/v1756986041/ajb0lks9smgql3bccyjx.webp
 samsung/A07 128|4/400/https://res.cloudinary.com/dygc5b8cn/image/upload/v1756559491/wokzeyy83lncbbewic1v.jpg
 N\A/Pad 100 128|12/700/https://res.cloudinary.com/dygc5b8cn/image/upload/v1756119440/ahwstejrduarizr8gieh.jpg
 N\A/Pad 30 Wifi 64|4/280/https://res.cloudinary.com/dygc5b8cn/image/upload/v1756119325/totf8uapgixfxtzrcy0n.webp
@@ -46,20 +46,20 @@ MI/Note 14 256|8/550/https://cdn.gadgetbytenepal.com/wp-content/uploads/2025/01/
 MI/poco X7 pro 512|12/1200/https://cdn.shortpixel.ai/spai/q_glossy+ret_img+to_webp/mobizil.com/wp-content/uploads/2025/01/Xiaomi-Poco-X7-Pro.jpg
 MI/Note 13 pro PLUS 512|12/1250/https://mobizil.com/wp-content/uploads/2023/11/Xiaomi-Redmi-Note-13-Pro-Plus.jpg
 MI/POCO X6 pro 256|12/950/https://dzairtic.dz/wp-content/uploads/2024/06/xiaomi-poco-x6-pro-frandroid-2024-768x768-1.png
-MI/POCO F6 PRO 512|12/1700/https://www.phoneshock.it/wp-content/uploads/2024/07/15501222.jpeg
+MI/POCO F6 PRO 512|12/1700/https://res.cloudinary.com/dygc5b8cn/image/upload/v1757492561/uzaash86iswt4gtg59b0.jpg
 MI/SE 11" 256|8/aaa/https://www.celletronic.com/wp-content/uploads/2023/09/xiaomi-redmi-pad-se-11-0-6gb-ram-128gb-wifi-gris.jpg
 MI/14C 256|8/400/https://www.hemfrance.com/39078-thickbox_default/xiaomi-redmi-14c-688-128-gb-6-gb-ram-green.jpg
 MI/14C 128|6/320/https://www.hemfrance.com/39078-thickbox_default/xiaomi-redmi-14c-688-128-gb-6-gb-ram-green.jpg
 MI/extender AC1200 |/100/https://www.smartbox.am/webroot/myfiles/images/products/ac1200/3ffafe36-ccb4-4dfe-87db-2f546a39b1b5.png
-Apple/Ip 16 pro max 256GB|كفالة ضفة/4170/https://mac-center.com.pr/cdn/shop/files/iPhone_16_Pro_Max_Desert_Titanium_PDP_Image_Position_1__en-US_bf24ca74-a053-42d3-80e2-3edc40e85c1e.jpg?v=1726226953&width=823
+Apple/Ip 16 pro max 256GB|كفالة ضفة |/4170/https://mac-center.com.pr/cdn/shop/files/iPhone_16_Pro_Max_Desert_Titanium_PDP_Image_Position_1__en-US_bf24ca74-a053-42d3-80e2-3edc40e85c1e.jpg?v=1726226953&width=823
 Apple/Ip 15 pro max 512GB|/aaa/https://www.apollo.pl/gfx/apollo/userfiles/_public/opisy/apple/195949019036/195949019036_5.jpg
-Apple/iphone 16 128GB|كفالة ضفة/2700/https://asiamall.asiacell.com/media/catalog/product/l/d/ld0006166708_2.jpg
-Apple/iphone 15 128GB|كفالة ضفة/2050/https://cdn.shortpixel.ai/spai/q_glossy+ret_img+to_webp/mobizil.com/wp-content/uploads/2023/09/iPhone-15-3.jpg
-Apple/iphone 13 128GB|كفالة ضفة/1730/https://m.media-amazon.com/images/I/516QZcrv+dL.jpg
-Apple/watch S10 46mm |/Aa/https://shop.ucom.am/media/catalog/product/cache/f0d04c535eae714fecfa8deb2c47c63b/1/a/1apple_watch_series_10_42mm_gps_silver_aluminum_sport_band_denim_1.webp
+Apple/iphone 16 128GB|كفالة ضفة |/2700/https://asiamall.asiacell.com/media/catalog/product/l/d/ld0006166708_2.jpg
+Apple/iphone 15 128GB|كفالة ضفة |/2050/https://cdn.shortpixel.ai/spai/q_glossy+ret_img+to_webp/mobizil.com/wp-content/uploads/2023/09/iPhone-15-3.jpg
+Apple/iphone 13 128GB|كفالة ضفة |/1730/https://m.media-amazon.com/images/I/516QZcrv+dL.jpg
+Apple/watch S10 46mm |/Aa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1757492396/emufutxqwwx1pcni1te7.jpg
 Apple/watch S10 42mm |/Aa/https://i.postimg.cc/cH6Mc0rP/IMG-7141.png
-Apple/ipad 11 256GB |كفالة ضفة/1610/https://realplaza.vtexassets.com/arquivos/ids/33743614-800-auto?v=638265979022630000&width=800&height=auto&aspect=true
-Apple/Ipad 11 128GB |كفالة ضفة/1260/https://realplaza.vtexassets.com/arquivos/ids/33743614-800-auto?v=638265979022630000&width=800&height=auto&aspect=true
+Apple/ipad 11 256GB |كفالة ضفة |/1610/https://realplaza.vtexassets.com/arquivos/ids/33743614-800-auto?v=638265979022630000&width=800&height=auto&aspect=true
+Apple/Ipad 11 128GB |كفالة ضفة |/1260/https://realplaza.vtexassets.com/arquivos/ids/33743614-800-auto?v=638265979022630000&width=800&height=auto&aspect=true
 Apple/ipad 9 64GB |/aaa/https://cdsassets.apple.com/live/SZLF0YNV/images/sp/111898_sp849-ipad-9gen-480.png
 Apple/20W cdata |/65/https://atoz.ps/media/catalog/product/cache/80ae6a42c65321efa11f489c1d538fd0/o/r/original_apple_c-data_20w_charger_1_.jpg
 Tecno/GO 1 64|6/240/https://static.reach-tele.com/uploads/thumbs/55/5512810686892b375ab5043332011747.png
@@ -82,7 +82,7 @@ Honor/X6b 256|6/410/https://skymil-informatique.com/50645-large_default/smartpho
 Honor/X6b 128|6/360/https://skymil-informatique.com/50645-large_default/smartphone-honor-x6b-6go-128go-vert-.jpg
 Honor/X5b 128|4/290/https://www.honor.com/content/dam/honor/sa-ar/product-list/smartphone/honor-x5b-plus/honor-x5b-list.png
 Honor/X5b 64|4/260/https://www.honor.com/content/dam/honor/sa-ar/product-list/smartphone/honor-x5b-plus/honor-x5b-list.png
-ZTE/A35e 64|4/240/https://bsimg.nl/images/zte-blade-a35e-2gb-64gb-grijs_8.png/pcK1-vuM-9fwX0kS0o7DSJ-xGYQ%3D/fit-in/0x0/filters%3Aupscale%28%29
+ZTE/A35e 64|4/240/https://res.cloudinary.com/dygc5b8cn/image/upload/v1757492442/l9tkbpeovqme0pxjrsrm.webp
 ZTE/A75 256|14/390/https://m.media-amazon.com/images/I/81lUzTar8HL.jpg
 ZTE/A55 256|12/300/https://media.zid.store/b74f2313-1275-4caa-abca-b5ece66cb8bd/e64dbe11-465b-499d-8fa6-b7ca47ecb1d6.png
 ZTE/A35 64|12/270/https://cdn.salla.sa/vzoPn/3e76ec41-f0fc-4349-a7b2-f5f6ef94390d-1000x1000-c7ZnhNfHRihxRTwVSwrnTq3pnLjbywUwvD15sDd3.png
@@ -90,7 +90,7 @@ ZTE/nubia Music 128 |/330/https://promart.vteximg.com.br/arquivos/ids/8633792-10
 ZTE/nubia V60 design 256|16/410/https://www.innwa.com.mm/storage/product/1430/202408181124zte-blade-v60-design-blue.webp
 ZTE/nubia V60 256|20/510/https://www.innwa.com.mm/storage/product/1430/202408181124zte-blade-v60-design-blue.webp
 N\A/Nokia 105 4G ori |/110/https://celloplanet.com/wp-content/uploads/2024/01/Nokia-105-2023-500x500-1.jpg
-N\A/Oscal pad 50 kids 64|2/280/https://skyelectronicsmw.com/wp-content/uploads/2024/11/Oscal-Pad-50-Kids-Blue-510x510-1.jpg
+N\A/Oscal pad 50 kids 64|2/280/https://res.cloudinary.com/dygc5b8cn/image/upload/v1757492490/nu3zpahlkogtittxrqtk.jpg
 N\A/Teclast p85 kids 64|4/270/https://en.teclast.com/cdn/shop/files/P85Tkids_2.png?v=1713948270&width=1000
 N\A/Teclast M50 128|8/440/https://en.teclast.com/cdn/shop/files/12_025ea586-e65f-447b-a78a-32f342dc516f.jpg?v=1690282129&width=1500
 N\A/H2163 |/35/https://s9.pik.ba/galerija/2021-04/26/06/slika-2830089-6086f09649711-velika.jpg
