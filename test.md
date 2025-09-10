@@ -26,7 +26,6 @@ Honor/400 512|12/1420/https://res.cloudinary.com/dygc5b8cn/image/upload/v1749890
 Honor/400 pro 512|12/2320/https://res.cloudinary.com/dygc5b8cn/image/upload/v1749889558/fmzaah1o7lludxn31jts.jpg
 Honor/X9C Smart |/870/https://res.cloudinary.com/dygc5b8cn/image/upload/v1748939036/fmnbqj4pn9g6a759fwja.jpg
 samsung/S25 ultra 256|12/3300/https://assets.mmsrg.com/isr/166325/c1/-/ASSET_MMS_149453259/fee_786_587_png
-samsung/S24 ultra 256|12/aaa/https://sbitany.com/image/cache/catalog/109-634-0049-0369-2024012565120-460x460.jpg
 samsung/A56 256|12/1270/https://res.cloudinary.com/dygc5b8cn/image/upload/v1749459188/y0z6o06cd6vd4duldj4x.webp
 samsung/A56 256|8/1220/https://res.cloudinary.com/dygc5b8cn/image/upload/v1754820726/old4z9el309kurxmnjsi.jpg
 samsung/A36 256|8/Aa/https://media-ik.croma.com/prod/https://media.croma.com/image/upload/v1741009141/Croma%20Assets/Communication/Mobiles/Images/314440_0_g3jqt5.png
