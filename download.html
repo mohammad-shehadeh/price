@@ -15,7 +15,6 @@
     <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="32x32" href="https://i.postimg.cc/VNssYbVS/IMG-1002.jpg">
     <link rel="apple-touch-icon" sizes="180x180" href="https://i.postimg.cc/VNssYbVS/IMG-1002.jpg">
-    <link rel="manifest" href="manifest.json">
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -302,6 +301,7 @@
             padding: 2.5rem;
             margin: 3rem 0;
             box-shadow: var(--box-shadow);
+            display: none;
         }
         
         .section-title {
@@ -360,16 +360,19 @@
         
         .step-image {
             width: 100%;
-            max-width: 200px;
+            max-width: 100%;
             border-radius: 10px;
             margin: 1rem auto;
             display: block;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border: 1px solid #ddd;
         }
         
         .step-description {
             color: #555;
             line-height: 1.6;
+            margin-top: 1rem;
+            font-weight: 500;
         }
         
         /* Features Section */
@@ -622,7 +625,7 @@
         </div>
         
         <!-- Instructions Section -->
-        <section class="instructions-section fade-in" id="iosInstructions" style="display: none;">
+        <section class="instructions-section fade-in" id="iosInstructions">
             <h2 class="section-title">كيفية تثبيت التطبيق على iOS</h2>
             <p style="text-align: center; margin-bottom: 2rem; color: #555;">
                 لتثبيت تطبيق Shehadeh Center على جهازك الآيفون، اتبع الخطوات التالية:
@@ -631,27 +634,35 @@
             <div class="ios-steps">
                 <div class="ios-step">
                     <span class="step-number">1</span>
-                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'%3E%3Crect width='300' height='200' fill='%230bb5b0'/%3E%3Ctext x='150' y='100' font-family='Arial' font-size='20' fill='white' text-anchor='middle'%3Eافتح الموقع في Safari%3C/text%3E%3C/svg%3E" alt="خطوة 1" class="step-image">
+                    <img src="https://i.postimg.cc/k5Y6H11b/IMG-0731.jpg" alt="خطوة 1: افتح الموقع في Safari" class="step-image">
                     <p class="step-description">افتح هذا الموقع باستخدام متصفح Safari</p>
                 </div>
                 
                 <div class="ios-step">
                     <span class="step-number">2</span>
-                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'%3E%3Crect width='300' height='200' fill='%23ff5722'/%3E%3Ctext x='150' y='100' font-family='Arial' font-size='20' fill='white' text-anchor='middle'%3Eانقر على مشاركة%3C/text%3E%3C/svg%3E" alt="خطوة 2" class="step-image">
+                    <img src="https://i.postimg.cc/13f8LxTr/IMG-0860.jpg" alt="خطوة 2: انقر على مشاركة" class="step-image">
                     <p class="step-description">انقر على زر "مشاركة" في أسفل المتصفح</p>
                 </div>
                 
                 <div class="ios-step">
                     <span class="step-number">3</span>
-                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'%3E%3Crect width='300' height='200' fill='%2328a745'/%3E%3Ctext x='150' y='100' font-family='Arial' font-size='20' fill='white' text-anchor='middle'%3Eأضف للشاشة الرئيسية%3C/text%3E%3C/svg%3E" alt="خطوة 3" class="step-image">
+                    <img src="https://i.postimg.cc/k5Y6H11b/IMG-0731.jpg" alt="خطوة 3: أضف للشاشة الرئيسية" class="step-image">
                     <p class="step-description">اختر "أضف إلى الشاشة الرئيسية" من القائمة</p>
                 </div>
                 
                 <div class="ios-step">
                     <span class="step-number">4</span>
-                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'%3E%3Crect width='300' height='200' fill='%232b2b2b'/%3E%3Ctext x='150' y='100' font-family='Arial' font-size='20' fill='white' text-anchor='middle'%3Eانقر على إضافة%3C/text%3E%3C/svg%3E" alt="خطوة 4" class="step-image">
+                    <img src="https://i.postimg.cc/13f8LxTr/IMG-0860.jpg" alt="خطوة 4: انقر على إضافة" class="step-image">
                     <p class="step-description">انقر على "إضافة" في الزاوية اليمنى العليا</p>
                 </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 2rem; padding: 1.5rem; background: #f0f9ff; border-radius: var(--border-radius);">
+                <h3 style="color: var(--primary-color); margin-bottom: 1rem;">ملاحظة هامة</h3>
+                <p style="color: #555; line-height: 1.6;">
+                    بعد إضافة التطبيق إلى الشاشة الرئيسية، يمكنك استخدامه كتطبيق عادي. 
+                    سيتم تثبيت هذا الموقع كتطبيق على جهازك وسيعمل بشكل كامل بدون الحاجة إلى فتح المتصفح.
+                </p>
             </div>
         </section>
         
@@ -715,28 +726,12 @@
             }, 1000);
         });
         
-        // إظهار/إخفاء إرشادات iOS
+        // إظهار إرشادات iOS عند الضغط على الزر
         function showIOSInstructions() {
             const instructions = document.getElementById('iosInstructions');
-            if (instructions.style.display === 'none') {
-                instructions.style.display = 'block';
-                instructions.scrollIntoView({behavior: "smooth"});
-            } else {
-                instructions.style.display = 'none';
-            }
+            instructions.style.display = 'block';
+            instructions.scrollIntoView({behavior: "smooth"});
         }
-        
-        // كشف إذا كان المستخدم يستخدم iOS
-        function isIOS() {
-            return /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
-        }
-        
-        // إذا كان المستخدم على iOS، نعرض له الإرشادات تلقائياً
-        window.addEventListener('load', function() {
-            if (isIOS()) {
-                document.getElementById('iosInstructions').style.display = 'block';
-            }
-        });
     </script>
 </body>
 </html>
