@@ -4,17 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1, user-scalable=no">
     <title>تحميل تطبيق Shehadeh Center</title>
-    <meta name="description" content="حمّل تطبيق Shehadeh Center  من أفضل العروض والأسعار">
+    <meta name="description" content="حمّل تطبيق Shehadeh Center للاستفادة من أفضل العروض والأسعار">
     
     <!-- Open Graph Metadata -->
     <meta property="og:title" content="Shehadeh Center - تحميل التطبيق">
     <meta property="og:description" content="حمّل تطبيق Shehadeh Center للاستفادة من أفضل العروض والأسعار">
     <meta property="og:image" content="https://i.postimg.cc/VNssYbVS/IMG-1002.jpg">
     <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mohammad-shehadeh.github.io/price/">
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="32x32" href="https://i.postimg.cc/VNssYbVS/IMG-1002.jpg">
     <link rel="apple-touch-icon" sizes="180x180" href="https://i.postimg.cc/VNssYbVS/IMG-1002.jpg">
+
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="data:application/json;base64,ewogICJuYW1lIjogIlNoZWhhZGVoIENlbnRlciIsCiAgInNob3J0X25hbWUiOiAiU2hlaGFkZWgiLAogICJzdGFydF91cmwiOiAiaHR0cHM6Ly9tb2hhbW1hZC1zaGVoYWRlaC5naXRodWIuaW8vcHJpY2UvIiwKICAiZGlzcGxheSI6ICJzdGFuZGFsb25lIiwKICAiYmFja2dyb3VuZF9jb2xvciI6ICIjMmIyYjJiIiwKICAidGhlbWVfY29sb3IiOiAiIzBiYjViMCIsCiAgImljb25zIjogWwogICAgewogICAgICAic3JjIjogImh0dHBzOi8vaS5wb3N0aW1nLmNjL1ZOc3NZYlZTL0lNRy0xMDAyLmpwZyIsCiAgICAgICJzaXplcyI6ICIxODB4MTgwIiwKICAgICAgInR5cGUiOiAiaW1hZ2UvanBnIgogICAgfQogIF0KfQ==">
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -552,6 +556,38 @@
             font-size: 1.2rem;
             font-weight: 500;
         }
+
+        /* توجيه المستخدمين إلى الموقع الرئيسي */
+        .redirect-notice {
+            background: #f0f9ff;
+            border-radius: var(--border-radius);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            text-align: center;
+            border-left: 4px solid var(--primary-color);
+        }
+        
+        .redirect-notice h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .redirect-btn {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.7rem 1.5rem;
+            background: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+        
+        .redirect-btn:hover {
+            background: #0a9d98;
+            transform: translateY(-2px);
+        }
     </style>
 </head>
 <body>
@@ -565,9 +601,9 @@
     <div class="nav-container">
         <a href="#" class="nav-logo">Shehadeh <span>Center</span></a>
         <div class="nav-actions">
-            <a href="index.html" class="nav-btn">
+            <a href="https://mohammad-shehadeh.github.io/price/" class="nav-btn">
                 <i class="fas fa-home"></i>
-                <span>الرئيسية</span>
+                <span>الموقع الرئيسي</span>
             </a>
         </div>
     </div>
@@ -582,6 +618,15 @@
     
     <!-- Main Content -->
     <main>
+        <!-- تنبيه للمستخدمين -->
+        <div class="redirect-notice fade-in">
+            <h3><i class="fas fa-info-circle"></i> ملاحظة هامة</h3>
+            <p>عند تثبيت التطبيق على جهاز الآيفون، سيتم تثبيت الموقع الرئيسي لتطبيق Shehadeh Center وليس صفحة التحميل فقط.</p>
+            <a href="https://mohammad-shehadeh.github.io/price/" class="redirect-btn">
+                <i class="fas fa-external-link-alt"></i> الانتقال إلى الموقع الرئيسي
+            </a>
+        </div>
+
         <!-- Download Section -->
         <section class="download-section fade-in">
             <div class="app-icon">
@@ -589,7 +634,7 @@
             </div>
             <h2 class="app-title">Shehadeh Center</h2>
             <p class="app-description">
-                حمّل تطبيق Shehadeh Center الآن 
+                حمّل تطبيق Shehadeh Center الآن واستمتع بتجربة تسوق فريدة مع أفضل الأسعار والعروض الحصرية على الأجهزة الإلكترونية والكهربائية
             </p>
         </section>
         
@@ -631,22 +676,27 @@
                 لتثبيت تطبيق Shehadeh Center على جهازك الآيفون، اتبع الخطوات التالية:
             </p>
             
-    
-                
+            <div class="ios-steps">
                 <div class="ios-step">
                     <span class="step-number">1</span>
-                    <img src="https://i.postimg.cc/3xSjhg35/IMG-0862.jpg" alt="خطوة 2: انقر على مشاركة" class="step-image">
-                    <p class="step-description">انقر على زر "مشاركة" في أسفل المتصفح</p>
+                    <img src="https://i.postimg.cc/3xSjhg35/IMG-0862.jpg" alt="خطوة 1: افتح الموقع في Safari" class="step-image">
+                    <p class="step-description">افتح الموقع <strong>https://mohammad-shehadeh.github.io/price/</strong> باستخدام متصفح Safari</p>
                 </div>
                 
                 <div class="ios-step">
                     <span class="step-number">2</span>
-                    <img src="https://i.postimg.cc/hG8Sx0vN/5-D42-AD62-FC2-A-4594-9-B00-6-DE4-FB091452.jpg" alt="خطوة 3: أضف للشاشة الرئيسية" class="step-image">
-                    <p class="step-description">اختر "أضف إلى الشاشة الرئيسية" من القائمة</p>
+                    <img src="https://i.postimg.cc/hG8Sx0vN/5-D42-AD62-FC2-A-4594-9-B00-6-DE4-FB091452.jpg" alt="خطوة 2: انقر على مشاركة" class="step-image">
+                    <p class="step-description">انقر على زر "مشاركة" في أسفل المتصفح</p>
                 </div>
                 
                 <div class="ios-step">
                     <span class="step-number">3</span>
+                    <img src="https://i.postimg.cc/13f8LxTr/IMG-0860.jpg" alt="خطوة 3: أضف للشاشة الرئيسية" class="step-image">
+                    <p class="step-description">اختر "أضف إلى الشاشة الرئيسية" من القائمة</p>
+                </div>
+                
+                <div class="ios-step">
+                    <span class="step-number">4</span>
                     <img src="https://i.postimg.cc/13f8LxTr/IMG-0860.jpg" alt="خطوة 4: انقر على إضافة" class="step-image">
                     <p class="step-description">انقر على "إضافة" في الزاوية اليمنى العليا</p>
                 </div>
@@ -656,7 +706,7 @@
                 <h3 style="color: var(--primary-color); margin-bottom: 1rem;">ملاحظة هامة</h3>
                 <p style="color: #555; line-height: 1.6;">
                     بعد إضافة التطبيق إلى الشاشة الرئيسية، يمكنك استخدامه كتطبيق عادي. 
-                    سيتم تثبيت هذا الموقع كتطبيق على جهازك وسيعمل بشكل كامل بدون الحاجة إلى فتح المتصفح.
+                    سيتم تثبيت الموقع الرئيسي <strong>https://mohammad-shehadeh.github.io/price/</strong> كتطبيق على جهازك وسيعمل بشكل كامل بدون الحاجة إلى فتح المتصفح.
                 </p>
             </div>
         </section>
@@ -695,7 +745,7 @@
                         <i class="fas fa-shopping-cart"></i>
                     </div>
                     <h3 class="feature-title">طلب سهل</h3>
-                    <p class="feature-description">عملية شراء مبسطة وسهلة مع خيارات  عرض كقائمة سريعة</p>
+                    <p class="feature-description">عملية شراء مبسطة وسهلة مع خيارات عرض كقائمة سريعة</p>
                 </div>
             </div>
         </section>
@@ -726,6 +776,27 @@
             const instructions = document.getElementById('iosInstructions');
             instructions.style.display = 'block';
             instructions.scrollIntoView({behavior: "smooth"});
+        }
+
+        // إذا كان المستخدم على iOS، نوجهه إلى الموقع الرئيسي
+        function isIOS() {
+            return /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+        }
+
+        // إذا كان المستخدم على iOS، نضيف رسالة توجيهية
+        if (isIOS()) {
+            window.addEventListener('load', function() {
+                const iosNotice = document.createElement('div');
+                iosNotice.className = 'redirect-notice fade-in';
+                iosNotice.innerHTML = `
+                    <h3><i class="fas fa-mobile-alt"></i> مستخدم iOS</h3>
+                    <p>للتثبيت الصحيح للتطبيق، يرجى زيارة الموقع الرئيسي <strong>https://mohammad-shehadeh.github.io/price/</strong> في متصفح Safari ثم اتباع إرشادات التثبيت.</p>
+                    <a href="https://mohammad-shehadeh.github.io/price/" class="redirect-btn">
+                        <i class="fas fa-external-link-alt"></i> الانتقال إلى الموقع الرئيسي
+                    </a>
+                `;
+                document.querySelector('main').insertBefore(iosNotice, document.querySelector('.download-section'));
+            });
         }
     </script>
 </body>
