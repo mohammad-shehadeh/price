@@ -8,7 +8,7 @@ Samsung/A53 +f |/65/https://res.cloudinary.com/dygc5b8cn/image/upload/v174971844
 Samsung/A33 +f |/65/https://res.cloudinary.com/dygc5b8cn/image/upload/v1749718421/dmrjujitr5k4oowvnp5v.jpg
 tecno/spark 10-10C-GO 2023 ORI |/50/https://image.made-in-china.com/2f0j00tHlqhopdbCgk/Original-LCD-for-Infinix-Tecno-Spark-10-Kl5q-Kl5K-Touch-Screen-Replacement-Mobile-Phone-LCD-Display.webp
 tecno/spark 20C-GO 2024 ORI |/50/https://sc04.alicdn.com/kf/Habc8f725c16e4d9a855b03e701f09647z.jpg
-tecno/spark 10 pro-pova5 |/60/https://sc04.alicdn.com/kf/Haa7d71236c224023b2c5600b91efc91aS.jpg
+tecno/spark 10 pro-pova5 |/55/https://sc04.alicdn.com/kf/Haa7d71236c224023b2c5600b91efc91aS.jpg
 tecno/spark 8C-9T-8T ORI |/50/https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNYvDd81uMVXkLKb0fS86lLuUeOEw9h9ER4g&s
 tecno/SPARK 20 ORI |/50/https://down-br.img.susercontent.com/file/br-11134207-7r98o-lwqnqnzdrdle81
 INFINEX/Smart 8HD |/50/undefined
@@ -33,7 +33,7 @@ Samsung/A14 original |/50/https://i.ebayimg.com/images/g/UrUAAOSwKDdlSogb/s-l120
 Samsung/A11 original |/50/https://i.ebayimg.com/images/g/AiMAAOSwxhNiKTAa/s-l1200.jpg
 Samsung/A04 original |/45/https://www.kniezon.com/cdn/shop/files/images-2023-11-30T182039.299.jpg?v=1701357697
 Samsung/A05 original |/50/https://s.alicdn.com/@sc04/kf/Hb1e6defaa2a84587a6b594ddf36bbca0R.jpg_720x720q50.jpg
-Samsung/A06 original |/55/https://i.ebayimg.com/images/g/TlIAAOSwzDxm9Oi6/s-l1200.jpg
+Samsung/A06 original |/50/https://i.ebayimg.com/images/g/TlIAAOSwzDxm9Oi6/s-l1200.jpg
 Samsung/A25 incell+f |/70/https://i.ebayimg.com/images/g/P90AAOSwrolnJhxh/s-l400.png
 Samsung/A24 incell+F |/60/https://www.cellspare.com/image/cache/catalog/data/Accessories%20Villa/Product%20image/samsung-galaxy-a24-4g-lcd-screen-with-frame-black-1000x1000.jpeg
 Samsung/A73 incell+F |/aaa/https://i.ebayimg.com/images/g/JMwAAOSw9JhirBRg/s-l1200.jpg
