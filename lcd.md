@@ -111,24 +111,25 @@ tecno/CAMON 18 Premer incell |/70/https://encrypted-tbn0.gstatic.com/images?q=tb
 Mi/11 lite 4G-5G orignal |/130/https://d57avc95tvxyg.cloudfront.net/images/thumbnails/885/885/detailed/5857/lcd_with_touch_screen_for_xiaomi_mi_11_lite_5g_green_by_maxbhi_com_88810.jpg?t=1731775338
 Mi/11 lite 4G-5G INCELL |/65/https://d57avc95tvxyg.cloudfront.net/images/thumbnails/885/885/detailed/5857/lcd_with_touch_screen_for_xiaomi_mi_11_lite_5g_green_by_maxbhi_com_88810.jpg?t=1731775338
 tecno/CAMON 20 PRO orignal |/130/https://i24.psgsm.net/gsm.com/p/916730/799/lcd-compatible-with-tecno-camon-20-pro-black-without-frame-original-prc-ck7n.jpg?e9f21ac804e74dc8060c0c7340b3e40f
-iphone/11 pro max original |/230/https://media.s-bol.com/qMnRoDk56x7R/kZKjVG5/550x518.jpgG
 Mi/12T-12T pro orignal |/170/https://i.ebayimg.com/images/g/hPUAAOSwoldku6wc/s-l1200.png
 tecno/CAMON 20 PRO incell |/70/https://i24.psgsm.net/gsm.com/p/916730/799/lcd-compatible-with-tecno-camon-20-pro-black-without-frame-original-prc-ck7n.jpg?e9f21ac804e74dc8060c0c7340b3e40f
-iphone/15 pro max orignal |/1250/https://i.ebayimg.com/images/g/cH4AAOSwjT1lMP7i/s-l1200.jpg
-iphone/14 pro max orignal |/650/https://www.mytrendyphone.eu/images/iPhone-14-Pro-Max-LCD-Display-Black-Original-Quality-07032023-01-p.webp
-iphone/12 pro max orignal |/350/https://www.mytrendyphone.eu/images/iPhone-12-Pro-Max-LCD-OLED-Display-Original-Quality-OEM-11052021-1-p.webp
-iphone/14 pro max incell |/Aaa/https://gsmok.pl/pliki_opis/norm_wyswietlacz-lcd-do-apple-iphone-14-pro-max-incell-1080p-fhd-ic-removable-jh-a115707-5767-1.JPG
-iphone/13pro max orignal |/650/https://www.cmedistribution.com.my/wp-content/uploads/2023/06/IPHONE-13-PRO-MAX-LCD-ORI-scaled-1.jpg
-iphone/13 pro max incell |/Aaa/https://image.made-in-china.com/2f0j00sTOcgQAJnRqp/Factory-Wholesale-for-iPhone-13-Screen-for-iPhone-13-PRO-Max-Display-for-iPhone-13-LCD-for-iPhone-13-PRO-Max-LCD.webp
+iphone/15 pro max orignal |/1200/https://i.ebayimg.com/images/g/cH4AAOSwjT1lMP7i/s-l1200.jpg
+iphone/15 pro max incell |/aaa/https://i.ebayimg.com/images/g/cH4AAOSwjT1lMP7i/s-l1200.jpg
+iphone/14 pro max orignal |/750/https://www.mytrendyphone.eu/images/iPhone-14-Pro-Max-LCD-Display-Black-Original-Quality-07032023-01-p.webp
+iphone/14 pro max oled |/300/https://i.ebayimg.com/images/g/l-kAAOSw4qtjnBqB/s-l1200.jpg
+iphone/14 pro max incell |/120/https://gsmok.pl/pliki_opis/norm_wyswietlacz-lcd-do-apple-iphone-14-pro-max-incell-1080p-fhd-ic-removable-jh-a115707-5767-1.JPG
+iphone/13 pro max orignal |/650/https://www.cmedistribution.com.my/wp-content/uploads/2023/06/IPHONE-13-PRO-MAX-LCD-ORI-scaled-1.jpg
+iphone/13 pro max oled |/300/https://i.ebayimg.com/images/g/8fcAAOSwAEhioeAc/s-l400.jpg
+iphone/13 pro max incell |/110/https://image.made-in-china.com/2f0j00sTOcgQAJnRqp/Factory-Wholesale-for-iPhone-13-Screen-for-iPhone-13-PRO-Max-Display-for-iPhone-13-LCD-for-iPhone-13-PRO-Max-LCD.webp
 HUAWEI/Y9 prime 2019 ORI |/55/https://sc04.alicdn.com/kf/Hf4fe40c1abb645adb9a0ee669a5aaacaJ.png
 iphone/ipad 7,8,9 touch |/45/https://mpsmobile.de/data/product/images/detail/normal/6477955B-DCF7-52B5-1E53-ECA1320AFE1D.jpg
 tecno/camon 17 pro ORI |/60/https://sc04.alicdn.com/kf/H83e2530c61714ddeb4c0af45a00f3c391.jpg
 iphone/12 pro original |/250/https://i.ebayimg.com/images/g/bkoAAOSwD7JkJcH9/s-l400.jpg
 iphone/XS max original |/200/https://roadieshub.com/wp-content/uploads/2023/12/I-PHONE-LCD-UNIT-XS-1.jpg
-iphone/14 pro max oled |/450/https://i.ebayimg.com/images/g/l-kAAOSw4qtjnBqB/s-l1200.jpg
-iphone/13 pro max oled |/350/https://i.ebayimg.com/images/g/8fcAAOSwAEhioeAc/s-l400.jpg
-iphone/12 pro max oled |/220/https://i.ebayimg.com/images/g/bkoAAOSwD7JkJcH9/s-l400.jpg
+iphone/12 pro max orignal |/350/https://www.mytrendyphone.eu/images/iPhone-12-Pro-Max-LCD-OLED-Display-Original-Quality-OEM-11052021-1-p.webp
+iphone/12 pro max oled |/aaa/https://i.ebayimg.com/images/g/bkoAAOSwD7JkJcH9/s-l400.jpg
 iphone/12 pro max BYH |/80/https://mengtor.com/uploadfile/goods/202303/202303012305293569.jpg
+iphone/11 pro max original |/230/https://media.s-bol.com/qMnRoDk56x7R/kZKjVG5/550x518.jpgG
 iphone/11 pro max BYH |/65/https://media.s-bol.com/qMnRoDk56x7R/kZKjVG5/550x518.jpg
 iphone/8 plus orignal |/80/https://fmmall.my/wp-content/uploads/2022/12/kKL6jMqMSdEiex8Im1XlyxAlRmNl8pXhMvL0Y65D.jpg
 iphone/ipad 7,8,9 LCD |/150/https://cellphonepartscanada.com/cdn/shop/products/replacement-lcd-for-ipad-7-ipad-8-ipad-9-lcd-10-2-best-cell-phone-parts-distributor-in-canada-parts-source_2048x2048.jpg?v=1713365081
