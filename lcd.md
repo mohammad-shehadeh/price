@@ -31,7 +31,6 @@ iphone/xr moche |/55/https://res.cloudinary.com/dygc5b8cn/image/upload/v17454017
 iphone/xs BYH |/55/https://roadieshub.com/wp-content/uploads/2023/12/I-PHONE-LCD-UNIT-XS-1.jpg
 iphone/xs max BYH |/65/https://m.media-amazon.com/images/I/61LlML7zbqL._AC_UL400_.jpg
 iphone/XS max original |/200/https://roadieshub.com/wp-content/uploads/2023/12/I-PHONE-LCD-UNIT-XS-1.jpg
-HONOR/X6b |/65/https://img.tvcmall.com/dynamic/uploads/details/740x740_6601118008A-1.webp
 Mi/10A-9A-9C ORI |/45/https://themall.ng/oc-content/uploads/3/1662.webp
 Mi/11 lite 4G-5G INCELL |/65/https://d57avc95tvxyg.cloudfront.net/images/thumbnails/885/885/detailed/5857/lcd_with_touch_screen_for_xiaomi_mi_11_lite_5g_green_by_maxbhi_com_88810.jpg?t=1731775338
 Mi/11 lite 4G-5G orignal |/130/https://d57avc95tvxyg.cloudfront.net/images/thumbnails/885/885/detailed/5857/lcd_with_touch_screen_for_xiaomi_mi_11_lite_5g_green_by_maxbhi_com_88810.jpg?t=1731775338
@@ -153,6 +152,7 @@ tecno/Spark Go1 |/55/undefined
 HONOR/X5 plus |/70/https://i.ebayimg.com/images/g/lMoAAOSwWWxkJ~at/s-l400.jpg
 HONOR/X5b |/60/https://i.ebayimg.com/images/g/lMoAAOSwWWxkJ~at/s-l400.jpg
 HONOR/X6a |/65/https://ae01.alicdn.com/kf/Scb9654cd3cd74c1ba9292d1abf514403P.jpg
+HONOR/X6b |/65/https://img.tvcmall.com/dynamic/uploads/details/740x740_6601118008A-1.webp
 HONOR/X7b |/70/https://http2.mlstatic.com/D_NQ_NP_695266-MLA75802206247_042024-O.webp
 HONOR/X8b |/120/https://www.vopmart.com/media/catalog/product/cache/fba01159e823484c6e3d091a338cccb0/s/p/sp1021679.jpg
 HONOR/X9b |/225/https://down-ph.img.susercontent.com/file/cn-11134207-7r98o-lz4pawofvvxvb2
@@ -162,14 +162,6 @@ OPPO/A53 ORI |/55/https://i93.psgsm.net/gsm.com/p/913645/799/lcd-compatible-with
 OPPO/A72 ORI |/55/https://i.ebayimg.com/images/g/bUQAAOSwteNhlxOn/s-l1200.png
 OPPO/A92 INCELL |/55/https://m.media-amazon.com/images/I/61moF0AJkLL.jpg
 OPPO/A96=9i |/60/undefined
-HUAWEI/NOVA 3I |/50/https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxR0Ay38rHBH2Lo6IsfkTYkwKLoPWlDT5ZcQ&s
-HUAWEI/P20 LITE |/40/https://www.techrepairlab.co.uk/cdn/shop/products/black_495503d1-5565-462b-ab57-c0be8c4bfdcc_1200x1200.jpg?v=1630933593
-HUAWEI/P30 LITE |/60/https://ae01.alicdn.com/kf/HTB1REmnSq6qK1RjSZFmq6x0PFXao.jpg
-HUAWEI/Y6 2019 |/50/https://www.piece-mobile.com/17160-large_default/touch-screen-and-lcd-huawei-y6-2019.jpg
-HUAWEI/Y7 2018 |/40/https://rounded.com/images/detailed/119/huawei-y7-2018-display-module-lcd-digitizer-black.png
-HUAWEI/Y7 2019 |/50/https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvfLEFU2TQWyBhJV2c6zdwGwLxctQz35X7gA&s
-HUAWEI/Y9 2019 ORI |/50/https://image.made-in-china.com/2f0j00CbVhueigsGfp/Mobile-Phone-Lcds-for-Huawei-Y9-Prime-2019-LCD-for-Huawei-Y9-2019-Screen-for-Huawei-Y9-LCD-Display-for-Huawei-Y9-2019-LCD-Pantallas.webp
-HUAWEI/Y9 prime 2019 ORI |/55/https://sc04.alicdn.com/kf/Hf4fe40c1abb645adb9a0ee669a5aaacaJ.png
 INFINEX/HOT 10 |/50/https://i.ebayimg.com/images/g/1XIAAOSw14dhXsY3/s-l400.jpg
 INFINEX/Hot 30 |/50/undefined
 INFINEX/HOT 30 |/60/https://sc04.alicdn.com/kf/Haa7d71236c224023b2c5600b91efc91aS.jpg
@@ -180,3 +172,11 @@ INFINEX/S5 pro |/50/undefined
 INFINEX/SMART 8 |/50/https://sc04.alicdn.com/kf/Habc8f725c16e4d9a855b03e701f09647z.jpg
 INFINEX/Smart 8HD |/50/undefined
 INFINEX/SMART 9 |/50/https://down-id.img.susercontent.com/file/id-11134207-7ras8-m3g5i0xmc0z2bc
+HUAWEI/NOVA 3I |/50/https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxR0Ay38rHBH2Lo6IsfkTYkwKLoPWlDT5ZcQ&s
+HUAWEI/P20 LITE |/40/https://www.techrepairlab.co.uk/cdn/shop/products/black_495503d1-5565-462b-ab57-c0be8c4bfdcc_1200x1200.jpg?v=1630933593
+HUAWEI/P30 LITE |/60/https://ae01.alicdn.com/kf/HTB1REmnSq6qK1RjSZFmq6x0PFXao.jpg
+HUAWEI/Y6 2019 |/50/https://www.piece-mobile.com/17160-large_default/touch-screen-and-lcd-huawei-y6-2019.jpg
+HUAWEI/Y7 2018 |/40/https://rounded.com/images/detailed/119/huawei-y7-2018-display-module-lcd-digitizer-black.png
+HUAWEI/Y7 2019 |/50/https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvfLEFU2TQWyBhJV2c6zdwGwLxctQz35X7gA&s
+HUAWEI/Y9 2019 ORI |/50/https://image.made-in-china.com/2f0j00CbVhueigsGfp/Mobile-Phone-Lcds-for-Huawei-Y9-Prime-2019-LCD-for-Huawei-Y9-2019-Screen-for-Huawei-Y9-LCD-Display-for-Huawei-Y9-2019-LCD-Pantallas.webp
+HUAWEI/Y9 prime 2019 ORI |/55/https://sc04.alicdn.com/kf/Hf4fe40c1abb645adb9a0ee669a5aaacaJ.png
