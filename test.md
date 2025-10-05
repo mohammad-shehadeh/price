@@ -1,6 +1,6 @@
 MI/Pad 2 256|8/670/https://res.cloudinary.com/dygc5b8cn/image/upload/v1759655366/bsrpwamkyjsfjjxjyvqq.webp
-Samsung/A36 256|12/1000/https://res.cloudinary.com/dygc5b8cn/image/upload/v1759655087/fcymols1dg15oczams6c.webp
-Samsung/A17 256|8/750/https://res.cloudinary.com/dygc5b8cn/image/upload/v1759654356/tdq2lrtsxwo9hshuo4dd.jpg
+samsung/A36 256|12/1000/https://res.cloudinary.com/dygc5b8cn/image/upload/v1759655087/fcymols1dg15oczams6c.webp
+samsung/A17 256|8/750/https://res.cloudinary.com/dygc5b8cn/image/upload/v1759654356/tdq2lrtsxwo9hshuo4dd.jpg
 MI/Redmi 15 256|8/510/https://res.cloudinary.com/dygc5b8cn/image/upload/v1759304172/u2xrt2uhefd3tbhmjroe.webp
 samsung/A17 128|4/560/https://res.cloudinary.com/dygc5b8cn/image/upload/v1759304168/d3bqnjrcxoay06rrnjtx.jpg
 samsung/A07 64|4/330/https://res.cloudinary.com/dygc5b8cn/image/upload/v1758201166/sicjbxtmxarydofvmecm.jpg
