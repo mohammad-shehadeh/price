@@ -1,13 +1,13 @@
 MI/Pad 2 256|8/670/https://res.cloudinary.com/dygc5b8cn/image/upload/v1759655366/bsrpwamkyjsfjjxjyvqq.webp
 MI/SE 11" 256|8/aaa/https://www.celletronic.com/wp-content/uploads/2023/09/xiaomi-redmi-pad-se-11-0-6gb-ram-128gb-wifi-gris.jpg
 MI/Redmi 15 256|8/510/https://res.cloudinary.com/dygc5b8cn/image/upload/v1759304172/u2xrt2uhefd3tbhmjroe.webp
-MI/Redmi 15C 128|4/370/https://res.cloudinary.com/dygc5b8cn/image/upload/v1757324301/ilyhjiezyfz5khp30p5e.webp
 MI/Redmi 15C 256|8/435/https://res.cloudinary.com/dygc5b8cn/image/upload/v1757324304/mijovlzrsdbgsxgcl1lf.webp
 samsung/S25 ultra 256|12/3300/https://assets.mmsrg.com/isr/166325/c1/-/ASSET_MMS_149453259/fee_786_587_png
 samsung/A17 128|4/560/https://res.cloudinary.com/dygc5b8cn/image/upload/v1759304168/d3bqnjrcxoay06rrnjtx.jpg
 samsung/A17 256|8/750/https://res.cloudinary.com/dygc5b8cn/image/upload/v1759654356/tdq2lrtsxwo9hshuo4dd.jpg
 samsung/A07 64|4/330/https://res.cloudinary.com/dygc5b8cn/image/upload/v1758201166/sicjbxtmxarydofvmecm.jpg
 MI/Redmi 15C 128|6/400/https://res.cloudinary.com/dygc5b8cn/image/upload/v1757324301/ilyhjiezyfz5khp30p5e.webp
+MI/Redmi 15C 128|4/370/https://res.cloudinary.com/dygc5b8cn/image/upload/v1757324301/ilyhjiezyfz5khp30p5e.webp
 Apple/Ipad 11 128|كفالة ضفة |/1280/https://res.cloudinary.com/dygc5b8cn/image/upload/v1756986041/ajb0lks9smgql3bccyjx.webp
 samsung/A07 128|4/380/https://res.cloudinary.com/dygc5b8cn/image/upload/v1756559491/wokzeyy83lncbbewic1v.jpg
 N\A/Pad 100 128|12/700/https://res.cloudinary.com/dygc5b8cn/image/upload/v1756119440/ahwstejrduarizr8gieh.jpg
@@ -48,9 +48,9 @@ MI/Redmi 13X 256|8/400/https://res.cloudinary.com/dygc5b8cn/image/upload/v175379
 MI/redmi A5 128|4/275/https://media.ldlc.com/r1600/ld/products/00/06/22/87/LD0006228768.jpg
 MI/Redmi A5 64|3/230/https://res.cloudinary.com/dygc5b8cn/image/upload/v1745846501/huvlm2coxnrudfzwmhtm.jpg
 MI/Note 14 pro plus 5G |/1270/https://fonexpress.net/wp-content/uploads/2025/01/Xiaomi-Redmi-Note-14-Pro-Plus.webp
+MI/Note 14 pro 512|12/880/https://www.giztop.com/media/catalog/product/cache/97cc1143d2e20f2b0c8ea91aaa12053c/r/e/redmi_note_14_pro.png
 MI/Note 14 pro 256|8/740/https://www.giztop.com/media/catalog/product/cache/97cc1143d2e20f2b0c8ea91aaa12053c/r/e/redmi_note_14_pro.png
 MI/Note 14 256|8/550/https://cdn.gadgetbytenepal.com/wp-content/uploads/2025/01/Redmi-Note-14-4G-1.jpg
-MI/Note 14 pro 512|12/880/https://www.giztop.com/media/catalog/product/cache/97cc1143d2e20f2b0c8ea91aaa12053c/r/e/redmi_note_14_pro.png
 MI/poco X7 pro 512|12/1160/https://cdn.shortpixel.ai/spai/q_glossy+ret_img+to_webp/mobizil.com/wp-content/uploads/2025/01/Xiaomi-Poco-X7-Pro.jpg
 MI/POCO X6 pro 256|12/900/https://dzairtic.dz/wp-content/uploads/2024/06/xiaomi-poco-x6-pro-frandroid-2024-768x768-1.png
 MI/POCO F6 PRO 512|12/1600/https://res.cloudinary.com/dygc5b8cn/image/upload/v1757492561/uzaash86iswt4gtg59b0.jpg
