@@ -347,6 +347,32 @@
     .filter-container label {
       margin-left: 10px;
     }
+
+    /* أنماط السحب والإفلات */
+    .dragging {
+      opacity: 0.5;
+      background-color: #e3f2fd !important;
+      border: 2px dashed var(--primary-color);
+    }
+
+    .drag-over {
+      background-color: #f0f8ff !important;
+    }
+
+    .row-handle {
+      cursor: grab;
+      padding: 8px;
+      color: #666;
+      transition: var(--transition);
+    }
+
+    .row-handle:active {
+      cursor: grabbing;
+    }
+
+    .row-handle:hover {
+      color: var(--primary-color);
+    }
   </style>
 </head>
 <body>
@@ -390,6 +416,7 @@
       <table id="catalogTable">
         <thead>
           <tr>
+            <th>تحريك</th>
             <th>الفئة</th>
             <th>الصنف</th>
             <th>الذاكرة</th>
@@ -437,20 +464,26 @@
       "lcd.md": ["Samsung", "iphone", "Mi", "tecno", "realmi", "INFINEX", "OPPO", "HONOR"]
     };
 
+    // متغيرات السحب والإفلات
+    let dragSrcEl = null;
+    let isDragging = false;
+    let longPressTimer = null;
+    let longPressDelay = 500; // زمن الضغط المطول بالمللي ثانية
+
     function updateOutput() {
       let lines = [];
       for (let row of tableBody.rows) {
         const cells = row.querySelectorAll("td");
         const values = [];
         
-        for (let i = 0; i < 6; i++) {
+        for (let i = 1; i < 7; i++) { // تبدأ من 1 لأن العمود الأول هو زر التحريك
           const cell = cells[i];
           
-          if (i === 0) { // خلية الفئة
+          if (i === 1) { // خلية الفئة
             const select = cell.querySelector('select');
             values.push(select ? select.value : cell.textContent.trim());
           } 
-          else if (i === 4) { // خلية الصورة
+          else if (i === 5) { // خلية الصورة
             const img = cell.querySelector('img.preview-image');
             values.push(img ? img.dataset.url : '');
           }
@@ -503,7 +536,7 @@
       
       // جمع الفئات الموجودة في الجدول
       tableBody.querySelectorAll('tr').forEach(row => {
-        const categoryCell = row.querySelector('td:first-child');
+        const categoryCell = row.querySelector('td:nth-child(2)'); // العمود الثاني هو الفئة
         const category = categoryCell.querySelector('select') ? 
                         categoryCell.querySelector('select').value : 
                         categoryCell.textContent.trim();
@@ -559,7 +592,19 @@
     function addRow(category = "", item = "", rom = "", ram = "", imageUrl = "", price = "", isNewRow = false) {
       const row = document.createElement("tr");
       
-      // 1. خلية الفئة
+      // 1. خلية التحريك (زر السحب)
+      const dragCell = document.createElement("td");
+      const dragHandle = document.createElement("div");
+      dragHandle.className = "row-handle";
+      dragHandle.innerHTML = '<i class="fas fa-arrows-alt-v"></i>';
+      dragHandle.setAttribute('title', 'اضغط مطولاً للسحب والإفلات');
+      
+      // إضافة أحداث السحب والإفلات
+      setupDragAndDrop(row, dragHandle);
+      
+      dragCell.appendChild(dragHandle);
+      
+      // 2. خلية الفئة
       const categoryCell = document.createElement("td");
       if (isNewRow) {
         categoryCell.className = "category-cell";
@@ -578,25 +623,25 @@
         });
       }
       
-      // 2. خلية الصنف
+      // 3. خلية الصنف
       const itemCell = document.createElement("td");
       itemCell.contentEditable = "true";
       itemCell.textContent = item;
       itemCell.addEventListener("input", updateOutput);
       
-      // 3. خلية الروم
+      // 4. خلية الروم
       const romCell = document.createElement("td");
       romCell.contentEditable = "true";
       romCell.textContent = rom;
       romCell.addEventListener("input", updateOutput);
       
-      // 4. خلية الرام
+      // 5. خلية الرام
       const ramCell = document.createElement("td");
       ramCell.contentEditable = "true";
       ramCell.textContent = ram;
       ramCell.addEventListener("input", updateOutput);
       
-      // 5. خلية الصورة
+      // 6. خلية الصورة
       const imageCell = document.createElement("td");
       
       const imageContainer = document.createElement("div");
@@ -645,13 +690,13 @@
       imageContainer.appendChild(fileInput);
       imageCell.appendChild(imageContainer);
       
-      // 6. خلية السعر
+      // 7. خلية السعر
       const priceCell = document.createElement("td");
       priceCell.contentEditable = "true";
       priceCell.textContent = price;
       priceCell.addEventListener("input", updateOutput);
       
-      // 7. خلية الإجراءات
+      // 8. خلية الإجراءات
       const actionCell = document.createElement("td");
       const deleteBtn = document.createElement("button");
       deleteBtn.className = "delete-btn";
@@ -660,6 +705,7 @@
       actionCell.appendChild(deleteBtn);
       
       // إضافة جميع الخلايا إلى الصف
+      row.appendChild(dragCell);
       row.appendChild(categoryCell);
       row.appendChild(itemCell);
       row.appendChild(romCell);
@@ -679,6 +725,108 @@
       updateCategoryFilter();
     }
 
+    // وظائف السحب والإفلات
+    function setupDragAndDrop(row, dragHandle) {
+      // بدء السحب عند الضغط المطول
+      dragHandle.addEventListener('mousedown', startDrag);
+      dragHandle.addEventListener('touchstart', startDrag);
+      
+      // منع السلوك الافتراضي لمنع التحديد أثناء السحب
+      dragHandle.addEventListener('dragstart', (e) => {
+        e.preventDefault();
+      });
+      
+      function startDrag(e) {
+        e.preventDefault();
+        
+        // بدء مؤقت الضغط المطول
+        longPressTimer = setTimeout(() => {
+          isDragging = true;
+          dragSrcEl = row;
+          row.classList.add('dragging');
+          
+          // إضافة مستمعات الأحداث للسحب
+          document.addEventListener('mousemove', onDrag);
+          document.addEventListener('touchmove', onDrag);
+          document.addEventListener('mouseup', endDrag);
+          document.addEventListener('touchend', endDrag);
+        }, longPressDelay);
+      }
+      
+      function onDrag(e) {
+        if (!isDragging) return;
+        
+        e.preventDefault();
+        const y = e.clientY || e.touches[0].clientY;
+        
+        // إخفاء العنصر الذي يتم سحبه
+        row.style.display = 'none';
+        
+        // العثور على العنصر الذي يتم السحب فوقه
+        const belowElem = document.elementFromPoint(
+          e.clientX || e.touches[0].clientX, 
+          y
+        );
+        
+        // إظهار العنصر مرة أخرى
+        row.style.display = '';
+        
+        let targetRow = belowElem ? belowElem.closest('tr') : null;
+        
+        // إزالة التمييز من جميع الصفوف
+        document.querySelectorAll('tr').forEach(r => {
+          r.classList.remove('drag-over');
+        });
+        
+        // تمييز الصف الهدف
+        if (targetRow && targetRow !== row && targetRow.parentNode === tableBody) {
+          targetRow.classList.add('drag-over');
+        }
+      }
+      
+      function endDrag(e) {
+        // إلغاء المؤقت إذا تم تحرير الزر قبل انتهاء الوقت
+        clearTimeout(longPressTimer);
+        
+        if (!isDragging) return;
+        
+        isDragging = false;
+        row.classList.remove('dragging');
+        
+        // إزالة التمييز من جميع الصفوف
+        document.querySelectorAll('tr').forEach(r => {
+          r.classList.remove('drag-over');
+        });
+        
+        // إزالة مستمعات الأحداث
+        document.removeEventListener('mousemove', onDrag);
+        document.removeEventListener('touchmove', onDrag);
+        document.removeEventListener('mouseup', endDrag);
+        document.removeEventListener('touchend', endDrag);
+        
+        const y = e.clientY || (e.changedTouches ? e.changedTouches[0].clientY : 0);
+        
+        // العثور على العنصر الذي تم تحرير الزر فوقه
+        const belowElem = document.elementFromPoint(
+          e.clientX || (e.changedTouches ? e.changedTouches[0].clientX : 0), 
+          y
+        );
+        
+        let targetRow = belowElem ? belowElem.closest('tr') : null;
+        
+        // إذا كان هناك صف هدف، نقل الصف إلى موقعه الجديد
+        if (targetRow && targetRow !== row && targetRow.parentNode === tableBody) {
+          const rect = targetRow.getBoundingClientRect();
+          const next = (y - rect.top) / (rect.bottom - rect.top) > 0.5;
+          
+          tableBody.insertBefore(row, next ? targetRow.nextSibling : targetRow);
+          updateOutput();
+        }
+        
+        dragSrcEl = null;
+      }
+    }
+
     function removeRow(button) {
       if (confirm("هل أنت متأكد من حذف هذا الصف؟")) {
         button.closest("tr").remove();
@@ -692,7 +840,7 @@
       const rows = tableBody.querySelectorAll("tr");
       
       rows.forEach(row => {
-        const categoryCell = row.querySelector("td:first-child");
+        const categoryCell = row.querySelector("td:nth-child(2)"); // العمود الثاني هو الفئة
         const category = categoryCell.querySelector("select") ? 
                        categoryCell.querySelector("select").value : 
                        categoryCell.textContent.trim();
@@ -703,6 +851,24 @@
           row.style.display = "none";
         }
       });
+    }
+
+    function validateCategories() {
+      const rows = tableBody.querySelectorAll("tr");
+      let emptyCategories = [];
+      
+      rows.forEach((row, index) => {
+        const categoryCell = row.querySelector("td:nth-child(2)"); // العمود الثاني هو الفئة
+        const category = categoryCell.querySelector("select") ? 
+                       categoryCell.querySelector("select").value : 
+                       categoryCell.textContent.trim();
+        
+        if (!category) {
+          emptyCategories.push(index + 1);
+        }
+      });
+      
+      return emptyCategories;
     }
 
     function loadSelectedFile() {
@@ -754,6 +920,13 @@
     }
 
     async function saveMarkdown() {
+      // التحقق من وجود أصناف بدون فئة
+      const emptyCategories = validateCategories();
+      if (emptyCategories.length > 0) {
+        alert(`لا يمكن الحفظ! هناك أصناف بدون فئة في الصفوف: ${emptyCategories.join(', ')}\n\nيرجى إضافة فئة لكل صنف قبل الحفظ.`);
+        return;
+      }
+      
       const content = btoa(unescape(encodeURIComponent(outputText.value)));
       const path = fileSelect.value;
       const url = `https://api.github.com/repos/${owner}/${repo}/contents/${path}`;
