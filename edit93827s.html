@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>مركز شحادة</title>
+  <title> Shehadeh Center </title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     :root {
@@ -11,7 +11,6 @@
       --secondary-color: #3f37c9;
       --success-color: #4cc9f0;
       --danger-color: #f72585;
-      --warning-color: #ff9e00;
       --light-color: #f8f9fa;
       --dark-color: #212529;
       --border-radius: 8px;
@@ -131,17 +130,6 @@
       transform: translateY(-2px);
     }
     
-    .btn-warning {
-      background-color: var(--warning-color);
-      color: white;
-      border: none;
-    }
-    
-    .btn-warning:hover {
-      background-color: #e68a00;
-      transform: translateY(-2px);
-    }
-    
     .btn-danger {
       background-color: var(--danger-color);
       color: white;
@@ -159,7 +147,6 @@
       box-shadow: var(--box-shadow);
       overflow-x: auto;
       margin-bottom: 30px;
-      position: relative;
     }
     
     table {
@@ -169,7 +156,7 @@
     }
     
     th, td {
-      padding: 12px 8px;
+      padding: 15px;
       text-align: center;
       border-bottom: 1px solid #eee;
     }
@@ -193,7 +180,7 @@
     td[contenteditable="true"] {
       background-color: #ffff;
       border-radius: 4px;
-      padding: 8px;
+      padding: 10px;
       outline: none;
     }
     
@@ -212,7 +199,7 @@
       border: none;
       background: transparent;
       text-align: center;
-      padding: 8px;
+      padding: 10px;
       font-size: 0.9rem;
     }
     
@@ -360,89 +347,14 @@
     .filter-container label {
       margin-left: 10px;
     }
-    
-    .alert {
-      padding: 12px 16px;
-      border-radius: var(--border-radius);
-      margin-bottom: 15px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-    
-    .alert-warning {
-      background-color: #fff3cd;
-      border: 1px solid #ffeaa7;
-      color: #856404;
-    }
-    
-    .alert-success {
-      background-color: #d4edda;
-      border: 1px solid #c3e6cb;
-      color: #155724;
-    }
-    
-    .alert-danger {
-      background-color: #f8d7da;
-      border: 1px solid #f5c6cb;
-      color: #721c24;
-    }
-    
-    .empty-category {
-      background-color: #fff3cd !important;
-      border: 1px dashed #ffc107 !important;
-    }
-    
-    .sort-indicator {
-      margin-right: 5px;
-      opacity: 0.7;
-    }
-    
-    .table-header {
-      cursor: pointer;
-      user-select: none;
-    }
-    
-    .table-header:hover {
-      background-color: rgba(255, 255, 255, 0.1);
-    }
-    
-    .loading-overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background-color: rgba(255, 255, 255, 0.8);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      z-index: 10;
-      border-radius: var(--border-radius);
-    }
-    
-    .spinner {
-      width: 40px;
-      height: 40px;
-      border: 4px solid rgba(0, 0, 0, 0.1);
-      border-left-color: var(--primary-color);
-      border-radius: 50%;
-      animation: spin 1s linear infinite;
-    }
-    
-    @keyframes spin {
-      to { transform: rotate(360deg); }
-    }
   </style>
 </head>
 <body>
   <div class="container">
     <div class="header">
-      <h1><i class="fas fa-edit"></i> مركز شحادة</h1>
+      <h1><i class="fas fa-edit"></i> Shehadeh Center  </h1>
       <p>الموقع خاص للمبرمج محمد شحادة فقط</p>
     </div>
-    
-    <div id="alertContainer"></div>
     
     <div class="controls">
       <div class="control-group">
@@ -462,10 +374,6 @@
         <i class="fas fa-plus-circle"></i> إضافة صنف جديد
       </button>
       
-      <button class="btn-warning" onclick="sortItems()">
-        <i class="fas fa-sort-alpha-down"></i> فرز الأصناف
-      </button>
-      
       <button class="btn-primary" onclick="saveMarkdown()">
         <i class="fas fa-save"></i> حفظ التعديلات
       </button>
@@ -478,16 +386,16 @@
       </select>
     </div>
     
-    <div class="table-container" id="tableContainer">
+    <div class="table-container">
       <table id="catalogTable">
         <thead>
           <tr>
-            <th class="table-header" onclick="sortTable(0)">الفئة <i class="fas fa-sort sort-indicator"></i></th>
-            <th class="table-header" onclick="sortTable(1)">الصنف <i class="fas fa-sort sort-indicator"></i></th>
+            <th>الفئة</th>
+            <th>الصنف</th>
             <th>الذاكرة</th>
             <th>الرام</th>
             <th>الصورة</th>
-            <th class="table-header" onclick="sortTable(5)">السعر <i class="fas fa-sort sort-indicator"></i></th>
+            <th>السعر</th>
             <th>إجراءات</th>
           </tr>
         </thead>
@@ -501,6 +409,8 @@
     </div>
   </div>
 
+  <script src="config.js"></script>
+
   <script>
     const owner = "mohammad-shehadeh";
     const repo = "price";
@@ -508,8 +418,6 @@
     const outputText = document.getElementById("outputText");
     const fileSelect = document.getElementById("fileSelect");
     const categoryFilter = document.getElementById("categoryFilter");
-    const alertContainer = document.getElementById("alertContainer");
-    const tableContainer = document.getElementById("tableContainer");
 
     // Cloudinary configuration
     const cloudName = 'dygc5b8cn';
@@ -528,48 +436,6 @@
       "abc.md": ["yesido", "LELISU", "UNIPRO", "Mixoria", "VEN-DENS", "Reshurk"],
       "lcd.md": ["Samsung", "iphone", "Mi", "tecno", "realmi", "INFINEX", "OPPO", "HONOR"]
     };
-
-    // متغيرات للتحكم في الفرز
-    let currentSortColumn = -1;
-    let sortDirection = 1; // 1 تصاعدي، -1 تنازلي
-
-    // دالة لإظهار التنبيهات
-    function showAlert(message, type = 'warning') {
-      const alertDiv = document.createElement('div');
-      alertDiv.className = `alert alert-${type}`;
-      alertDiv.innerHTML = `
-        <i class="fas fa-${type === 'warning' ? 'exclamation-triangle' : type === 'success' ? 'check-circle' : 'exclamation-circle'}"></i>
-        ${message}
-      `;
-      alertContainer.appendChild(alertDiv);
-      
-      // إزالة التنبيه بعد 5 ثواني
-      setTimeout(() => {
-        alertDiv.remove();
-      }, 5000);
-    }
-
-    // دالة للتحقق من وجود صفوف بدون فئة
-    function checkEmptyCategories() {
-      const rows = tableBody.querySelectorAll('tr');
-      let hasEmptyCategory = false;
-      
-      rows.forEach(row => {
-        const categoryCell = row.querySelector('td:first-child');
-        const category = categoryCell.querySelector('select') ? 
-                       categoryCell.querySelector('select').value : 
-                       categoryCell.textContent.trim();
-        
-        if (!category) {
-          hasEmptyCategory = true;
-          categoryCell.classList.add('empty-category');
-        } else {
-          categoryCell.classList.remove('empty-category');
-        }
-      });
-      
-      return hasEmptyCategory;
-    }
 
     function updateOutput() {
       let lines = [];
@@ -600,9 +466,6 @@
         }
       }
       outputText.value = lines.join("\n");
-      
-      // التحقق من وجود فئات فارغة
-      checkEmptyCategories();
     }
 
     function createCategorySelect(selectedValue = "") {
@@ -843,12 +706,6 @@
     }
 
     function loadSelectedFile() {
-      // إظهار مؤشر التحميل
-      const loadingOverlay = document.createElement('div');
-      loadingOverlay.className = 'loading-overlay';
-      loadingOverlay.innerHTML = '<div class="spinner"></div>';
-      tableContainer.appendChild(loadingOverlay);
-      
       tableBody.innerHTML = "";
       const filename = fileSelect.value;
       fetch(`https://raw.githubusercontent.com/${owner}/${repo}/main/${filename}`)
@@ -886,157 +743,22 @@
           }
           updateOutput();
           updateCategoryFilter();
-          loadingOverlay.remove();
-          showAlert('تم تحميل البيانات بنجاح', 'success');
         })
         .catch(() => {
-          loadingOverlay.remove();
-          showAlert("تعذر تحميل الملف " + filename, 'danger');
+          alert("تعذر تحميل الملف " + filename);
         });
     }
 
     function addNewRow() {
       addRow("", "", "", "", "", "", true);
-      showAlert('تم إضافة صف جديد. يرجى اختيار الفئة قبل الحفظ.', 'warning');
-    }
-
-    // دالة فرز الجدول حسب العمود
-    function sortTable(columnIndex) {
-      const rows = Array.from(tableBody.querySelectorAll('tr'));
-      
-      // تحديث اتجاه الفرز
-      if (currentSortColumn === columnIndex) {
-        sortDirection = -sortDirection;
-      } else {
-        currentSortColumn = columnIndex;
-        sortDirection = 1;
-      }
-      
-      // تحديث أيقونات الفرز
-      const headers = document.querySelectorAll('th.table-header');
-      headers.forEach((header, index) => {
-        const icon = header.querySelector('i');
-        if (index === columnIndex) {
-          icon.className = sortDirection === 1 ? 'fas fa-sort-up sort-indicator' : 'fas fa-sort-down sort-indicator';
-        } else {
-          icon.className = 'fas fa-sort sort-indicator';
-        }
-      });
-      
-      // فرز الصفوف
-      rows.sort((a, b) => {
-        const aCell = a.cells[columnIndex];
-        const bCell = b.cells[columnIndex];
-        
-        let aValue, bValue;
-        
-        // معالجة خلايا الفئة بشكل خاص
-        if (columnIndex === 0) {
-          aValue = aCell.querySelector('select') ? aCell.querySelector('select').value : aCell.textContent.trim();
-          bValue = bCell.querySelector('select') ? bCell.querySelector('select').value : bCell.textContent.trim();
-        } 
-        // معالجة خلايا الصورة بشكل خاص
-        else if (columnIndex === 4) {
-          aValue = aCell.querySelector('img') ? aCell.querySelector('img').dataset.url : '';
-          bValue = bCell.querySelector('img') ? bCell.querySelector('img').dataset.url : '';
-        }
-        // الخلايا الأخرى
-        else {
-          aValue = aCell.textContent.trim();
-          bValue = bCell.textContent.trim();
-        }
-        
-        // تحويل القيم الرقمية إذا أمكن
-        if (columnIndex === 5) { // عمود السعر
-          aValue = parseFloat(aValue) || 0;
-          bValue = parseFloat(bValue) || 0;
-        }
-        
-        // المقارنة
-        if (aValue < bValue) return -1 * sortDirection;
-        if (aValue > bValue) return 1 * sortDirection;
-        return 0;
-      });
-      
-      // إعادة ترتيب الصفوف في الجدول
-      tableBody.innerHTML = '';
-      rows.forEach(row => tableBody.appendChild(row));
-      
-      updateOutput();
-      showAlert(`تم فرز البيانات حسب ${columnIndex === 0 ? 'الفئة' : columnIndex === 1 ? 'الصنف' : 'السعر'}`, 'success');
-    }
-
-    // دالة فرز الأصناف داخل كل فئة
-    function sortItems() {
-      const rows = Array.from(tableBody.querySelectorAll('tr'));
-      const categorizedRows = {};
-      
-      // تجميع الصفوف حسب الفئة
-      rows.forEach(row => {
-        const categoryCell = row.querySelector('td:first-child');
-        const category = categoryCell.querySelector('select') ? 
-                       categoryCell.querySelector('select').value : 
-                       categoryCell.textContent.trim();
-        
-        if (!categorizedRows[category]) {
-          categorizedRows[category] = [];
-        }
-        
-        categorizedRows[category].push(row);
-      });
-      
-      // فرز الصفوف داخل كل فئة حسب اسم الصنف
-      Object.keys(categorizedRows).forEach(category => {
-        categorizedRows[category].sort((a, b) => {
-          const aItem = a.cells[1].textContent.trim();
-          const bItem = b.cells[1].textContent.trim();
-          return aItem.localeCompare(bItem, 'ar');
-        });
-      });
-      
-      // إعادة بناء الجدول مع الحفاظ على ترتيب الفئات
-      tableBody.innerHTML = '';
-      
-      // الحصول على ترتيب الفئات المحدد
-      const filename = fileSelect.value;
-      const orderedCategories = categoryOrder[filename] || [];
-      
-      // إضافة الصفوف حسب ترتيب الفئات المحدد
-      orderedCategories.forEach(category => {
-        if (categorizedRows[category]) {
-          categorizedRows[category].forEach(row => tableBody.appendChild(row));
-        }
-      });
-      
-      // إضافة أي فئات غير موجودة في القائمة المرتبة
-      Object.keys(categorizedRows).forEach(category => {
-        if (!orderedCategories.includes(category)) {
-          categorizedRows[category].forEach(row => tableBody.appendChild(row));
-        }
-      });
-      
-      updateOutput();
-      showAlert('تم فرز الأصناف داخل كل فئة حسب الأبجدية', 'success');
     }
 
     async function saveMarkdown() {
-      // التحقق من وجود صفوف بدون فئة
-      if (checkEmptyCategories()) {
-        showAlert('يوجد صفوف بدون فئة. يرجى اختيار الفئة لجميع الأصناف قبل الحفظ.', 'danger');
-        return;
-      }
-      
       const content = btoa(unescape(encodeURIComponent(outputText.value)));
       const path = fileSelect.value;
       const url = `https://api.github.com/repos/${owner}/${repo}/contents/${path}`;
 
       try {
-        // إظهار مؤشر التحميل
-        const loadingOverlay = document.createElement('div');
-        loadingOverlay.className = 'loading-overlay';
-        loadingOverlay.innerHTML = '<div class="spinner"></div>';
-        tableContainer.appendChild(loadingOverlay);
-        
         const shaRes = await fetch(url, {
           headers: { Authorization: `token ${GITHUB_TOKEN}` }
         });
@@ -1057,17 +779,15 @@
         });
         
         const data = await saveRes.json();
-        loadingOverlay.remove();
-        
         if (data.content) {
-          showAlert("تم حفظ التعديلات بنجاح!", 'success');
+          alert("تم حفظ التعديلات بنجاح!");
         } else {
           console.error(data);
-          showAlert("حدث خطأ أثناء الحفظ.", 'danger');
+          alert("حدث خطأ أثناء الحفظ.");
         }
       } catch (err) {
         console.error(err);
-        showAlert("فشل الاتصال بواجهة GitHub.", 'danger');
+        alert("فشل الاتصال بواجهة GitHub.");
       }
     }
 
