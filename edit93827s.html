@@ -31,6 +31,7 @@
       line-height: 1.6;
       padding: 20px;
       direction: rtl;
+      overflow-x: hidden;
     }
     
     .container {
@@ -147,6 +148,7 @@
       box-shadow: var(--box-shadow);
       overflow-x: auto;
       margin-bottom: 30px;
+      position: relative;
     }
     
     table {
@@ -304,12 +306,13 @@
       overflow-wrap: break-word;
     }
 
-    th:nth-child(1), td:nth-child(1) { width: 90px; }
-    th:nth-child(2), td:nth-child(2) { width: 100px; }
-    th:nth-child(3), td:nth-child(3) { width: 60px; }
+    th:nth-child(1), td:nth-child(1) { width: 60px; }
+    th:nth-child(2), td:nth-child(2) { width: 90px; }
+    th:nth-child(3), td:nth-child(3) { width: 100px; }
     th:nth-child(4), td:nth-child(4) { width: 60px; }
-    th:nth-child(5), td:nth-child(5) { width: 100px; }
-    th:nth-child(6), td:nth-child(6) { width: 60px; }
+    th:nth-child(5), td:nth-child(5) { width: 60px; }
+    th:nth-child(6), td:nth-child(6) { width: 100px; }
+    th:nth-child(7), td:nth-child(7) { width: 60px; }
 
     button.delete-btn {
       padding: 2px 4px;
@@ -348,15 +351,27 @@
       margin-left: 10px;
     }
 
-    /* أنماط السحب والإفلات */
+    /* أنماط السحب والإفلات المحسنة */
     .dragging {
-      opacity: 0.5;
+      opacity: 0.8;
       background-color: #e3f2fd !important;
-      border: 2px dashed var(--primary-color);
+      border: 2px solid var(--primary-color);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      transform: rotate(2deg);
+      z-index: 1000;
     }
 
     .drag-over {
       background-color: #f0f8ff !important;
+      border-top: 2px dashed var(--primary-color);
+    }
+
+    .drag-over-top {
+      border-top: 2px dashed var(--primary-color);
+    }
+
+    .drag-over-bottom {
+      border-bottom: 2px dashed var(--primary-color);
     }
 
     .row-handle {
@@ -364,6 +379,8 @@
       padding: 8px;
       color: #666;
       transition: var(--transition);
+      touch-action: none;
+      user-select: none;
     }
 
     .row-handle:active {
@@ -373,9 +390,64 @@
     .row-handle:hover {
       color: var(--primary-color);
     }
+
+    .drag-ghost {
+      position: fixed;
+      background: white;
+      border: 2px solid var(--primary-color);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+      border-radius: 8px;
+      z-index: 10000;
+      opacity: 0.95;
+      pointer-events: none;
+      transform: rotate(3deg);
+      transition: none;
+    }
+
+    .drag-ghost td {
+      padding: 12px;
+      border: none;
+    }
+
+    .auto-scroll-top, .auto-scroll-bottom {
+      position: fixed;
+      left: 0;
+      right: 0;
+      height: 40px;
+      background: linear-gradient(180deg, rgba(67, 97, 238, 0.1), transparent);
+      z-index: 9999;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .auto-scroll-top {
+      top: 0;
+    }
+
+    .auto-scroll-bottom {
+      bottom: 0;
+    }
+
+    .auto-scroll-top.active, .auto-scroll-bottom.active {
+      opacity: 1;
+    }
+
+    .scroll-indicator {
+      position: absolute;
+      width: 100%;
+      text-align: center;
+      color: var(--primary-color);
+      font-weight: bold;
+      padding: 5px;
+    }
   </style>
 </head>
 <body>
+  <div class="auto-scroll-top" id="autoScrollTop">
+    <div class="scroll-indicator">↑ التمرير للأعلى ↑</div>
+  </div>
+  
   <div class="container">
     <div class="header">
       <h1><i class="fas fa-edit"></i> Shehadeh Center  </h1>
@@ -436,6 +508,10 @@
     </div>
   </div>
 
+  <div class="auto-scroll-bottom" id="autoScrollBottom">
+    <div class="scroll-indicator">↓ التمرير للأسفل ↓</div>
+  </div>
+
   <script src="config.js"></script>
 
   <script>
@@ -445,6 +521,8 @@
     const outputText = document.getElementById("outputText");
     const fileSelect = document.getElementById("fileSelect");
     const categoryFilter = document.getElementById("categoryFilter");
+    const autoScrollTop = document.getElementById("autoScrollTop");
+    const autoScrollBottom = document.getElementById("autoScrollBottom");
 
     // Cloudinary configuration
     const cloudName = 'dygc5b8cn';
@@ -464,11 +542,16 @@
       "lcd.md": ["Samsung", "iphone", "Mi", "tecno", "realmi", "INFINEX", "OPPO", "HONOR"]
     };
 
-    // متغيرات السحب والإفلات
+    // متغيرات السحب والإفلات المحسنة
     let dragSrcEl = null;
     let isDragging = false;
     let longPressTimer = null;
-    let longPressDelay = 500; // زمن الضغط المطول بالمللي ثانية
+    let longPressDelay = 400;
+    let dragGhost = null;
+    let autoScrollInterval = null;
+    let currentScrollSpeed = 0;
+    let startY = 0;
+    let dragOffsetY = 0;
 
     function updateOutput() {
       let lines = [];
@@ -476,24 +559,23 @@
         const cells = row.querySelectorAll("td");
         const values = [];
         
-        for (let i = 1; i < 7; i++) { // تبدأ من 1 لأن العمود الأول هو زر التحريك
+        for (let i = 1; i < 7; i++) {
           const cell = cells[i];
           
-          if (i === 1) { // خلية الفئة
+          if (i === 1) {
             const select = cell.querySelector('select');
             values.push(select ? select.value : cell.textContent.trim());
           } 
-          else if (i === 5) { // خلية الصورة
+          else if (i === 5) {
             const img = cell.querySelector('img.preview-image');
             values.push(img ? img.dataset.url : '');
           }
-          else { // الخلايا الأخرى
+          else {
             values.push(cell.textContent.trim());
           }
         }
         
         if (values.some(val => val !== "")) {
-          // دمج اسم المنتج مع الروم والرام
           const productName = `${values[1]} ${values[2]}|${values[3]}`;
           lines.push(`${values[0]}/${productName}/${values[5]}/${values[4]}`);
         }
@@ -512,13 +594,11 @@
         updateCategoryFilter();
       };
       
-      // إضافة خيار فارغ
       const emptyOption = document.createElement("option");
       emptyOption.value = "";
       emptyOption.textContent = "اختر الفئة";
       select.appendChild(emptyOption);
       
-      // إضافة خيارات الفئة حسب الترتيب المحدد
       options.forEach(option => {
         const opt = document.createElement("option");
         opt.value = option;
@@ -534,22 +614,18 @@
       const filename = fileSelect.value;
       const currentCategories = new Set();
       
-      // جمع الفئات الموجودة في الجدول
       tableBody.querySelectorAll('tr').forEach(row => {
-        const categoryCell = row.querySelector('td:nth-child(2)'); // العمود الثاني هو الفئة
+        const categoryCell = row.querySelector('td:nth-child(2)');
         const category = categoryCell.querySelector('select') ? 
                         categoryCell.querySelector('select').value : 
                         categoryCell.textContent.trim();
         if (category) currentCategories.add(category);
       });
       
-      // إضافة الفئات من الترتيب المحدد
       const orderedCategories = categoryOrder[filename] || [];
       
-      // تحديث قائمة التصفية
       categoryFilter.innerHTML = '<option value="">عرض الكل</option>';
       
-      // إضافة الفئات المرتبة أولاً
       orderedCategories.forEach(category => {
         if (currentCategories.has(category)) {
           const option = document.createElement("option");
@@ -559,7 +635,6 @@
         }
       });
       
-      // إضافة أي فئات أخرى غير موجودة في القائمة المرتبة
       currentCategories.forEach(category => {
         if (!orderedCategories.includes(category)) {
           const option = document.createElement("option");
@@ -592,16 +667,14 @@
     function addRow(category = "", item = "", rom = "", ram = "", imageUrl = "", price = "", isNewRow = false) {
       const row = document.createElement("tr");
       
-      // 1. خلية التحريك (زر السحب)
+      // 1. خلية التحريك
       const dragCell = document.createElement("td");
       const dragHandle = document.createElement("div");
       dragHandle.className = "row-handle";
       dragHandle.innerHTML = '<i class="fas fa-arrows-alt-v"></i>';
       dragHandle.setAttribute('title', 'اضغط مطولاً للسحب والإفلات');
       
-      // إضافة أحداث السحب والإفلات
       setupDragAndDrop(row, dragHandle);
-      
       dragCell.appendChild(dragHandle);
       
       // 2. خلية الفئة
@@ -643,7 +716,6 @@
       
       // 6. خلية الصورة
       const imageCell = document.createElement("td");
-      
       const imageContainer = document.createElement("div");
       imageContainer.className = "image-container";
       
@@ -714,7 +786,6 @@
       row.appendChild(priceCell);
       row.appendChild(actionCell);
       
-      // إضافة الصف إلى الجدول
       if (isNewRow) {
         tableBody.insertBefore(row, tableBody.firstChild);
       } else {
@@ -725,106 +796,225 @@
       updateCategoryFilter();
     }
 
-    // وظائف السحب والإفلات
+    // وظائف السحب والإفلات المحسنة
     function setupDragAndDrop(row, dragHandle) {
-      // بدء السحب عند الضغط المطول
-      dragHandle.addEventListener('mousedown', startDrag);
-      dragHandle.addEventListener('touchstart', startDrag);
+      dragHandle.addEventListener('mousedown', (e) => startDrag(e, row));
+      dragHandle.addEventListener('touchstart', (e) => startDrag(e, row), { passive: false });
       
-      // منع السلوك الافتراضي لمنع التحديد أثناء السحب
-      dragHandle.addEventListener('dragstart', (e) => {
+      function startDrag(e, row) {
         e.preventDefault();
-      });
-      
-      function startDrag(e) {
-        e.preventDefault();
+        e.stopPropagation();
         
-        // بدء مؤقت الضغط المطول
         longPressTimer = setTimeout(() => {
           isDragging = true;
           dragSrcEl = row;
+          startY = e.clientY || e.touches[0].clientY;
+          
+          // إنشاء صف شبح يتبع المؤشر
+          createDragGhost(row);
+          
+          // إضافة كلاس السحب
           row.classList.add('dragging');
           
-          // إضافة مستمعات الأحداث للسحب
-          document.addEventListener('mousemove', onDrag);
-          document.addEventListener('touchmove', onDrag);
+          // إخفاء الصف الأصلي
+          row.style.opacity = '0.3';
+          
+          // إضافة مستمعات الأحداث
+          document.addEventListener('mousemove', onDragMove);
+          document.addEventListener('touchmove', onDragMove, { passive: false });
           document.addEventListener('mouseup', endDrag);
           document.addEventListener('touchend', endDrag);
+          
+          // بدء التمرير التلقائي
+          startAutoScroll();
         }, longPressDelay);
       }
       
-      function onDrag(e) {
+      function onDragMove(e) {
         if (!isDragging) return;
         
         e.preventDefault();
-        const y = e.clientY || e.touches[0].clientY;
+        const clientY = e.clientY || (e.touches && e.touches[0].clientY);
+        if (!clientY) return;
         
-        // إخفاء العنصر الذي يتم سحبه
-        row.style.display = 'none';
+        // تحديث موقع الصف الشبح
+        updateDragGhost(clientY);
         
-        // العثور على العنصر الذي يتم السحب فوقه
-        const belowElem = document.elementFromPoint(
-          e.clientX || e.touches[0].clientX, 
-          y
-        );
+        // تحديث موضع السحب
+        dragOffsetY = clientY - startY;
         
-        // إظهار العنصر مرة أخرى
-        row.style.display = '';
-        
-        let targetRow = belowElem ? belowElem.closest('tr') : null;
-        
-        // إزالة التمييز من جميع الصفوف
-        document.querySelectorAll('tr').forEach(r => {
-          r.classList.remove('drag-over');
-        });
-        
-        // تمييز الصف الهدف
-        if (targetRow && targetRow !== row && targetRow.parentNode === tableBody) {
-          targetRow.classList.add('drag-over');
-        }
+        // العثور على الصف الهدف
+        updateTargetRow(clientY);
       }
       
       function endDrag(e) {
-        // إلغاء المؤقت إذا تم تحرير الزر قبل انتهاء الوقت
         clearTimeout(longPressTimer);
         
         if (!isDragging) return;
         
         isDragging = false;
-        row.classList.remove('dragging');
+        
+        // إزالة الصف الشبح
+        removeDragGhost();
+        
+        // إعادة الصف الأصلي
+        if (dragSrcEl) {
+          dragSrcEl.classList.remove('dragging');
+          dragSrcEl.style.opacity = '1';
+        }
         
         // إزالة التمييز من جميع الصفوف
         document.querySelectorAll('tr').forEach(r => {
-          r.classList.remove('drag-over');
+          r.classList.remove('drag-over', 'drag-over-top', 'drag-over-bottom');
         });
         
         // إزالة مستمعات الأحداث
-        document.removeEventListener('mousemove', onDrag);
-        document.removeEventListener('touchmove', onDrag);
+        document.removeEventListener('mousemove', onDragMove);
+        document.removeEventListener('touchmove', onDragMove);
         document.removeEventListener('mouseup', endDrag);
         document.removeEventListener('touchend', endDrag);
         
-        const y = e.clientY || (e.changedTouches ? e.changedTouches[0].clientY : 0);
+        // إيقاف التمرير التلقائي
+        stopAutoScroll();
         
-        // العثور على العنصر الذي تم تحرير الزر فوقه
-        const belowElem = document.elementFromPoint(
-          e.clientX || (e.changedTouches ? e.changedTouches[0].clientX : 0), 
-          y
-        );
-        
-        let targetRow = belowElem ? belowElem.closest('tr') : null;
-        
-        // إذا كان هناك صف هدف، نقل الصف إلى موقعه الجديد
-        if (targetRow && targetRow !== row && targetRow.parentNode === tableBody) {
-          const rect = targetRow.getBoundingClientRect();
-          const next = (y - rect.top) / (rect.bottom - rect.top) > 0.5;
-          
-          tableBody.insertBefore(row, next ? targetRow.nextSibling : targetRow);
-          updateOutput();
+        // إعادة ترتيب الصفوف إذا كان هناك هدف
+        const clientY = e.clientY || (e.changedTouches && e.changedTouches[0].clientY);
+        if (clientY && dragSrcEl) {
+          const targetRow = findTargetRow(clientY);
+          if (targetRow && targetRow !== dragSrcEl) {
+            const rect = targetRow.getBoundingClientRect();
+            const next = (clientY - rect.top) / (rect.bottom - rect.top) > 0.5;
+            
+            tableBody.insertBefore(dragSrcEl, next ? targetRow.nextSibling : targetRow);
+            updateOutput();
+          }
         }
         
         dragSrcEl = null;
       }
+    }
+
+    function createDragGhost(row) {
+      dragGhost = row.cloneNode(true);
+      dragGhost.className = 'drag-ghost';
+      dragGhost.style.width = row.offsetWidth + 'px';
+      
+      // إزالة زر الحذف والأزرار الأخرى من الشبح
+      const actionCell = dragGhost.querySelector('td:last-child');
+      if (actionCell) actionCell.innerHTML = '';
+      
+      document.body.appendChild(dragGhost);
+    }
+
+    function updateDragGhost(clientY) {
+      if (!dragGhost) return;
+      
+      const scrollY = window.scrollY || window.pageYOffset;
+      dragGhost.style.top = (clientY + scrollY - 30) + 'px';
+      dragGhost.style.left = (window.innerWidth / 2 - dragGhost.offsetWidth / 2) + 'px';
+    }
+
+    function removeDragGhost() {
+      if (dragGhost) {
+        document.body.removeChild(dragGhost);
+        dragGhost = null;
+      }
+    }
+
+    function updateTargetRow(clientY) {
+      // إزالة التمييز من جميع الصفوف
+      document.querySelectorAll('tr').forEach(r => {
+        r.classList.remove('drag-over', 'drag-over-top', 'drag-over-bottom');
+      });
+      
+      const targetRow = findTargetRow(clientY);
+      
+      if (targetRow && targetRow !== dragSrcEl) {
+        const rect = targetRow.getBoundingClientRect();
+        const isTopHalf = (clientY - rect.top) / (rect.bottom - rect.top) < 0.5;
+        
+        targetRow.classList.add('drag-over');
+        if (isTopHalf) {
+          targetRow.classList.add('drag-over-top');
+        } else {
+          targetRow.classList.add('drag-over-bottom');
+        }
+      }
+    }
+
+    function findTargetRow(clientY) {
+      const rows = Array.from(tableBody.querySelectorAll('tr'));
+      
+      for (let row of rows) {
+        if (row === dragSrcEl) continue;
+        
+        const rect = row.getBoundingClientRect();
+        if (clientY >= rect.top && clientY <= rect.bottom) {
+          return row;
+        }
+      }
+      
+      // إذا كان المؤشر في الجزء السفلي، إرجاع آخر صف
+      const lastRow = rows[rows.length - 1];
+      if (lastRow && clientY > lastRow.getBoundingClientRect().bottom) {
+        return lastRow;
+      }
+      
+      return null;
+    }
+
+    function startAutoScroll() {
+      autoScrollInterval = setInterval(() => {
+        if (!isDragging) {
+          stopAutoScroll();
+          return;
+        }
+        
+        const scrollThreshold = 100;
+        const scrollSpeed = 20;
+        const viewportHeight = window.innerHeight;
+        const mouseY = startY + dragOffsetY;
+        
+        // التحقق من الحاجة للتمرير للأعلى
+        if (mouseY < scrollThreshold) {
+          currentScrollSpeed = -scrollSpeed * (1 - mouseY / scrollThreshold);
+          autoScrollTop.classList.add('active');
+          autoScrollBottom.classList.remove('active');
+        }
+        // التحقق من الحاجة للتمرير للأسفل
+        else if (mouseY > viewportHeight - scrollThreshold) {
+          currentScrollSpeed = scrollSpeed * (1 - (viewportHeight - mouseY) / scrollThreshold);
+          autoScrollBottom.classList.add('active');
+          autoScrollTop.classList.remove('active');
+        }
+        // لا حاجة للتمرير
+        else {
+          currentScrollSpeed = 0;
+          autoScrollTop.classList.remove('active');
+          autoScrollBottom.classList.remove('active');
+          return;
+        }
+        
+        // تنفيذ التمرير
+        window.scrollBy(0, currentScrollSpeed);
+        
+        // تحديث موضع الصف الشبح بعد التمرير
+        if (dragGhost) {
+          const scrollY = window.scrollY || window.pageYOffset;
+          dragGhost.style.top = (startY + dragOffsetY + scrollY - 30) + 'px';
+        }
+        
+      }, 16); // ~60 FPS
+    }
+
+    function stopAutoScroll() {
+      if (autoScrollInterval) {
+        clearInterval(autoScrollInterval);
+        autoScrollInterval = null;
+      }
+      currentScrollSpeed = 0;
+      autoScrollTop.classList.remove('active');
+      autoScrollBottom.classList.remove('active');
     }
 
     function removeRow(button) {
@@ -840,7 +1030,7 @@
       const rows = tableBody.querySelectorAll("tr");
       
       rows.forEach(row => {
-        const categoryCell = row.querySelector("td:nth-child(2)"); // العمود الثاني هو الفئة
+        const categoryCell = row.querySelector("td:nth-child(2)");
         const category = categoryCell.querySelector("select") ? 
                        categoryCell.querySelector("select").value : 
                        categoryCell.textContent.trim();
@@ -858,7 +1048,7 @@
       let emptyCategories = [];
       
       rows.forEach((row, index) => {
-        const categoryCell = row.querySelector("td:nth-child(2)"); // العمود الثاني هو الفئة
+        const categoryCell = row.querySelector("td:nth-child(2)");
         const category = categoryCell.querySelector("select") ? 
                        categoryCell.querySelector("select").value : 
                        categoryCell.textContent.trim();
@@ -881,7 +1071,6 @@
           for (let line of lines) {
             const parts = line.split('/');
             if (parts.length >= 4) {
-              // تحليل اسم المنتج لاستخراج الروم والرام
               const productParts = parts[1].trim().split(' ');
               const romRam = productParts[productParts.length - 1].split('|');
               
@@ -889,7 +1078,6 @@
               let rom = romRam[0] || "";
               let ram = romRam[1] || "";
               
-              // إذا لم يكن هناك | في الاسم، نعتبره اسم فقط بدون روم ورام
               if (productParts[productParts.length - 1].indexOf('|') === -1) {
                 itemName = parts[1].trim();
                 rom = "";
@@ -920,7 +1108,6 @@
     }
 
     async function saveMarkdown() {
-      // التحقق من وجود أصناف بدون فئة
       const emptyCategories = validateCategories();
       if (emptyCategories.length > 0) {
         alert(`لا يمكن الحفظ! هناك أصناف بدون فئة في الصفوف: ${emptyCategories.join(', ')}\n\nيرجى إضافة فئة لكل صنف قبل الحفظ.`);
