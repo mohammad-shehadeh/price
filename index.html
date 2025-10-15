@@ -1841,6 +1841,53 @@ function changeAdImage(newImageUrl) {
 
         // Initialize App
         window.addEventListener('load', init);
+        
+        
+        // إخفاء صور منتجات الشاشات بعد تحميل المنتجات
+function hideLCDImages() {
+    document.querySelectorAll('.product').forEach(product => {
+        const categoryElement = product.querySelector('.product-category');
+        if (categoryElement) {
+            const category = categoryElement.textContent.toLowerCase();
+            const lcdKeywords = ['شاشات', 'شاشة', 'lcd', 'شاشات كمبيوتر', 'شاشات تلفزيون'];
+            
+            if (lcdKeywords.some(keyword => category.includes(keyword))) {
+                const imgContainer = product.querySelector('.product-img-container');
+                if (imgContainer) {
+                    imgContainer.style.display = 'none';
+                    
+                    // إضافة أيقونة بديلة
+                    if (!product.querySelector('.lcd-icon')) {
+                        const icon = document.createElement('div');
+                        icon.className = 'lcd-icon';
+                        icon.innerHTML = '📺';
+                        icon.style.cssText = `
+                            position: absolute;
+                            top: 15px;
+                            left: 15px;
+                            font-size: 24px;
+                            background: rgba(11, 181, 176, 0.9);
+                            width: 40px;
+                            height: 40px;
+                            border-radius: 50%;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            z-index: 2;
+                            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+                        `;
+                        product.style.position = 'relative';
+                        product.appendChild(icon);
+                    }
+                }
+            }
+        }
+    });
+}
+
+// استدعاء الدالة بعد تحميل المنتجات
+setTimeout(hideLCDImages, 1000);
+        
     </script>
 </body>
 </html>
