@@ -1092,6 +1092,87 @@
         padding-top: 1.2rem;
     }
 }
+
+
+
+
+/* إخفاء صور المنتجات من ملف lcd.md */
+.product:has(.product-category:contains("شاشات")),
+.product:has(.product-category:contains("شاشة")),
+.product:has(.product-category:contains("LCD")),
+.product:has(.product-category:contains("شاشات كمبيوتر")),
+.product:has(.product-category:contains("شاشات تلفزيون")) {
+    /* إخفاء حاوية الصورة */
+    .product-img-container {
+        display: none !important;
+    }
+    
+    /* تصميم بديل للمنتجات بدون صور */
+    .product-content {
+        padding-top: 1.8rem;
+        border-top: 3px solid var(--primary-color);
+        margin-top: 0.5rem;
+    }
+    
+    /* تأثير خاص للمنتجات المخفية صورها */
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-left: 4px solid var(--primary-color);
+}
+
+/* تعديل التظليل للعناصر بدون صور */
+.product:has(.product-category:contains("شاشات")):hover,
+.product:has(.product-category:contains("شاشة")):hover,
+.product:has(.product-category:contains("LCD")):hover,
+.product:has(.product-category:contains("شاشات كمبيوتر")):hover,
+.product:has(.product-category:contains("شاشات تلفزيون")):hover {
+    box-shadow: 0 8px 20px rgba(11, 181, 176, 0.15);
+    transform: translateY(-5px);
+}
+
+/* إضافة أيقونة للمنتجات بدون صور */
+.product:has(.product-category:contains("شاشات"))::before,
+.product:has(.product-category:contains("شاشة"))::before,
+.product:has(.product-category:contains("LCD"))::before,
+.product:has(.product-category:contains("شاشات كمبيوتر"))::before,
+.product:has(.product-category:contains("شاشات تلفزيون"))::before {
+    content: "📺";
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    font-size: 24px;
+    background: rgba(11, 181, 176, 0.9);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* تحسين المظهر للأجهزة المحمولة */
+@media (max-width: 768px) {
+    .product:has(.product-category:contains("شاشات"))::before,
+    .product:has(.product-category:contains("شاشة"))::before,
+    .product:has(.product-category:contains("LCD"))::before,
+    .product:has(.product-category:contains("شاشات كمبيوتر"))::before,
+    .product:has(.product-category:contains("شاشات تلفزيون"))::before {
+        width: 35px;
+        height: 35px;
+        font-size: 18px;
+        top: 10px;
+        left: 10px;
+    }
+    
+    .product:has(.product-category:contains("شاشات")) .product-content,
+    .product:has(.product-category:contains("شاشة")) .product-content,
+    .product:has(.product-category:contains("LCD")) .product-content,
+    .product:has(.product-category:contains("شاشات كمبيوتر")) .product-content,
+    .product:has(.product-category:contains("شاشات تلفزيون")) .product-content {
+        padding-top: 1.2rem;
+    }
+}
     </style>
 </head>
 <body>
@@ -1842,51 +1923,6 @@ function changeAdImage(newImageUrl) {
         // Initialize App
         window.addEventListener('load', init);
         
-        
-        // إخفاء صور منتجات الشاشات بعد تحميل المنتجات
-function hideLCDImages() {
-    document.querySelectorAll('.product').forEach(product => {
-        const categoryElement = product.querySelector('.product-category');
-        if (categoryElement) {
-            const category = categoryElement.textContent.toLowerCase();
-            const lcdKeywords = ['شاشات', 'شاشة', 'lcd', 'شاشات كمبيوتر', 'شاشات تلفزيون'];
-            
-            if (lcdKeywords.some(keyword => category.includes(keyword))) {
-                const imgContainer = product.querySelector('.product-img-container');
-                if (imgContainer) {
-                    imgContainer.style.display = 'none';
-                    
-                    // إضافة أيقونة بديلة
-                    if (!product.querySelector('.lcd-icon')) {
-                        const icon = document.createElement('div');
-                        icon.className = 'lcd-icon';
-                        icon.innerHTML = '📺';
-                        icon.style.cssText = `
-                            position: absolute;
-                            top: 15px;
-                            left: 15px;
-                            font-size: 24px;
-                            background: rgba(11, 181, 176, 0.9);
-                            width: 40px;
-                            height: 40px;
-                            border-radius: 50%;
-                            display: flex;
-                            align-items: center;
-                            justify-content: center;
-                            z-index: 2;
-                            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-                        `;
-                        product.style.position = 'relative';
-                        product.appendChild(icon);
-                    }
-                }
-            }
-        }
-    });
-}
-
-// استدعاء الدالة بعد تحميل المنتجات
-setTimeout(hideLCDImages, 1000);
         
     </script>
 </body>
