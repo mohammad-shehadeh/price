@@ -1094,11 +1094,7 @@
 }
 
 
-/* إخفاء الصور داخل القسم الثاني (أسعار الشاشات) فقط */
-section:nth-child(3) img,
-div:nth-child(3) img {
-  display: none !important;
-}
+
     </style>
 </head>
 <body>
@@ -1849,7 +1845,39 @@ function changeAdImage(newImageUrl) {
         // Initialize App
         window.addEventListener('load', init);
         
-        
+
+        // تعديل خاص لزر أسعار الشاشات (nth-child(2))
+document.addEventListener("DOMContentLoaded", () => {
+    const fileButtons = document.querySelectorAll(".file-btn");
+
+    // تأكد أن الزر الثاني موجود
+    if (fileButtons[1]) {
+        fileButtons[1].addEventListener("click", () => {
+            // عند الضغط على زر أسعار الشاشات، نخفي الصور
+            const observer = new MutationObserver(() => {
+                document.querySelectorAll(".product-img-container").forEach(img => {
+                    img.style.display = "none";
+                });
+            });
+            observer.observe(document.getElementById("categories"), { childList: true, subtree: true });
+        });
+    }
+
+    // إذا تم الضغط على أي زر آخر نُعيد الصور
+    fileButtons.forEach((btn, index) => {
+        if (index !== 1) {
+            btn.addEventListener("click", () => {
+                const observer = new MutationObserver(() => {
+                    document.querySelectorAll(".product-img-container").forEach(img => {
+                        img.style.display = "";
+                    });
+                });
+                observer.observe(document.getElementById("categories"), { childList: true, subtree: true });
+            });
+        }
+    });
+});
+
     </script>
 </body>
 </html>
