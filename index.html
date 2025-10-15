@@ -1094,6 +1094,27 @@
 }
 
 
+/* إخفاء الصورة والإطار في المنتجات التي لا تحتوي على صورة */
+.product-img-container img[src=""],
+.product-img-container img:not([src]),
+.product-img-container img[src=" "],
+.product-img-container img[src*="No+Image"],
+.product-img-container img[src*="placeholder"] {
+  display: none !important;
+}
+
+/* إخفاء الإطار أو المساحة المخصصة للصورة إذا لم تُعرض الصورة */
+.product-img-container:has(img[src=""]),
+.product-img-container:has(img:not([src])),
+.product-img-container:has(img[src=" "]),
+.product-img-container:has(img[src*="No+Image"]),
+.product-img-container:has(img[src*="placeholder"]) {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
 
     </style>
 </head>
@@ -1846,37 +1867,7 @@ function changeAdImage(newImageUrl) {
         window.addEventListener('load', init);
         
 
-        // تعديل خاص لزر أسعار الشاشات (nth-child(2))
-document.addEventListener("DOMContentLoaded", () => {
-    const fileButtons = document.querySelectorAll(".file-btn");
 
-    // تأكد أن الزر الثاني موجود
-    if (fileButtons[1]) {
-        fileButtons[1].addEventListener("click", () => {
-            // عند الضغط على زر أسعار الشاشات، نخفي الصور
-            const observer = new MutationObserver(() => {
-                document.querySelectorAll(".product-img-container").forEach(img => {
-                    img.style.display = "none";
-                });
-            });
-            observer.observe(document.getElementById("categories"), { childList: true, subtree: true });
-        });
-    }
-
-    // إذا تم الضغط على أي زر آخر نُعيد الصور
-    fileButtons.forEach((btn, index) => {
-        if (index !== 1) {
-            btn.addEventListener("click", () => {
-                const observer = new MutationObserver(() => {
-                    document.querySelectorAll(".product-img-container").forEach(img => {
-                        img.style.display = "";
-                    });
-                });
-                observer.observe(document.getElementById("categories"), { childList: true, subtree: true });
-            });
-        }
-    });
-});
 
     </script>
 </body>
