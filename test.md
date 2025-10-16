@@ -1,3 +1,4 @@
+Tecno/Slim 256|8/750/https://res.cloudinary.com/dygc5b8cn/image/upload/v1760622512/yze1nsxdm3lgmny2tjyo.webp
 MI/Pad 2 256|8/670/https://res.cloudinary.com/dygc5b8cn/image/upload/v1759655366/bsrpwamkyjsfjjxjyvqq.webp
 MI/SE 11" 256|8/aaa/https://www.celletronic.com/wp-content/uploads/2023/09/xiaomi-redmi-pad-se-11-0-6gb-ram-128gb-wifi-gris.jpg
 MI/Redmi 15 256|8/510/https://res.cloudinary.com/dygc5b8cn/image/upload/v1759304172/u2xrt2uhefd3tbhmjroe.webp
@@ -40,6 +41,7 @@ samsung/A36 128|8/890/https://media-ik.croma.com/prod/https://media.croma.com/im
 samsung/Tap A9+  5G 128|8/640/https://res.cloudinary.com/dygc5b8cn/image/upload/v1753694538/hof796y09s8x8ovvttwp.jpg
 samsung/TAP A9 64|4/340/https://oplayce.ci/cdn/shop/files/samsung-galaxy-tab-a9_5_1024x.jpg?v=1717431017
 samsung/A26 128|6 |/680/https://res.cloudinary.com/dygc5b8cn/image/upload/v1747478968/m8ckbi5uatn8p2qcarzi.jpg
+samsung/A16 256|8/600/https://res.cloudinary.com/dygc5b8cn/image/upload/v1760622406/osrvauzbylvidbzxirlq.png
 samsung/A16 128|4/450/https://econtent.o2.co.uk/o/econtent/media/get/ff0037cf-f7bc-4ca6-bde5-779c9cbb9c2b
 samsung/A06 128|4/320/https://www.jibalzone.com/media/7389/conversions/6704ddec150e1_193679_2024-slider.jpg
 samsung/A06 64|4/280/https://www.jibalzone.com/media/7389/conversions/6704ddec150e1_193679_2024-slider.jpg
