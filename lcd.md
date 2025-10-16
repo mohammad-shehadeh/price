@@ -1,3 +1,4 @@
+OPPO/A73 |/50/undefined
 Mi/Redmi A5 - poco C71 |/50/undefined
 Mi/Note 14 incell |/60/undefined
 Mi/Note 12 incell +frame |/60/undefined
