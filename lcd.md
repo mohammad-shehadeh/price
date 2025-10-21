@@ -1,4 +1,3 @@
-
 Mi/Redmi A5 - poco C71 |/50/undefined
 Mi/Note 14 incell |/60/undefined
 Mi/Note 12 incell +frame |/60/undefined
@@ -84,18 +83,28 @@ realmi/C25Y-C21Y ORI |/45/
 realmi/C3-5I-6I ORI |/45/
 Samsung/A03 core |/45/
 Samsung/A03S-A02S-A03-A04E original |/45/
+Samsung/A02S +FRAME/55/
+Samsung/A03S +FRAME/55/
+Samsung/A04E +FRAME/55/
 Samsung/A04 original |/45/
+Samsung/A04 +FRAME/55/
 Samsung/A04S-A13 5G original |/45/
+Samsung/A04S +FRAME/55/
 Samsung/A05 original |/45/
+Samsung/A05 +FRAME/55/
 Samsung/A05S original |/50/
 Samsung/A06 original |/50/
+Samsung/A06 +FRAME/60/
 Samsung/A10 |/40/
 Samsung/A10S |/40/
 Samsung/A11 original |/45/
 Samsung/A12-A02 original |/45/
+Samsung/A12 +FRAME/55/
 Samsung/A13-A23-M336 original |/45/
+Samsung/A13 +FRAME/55/
 Samsung/A14 5G original |/50/
 Samsung/A14 original |/45/
+Samsung/A14 +FRAME/55/
 Samsung/A15 incell+F |/60/
 Samsung/A16 oled+f |/165/
 Samsung/A16 incell+F |/60/
@@ -129,8 +138,8 @@ Samsung/A72 olbig+F |/160/
 Samsung/A73 incell+F |/aaa/
 Samsung/A73 olbig+F |/180/
 Samsung/J4+-J6+ |/45/
-Samsung/A50 - A30/50/
-Samsung/A20/50/
+Samsung/A50 - A30 INCELL +FRAME/50/
+Samsung/A20 INCELL + FRAME/50/
 Samsung/M13 |/45/
 Samsung/Tap A9 |/90/undefined
 tecno/camon 17 pro ORI |/60/
