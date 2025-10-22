@@ -84,15 +84,18 @@ Mi/redmi 14C |/50/undefined
 Mi/redmi 8-8A |/45/undefined
 Mi/redmi 9 ORI |/45/undefined
 Mi/redmi 9T-M3 |/45/undefined
-realmi,oppo,onePlus/7i-A53 ORI |/50/undefined
-realmi,oppo,onePlus/A73 |/50/undefined
-realmi,oppo,onePlus,oppo,onePlus/9I ORI |/60/undefined
-realmi,oppo,onePlus/C11 2021 ORI |/45/undefined
-realmi,oppo,onePlus/C11 ORI |/44/undefined
-realmi,oppo,onePlus/C12-C15 ORI |/45/undefined
-realmi,oppo,onePlus/C25-C21 ORI |/45/undefined
-realmi,oppo,onePlus/C25Y-C21Y ORI |/45/undefined
-realmi,oppo,onePlus/C3-5I-6I ORI |/45/undefined
+realmi,oppo,onePlus/REALMI 7I - REALMI C17 - OPPO A11S - OPPO A54 4G - OPPO A55 4G - OPPO A53 - OPPO A33 2020 - OPPO A32 - OPPO A53S - OPPO A51 2021 - REALMI 7I - OPPO A51 2020 ORI |/50/undefined
+realmi,oppo,onePlus/OPPO A73 - OPPO A91 - OPPO RENO 3 - OPPO F15 - OPPO F17 |/50/undefined
+realmi,oppo,onePlus/REALMI 9I - REALMI 8I - NARZO 50 - K10 4G - OPPO A96 4G INDIA ORI |/60/undefined
+realmi,oppo,onePlus/REALMI C11 2021 - REALMI C20 - REALMI C21 - OPPO NARZO 50I ORI |/45/undefined
+realmi,oppo,onePlus/REALMI C11 - REALMI C12 - REALMI C15 - OPPO A15 - OPPO A15S - OPPO A35 - NARZO 20 - NARZO 20A ORI |/44/undefined
+realmi,oppo,onePlus/REALMI C25 - REALMI C21 - REALMI C25S - OPPO A16 - OPPO A16S - OPPO A55 5G - OPPO A56 5G - OPPO A54S - NARZO 50A ORI |/45/undefined
+realmi,oppo,onePlus/REALMI C25Y - REALMI C21Y ORI |/45/undefined
+realmi,oppo,onePlus/REALMI C3 - REALMI 5I - REALMI 6I - REALMI 5S - REALMI 5 - OPPO A11 - OPPO A11X - OPPO A5 2020 - OPPO A9 2020 - OPPO A31 2020 - OPPO A51 ORI |/45/undefined
+realmi,oppo,onePlus/OPPO A52 - OPPO A72 - OPPO A92 ORI |/50/undefined
+realmi,oppo,onePlus/REALMI 7I - REAMLI C17 - OPPO A54 - OPPO A33 - OPPO A55 - OPPO A53 - OPPO A32 - OPPO A53S - OPPO A51 2021 - A51 2020 ORI |/50/undefined
+realmi,oppo,onePlus/OPPO A72 - OPPO A52 - OPPO A92 ORI |/50/undefined
+realmi,oppo,onePlus/OPPO A93 - RENO 4 4G - RENO 4 LITE - F17 PRO INCELL |/55/undefined
 Samsung/A03 core |/45/undefined
 Samsung/A03S-A02S-A03-A04E original |/45/undefined
 Samsung/A02S +FRAME |/55/undefined
@@ -169,13 +172,12 @@ tecno,infinix,itel/POVA 4 - POVA NEW 2 - POVA NEW 3 - HOT 12 - HOT 12 PLAY - NOT
 tecno,infinix,itel/pova new ORI |/45/undefined
 tecno,infinix,itel/spark 10 pro - pova5 POVA 5 PRO - HOT 30 - NOTE 30 - HOT 40X - HOT 40 - HOT 40 PRO - SPARK 20 PRO - POVA 6 NEW 4G - NOTE 40X 5G |/50/undefined
 tecno,infinix,itel/spark 10 - 10C - GO 2023 - POP 7 - POP 7 PRO - SMART 7 HD - SMART 7 - ITEL A50 - ITEK A50S - ITEL A60 - ITEL A60S - ITEL A70 - ITEL A05S - ITEL P40 - HOT 30I - SMART 7 PLUS - ITEL S23 - ITEL S23 - ITEL P55 5G - ORI |/45/undefined
-tecno,infinix,itel/SPARK 20 - 20C - GO 2024 - SMART 8 - SMART 8C - SMART 8 PRO - HOT 40 I - POP 8 - ITEL P55 PLUS - ITEL P55 - ITEL A70S - ITEL S24 - ORI |/45/undefined
+tecno,infinix,itel/SPARK 20 - 20C - GO 2024 - SMART 8 -  SMART 8 HD - SMART 8C - SMART 8 PRO - HOT 40 I - POP 8 - ITEL P55 PLUS - ITEL P55 - ITEL A70S - ITEL S24 - ORI |/45/undefined
 tecno,infinix,itel/spark 8C - 9T - 8T - 9 - ITEL S18 ORI |/45/undefined
 tecno,infinix,itel/Spark Go1 - GO1S - POP 9 5G - SPARK 30 5G - SPARK 30C HOT 50 5G - HOT 50I - NOTE 50X 5G - SMART 9 - SMART 9 HD - ITEL P65 ITEL P65 PLUS - ITEL P67 - ITEL A80 - A95 5G - POVA 6 NEW 5G - |/45/undefined
 tecno,infinix,itel/SPARK GO2/50/
 tecno,infinix,itel/POVA 6 - POVA 6 PRO 5G - CAMON 30 - CAMON 30 5G - NOTE 40 5G ORI /60/
 tecno,infinix,itel/POVA 7/60/
-tecno,infinix,itel/
 HONOR/X5 plus |/55/undefined
 HONOR/X5b |/55/undefined
 HONOR/X6a |/55/undefined
@@ -183,21 +185,8 @@ HONOR/X6b |/55/undefined
 HONOR/X8b |/110/undefined
 HONOR/X9b |/220/undefined
 HONOR/X9C |/220/undefined
-realmi,oppo,onePlus/A52 ORI |/50/undefined
-realmi,oppo,onePlus/A53 ORI |/50/undefined
-realmi,oppo,onePlus/A72 ORI |/50/undefined
-realmi,oppo,onePlus/A92 INCELL |/55/undefined
-realmi,oppo,onePlus/A96=9i |/60/undefined
-tecno,infinix,itel/HOT 10 |/45/undefined
-tecno,infinix,itel/Hot 30 |/45/undefined
-tecno,infinix,itel/HOT 30 |/50/undefined
-tecno,infinix,itel/HOT 40I |/45/undefined
-tecno,infinix,itel/HOT 50 |/45/undefined
-tecno,infinix,itel/HOT 50I |/45/undefined
-tecno,infinix,itel/S5 pro |/45/undefined
-tecno,infinix,itel/SMART 8 |/45/undefined
-tecno,infinix,itel/Smart 8HD |/45/undefined
-tecno,infinix,itel/SMART 9 |/45/undefined
+tecno,infinix,itel/ infinix HOT 10 |/45/undefined
+tecno,infinix,itel/infinix S5 pro |/45/undefined
 HUAWEI/NOVA 3I |/50/undefined
 HUAWEI/P20 LITE |/40/undefined
 HUAWEI/P30 LITE |/60/undefined
