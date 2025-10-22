@@ -1,7 +1,3 @@
-Mi/Redmi A5 - poco C71 |/50/undefined
-Mi/Note 14 incell |/60/undefined
-Mi/Note 12 incell +frame |/60/undefined
-Mi/13C +frame |/55/undefined
 iphone/x BYH |/55/undefined
 iphone/xr BYH |/55/undefined
 iphone/xs BYH |/55/undefined
@@ -46,44 +42,45 @@ iphone/ipad 7,8,9 LCD |/150/undefined
 iphone/ipad 7,8,9 touch |/45/undefined
 iphone/watch S6 44mm |/200/undefined
 iphone/watch S7 44mm |/200/undefined
-Mi/10A-9A-9C ORI |/45/undefined
-Mi/11 lite 4G-5G INCELL |/60/undefined
-Mi/11 lite 4G-5G orignal |/Aaa/undefined
-Mi/12T-12T pro orignal |/170/undefined
-Mi/A2 plus-A2-A1 plus ORI |/45/undefined
-Mi/A3 ORI |/45/undefined
-Mi/Note 10-note 10S incell |/50/undefined
-Mi/Note 10-note 10S oled |/80/undefined
-Mi/Note 10-note 10S original |/Aaa/undefined
-Mi/Note 11 pro-Note10 pro-poco X4 pro |/55/undefined
-Mi/Note 11-note 11S-Note 12S INCELL |/55/undefined
-Mi/Note 11-note 11S-Note 12S OLED |/100/undefined
-Mi/Note 12 incell |/55/undefined
-Mi/Note 12 oled |/100/undefined
-Mi/Note 12 pro incell |/55/undefined
-Mi/Note 13 incell |/60/undefined
-Mi/Note 13 OLED |/120/undefined
-Mi/Note 13 pro OLED |/120/undefined
-Mi/Note 13 pro incell |/65/undefined
-Mi/Note 7 |/45/undefined
-Mi/Note 8 pro HI |/45/undefined
-Mi/Note 8-Note 8 2021 original |/45/undefined
-Mi/Note 9 HI |/45/undefined
-Mi/Note 9 pro-Note 9 pro HI |/45/undefined
-Mi/POCO X3 orignal |/50/undefined
-Mi/POCO X4 PRO INCELL |/55/undefined
-Mi/POCO X4 PRO OLED |/120/undefined
-Mi/POCO X5 PRO - NOTE 12 PRO PLUS 5G INCELL |/60/undefined
-Mi/POCO X6  pro incell |/60/undefined
-Mi/redmi 10 |/45/undefined
-Mi/redmi 10C ORI |/45/undefined
-Mi/redmi 12 ,REDMI 13 |/45/undefined
-Mi/redmi 12C ORI |/45/undefined
-Mi/redmi 13C ORI |/45/undefined
-Mi/redmi 14C |/50/undefined
-Mi/redmi 8-8A |/45/undefined
-Mi/redmi 9 ORI |/45/undefined
-Mi/redmi 9T-M3 |/45/undefined
+Mi/Redmi A5 - poco C71 |/50/undefined
+Mi/Note 12 incell +frame |/60/undefined
+Mi/13C +frame |/55/undefined
+Mi/REDMI 10A - REDMI 9A - REDMI 9C ORI |/45/undefined
+Mi/MI 11 lite 4G - MI 11 LITE 5G - MI 11 LITE NE 5G INCELL |/60/undefined
+Mi/MI 11 lite 4G - MI 11 LITE 5G - MI 11 LITE NE 5G  orignal |/120/undefined
+Mi/MI 12T - MI 12T pro orignal |/170/undefined
+Mi/REDMI A2 plus - REDMI A2 - REDMI A1 plus - REDMI A1 - POCO C50 - POCO C51 ORI |/45/undefined
+Mi/REDMI A3 - REDMI A3 PLUS - REDMI A3X - POCO C61 ORI |/45/undefined
+Mi/REDMI Note 10 - REDMI note 10S - POCO M5S incell |/50/undefined
+Mi/REDMI Note 10 - REDMI note 10S - POCO M5S oled |/80/undefined
+Mi/REDMI NOTE 10 PRO - NOTE 10 PRO MAX - NOTE 11 PRO - NOTE 11 PRO 5G - NOTE 11 PRO PLUS 5G - NOTE 12 PRO - POCO X4 PRO - POCO X4 PRO 5G INCELL |/55/undefined
+Mi/REDMI NOTE 10 PRO - NOTE 10 PRO MAX - NOTE 11 PRO - NOTE 11 PRO 5G - NOTE 11 PRO PLUS 5G - NOTE 12 PRO - POCO X4 PRO - POCO X4 PRO 5G OLED |/120/undefined
+Mi/REDMI Note 11 - REDMI note 11S - REDMI Note 12S - POCO M4 PRO INCELL |/55/undefined
+Mi/REDMI Note 11 - REDMI note 11S - REDMI Note 12S - POCO M4 PRO OLED |/100/undefined
+Mi/REDMI Note 12 - NOTE 12 5G - POCO X5 incell |/55/undefined
+Mi/REDMI Note 12 - NOTE 12 5G - POCO X5 OLED |/100/undefined
+Mi/REDMI Note 14 4G - REDMI NOTE 13 4G - REDMI NOTE 14 5G - POCO M7 PRO incell |/60/undefined
+Mi/REDMI Note 14 4G - REDMI NOTE 13 4G - REDMI NOTE 14 5G - POCO M7 PRO OLED |/120/undefined
+Mi/REDMI Note 14 PRO 5G - REDMI NOTE 13 PRO PLUS 5G - REDMI NOTE 14 PRO PLUS 5G - POCO X7 incell |/AAA/undefined
+Mi/REDMI Note 14 PRO 5G - REDMI NOTE 13 PRO PLUS 5G - REDMI NOTE 14 PRO PLUS 5G - POCO X7 incell |/AAA/undefined
+Mi/REDMI Note 13 pro - REDMI NOTE 14S - POCO M6 PRO OLED |/120/undefined
+Mi/REDMI Note 13 pro - REDMI NOTE 14S - POCO M6 PRO incell |/65/undefined
+Mi/REDMI Note 7 |/45/undefined
+Mi/REDMI Note 8 pro HI |/45/undefined
+Mi/REDMI Note 8 - Note 8 2021 original |/45/undefined
+Mi/REDMI Note 9 - MI 10X HI |/45/undefined
+Mi/REDMI Note 9 pro - REDMI Note 9 pro - POCO M2 PRO HI |/45/undefined
+Mi/POCO X3 - POCO X3 - MI 10T LITE orignal |/50/undefined
+Mi/POCO X5 PRO - REDMI NOTE 12 PRO PLUS 5G - REDMI NOTEN 12 PRO 5G INCELL |/60/undefined
+Mi/POCO X6 pro - POCO F6 PRO - REDMI K70E incell |/60/undefined
+Mi/redmi 10 - REDMI 10 PRIME - REDMI 10 2022 |/45/undefined
+Mi/redmi 10C - REDMI 12C - REDMI 11A - POCO C40 - POCO C55 ORI |/45/undefined
+Mi/redmi 12 - REDMI 13 - POCO M6 PRO |/45/undefined
+Mi/redmi 13C - REDMI 13R - POCO C65 - POCO M6 5G ORI |/45/undefined
+Mi/redmi 14C - REDMI A3 PRO - REDMI A4 5G - POCO C75 - POCO M7 5G|/50/undefined
+Mi/redmi 8 - REDMI 8A |/45/undefined
+Mi/redmi 9 - POCO M2 ORI |/45/undefined
+Mi/redmi 9T - POCO M3 |/45/undefined
 realmi,oppo,onePlus/REALMI 7I - REALMI C17 - OPPO A11S - OPPO A54 4G - OPPO A55 4G - OPPO A53 - OPPO A33 2020 - OPPO A32 - OPPO A53S - OPPO A51 2021 - REALMI 7I - OPPO A51 2020 ORI |/50/undefined
 realmi,oppo,onePlus/OPPO A73 - OPPO A91 - OPPO RENO 3 - OPPO F15 - OPPO F17 |/50/undefined
 realmi,oppo,onePlus/REALMI 9I - REALMI 8I - NARZO 50 - K10 4G - OPPO A96 4G INDIA ORI |/60/undefined
