@@ -84,15 +84,15 @@ Mi/redmi 14C |/50/undefined
 Mi/redmi 8-8A |/45/undefined
 Mi/redmi 9 ORI |/45/undefined
 Mi/redmi 9T-M3 |/45/undefined
-realmi/7i-A53 ORI |/50/undefined
-OPPO/A73 |/50/undefined
-realmi/9I ORI |/60/undefined
-realmi/C11 2021 ORI |/45/undefined
-realmi/C11 ORI |/44/undefined
-realmi/C12-C15 ORI |/45/undefined
-realmi/C25-C21 ORI |/45/undefined
-realmi/C25Y-C21Y ORI |/45/undefined
-realmi/C3-5I-6I ORI |/45/undefined
+realmi,oppo,onePlus/7i-A53 ORI |/50/undefined
+realmi,oppo,onePlus/A73 |/50/undefined
+realmi,oppo,onePlus,oppo,onePlus/9I ORI |/60/undefined
+realmi,oppo,onePlus/C11 2021 ORI |/45/undefined
+realmi,oppo,onePlus/C11 ORI |/44/undefined
+realmi,oppo,onePlus/C12-C15 ORI |/45/undefined
+realmi,oppo,onePlus/C25-C21 ORI |/45/undefined
+realmi,oppo,onePlus/C25Y-C21Y ORI |/45/undefined
+realmi,oppo,onePlus/C3-5I-6I ORI |/45/undefined
 Samsung/A03 core |/45/undefined
 Samsung/A03S-A02S-A03-A04E original |/45/undefined
 Samsung/A02S +FRAME |/55/undefined
@@ -154,27 +154,28 @@ Samsung/A50 - A30 INCELL +FRAME |/50/undefined
 Samsung/A20 INCELL + FRAME |/50/undefined
 Samsung/M13 |/45/undefined
 Samsung/Tap A9 |/90/undefined
-tecno,infinix,itel/camon 17 pro ORI |/60/undefined
-tecno,infinix,itel/CAMON 18 Premer incell |/70/undefined
-tecno,infinix,itel/CAMON 18P ORI |/50/undefined
-tecno,infinix,itel/CAMON 19 ORI |/50/undefined
-tecno,infinix,itel/CAMON 19 PRO |/50/undefined
-tecno,infinix,itel/CAMON 20 PRO incell |/60/undefined
-tecno,infinix,itel/CAMON 20 PRO orignal |/120/undefined
-tecno,infinix,itel/comon 17-spark 7 pro ORI |/50/undefined
-tecno,infinix,itel/pop 5 lite-GO2022 ORI |/45/undefined
-tecno,infinix,itel/POP 6 PRO |/45/undefined
-tecno,infinix,itel/POP 7 |/45/undefined
+tecno,infinix,itel/camon 17 pro - zero x new ORI |/60/undefined
+tecno,infinix,itel/CAMON 18 Premer - zero x incell |/70/undefined
+tecno,infinix,itel/CAMON 19 - CAMON 19 new - CAMON 18 - CAMON 18P - CAMON 18t - spark 8 pro - hot 11S - POVA New 5G - HOT 20S - HOT 20 PRO - CAMON 17P - CAMON 17 PREMIER ORI |/50/undefined
+tecno,infinix,itel/CAMON 19 - CAMON 19 PRO ORI |/50/undefined
+tecno,infinix,itel/CAMON 20 PRO - CAMON 20 - NOTE 30 VIP - NOTE 30 PRO - CAMON 20 PRIMER - GT 10 PRO - GT 10 PRO PLUS incell |/60/undefined
+tecno,infinix,itel/CAMON 20 PRO - CAMON 20 - NOTE 30 VIP - NOTE 30 PRO - CAMON 20 PRIMER - GT 10 PRO - GT 10 PRO PLUS orignal |/120/undefined
+tecno,infinix,itel/comon 17 - spark 7 pro - CAMON 18I - VISION 2 ORI |/50/undefined
+tecno,infinix,itel/pop 5 lite - GO 2022 - POP 5 PRO - SMART 6 ORI |/45/undefined
+tecno,infinix,itel/POP 6 PRO - HOT 12 PRO |/45/undefined
 tecno,infinix,itel/POVA 1 ORI |/50/undefined
-tecno,infinix,itel/POVA 2-POVA 3 ORI |/50/undefined
-tecno,infinix,itel/POVA 4-POVA NEW 2 ORI |/50/undefined
+tecno,infinix,itel/POVA 2 - POVA 3 POVA 5G - NOTE 10 - NOTE 11S - NOTE 11 PRO - NOTE 11I ORI |/50/undefined
+tecno,infinix,itel/POVA 4 - POVA NEW 2 - POVA NEW 3 - HOT 12 - HOT 12 PLAY - NOTE 12 I - HOT 2O - HOT 20 PLAY - HOT 30 PLAY - ITEL P40 PLUS ORI |/50/undefined
 tecno,infinix,itel/pova new ORI |/45/undefined
-tecno,infinix,itel/spark 10 pro-pova5 |/50/undefined
-tecno,infinix,itel/spark 10-10C-GO 2023 ORI |/45/undefined
-tecno,infinix,itel/SPARK 20 ORI |/45/undefined
-tecno,infinix,itel/spark 20C-GO 2024 ORI |/45/undefined
-tecno,infinix,itel/spark 8C-9T-8T ORI |/45/undefined
-tecno,infinix,itel/Spark Go1 |/45/undefined
+tecno,infinix,itel/spark 10 pro - pova5 POVA 5 PRO - HOT 30 - NOTE 30 - HOT 40X - HOT 40 - HOT 40 PRO - SPARK 20 PRO - POVA 6 NEW 4G - NOTE 40X 5G |/50/undefined
+tecno,infinix,itel/spark 10 - 10C - GO 2023 - POP 7 - POP 7 PRO - SMART 7 HD - SMART 7 - ITEL A50 - ITEK A50S - ITEL A60 - ITEL A60S - ITEL A70 - ITEL A05S - ITEL P40 - HOT 30I - SMART 7 PLUS - ITEL S23 - ITEL S23 - ITEL P55 5G - ORI |/45/undefined
+tecno,infinix,itel/SPARK 20 - 20C - GO 2024 - SMART 8 - SMART 8C - SMART 8 PRO - HOT 40 I - POP 8 - ITEL P55 PLUS - ITEL P55 - ITEL A70S - ITEL S24 - ORI |/45/undefined
+tecno,infinix,itel/spark 8C - 9T - 8T - 9 - ITEL S18 ORI |/45/undefined
+tecno,infinix,itel/Spark Go1 - GO1S - POP 9 5G - SPARK 30 5G - SPARK 30C HOT 50 5G - HOT 50I - NOTE 50X 5G - SMART 9 - SMART 9 HD - ITEL P65 ITEL P65 PLUS - ITEL P67 - ITEL A80 - A95 5G - POVA 6 NEW 5G - |/45/undefined
+tecno,infinix,itel/SPARK GO2/50/
+tecno,infinix,itel/POVA 6 - POVA 6 PRO 5G - CAMON 30 - CAMON 30 5G - NOTE 40 5G ORI /60/
+tecno,infinix,itel/POVA 7/60/
+tecno,infinix,itel/
 HONOR/X5 plus |/55/undefined
 HONOR/X5b |/55/undefined
 HONOR/X6a |/55/undefined
@@ -182,11 +183,11 @@ HONOR/X6b |/55/undefined
 HONOR/X8b |/110/undefined
 HONOR/X9b |/220/undefined
 HONOR/X9C |/220/undefined
-OPPO/A52 ORI |/50/undefined
-OPPO/A53 ORI |/50/undefined
-OPPO/A72 ORI |/50/undefined
-OPPO/A92 INCELL |/55/undefined
-OPPO/A96=9i |/60/undefined
+realmi,oppo,onePlus/A52 ORI |/50/undefined
+realmi,oppo,onePlus/A53 ORI |/50/undefined
+realmi,oppo,onePlus/A72 ORI |/50/undefined
+realmi,oppo,onePlus/A92 INCELL |/55/undefined
+realmi,oppo,onePlus/A96=9i |/60/undefined
 tecno,infinix,itel/HOT 10 |/45/undefined
 tecno,infinix,itel/Hot 30 |/45/undefined
 tecno,infinix,itel/HOT 30 |/50/undefined
