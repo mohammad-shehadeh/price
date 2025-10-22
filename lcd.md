@@ -163,7 +163,7 @@ Samsung/A71 oled +FRAME |/aaa/undefined
 Samsung/A72 incell +FRAME |/65/undefined
 Samsung/A72 olbig +FRAME |/160/undefined
 Samsung/A73 incell +FRAME |/aaa/undefined
-Samsung/A73 olbig +FRAME  |/180/undefined
+Samsung/A73 olbig +FRAME |/180/undefined
 Samsung/J4+-J6+ |/45/undefined
 Samsung/A50 - A30 INCELL +FRAME |/50/undefined
 Samsung/A20 INCELL + FRAME |/50/undefined
@@ -187,10 +187,10 @@ tecno | infinix | itel/spark 10 - 10C - GO 2023 - POP 7 - POP 7 PRO - SMART 7 HD
 tecno | infinix | itel/SPARK 20 - 20C - GO 2024 - SMART 8 -  SMART 8 HD - SMART 8C - SMART 8 PRO - HOT 40 I - POP 8 - ITEL P55 PLUS - ITEL P55 - ITEL A70S - ITEL S24 - ORI |/45/undefined
 tecno | infinix | itel/spark 8C - 9T - 8T - 9 - ITEL S18 ORI |/45/undefined
 tecno | infinix | itel/Spark Go1 - GO1S - POP 9 5G - SPARK 30 5G - SPARK 30C HOT 50 5G - HOT 50I - NOTE 50X 5G - SMART 9 - SMART 9 HD - ITEL P65 ITEL P65 PLUS - ITEL P67 - ITEL A80 - A95 5G - POVA 6 NEW 5G - |/45/undefined
-tecno | infinix | itel/SPARK GO2/50/
-tecno | infinix | itel/POVA 6 - POVA 6 PRO 5G - CAMON 30 - CAMON 30 5G - NOTE 40 5G ORI /60/
-tecno | infinix | itel/POVA 7/60/
-tecno | infinix | itel/ infinix HOT 10 |/45/undefined
+tecno | infinix | itel/SPARK GO2 |/50/undefined
+tecno | infinix | itel/POVA 6 - POVA 6 PRO 5G - CAMON 30 - CAMON 30 5G - NOTE 40 5G ORI |/60/undefined
+tecno | infinix | itel/POVA 7 |/60/undefined
+tecno | infinix | itel/infinix HOT 10 |/45/undefined
 tecno | infinix | itel/infinix S5 pro |/45/undefined
 HONOR/X5 plus |/55/undefined
 HONOR/X5b |/55/undefined
