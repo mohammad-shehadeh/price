@@ -81,6 +81,7 @@ Mi/REDMI Note 9S - REDMI Note 9 pro HI +FRAME |/55/undefined
 Mi/POCO X3 - POCO X3 - MI 10T LITE orignal |/50/undefined
 Mi/POCO X5 PRO - REDMI NOTE 12 PRO PLUS 5G - REDMI NOTEN 12 PRO 5G INCELL |/60/undefined
 Mi/POCO X6 pro - POCO F6 PRO - REDMI K70E incell |/60/undefined
+Mi/POCO F5 5G - NOTE 13 5G ORI |/130/undefined
 Mi/redmi 10 - REDMI 10 PRIME - REDMI 10 2022 |/45/undefined
 Mi/redmi 10C - REDMI 12C - REDMI 11A - POCO C40 - POCO C55 ORI |/45/undefined
 Mi/redmi 10C +FRAME ORI |/55/undefined
