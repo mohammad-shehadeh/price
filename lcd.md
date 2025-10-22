@@ -2,20 +2,38 @@ Mi/Redmi A5 - poco C71 |/50/undefined
 Mi/Note 14 incell |/60/undefined
 Mi/Note 12 incell +frame |/60/undefined
 Mi/13C +frame |/55/undefined
+iphone/x BYH |/55/
+iphone/xr BYH |/55/
+iphone/xs BYH |/55/
+iphone/xs max BYH |/65/
+iphone/XS max original |/200/
+iphone/Ip 11 byh |/55/undefined
 iphone/11 orignal |/85/
+iphone/11 orignal ch |/120/
 iphone/11 pro max BYH |/60/
 iphone/11 pro max original |/230/
 iphone/12 pro BYH |/65/
-iphone/12 pro max BYH |/80/
-iphone/12 pro max oled |/aaa/
-iphone/12 pro max orignal |/350/
 iphone/12 pro original |/250/
+iphone/12 pro max BYH |/80/
+iphone/12 pro max orignal |/330/
+iphone/13 BYH |/80/
+iphone/13 orignal |/280/
+iphone/13 pro BYH |/100/
+iphone/13 pro orignal |/500/
 iphone/13 pro max BYH |/130/
-iphone/13 pro max oled |/Aaa/
 iphone/13 pro max orignal |/650/
+iphone/14 BYH |/85/
+iphone/14 orignal |/300/
+iphone/14 pro BYH |/110/
+iphone/14 pro orignal |/550/
 iphone/14 pro max BYH |/140/
 iphone/14 pro max orignal |/750/
+iphone/15 BYH |/110/
+iphone/15 original |/600/
+iphone/15 pro BYH |/120/
+iphone/15 pro original  |/580/
 iphone/15 pro max BYH |/150/
+iphone/15 pro max OLED |/700/
 iphone/15 pro max orignal |/1150/
 iphone/16 pro max orignal |/1150/
 iphone/6 plus |/25/
@@ -23,17 +41,11 @@ iphone/7 plus |/40/
 iphone/8 plus AAA |/45/
 iphone/8 plus orignal |/80/
 iphone/8G |/35/
-iphone/Ip 11 byh |/55/undefined
 iphone/ipad 10 touch |/50/
 iphone/ipad 7,8,9 LCD |/150/
 iphone/ipad 7,8,9 touch |/45/
 iphone/watch S6 44mm |/200/
 iphone/watch S7 44mm |/200/
-iphone/x BYH |/55/
-iphone/xr BYH |/55/
-iphone/xs BYH |/55/
-iphone/xs max BYH |/65/
-iphone/XS max original |/200/
 Mi/10A-9A-9C ORI |/45/
 Mi/11 lite 4G-5G INCELL |/60/
 Mi/11 lite 4G-5G orignal |/Aaa/
@@ -142,27 +154,27 @@ Samsung/A50 - A30 INCELL +FRAME/50/
 Samsung/A20 INCELL + FRAME/50/
 Samsung/M13 |/45/
 Samsung/Tap A9 |/90/undefined
-tecno/camon 17 pro ORI |/60/
-tecno/CAMON 18 Premer incell |/70/
-tecno/CAMON 18P ORI |/50/
-tecno/CAMON 19 ORI |/50/
-tecno/CAMON 19 PRO |/50/
-tecno/CAMON 20 PRO incell |/60/
-tecno/CAMON 20 PRO orignal |/120/
-tecno/comon 17-spark 7 pro ORI |/50/
-tecno/pop 5 lite-GO2022 ORI |/45/
-tecno/POP 6 PRO |/45/
-tecno/POP 7 |/45/
-tecno/POVA 1 ORI |/50/
-tecno/POVA 2-POVA 3 ORI |/50/
-tecno/POVA 4-POVA NEW 2 ORI |/50/
-tecno/pova new ORI |/45/
-tecno/spark 10 pro-pova5 |/50/
-tecno/spark 10-10C-GO 2023 ORI |/45/
-tecno/SPARK 20 ORI |/45/
-tecno/spark 20C-GO 2024 ORI |/45/
-tecno/spark 8C-9T-8T ORI |/45/
-tecno/Spark Go1 |/45/undefined
+tecno,infinix,itel/camon 17 pro ORI |/60/
+tecno,infinix,itel/CAMON 18 Premer incell |/70/
+tecno,infinix,itel/CAMON 18P ORI |/50/
+tecno,infinix,itel/CAMON 19 ORI |/50/
+tecno,infinix,itel/CAMON 19 PRO |/50/
+tecno,infinix,itel/CAMON 20 PRO incell |/60/
+tecno,infinix,itel/CAMON 20 PRO orignal |/120/
+tecno,infinix,itel/comon 17-spark 7 pro ORI |/50/
+tecno,infinix,itel/pop 5 lite-GO2022 ORI |/45/
+tecno,infinix,itel/POP 6 PRO |/45/
+tecno,infinix,itel/POP 7 |/45/
+tecno,infinix,itel/POVA 1 ORI |/50/
+tecno,infinix,itel/POVA 2-POVA 3 ORI |/50/
+tecno,infinix,itel/POVA 4-POVA NEW 2 ORI |/50/
+tecno,infinix,itel/pova new ORI |/45/
+tecno,infinix,itel/spark 10 pro-pova5 |/50/
+tecno,infinix,itel/spark 10-10C-GO 2023 ORI |/45/
+tecno,infinix,itel/SPARK 20 ORI |/45/
+tecno,infinix,itel/spark 20C-GO 2024 ORI |/45/
+tecno,infinix,itel/spark 8C-9T-8T ORI |/45/
+tecno,infinix,itel/Spark Go1 |/45/undefined
 HONOR/X5 plus |/55/
 HONOR/X5b |/55/
 HONOR/X6a |/55/
@@ -176,16 +188,16 @@ OPPO/A53 ORI |/50/
 OPPO/A72 ORI |/50/
 OPPO/A92 INCELL |/55/
 OPPO/A96=9i |/60/undefined
-INFINEX/HOT 10 |/45/
-INFINEX/Hot 30 |/45/undefined
-INFINEX/HOT 30 |/50/
-INFINEX/HOT 40I |/45/
-INFINEX/HOT 50 |/45/
-INFINEX/HOT 50I |/45/
-INFINEX/S5 pro |/45/undefined
-INFINEX/SMART 8 |/45/
-INFINEX/Smart 8HD |/45/undefined
-INFINEX/SMART 9 |/45/
+tecno,infinix,itel/HOT 10 |/45/
+tecno,infinix,itel/Hot 30 |/45/undefined
+tecno,infinix,itel/HOT 30 |/50/
+tecno,infinix,itel/HOT 40I |/45/
+tecno,infinix,itel/HOT 50 |/45/
+tecno,infinix,itel/HOT 50I |/45/
+tecno,infinix,itel/S5 pro |/45/undefined
+tecno,infinix,itel/SMART 8 |/45/
+tecno,infinix,itel/Smart 8HD |/45/undefined
+tecno,infinix,itel/SMART 9 |/45/
 HUAWEI/NOVA 3I |/50/
 HUAWEI/P20 LITE |/40/
 HUAWEI/P30 LITE |/60/
