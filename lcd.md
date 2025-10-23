@@ -1,3 +1,26 @@
+tecno | infinix | itel/camon 17 pro - zero x new ORI |/60/undefined
+tecno | infinix | itel/CAMON 18 Premer - zero x incell |/70/undefined
+tecno | infinix | itel/CAMON 19 - CAMON 19 new - CAMON 18 - CAMON 18P - CAMON 18t - spark 8 pro - hot 11S - POVA New 5G - HOT 20S - HOT 20 PRO - CAMON 17P - CAMON 17 PREMIER ORI |/50/undefined
+tecno | infinix | itel/CAMON 19 - CAMON 19 PRO ORI |/50/undefined
+tecno | infinix | itel/CAMON 20 PRO - CAMON 20 - NOTE 30 VIP - NOTE 30 PRO - CAMON 20 PRIMER - GT 10 PRO - GT 10 PRO PLUS incell |/60/undefined
+tecno | infinix | itel/CAMON 20 PRO - CAMON 20 - NOTE 30 VIP - NOTE 30 PRO - CAMON 20 PRIMER - GT 10 PRO - GT 10 PRO PLUS orignal |/120/undefined
+tecno | infinix | itel/comon 17 - spark 7 pro - CAMON 18I - VISION 2 ORI |/50/undefined
+tecno | infinix | itel/pop 5 lite - GO 2022 - POP 5 PRO - SMART 6 ORI |/45/undefined
+tecno | infinix | itel/POP 6 PRO - HOT 12 PRO |/45/undefined
+tecno | infinix | itel/POVA 1 ORI |/50/undefined
+tecno | infinix | itel/POVA 2 - POVA 3 POVA 5G - NOTE 10 - NOTE 11S - NOTE 11 PRO - NOTE 11I ORI |/50/undefined
+tecno | infinix | itel/POVA 4 - POVA NEW 2 - POVA NEW 3 - HOT 12 - HOT 12 PLAY - NOTE 12 I - HOT 2O - HOT 20 PLAY - HOT 30 PLAY - ITEL P40 PLUS ORI |/50/undefined
+tecno | infinix | itel/pova new ORI |/45/undefined
+tecno | infinix | itel/spark 10 pro - pova5 POVA 5 PRO - HOT 30 - NOTE 30 - HOT 40X - HOT 40 - HOT 40 PRO - SPARK 20 PRO - POVA 6 NEW 4G - NOTE 40X 5G |/50/undefined
+tecno | infinix | itel/spark 10 - 10C - GO 2023 - POP 7 - POP 7 PRO - SMART 7 HD - SMART 7 - ITEL A50 - ITEK A50S - ITEL A60 - ITEL A60S - ITEL A70 - ITEL A05S - ITEL P40 - HOT 30I - SMART 7 PLUS - ITEL S23 - ITEL S23 - ITEL P55 5G - ORI |/45/undefined
+tecno | infinix | itel/SPARK 20 - 20C - GO 2024 - SMART 8 -  SMART 8 HD - SMART 8C - SMART 8 PRO - HOT 40 I - POP 8 - ITEL P55 PLUS - ITEL P55 - ITEL A70S - ITEL S24 - ORI |/45/undefined
+tecno | infinix | itel/spark 8C - 9T - 8T - 9 - ITEL S18 ORI |/45/undefined
+tecno | infinix | itel/Spark Go1 - GO1S - POP 9 5G - SPARK 30 5G - SPARK 30C HOT 50 5G - HOT 50I - NOTE 50X 5G - SMART 9 - SMART 9 HD - ITEL P65 ITEL P65 PLUS - ITEL P67 - ITEL A80 - A95 5G - POVA 6 NEW 5G - |/45/undefined
+tecno | infinix | itel/SPARK GO2 |/50/undefined
+tecno | infinix | itel/POVA 6 - POVA 6 PRO 5G - CAMON 30 - CAMON 30 5G - NOTE 40 5G ORI |/60/undefined
+tecno | infinix | itel/POVA 7 |/60/undefined
+tecno | infinix | itel/infinix HOT 10 |/45/undefined
+tecno | infinix | itel/infinix S5 pro |/45/undefined
 iphone/x BYH |/55/undefined
 iphone/xr BYH |/55/undefined
 iphone/xs BYH |/55/undefined
@@ -42,61 +65,61 @@ iphone/ipad 7,8,9 LCD |/150/undefined
 iphone/ipad 7,8,9 touch |/45/undefined
 iphone/watch S6 44mm |/200/undefined
 iphone/watch S7 44mm |/200/undefined
-Mi/Redmi A5 - poco C71 |/50/undefined
-Mi/REDMI 10A - REDMI 9A - REDMI 9C ORI |/45/undefined
-Mi/REDMI 10A - REDMI 9A - REDMI 9C + FRAME ORI |/55/undefined
-Mi/MI 11 lite 4G - MI 11 LITE 5G - MI 11 LITE NE 5G INCELL |/60/undefined
-Mi/MI 11 lite 4G - MI 11 LITE 5G - MI 11 LITE NE 5G  orignal |/120/undefined
-Mi/MI 12T - MI 12T pro orignal |/170/undefined
-Mi/REDMI A2 plus - REDMI A2 - REDMI A1 plus - REDMI A1 - POCO C50 - POCO C51 ORI |/45/undefined
-Mi/REDMI A3 - REDMI A3 PLUS - REDMI A3X - POCO C61 ORI |/45/undefined
-Mi/REDMI Note 10 - REDMI note 10S - POCO M5S incell |/50/undefined
-Mi/REDMI Note 10 - REDMI note 10S +FRAME incell |/60/undefined
-Mi/REDMI Note 10 - REDMI note 10S - POCO M5S oled |/80/undefined
-Mi/REDMI NOTE 10 PRO - NOTE 10 PRO MAX - NOTE 11 PRO - NOTE 11 PRO 5G - NOTE 11 PRO PLUS 5G - NOTE 12 PRO - POCO X4 PRO - POCO X4 PRO 5G INCELL |/55/undefined
-Mi/REDMI NOTE 10 PRO - NOTE 10 PRO MAX - NOTE 11 PRO - NOTE 11 PRO 5G - NOTE 11 PRO PLUS 5G - NOTE 12 PRO - POCO X4 PRO - POCO X4 PRO 5G OLED |/120/undefined
-Mi/REDMI Note 10  PRO incell +FRAME |/60/undefined
-Mi/REDMI Note 11  PRO incell +FRAME |/60/undefined
-Mi/POCO X4 PRO incell +FRAME |/60/undefined
-Mi/REDMI Note 11 - REDMI note 11S - REDMI Note 12S - POCO M4 PRO INCELL |/55/undefined
-Mi/REDMI Note 11 - REDMI note 11S - REDMI Note 12S - POCO M4 PRO OLED |/100/undefined
-Mi/REDMI Note 11 - REDMI note 11S +FRAME incell |/65/undefined
-Mi/REDMI Note 12 - NOTE 12 5G - POCO X5 incell |/55/undefined
-Mi/REDMI Note 12 - NOTE 12 5G - POCO X5 OLED |/100/undefined
-Mi/Note 12 incell +frame |/60/undefined
-Mi/REDMI Note 14 4G - REDMI NOTE 13 4G - REDMI NOTE 14 5G - POCO M7 PRO incell |/60/undefined
-Mi/REDMI Note 14 4G - REDMI NOTE 13 4G - REDMI NOTE 14 5G - POCO M7 PRO OLED |/120/undefined
-Mi/REDMI Note 14 PRO 5G - REDMI NOTE 13 PRO PLUS 5G - REDMI NOTE 14 PRO PLUS 5G - POCO X7 incell |/AAA/undefined
-Mi/REDMI Note 14 PRO 5G - REDMI NOTE 13 PRO PLUS 5G - REDMI NOTE 14 PRO PLUS 5G - POCO X7 incell |/AAA/undefined
-Mi/REDMI Note 13 pro - REDMI NOTE 14S - POCO M6 PRO OLED |/120/undefined
-Mi/REDMI Note 13 pro - REDMI NOTE 14S - POCO M6 PRO incell |/65/undefined
-Mi/REDMI Note 7 |/45/undefined
-Mi/REDMI Note 8 pro HI |/45/undefined
-Mi/REDMI Note 8 - Note 8 2021 original |/45/undefined
-Mi/REDMI Note 8 - Note 8 2021 original +FRAME |/55/undefined
-Mi/REDMI Note 9 - MI 10X HI |/45/undefined
-Mi/REDMI Note 9 HI +FRAME |/55/undefined
-Mi/REDMI Note 9S - REDMI Note 9 pro - POCO M2 PRO HI |/45/undefined
-Mi/REDMI Note 9S - REDMI Note 9 pro HI +FRAME |/55/undefined
-Mi/POCO X3 - POCO X3 - MI 10T LITE orignal |/50/undefined
-Mi/POCO X5 PRO - REDMI NOTE 12 PRO PLUS 5G - REDMI NOTEN 12 PRO 5G INCELL |/60/undefined
-Mi/POCO X6 pro - POCO F6 PRO - REDMI K70E incell |/60/undefined
-Mi/POCO F5 5G - NOTE 13 5G ORI |/130/undefined
-Mi/redmi 10 - REDMI 10 PRIME - REDMI 10 2022 |/45/undefined
-Mi/redmi 10C - REDMI 12C - REDMI 11A - POCO C40 - POCO C55 ORI |/45/undefined
-Mi/redmi 10C +FRAME ORI |/55/undefined
-Mi/redmi 12C +FRAME ORI |/55/undefined
-Mi/redmi 12 - REDMI 13 - POCO M6 PRO |/45/undefined
-Mi/redmi 13C - REDMI 13R - POCO C65 - POCO M6 5G ORI |/45/undefined
-Mi/13C +frame |/55/undefined
-Mi/redmi 14C - REDMI A3 PRO - REDMI A4 5G - POCO C75 - POCO M7 5G|/50/undefined
-Mi/redmi 8 - REDMI 8A |/45/undefined
-Mi/redmi 9 - POCO M2 ORI |/45/undefined
-Mi/redmi 9T - POCO M3 |/45/undefined
+Mi | poco/Redmi A5 - poco C71 |/50/undefined
+Mi | poco/REDMI 10A - REDMI 9A - REDMI 9C ORI |/45/undefined
+Mi | poco/REDMI 10A - REDMI 9A - REDMI 9C + FRAME ORI |/55/undefined
+Mi | poco/MI 11 lite 4G - MI 11 LITE 5G - MI 11 LITE NE 5G INCELL |/60/undefined
+Mi | poco/MI 11 lite 4G - MI 11 LITE 5G - MI 11 LITE NE 5G  orignal |/120/undefined
+Mi | poco/MI 12T - MI 12T pro orignal |/170/undefined
+Mi | poco/REDMI A2 plus - REDMI A2 - REDMI A1 plus - REDMI A1 - POCO C50 - POCO C51 ORI |/45/undefined
+Mi | poco/REDMI A3 - REDMI A3 PLUS - REDMI A3X - POCO C61 ORI |/45/undefined
+Mi | poco/REDMI Note 10 - REDMI note 10S - POCO M5S incell |/50/undefined
+Mi | poco/REDMI Note 10 - REDMI note 10S +FRAME incell |/60/undefined
+Mi | poco/REDMI Note 10 - REDMI note 10S - POCO M5S oled |/80/undefined
+Mi | poco/REDMI NOTE 10 PRO - NOTE 10 PRO MAX - NOTE 11 PRO - NOTE 11 PRO 5G - NOTE 11 PRO PLUS 5G - NOTE 12 PRO - POCO X4 PRO - POCO X4 PRO 5G INCELL |/55/undefined
+Mi | poco/REDMI NOTE 10 PRO - NOTE 10 PRO MAX - NOTE 11 PRO - NOTE 11 PRO 5G - NOTE 11 PRO PLUS 5G - NOTE 12 PRO - POCO X4 PRO - POCO X4 PRO 5G OLED |/120/undefined
+Mi | poco/REDMI Note 10  PRO incell +FRAME |/60/undefined
+Mi | poco/REDMI Note 11  PRO incell +FRAME |/60/undefined
+Mi | poco/POCO X4 PRO incell +FRAME |/60/undefined
+Mi | poco/REDMI Note 11 - REDMI note 11S - REDMI Note 12S - POCO M4 PRO INCELL |/55/undefined
+Mi | poco/REDMI Note 11 - REDMI note 11S - REDMI Note 12S - POCO M4 PRO OLED |/100/undefined
+Mi | poco/REDMI Note 11 - REDMI note 11S +FRAME incell |/65/undefined
+Mi | poco/REDMI Note 12 - NOTE 12 5G - POCO X5 incell |/55/undefined
+Mi | poco/REDMI Note 12 - NOTE 12 5G - POCO X5 OLED |/100/undefined
+Mi | poco/Note 12 incell +frame |/60/undefined
+Mi | poco/REDMI Note 14 4G - REDMI NOTE 13 4G - REDMI NOTE 14 5G - POCO M7 PRO incell |/60/undefined
+Mi | poco/REDMI Note 14 4G - REDMI NOTE 13 4G - REDMI NOTE 14 5G - POCO M7 PRO OLED |/120/undefined
+Mi | poco/REDMI Note 14 PRO 5G - REDMI NOTE 13 PRO PLUS 5G - REDMI NOTE 14 PRO PLUS 5G - POCO X7 incell |/AAA/undefined
+Mi | poco/REDMI Note 14 PRO 5G - REDMI NOTE 13 PRO PLUS 5G - REDMI NOTE 14 PRO PLUS 5G - POCO X7 incell |/AAA/undefined
+Mi | poco/REDMI Note 13 pro - REDMI NOTE 14S - POCO M6 PRO OLED |/120/undefined
+Mi | poco/REDMI Note 13 pro - REDMI NOTE 14S - POCO M6 PRO incell |/65/undefined
+Mi | poco/REDMI Note 7 |/45/undefined
+Mi | poco/REDMI Note 8 pro HI |/45/undefined
+Mi | poco/REDMI Note 8 - Note 8 2021 original |/45/undefined
+Mi | poco/REDMI Note 8 - Note 8 2021 original +FRAME |/55/undefined
+Mi | poco/REDMI Note 9 - MI 10X HI |/45/undefined
+Mi | poco/REDMI Note 9 HI +FRAME |/55/undefined
+Mi | poco/REDMI Note 9S - REDMI Note 9 pro - POCO M2 PRO HI |/45/undefined
+Mi | poco/REDMI Note 9S - REDMI Note 9 pro HI +FRAME |/55/undefined
+Mi | poco/POCO X3 - POCO X3 - MI 10T LITE orignal |/50/undefined
+Mi | poco/POCO X5 PRO - REDMI NOTE 12 PRO PLUS 5G - REDMI NOTEN 12 PRO 5G INCELL |/60/undefined
+Mi | poco/POCO X6 pro - POCO F6 PRO - REDMI K70E incell |/60/undefined
+Mi | poco/POCO F5 5G - NOTE 13 5G ORI |/130/undefined
+Mi | poco/redmi 10 - REDMI 10 PRIME - REDMI 10 2022 |/45/undefined
+Mi | poco/redmi 10C - REDMI 12C - REDMI 11A - POCO C40 - POCO C55 ORI |/45/undefined
+Mi | poco/redmi 10C +FRAME ORI |/55/undefined
+Mi | poco/redmi 12C +FRAME ORI |/55/undefined
+Mi | poco/redmi 12 - REDMI 13 - POCO M6 PRO |/45/undefined
+Mi | poco/redmi 13C - REDMI 13R - POCO C65 - POCO M6 5G ORI |/45/undefined
+Mi | poco/13C +frame |/55/undefined
+Mi | poco/redmi 14C - REDMI A3 PRO - REDMI A4 5G - POCO C75 - POCO M7 5G|/50/undefined
+Mi | poco/redmi 8 - REDMI 8A |/45/undefined
+Mi | poco/redmi 9 - POCO M2 ORI |/45/undefined
+Mi | poco/redmi 9T - POCO M3 |/45/undefined
 realmi | oppo | onePlus/REALMI 7I - REALMI C17 - OPPO A11S - OPPO A54 4G - OPPO A55 4G - OPPO A53 - OPPO A33 2020 - OPPO A32 - OPPO A53S - OPPO A51 2021 - REALMI 7I - OPPO A51 2020 ORI |/50/undefined
 realmi | oppo | onePlus/OPPO A73 - OPPO A91 - OPPO RENO 3 - OPPO F15 - OPPO F17 |/50/undefined
 realmi | oppo | onePlus/REALMI 9I - REALMI 8I - NARZO 50 - K10 4G - OPPO A96 4G INDIA ORI |/60/undefined
-realmi | oppo | onePlus/REALMI C11 2021 - REALMI C20 - REALMI C21 - OPPO NARZO 50I ORI |/45/undefined
+realmi | oppo | onePlus/REALMI C11 2021 - REALMI C20 - REALMI C21 - NARZO 50I ORI |/45/undefined
 realmi | oppo | onePlus/REALMI C11 - REALMI C12 - REALMI C15 - OPPO A15 - OPPO A15S - OPPO A35 - NARZO 20 - NARZO 20A ORI |/44/undefined
 realmi | oppo | onePlus/REALMI C25 - REALMI C21 - REALMI C25S - OPPO A16 - OPPO A16S - OPPO A55 5G - OPPO A56 5G - OPPO A54S - NARZO 50A ORI |/45/undefined
 realmi | oppo | onePlus/REALMI C25Y - REALMI C21Y ORI |/45/undefined
@@ -108,13 +131,13 @@ realmi | oppo | onePlus/REALMI 7I - REAMLI C17 - OPPO A54 - OPPO A33 - OPPO A55 
 realmi | oppo | onePlus/OPPO A72 - OPPO A52 - OPPO A92 ORI |/50/undefined
 realmi | oppo | onePlus/OPPO A93 - RENO 4 4G - RENO 4 LITE - F17 PRO INCELL |/55/undefined
 Samsung/A03 core |/45/undefined
-Samsung/A03S-A02S-A03-A04E original |/45/undefined
+Samsung/A03S - A02S - A03 - A04E original |/45/undefined
 Samsung/A02S +FRAME |/55/undefined
 Samsung/A03S +FRAME |/55/undefined
 Samsung/A04E +FRAME |/55/undefined
 Samsung/A04 original |/45/undefined
 Samsung/A04 +FRAME |/55/undefined
-Samsung/A04S-A13 5G original |/45/undefined
+Samsung/A04S - A13 5G original |/45/undefined
 Samsung/A04S +FRAME |/55/undefined
 Samsung/A05 original |/45/undefined
 Samsung/A05 +FRAME |/55/undefined
@@ -169,29 +192,6 @@ Samsung/A50 - A30 INCELL +FRAME |/50/undefined
 Samsung/A20 INCELL + FRAME |/50/undefined
 Samsung/M13 |/45/undefined
 Samsung/Tap A9 |/90/undefined
-tecno | infinix | itel/camon 17 pro - zero x new ORI |/60/undefined
-tecno | infinix | itel/CAMON 18 Premer - zero x incell |/70/undefined
-tecno | infinix | itel/CAMON 19 - CAMON 19 new - CAMON 18 - CAMON 18P - CAMON 18t - spark 8 pro - hot 11S - POVA New 5G - HOT 20S - HOT 20 PRO - CAMON 17P - CAMON 17 PREMIER ORI |/50/undefined
-tecno | infinix | itel/CAMON 19 - CAMON 19 PRO ORI |/50/undefined
-tecno | infinix | itel/CAMON 20 PRO - CAMON 20 - NOTE 30 VIP - NOTE 30 PRO - CAMON 20 PRIMER - GT 10 PRO - GT 10 PRO PLUS incell |/60/undefined
-tecno | infinix | itel/CAMON 20 PRO - CAMON 20 - NOTE 30 VIP - NOTE 30 PRO - CAMON 20 PRIMER - GT 10 PRO - GT 10 PRO PLUS orignal |/120/undefined
-tecno | infinix | itel/comon 17 - spark 7 pro - CAMON 18I - VISION 2 ORI |/50/undefined
-tecno | infinix | itel/pop 5 lite - GO 2022 - POP 5 PRO - SMART 6 ORI |/45/undefined
-tecno | infinix | itel/POP 6 PRO - HOT 12 PRO |/45/undefined
-tecno | infinix | itel/POVA 1 ORI |/50/undefined
-tecno | infinix | itel/POVA 2 - POVA 3 POVA 5G - NOTE 10 - NOTE 11S - NOTE 11 PRO - NOTE 11I ORI |/50/undefined
-tecno | infinix | itel/POVA 4 - POVA NEW 2 - POVA NEW 3 - HOT 12 - HOT 12 PLAY - NOTE 12 I - HOT 2O - HOT 20 PLAY - HOT 30 PLAY - ITEL P40 PLUS ORI |/50/undefined
-tecno | infinix | itel/pova new ORI |/45/undefined
-tecno | infinix | itel/spark 10 pro - pova5 POVA 5 PRO - HOT 30 - NOTE 30 - HOT 40X - HOT 40 - HOT 40 PRO - SPARK 20 PRO - POVA 6 NEW 4G - NOTE 40X 5G |/50/undefined
-tecno | infinix | itel/spark 10 - 10C - GO 2023 - POP 7 - POP 7 PRO - SMART 7 HD - SMART 7 - ITEL A50 - ITEK A50S - ITEL A60 - ITEL A60S - ITEL A70 - ITEL A05S - ITEL P40 - HOT 30I - SMART 7 PLUS - ITEL S23 - ITEL S23 - ITEL P55 5G - ORI |/45/undefined
-tecno | infinix | itel/SPARK 20 - 20C - GO 2024 - SMART 8 -  SMART 8 HD - SMART 8C - SMART 8 PRO - HOT 40 I - POP 8 - ITEL P55 PLUS - ITEL P55 - ITEL A70S - ITEL S24 - ORI |/45/undefined
-tecno | infinix | itel/spark 8C - 9T - 8T - 9 - ITEL S18 ORI |/45/undefined
-tecno | infinix | itel/Spark Go1 - GO1S - POP 9 5G - SPARK 30 5G - SPARK 30C HOT 50 5G - HOT 50I - NOTE 50X 5G - SMART 9 - SMART 9 HD - ITEL P65 ITEL P65 PLUS - ITEL P67 - ITEL A80 - A95 5G - POVA 6 NEW 5G - |/45/undefined
-tecno | infinix | itel/SPARK GO2 |/50/undefined
-tecno | infinix | itel/POVA 6 - POVA 6 PRO 5G - CAMON 30 - CAMON 30 5G - NOTE 40 5G ORI |/60/undefined
-tecno | infinix | itel/POVA 7 |/60/undefined
-tecno | infinix | itel/infinix HOT 10 |/45/undefined
-tecno | infinix | itel/infinix S5 pro |/45/undefined
 HONOR/X5 plus |/55/undefined
 HONOR/X5b |/55/undefined
 HONOR/X6a |/55/undefined
