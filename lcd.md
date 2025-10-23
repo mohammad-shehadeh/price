@@ -11,7 +11,7 @@ tecno | infinix | itel/POVA 1 ORI |/50/undefined
 tecno | infinix | itel/POVA 2 - POVA 3 POVA 5G - NOTE 10 - NOTE 11S - NOTE 11 PRO - NOTE 11I ORI |/50/undefined
 tecno | infinix | itel/POVA 4 - POVA NEW 2 - POVA NEW 3 - HOT 12 - HOT 12 PLAY - NOTE 12 I - HOT 2O - HOT 20 PLAY - HOT 30 PLAY - ITEL P40 PLUS ORI |/50/undefined
 tecno | infinix | itel/pova new ORI |/45/undefined
-tecno | infinix | itel/spark 10 pro - pova5 POVA 5 PRO - HOT 30 - NOTE 30 - HOT 40X - HOT 40 - HOT 40 PRO - SPARK 20 PRO - POVA 6 NEW 4G - NOTE 40X 5G |/50/undefined
+tecno | infinix | itel/spark 10 pro - pova 5 - POVA 5 PRO - HOT 30 - NOTE 30 - HOT 40X - HOT 40 - HOT 40 PRO - SPARK 20 PRO - POVA 6 NEW 4G - NOTE 40X 5G |/50/undefined
 tecno | infinix | itel/spark 10 - 10C - GO 2023 - POP 7 - POP 7 PRO - SMART 7 HD - SMART 7 - ITEL A50 - ITEK A50S - ITEL A60 - ITEL A60S - ITEL A70 - ITEL A05S - ITEL P40 - HOT 30I - SMART 7 PLUS - ITEL S23 - ITEL S23 - ITEL P55 5G - ORI |/45/undefined
 tecno | infinix | itel/SPARK 20 - 20C - GO 2024 - SMART 8 -  SMART 8 HD - SMART 8C - SMART 8 PRO - HOT 40 I - POP 8 - ITEL P55 PLUS - ITEL P55 - ITEL A70S - ITEL S24 - ORI |/45/undefined
 tecno | infinix | itel/spark 8C - 9T - 8T - 9 - ITEL S18 ORI |/45/undefined
