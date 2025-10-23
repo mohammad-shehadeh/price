@@ -2,7 +2,7 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1, u-scalable=no">
     <title>أسعار الأجهزة أونلاين | Shehadeh Center</title>
     <meta name="description" content="أفضل أسعار الأجهزة الإلكترونية والكهربائية">
     
@@ -45,7 +45,7 @@
         }
         
         body {
-            font-family: 'Tajawal', Arial, sans-serif;
+            font-family: 'Tajawal', Arial, sans-if;
             margin: 0;
             padding: 0;
             background-color: #f8f9fa;
@@ -1116,6 +1116,15 @@
   padding: 0 !important;
 }
 
+
+        .highlight {
+    background-color: yellow;
+    color: black;
+    font-weight: bold;
+    border-radius: 3px;
+    padding: 0 2px;
+}
+
     </style>
 </head>
 <body>
@@ -1479,42 +1488,78 @@
             });
         }
         
-        // Filter Products
-        function filterProducts(category) {
-            const filteredProducts = category === 'All' ? products : products.filter(p => p.category === category);
-            renderFilteredProducts(filteredProducts);
-            
-            // Update active button
-            document.querySelectorAll('.filter-btn').forEach(btn => {
-                btn.classList.remove('active');
-            });
-            event.target.classList.add('active');
-        }
+// Filter Products
+function filterProducts(category) {
+    const filteredProducts = category === 'All' ? products : products.filter(p => p.category === category);
+    renderFilteredProducts(filteredProducts);
+    
+    // Update active button
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.classList.remove('active');
+    });
+    event.target.classList.add('active');
+}
+
+// Render Filtered Products with highlight
+function renderFilteredProducts(filteredProducts, searchTerm = '') {
+    categoriesContainer.innerHTML = '';
+    filteredProducts.forEach(product => {
+        const productElement = createProductElement(product, searchTerm);
+        categoriesContainer.appendChild(productElement);
+    });
+}
+
+// Handle Search
+function handleSearch() {
+    const searchTerm = searchBox.value.toLowerCase().trim();
+    const cleanedSearchTerm = searchTerm.replace(/\s+/g, '');
+
+    const filteredProducts = products.filter(product => {
+        const productName = product.name.toLowerCase().replace(/\s+/g, '');
+        const productCategory = product.category.toLowerCase().replace(/\s+/g, '');
         
-        // Render Filtered Products
-        function renderFilteredProducts(filteredProducts) {
-            categoriesContainer.innerHTML = '';
-            filteredProducts.forEach(product => {
-                const productElement = createProductElement(product);
-                categoriesContainer.appendChild(productElement);
-            });
-        }
-        
-        // Handle Search
-        function handleSearch() {
-            const searchTerm = searchBox.value.toLowerCase().trim();
-            const cleanedSearchTerm = searchTerm.replace(/\s+/g, '');
-            
-            const filteredProducts = products.filter(product => {
-                const productName = product.name.toLowerCase().replace(/\s+/g, '');
-                const productCategory = product.category.toLowerCase().replace(/\s+/g, '');
-                
-                return productName.includes(cleanedSearchTerm) || 
-                       productCategory.includes(cleanedSearchTerm);
-            });
-            
-            renderFilteredProducts(filteredProducts);
-        }
+        return productName.includes(cleanedSearchTerm) || 
+               productCategory.includes(cleanedSearchTerm);
+    });
+    
+    renderFilteredProducts(filteredProducts, searchTerm);
+}
+
+// تعديل على createProductElement ليُبرز النص المطابق
+function createProductElement(product, searchTerm = '') {
+    const productDiv = document.createElement('div');
+    productDiv.className = 'product fade-in';
+    
+    // Highlight function
+    function highlightMatch(text) {
+        if (!searchTerm) return text;
+        const regex = new RegExp(`(${searchTerm})`, 'gi');
+        return text.replace(regex, `<mark class="highlight">$1</mark>`);
+    }
+
+    // Product Image
+    const productImgContainer = document.createElement('div');
+    productImgContainer.className = 'product-img-container';
+    
+    const productImage = document.createElement('img');
+    productImage.src = product.image;
+    productImgContainer.appendChild(productImage);
+    
+    // Product Name
+    const productName = document.createElement('h3');
+    productName.innerHTML = highlightMatch(product.name);
+
+    // Product Category
+    const productCategory = document.createElement('p');
+    productCategory.innerHTML = highlightMatch(product.category);
+
+    productDiv.appendChild(productImgContainer);
+    productDiv.appendChild(productName);
+    productDiv.appendChild(productCategory);
+    
+    return productDiv;
+}
+
         
         // Cart Functions
         function toggleCart() {
@@ -1791,14 +1836,14 @@ function refreshProductUI(productName) {
             lastTouchEnd = now;
         }, { passive: false });
         
-        // Service Worker
-        if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('/sw.js')
+        // vice Worker
+        if ('viceWorker' in navigator) {
+            navigator.viceWorker.register('/sw.js')
                 .then(function(reg) {
-                    console.log('Service Worker registered with scope:', reg.scope);
+                    console.log('vice Worker registered with scope:', reg.scope);
                 })
                 .catch(function(error) {
-                    console.error('Service Worker registration failed:', error);
+                    console.error('vice Worker registration failed:', error);
                 });
         }
         
