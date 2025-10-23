@@ -1479,18 +1479,6 @@
             });
         }
         
-        // Filter Products
-        function filterProducts(category) {
-            const filteredProducts = category === 'All' ? products : products.filter(p => p.category === category);
-            renderFilteredProducts(filteredProducts);
-            
-            // Update active button
-            document.querySelectorAll('.filter-btn').forEach(btn => {
-                btn.classList.remove('active');
-            });
-            event.target.classList.add('active');
-        }
-        
        // Filter Products
 function filterProducts(category) {
   const filteredProducts =
@@ -1531,14 +1519,18 @@ function handleSearch() {
 
   renderFilteredProducts(filteredProducts);
 
-  // Highlight matching text
+  // Highlight matching text (fix spaces issue)
   if (cleanedSearchTerm) {
-    const regex = new RegExp(`(${cleanedSearchTerm})`, 'gi');
+    // نحول المسافات في البحث إلى \s+ حتى يقبل فراغات متعددة
+    const flexibleTerm = searchTerm.replace(/\s+/g, '\\s+');
+    const regex = new RegExp(`(${flexibleTerm})`, 'gi');
+
     document.querySelectorAll('.product-name, .product-category').forEach(el => {
       el.innerHTML = el.textContent.replace(regex, '<mark>$1</mark>');
     });
   }
 }
+
 
         
         // Cart Functions
