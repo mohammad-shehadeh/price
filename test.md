@@ -1,5 +1,5 @@
 Sony/PS5 1T|SD/2050/https://res.cloudinary.com/dygc5b8cn/image/upload/v1761125137/opry0rsvlx9wvw8vvmlr.webp
-Apple/17 pro max كفالة ضفة SIM 256|/5550/https://res.cloudinary.com/dygc5b8cn/image/upload/v1761035345/gwlomv0ep0ounsg6zndj.jpg
+Apple/17 pro max كفالة ضفة SIM 256|/Aaa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1761035345/gwlomv0ep0ounsg6zndj.jpg
 Tecno/Slim 256|8/750/https://res.cloudinary.com/dygc5b8cn/image/upload/v1760622512/yze1nsxdm3lgmny2tjyo.webp
 MI/Pad 2 256|8/670/https://res.cloudinary.com/dygc5b8cn/image/upload/v1759655366/bsrpwamkyjsfjjxjyvqq.webp
 MI/SE 11" 256|8/aaa/https://www.celletronic.com/wp-content/uploads/2023/09/xiaomi-redmi-pad-se-11-0-6gb-ram-128gb-wifi-gris.jpg
