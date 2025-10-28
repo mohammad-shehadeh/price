@@ -18,7 +18,7 @@ tecno | infinix | itel/spark 8C - spark 9T - spark 8T - spark 9 - ITEL S18 ORI |
 tecno | infinix | itel/Spark Go1 - spark GO1S - TECNO POP 9 5G - SPARK 30 5G - SPARK 30C - infinix HOT 50 5G - infinix HOT 50I - infinix NOTE 50X 5G - infinix SMART 9 - infinix SMART 9 HD - ITEL P65 ITEL P65 PLUS - ITEL P67 - ITEL A80 - A95 5G - POVA 6 NEW 5G - |/45/undefined
 tecno | infinix | itel/SPARK GO2 |/50/undefined
 tecno | infinix | itel/tecno POVA 6 - tecno POVA 6 PRO 5G - tecno CAMON 30 - tecno CAMON 30 5G - infinix NOTE 40 5G ORI |/60/undefined
-tecno | infinix | itel/ tecno POVA 7 |/60/undefined
+tecno | infinix | itel/tecno POVA 7 |/60/undefined
 tecno | infinix | itel/infinix HOT 10 |/45/undefined
 tecno | infinix | itel/infinix S5 pro |/45/undefined
 iphone/x BYH |/55/undefined
@@ -27,8 +27,8 @@ iphone/xs BYH |/55/undefined
 iphone/xs max BYH |/65/undefined
 iphone/XS max original |/200/undefined
 iphone/Ip 11 byh |/55/undefined
-iphone/11 orignal |/85/undefined
-iphone/11 orignal ch |/120/undefined
+iphone/Ip 11 original |/85/undefined
+iphone/Ip 11 orignal ch |/120/undefined
 iphone/11 pro max BYH |/60/undefined
 iphone/11 pro max original |/230/undefined
 iphone/12 pro BYH |/65/undefined
