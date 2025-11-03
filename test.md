@@ -64,9 +64,9 @@ MI/Note 13 pro PLUS 512|12/1180/https://mobizil.com/wp-content/uploads/2023/11/X
 MI/extender AC1200 |/100/https://www.smartbox.am/webroot/myfiles/images/products/ac1200/3ffafe36-ccb4-4dfe-87db-2f546a39b1b5.png
 Apple/Ip 16 pro max 256GB|كفالة ضفة |/Aa/https://mac-center.com.pr/cdn/shop/files/iPhone_16_Pro_Max_Desert_Titanium_PDP_Image_Position_1__en-US_bf24ca74-a053-42d3-80e2-3edc40e85c1e.jpg?v=1726226953&width=823
 Apple/Ip 15 pro max 512GB|/aaa/https://www.apollo.pl/gfx/apollo/userfiles/_public/opisy/apple/195949019036/195949019036_5.jpg
-Apple/iphone 16 128GB|كفالة ضفة |/2700/https://asiamall.asiacell.com/media/catalog/product/l/d/ld0006166708_2.jpg
+Apple/iphone 16 128GB|كفالة ضفة |/2420/https://asiamall.asiacell.com/media/catalog/product/l/d/ld0006166708_2.jpg
 Apple/iphone 15 128GB|كفالة ضفة |/2050/https://cdn.shortpixel.ai/spai/q_glossy+ret_img+to_webp/mobizil.com/wp-content/uploads/2023/09/iPhone-15-3.jpg
-Apple/iphone 13 128GB|كفالة ضفة |/1670/https://m.media-amazon.com/images/I/516QZcrv+dL.jpg
+Apple/iphone 13 128GB|كفالة ضفة |/Aa/https://m.media-amazon.com/images/I/516QZcrv+dL.jpg
 Apple/watch S10 46mm |/Aa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1757492396/emufutxqwwx1pcni1te7.jpg
 Apple/watch S10 42mm |/Aa/https://i.postimg.cc/cH6Mc0rP/IMG-7141.png
 Apple/ipad 11 256GB |كفالة ضفة |/AA/https://realplaza.vtexassets.com/arquivos/ids/33743614-800-auto?v=638265979022630000&width=800&height=auto&aspect=true
