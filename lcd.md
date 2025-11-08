@@ -168,25 +168,25 @@ Samsung/A31 oled +FRAME |/90/undefined
 Samsung/A32 incell +FRAME |/60/undefined
 Samsung/A32 olbig +FRAME |/90/undefined
 Samsung/A33 +FRAME |/65/undefined
-Samsung/A33 olbig +FRAME |/120/undefined
+Samsung/A33 olbig +FRAME |/110/undefined
 Samsung/A35 original +FRAME |/aaa/undefined
 Samsung/A51 incell +FRAME |/60/undefined
 Samsung/A51 olbig +FRAME |/100/undefined
 Samsung/A52 incell+FRAME |/60/undefined
-Samsung/A52 olbig +FRAME |/160/undefined
-Samsung/A52 original +FRAME |/260/undefined
+Samsung/A52 olbig +FRAME |/120/undefined
+Samsung/A52 original +FRAME |/250/undefined
 Samsung/A53 +FRAME |/65/undefined
-Samsung/A53 olbig +FRAME |/130/undefined
-Samsung/A54 original +FRAME |/280/undefined
+Samsung/A53 olbig +FRAME |/120/undefined
+Samsung/A54 original +FRAME |/250/undefined
 Samsung/A55 original +FRAME |/aaa/undefined
 Samsung/A70 incell +FRAME |/60/undefined
 Samsung/A70 olbig +FRAME |/120/undefined
 Samsung/A71 incell +FRAME |/60/undefined
 Samsung/A71 oled +FRAME |/aaa/undefined
 Samsung/A72 incell +FRAME |/65/undefined
-Samsung/A72 olbig +FRAME |/160/undefined
+Samsung/A72 olbig +FRAME |/120/undefined
 Samsung/A73 incell +FRAME |/aaa/undefined
-Samsung/A73 olbig +FRAME |/180/undefined
+Samsung/A73 olbig +FRAME |/130/undefined
 Samsung/J4+-J6+ |/45/undefined
 Samsung/A50 - A30 INCELL +FRAME |/50/undefined
 Samsung/A20 INCELL + FRAME |/50/undefined
