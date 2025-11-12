@@ -8,9 +8,9 @@ MI/Redmi 15C 256|8/400/https://res.cloudinary.com/dygc5b8cn/image/upload/v175732
 samsung/S25 ultra 256|12/3050/https://assets.mmsrg.com/isr/166325/c1/-/ASSET_MMS_149453259/fee_786_587_png
 samsung/A17 128|4/500/https://res.cloudinary.com/dygc5b8cn/image/upload/v1759304168/d3bqnjrcxoay06rrnjtx.jpg
 samsung/A17 256|8/Aa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1759654356/tdq2lrtsxwo9hshuo4dd.jpg
-samsung/A07 64|4/300/https://res.cloudinary.com/dygc5b8cn/image/upload/v1758201166/sicjbxtmxarydofvmecm.jpg
+samsung/A07 64|4/290/https://res.cloudinary.com/dygc5b8cn/image/upload/v1758201166/sicjbxtmxarydofvmecm.jpg
 MI/Redmi 15C 128|6/Aa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1757324301/ilyhjiezyfz5khp30p5e.webp
-MI/Redmi 15C 128|4/350/https://res.cloudinary.com/dygc5b8cn/image/upload/v1757324301/ilyhjiezyfz5khp30p5e.webp
+MI/Redmi 15C 128|4/330/https://res.cloudinary.com/dygc5b8cn/image/upload/v1757324301/ilyhjiezyfz5khp30p5e.webp
 Apple/Ipad 11 128|كفالة ضفة |/1220/https://res.cloudinary.com/dygc5b8cn/image/upload/v1756986041/ajb0lks9smgql3bccyjx.webp
 samsung/A07 128|4/320/https://res.cloudinary.com/dygc5b8cn/image/upload/v1756559491/wokzeyy83lncbbewic1v.jpg
 N\A/Pad 100 128|12/700/https://res.cloudinary.com/dygc5b8cn/image/upload/v1756119440/ahwstejrduarizr8gieh.jpg
@@ -23,7 +23,7 @@ Honor/400 LITE 256|8/830/https://res.cloudinary.com/dygc5b8cn/image/upload/v1754
 Honor/X6C 256|6/420/https://res.cloudinary.com/dygc5b8cn/image/upload/v1753782712/dps4kgccnmz4xh7zxxm7.jpg
 Honor/X8C 256|8/660/https://res.cloudinary.com/dygc5b8cn/image/upload/v1753782673/tcqjqve8dkgphgpp7wvj.jpg
 Honor/X8C 512|8/760/https://res.cloudinary.com/dygc5b8cn/image/upload/v1753782620/keu8xfmhscfqyjh8vric.webp
-Tecno/Camon 40 Pro 256|16/880/https://res.cloudinary.com/dygc5b8cn/image/upload/v1753778548/vvgtuupv7cjnok1bk0xn.jpg
+Tecno/Camon 40 Pro 256|16/850/https://res.cloudinary.com/dygc5b8cn/image/upload/v1753778548/vvgtuupv7cjnok1bk0xn.jpg
 Tecno/POVA 7 256|16/620/https://res.cloudinary.com/dygc5b8cn/image/upload/v1753778442/gy0m4h8sjnuloar9avmw.jpg
 Tecno/Spark 30C 256|16/400/https://res.cloudinary.com/dygc5b8cn/image/upload/v1753778370/sp6c0p34w1ngaj0kb8yw.jpg
 Tecno/Go2 128|8/310/https://res.cloudinary.com/dygc5b8cn/image/upload/v1753777890/pnir0njijadnn5r09v5i.jpg
