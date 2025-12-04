@@ -1137,6 +1137,68 @@
         align-items: flex-start;
         padding-top: 20px;
     }
+    
+    .iban-section {
+        margin: 10px 0;
+    }
+    
+    .iban-container {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-top: 5px;
+        background: #f8f9fa;
+        padding: 10px;
+        border-radius: 6px;
+        border: 1px solid #dee2e6;
+    }
+    
+    .iban-number {
+        font-family: 'Courier New', monospace;
+        font-size: 14px;
+        color: #333;
+        flex-grow: 1;
+        word-break: break-all;
+        padding: 5px;
+    }
+    
+    .copy-btn {
+        background: #4CAF50;
+        color: white;
+        border: none;
+        padding: 8px 15px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 13px;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        transition: background 0.3s;
+        white-space: nowrap;
+    }
+    
+    .copy-btn:hover {
+        background: #45a049;
+    }
+    
+    .copy-btn:active {
+        background: #3d8b40;
+    }
+    
+    .copy-btn i {
+        font-size: 12px;
+    }
+    
+    .copy-notification {
+        animation: fadeInOut 2s ease-in-out;
+    }
+    
+    @keyframes fadeInOut {
+        0% { opacity: 0; }
+        20% { opacity: 1; }
+        80% { opacity: 1; }
+        100% { opacity: 0; }
+    }
     </style>
 </head>
 <body>
@@ -1286,14 +1348,29 @@
             </div>
             
             <!-- تفاصيل البنك (تظهر فقط عند اختيار التحويل البنكي) -->
-            <div class="form-group bank-details" id="bank-details" style="display: none;">
-                <div class="alert alert-info">
-                    <h4><i class="fas fa-info-circle"></i> معلومات التحويل البنكي</h4>
-                    <p><strong>اسم البنك:</strong> القاهرة عمان</p>
-                    <p><strong>رقم الحساب:</strong> 0568888825</p>
-                    <p><strong>اسم المستفيد:</strong>  Bashar shehadeh</p>
-                    <p>يرجى إرسال صورة التحويل بعد الإتمام</p>
-                </div>
+<div class="form-group bank-details" id="bank-details" style="display: none;">
+    <div class="alert alert-info">
+        <h4><i class="fas fa-info-circle"></i> معلومات التحويل البنكي</h4>
+        <p><strong>اسم البنك:</strong> القاهرة عمان</p>
+        
+        <div class="iban-section">
+            <p><strong>رقم الآيبان:</strong></p>
+            <div class="iban-container">
+                <code class="iban-number">PS75PIBC083911094670033100000</code>
+                <button class="copy-btn" onclick="copyIban()" title="نسخ رقم الآيبان">
+                    <i class="fas fa-copy"></i> نسخ
+                </button>
+            </div>
+        </div>
+        
+        <p><strong>اسم المستفيد:</strong> Bashar shehadeh</p>
+        <p><strong>رقم الهاتف:</strong> 0568888825</p>
+        <p><strong>ملاحظة:</strong> يرجى إرسال صورة التحويل بعد الإتمام</p>
+        <p class="copy-notification" id="copy-notification" style="display: none; color: green; margin-top: 5px;">
+            <i class="fas fa-check-circle"></i> تم نسخ رقم الآيبان!
+        </p>
+    </div>
+</div>
             </div>
         </div>
         <div class="popup-footer">
@@ -2230,6 +2307,65 @@ function changeAdImage(newImageUrl) {
     adPopup.classList.add('show'); // إظهار الإعلان الجديد
 }
 
+
+    // دالة نسخ رقم الآيبان
+    function copyIban() {
+        const ibanNumber = 'PS75PIBC083911094670033100000';
+        const notification = document.getElementById('copy-notification');
+        
+        // نسخ النص إلى الحافظة
+        navigator.clipboard.writeText(ibanNumber)
+            .then(() => {
+                // إظهار إشعار النجاح
+                notification.style.display = 'block';
+                notification.style.color = 'green';
+                notification.innerHTML = '<i class="fas fa-check-circle"></i> تم نسخ رقم الآيبان!';
+                
+                // إخفاء الإشعار بعد 3 ثواني
+                setTimeout(() => {
+                    notification.style.display = 'none';
+                }, 3000);
+                
+                // تغيير نص الزر مؤقتاً
+                const copyBtn = document.querySelector('.copy-btn');
+                const originalHTML = copyBtn.innerHTML;
+                copyBtn.innerHTML = '<i class="fas fa-check"></i> تم النسخ';
+                copyBtn.style.background = '#45a049';
+                
+                setTimeout(() => {
+                    copyBtn.innerHTML = originalHTML;
+                    copyBtn.style.background = '#4CAF50';
+                }, 2000);
+            })
+            .catch(err => {
+                // حل بديل للمتصفحات القديمة
+                const textArea = document.createElement('textarea');
+                textArea.value = ibanNumber;
+                document.body.appendChild(textArea);
+                textArea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textArea);
+                
+                // إظهار إشعار النجاح
+                notification.style.display = 'block';
+                notification.style.color = 'green';
+                notification.innerHTML = '<i class="fas fa-check-circle"></i> تم نسخ رقم الآيبان!';
+                
+                setTimeout(() => {
+                    notification.style.display = 'none';
+                }, 3000);
+            });
+    }
+    
+    // إذا أردت تحديث رسالة الواتساب لتشمل الآيبان الجديد
+        if (paymentMethod === 'bank') {
+            message += `\n💳 معلومات التحويل البنكي:\n`;
+            message += `البنك: القاهرة عمان\n`;
+            message += `رقم الآيبان: PS75PIBC083911094670033100000\n`;
+            message += `اسم المستفيد: Bashar shehadeh\n`;
+            message += `━━━━━━━━━━━━━━━\n`;
+        }
+        
         // Initialize App
         window.addEventListener('load', init);
         
