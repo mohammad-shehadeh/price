@@ -1231,58 +1231,60 @@
     </div>
 </body>
     
-    <script>
-        // DOM Elements
-        const categoriesContainer = document.getElementById('categories');
-        const cartItemsContainer = document.getElementById('cart-items');
-        const checkoutButton = document.getElementById('checkout-button');
-        const popup = document.getElementById('popup');
-        const confirmButton = document.getElementById('confirm-button');
-        const cancelButton = document.getElementById('cancel-button');
-        const customerNameInput = document.getElementById('customer-name');
-        const customerPhoneInput = document.getElementById('customer-phone');
-        const showCartButton = document.getElementById('show-cart-button');
-        const hideCartButton = document.getElementById('hide-cart-button');
-        const cartElement = document.getElementById('cart');
-        const searchBox = document.getElementById('search-box');
-        const filterButtonsContainer = document.getElementById('filter-buttons');
-        const fileButtonsContainer = document.getElementById('file-buttons');
-        const notification = document.getElementById('notification');
-        const notificationText = document.getElementById('notification-text');
-        const cartCount = document.getElementById('cart-count');
-        const cartTotal = document.getElementById('cart-total');
-        const scrollUpButton = document.getElementById('scrollUp');
-        
-        // Data
-        let products = [];
-        let cart = JSON.parse(localStorage.getItem('cart')) || [];
-        
+<script>
+    // DOM Elements
+    const categoriesContainer = document.getElementById('categories');
+    const cartItemsContainer = document.getElementById('cart-items');
+    const checkoutButton = document.getElementById('checkout-button');
+    const popup = document.getElementById('popup');
+    const confirmButton = document.getElementById('confirm-button');
+    const cancelButton = document.getElementById('cancel-button');
+    const customerNameInput = document.getElementById('customer-name');
+    const customerPhoneInput = document.getElementById('customer-phone');
+    const showCartButton = document.getElementById('show-cart-button');
+    const hideCartButton = document.getElementById('hide-cart-button');
+    const cartElement = document.getElementById('cart');
+    const searchBox = document.getElementById('search-box');
+    const filterButtonsContainer = document.getElementById('filter-buttons');
+    const notification = document.getElementById('notification');
+    const notificationText = document.getElementById('notification-text');
+    const cartCount = document.getElementById('cart-count');
+    const cartTotal = document.getElementById('cart-total');
+    const scrollUpButton = document.getElementById('scrollUp');
 
-        
-        // Initialize
-        function init() {
-            createFileButtons();
-            loadProductsFromFile('lcd.md');
-            renderCart();
-            updateCartCount();
-            
-            // Event Listeners
-            showCartButton.addEventListener('click', toggleCart);
-            hideCartButton.addEventListener('click', toggleCart);
-            checkoutButton.addEventListener('click', showPopup);
-            confirmButton.addEventListener('click', confirmOrder);
-            cancelButton.addEventListener('click', hidePopup);
-            scrollUpButton.addEventListener('click', scrollToTop);
-            searchBox.addEventListener('input', handleSearch);
-            
-            // Hide loading screen after 2 seconds
+    // Data
+    let products = [];
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    // لا يوجد أي أزرار ملفات بعد الآن
+    const fileButtons = [];
+
+    // Initialize
+    function init() {
+
+        // تحميل الملف الافتراضي مباشرة
+        loadProductsFromFile('lcd.md');
+
+        renderCart();
+        updateCartCount();
+
+        // Event Listeners
+        showCartButton.addEventListener('click', toggleCart);
+        hideCartButton.addEventListener('click', toggleCart);
+        checkoutButton.addEventListener('click', showPopup);
+        confirmButton.addEventListener('click', confirmOrder);
+        cancelButton.addEventListener('click', hidePopup);
+        scrollUpButton.addEventListener('click', scrollToTop);
+        searchBox.addEventListener('input', handleSearch);
+
+        // Hide loading screen
+        setTimeout(() => {
+            document.getElementById('loading-screen').style.opacity = '0';
             setTimeout(() => {
-                document.getElementById('loading-screen').style.opacity = '0';
-                setTimeout(() => {
-                    document.getElementById('loading-screen').style.display = 'none';
-                }, 500);
-            }, 0);
-        }
+                document.getElementById('loading-screen').style.display = 'none';
+            }, 500);
+        }, 0);
+    }
         
         // Create File Buttons
         function createFileButtons() {
