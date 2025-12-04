@@ -2308,63 +2308,6 @@ function changeAdImage(newImageUrl) {
 }
 
 
-    // دالة نسخ رقم الآيبان
-    function copyIban() {
-        const ibanNumber = 'PS75PIBC083911094670033100000';
-        const notification = document.getElementById('copy-notification');
-        
-        // نسخ النص إلى الحافظة
-        navigator.clipboard.writeText(ibanNumber)
-            .then(() => {
-                // إظهار إشعار النجاح
-                notification.style.display = 'block';
-                notification.style.color = 'green';
-                notification.innerHTML = '<i class="fas fa-check-circle"></i> تم نسخ رقم الآيبان!';
-                
-                // إخفاء الإشعار بعد 3 ثواني
-                setTimeout(() => {
-                    notification.style.display = 'none';
-                }, 3000);
-                
-                // تغيير نص الزر مؤقتاً
-                const copyBtn = document.querySelector('.copy-btn');
-                const originalHTML = copyBtn.innerHTML;
-                copyBtn.innerHTML = '<i class="fas fa-check"></i> تم النسخ';
-                copyBtn.style.background = '#45a049';
-                
-                setTimeout(() => {
-                    copyBtn.innerHTML = originalHTML;
-                    copyBtn.style.background = '#4CAF50';
-                }, 2000);
-            })
-            .catch(err => {
-                // حل بديل للمتصفحات القديمة
-                const textArea = document.createElement('textarea');
-                textArea.value = ibanNumber;
-                document.body.appendChild(textArea);
-                textArea.select();
-                document.execCommand('copy');
-                document.body.removeChild(textArea);
-                
-                // إظهار إشعار النجاح
-                notification.style.display = 'block';
-                notification.style.color = 'green';
-                notification.innerHTML = '<i class="fas fa-check-circle"></i> تم نسخ رقم الآيبان!';
-                
-                setTimeout(() => {
-                    notification.style.display = 'none';
-                }, 3000);
-            });
-    }
-    
-    // إذا أردت تحديث رسالة الواتساب لتشمل الآيبان الجديد
-        if (paymentMethod === 'bank') {
-            message += `\n💳 معلومات التحويل البنكي:\n`;
-            message += `البنك: القاهرة عمان\n`;
-            message += `رقم الآيبان: PS75PIBC083911094670033100000\n`;
-            message += `اسم المستفيد: Bashar shehadeh\n`;
-            message += `━━━━━━━━━━━━━━━\n`;
-        }
         
         // Initialize App
         window.addEventListener('load', init);
