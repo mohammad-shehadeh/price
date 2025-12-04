@@ -1116,6 +1116,27 @@
   padding: 0 !important;
 }
 
+    /* منع التمرير عند فتح نافذة الطلب */
+    body.no-scroll {
+        overflow: hidden;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+    }
+    
+    /* تأكد من أن نافذة الطلب يمكن تمريرها داخليًا */
+    .popup-content {
+        max-height: 80vh;
+        overflow-y: auto;
+        margin: 20px auto;
+    }
+    
+    /* إضافة تأثير عند فتح النافذة */
+    .popup.open {
+        display: flex;
+        align-items: flex-start;
+        padding-top: 20px;
+    }
     </style>
 </head>
 <body>
