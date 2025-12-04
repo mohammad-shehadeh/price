@@ -2307,87 +2307,25 @@ function changeAdImage(newImageUrl) {
 }
 
 
-        
-
-// ==============================
-// دالة نسخ الآيبان
-// ==============================
 function copyIban() {
-    const ibanNumber = 'PS75PIBC083911094670033100000';
-    const notification = document.getElementById('copy-notification');
-    
+    // الحصول على رقم الآيبان
+    const ibanText = document.querySelector(".iban-number").textContent;
+
     // نسخ النص إلى الحافظة
-    if (navigator.clipboard && window.isSecureContext) {
-        // استخدام Clipboard API الحديث
-        navigator.clipboard.writeText(ibanNumber)
-            .then(() => {
-                showCopySuccess(notification);
-            })
-            .catch(err => {
-                // استخدام الطريقة القديمة إذا فشل
-                fallbackCopyText(ibanNumber, notification);
-            });
-    } else {
-        // استخدام الطريقة القديمة
-        fallbackCopyText(ibanNumber, notification);
-    }
-}
+    navigator.clipboard.writeText(ibanText).then(() => {
+        // إظهار إشعار النجاح
+        const notif = document.getElementById("copy-notification");
+        notif.style.display = "block";
 
-function showCopySuccess(notification) {
-    if (!notification) return;
-    
-    notification.style.display = 'block';
-    notification.style.color = 'green';
-    notification.innerHTML = '<i class="fas fa-check-circle"></i> تم نسخ رقم الآيبان!';
-    
-    setTimeout(() => {
-        notification.style.display = 'none';
-    }, 3000);
-    
-    const copyBtn = document.querySelector('.copy-btn');
-    if (copyBtn) {
-        const originalHTML = copyBtn.innerHTML;
-        copyBtn.innerHTML = '<i class="fas fa-check"></i> تم النسخ';
-        copyBtn.style.background = '#45a049';
-        
+        // إخفائه بعد ثانيتين
         setTimeout(() => {
-            copyBtn.innerHTML = originalHTML;
-            copyBtn.style.background = '';
+            notif.style.display = "none";
         }, 2000);
-    }
+    }).catch(err => {
+        console.error("Error copying IBAN:", err);
+    });
 }
 
-function fallbackCopyText(text, notification) {
-    try {
-        const textArea = document.createElement('textarea');
-        textArea.value = text;
-        textArea.style.position = 'fixed';
-        textArea.style.left = '-999999px';
-        textArea.style.top = '-999999px';
-        document.body.appendChild(textArea);
-        textArea.focus();
-        textArea.select();
-        
-        const successful = document.execCommand('copy');
-        document.body.removeChild(textArea);
-        
-        if (successful) {
-            showCopySuccess(notification);
-        } else {
-            alert('يرجى نسخ النص يدوياً: ' + text);
-        }
-    } catch (err) {
-        alert('يرجى نسخ النص يدوياً: ' + text);
-    }
-}
-
-// ==============================
-// باقي السكربت الرئيسي
-// ==============================
-function init() {
-    // تهيئة المتجر
-    // ... باقي الأكواد
-}
 
 // تشغيل التهيئة عند تحميل الصفحة
 window.addEventListener('DOMContentLoaded', init);
