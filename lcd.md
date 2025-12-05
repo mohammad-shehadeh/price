@@ -65,6 +65,7 @@ iphone/ipad 7,8,9 LCD |/150/undefined
 iphone/ipad 7,8,9 touch |/45/undefined
 iphone/watch S6 44mm |/200/undefined
 iphone/watch S7 44mm |/200/undefined
+Mi | poco/Redmi pad SE - Redmi pad 2 |/100/undefined
 Mi | poco/Redmi A5 - poco C71 |/50/undefined
 Mi | poco/REDMI 10A - REDMI 9A - REDMI 9C ORI |/45/undefined
 Mi | poco/REDMI 10A - REDMI 9A - REDMI 9C + FRAME ORI |/55/undefined
@@ -113,6 +114,7 @@ Mi | poco/redmi 12 - REDMI 13 - POCO M6 PRO |/45/undefined
 Mi | poco/redmi 13C - REDMI 13R - POCO C65 - POCO M6 5G ORI |/45/undefined
 Mi | poco/13C +frame |/55/undefined
 Mi | poco/redmi 14C - REDMI A3 PRO - REDMI A4 5G - POCO C75 - POCO M7 5G|/50/undefined
+Mi | poco/redmi 15C|/50/undefined
 Mi | poco/redmi 8 - REDMI 8A |/45/undefined
 Mi | poco/redmi 9 - POCO M2 ORI |/45/undefined
 Mi | poco/redmi 9T - POCO M3 |/45/undefined
@@ -144,15 +146,20 @@ Samsung/A05 +FRAME |/55/undefined
 Samsung/A05S original |/50/undefined
 Samsung/A06 original |/50/undefined
 Samsung/A06 +FRAME |/60/undefined
+Samsung/A07 |/50/undefined
+Samsung/A07 +FRAME |/60/undefined
 Samsung/A10 |/40/undefined
 Samsung/A10S |/40/undefined
-Samsung/A11 original |/45/undefined
+Samsung/A11  |/45/undefined
+Samsung/A11 +Frame |/55/undefined
 Samsung/A12-A02 original |/45/undefined
 Samsung/A12 +FRAME |/55/undefined
 Samsung/A13-A23-M336 original |/45/undefined
 Samsung/A13 +FRAME |/55/undefined
-Samsung/A14 5G original |/50/undefined
-Samsung/A14 original |/45/undefined
+Samsung/A23 +FRAME |/55/undefined
+Samsung/A14 5G  |/50/undefined
+Samsung/A14 5G +frame |/60/undefined
+Samsung/A14  |/45/undefined
 Samsung/A14 +FRAME |/55/undefined
 Samsung/A15 incell+F |/60/undefined
 Samsung/A16 oled+f |/165/undefined
@@ -188,10 +195,12 @@ Samsung/A72 olbig +FRAME |/120/undefined
 Samsung/A73 incell +FRAME |/aaa/undefined
 Samsung/A73 olbig +FRAME |/130/undefined
 Samsung/J4+-J6+ |/45/undefined
+Samsung/J7 prime |/45/undefined
 Samsung/A50 - A30 INCELL +FRAME |/50/undefined
 Samsung/A20 INCELL + FRAME |/50/undefined
 Samsung/M13 |/45/undefined
 Samsung/Tap A9 |/90/undefined
+Samsung/Tap A9+ 5G 11" |/110/undefined
 HONOR/X5 plus |/55/undefined
 HONOR/X5b |/55/undefined
 HONOR/X6a |/55/undefined
