@@ -2,7 +2,7 @@ samsung/A26 256|8/750/https://res.cloudinary.com/dygc5b8cn/image/upload/v1764065
 samsung/A07 256|8/400/https://res.cloudinary.com/dygc5b8cn/image/upload/v1764064978/vvks2bmm3sqhrvyidtnu.jpg
 Honor/X9d 256|12/1120/https://res.cloudinary.com/dygc5b8cn/image/upload/v1763373225/j3170qc31xs8tyqnkoju.webp
 Sony/PS5 1T|SD/2050/https://res.cloudinary.com/dygc5b8cn/image/upload/v1761125137/opry0rsvlx9wvw8vvmlr.webp
-Apple/17 pro max كفالة ضفة معتمد4550 🟧4530 🟦4600 ⬜️ 256|/4530/https://res.cloudinary.com/dygc5b8cn/image/upload/v1761035345/gwlomv0ep0ounsg6zndj.jpg
+Apple/17 pro max كفالة ضفة معتمد|/4530/https://res.cloudinary.com/dygc5b8cn/image/upload/v1761035345/gwlomv0ep0ounsg6zndj.jpg
 Tecno/Slim 256|8/750/https://res.cloudinary.com/dygc5b8cn/image/upload/v1760622512/yze1nsxdm3lgmny2tjyo.webp
 MI/Pad 2 256|8/670/https://res.cloudinary.com/dygc5b8cn/image/upload/v1759655366/bsrpwamkyjsfjjxjyvqq.webp
 MI/SE 11" 256|8/aaa/https://www.celletronic.com/wp-content/uploads/2023/09/xiaomi-redmi-pad-se-11-0-6gb-ram-128gb-wifi-gris.jpg
@@ -46,11 +46,6 @@ samsung/A36 128|8/890/https://media-ik.croma.com/prod/https://media.croma.com/im
 samsung/Tap A9+  5G 128|8/640/https://res.cloudinary.com/dygc5b8cn/image/upload/v1753694538/hof796y09s8x8ovvttwp.jpg
 samsung/TAP A9 64|4/340/https://oplayce.ci/cdn/shop/files/samsung-galaxy-tab-a9_5_1024x.jpg?v=1717431017
 samsung/A26 128|6 |/650/https://res.cloudinary.com/dygc5b8cn/image/upload/v1747478968/m8ckbi5uatn8p2qcarzi.jpg
-samsung/A16 256|8/Aa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1760622406/osrvauzbylvidbzxirlq.png
-samsung/A16 128|4/Aa/https://econtent.o2.co.uk/o/econtent/media/get/ff0037cf-f7bc-4ca6-bde5-779c9cbb9c2b
-samsung/A06 128|4/Aa/https://www.jibalzone.com/media/7389/conversions/6704ddec150e1_193679_2024-slider.jpg
-samsung/A06 64|4/Aa/https://www.jibalzone.com/media/7389/conversions/6704ddec150e1_193679_2024-slider.jpg
-samsung/Galaxy Fit 3 |/Aa/https://www.tmt.my/data/editor/sc-product/15959/SAMSUNG-GALAXY-FIT-3-TMT.jpg
 MI/Redmi 13X 256|8/400/https://res.cloudinary.com/dygc5b8cn/image/upload/v1753791535/a13rrdzxc1i0gtxd5b6f.png
 MI/redmi A5 128|4/245/https://media.ldlc.com/r1600/ld/products/00/06/22/87/LD0006228768.jpg
 MI/Redmi A5 64|3/225/https://res.cloudinary.com/dygc5b8cn/image/upload/v1745846501/huvlm2coxnrudfzwmhtm.jpg
@@ -59,7 +54,6 @@ MI/Note 14 pro 512|12/850/https://www.giztop.com/media/catalog/product/cache/97c
 MI/Note 14 pro 256|8/710/https://www.giztop.com/media/catalog/product/cache/97cc1143d2e20f2b0c8ea91aaa12053c/r/e/redmi_note_14_pro.png
 MI/Note 14 256|8/530/https://cdn.gadgetbytenepal.com/wp-content/uploads/2025/01/Redmi-Note-14-4G-1.jpg
 MI/poco X7 pro 512|12/1120/https://cdn.shortpixel.ai/spai/q_glossy+ret_img+to_webp/mobizil.com/wp-content/uploads/2025/01/Xiaomi-Poco-X7-Pro.jpg
-MI/POCO X6 pro 256|12/Aa/https://dzairtic.dz/wp-content/uploads/2024/06/xiaomi-poco-x6-pro-frandroid-2024-768x768-1.png
 MI/POCO F6 PRO 512|12/1600/https://res.cloudinary.com/dygc5b8cn/image/upload/v1757492561/uzaash86iswt4gtg59b0.jpg
 MI/14C 256|8/Aa/https://www.hemfrance.com/39078-thickbox_default/xiaomi-redmi-14c-688-128-gb-6-gb-ram-green.jpg
 MI/14C 128|6/Aa/https://www.hemfrance.com/39078-thickbox_default/xiaomi-redmi-14c-688-128-gb-6-gb-ram-green.jpg
@@ -67,26 +61,13 @@ MI/Note 13 pro PLUS 512|12/1180/https://mobizil.com/wp-content/uploads/2023/11/X
 MI/extender AC1200 |/100/https://www.smartbox.am/webroot/myfiles/images/products/ac1200/3ffafe36-ccb4-4dfe-87db-2f546a39b1b5.png
 Apple/Ip 16 pro max 256GB|كفالة ضفة |/Aa/https://mac-center.com.pr/cdn/shop/files/iPhone_16_Pro_Max_Desert_Titanium_PDP_Image_Position_1__en-US_bf24ca74-a053-42d3-80e2-3edc40e85c1e.jpg?v=1726226953&width=823
 Apple/Ip 15 pro max 512GB|/aaa/https://www.apollo.pl/gfx/apollo/userfiles/_public/opisy/apple/195949019036/195949019036_5.jpg
-Apple/iphone 16 128GB|كفالة ضفة |/2420/https://asiamall.asiacell.com/media/catalog/product/l/d/ld0006166708_2.jpg
-Apple/iphone 15 128GB|كفالة ضفة |/2050/https://cdn.shortpixel.ai/spai/q_glossy+ret_img+to_webp/mobizil.com/wp-content/uploads/2023/09/iPhone-15-3.jpg
+Apple/iphone 16 128GB|كفالة ضفة |/aaa/https://asiamall.asiacell.com/media/catalog/product/l/d/ld0006166708_2.jpg
+Apple/iphone 15 128GB|كفالة ضفة |/aaa/https://cdn.shortpixel.ai/spai/q_glossy+ret_img+to_webp/mobizil.com/wp-content/uploads/2023/09/iPhone-15-3.jpg
 Apple/iphone 13 128GB|كفالة ضفة |/Aa/https://m.media-amazon.com/images/I/516QZcrv+dL.jpg
-Apple/watch S10 46mm |/Aa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1757492396/emufutxqwwx1pcni1te7.jpg
-Apple/watch S10 42mm |/Aa/https://i.postimg.cc/cH6Mc0rP/IMG-7141.png
 Apple/ipad 11 256GB |كفالة ضفة |/AA/https://realplaza.vtexassets.com/arquivos/ids/33743614-800-auto?v=638265979022630000&width=800&height=auto&aspect=true
 Apple/Ipad 11 128GB |كفالة ضفة |/1220/https://realplaza.vtexassets.com/arquivos/ids/33743614-800-auto?v=638265979022630000&width=800&height=auto&aspect=true
-Apple/ipad 9 64GB |/aaa/https://cdsassets.apple.com/live/SZLF0YNV/images/sp/111898_sp849-ipad-9gen-480.png
 Apple/20W cdata |/65/https://atoz.ps/media/catalog/product/cache/80ae6a42c65321efa11f489c1d538fd0/o/r/original_apple_c-data_20w_charger_1_.jpg
 Tecno/GO 1 64|6/240/https://static.reach-tele.com/uploads/thumbs/55/5512810686892b375ab5043332011747.png
-Tecno/Camon 20 premier 5G 512|16/800/https://cdn.mart.ps/247862-thickbox_default/tecno-camon-20-premier-5g-512-8gb.jpg
-Tecno/spark 20 pro 256|16/500/https://res.cloudinary.com/dygc5b8cn/image/upload/v1753781519/a1eybgvkn6y37whl495z.png
-Tecno/Camon 30 256|16/650/https://res.cloudinary.com/dygc5b8cn/image/upload/v1753781521/hfaislrvycqic6fu9jag.png
-Infinix/smart 9 HD 64|4/Aaa/https://img.drz.lazcdn.com/static/pk/p/b4e1caad1e69f3f555ca52b5bc6b00a7.png_960x960q80.png_.webp
-Infinix/hot 50pro 256|16/aaa/https://media.extra.com/i/aurora/100389042_100_01?fmt=auto&w=720
-Infinix/hot 50 128|16/420/https://www.startech.com.bd/image/cache/catalog/mobile/infinix/hot-50/infinix-hot-50-sleek-black-500x500.webp
-Infinix/hot 50i 128|8/AAA/https://i0.wp.com/alltech.pk/wp-content/uploads/2024/10/Infinix-Hot-50i-Sleek-Blk.jpg
-Infinix/smart 9 128|4/aaa/https://7lcart.s3.eu-central-1.amazonaws.com/cardnet.sa/6592/conversions/172798721466fefe0e7d6e9-card.jpg
-Infinix/smart 9 64|3/Aaa/https://7lcart.s3.eu-central-1.amazonaws.com/cardnet.sa/6592/conversions/172798721466fefe0e7d6e9-card.jpg
-Infinix/Zero 40 512|16/aaa/https://megaphonecity.com.my/wp-content/uploads/2024/08/zero-40-pink.jpg
 Honor/X9C 256|8/960/https://res.cloudinary.com/dygc5b8cn/image/upload/v1753782809/admrtfjph5mggqchmg8d.jpg
 Honor/X9C 256|12/1140/https://mob4g.com/wp-content/uploads/2024/12/Honor-X9c-Smart-2-600x600.webp
 Honor/X8b 512|8/AAA/https://www.honor.com/content/dam/honor/my/product-list/smartphone/honor-x8b/honor-x8b-green.png
