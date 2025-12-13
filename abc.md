@@ -1,8 +1,8 @@
 yesido/C186 علاقة سيارة|/41/https://res.cloudinary.com/dygc5b8cn/image/upload/v1765625521/uaofi2hob4mpdhsds1mc.jpg
 yesido/C132 علاقة سيارة|/41/https://res.cloudinary.com/dygc5b8cn/image/upload/v1765625461/dozvus3e1r1t2ksysd24.jpg
-yesido/C226 علاقة سيارة|/30/https://res.cloudinary.com/dygc5b8cn/image/upload/v1765625404/skjdwpn4cn2kveoxy9zd.jpg
+yesido/C226 مبرد|/30/https://res.cloudinary.com/dygc5b8cn/image/upload/v1765625404/skjdwpn4cn2kveoxy9zd.jpg
 yesido/C267 علاقة سيارة|/15/https://res.cloudinary.com/dygc5b8cn/image/upload/v1765625352/pb2pkefatm3h8flldh6g.jpg
-yesido/C299 علاقة سيارة|/11/https://res.cloudinary.com/dygc5b8cn/image/upload/v1765625300/gk9rc6cnz6j9wnnyvhpc.jpg
+yesido/C299 ستاند موبايل|/11/https://res.cloudinary.com/dygc5b8cn/image/upload/v1765625300/gk9rc6cnz6j9wnnyvhpc.jpg
 yesido/C229 علاقة سيارة|/22/https://res.cloudinary.com/dygc5b8cn/image/upload/v1765625266/grhaczhumeevunshszy5.jpg
 yesido/C133 علاقة سيارة|/21/https://res.cloudinary.com/dygc5b8cn/image/upload/v1765625221/xqvh146pb2ido3jwepmq.jpg
 yesido/C85 علاقة سيارة|/13/https://res.cloudinary.com/dygc5b8cn/image/upload/v1765625166/tvxyjiytrd5cb6hd8p61.jpg
@@ -11,7 +11,7 @@ yesido/C166 علاقة سيارة|/14/https://res.cloudinary.com/dygc5b8cn/image
 yesido/C292 علاقة سيارة|/48/https://res.cloudinary.com/dygc5b8cn/image/upload/v1765624962/outok69kballfy9jcxfw.jpg
 yesido/C222 علاقة سيارة|/12/https://res.cloudinary.com/dygc5b8cn/image/upload/v1765624905/trgyxfdtulxtzjgiih33.jpg
 yesido/VC02 مكنسة سيارة|/55/https://res.cloudinary.com/dygc5b8cn/image/upload/v1765624843/ic5ptu0kmx69j7u6izdw.jpg
-yesido/C291 علاقة موبايل|/33/https://res.cloudinary.com/dygc5b8cn/image/upload/v1765624778/lnhsmb9aznvbrdf5iueh.jpg
+yesido/C291 ستاند موبايل|/33/https://res.cloudinary.com/dygc5b8cn/image/upload/v1765624778/lnhsmb9aznvbrdf5iueh.jpg
 yesido/C217 علاقة سيارة|/23/https://res.cloudinary.com/dygc5b8cn/image/upload/v1765624727/rk4xyutjzc7vucuollwc.jpg
 yesido/TWS29 سماعة بلوتوث|/65/https://res.cloudinary.com/dygc5b8cn/image/upload/v1765624667/ye6ifppholqbw3zffi8e.jpg
 yesido/TWS28 سماعة بلوتوث|/50/https://res.cloudinary.com/dygc5b8cn/image/upload/v1765624619/ozvlmszfgwcjgqbsdtwt.jpg
