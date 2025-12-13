@@ -720,9 +720,13 @@
       imageContainer.className = "image-container";
       
       const imagePreview = document.createElement("img");
-      imagePreview.className = "preview-image";
-      imagePreview.style.maxWidth = "100px";
-      imagePreview.style.maxHeight = "100px";
+imagePreview.className = "preview-image";
+
+// فرض 1:1
+imagePreview.style.width = "100px";
+imagePreview.style.height = "100px";
+imagePreview.style.objectFit = "cover";
+imagePreview.style.borderRadius = "6px"; // اختياري
       
       if (imageUrl) {
         imagePreview.src = imageUrl;
