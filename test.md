@@ -14,7 +14,7 @@ samsung/A17 256|8/Aa/https://res.cloudinary.com/dygc5b8cn/image/upload/v17596543
 samsung/A07 64|4/Aa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1758201166/sicjbxtmxarydofvmecm.jpg
 MI/Redmi 15C 128|6/Aa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1757324301/ilyhjiezyfz5khp30p5e.webp
 MI/Redmi 15C 128|4/320/https://res.cloudinary.com/dygc5b8cn/image/upload/v1757324301/ilyhjiezyfz5khp30p5e.webp
-Apple/Ipad 11 128|كفالة ضفة |/1220/https://res.cloudinary.com/dygc5b8cn/image/upload/v1756986041/ajb0lks9smgql3bccyjx.webp
+Apple/Ipad 11 128|كفالة ضفة |/1240/https://res.cloudinary.com/dygc5b8cn/image/upload/v1756986041/ajb0lks9smgql3bccyjx.webp
 samsung/A07 128|4/320/https://res.cloudinary.com/dygc5b8cn/image/upload/v1756559491/wokzeyy83lncbbewic1v.jpg
 N\A/Pad 100 128|12/700/https://res.cloudinary.com/dygc5b8cn/image/upload/v1756119440/ahwstejrduarizr8gieh.jpg
 N\A/Pad 30 Wifi 64|4/280/https://res.cloudinary.com/dygc5b8cn/image/upload/v1756119325/totf8uapgixfxtzrcy0n.webp
