@@ -82,7 +82,7 @@
       color: var(--dark-color);
     }
     
-    select, button {
+    select, button, input {
       padding: 10px 15px;
       border-radius: var(--border-radius);
       border: 1px solid #ddd;
@@ -95,7 +95,7 @@
       min-width: 150px;
     }
     
-    select:focus {
+    select:focus, input:focus {
       outline: none;
       border-color: var(--primary-color);
       box-shadow: 0 0 0 2px rgba(67, 97, 238, 0.2);
@@ -107,39 +107,37 @@
       display: flex;
       align-items: center;
       gap: 8px;
-    }
-    
-    .btn-primary {
       background-color: var(--primary-color);
       color: white;
       border: none;
     }
     
+    button:hover {
+      transform: translateY(-2px);
+    }
+    
+    .btn-primary {
+      background-color: var(--primary-color);
+    }
+    
     .btn-primary:hover {
       background-color: var(--secondary-color);
-      transform: translateY(-2px);
     }
     
     .btn-success {
       background-color: #2ecc71;
-      color: white;
-      border: none;
     }
     
     .btn-success:hover {
       background-color: #27ae60;
-      transform: translateY(-2px);
     }
     
     .btn-danger {
       background-color: var(--danger-color);
-      color: white;
-      border: none;
     }
     
     .btn-danger:hover {
       background-color: #d1146a;
-      transform: translateY(-2px);
     }
     
     .table-container {
@@ -265,7 +263,7 @@
         align-items: stretch;
       }
       
-      select, button {
+      select, button, input {
         width: 100%;
       }
     }
@@ -441,6 +439,164 @@
       font-weight: bold;
       padding: 5px;
     }
+
+    /* أنماط النافذة المنبثقة */
+    .modal {
+      position: fixed;
+      z-index: 10000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      direction: rtl;
+    }
+
+    .modal-content {
+      background-color: white;
+      padding: 20px;
+      border-radius: var(--border-radius);
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+      width: 90%;
+      max-width: 700px;
+      max-height: 90vh;
+      overflow-y: auto;
+    }
+
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid #eee;
+      padding-bottom: 15px;
+      margin-bottom: 20px;
+    }
+
+    .modal-header h3 {
+      color: var(--primary-color);
+      margin: 0;
+    }
+
+    .close {
+      font-size: 28px;
+      font-weight: bold;
+      color: #aaa;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .close:hover {
+      color: var(--danger-color);
+    }
+
+    .modal-footer {
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+      margin-top: 20px;
+      padding-top: 20px;
+      border-top: 2px solid #eee;
+    }
+
+    .upload-area {
+      border: 2px dashed var(--primary-color);
+      border-radius: var(--border-radius);
+      padding: 40px 20px;
+      text-align: center;
+      cursor: pointer;
+      transition: var(--transition);
+      background-color: #f8faff;
+      margin-top: 10px;
+    }
+
+    .upload-area:hover {
+      background-color: #eef2ff;
+      border-color: var(--secondary-color);
+    }
+
+    .upload-area i {
+      color: var(--primary-color);
+      margin-bottom: 15px;
+    }
+
+    .upload-area p {
+      margin: 5px 0;
+      color: #555;
+    }
+
+    .upload-area .hint {
+      font-size: 0.8rem;
+      color: #888;
+    }
+
+    .preview-image-small {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 4px;
+      border: 2px solid #ddd;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .preview-image-small:hover {
+      transform: scale(1.05);
+      border-color: var(--primary-color);
+    }
+
+    .image-counter {
+      position: absolute;
+      top: -5px;
+      right: -5px;
+      background-color: var(--danger-color);
+      color: white;
+      border-radius: 50%;
+      width: 20px;
+      height: 20px;
+      font-size: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+
+    .image-container-relative {
+      position: relative;
+      display: inline-block;
+    }
+
+    .preview-image {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 6px;
+    }
+
+    .progress-bar {
+      width: 100%;
+      height: 10px;
+      background-color: #f0f0f0;
+      border-radius: 5px;
+      margin-top: 10px;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      background-color: var(--primary-color);
+      width: 0%;
+      transition: width 0.3s ease;
+    }
+
+    .progress-text {
+      text-align: center;
+      margin-top: 5px;
+      font-weight: bold;
+      color: var(--primary-color);
+    }
   </style>
 </head>
 <body>
@@ -470,6 +626,10 @@
       
       <button class="btn-success" onclick="addNewRow()">
         <i class="fas fa-plus-circle"></i> إضافة صنف جديد
+      </button>
+      
+      <button class="btn-primary" onclick="openBulkUpload()">
+        <i class="fas fa-layer-group"></i> إضافة بالجملة
       </button>
       
       <button class="btn-primary" onclick="saveMarkdown()">
@@ -508,11 +668,75 @@
     </div>
   </div>
 
+  <!-- نافذة إضافة الجملة -->
+  <div id="bulkUploadModal" class="modal" style="display: none;">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3><i class="fas fa-layer-group"></i> إضافة أصناف بالجملة</h3>
+        <span class="close" onclick="closeBulkUpload()">&times;</span>
+      </div>
+      <div class="modal-body">
+        <div class="upload-section">
+          <label for="bulkImageUpload">
+            <i class="fas fa-cloud-upload-alt"></i> اختر صور متعددة (يمكنك اختيار أكثر من صورة)
+          </label>
+          <input type="file" id="bulkImageUpload" multiple accept="image/*" 
+                 style="display: none" onchange="handleBulkImageSelect(event)">
+          <div class="upload-area" id="bulkUploadArea">
+            <i class="fas fa-images fa-3x"></i>
+            <p>اسحب وأفلت الصور هنا أو انقر لاختيار الملفات</p>
+            <p class="hint">يمكنك اختيار عدة صور في وقت واحد (CTRL+Click)</p>
+          </div>
+          <div id="selectedImagesCount" style="margin-top: 10px; color: var(--primary-color); font-weight: bold;"></div>
+          <button class="btn-danger" onclick="clearAllBulkImages()" style="margin-top: 10px;">
+            <i class="fas fa-trash"></i> حذف جميع الصور
+          </button>
+        </div>
+        
+        <div class="bulk-options" style="margin-top: 20px;">
+          <h4><i class="fas fa-cog"></i> خيارات الإضافة</h4>
+          <div class="control-group">
+            <label for="bulkCategory">الفئة الافتراضية:</label>
+            <select id="bulkCategory" style="min-width: 150px;">
+              <!-- سيتم ملؤه تلقائياً -->
+            </select>
+          </div>
+          <div class="control-group" style="margin-top: 10px;">
+            <label for="bulkNamePrefix">بادئة الاسم:</label>
+            <input type="text" id="bulkNamePrefix" placeholder="مثال: جهاز" style="width: 200px;">
+          </div>
+          <div class="control-group" style="margin-top: 10px;">
+            <label for="bulkStartNumber">رقم البدء:</label>
+            <input type="number" id="bulkStartNumber" value="1" min="1" style="width: 100px;">
+          </div>
+        </div>
+        
+        <div id="bulkPreview" style="margin-top: 20px; max-height: 300px; overflow-y: auto; display: none;">
+          <h4><i class="fas fa-eye"></i> معاينة الصور المختارة</h4>
+          <div id="bulkPreviewGrid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); gap: 10px; margin-top: 10px;"></div>
+        </div>
+
+        <div id="progressContainer" style="display: none;">
+          <div class="progress-bar">
+            <div class="progress-fill" id="progressFill"></div>
+          </div>
+          <div class="progress-text" id="progressText">0%</div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn-danger" onclick="closeBulkUpload()">
+          <i class="fas fa-times"></i> إلغاء
+        </button>
+        <button class="btn-success" onclick="processBulkUpload()" id="processBulkBtn">
+          <i class="fas fa-play"></i> بدء الإضافة
+        </button>
+      </div>
+    </div>
+  </div>
+
   <div class="auto-scroll-bottom" id="autoScrollBottom">
     <div class="scroll-indicator">↓ التمرير للأسفل ↓</div>
   </div>
-
-  <script src="config.js"></script>
 
   <script>
     const owner = "mohammad-shehadeh";
@@ -553,6 +777,12 @@
     let startY = 0;
     let dragOffsetY = 0;
 
+    // متغيرات الإضافة بالجملة
+    let bulkImages = [];
+    let bulkUploadInProgress = false;
+    const GITHUB_TOKEN = "YOUR_GITHUB_TOKEN_HERE"; // ضع التوكن هنا
+
+    // دالة تحديث الناتج
     function updateOutput() {
       let lines = [];
       for (let row of tableBody.rows) {
@@ -583,6 +813,7 @@
       outputText.value = lines.join("\n");
     }
 
+    // دالة إنشاء قائمة الفئات
     function createCategorySelect(selectedValue = "") {
       const filename = fileSelect.value;
       const options = categoryOrder[filename] || [];
@@ -610,6 +841,7 @@
       return select;
     }
 
+    // دالة تحديث عامل التصفية
     function updateCategoryFilter() {
       const filename = fileSelect.value;
       const currentCategories = new Set();
@@ -645,6 +877,7 @@
       });
     }
 
+    // دالة رفع الصور إلى Cloudinary
     async function uploadImage(file) {
       const formData = new FormData();
       formData.append('file', file);
@@ -664,6 +897,7 @@
       }
     }
 
+    // دالة إضافة صف جديد
     function addRow(category = "", item = "", rom = "", ram = "", imageUrl = "", price = "", isNewRow = false) {
       const row = document.createElement("tr");
       
@@ -720,13 +954,11 @@
       imageContainer.className = "image-container";
       
       const imagePreview = document.createElement("img");
-imagePreview.className = "preview-image";
-
-// فرض 1:1
-imagePreview.style.width = "100px";
-imagePreview.style.height = "100px";
-imagePreview.style.objectFit = "cover";
-imagePreview.style.borderRadius = "6px"; // اختياري
+      imagePreview.className = "preview-image";
+      imagePreview.style.width = "100px";
+      imagePreview.style.height = "100px";
+      imagePreview.style.objectFit = "cover";
+      imagePreview.style.borderRadius = "6px";
       
       if (imageUrl) {
         imagePreview.src = imageUrl;
@@ -898,6 +1130,7 @@ imagePreview.style.borderRadius = "6px"; // اختياري
       }
     }
 
+    // دالات مساعدة للسحب والإفلات
     function createDragGhost(row) {
       dragGhost = row.cloneNode(true);
       dragGhost.className = 'drag-ghost';
@@ -1021,6 +1254,7 @@ imagePreview.style.borderRadius = "6px"; // اختياري
       autoScrollBottom.classList.remove('active');
     }
 
+    // دالة حذف صف
     function removeRow(button) {
       if (confirm("هل أنت متأكد من حذف هذا الصف؟")) {
         button.closest("tr").remove();
@@ -1029,6 +1263,7 @@ imagePreview.style.borderRadius = "6px"; // اختياري
       }
     }
 
+    // دالة التصفية حسب الفئة
     function filterByCategory() {
       const selectedCategory = categoryFilter.value;
       const rows = tableBody.querySelectorAll("tr");
@@ -1047,6 +1282,7 @@ imagePreview.style.borderRadius = "6px"; // اختياري
       });
     }
 
+    // دالة التحقق من الفئات الفارغة
     function validateCategories() {
       const rows = tableBody.querySelectorAll("tr");
       let emptyCategories = [];
@@ -1065,6 +1301,7 @@ imagePreview.style.borderRadius = "6px"; // اختياري
       return emptyCategories;
     }
 
+    // دالة تحميل الملف المحدد
     function loadSelectedFile() {
       tableBody.innerHTML = "";
       const filename = fileSelect.value;
@@ -1107,10 +1344,12 @@ imagePreview.style.borderRadius = "6px"; // اختياري
         });
     }
 
+    // دالة إضافة صف جديد
     function addNewRow() {
       addRow("", "", "", "", "", "", true);
     }
 
+    // دالة حفظ التعديلات
     async function saveMarkdown() {
       const emptyCategories = validateCategories();
       if (emptyCategories.length > 0) {
@@ -1155,6 +1394,316 @@ imagePreview.style.borderRadius = "6px"; // اختياري
       }
     }
 
+    // ============ دوال الإضافة بالجملة ============
+
+    // دالة فتح نافذة الإضافة بالجملة
+    function openBulkUpload() {
+      const modal = document.getElementById('bulkUploadModal');
+      modal.style.display = 'flex';
+      
+      // إعادة تعيين المتغيرات
+      bulkImages = [];
+      document.getElementById('bulkPreview').style.display = 'none';
+      document.getElementById('bulkPreviewGrid').innerHTML = '';
+      document.getElementById('selectedImagesCount').textContent = '';
+      document.getElementById('progressContainer').style.display = 'none';
+      document.getElementById('processBulkBtn').innerHTML = '<i class="fas fa-play"></i> بدء الإضافة';
+      document.getElementById('processBulkBtn').disabled = false;
+      
+      // ملء خيارات الفئة
+      const bulkCategorySelect = document.getElementById('bulkCategory');
+      bulkCategorySelect.innerHTML = '';
+      
+      const filename = fileSelect.value;
+      const options = categoryOrder[filename] || [];
+      
+      const emptyOption = document.createElement('option');
+      emptyOption.value = '';
+      emptyOption.textContent = 'اختر الفئة';
+      bulkCategorySelect.appendChild(emptyOption);
+      
+      options.forEach(option => {
+        const opt = document.createElement('option');
+        opt.value = option;
+        opt.textContent = option;
+        bulkCategorySelect.appendChild(opt);
+      });
+      
+      // تعيين القيم الافتراضية
+      document.getElementById('bulkNamePrefix').value = 'جهاز';
+      document.getElementById('bulkStartNumber').value = 1;
+      
+      // إعداد سحب وإفلات الصور
+      setupBulkDragAndDrop();
+    }
+
+    // دالة إغلاق نافذة الإضافة بالجملة
+    function closeBulkUpload() {
+      document.getElementById('bulkUploadModal').style.display = 'none';
+      bulkImages = [];
+    }
+
+    // دالة إعداد السحب والإفلات للصور
+    function setupBulkDragAndDrop() {
+      const uploadArea = document.getElementById('bulkUploadArea');
+      const fileInput = document.getElementById('bulkImageUpload');
+      
+      // النقر على منطقة التحميل
+      uploadArea.addEventListener('click', () => {
+        fileInput.click();
+      });
+      
+      // سحب وإفلات الملفات
+      uploadArea.addEventListener('dragover', (e) => {
+        e.preventDefault();
+        uploadArea.style.backgroundColor = '#eef2ff';
+        uploadArea.style.borderColor = var(--secondary-color);
+      });
+      
+      uploadArea.addEventListener('dragleave', (e) => {
+        e.preventDefault();
+        uploadArea.style.backgroundColor = '#f8faff';
+        uploadArea.style.borderColor = var(--primary-color);
+      });
+      
+      uploadArea.addEventListener('drop', (e) => {
+        e.preventDefault();
+        uploadArea.style.backgroundColor = '#f8faff';
+        uploadArea.style.borderColor = var(--primary-color);
+        
+        const files = Array.from(e.dataTransfer.files);
+        handleBulkFiles(files);
+      });
+    }
+
+    // دالة معالجة اختيار الصور
+    function handleBulkImageSelect(event) {
+      const files = Array.from(event.target.files);
+      handleBulkFiles(files);
+    }
+
+    // دالة معالجة ملفات الصور
+    function handleBulkFiles(files) {
+      // تصفية الملفات لاستقبال الصور فقط
+      const imageFiles = files.filter(file => file.type.startsWith('image/'));
+      
+      if (imageFiles.length === 0) {
+        alert('يرجى اختيار ملفات صور فقط');
+        return;
+      }
+      
+      // إضافة الصور الجديدة إلى القائمة
+      bulkImages = [...bulkImages, ...imageFiles];
+      
+      updateBulkPreview();
+      
+      // تحديث العداد
+      const countElement = document.getElementById('selectedImagesCount');
+      countElement.textContent = `تم اختيار ${bulkImages.length} صورة`;
+      countElement.style.color = bulkImages.length > 0 ? 'green' : var(--primary-color);
+    }
+
+    // دالة تحديث معاينة الصور
+    function updateBulkPreview() {
+      const previewContainer = document.getElementById('bulkPreview');
+      const grid = document.getElementById('bulkPreviewGrid');
+      
+      if (bulkImages.length === 0) {
+        previewContainer.style.display = 'none';
+        return;
+      }
+      
+      previewContainer.style.display = 'block';
+      grid.innerHTML = '';
+      
+      // عرض أول 20 صورة فقط للمعاينة
+      const previewImages = bulkImages.slice(0, 20);
+      
+      previewImages.forEach((file, index) => {
+        const reader = new FileReader();
+        reader.onload = (e) => {
+          const imgContainer = document.createElement('div');
+          imgContainer.className = 'image-container-relative';
+          imgContainer.title = file.name;
+          
+          const img = document.createElement('img');
+          img.className = 'preview-image-small';
+          img.src = e.target.result;
+          
+          const removeBtn = document.createElement('div');
+          removeBtn.className = 'image-counter';
+          removeBtn.textContent = '✕';
+          removeBtn.style.cursor = 'pointer';
+          removeBtn.onclick = (event) => {
+            event.stopPropagation();
+            removeBulkImage(index);
+          };
+          
+          imgContainer.appendChild(img);
+          imgContainer.appendChild(removeBtn);
+          grid.appendChild(imgContainer);
+        };
+        reader.readAsDataURL(file);
+      });
+      
+      if (bulkImages.length > 20) {
+        const moreText = document.createElement('div');
+        moreText.textContent = `+ ${bulkImages.length - 20} صورة إضافية`;
+        moreText.style.gridColumn = '1 / -1';
+        moreText.style.textAlign = 'center';
+        moreText.style.padding = '10px';
+        moreText.style.color = '#666';
+        grid.appendChild(moreText);
+      }
+    }
+
+    // دالة حذف صورة من القائمة
+    function removeBulkImage(index) {
+      bulkImages.splice(index, 1);
+      updateBulkPreview();
+      
+      const countElement = document.getElementById('selectedImagesCount');
+      countElement.textContent = `تم اختيار ${bulkImages.length} صورة`;
+    }
+
+    // دالة حذف جميع الصور
+    function clearAllBulkImages() {
+      if (bulkImages.length > 0 && confirm(`هل تريد حذف جميع الصور المختارة (${bulkImages.length} صورة)?`)) {
+        bulkImages = [];
+        updateBulkPreview();
+        document.getElementById('selectedImagesCount').textContent = '';
+      }
+    }
+
+    // دالة تحويل الملف إلى base64
+    function fileToBase64(file) {
+      return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onload = () => resolve(reader.result);
+        reader.onerror = error => reject(error);
+      });
+    }
+
+    // دالة معالجة الإضافة بالجملة
+    async function processBulkUpload() {
+      const category = document.getElementById('bulkCategory').value;
+      const namePrefix = document.getElementById('bulkNamePrefix').value.trim() || 'جهاز';
+      const startNumber = parseInt(document.getElementById('bulkStartNumber').value) || 1;
+      
+      if (!category) {
+        alert('يرجى اختيار فئة للأصناف الجديدة');
+        return;
+      }
+      
+      if (bulkImages.length === 0) {
+        alert('لم تختر أي صور للإضافة');
+        return;
+      }
+      
+      if (bulkUploadInProgress) {
+        return;
+      }
+      
+      bulkUploadInProgress = true;
+      const processBtn = document.getElementById('processBulkBtn');
+      processBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> جاري الإضافة...';
+      processBtn.disabled = true;
+      
+      // إظهار شريط التقدم
+      const progressContainer = document.getElementById('progressContainer');
+      const progressFill = document.getElementById('progressFill');
+      const progressText = document.getElementById('progressText');
+      progressContainer.style.display = 'block';
+      progressFill.style.width = '0%';
+      progressText.textContent = '0%';
+      
+      let successfulUploads = 0;
+      let failedUploads = 0;
+      
+      try {
+        // رفع الصور على دفعات لتحسين الأداء
+        const batchSize = 3; // رفع 3 صور في كل مرة
+        const totalImages = bulkImages.length;
+        const totalBatches = Math.ceil(totalImages / batchSize);
+        
+        for (let batchIndex = 0; batchIndex < totalBatches; batchIndex++) {
+          const start = batchIndex * batchSize;
+          const end = Math.min(start + batchSize, totalImages);
+          const batch = bulkImages.slice(start, end);
+          
+          // رفع دفعة من الصور
+          const uploadPromises = batch.map((file, index) => 
+            uploadImage(file).then(url => ({
+              url,
+              index: start + index,
+              success: true
+            })).catch(error => ({
+              url: null,
+              index: start + index,
+              success: false,
+              error
+            }))
+          );
+          
+          const results = await Promise.all(uploadPromises);
+          
+          // معالجة النتائج
+          for (const result of results) {
+            if (result.success && result.url) {
+              // إنشاء اسم للصنف
+              const itemName = `${namePrefix} ${startNumber + result.index}`;
+              
+              // إضافة صف جديد
+              addRow(
+                category,
+                itemName,
+                "", // ROM
+                "", // RAM
+                result.url,
+                "", // Price
+                true // isNewRow
+              );
+              
+              successfulUploads++;
+            } else {
+              failedUploads++;
+            }
+            
+            // تحديث شريط التقدم
+            const progressPercent = Math.round(((result.index + 1) / totalImages) * 100);
+            progressFill.style.width = `${progressPercent}%`;
+            progressText.textContent = `${progressPercent}% (${result.index + 1}/${totalImages})`;
+          }
+          
+          // إعطاء متصفح الفرصة للتحديث
+          await new Promise(resolve => setTimeout(resolve, 100));
+        }
+        
+        // إظهار النتيجة
+        let message = `تم إضافة ${successfulUploads} صنف بنجاح!`;
+        if (failedUploads > 0) {
+          message += `\nفشل رفع ${failedUploads} صورة`;
+        }
+        
+        alert(message);
+        
+        // إغلاق النافذة بعد تأخير قصير
+        setTimeout(() => {
+          closeBulkUpload();
+        }, 1000);
+        
+      } catch (error) {
+        console.error('Error in bulk upload:', error);
+        alert(`حدث خطأ أثناء إضافة الأصناف: ${error.message}`);
+      } finally {
+        bulkUploadInProgress = false;
+        processBtn.innerHTML = '<i class="fas fa-play"></i> بدء الإضافة';
+        processBtn.disabled = false;
+      }
+    }
+
+    // تحميل الصفحة
     window.onload = function() {
       loadSelectedFile();
       fileSelect.addEventListener("change", function() {
