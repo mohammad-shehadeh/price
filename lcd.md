@@ -57,7 +57,7 @@ iphone/15 pro max orignal |/1150/undefined
 iphone/16 pro max orignal |/1150/undefined
 iphone/6 plus |/25/undefined
 iphone/7 plus |/40/undefined
-iphone/8 plus AAA |/aaa/undefined
+iphone/8 plus AAA |/45/undefined
 iphone/8 plus orignal |/aaa/undefined
 iphone/8G |/aaa/undefined
 iphone/ipad 10 touch |/45/undefined
@@ -89,6 +89,7 @@ Mi | poco/REDMI Note 12 - NOTE 12 5G - POCO X5 incell |/55/undefined
 Mi | poco/REDMI Note 12 - NOTE 12 5G - POCO X5 OLED |/100/undefined
 Mi | poco/Note 12 incell +frame |/60/undefined
 Mi | poco/REDMI Note 14 4G - REDMI NOTE 13 4G - REDMI NOTE 14 5G - POCO M7 PRO incell |/60/undefined
+Mi | poco/REDMI Note 13 +Frame/70/undefined
 Mi | poco/REDMI Note 14 4G - REDMI NOTE 13 4G - REDMI NOTE 14 5G - POCO M7 PRO OLED |/120/undefined
 Mi | poco/REDMI Note 14 PRO 5G - REDMI NOTE 13 PRO PLUS 5G - REDMI NOTE 14 PRO PLUS 5G - POCO X7 incell |/AAA/undefined
 Mi | poco/REDMI Note 14 PRO 5G - REDMI NOTE 13 PRO PLUS 5G - REDMI NOTE 14 PRO PLUS 5G - POCO X7 incell |/AAA/undefined
