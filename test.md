@@ -1,4 +1,5 @@
-MI/C71 64|3/235/https://res.cloudinary.com/dygc5b8cn/image/upload/v1766568493/kwt5ow5wuofjizgiweqe.webp
+samsung/TAB A11 128|8/580/https://res.cloudinary.com/dygc5b8cn/image/upload/v1767692192/ubyqea0ilzlcx95s4mwa.jpg
+MI/C71 64|3/240/https://res.cloudinary.com/dygc5b8cn/image/upload/v1766568493/kwt5ow5wuofjizgiweqe.webp
 samsung/A26 256|8/750/https://res.cloudinary.com/dygc5b8cn/image/upload/v1764065061/khfpksu8x13khbj6rok2.jpg
 samsung/A17 128|‏6/‏510/https://res.cloudinary.com/dygc5b8cn/image/upload/v1766568210/sra8gy0ybsftajzelwqy.jpg
 samsung/A07 256|8/Aa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1764064978/vvks2bmm3sqhrvyidtnu.jpg
