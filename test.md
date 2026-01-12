@@ -92,3 +92,9 @@ N\A/Teclast p85 kids 64|4/270/https://en.teclast.com/cdn/shop/files/P85Tkids_2.p
 N\A/Teclast M50 128|8/440/https://en.teclast.com/cdn/shop/files/12_025ea586-e65f-447b-a78a-32f342dc516f.jpg?v=1690282129&width=1500
 N\A/H2163 |/35/https://s9.pik.ba/galerija/2021-04/26/06/slika-2830089-6086f09649711-velika.jpg
 samsung/A17 128|‏6/‏510/https://res.cloudinary.com/dygc5b8cn/image/upload/v1766568210/sra8gy0ybsftajzelwqy.jpg
+Honor/huawei GT  6 Black |/720/https://res.cloudinary.com/dygc5b8cn/image/upload/v1768227581/nffehziqmd7dfnioefmp.webp
+Honor/huawei GT  6 Green |/720/https://res.cloudinary.com/dygc5b8cn/image/upload/v1768227582/fisgduwjkpvoxrtz65ra.webp
+Honor/huawei GT 6 Grey |/720/https://res.cloudinary.com/dygc5b8cn/image/upload/v1768227583/fx4u6lvsfp27l4esagkh.jpg
+Honor/huawei GT 6 pro titanium |/1350/https://res.cloudinary.com/dygc5b8cn/image/upload/v1768227583/c8mhrceo2s17fodua5t4.jpg
+Honor/huawei GT 6 pro black |/990/https://res.cloudinary.com/dygc5b8cn/image/upload/v1768227584/ouneqq7unlc2mcycqwva.jpg
+Honor/huawei GT 6 pro Brown |/990/https://res.cloudinary.com/dygc5b8cn/image/upload/v1768227586/oukwzyqhww3kulp9tvsr.webp
