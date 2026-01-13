@@ -1,3 +1,4 @@
+iphone/17 pro max original |/1500/undefined
 tecno | infinix | itel/CAMON 17 pro - zero x new ORI |/60/undefined
 tecno | infinix | itel/CAMON 18 Premer - zero x incell |/70/undefined
 tecno | infinix | itel/CAMON 19 - CAMON 19 new - CAMON 18 - CAMON 18P - CAMON 18t - spark 8 pro - infinix hot 11S - POVA New 5G - infinix HOT 20S - infinix HOT 20 PRO - CAMON 17P - CAMON 17 PREMIER ORI |/50/undefined
@@ -89,7 +90,7 @@ Mi | poco/REDMI Note 12 - NOTE 12 5G - POCO X5 incell |/55/undefined
 Mi | poco/REDMI Note 12 - NOTE 12 5G - POCO X5 OLED |/100/undefined
 Mi | poco/Note 12 incell +frame |/60/undefined
 Mi | poco/REDMI Note 14 4G - REDMI NOTE 13 4G - REDMI NOTE 14 5G - POCO M7 PRO incell |/60/undefined
-Mi | poco/REDMI Note 13 +Frame/70/undefined
+Mi | poco/REDMI Note 13 +Frame |/70/undefined
 Mi | poco/REDMI Note 14 4G - REDMI NOTE 13 4G - REDMI NOTE 14 5G - POCO M7 PRO OLED |/120/undefined
 Mi | poco/REDMI Note 14 PRO 5G - REDMI NOTE 13 PRO PLUS 5G - REDMI NOTE 14 PRO PLUS 5G - POCO X7 incell |/AAA/undefined
 Mi | poco/REDMI Note 14 PRO 5G - REDMI NOTE 13 PRO PLUS 5G - REDMI NOTE 14 PRO PLUS 5G - POCO X7 incell |/AAA/undefined
@@ -151,16 +152,16 @@ Samsung/A07 |/50/undefined
 Samsung/A07 +FRAME |/60/undefined
 Samsung/A10 |/40/undefined
 Samsung/A10S |/40/undefined
-Samsung/A11  |/45/undefined
+Samsung/A11 |/45/undefined
 Samsung/A11 +Frame |/55/undefined
 Samsung/A12-A02 original |/45/undefined
 Samsung/A12 +FRAME |/55/undefined
 Samsung/A13-A23-M336 original |/45/undefined
 Samsung/A13 +FRAME |/55/undefined
 Samsung/A23 +FRAME |/55/undefined
-Samsung/A14 5G  |/50/undefined
+Samsung/A14 5G |/50/undefined
 Samsung/A14 5G +frame |/60/undefined
-Samsung/A14  |/45/undefined
+Samsung/A14 |/45/undefined
 Samsung/A14 +FRAME |/55/undefined
 Samsung/A15 incell+F |/60/undefined
 Samsung/A16 oled+f |/165/undefined
