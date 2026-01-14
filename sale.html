@@ -1395,83 +1395,298 @@
     border-bottom: 2px solid rgba(255, 255, 255, 0.2);
 }
 
-/* تحسين عرض الجدول الجديد */
-.products-table {
+/* تحسين عرض الجدول الجديد */.products-table {
     width: 100%;
-    border-collapse: collapse;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    background: white;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.products-table:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+}
+
+.products-table thead {
+    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+    color: white;
 }
 
 .products-table th {
-    background-color: #f8f9fa;
-    color: var(--dark-color);
-    padding: 1rem;
-    font-weight: 600;
+    padding: 1.25rem 1rem;
+    font-weight: 700;
     text-align: right;
-    border-bottom: 2px solid #dee2e6;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+    border: none;
+    position: relative;
+    overflow: hidden;
+}
+
+.products-table th::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 10%;
+    width: 80%;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.4);
+}
+
+.products-table th:first-child {
+    border-top-right-radius: 16px;
+}
+
+.products-table th:last-child {
+    border-top-left-radius: 16px;
+}
+
+.products-table tbody tr {
+    transition: all 0.3s ease;
+    position: relative;
 }
 
 .products-table td {
-    padding: 1rem;
-    border-bottom: 1px solid #eee;
+    padding: 1.25rem 1rem;
     text-align: right;
     transition: var(--transition);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    position: relative;
+    font-size: 0.95rem;
 }
 
-.products-table tr:hover {
-    background-color: #f9f9f9;
+.products-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.products-table tbody tr:last-child td:first-child {
+    border-bottom-right-radius: 16px;
+}
+
+.products-table tbody tr:last-child td:last-child {
+    border-bottom-left-radius: 16px;
+}
+
+.products-table tbody tr:hover {
+    background-color: rgba(106, 17, 203, 0.05);
+    transform: scale(1.005);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    z-index: 1;
+}
+
+.products-table tbody tr:hover td {
+    border-color: transparent;
+}
+
+.products-table tbody tr::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 4px;
+    background: linear-gradient(to bottom, #6a11cb, #2575fc);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.products-table tbody tr:hover::before {
+    opacity: 1;
 }
 
 .products-table tr:nth-child(even) {
-    background-color: #f8f9fa;
+    background-color: rgba(248, 249, 250, 0.6);
+}
+
+.products-table tr:nth-child(even):hover {
+    background-color: rgba(106, 17, 203, 0.08);
 }
 
 /* تحسين عرض الأعمدة */
 .product-name-cell {
-    font-weight: 500;
-    color: var(--dark-color);
+    font-weight: 600;
+    color: #2d3436;
     min-width: 250px;
     max-width: 400px;
     word-wrap: break-word;
+    line-height: 1.5;
+    padding-right: 1.5rem !important;
+}
+
+.product-name-cell::before {
+    content: "📦";
+    margin-left: 8px;
+    opacity: 0.7;
+    font-size: 0.9em;
 }
 
 .product-price-cell {
-    color: var(--success-color);
-    font-weight: 700;
+    color: #00b894;
+    font-weight: 800;
     text-align: left !important;
     direction: ltr;
-    min-width: 100px;
-    font-size: 1.1rem;
+    min-width: 120px;
+    font-size: 1.15rem;
+    position: relative;
+    padding-left: 2rem !important;
+}
+
+.product-price-cell::before {
+    content: "$";
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.9rem;
+    opacity: 0.7;
+    font-weight: 600;
+}
+
+/* تأثيرات إضافية للخلايا */
+.products-table td {
+    position: relative;
+    overflow: hidden;
+}
+
+.products-table td::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transform: translateX(-100%);
+    transition: transform 0.6s ease;
+}
+
+.products-table tr:hover td::after {
+    transform: translateX(100%);
 }
 
 /* تصميم للأجهزة المحمولة */
 @media (max-width: 768px) {
     .category-table-section {
         margin-bottom: 1.5rem;
+        padding: 0 0.5rem;
     }
     
     .category-title {
-        padding: 0.8rem 1rem;
-        font-size: 1.1rem;
+        padding: 1rem;
+        font-size: 1.2rem;
+        border-radius: 12px;
+        background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+        color: white;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        margin-bottom: 1rem;
+    }
+    
+    .products-table {
+        border-radius: 12px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
     }
     
     .products-table th,
     .products-table td {
-        padding: 0.8rem;
+        padding: 1rem 0.8rem;
         font-size: 0.9rem;
     }
     
     .product-name-cell {
         min-width: 200px;
+        padding-right: 1rem !important;
+    }
+    
+    .product-price-cell {
+        min-width: 100px;
+        padding-left: 1.5rem !important;
+    }
+    
+    .product-price-cell::before {
+        left: 0.8rem;
     }
 }
 
 @media (max-width: 480px) {
     .products-table-container {
         overflow-x: auto;
+        border-radius: 10px;
+        padding: 5px;
+    }
+    
+    .products-table {
+        min-width: 450px;
+        border-radius: 10px;
     }
     
     .product-name-cell {
-        min-width: 150px;
+        min-width: 180px;
+        font-size: 0.9rem;
+    }
+    
+    .product-price-cell {
+        font-size: 1rem;
+    }
+    
+    .products-table th {
+        font-size: 0.9rem;
+        padding: 0.9rem 0.7rem;
+    }
+    
+    .products-table td {
+        padding: 0.9rem 0.7rem;
+    }
+}
+
+/* تأثيرات تحميل للجدول */
+@keyframes fadeInRow {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.products-table tbody tr {
+    animation: fadeInRow 0.5s ease forwards;
+}
+
+.products-table tbody tr:nth-child(1) { animation-delay: 0.05s; }
+.products-table tbody tr:nth-child(2) { animation-delay: 0.1s; }
+.products-table tbody tr:nth-child(3) { animation-delay: 0.15s; }
+.products-table tbody tr:nth-child(4) { animation-delay: 0.2s; }
+.products-table tbody tr:nth-child(5) { animation-delay: 0.25s; }
+.products-table tbody tr:nth-child(6) { animation-delay: 0.3s; }
+.products-table tbody tr:nth-child(7) { animation-delay: 0.35s; }
+.products-table tbody tr:nth-child(8) { animation-delay: 0.4s; }
+.products-table tbody tr:nth-child(9) { animation-delay: 0.45s; }
+.products-table tbody tr:nth-child(10) { animation-delay: 0.5s; }
+
+/* تخصيص شريط التمرير للجدول على الأجهزة المحمولة */
+@media (max-width: 480px) {
+    .products-table-container::-webkit-scrollbar {
+        height: 6px;
+    }
+    
+    .products-table-container::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        border-radius: 10px;
+    }
+    
+    .products-table-container::-webkit-scrollbar-thumb {
+        background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+        border-radius: 10px;
+    }
+    
+    .products-table-container::-webkit-scrollbar-thumb:hover {
+        background: linear-gradient(135deg, #5a0db5 0%, #1c68e8 100%);
     }
 }
     </style>
