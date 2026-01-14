@@ -1872,17 +1872,7 @@ function renderTableView() {
     });
 }
 
-// دالة لإضافة المنتج من الجدول للسلة
-function addTableProductToCart(productName) {
-    const product = products.find(p => p.name === productName);
-    if (product && !isNaN(product.price)) {
-        addToCart(product, 1);
-        showNotification('تمت إضافة المنتج إلى السلة');
-        
-        // تحديث زر الإضافة في الجدول
-        updateTableAddButton(productName);
-    }
-}
+
 
 // تحديث زر إضافة معين في الجدول
 function updateTableAddButton(productName) {
@@ -2182,53 +2172,69 @@ function renderFilteredProducts(filteredProducts) {
     }
 }
 
-// عرض المنتجات المصفاة كجدول
+// عرض المنتجات المصفاة كجدول// دالة لعرض المنتجات المصفاة كجدول (النسخة المعدلة)
 function renderFilteredProductsTable(filteredProducts) {
-    const tableContainer = document.createElement('div');
-    tableContainer.className = 'products-table-container';
+    const categoriesContainer = document.getElementById('categories');
+    categoriesContainer.innerHTML = '';
     
-    const table = document.createElement('table');
-    table.className = 'products-table';
+    // تجميع المنتجات المصفاة حسب الفئة
+    const filteredCategories = [...new Set(filteredProducts.map(p => p.category))];
     
-    const thead = document.createElement('thead');
-    thead.innerHTML = `
-        <tr>
-            <th>الصنف</th>
-            <th>الفئة</th>
-            <th>السعر</th>
-            <th>الإجراءات</th>
-        </tr>
-    `;
-    table.appendChild(thead);
-    
-    const tbody = document.createElement('tbody');
-    
-    filteredProducts.forEach(product => {
-        const row = document.createElement('tr');
-        const cleanName = product.name.replace(/<br>/g, ' ').trim();
-        const price = isNaN(product.price) ? 
-            '<span class="unavailable">غير متوفر</span>' : 
-            `<span class="price">${product.price.toFixed(2)} ₪</span>`;
-        const addButton = isNaN(product.price) ? 
-            '<button class="table-add-btn" disabled>غير متاح</button>' :
-            `<button class="table-add-btn" onclick="addTableProductToCart('${product.name.replace(/'/g, "\\'")}')">إضافة للسلة</button>`;
+    filteredCategories.forEach(category => {
+        // إنشاء قسم الفئة
+        const categorySection = document.createElement('div');
+        categorySection.className = 'category-table-section';
         
-        row.innerHTML = `
-            <td class="product-name-cell">${cleanName}</td>
-            <td class="product-category-cell">${product.category}</td>
-            <td class="product-price-cell">${price}</td>
-            <td class="product-actions-cell">${addButton}</td>
+        // عنوان الفئة
+        const categoryTitle = document.createElement('h2');
+        categoryTitle.className = 'category-title';
+        categoryTitle.textContent = category;
+        categorySection.appendChild(categoryTitle);
+        
+        // إنشاء جدول للفئة
+        const tableContainer = document.createElement('div');
+        tableContainer.className = 'products-table-container';
+        
+        const table = document.createElement('table');
+        table.className = 'products-table';
+        
+        // رأس الجدول
+        const thead = document.createElement('thead');
+        thead.innerHTML = `
+            <tr>
+                <th>الصنف</th>
+                <th>السعر</th>
+            </tr>
         `;
+        table.appendChild(thead);
         
-        tbody.appendChild(row);
+        // جسم الجدول
+        const tbody = document.createElement('tbody');
+        
+        // الحصول على منتجات هذه الفئة
+        const categoryProducts = filteredProducts.filter(p => p.category === category);
+        
+        categoryProducts.forEach(product => {
+            const row = document.createElement('tr');
+            
+            const cleanName = product.name.replace(/<br>/g, ' ').trim();
+            const price = isNaN(product.price) ? 
+                '<span class="unavailable">غير متوفر</span>' : 
+                `<span class="price">${product.price.toFixed(2)} ₪</span>`;
+            
+            row.innerHTML = `
+                <td class="product-name-cell">${cleanName}</td>
+                <td class="product-price-cell">${price}</td>
+            `;
+            
+            tbody.appendChild(row);
+        });
+        
+        table.appendChild(tbody);
+        tableContainer.appendChild(table);
+        categorySection.appendChild(tableContainer);
+        categoriesContainer.appendChild(categorySection);
     });
-    
-    table.appendChild(tbody);
-    tableContainer.appendChild(table);
-    categoriesContainer.appendChild(tableContainer);
-    
-    // تحديث أزرار الإضافة
-    updateAllTableAddButtons();
 }
 
 // Handle Search
