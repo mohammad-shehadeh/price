@@ -26,35 +26,35 @@ iphone/x BYH |/55/undefined
 iphone/xr BYH |/55/undefined
 iphone/xs BYH |/55/undefined
 iphone/xs max BYH |/65/undefined
-iphone/XS max original |/200/undefined
+iphone/XS max original |/180/undefined
 iphone/Ip 11 byh |/55/undefined
 iphone/Ip 11 original |/85/undefined
 iphone/Ip 11 orignal ch |/120/undefined
 iphone/11 pro max BYH |/60/undefined
-iphone/11 pro max original |/230/undefined
+iphone/11 pro max original |/Aa/undefined
 iphone/12 pro BYH |/65/undefined
-iphone/12 pro original |/250/undefined
+iphone/12 pro original |/230/undefined
 iphone/12 pro max BYH |/80/undefined
-iphone/12 pro max orignal |/330/undefined
+iphone/12 pro max orignal |/300/undefined
 iphone/13 BYH |/80/undefined
-iphone/13 orignal |/280/undefined
+iphone/13 orignal |/250/undefined
 iphone/13 pro BYH |/100/undefined
-iphone/13 pro orignal |/500/undefined
+iphone/13 pro orignal |/470/undefined
 iphone/13 pro max BYH |/130/undefined
-iphone/13 pro max orignal |/650/undefined
+iphone/13 pro max orignal |/590/undefined
 iphone/14 BYH |/85/undefined
-iphone/14 orignal |/300/undefined
+iphone/14 orignal |/280/undefined
 iphone/14 pro BYH |/110/undefined
-iphone/14 pro orignal |/550/undefined
+iphone/14 pro orignal |/530/undefined
 iphone/14 pro max BYH |/140/undefined
-iphone/14 pro max orignal |/750/undefined
+iphone/14 pro max orignal |/650/undefined
 iphone/15 BYH |/110/undefined
-iphone/15 original |/600/undefined
+iphone/15 original |/500/undefined
 iphone/15 pro BYH |/120/undefined
-iphone/15 pro original |/580/undefined
+iphone/15 pro original |/550/undefined
 iphone/15 pro max BYH |/150/undefined
-iphone/15 pro max OLED |/700/undefined
-iphone/15 pro max orignal |/1150/undefined
+iphone/15 pro max OLED |/400/undefined
+iphone/15 pro max orignal |/Aa/undefined
 iphone/16 pro max orignal |/1150/undefined
 iphone/6 plus |/25/undefined
 iphone/7 plus |/40/undefined
@@ -62,7 +62,7 @@ iphone/8 plus AAA |/45/undefined
 iphone/8 plus orignal |/aaa/undefined
 iphone/8G |/aaa/undefined
 iphone/ipad 10 touch |/45/undefined
-iphone/ipad 7,8,9 LCD |/150/undefined
+iphone/ipad 7,8,9 LCD |/Aa/undefined
 iphone/ipad 7,8,9 touch |/45/undefined
 iphone/watch S6 44mm |/200/undefined
 iphone/watch S7 44mm |/200/undefined
