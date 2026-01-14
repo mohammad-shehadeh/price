@@ -1276,6 +1276,105 @@
         text-overflow: ellipsis;
     }
 }
+
+/* أنماط زر التبديل */
+.view-toggle-btn {
+    background-color: var(--accent-color);
+}
+
+.view-toggle-btn:hover {
+    background-color: #e64a19;
+}
+
+/* أنماط العرض الجدولي */
+.products-table-container {
+    width: 100%;
+    overflow-x: auto;
+    margin: 1rem 0;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.products-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+}
+
+.products-table th {
+    background: linear-gradient(135deg, var(--secondary-color), #1a1a1a);
+    color: white;
+    padding: 1rem;
+    font-weight: 600;
+    text-align: right;
+    position: sticky;
+    top: 0;
+}
+
+.products-table td {
+    padding: 1rem;
+    border-bottom: 1px solid #eee;
+    text-align: right;
+    transition: var(--transition);
+}
+
+.products-table tr:hover {
+    background-color: #f9f9f9;
+}
+
+.products-table tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+/* أعمدة الجدول */
+.product-name-cell {
+    font-weight: 500;
+    color: var(--dark-color);
+    min-width: 200px;
+}
+
+.product-category-cell {
+    color: var(--primary-color);
+    font-weight: 600;
+    min-width: 150px;
+}
+
+.product-price-cell {
+    color: var(--success-color);
+    font-weight: 700;
+    text-align: left !important;
+    direction: ltr;
+    min-width: 100px;
+}
+
+.product-actions-cell {
+    min-width: 120px;
+}
+
+/* زر الإضافة في الجدول */
+.table-add-btn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: var(--transition);
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.table-add-btn:hover {
+    background-color: #0a9d98;
+    transform: translateY(-2px);
+}
+
+.table-add-btn:disabled {
+    background-color: #ddd;
+    color: #999;
+    cursor: not-allowed;
+    transform: none;
+}
     </style>
 </head>
 <body>
@@ -1285,21 +1384,28 @@
         <div class="loading-text">جاري التحميل...</div>
     </div>
     
-    <!-- Navigation Bar -->
     <div class="nav-container">
-        <a href="#" class="nav-logo">Shehadeh <span>Center</span></a>
-        <div class="nav-actions">
-            <a href="abr.html" class="nav-btn">
-                <i class="fas fa-list"></i>
-                <span>القائمة</span>
-            </a>
-            <div class="nav-cart" id="show-cart-button">
-                <span class="cart-count" id="cart-count">0</span>
-                <i class="fas fa-shopping-cart"></i>
-                <span class="cart-text">السلة</span>
-            </div>
+    <a href="#" class="nav-logo">Shehadeh <span>Center</span></a>
+    
+    <div class="nav-actions">
+        <a href="abr.html" class="nav-btn">
+            <i class="fas fa-list"></i>
+            <span>القائمة</span>
+        </a>
+        
+        <!-- زر تبديل العرض الجديد -->
+        <button class="nav-btn view-toggle-btn" id="view-toggle-btn">
+            <i class="fas fa-th-large" id="view-icon"></i>
+            <span id="view-text">عرض متجر</span>
+        </button>
+        
+        <div class="nav-cart" id="show-cart-button">
+            <span class="cart-count" id="cart-count">0</span>
+            <i class="fas fa-shopping-cart"></i>
+            <span class="cart-text">السلة</span>
         </div>
     </div>
+</div>
     
 <!-- النافذة الإعلانية -->
 <div class="ad-popup" id="adPopup">
@@ -1403,31 +1509,37 @@
     
     <script>
         // DOM Elements
-        const categoriesContainer = document.getElementById('categories');
-        const cartItemsContainer = document.getElementById('cart-items');
-        const checkoutButton = document.getElementById('checkout-button');
-        const popup = document.getElementById('popup');
-        const confirmButton = document.getElementById('confirm-button');
-        const cancelButton = document.getElementById('cancel-button');
-        const customerNameInput = document.getElementById('customer-name');
-        const customerPhoneInput = document.getElementById('customer-phone');
-        const showCartButton = document.getElementById('show-cart-button');
-        const hideCartButton = document.getElementById('hide-cart-button');
-        const cartElement = document.getElementById('cart');
-        const searchBox = document.getElementById('search-box');
-        const filterButtonsContainer = document.getElementById('filter-buttons');
-        const fileButtonsContainer = document.getElementById('file-buttons');
-        const notification = document.getElementById('notification');
-        const notificationText = document.getElementById('notification-text');
-        const cartCount = document.getElementById('cart-count');
-        const cartTotal = document.getElementById('cart-total');
-        const scrollUpButton = document.getElementById('scrollUp');
-        
-        // Data
-        let products = [];
-        let cart = JSON.parse(localStorage.getItem('cart')) || [];
-        
-        // البيانات المحدثة مع تسميات أفضل وأيقونات
+const categoriesContainer = document.getElementById('categories');
+const cartItemsContainer = document.getElementById('cart-items');
+const checkoutButton = document.getElementById('checkout-button');
+const popup = document.getElementById('popup');
+const confirmButton = document.getElementById('confirm-button');
+const cancelButton = document.getElementById('cancel-button');
+const customerNameInput = document.getElementById('customer-name');
+const customerPhoneInput = document.getElementById('customer-phone');
+const showCartButton = document.getElementById('show-cart-button');
+const hideCartButton = document.getElementById('hide-cart-button');
+const cartElement = document.getElementById('cart');
+const searchBox = document.getElementById('search-box');
+const filterButtonsContainer = document.getElementById('filter-buttons');
+const fileButtonsContainer = document.getElementById('file-buttons');
+const notification = document.getElementById('notification');
+const notificationText = document.getElementById('notification-text');
+const cartCount = document.getElementById('cart-count');
+const cartTotal = document.getElementById('cart-total');
+const scrollUpButton = document.getElementById('scrollUp');
+
+// DOM Elements الجديدة للتبديل
+const viewToggleBtn = document.getElementById('view-toggle-btn');
+const viewIcon = document.getElementById('view-icon');
+const viewText = document.getElementById('view-text');
+
+// Data
+let currentView = 'store'; // 'store' أو 'table'
+let products = [];
+let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+// File Buttons Data
 const fileButtons = [
     { label: 'أسعار الأجهزة', fileName: 'test.md', icon: 'fas fa-laptop' },
     { label: 'أسعار الشاشات', fileName: 'lcd.md', icon: 'fas fa-tv' },
@@ -1436,29 +1548,32 @@ const fileButtons = [
 ];
         
         // Initialize
-        function init() {
-            createFileButtons();
-            loadProductsFromFile('test.md');
-            renderCart();
-            updateCartCount();
-            
-            // Event Listeners
-            showCartButton.addEventListener('click', toggleCart);
-            hideCartButton.addEventListener('click', toggleCart);
-            checkoutButton.addEventListener('click', showPopup);
-            confirmButton.addEventListener('click', confirmOrder);
-            cancelButton.addEventListener('click', hidePopup);
-            scrollUpButton.addEventListener('click', scrollToTop);
-            searchBox.addEventListener('input', handleSearch);
-            
-            // Hide loading screen after 2 seconds
-            setTimeout(() => {
-                document.getElementById('loading-screen').style.opacity = '0';
-                setTimeout(() => {
-                    document.getElementById('loading-screen').style.display = 'none';
-                }, 500);
-            }, 0);
-        }
+function init() {
+    createFileButtons();
+    loadProductsFromFile('test.md');
+    renderCart();
+    updateCartCount();
+    
+    // Event Listeners
+    showCartButton.addEventListener('click', toggleCart);
+    hideCartButton.addEventListener('click', toggleCart);
+    checkoutButton.addEventListener('click', showPopup);
+    confirmButton.addEventListener('click', confirmOrder);
+    cancelButton.addEventListener('click', hidePopup);
+    scrollUpButton.addEventListener('click', scrollToTop);
+    searchBox.addEventListener('input', handleSearch);
+    
+    // مستمع جديد لزر التبديل
+    viewToggleBtn.addEventListener('click', toggleView);
+    
+    // Hide loading screen after 2 seconds
+    setTimeout(() => {
+        document.getElementById('loading-screen').style.opacity = '0';
+        setTimeout(() => {
+            document.getElementById('loading-screen').style.display = 'none';
+        }, 500);
+    }, 0);
+}
         
        // DOM Elements الجديدة
 const toggleFilesBtn = document.getElementById('toggle-files-btn');
@@ -1536,6 +1651,156 @@ function createFileButtons() {
     loadProductsFromFile(fileButtons[0].fileName);
 }
 
+// ============ دوال التبديل الجديدة ============
+
+// تبديل العرض بين المتجر والجدول
+function toggleView() {
+    currentView = currentView === 'store' ? 'table' : 'store';
+    
+    // تحديث الزر
+    updateViewButton();
+    
+    // إعادة عرض المنتجات بالشكل الجديد
+    renderProducts();
+}
+
+// تحديث زر التبديل
+function updateViewButton() {
+    if (currentView === 'store') {
+        viewIcon.className = 'fas fa-th-large';
+        viewText.textContent = 'عرض متجر';
+        viewToggleBtn.style.backgroundColor = '#ff5722'; // لون accent
+    } else {
+        viewIcon.className = 'fas fa-list';
+        viewText.textContent = 'عرض جدول';
+        viewToggleBtn.style.backgroundColor = '#6c757d'; // لون رمادي
+    }
+}
+
+// عرض المنتجات بناءً على الوضع الحالي
+function renderProducts() {
+    const categoriesContainer = document.getElementById('categories');
+    categoriesContainer.innerHTML = '';
+    
+    if (currentView === 'store') {
+        renderStoreView();
+    } else {
+        renderTableView();
+    }
+}
+
+// العرض كمتجر (الشكل الحالي)
+function renderStoreView() {
+    const categoriesContainer = document.getElementById('categories');
+    const categories = [...new Set(products.map(p => p.category))];
+    
+    categories.forEach(category => {
+        const categoryProducts = products.filter(p => p.category === category);
+        
+        categoryProducts.forEach(product => {
+            const productElement = createProductElement(product);
+            categoriesContainer.appendChild(productElement);
+        });
+    });
+}
+
+// العرض كجدول (الشكل الجديد)
+function renderTableView() {
+    const categoriesContainer = document.getElementById('categories');
+    
+    // إنشاء جدول
+    const tableContainer = document.createElement('div');
+    tableContainer.className = 'products-table-container';
+    
+    const table = document.createElement('table');
+    table.className = 'products-table';
+    
+    // رأس الجدول
+    const thead = document.createElement('thead');
+    thead.innerHTML = `
+        <tr>
+            <th>الصنف</th>
+            <th>الفئة</th>
+            <th>السعر</th>
+            <th>الإجراءات</th>
+        </tr>
+    `;
+    table.appendChild(thead);
+    
+    // جسم الجدول
+    const tbody = document.createElement('tbody');
+    
+    products.forEach(product => {
+        const row = document.createElement('tr');
+        
+        // تنظيف اسم المنتج
+        const cleanName = product.name.replace(/<br>/g, ' ').trim();
+        
+        // تنسيق السعر
+        const price = isNaN(product.price) ? 
+            '<span class="unavailable">غير متوفر</span>' : 
+            `<span class="price">${product.price.toFixed(2)} ₪</span>`;
+        
+        // زر الإضافة للسلة
+        const addButton = isNaN(product.price) ? 
+            '<button class="table-add-btn" disabled>غير متاح</button>' :
+            `<button class="table-add-btn" onclick="addTableProductToCart('${product.name.replace(/'/g, "\\'")}')">إضافة للسلة</button>`;
+        
+        row.innerHTML = `
+            <td class="product-name-cell">${cleanName}</td>
+            <td class="product-category-cell">${product.category}</td>
+            <td class="product-price-cell">${price}</td>
+            <td class="product-actions-cell">${addButton}</td>
+        `;
+        
+        tbody.appendChild(row);
+    });
+    
+    table.appendChild(tbody);
+    tableContainer.appendChild(table);
+    categoriesContainer.appendChild(tableContainer);
+    
+    // تحديث حالة أزرار الإضافة بناءً على السلة الحالية
+    updateAllTableAddButtons();
+}
+
+// دالة لإضافة المنتج من الجدول للسلة
+function addTableProductToCart(productName) {
+    const product = products.find(p => p.name === productName);
+    if (product && !isNaN(product.price)) {
+        addToCart(product, 1);
+        showNotification('تمت إضافة المنتج إلى السلة');
+        
+        // تحديث زر الإضافة في الجدول
+        updateTableAddButton(productName);
+    }
+}
+
+// تحديث زر إضافة معين في الجدول
+function updateTableAddButton(productName) {
+    const existingProduct = cart.find(item => item.name === productName);
+    
+    document.querySelectorAll('.table-add-btn').forEach(btn => {
+        const row = btn.closest('tr');
+        const productNameCell = row.querySelector('.product-name-cell');
+        const cleanProductName = productName.replace(/<br>/g, ' ').trim();
+        
+        if (productNameCell && productNameCell.textContent.includes(cleanProductName.split('<br>')[0])) {
+            if (existingProduct) {
+                btn.textContent = `مضاف (${existingProduct.quantity})`;
+                btn.style.backgroundColor = '#28a745'; // لون success
+                btn.disabled = true;
+            }
+        }
+    });
+}
+
+// تحديث جميع أزرار الإضافة في الجدول
+function updateAllTableAddButtons() {
+    products.forEach(product => {
+        updateTableAddButton(product.name);
+    });
+}
 // تبديل فتح/إغلاق القائمة
 function toggleFilesMenu() {
     const isOpen = filesMenu.classList.contains('show');
@@ -1588,11 +1853,13 @@ function updateSelectedFile(label, fileName) {
 }
         
         // تحميل المنتجات من الملف مع مؤشر التحميل
+// Load Products from File
 function loadProductsFromFile(fileName) {
     // إظهار مؤشر التحميل
-    const originalLabel = currentFileLabel.textContent;
-    currentFileLabel.textContent = 'جاري التحميل...';
-    toggleFilesBtn.disabled = true;
+    const originalLabel = document.getElementById('current-file-label').textContent;
+    document.getElementById('current-file-label').textContent = 'جاري التحميل...';
+    const toggleBtn = document.getElementById('toggle-files-btn');
+    if (toggleBtn) toggleBtn.disabled = true;
     
     fetch(fileName)
         .then(response => response.text())
@@ -1611,41 +1878,34 @@ function loadProductsFromFile(fileName) {
                     });
                 }
             });
-            renderCategories();
+            
+            // استبدل renderCategories بـ renderProducts
+            renderProducts();
             createFilterButtons();
             
             // إعادة التسمية الأصلية
             const selectedFile = fileButtons.find(f => f.fileName === fileName);
             if (selectedFile) {
-                currentFileLabel.textContent = selectedFile.label;
+                document.getElementById('current-file-label').textContent = selectedFile.label;
             }
-            toggleFilesBtn.disabled = false;
+            if (toggleBtn) toggleBtn.disabled = false;
             
             // إظهار إشعار
             showNotification(`تم تحميل ${products.length} منتج`);
         })
         .catch(error => {
             console.error('Error loading products:', error);
-            currentFileLabel.textContent = originalLabel;
-            toggleFilesBtn.disabled = false;
+            document.getElementById('current-file-label').textContent = originalLabel;
+            if (toggleBtn) toggleBtn.disabled = false;
             showNotification('حدث خطأ في تحميل الملف');
         });
 }
         
-        // Render Categories and Products
-        function renderCategories() {
-            categoriesContainer.innerHTML = '';
-            const categories = [...new Set(products.map(p => p.category))];
-            
-            categories.forEach(category => {
-                const categoryProducts = products.filter(p => p.category === category);
-                
-                categoryProducts.forEach(product => {
-                    const productElement = createProductElement(product);
-                    categoriesContainer.appendChild(productElement);
-                });
-            });
-        }
+        // Render Categories and Products - أصبحت غير مستخدمة أو احتفظ بها للمتوافقية
+function renderCategories() {
+    // يمكنك تركها فارغة أو استدعاء renderProducts
+    renderProducts();
+}
         
         // Create Product Element
         function createProductElement(product) {
@@ -1786,26 +2046,81 @@ function loadProductsFromFile(fileName) {
         
        // Filter Products
 function filterProducts(category) {
-  const filteredProducts =
-    category === 'All'
-      ? products
-      : products.filter(p => p.category === category);
-  renderFilteredProducts(filteredProducts);
+    const filteredProducts = category === 'All' 
+        ? products 
+        : products.filter(p => p.category === category);
+    renderFilteredProducts(filteredProducts);
 
-  // Update active button
-  document.querySelectorAll('.filter-btn').forEach(btn => {
-    btn.classList.remove('active');
-  });
-  event.target.classList.add('active');
+    // Update active button
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.classList.remove('active');
+    });
+    event.target.classList.add('active');
 }
 
 // Render Filtered Products
 function renderFilteredProducts(filteredProducts) {
-  categoriesContainer.innerHTML = '';
-  filteredProducts.forEach(product => {
-    const productElement = createProductElement(product);
-    categoriesContainer.appendChild(productElement);
-  });
+    categoriesContainer.innerHTML = '';
+    
+    if (currentView === 'store') {
+        // العرض كمتجر
+        filteredProducts.forEach(product => {
+            const productElement = createProductElement(product);
+            categoriesContainer.appendChild(productElement);
+        });
+    } else {
+        // العرض كجدول
+        renderFilteredProductsTable(filteredProducts);
+    }
+}
+
+// عرض المنتجات المصفاة كجدول
+function renderFilteredProductsTable(filteredProducts) {
+    const tableContainer = document.createElement('div');
+    tableContainer.className = 'products-table-container';
+    
+    const table = document.createElement('table');
+    table.className = 'products-table';
+    
+    const thead = document.createElement('thead');
+    thead.innerHTML = `
+        <tr>
+            <th>الصنف</th>
+            <th>الفئة</th>
+            <th>السعر</th>
+            <th>الإجراءات</th>
+        </tr>
+    `;
+    table.appendChild(thead);
+    
+    const tbody = document.createElement('tbody');
+    
+    filteredProducts.forEach(product => {
+        const row = document.createElement('tr');
+        const cleanName = product.name.replace(/<br>/g, ' ').trim();
+        const price = isNaN(product.price) ? 
+            '<span class="unavailable">غير متوفر</span>' : 
+            `<span class="price">${product.price.toFixed(2)} ₪</span>`;
+        const addButton = isNaN(product.price) ? 
+            '<button class="table-add-btn" disabled>غير متاح</button>' :
+            `<button class="table-add-btn" onclick="addTableProductToCart('${product.name.replace(/'/g, "\\'")}')">إضافة للسلة</button>`;
+        
+        row.innerHTML = `
+            <td class="product-name-cell">${cleanName}</td>
+            <td class="product-category-cell">${product.category}</td>
+            <td class="product-price-cell">${price}</td>
+            <td class="product-actions-cell">${addButton}</td>
+        `;
+        
+        tbody.appendChild(row);
+    });
+    
+    table.appendChild(tbody);
+    tableContainer.appendChild(table);
+    categoriesContainer.appendChild(tableContainer);
+    
+    // تحديث أزرار الإضافة
+    updateAllTableAddButtons();
 }
 
 // Handle Search
