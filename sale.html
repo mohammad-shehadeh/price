@@ -2434,7 +2434,7 @@
         showNotification('جاري إعداد الفاتورة للإرسال...');
         
         try {
-            // إنشاء الفاتورة النصية المنسقة
+            // إنشاء الفاتورة النصية المنسقة مع روابط الصور الحقيقية
             const invoiceText = createBeautifulInvoice(name, phone);
             
             // ترميز الرسالة
@@ -2460,17 +2460,11 @@
         }
     }
 
-    // دالة لإنشاء فاتورة نصية جميلة ومنسقة
+    // دالة لإنشاء فاتورة نصية جميلة ومنسقة مع روابط الصور الحقيقية
     function createBeautifulInvoice(name, phone) {
         const now = new Date();
         const invoiceNumber = generateInvoiceNumber();
         const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-        
-        // إنشاء روابط مختصرة للصور
-        const shortImageUrls = cart.map(item => ({
-            name: item.name,
-            shortUrl: createShortUrl(item.image)
-        }));
         
         let invoiceText = '';
         
@@ -2497,7 +2491,6 @@
         cart.forEach((item, index) => {
             const cleanName = item.name.replace(/<br>/g, ' ').trim();
             const itemTotal = item.price * item.quantity;
-            const imageLink = shortImageUrls.find(img => img.name === item.name)?.shortUrl || item.image;
             
             invoiceText += `\n*${index + 1}. ${item.category}*\n`;
             invoiceText += `   📝 ${cleanName}\n`;
@@ -2505,9 +2498,11 @@
             invoiceText += `   💰 السعر: ${item.price.toFixed(2)} ₪\n`;
             invoiceText += `   🧮 المجموع: ${itemTotal.toFixed(2)} ₪\n`;
             
-            // إضافة رابط الصورة المختصر
-            if (item.image && item.image !== '') {
-                invoiceText += `   🖼️ رابط الصورة: ${imageLink}\n`;
+            // إضافة رابط الصورة الحقيقي للمنتج
+            if (item.image && item.image.trim() !== '' && item.image !== 'undefined') {
+                // تقصير الرابط إذا كان طويلاً جداً
+                const shortImageUrl = shortenUrl(item.image);
+                invoiceText += `   🖼️ رابط الصورة: ${shortImageUrl}\n`;
             }
             
             invoiceText += `   ────────────────\n`;
@@ -2533,27 +2528,41 @@
         invoiceText += `📍 العنوان: فلسطين - طولكرم\n`;
         invoiceText += `⭐️ شكرًا لثقتكم بنا ⭐️\n\n`;
         
-        invoiceText += `⚡ *ملاحظة*: يمكن الضغط على روابط الصور لمشاهدة المنتج\n`;
+        invoiceText += `⚡ *ملاحظة*: يمكن نسخ رابط الصورة وفتحه في المتصفح لمشاهدة المنتج\n`;
         
         return invoiceText;
     }
 
-    // دالة لإنشاء روابط مختصرة
-    function createShortUrl(originalUrl) {
-        // إذا كان الرابط قصيراً بالفعل، ارجعه كما هو
-        if (originalUrl.length <= 50) {
-            return originalUrl;
-        }
-        
-        // محاولة إنشاء رابط مختصر باستخدم tinyurl
-        // يمكنك استبدال هذا بخدمة تقصير الروابط المفضلة لديك
+    // دالة لتقصير الروابط الطويلة
+    function shortenUrl(url) {
         try {
-            // هذا مثال باستخدام tinyurl API
-            // في الواقع تحتاج إلى تنفيذ API call
-            return `tinyurl.com/${btoa(originalUrl).substring(0, 10)}`;
+            // إذا كان الرابط قصيراً، ارجعه كما هو
+            if (url.length <= 60) {
+                return url;
+            }
+            
+            // تقصير الرابط يدوياً لعرض جزء منه فقط
+            try {
+                // استخراج اسم الملف من الرابط
+                const urlParts = url.split('/');
+                const fileName = urlParts[urlParts.length - 1];
+                
+                // إذا كان هناك اسم ملف، استخدمه
+                if (fileName && fileName.includes('.')) {
+                    return `.../${fileName.substring(0, 40)}`;
+                }
+            } catch (e) {
+                // إذا فشل، عد للرابط الأصلي مقصوص
+            }
+            
+            // عرض جزء من بداية ونهاية الرابط
+            const firstPart = url.substring(0, 30);
+            const lastPart = url.substring(url.length - 20);
+            return `${firstPart}...${lastPart}`;
+            
         } catch (error) {
-            // إذا فشل، استخدم الرابط الأصلي
-            return originalUrl;
+            // في حالة الخطأ، ارجع الرابط الأصلي
+            return url.length > 80 ? url.substring(0, 80) + '...' : url;
         }
     }
 
