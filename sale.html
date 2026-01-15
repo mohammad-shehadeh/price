@@ -22,7 +22,8 @@
     
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&display=swap" rel="stylesheet">
-    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <style>
         :root {
             --primary-color: #0bb5b0;
@@ -2541,77 +2542,55 @@ const fileButtons = [
     const now = new Date();
     const dateTime = formatDateTime(now);
     const invoiceNumber = generateInvoiceNumber();
+    const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
     
-    // إنشاء بيانات الفاتورة
-    const invoiceData = {
-        invoiceNumber: invoiceNumber,
-        customer: { 
-            name: name, 
-            phone: phone 
-        },
-        date: dateTime,
-        items: cart.map(item => ({
-            category: item.category,
-            name: item.name,
-            cleanName: item.name.replace(/<br>/g, ' ').replace(/بار/g, '').trim(),
-            price: item.price,
-            quantity: item.quantity,
-            total: item.price * item.quantity,
-            image: item.image
-        })),
-        subtotal: cart.reduce((sum, item) => sum + (item.price * item.quantity), 0)
-    };
+    // إظهار رسالة تحضير PDF
+    showNotification('جاري إنشاء الفاتورة...');
     
-    // تشفير الفاتورة إلى نص غير مفهوم
-    const encryptedInvoice = encryptInvoice(invoiceData);
+    // إنشاء نص الفاتورة النصية أولاً (كبديل في حالة فشل PDF)
+    const textInvoice = createTextInvoice(name, phone, dateTime, invoiceNumber, subtotal);
     
-    // إعداد رسالة واتساب للعميل
-    let customerMessage = `⭐️ فاتورة Shehadeh Centre ⭐️\n`;
-    customerMessage += `━━━━━━━━━━━━━━━━━━━━\n`;
-    customerMessage += `📅 ${dateTime}\n`;
-    customerMessage += `📋 ${invoiceNumber}\n`;
-    customerMessage += `👤 ${name} | 📞 ${phone}\n`;
-    customerMessage += `━━━━━━━━━━━━━━━━━━━━\n\n`;
-    customerMessage += `🔐 **الفاتورة المشفرة:**\n`;
-    customerMessage += `${encryptedInvoice}\n\n`;
-    customerMessage += `━━━━━━━━━━━━━━━━━━━━\n`;
-    customerMessage += `📌 **تعليمات الاستخدام:**\n`;
-    customerMessage += `1. احفظ هذه الرسالة\n`;
-    customerMessage += `2. عند الاستلام، سيرسل الموظف رسالة\n`;
-    customerMessage += `3. ستظهر الفاتورة الكاملة مع الصور`;
-    
-    const customerWhatsappURL = `https://wa.me/${phone}?text=${encodeURIComponent(customerMessage)}`;
-    window.open(customerWhatsappURL, '_blank');
-    
-    // إعداد رسالة واتساب للموظفين
-    let employeeMessage = `📦 **طلب جديد - Shehadeh Centre** 📦\n`;
-    employeeMessage += `━━━━━━━━━━━━━━━━━━━━\n`;
-    employeeMessage += `🎫 ${invoiceNumber}\n`;
-    employeeMessage += `👤 ${name}\n`;
-    employeeMessage += `📞 ${phone}\n`;
-    employeeMessage += `📅 ${dateTime}\n`;
-    employeeMessage += `━━━━━━━━━━━━━━━━━━━━\n`;
-    employeeMessage += `🔢 المنتجات: ${cart.length}\n`;
-    employeeMessage += `💰 الإجمالي: ${invoiceData.subtotal.toFixed(2)} ₪\n`;
-    employeeMessage += `━━━━━━━━━━━━━━━━━━━━\n`;
-    employeeMessage += `🔐 **الفاتورة المشفرة:**\n`;
-    employeeMessage += `${encryptedInvoice}\n`;
-    employeeMessage += `━━━━━━━━━━━━━━━━━━━━\n`;
-    employeeMessage += `📋 **لتحويلها إلى فاتورة كاملة:**\n`;
-    employeeMessage += `1. انسخ النص المشفّر أعلاه\n`;
-    employeeMessage += `2. اذهب إلى موقع فك التشفير\n`;
-    employeeMessage += `3. الصق النص وسيظهر كل شيء!`;
-    
-    const employeeWhatsappURL = `https://wa.me/972566888825?text=${encodeURIComponent(employeeMessage)}`;
-    setTimeout(() => {
-        window.open(employeeWhatsappURL, '_blank');
-    }, 1500);
+    // محاولة إنشاء PDF
+    try {
+        // إنشاء PDF
+        const pdfBlob = generatePDF(name, phone, dateTime, invoiceNumber, subtotal);
+        
+        // إعداد رسائل واتساب
+        const customerMessage = `⭐️ فاتورتك من Shehadeh Centre ⭐️\n\n${textInvoice}`;
+        const employeeMessage = `📦 **طلب جديد - Shehadeh Centre** 📦\n\n${textInvoice}\n\n📞 العميل: ${phone}`;
+        
+        // إرسال للعميل
+        sendInvoiceViaWhatsApp(phone, customerMessage, 'العميل');
+        
+        // إرسال للموظفين
+        setTimeout(() => {
+            sendInvoiceViaWhatsApp('972566888825', employeeMessage, 'الموظفين');
+        }, 1500);
+        
+        // حفظ PDF محلياً (اختياري)
+        savePDFLocally(pdfBlob, invoiceNumber);
+        
+    } catch (error) {
+        console.error('خطأ في إنشاء PDF، استخدام النسخة النصية:', error);
+        
+        // استخدام النسخة النصية إذا فشل PDF
+        const customerMessage = `⭐️ فاتورتك من Shehadeh Centre ⭐️\n\n${textInvoice}`;
+        const employeeMessage = `📦 **طلب جديد - Shehadeh Centre** 📦\n\n${textInvoice}\n\n📞 العميل: ${phone}`;
+        
+        // إرسال للعميل
+        window.open(`https://wa.me/${phone}?text=${encodeURIComponent(customerMessage)}`, '_blank');
+        
+        // إرسال للموظفين
+        setTimeout(() => {
+            window.open(`https://wa.me/972566888825?text=${encodeURIComponent(employeeMessage)}`, '_blank');
+        }, 1500);
+    }
     
     // مسح السلة
     clearCartAndReset();
     hidePopup();
     
-    showNotification('تم إنشاء الفاتورة وإرسالها على واتساب');
+    showNotification('تم إرسال الفاتورة على واتساب');
 }
 
 // دالة لتوليد رقم فاتورة
@@ -2624,37 +2603,221 @@ function generateInvoiceNumber() {
     return `SHC-${year}${month}${day}-${random}`;
 }
 
-// دالة لتشفير الفاتورة
-function encryptInvoice(invoiceData) {
-    // 1. تحويل البيانات إلى JSON
-    const jsonData = JSON.stringify(invoiceData);
+// دالة لإنشاء PDF
+function generatePDF(name, phone, dateTime, invoiceNumber, subtotal) {
+    const { jsPDF } = window.jspdf;
+    const pdf = new jsPDF('p', 'mm', 'a4');
+    const pageWidth = pdf.internal.pageSize.getWidth();
+    const margin = 20;
+    let yPosition = margin;
     
-    // 2. تشفير Base64
-    let base64 = btoa(unescape(encodeURIComponent(jsonData)));
+    // إعداد الخط العربي (إذا كان متاحاً)
+    try {
+        pdf.addFont('https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic&display=swap', 'Arabic', 'normal');
+        pdf.setFont('Arabic');
+    } catch (e) {
+        pdf.setFont('helvetica');
+    }
     
-    // 3. إضافة رموز عشوائية لتغيير شكل النص
-    const symbols = ['#', '@', '!', '$', '%', '&', '*', '+', '=', '~'];
-    let encrypted = '';
+    // العنوان
+    pdf.setFontSize(24);
+    pdf.setTextColor(11, 91, 168); // لون أزرق
+    pdf.text('⭐️ Shehadeh Centre ⭐️', pageWidth / 2, yPosition, { align: 'center' });
+    yPosition += 15;
     
-    for (let i = 0; i < base64.length; i++) {
-        encrypted += base64[i];
-        // إضافة رمز عشوائي كل 3-5 أحرف
-        if ((i + 1) % 4 === 0 && i < base64.length - 1) {
-            encrypted += symbols[Math.floor(Math.random() * symbols.length)];
+    pdf.setFontSize(12);
+    pdf.setTextColor(100, 100, 100);
+    pdf.text('فاتورة رسمية', pageWidth / 2, yPosition, { align: 'center' });
+    yPosition += 10;
+    
+    // رقم الفاتورة
+    pdf.setFontSize(14);
+    pdf.setTextColor(11, 91, 168);
+    pdf.text(`رقم الفاتورة: ${invoiceNumber}`, pageWidth / 2, yPosition, { align: 'center' });
+    yPosition += 15;
+    
+    // خط فاصل
+    pdf.setDrawColor(11, 139, 156);
+    pdf.setLineWidth(0.5);
+    pdf.line(margin, yPosition, pageWidth - margin, yPosition);
+    yPosition += 10;
+    
+    // معلومات العميل
+    pdf.setFontSize(12);
+    pdf.setTextColor(0, 0, 0);
+    
+    pdf.text(`العميل: ${name}`, margin, yPosition);
+    yPosition += 8;
+    
+    pdf.text(`الهاتف: ${phone}`, margin, yPosition);
+    yPosition += 8;
+    
+    pdf.text(`التاريخ: ${dateTime}`, margin, yPosition);
+    yPosition += 15;
+    
+    // عنوان المنتجات
+    pdf.setFontSize(14);
+    pdf.setTextColor(11, 91, 168);
+    pdf.text('المنتجات المطلوبة:', margin, yPosition);
+    yPosition += 10;
+    
+    pdf.setFontSize(10);
+    pdf.setTextColor(100, 100, 100);
+    
+    // جدول المنتجات
+    const tableTop = yPosition;
+    let tableY = tableTop;
+    
+    // رأس الجدول
+    pdf.setFillColor(240, 248, 255);
+    pdf.rect(margin, tableY, pageWidth - (2 * margin), 10, 'F');
+    
+    pdf.setTextColor(11, 91, 168);
+    pdf.text('الصنف', margin + 5, tableY + 7);
+    pdf.text('الكمية', margin + 120, tableY + 7);
+    pdf.text('السعر', margin + 150, tableY + 7);
+    pdf.text('المجموع', pageWidth - margin - 30, tableY + 7);
+    
+    tableY += 12;
+    
+    // تفاصيل المنتجات
+    pdf.setTextColor(0, 0, 0);
+    
+    cart.forEach((item, index) => {
+        const cleanName = item.name.replace(/<br>/g, ' ').replace(/بار/g, '').trim();
+        const itemTotal = item.price * item.quantity;
+        
+        // تقطيع النص إذا كان طويلاً
+        const lines = pdf.splitTextToSize(`${item.category} - ${cleanName}`, 70);
+        
+        lines.forEach((line, lineIndex) => {
+            if (tableY > 250) { // إذا وصلنا لآخر الصفحة
+                pdf.addPage();
+                tableY = margin;
+            }
+            
+            if (lineIndex === 0) {
+                pdf.text(line, margin + 5, tableY + 7);
+                pdf.text(item.quantity.toString(), margin + 120, tableY + 7);
+                pdf.text(`${item.price.toFixed(2)} ₪`, margin + 150, tableY + 7);
+                pdf.text(`${itemTotal.toFixed(2)} ₪`, pageWidth - margin - 30, tableY + 7);
+            } else {
+                pdf.text(line, margin + 5, tableY + 7);
+            }
+            
+            tableY += 8;
+        });
+        
+        // خط فاصل بين المنتجات
+        pdf.setDrawColor(200, 200, 200);
+        pdf.setLineWidth(0.1);
+        pdf.line(margin, tableY, pageWidth - margin, tableY);
+        tableY += 5;
+    });
+    
+    yPosition = tableY + 10;
+    
+    // الإجماليات
+    pdf.setFontSize(12);
+    pdf.setTextColor(0, 0, 0);
+    
+    pdf.text(`عدد المنتجات: ${cart.length}`, pageWidth - margin - 5, yPosition, { align: 'right' });
+    yPosition += 10;
+    
+    pdf.text(`المجموع الجزئي: ${subtotal.toFixed(2)} ₪`, pageWidth - margin - 5, yPosition, { align: 'right' });
+    yPosition += 10;
+    
+    pdf.text(`الضريبة (0%): 0.00 ₪`, pageWidth - margin - 5, yPosition, { align: 'right' });
+    yPosition += 15;
+    
+    // الإجمالي النهائي
+    pdf.setFontSize(16);
+    pdf.setTextColor(255, 87, 34); // لون برتقالي
+    pdf.text(`الإجمالي النهائي: ${subtotal.toFixed(2)} ₪`, pageWidth / 2, yPosition, { align: 'center' });
+    yPosition += 20;
+    
+    // التذييل
+    pdf.setFontSize(10);
+    pdf.setTextColor(100, 100, 100);
+    
+    pdf.text('شكرًا لاختياركم Shehadeh Centre', pageWidth / 2, yPosition, { align: 'center' });
+    yPosition += 7;
+    
+    pdf.text('للاستفسار: 972566888825', pageWidth / 2, yPosition, { align: 'center' });
+    
+    // تحويل إلى blob
+    return pdf.output('blob');
+}
+
+// دالة لإنشاء فاتورة نصية (كبديل)
+function createTextInvoice(name, phone, dateTime, invoiceNumber, subtotal) {
+    let invoiceText = '';
+    
+    invoiceText += `━━━━━━━━━━━━━━━━━━━━\n`;
+    invoiceText += `📋 فاتورة: ${invoiceNumber}\n`;
+    invoiceText += `📅 التاريخ: ${dateTime}\n`;
+    invoiceText += `👤 العميل: ${name}\n`;
+    invoiceText += `📞 الهاتف: ${phone}\n`;
+    invoiceText += `━━━━━━━━━━━━━━━━━━━━\n\n`;
+    
+    invoiceText += `🛒 المنتجات المطلوبة:\n`;
+    invoiceText += `─────────────────────\n`;
+    
+    cart.forEach((item, index) => {
+        const cleanName = item.name.replace(/<br>/g, ' ').replace(/بار/g, '').trim();
+        const itemTotal = item.price * item.quantity;
+        
+        invoiceText += `${index + 1}. ${item.category} - ${cleanName}\n`;
+        invoiceText += `   الكمية: ${item.quantity} | السعر: ${item.price.toFixed(2)} ₪\n`;
+        invoiceText += `   المجموع: ${itemTotal.toFixed(2)} ₪\n`;
+        
+        // إضافة رابط الصورة
+        if (item.image && item.image !== '') {
+            invoiceText += `   📸 ${item.image}\n`;
         }
+        
+        invoiceText += `   ─────────────────────\n`;
+    });
+    
+    invoiceText += `\n💰 الإجماليات:\n`;
+    invoiceText += `─────────────────────\n`;
+    invoiceText += `عدد المنتجات: ${cart.length}\n`;
+    invoiceText += `المجموع الجزئي: ${subtotal.toFixed(2)} ₪\n`;
+    invoiceText += `الضريبة (0%): 0.00 ₪\n`;
+    invoiceText += `━━━━━━━━━━━━━━━━━━━━\n`;
+    invoiceText += `الإجمالي النهائي: ${subtotal.toFixed(2)} ₪\n`;
+    invoiceText += `━━━━━━━━━━━━━━━━━━━━\n\n`;
+    
+    invoiceText += `📌 ملاحظات:\n`;
+    invoiceText += `• هذه فاتورة إلكترونية رسمية\n`;
+    invoiceText += `• للاستفسار: 972566888825\n`;
+    invoiceText += `• شكرًا لاختياركم Shehadeh Centre`;
+    
+    return invoiceText;
+}
+
+// دالة لإرسال الفاتورة عبر واتساب
+function sendInvoiceViaWhatsApp(phoneNumber, message, recipientType) {
+    const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    window.open(whatsappURL, '_blank');
+    
+    console.log(`تم إرسال الفاتورة إلى ${recipientType}: ${phoneNumber}`);
+}
+
+// دالة لحفظ PDF محلياً (اختياري)
+function savePDFLocally(pdfBlob, invoiceNumber) {
+    try {
+        const url = URL.createObjectURL(pdfBlob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = `${invoiceNumber}.pdf`;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+    } catch (error) {
+        console.log('لم يتم حفظ PDF محلياً:', error);
     }
-    
-    // 4. إضافة بادئة ونهاية
-    encrypted = `SHC_${encrypted}_END`;
-    
-    // 5. تقسيم إلى أسطر لعرض أفضل
-    const chunkSize = 60;
-    const chunks = [];
-    for (let i = 0; i < encrypted.length; i += chunkSize) {
-        chunks.push(encrypted.substring(i, i + chunkSize));
-    }
-    
-    return chunks.join('\n');
 }
 
 // دالة لمسح السلة
@@ -2671,28 +2834,6 @@ function clearCartAndReset() {
     document.querySelectorAll('.quantity-controls').forEach(controls => {
         controls.style.display = 'none';
     });
-}
-
-// دالة لحفظ بيانات الفاتورة (اختياري - لحفظ محلي)
-function saveInvoiceData(invoiceData) {
-    try {
-        const existingInvoices = JSON.parse(localStorage.getItem('shehadeh_invoices')) || [];
-        
-        existingInvoices.push({
-            ...invoiceData,
-            createdAt: new Date().toISOString(),
-            status: 'pending'
-        });
-        
-        if (existingInvoices.length > 100) {
-            existingInvoices.shift();
-        }
-        
-        localStorage.setItem('shehadeh_invoices', JSON.stringify(existingInvoices));
-        
-    } catch (error) {
-        console.error('Error saving invoice:', error);
-    }
 }
 
 function formatDateTime(date) {
