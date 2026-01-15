@@ -1706,28 +1706,26 @@
     const viewText = document.getElementById('view-text');
 
     // Data
-    let currentView = 'store'; // 'store' أو 'table'
+    let currentView = 'store';
     let products = [];
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
     // File Buttons Data
-const fileButtons = [
-    { label: 'أسعار الأجهزة', fileName: 'test.md', icon: 'fas fa-mobile-alt' },
-    { label: 'أسعار الشاشات', fileName: 'lcd.md', icon: 'fas fa-tv' },
-    { label: 'أسعار الاكسسوارات', fileName: 'abc.md', icon: 'fas fa-headphones' },
-    { label: 'أسعار معدات الصيانة', fileName: 'tools.md', icon: 'fas fa-tools' },
-    { label: 'أسعار قطع صيانة', fileName: 'flex.md', icon: 'fas fa-microchip' },
-    { label: 'أسعار البطاريات', fileName: 'batteries.md', icon: 'fas fa-car-battery' }
-];
+    const fileButtons = [
+        { label: 'أسعار الأجهزة', fileName: 'test.md', icon: 'fas fa-mobile-alt' },
+        { label: 'أسعار الشاشات', fileName: 'lcd.md', icon: 'fas fa-tv' },
+        { label: 'أسعار الاكسسوارات', fileName: 'abc.md', icon: 'fas fa-headphones' },
+        { label: 'أسعار معدات الصيانة', fileName: 'tools.md', icon: 'fas fa-tools' },
+        { label: 'أسعار قطع صيانة', fileName: 'flex.md', icon: 'fas fa-microchip' },
+        { label: 'أسعار البطاريات', fileName: 'batteries.md', icon: 'fas fa-car-battery' }
+    ];
     
     // إعدادات الإعلان
-    const AD_ENABLED = false; // تعطيل الإعلان مؤقتاً
+    const AD_ENABLED = false;
 
     // Initialize
     function init() {
-        // تحميل تفضيلات العرض
         loadViewPreference();
-        
         createFileButtons();
         loadProductsFromFile('test.md');
         renderCart();
@@ -1741,11 +1739,8 @@ const fileButtons = [
         cancelButton.addEventListener('click', hidePopup);
         scrollUpButton.addEventListener('click', scrollToTop);
         searchBox.addEventListener('input', handleSearch);
-        
-        // مستمع جديد لزر التبديل
         viewToggleBtn.addEventListener('click', toggleView);
         
-        // Hide loading screen after 2 seconds
         setTimeout(() => {
             document.getElementById('loading-screen').style.opacity = '0';
             setTimeout(() => {
@@ -1763,28 +1758,23 @@ const fileButtons = [
 
     // إنشاء زر تبديل الملفات
     function createFileButtons() {
-        // إضافة طبقة overlay لإغلاق القائمة
         filesMenuOverlay = document.createElement('div');
         filesMenuOverlay.className = 'files-menu-overlay';
         document.body.appendChild(filesMenuOverlay);
         
-        // حدث فتح/إغلاق القائمة
         toggleFilesBtn.addEventListener('click', (e) => {
             e.stopPropagation();
             toggleFilesMenu();
         });
         
-        // إغلاق القائمة عند النقر خارجها
         filesMenuOverlay.addEventListener('click', () => {
             closeFilesMenu();
         });
         
-        // إنشاء خيارات القائمة
         fileButtons.forEach((buttonInfo, index) => {
             const option = document.createElement('button');
             option.className = 'file-option';
             
-            // إضافة أيقونة إذا كانت موجودة
             if (buttonInfo.icon) {
                 option.innerHTML = `<i class="${buttonInfo.icon}"></i> ${buttonInfo.label}`;
             } else {
@@ -1793,30 +1783,22 @@ const fileButtons = [
             
             option.dataset.fileName = buttonInfo.fileName;
             
-            // تحديد الخيار النشط افتراضياً
             if (index === 0) {
                 option.classList.add('active');
             }
             
             option.onclick = (e) => {
                 e.stopPropagation();
-                
-                // تحديث الزر الرئيسي
                 updateSelectedFile(buttonInfo.label, buttonInfo.fileName);
                 
-                // تحديث الخيار النشط
                 document.querySelectorAll('.file-option').forEach(opt => {
                     opt.classList.remove('active');
                 });
                 option.classList.add('active');
                 
-                // تحميل المنتجات
                 loadProductsFromFile(buttonInfo.fileName);
-                
-                // إغلاق القائمة
                 closeFilesMenu();
                 
-                // تأثير عند التحديد
                 option.style.backgroundColor = '#e8f4f8';
                 setTimeout(() => {
                     option.style.backgroundColor = '';
@@ -1826,17 +1808,14 @@ const fileButtons = [
             filesMenu.appendChild(option);
         });
         
-        // تحميل الملف الافتراضي عند البدء
         loadProductsFromFile(fileButtons[0].fileName);
     }
 
-    // ============ حفظ واستعادة تفضيلات العرض ============
-    // حفظ وضعية العرض في localStorage
+    // حفظ واستعادة تفضيلات العرض
     function saveViewPreference() {
         localStorage.setItem('productView', currentView);
     }
 
-    // استعادة وضعية العرض من localStorage
     function loadViewPreference() {
         const savedView = localStorage.getItem('productView');
         if (savedView === 'store' || savedView === 'table') {
@@ -1845,21 +1824,13 @@ const fileButtons = [
         }
     }
 
-    // تبديل العرض بين المتجر والجدول
     function toggleView() {
         currentView = currentView === 'store' ? 'table' : 'store';
-        
-        // تحديث الزر
         updateViewButton();
-        
-        // حفظ التفضيلات
         saveViewPreference();
-        
-        // إعادة عرض المنتجات بالشكل الجديد
         renderProducts();
     }
 
-    // تحديث زر التبديل
     function updateViewButton() {
         if (currentView === 'store') {
             viewIcon.className = 'fas fa-th-large';
@@ -1872,7 +1843,6 @@ const fileButtons = [
         }
     }
 
-    // عرض المنتجات بناءً على الوضع الحالي
     function renderProducts() {
         const categoriesContainer = document.getElementById('categories');
         categoriesContainer.innerHTML = '';
@@ -1884,9 +1854,7 @@ const fileButtons = [
         }
     }
 
-    // العرض كمتجر
     function renderStoreView() {
-        const categoriesContainer = document.getElementById('categories');
         const categories = [...new Set(products.map(p => p.category))];
         
         categories.forEach(category => {
@@ -1899,33 +1867,24 @@ const fileButtons = [
         });
     }
 
-    // العرض كجدول
     function renderTableView() {
-        const categoriesContainer = document.getElementById('categories');
-        categoriesContainer.innerHTML = '';
-        
-        // تجميع المنتجات حسب الفئة
         const categories = [...new Set(products.map(p => p.category))];
         
         categories.forEach(category => {
-            // إنشاء قسم الفئة
             const categorySection = document.createElement('div');
             categorySection.className = 'category-table-section';
             
-            // عنوان الفئة
             const categoryTitle = document.createElement('h2');
             categoryTitle.className = 'category-title';
             categoryTitle.textContent = category;
             categorySection.appendChild(categoryTitle);
             
-            // إنشاء جدول للفئة
             const tableContainer = document.createElement('div');
             tableContainer.className = 'products-table-container';
             
             const table = document.createElement('table');
             table.className = 'products-table';
             
-            // رأس الجدول
             const thead = document.createElement('thead');
             thead.innerHTML = `
                 <tr>
@@ -1935,24 +1894,17 @@ const fileButtons = [
             `;
             table.appendChild(thead);
             
-            // جسم الجدول
             const tbody = document.createElement('tbody');
             
-            // الحصول على منتجات هذه الفئة
             const categoryProducts = products.filter(p => p.category === category);
             
             categoryProducts.forEach(product => {
                 const row = document.createElement('tr');
-                
-                // تنظيف اسم المنتج
                 const cleanName = product.name.replace(/<br>/g, ' ').trim();
-                
-                // تنسيق السعر
                 const price = isNaN(product.price) ? 
                     '<span class="unavailable">غير متوفر</span>' : 
                     `<span class="price">${product.price.toFixed(2)} ₪</span>`;
                 
-                // الصف يحتوي فقط على الصنف والسعر
                 row.innerHTML = `
                     <td class="product-name-cell">${cleanName}</td>
                     <td class="product-price-cell">${price}</td>
@@ -1967,15 +1919,7 @@ const fileButtons = [
             categoriesContainer.appendChild(categorySection);
         });
     }
-
-    // تحديث جميع أزرار الإضافة في الجدول
-    function updateAllTableAddButtons() {
-        products.forEach(product => {
-            updateTableAddButton(product.name);
-        });
-    }
     
-    // تبديل فتح/إغلاق القائمة
     function toggleFilesMenu() {
         const isOpen = filesMenu.classList.contains('show');
         
@@ -1986,31 +1930,26 @@ const fileButtons = [
         }
     }
 
-    // فتح القائمة
     function openFilesMenu() {
         filesMenu.classList.add('show');
         toggleFilesBtn.classList.add('active');
         filesMenuOverlay.classList.add('show');
         
-        // إضافة تأثير للزر
         toggleFilesBtn.style.transform = 'scale(0.98)';
         setTimeout(() => {
             toggleFilesBtn.style.transform = '';
         }, 200);
     }
 
-    // إغلاق القائمة
     function closeFilesMenu() {
         filesMenu.classList.remove('show');
         toggleFilesBtn.classList.remove('active');
         filesMenuOverlay.classList.remove('show');
     }
 
-    // تحديث التسمية عند اختيار ملف
     function updateSelectedFile(label, fileName) {
         currentFileLabel.textContent = label;
         
-        // إضافة تأثير تغيير النص
         currentFileLabel.style.opacity = '0.5';
         currentFileLabel.style.transform = 'translateY(5px)';
         
@@ -2018,7 +1957,6 @@ const fileButtons = [
             currentFileLabel.style.opacity = '1';
             currentFileLabel.style.transform = 'translateY(0)';
             
-            // إضافة مؤقت للإشارة إلى التحديث
             toggleFilesBtn.style.backgroundColor = 'rgba(11, 181, 176, 0.2)';
             setTimeout(() => {
                 toggleFilesBtn.style.backgroundColor = '';
@@ -2026,9 +1964,7 @@ const fileButtons = [
         }, 150);
     }
     
-    // تحميل المنتجات من الملف مع مؤشر التحميل
     function loadProductsFromFile(fileName) {
-        // إظهار مؤشر التحميل
         const originalLabel = document.getElementById('current-file-label').textContent;
         document.getElementById('current-file-label').textContent = 'جاري التحميل...';
         const toggleBtn = document.getElementById('toggle-files-btn');
@@ -2052,18 +1988,15 @@ const fileButtons = [
                     }
                 });
                 
-                // استبدل renderCategories بـ renderProducts
                 renderProducts();
                 createFilterButtons();
                 
-                // إعادة التسمية الأصلية
                 const selectedFile = fileButtons.find(f => f.fileName === fileName);
                 if (selectedFile) {
                     document.getElementById('current-file-label').textContent = selectedFile.label;
                 }
                 if (toggleBtn) toggleBtn.disabled = false;
                 
-                // إظهار إشعار
                 showNotification(`تم تحميل ${products.length} منتج`);
             })
             .catch(error => {
@@ -2074,12 +2007,10 @@ const fileButtons = [
             });
     }
     
-    // Create Product Element
     function createProductElement(product) {
         const productDiv = document.createElement('div');
         productDiv.className = 'product fade-in';
         
-        // Product Image
         const productImgContainer = document.createElement('div');
         productImgContainer.className = 'product-img-container';
         
@@ -2093,17 +2024,14 @@ const fileButtons = [
         productImgContainer.appendChild(productImage);
         productDiv.appendChild(productImgContainer);
         
-        // Product Content
         const productContent = document.createElement('div');
         productContent.className = 'product-content';
         
-        // Product Category
         const productCategory = document.createElement('div');
         productCategory.className = 'product-category';
         productCategory.textContent = product.category;
         productContent.appendChild(productCategory);
         
-        // Product Name
         const productName = document.createElement('div');
         productName.className = 'product-name';
         
@@ -2119,7 +2047,6 @@ const fileButtons = [
         
         productContent.appendChild(productName);
         
-        // Product Price
         const productPrice = document.createElement('div');
         productPrice.className = 'product-price';
         
@@ -2129,11 +2056,9 @@ const fileButtons = [
         productPrice.innerHTML = `<span class="${priceClass}">${price}</span>`;
         productContent.appendChild(productPrice);
         
-        // Product Actions
         const productActions = document.createElement('div');
         productActions.className = 'product-actions';
         
-        // Add to Cart Button
         const addToCartBtn = document.createElement('button');
         addToCartBtn.className = 'add-to-cart-btn';
         addToCartBtn.innerHTML = '<i class="fas fa-shopping-cart"></i> إضافة للسلة';
@@ -2150,7 +2075,6 @@ const fileButtons = [
         
         productActions.appendChild(addToCartBtn);
         
-        // Quantity Controls
         const quantityControls = document.createElement('div');
         quantityControls.className = 'quantity-controls';
         
@@ -2174,7 +2098,6 @@ const fileButtons = [
         quantityControls.appendChild(quantityInput);
         quantityControls.appendChild(increaseBtn);
         
-        // Check if product is in cart
         const existingProduct = cart.find(item => item.name === product.name);
         if (existingProduct) {
             addToCartBtn.style.display = 'none';
@@ -2189,18 +2112,15 @@ const fileButtons = [
         return productDiv;
     }
     
-    // Create Filter Buttons
     function createFilterButtons() {
         filterButtonsContainer.innerHTML = '';
         
-        // All Button
         const allButton = document.createElement('button');
         allButton.textContent = 'الكل';
         allButton.className = 'filter-btn active';
         allButton.onclick = () => filterProducts('All');
         filterButtonsContainer.appendChild(allButton);
         
-        // Category Buttons
         const categories = [...new Set(products.map(p => p.category))];
         categories.forEach(category => {
             const button = document.createElement('button');
@@ -2211,63 +2131,49 @@ const fileButtons = [
         });
     }
     
-    // Filter Products
     function filterProducts(category) {
         const filteredProducts = category === 'All' 
             ? products 
             : products.filter(p => p.category === category);
         renderFilteredProducts(filteredProducts);
 
-        // Update active button
         document.querySelectorAll('.filter-btn').forEach(btn => {
             btn.classList.remove('active');
         });
         event.target.classList.add('active');
     }
 
-    // Render Filtered Products
     function renderFilteredProducts(filteredProducts) {
         categoriesContainer.innerHTML = '';
         
         if (currentView === 'store') {
-            // العرض كمتجر
             filteredProducts.forEach(product => {
                 const productElement = createProductElement(product);
                 categoriesContainer.appendChild(productElement);
             });
         } else {
-            // العرض كجدول
             renderFilteredProductsTable(filteredProducts);
         }
     }
 
-    // دالة لعرض المنتجات المصفاة كجدول
     function renderFilteredProductsTable(filteredProducts) {
-        const categoriesContainer = document.getElementById('categories');
-        categoriesContainer.innerHTML = '';
-        
-        // تجميع المنتجات المصفاة حسب الفئة
         const filteredCategories = [...new Set(filteredProducts.map(p => p.category))];
         
         filteredCategories.forEach(category => {
-            // إنشاء قسم الفئة
             const categorySection = document.createElement('div');
             categorySection.className = 'category-table-section';
             
-            // عنوان الفئة
             const categoryTitle = document.createElement('h2');
             categoryTitle.className = 'category-title';
             categoryTitle.textContent = category;
             categorySection.appendChild(categoryTitle);
             
-            // إنشاء جدول للفئة
             const tableContainer = document.createElement('div');
             tableContainer.className = 'products-table-container';
             
             const table = document.createElement('table');
             table.className = 'products-table';
             
-            // رأس الجدول
             const thead = document.createElement('thead');
             thead.innerHTML = `
                 <tr>
@@ -2277,15 +2183,12 @@ const fileButtons = [
             `;
             table.appendChild(thead);
             
-            // جسم الجدول
             const tbody = document.createElement('tbody');
             
-            // الحصول على منتجات هذه الفئة
             const categoryProducts = filteredProducts.filter(p => p.category === category);
             
             categoryProducts.forEach(product => {
                 const row = document.createElement('tr');
-                
                 const cleanName = product.name.replace(/<br>/g, ' ').trim();
                 const price = isNaN(product.price) ? 
                     '<span class="unavailable">غير متوفر</span>' : 
@@ -2306,7 +2209,6 @@ const fileButtons = [
         });
     }
 
-    // Handle Search - نسخة محسنة مع دعم التظليل في كلا الوضعين
     function handleSearch() {
         const searchTerm = searchBox.value.toLowerCase().trim();
         
@@ -2321,9 +2223,7 @@ const fileButtons = [
         
         renderFilteredProducts(filteredProducts);
         
-        // Highlight matching text in both views
         if (searchTerm) {
-            // حالة العرض كمتجر
             if (currentView === 'store') {
                 document.querySelectorAll('.product-name, .product-category').forEach(el => {
                     const text = el.textContent;
@@ -2331,7 +2231,6 @@ const fileButtons = [
                     el.innerHTML = text.replace(regex, '<mark class="search-highlight">$1</mark>');
                 });
             } 
-            // حالة العرض كجدول
             else if (currentView === 'table') {
                 document.querySelectorAll('.product-name-cell').forEach(el => {
                     const text = el.textContent;
@@ -2346,7 +2245,6 @@ const fileButtons = [
                 });
             }
         } else {
-            // إزالة التظليل إذا كان البحث فارغاً
             if (currentView === 'store') {
                 document.querySelectorAll('.product-name, .product-category').forEach(el => {
                     el.innerHTML = el.textContent;
@@ -2359,7 +2257,6 @@ const fileButtons = [
         }
     }
     
-    // Cart Functions
     function toggleCart() {
         cartElement.classList.toggle('open');
     }
@@ -2394,12 +2291,10 @@ const fileButtons = [
         }
     }
 
-    // تحديث واجهة المنتج المحدد فقط
     function refreshProductUI(productName) {
         const product = products.find(p => p.name === productName);
         if (!product) return;
 
-        // البحث عن العنصر في الصفحة واستبداله
         const oldElement = [...categoriesContainer.children].find(el =>
             el.querySelector('.product-name strong')?.innerText.includes(productName)
         );
@@ -2428,13 +2323,11 @@ const fileButtons = [
             const cartItem = document.createElement('div');
             cartItem.className = 'cart-item';
             
-            // Item Image
             const itemImg = document.createElement('img');
             itemImg.className = 'cart-item-img';
             itemImg.src = item.image;
             itemImg.alt = item.name;
             
-            // Item Details
             const itemDetails = document.createElement('div');
             itemDetails.className = 'cart-item-details';
             
@@ -2446,7 +2339,6 @@ const fileButtons = [
             itemPrice.className = 'cart-item-price';
             itemPrice.textContent = `${item.price.toFixed(2)} ₪`;
             
-            // Item Actions
             const itemActions = document.createElement('div');
             itemActions.className = 'cart-item-actions';
             
@@ -2511,8 +2403,6 @@ const fileButtons = [
         const count = cart.reduce((total, item) => total + item.quantity, 0);
         cartCount.textContent = count;
     }
-
-    // ============ دوال نظام الفاتورة الجديد ============
     
     // Order Functions
     function showPopup() {
@@ -2530,281 +2420,282 @@ const fileButtons = [
         customerPhoneInput.value = '';
     }
 
-function confirmOrder() {
-    const name = customerNameInput.value.trim();
-    const phone = customerPhoneInput.value.trim();
-    
-    if (!name || !phone) {
-        showNotification('الرجاء إدخال الاسم ورقم الهاتف');
-        return;
-    }
-    
-    const now = new Date();
-    const dateTime = formatDateTime(now);
-    const invoiceNumber = generateInvoiceNumber();
-    const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-    
-    // إظهار رسالة تحضير PDF
-    showNotification('جاري إنشاء الفاتورة...');
-    
-    try {
-        // إنشاء PDF
-        const pdfBlob = generatePDF(name, phone, dateTime, invoiceNumber, subtotal);
+    // دالة تأكيد الطلب الرئيسية
+    function confirmOrder() {
+        const name = customerNameInput.value.trim();
+        const phone = customerPhoneInput.value.trim();
         
-        // حفظ PDF محلياً للحصول على رابط
-        const pdfUrl = URL.createObjectURL(pdfBlob);
+        if (!name || !phone) {
+            showNotification('الرجاء إدخال الاسم ورقم الهاتف');
+            return;
+        }
         
-        // إعداد رسالة واتساب
-        const whatsappMessage = `⭐️ فاتورة جديدة - Shehadeh Centre ⭐️
-
-📋 فاتورة رقم: ${invoiceNumber}
-📅 التاريخ: ${dateTime}
-👤 العميل: ${name}
-📞 هاتف العميل: ${phone}
-
-🛒 عدد المنتجات: ${cart.length}
-💰 الإجمالي: ${subtotal.toFixed(2)} ₪
-
-📌 ملاحظات:
-• هذه فاتورة إلكترونية
-• سيتم توصيل الطلب خلال 24-48 ساعة
-• للاستفسار: 972566888825
-
-شكرًا لاختياركم Shehadeh Centre ⭐️`;
+        // إظهار رسالة تحضير
+        showNotification('جاري إنشاء الفاتورة وإعدادها للإرسال...');
         
-        // رقم هاتف الشركة
-        const companyPhone = '972566888825';
-        
-        // ترميز الرسالة والملف
-        const encodedMessage = encodeURIComponent(whatsappMessage);
-        
-        // رابط واتساب مع الرسالة والمرفق
-        const whatsappURL = `https://wa.me/${companyPhone}?text=${encodedMessage}`;
-        
-        // إنشاء رابط لتحميل PDF مؤقت
-        const downloadLink = document.createElement('a');
-        downloadLink.href = pdfUrl;
-        downloadLink.download = `${invoiceNumber}.pdf`;
-        document.body.appendChild(downloadLink);
-        
-        // بعد 1 ثانية، افتح واتساب
-        setTimeout(() => {
-            // افتح واتساب في نافذة جديدة
-            window.open(whatsappURL, '_blank');
+        try {
+            // إنشاء الفاتورة النصية أولاً
+            const textInvoice = createTextInvoice(name, phone);
             
-            // بعد 2 ثانية، تلميح للمستخدم لرفع الملف يدويًا
+            // إنشاء PDF
+            const pdfBlob = generatePDF(name, phone);
+            
+            // حفظ PDF محلياً
+            const pdfUrl = URL.createObjectURL(pdfBlob);
+            
+            // إعداد رسالة واتساب
+            const message = `السلام عليكم ورحمة الله وبركاته
+
+فاتورة جديدة من متجر شحادة سنتر
+
+الاسم: ${name}
+رقم الهاتف: ${phone}
+
+${textInvoice}
+
+شكراً لتعاملكم معنا
+Shehadeh Centre
+972566888825`;
+            
+            // ترميز الرسالة
+            const encodedMessage = encodeURIComponent(message);
+            
+            // إنشاء رابط واتساب
+            const whatsappLink = `https://wa.me/972566888825?text=${encodedMessage}`;
+            
+            // فتح واتساب في نافذة جديدة
+            const whatsappWindow = window.open(whatsappLink, '_blank');
+            
+            // تنزيل PDF تلقائياً
             setTimeout(() => {
-                showNotification('الرجاء رفع ملف PDF يدويًا في واتساب');
+                const link = document.createElement('a');
+                link.href = pdfUrl;
+                link.download = `فاتورة_${name}_${Date.now()}.pdf`;
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
                 
-                // تقديم خيار لتحميل PDF إذا احتاج
-                const downloadBtn = document.createElement('button');
-                downloadBtn.textContent = 'تحميل PDF للرفع اليدوي';
-                downloadBtn.style.cssText = `
-                    position: fixed;
-                    top: 20px;
-                    right: 20px;
-                    z-index: 1000;
-                    background: #25D366;
-                    color: white;
-                    padding: 10px 15px;
-                    border: none;
-                    border-radius: 5px;
-                    cursor: pointer;
-                    font-family: inherit;
-                `;
-                downloadBtn.onclick = () => {
-                    downloadLink.click();
-                    downloadBtn.remove();
-                };
-                document.body.appendChild(downloadBtn);
-                
-                // إزالة الزر بعد 30 ثانية
+                // تحذير المستخدم لرفع الملف
                 setTimeout(() => {
-                    if (downloadBtn.parentNode) {
-                        downloadBtn.remove();
+                    showNotification('يرجى رفع ملف PDF في نافذة واتساب');
+                    if (whatsappWindow && !whatsappWindow.closed) {
+                        whatsappWindow.focus();
                     }
-                }, 30000);
+                }, 1000);
                 
-            }, 2000);
+            }, 500);
             
-        }, 1000);
-        
-        // مسح السلة
-        clearCartAndReset();
-        hidePopup();
-        
-        showNotification('تم إنشاء الفاتورة، جاري فتح واتساب...');
-        
-        // تنظيف رابط PDF بعد 5 دقائق
-        setTimeout(() => {
-            URL.revokeObjectURL(pdfUrl);
-        }, 300000);
-        
-    } catch (error) {
-        console.error('خطأ في إنشاء الفاتورة:', error);
-        
-        // النسخة الاحتياطية النصية
-        const textInvoice = createTextInvoice(name, phone, dateTime, invoiceNumber, subtotal);
-        const whatsappMessage = `⭐️ فاتورة جديدة - Shehadeh Centre ⭐️\n\n${textInvoice}`;
-        const companyPhone = '972566888825';
-        const whatsappURL = `https://wa.me/${companyPhone}?text=${encodeURIComponent(whatsappMessage)}`;
-        
-        // افتح واتساب مباشرة
-        window.open(whatsappURL, '_blank');
-        
-        // مسح السلة
-        clearCartAndReset();
-        hidePopup();
-        
-        showNotification('تم إرسال الفاتورة النصية على واتساب');
-    }
-}
+            // مسح السلة وإغلاق النافذة
+            clearCartAndReset();
+            hidePopup();
+            
+            // نظف الذاكرة بعد دقيقة
+            setTimeout(() => {
+                URL.revokeObjectURL(pdfUrl);
+            }, 60000);
+            
+        } catch (error) {
+            console.error('خطأ في إنشاء الفاتورة:', error);
+            
+            // النسخة الاحتياطية: إرسال نص فقط
+            const backupMessage = `فاتورة جديدة
+الاسم: ${name}
+رقم الهاتف: ${phone}
 
-// دالة محسنة لإنشاء PDF
-function generatePDF(name, phone, dateTime, invoiceNumber, subtotal) {
-    const { jsPDF } = window.jspdf;
-    const pdf = new jsPDF('p', 'mm', 'a4');
-    const pageWidth = pdf.internal.pageSize.getWidth();
-    const margin = 20;
-    let yPosition = margin;
-    
-    // العنوان الرئيسي
-    pdf.setFontSize(24);
-    pdf.setTextColor(11, 91, 168);
-    pdf.text('⭐️ Shehadeh Centre ⭐️', pageWidth / 2, yPosition, { align: 'center' });
-    yPosition += 15;
-    
-    pdf.setFontSize(16);
-    pdf.setTextColor(100, 100, 100);
-    pdf.text('فاتورة إلكترونية رسمية', pageWidth / 2, yPosition, { align: 'center' });
-    yPosition += 20;
-    
-    // معلومات الفاتورة
-    pdf.setFontSize(14);
-    pdf.setTextColor(0, 0, 0);
-    
-    pdf.text(`رقم الفاتورة: ${invoiceNumber}`, pageWidth - margin, yPosition, { align: 'right' });
-    yPosition += 8;
-    pdf.text(`التاريخ: ${dateTime}`, pageWidth - margin, yPosition, { align: 'right' });
-    yPosition += 15;
-    
-    // معلومات العميل
-    pdf.setFontSize(12);
-    pdf.setTextColor(11, 91, 168);
-    pdf.text('معلومات العميل:', margin, yPosition);
-    yPosition += 8;
-    
-    pdf.setFontSize(11);
-    pdf.setTextColor(0, 0, 0);
-    pdf.text(`الاسم: ${name}`, margin + 5, yPosition);
-    yPosition += 7;
-    pdf.text(`الهاتف: ${phone}`, margin + 5, yPosition);
-    yPosition += 15;
-    
-    // جدول المنتجات
-    pdf.setFontSize(14);
-    pdf.setTextColor(11, 91, 168);
-    pdf.text('تفاصيل الطلب:', margin, yPosition);
-    yPosition += 10;
-    
-    // رأس الجدول
-    pdf.setFillColor(240, 248, 255);
-    pdf.rect(margin, yPosition, pageWidth - (2 * margin), 10, 'F');
-    
-    pdf.setFontSize(10);
-    pdf.setTextColor(11, 91, 168);
-    pdf.text('الصنف', margin + 5, yPosition + 7);
-    pdf.text('الكمية', margin + 120, yPosition + 7);
-    pdf.text('السعر', margin + 150, yPosition + 7);
-    pdf.text('المجموع', pageWidth - margin - 30, yPosition + 7);
-    
-    yPosition += 12;
-    
-    // تفاصيل المنتجات
-    pdf.setTextColor(0, 0, 0);
-    
-    cart.forEach((item, index) => {
-        const cleanName = item.name.replace(/<br>/g, ' ').replace(/بار/g, '').trim();
-        const itemTotal = item.price * item.quantity;
-        
-        // تقطيع النص إذا كان طويلاً
-        const lines = pdf.splitTextToSize(`${item.category} - ${cleanName}`, 70);
-        
-        lines.forEach((line, lineIndex) => {
-            if (yPosition > 250) { // صفحة جديدة إذا لزم الأمر
-                pdf.addPage();
-                yPosition = margin;
-            }
+${createSimpleTextInvoice()}
+
+Shehadeh Centre - 972566888825`;
             
-            if (lineIndex === 0) {
-                pdf.text(line, margin + 5, yPosition + 7);
-                pdf.text(item.quantity.toString(), margin + 120, yPosition + 7);
-                pdf.text(`${item.price.toFixed(2)} ₪`, margin + 150, yPosition + 7);
-                pdf.text(`${itemTotal.toFixed(2)} ₪`, pageWidth - margin - 30, yPosition + 7);
-            } else {
-                pdf.text(line, margin + 5, yPosition + 7);
-            }
+            const encodedMessage = encodeURIComponent(backupMessage);
+            window.open(`https://wa.me/972566888825?text=${encodedMessage}`, '_blank');
             
-            yPosition += 8;
+            clearCartAndReset();
+            hidePopup();
+            showNotification('تم إرسال الفاتورة النصية');
+        }
+    }
+
+    // دالة لإنشاء نص الفاتورة
+    function createTextInvoice(name, phone) {
+        const now = new Date();
+        const invoiceNumber = generateInvoiceNumber();
+        const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+        
+        let invoiceText = `📋 فاتورة رقم: ${invoiceNumber}\n`;
+        invoiceText += `📅 التاريخ: ${formatDateTime(now)}\n`;
+        invoiceText += `👤 العميل: ${name}\n`;
+        invoiceText += `📞 الهاتف: ${phone}\n\n`;
+        invoiceText += `🛒 المنتجات المطلوبة:\n`;
+        invoiceText += `─────────────────────\n`;
+        
+        cart.forEach((item, index) => {
+            const cleanName = item.name.replace(/<br>/g, ' ').trim();
+            const itemTotal = item.price * item.quantity;
+            
+            invoiceText += `${index + 1}. ${item.category} - ${cleanName}\n`;
+            invoiceText += `   الكمية: ${item.quantity} × ${item.price.toFixed(2)} ₪ = ${itemTotal.toFixed(2)} ₪\n`;
+            invoiceText += `─────────────────────\n`;
         });
         
-        // خط فاصل بين المنتجات
-        pdf.setDrawColor(200, 200, 200);
-        pdf.setLineWidth(0.1);
-        pdf.line(margin, yPosition, pageWidth - margin, yPosition);
-        yPosition += 5;
-    });
-    
-    yPosition += 10;
-    
-    // الإجماليات
-    pdf.setFontSize(12);
-    pdf.setTextColor(0, 0, 0);
-    
-    pdf.text(`عدد المنتجات: ${cart.length}`, pageWidth - margin - 5, yPosition, { align: 'right' });
-    yPosition += 8;
-    pdf.text(`المجموع الجزئي: ${subtotal.toFixed(2)} ₪`, pageWidth - margin - 5, yPosition, { align: 'right' });
-    yPosition += 8;
-    pdf.text(`الضريبة (0%): 0.00 ₪`, pageWidth - margin - 5, yPosition, { align: 'right' });
-    yPosition += 12;
-    
-    // خط فاصل
-    pdf.setDrawColor(11, 139, 156);
-    pdf.setLineWidth(1);
-    pdf.line(margin, yPosition, pageWidth - margin, yPosition);
-    yPosition += 10;
-    
-    // الإجمالي النهائي
-    pdf.setFontSize(18);
-    pdf.setTextColor(255, 87, 34);
-    pdf.text(`الإجمالي النهائي: ${subtotal.toFixed(2)} ₪`, pageWidth / 2, yPosition, { align: 'center' });
-    yPosition += 20;
-    
-    // التذييل
-    pdf.setFontSize(10);
-    pdf.setTextColor(100, 100, 100);
-    
-    pdf.text('شكرًا لاختياركم Shehadeh Centre', pageWidth / 2, yPosition, { align: 'center' });
-    yPosition += 6;
-    pdf.text('للاستفسار: 972566888825 | تواصل واتساب مباشرة', pageWidth / 2, yPosition, { align: 'center' });
-    yPosition += 6;
-    pdf.text('توقيع: ____________________', pageWidth / 2, yPosition, { align: 'center' });
-    
-    // إضافة باركود بسيط (اختياري)
-    yPosition += 15;
-    pdf.setFontSize(8);
-    pdf.setTextColor(150, 150, 150);
-    pdf.text(`Invoice ID: ${invoiceNumber} | Generated: ${new Date().toISOString()}`, pageWidth / 2, yPosition, { align: 'center' });
-    
-    // تحويل إلى blob
-    return pdf.output('blob');
-}
+        invoiceText += `\n💰 الإجمالي: ${subtotal.toFixed(2)} ₪\n`;
+        invoiceText += `━━━━━━━━━━━━━━━━━━━━\n\n`;
+        invoiceText += `شكراً لاختياركم Shehadeh Centre\n`;
+        invoiceText += `للاستفسار: 972566888825`;
+        
+        return invoiceText;
+    }
 
-// إضافة هذه الوظيفة المساعدة للرسائل
-function showNotification(message, duration = 3000) {
-    // كود عرض الإشعار الخاص بك
-    console.log(message);
-}
+    // دالة لإنشاء نص مختصر
+    function createSimpleTextInvoice() {
+        const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+        
+        let text = `تفاصيل الطلب:\n`;
+        cart.forEach(item => {
+            text += `- ${item.category}: ${item.name.replace(/<br>/g, ' ')} × ${item.quantity} = ${(item.price * item.quantity).toFixed(2)} ₪\n`;
+        });
+        text += `\nالمجموع: ${subtotal.toFixed(2)} ₪`;
+        
+        return text;
+    }
+
+    // دالة لإنشاء PDF
+    function generatePDF(name, phone) {
+        const { jsPDF } = window.jspdf;
+        const pdf = new jsPDF();
+        const pageWidth = pdf.internal.pageSize.getWidth();
+        const margin = 20;
+        let y = margin;
+        
+        // العنوان
+        pdf.setFontSize(24);
+        pdf.setTextColor(11, 91, 168);
+        pdf.text('Shehadeh Centre', pageWidth / 2, y, { align: 'center' });
+        y += 15;
+        
+        pdf.setFontSize(16);
+        pdf.text('فاتورة إلكترونية', pageWidth / 2, y, { align: 'center' });
+        y += 20;
+        
+        // معلومات الفاتورة
+        pdf.setFontSize(12);
+        pdf.setTextColor(0, 0, 0);
+        
+        const now = new Date();
+        const invoiceNumber = generateInvoiceNumber();
+        
+        pdf.text(`رقم الفاتورة: ${invoiceNumber}`, pageWidth - margin, y, { align: 'right' });
+        y += 8;
+        pdf.text(`التاريخ: ${formatDateTime(now)}`, pageWidth - margin, y, { align: 'right' });
+        y += 15;
+        
+        // معلومات العميل
+        pdf.text(`الاسم: ${name}`, margin, y);
+        y += 8;
+        pdf.text(`الهاتف: ${phone}`, margin, y);
+        y += 15;
+        
+        // جدول المنتجات
+        pdf.setFontSize(14);
+        pdf.setTextColor(11, 91, 168);
+        pdf.text('تفاصيل المنتجات:', margin, y);
+        y += 10;
+        
+        pdf.setFontSize(10);
+        pdf.setTextColor(100, 100, 100);
+        
+        let tableY = y;
+        
+        // رأس الجدول
+        pdf.setFillColor(240, 248, 255);
+        pdf.rect(margin, tableY, pageWidth - (2 * margin), 10, 'F');
+        
+        pdf.setTextColor(11, 91, 168);
+        pdf.text('الصنف', margin + 5, tableY + 7);
+        pdf.text('الكمية', margin + 120, tableY + 7);
+        pdf.text('السعر', margin + 150, tableY + 7);
+        pdf.text('المجموع', pageWidth - margin - 30, tableY + 7);
+        
+        tableY += 12;
+        
+        // المنتجات
+        pdf.setTextColor(0, 0, 0);
+        
+        cart.forEach((item, index) => {
+            const cleanName = item.name.replace(/<br>/g, ' ').trim();
+            const itemTotal = item.price * item.quantity;
+            
+            if (tableY > 250) {
+                pdf.addPage();
+                tableY = margin;
+            }
+            
+            pdf.text(`${item.category} - ${cleanName}`, margin + 5, tableY + 7);
+            pdf.text(item.quantity.toString(), margin + 120, tableY + 7);
+            pdf.text(`${item.price.toFixed(2)} ₪`, margin + 150, tableY + 7);
+            pdf.text(`${itemTotal.toFixed(2)} ₪`, pageWidth - margin - 30, tableY + 7);
+            
+            tableY += 10;
+        });
+        
+        y = tableY + 10;
+        
+        // الإجماليات
+        const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+        
+        pdf.setFontSize(12);
+        pdf.text(`المجموع: ${subtotal.toFixed(2)} ₪`, pageWidth - margin, y, { align: 'right' });
+        y += 15;
+        
+        // التذييل
+        pdf.setFontSize(10);
+        pdf.setTextColor(100, 100, 100);
+        pdf.text('شكراً لاختياركم Shehadeh Centre', pageWidth / 2, y, { align: 'center' });
+        y += 6;
+        pdf.text('للاستفسار: 972566888825', pageWidth / 2, y, { align: 'center' });
+        
+        return pdf.output('blob');
+    }
+
+    // دالة لتوليد رقم فاتورة
+    function generateInvoiceNumber() {
+        const now = new Date();
+        const year = now.getFullYear().toString().slice(-2);
+        const month = (now.getMonth() + 1).toString().padStart(2, '0');
+        const day = now.getDate().toString().padStart(2, '0');
+        const random = Math.floor(Math.random() * 1000).toString().padStart(3, '0');
+        return `SHC-${year}${month}${day}-${random}`;
+    }
+
+    // دالة تنسيق التاريخ والوقت
+    function formatDateTime(date) {
+        const day = date.getDate().toString().padStart(2, '0');
+        const month = (date.getMonth() + 1).toString().padStart(2, '0');
+        const year = date.getFullYear();
+        let hours = date.getHours();
+        const minutes = date.getMinutes().toString().padStart(2, '0');
+        const ampm = hours >= 12 ? 'م' : 'ص';
+        hours = hours % 12;
+        hours = hours ? hours : 12;
+        return `${day}/${month}/${year} ${hours}:${minutes}${ampm}`;
+    }
+
+    // دالة لمسح السلة
+    function clearCartAndReset() {
+        cart = [];
+        saveCart();
+        renderCart();
+        updateCartCount();
+        
+        document.querySelectorAll('.add-to-cart-btn').forEach(btn => {
+            btn.style.display = 'block';
+        });
+        
+        document.querySelectorAll('.quantity-controls').forEach(controls => {
+            controls.style.display = 'none';
+        });
+        
+        showNotification('تم تأكيد الطلب ومسح السلة');
+    }
 
     // Notification
     function showNotification(text) {
@@ -2825,30 +2716,24 @@ function showNotification(message, duration = 3000) {
     }
 
     // ============ التحكم في النافذة الإعلانية ============
-    // التحكم في النافذة الإعلانية
     const adPopup = document.getElementById('adPopup');
     const closeAd = document.getElementById('closeAd');
     const dontShowAgain = document.getElementById('dontShowAgain');
     const adImage = document.querySelector('.ad-image');
 
-    // التحقق مما إذا كان الإعلان مفعلاً
     if (AD_ENABLED) {
-        // إعداد مفتاح للتخزين المحلي
         const AD_IMAGE_KEY = 'adImageSource';
         const currentAdImage = adImage.src;
         
         const savedAdImage = localStorage.getItem(AD_IMAGE_KEY);
         const dontShowAd = localStorage.getItem('dontShowAd');
         
-        // إذا كانت صورة الإعلان مختلفة عن المخزنة، أو لم يطلب المستخدم عدم الإظهار
         if (currentAdImage !== savedAdImage || !dontShowAd) {
-            // إظهار الإعلان بعد تحميل الصفحة
             setTimeout(() => {
                 adPopup.classList.add('show');
             }, 1000);
         }
         
-        // بقية كود التحكم بالإعلان...
         closeAd.addEventListener('click', () => {
             adPopup.classList.remove('show');
             
@@ -2869,11 +2754,10 @@ function showNotification(message, duration = 3000) {
             }
         });
     } else {
-        // إذا كان الإعلان معطلاً، أخفي النافذة
         adPopup.style.display = 'none';
     }
 
-    // Prevent zoom on mobile
+    // منع التكبير على الموبايل
     document.addEventListener('touchstart', function (event) {
         if (event.touches.length > 1) {
             event.preventDefault();
