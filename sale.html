@@ -2511,120 +2511,148 @@ const fileButtons = [
         cartCount.textContent = count;
     }
 
-    function confirmOrder() {
-    const name = customerNameInput.value.trim();
-    const phone = customerPhoneInput.value.trim();
+    // ============ دوال نظام الفاتورة الجديد ============
     
-    if (!name || !phone) {
-        showNotification('الرجاء إدخال الاسم ورقم الهاتف');
-        return;
-    }
-    
-    // إنشاء رمز فاتورة فريد
-    const invoiceCode = generateInvoiceCode();
-    const now = new Date();
-    const dateTime = formatDateTime(now);
-    
-    // إنشاء بيانات الفاتورة ككائن
-    const invoiceData = {
-        code: invoiceCode,
-        customer: { name, phone },
-        date: dateTime,
-        items: cart.map(item => ({
-            category: item.category,
-            name: item.name,
-            cleanName: item.name.replace(/<br>/g, ' ').replace(/بار/g, '').trim(),
-            price: item.price,
-            quantity: item.quantity,
-            total: item.price * item.quantity,
-            image: item.image // رابط الصورة
-        })),
-        subtotal: cart.reduce((sum, item) => sum + (item.price * item.quantity), 0)
-    };
-    
-    // حفظ الفاتورة في localStorage أو IndexedDB
-    saveInvoiceData(invoiceData);
-    
-    // إعداد رسالة واتساب مع الرمز فقط
-    let message = `⭐️ طلب جديد - Shehadeh Centre ⭐️\n`;
-    message += `━━━━━━━━━━━━━━━\n`;
-    message += `🎫 رمز الفاتورة: ${invoiceCode}\n`;
-    message += `👤 العميل: ${name}\n`;
-    message += `📞 الهاتف: ${phone}\n`;
-    message += `📅 التاريخ: ${dateTime}\n`;
-    message += `━━━━━━━━━━━━━━━\n`;
-    message += `🔢 عدد المنتجات: ${cart.length}\n`;
-    message += `💰 الإجمالي: ${invoiceData.subtotal.toFixed(2)} ₪\n`;
-    message += `━━━━━━━━━━━━━━━\n`;
-    message += `📋 لرؤية الفاتورة الكاملة مع الصور:\n`;
-    message += `https://your-decoder-site.com?code=${invoiceCode}\n`;
-    message += `(الرابط للموظفين فقط)`;
-    
-    const whatsappURL = `https://wa.me/972566888825?text=${encodeURIComponent(message)}`;
-    window.open(whatsappURL, '_blank');
-    
-    // مسح السلة
-    clearCartAndReset();
-    hidePopup();
-    
-    // إظهار الرمز للمستخدم
-    showNotification(`تم إنشاء الفاتورة برمز: ${invoiceCode}`);
-}
-
-// دالة لإنشاء رمز فريد للفاتورة
-function generateInvoiceCode() {
-    const timestamp = Date.now().toString(36); // الوقت بقاعدة 36
-    const random = Math.random().toString(36).substr(2, 4).toUpperCase(); // 4 أحرف عشوائية
-    const prefix = 'SHC'; // Shehadeh Center
-    
-    return `${prefix}-${timestamp}-${random}`;
-    // مثال: SHC-lj1x2v3-ABC4
-}
-
-// دالة لحفظ بيانات الفاتورة
-function saveInvoiceData(invoiceData) {
-    // حفظ في localStorage (للتخزين المحلي)
-    try {
-        // الحصول على الفواتير الحالية أو إنشاء مصفوفة جديدة
-        const existingInvoices = JSON.parse(localStorage.getItem('shehadeh_invoices')) || [];
-        
-        // إضافة الفاتورة الجديدة
-        existingInvoices.push({
-            ...invoiceData,
-            createdAt: new Date().toISOString(),
-            status: 'pending' // pending, completed, cancelled
-        });
-        
-        // حفظ (الحد الأقصى 100 فاتورة)
-        if (existingInvoices.length > 100) {
-            existingInvoices.shift(); // إزالة أقدم فاتورة
+    // Order Functions
+    function showPopup() {
+        if (cart.length === 0) {
+            showNotification('السلة فارغة، أضف منتجات أولاً');
+            return;
         }
         
-        localStorage.setItem('shehadeh_invoices', JSON.stringify(existingInvoices));
-        
-        // أيضاً حفظ في IndexedDB للصور الكبيرة (اختياري)
-        saveToIndexedDB(invoiceData);
-        
-    } catch (error) {
-        console.error('Error saving invoice:', error);
+        popup.style.display = 'flex';
     }
-}
 
-// دالة لمسح السلة
-function clearCartAndReset() {
-    cart = [];
-    saveCart();
-    renderCart();
-    updateCartCount();
-    
-    document.querySelectorAll('.add-to-cart-btn').forEach(btn => {
-        btn.style.display = 'block';
-    });
-    
-    document.querySelectorAll('.quantity-controls').forEach(controls => {
-        controls.style.display = 'none';
-    });
-}
+    function hidePopup() {
+        popup.style.display = 'none';
+        customerNameInput.value = '';
+        customerPhoneInput.value = '';
+    }
+
+    function confirmOrder() {
+        const name = customerNameInput.value.trim();
+        const phone = customerPhoneInput.value.trim();
+        
+        if (!name || !phone) {
+            showNotification('الرجاء إدخال الاسم ورقم الهاتف');
+            return;
+        }
+        
+        // إنشاء رمز فاتورة فريد
+        const invoiceCode = generateInvoiceCode();
+        const now = new Date();
+        const dateTime = formatDateTime(now);
+        
+        // إنشاء بيانات الفاتورة ككائن
+        const invoiceData = {
+            code: invoiceCode,
+            customer: { name, phone },
+            date: dateTime,
+            items: cart.map(item => ({
+                category: item.category,
+                name: item.name,
+                cleanName: item.name.replace(/<br>/g, ' ').replace(/بار/g, '').trim(),
+                price: item.price,
+                quantity: item.quantity,
+                total: item.price * item.quantity,
+                image: item.image // رابط الصورة
+            })),
+            subtotal: cart.reduce((sum, item) => sum + (item.price * item.quantity), 0)
+        };
+        
+        // حفظ الفاتورة في localStorage
+        saveInvoiceData(invoiceData);
+        
+        // إعداد رسالة واتساب مع الرمز فقط
+        let message = `⭐️ طلب جديد - Shehadeh Centre ⭐️\n`;
+        message += `━━━━━━━━━━━━━━━\n`;
+        message += `🎫 رمز الفاتورة: ${invoiceCode}\n`;
+        message += `👤 العميل: ${name}\n`;
+        message += `📞 الهاتف: ${phone}\n`;
+        message += `📅 التاريخ: ${dateTime}\n`;
+        message += `━━━━━━━━━━━━━━━\n`;
+        message += `🔢 عدد المنتجات: ${cart.length}\n`;
+        message += `💰 الإجمالي: ${invoiceData.subtotal.toFixed(2)} ₪\n`;
+        message += `━━━━━━━━━━━━━━━\n`;
+        message += `📋 لرؤية الفاتورة الكاملة مع الصور:\n`;
+        message += `https://your-decoder-site.com?code=${invoiceCode}\n`;
+        message += `(الرابط للموظفين فقط)`;
+        
+        const whatsappURL = `https://wa.me/972566888825?text=${encodeURIComponent(message)}`;
+        window.open(whatsappURL, '_blank');
+        
+        // مسح السلة
+        clearCartAndReset();
+        hidePopup();
+        
+        // إظهار الرمز للمستخدم
+        showNotification(`تم إنشاء الفاتورة برمز: ${invoiceCode}`);
+    }
+
+    // دالة لإنشاء رمز فريد للفاتورة
+    function generateInvoiceCode() {
+        const timestamp = Date.now().toString(36); // الوقت بقاعدة 36
+        const random = Math.random().toString(36).substr(2, 4).toUpperCase(); // 4 أحرف عشوائية
+        const prefix = 'SHC'; // Shehadeh Center
+        
+        return `${prefix}-${timestamp}-${random}`;
+        // مثال: SHC-lj1x2v3-ABC4
+    }
+
+    // دالة لحفظ بيانات الفاتورة
+    function saveInvoiceData(invoiceData) {
+        // حفظ في localStorage (للتخزين المحلي)
+        try {
+            // الحصول على الفواتير الحالية أو إنشاء مصفوفة جديدة
+            const existingInvoices = JSON.parse(localStorage.getItem('shehadeh_invoices')) || [];
+            
+            // إضافة الفاتورة الجديدة
+            existingInvoices.push({
+                ...invoiceData,
+                createdAt: new Date().toISOString(),
+                status: 'pending' // pending, completed, cancelled
+            });
+            
+            // حفظ (الحد الأقصى 100 فاتورة)
+            if (existingInvoices.length > 100) {
+                existingInvoices.shift(); // إزالة أقدم فاتورة
+            }
+            
+            localStorage.setItem('shehadeh_invoices', JSON.stringify(existingInvoices));
+            
+        } catch (error) {
+            console.error('Error saving invoice:', error);
+        }
+    }
+
+    // دالة لمسح السلة
+    function clearCartAndReset() {
+        cart = [];
+        saveCart();
+        renderCart();
+        updateCartCount();
+        
+        document.querySelectorAll('.add-to-cart-btn').forEach(btn => {
+            btn.style.display = 'block';
+        });
+        
+        document.querySelectorAll('.quantity-controls').forEach(controls => {
+            controls.style.display = 'none';
+        });
+    }
+
+    function formatDateTime(date) {
+        const day = date.getDate().toString().padStart(2, '0');
+        const month = (date.getMonth() + 1).toString().padStart(2, '0');
+        const year = date.getFullYear();
+        let hours = date.getHours();
+        const minutes = date.getMinutes().toString().padStart(2, '0');
+        const ampm = hours >= 12 ? 'م' : 'ص';
+        hours = hours % 12;
+        hours = hours ? hours : 12;
+        const dayOfWeek = ["الأحد", "الاثنين", "الثلاثاء", "الأربعاء", "الخميس", "الجمعة", "السبت"][date.getDay()];
+        return `${day}/${month}/${year} ${hours}:${minutes}${ampm} ${dayOfWeek}`;
+    }
 
     // Notification
     function showNotification(text) {
