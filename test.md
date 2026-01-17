@@ -1,9 +1,9 @@
-huawei/ GT  6 Black |/720/https://res.cloudinary.com/dygc5b8cn/image/upload/v1768227581/nffehziqmd7dfnioefmp.webp
-huawei/ GT  6 Green |/720/https://res.cloudinary.com/dygc5b8cn/image/upload/v1768227582/fisgduwjkpvoxrtz65ra.webp
-huawei/ GT 6 Grey |/720/https://res.cloudinary.com/dygc5b8cn/image/upload/v1768227583/fx4u6lvsfp27l4esagkh.jpg
-huawei/ GT 6 pro titanium |/1350/https://res.cloudinary.com/dygc5b8cn/image/upload/v1768227583/c8mhrceo2s17fodua5t4.jpg
-huawei/ GT 6 pro black |/990/https://res.cloudinary.com/dygc5b8cn/image/upload/v1768227584/ouneqq7unlc2mcycqwva.jpg
-huawei/ GT 6 pro Brown |/990/https://res.cloudinary.com/dygc5b8cn/image/upload/v1768227586/oukwzyqhww3kulp9tvsr.webp
+huawei/GT  6 Black |/700/https://res.cloudinary.com/dygc5b8cn/image/upload/v1768227581/nffehziqmd7dfnioefmp.webp
+huawei/GT  6 Green |/700/https://res.cloudinary.com/dygc5b8cn/image/upload/v1768227582/fisgduwjkpvoxrtz65ra.webp
+huawei/GT 6 Grey |/700/https://res.cloudinary.com/dygc5b8cn/image/upload/v1768227583/fx4u6lvsfp27l4esagkh.jpg
+huawei/GT 6 pro titanium |/1350/https://res.cloudinary.com/dygc5b8cn/image/upload/v1768227583/c8mhrceo2s17fodua5t4.jpg
+huawei/GT 6 pro black |/990/https://res.cloudinary.com/dygc5b8cn/image/upload/v1768227584/ouneqq7unlc2mcycqwva.jpg
+huawei/GT 6 pro Brown |/990/https://res.cloudinary.com/dygc5b8cn/image/upload/v1768227586/oukwzyqhww3kulp9tvsr.webp
 samsung/TAB A11 128|8/580/https://res.cloudinary.com/dygc5b8cn/image/upload/v1767692192/ubyqea0ilzlcx95s4mwa.jpg
 MI/C71 64|3/240/https://res.cloudinary.com/dygc5b8cn/image/upload/v1766568493/kwt5ow5wuofjizgiweqe.webp
 samsung/A26 256|8/750/https://res.cloudinary.com/dygc5b8cn/image/upload/v1764065061/khfpksu8x13khbj6rok2.jpg
