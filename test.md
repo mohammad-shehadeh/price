@@ -1,3 +1,6 @@
+N/A/Nokia 108 |/125/https://res.cloudinary.com/dygc5b8cn/image/upload/v1768648661/gat9whx1e07qi9ilswpg.webp
+N/A/Nokia 110 |/120/https://res.cloudinary.com/dygc5b8cn/image/upload/v1768648574/g1gljaqe1lwqaafpobf0.jpg
+samsung/Tab a11 ‏64|‏4/430/https://res.cloudinary.com/dygc5b8cn/image/upload/v1768648464/upearlshkahnpk5bgd3v.jpg
 huawei/GT  6 Black |/700/https://res.cloudinary.com/dygc5b8cn/image/upload/v1768227581/nffehziqmd7dfnioefmp.webp
 huawei/GT  6 Green |/700/https://res.cloudinary.com/dygc5b8cn/image/upload/v1768227582/fisgduwjkpvoxrtz65ra.webp
 huawei/GT 6 Grey |/700/https://res.cloudinary.com/dygc5b8cn/image/upload/v1768227583/fx4u6lvsfp27l4esagkh.jpg
