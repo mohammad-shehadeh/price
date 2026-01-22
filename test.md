@@ -1,3 +1,6 @@
+MI/NOTE 15 PRO 512|12/1010/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769083954/ytytfhodxytzcrqr1pcz.jpg
+MI/NOTE 15 PRO 256|8/835/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769083899/cxucuyswalsqf24gqprl.webp
+MI/NOTE 15 256|8/660/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769083825/bytesdd6t344fn7bnhou.jpg
 Nokia/Nokia 108 4G ori |/125/https://res.cloudinary.com/dygc5b8cn/image/upload/v1768648661/gat9whx1e07qi9ilswpg.webp
 Nokia/Nokia 110 4G ori |/120/https://res.cloudinary.com/dygc5b8cn/image/upload/v1768648574/g1gljaqe1lwqaafpobf0.jpg
 samsung/Tab a11 ‏64|‏4/430/https://res.cloudinary.com/dygc5b8cn/image/upload/v1768648464/upearlshkahnpk5bgd3v.jpg
