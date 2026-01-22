@@ -27,31 +27,31 @@ iphone flex charger/Ip 8 PLUS أصلي|/65/https://res.cloudinary.com/dygc5b8cn/
 iphone flex charger/Ip 8 أصلي|/65/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769071186/axu1anjr0pkwxfkbnw9i.jpg
 iphone flex charger/Ip 7 PLUS أصلي|/65/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769071191/wcvgywemioe5drgusxaw.jpg
 iphone flex charger/Ip 7 أصلي|/65/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769071196/l5bzlh6jj4hrtutxbc0x.jpg
-iphone flex sensor/Ip 17 pro max أصلي|/65/
-iphone flex sensor/Ip 16 pro max أصلي|/65/
-iphone flex sensor/Ip 15 pro max أصلي|/65/
-iphone flex sensor/Ip 14 pro max أصلي|/65/
-iphone flex sensor/Ip 13 pro max أصلي|/65/
-iphone flex sensor/Ip 12 pro max أصلي|/65/
-iphone flex sensor/Ip 11 pro max أصلي|/65/
-iphone flex sensor/Ip 17 pro أصلي|/65/
-iphone flex sensor/Ip 16 pro أصلي|/65/
-iphone flex sensor/Ip 15 pro أصلي|/65/
-iphone flex sensor/Ip 14 pro أصلي|/65/
-iphone flex sensor/Ip 13 pro أصلي|/65/
-iphone flex sensor/Ip 12 pro أصلي|/65/
-iphone flex sensor/Ip 11 pro أصلي|/65/
-iphone flex sensor/Ip XS max أصلي|/65/
-iphone flex sensor/Ip XS أصلي|/65/
-iphone flex sensor/Ip X أصلي|/65/
-iphone flex sensor/Ip 17 أصلي|/65/
-iphone flex sensor/Ip 16 أصلي|/65/
-iphone flex sensor/Ip 15 أصلي|/65/
-iphone flex sensor/Ip 14 أصلي|/65/
-iphone flex sensor/Ip 13 أصلي|/65/
-iphone flex sensor/Ip 12 أصلي|/65/
-iphone flex sensor/Ip 11 أصلي|/65/
-iphone flex sensor/Ip 8 plus أصلي|/65/
-iphone flex sensor/Ip 8  أصلي|/65/
-iphone flex sensor/Ip 7 plus أصلي|/65/
-iphone flex sensor/Ip 7 أصلي|/65/
+iphone flex sensor/Ip 17 pro max أصلي|/65/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769072409/k6vmhjjrap95dj0a8g4p.jpg
+iphone flex sensor/Ip 16 pro max أصلي|/65/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769072419/cr31qykhfi8pq623xvgg.webp
+iphone flex sensor/Ip 15 pro max أصلي|/65/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769072427/ob1wuplctmohkdahb5li.jpg
+iphone flex sensor/Ip 14 pro max أصلي|/65/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769072555/ibomciksikubtzigyjfu.webp
+iphone flex sensor/Ip 13 pro max أصلي|/65/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769072563/io5ob4t7wkahavejzfyn.jpg
+iphone flex sensor/Ip 12 pro max أصلي|/65/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769072573/vl0wzh9bjjbebnix8yyw.jpg
+iphone flex sensor/Ip 11 pro max أصلي|/65/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769073080/gl2xle8ck4bjlk57uqup.webp
+iphone flex sensor/Ip 17 pro أصلي|/65/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769072680/xpngutdlbteckpnyfn0j.jpg
+iphone flex sensor/Ip 16 pro أصلي|/65/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769072687/rklajwddb1aemyzkt7m7.jpg
+iphone flex sensor/Ip 15 pro أصلي|/65/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769072698/yclydgnaxs1psuta1wh9.jpg
+iphone flex sensor/Ip 14 pro أصلي|/65/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769072721/lw8q865d0bwqvi97vbnf.webp
+iphone flex sensor/Ip 13 pro أصلي|/65/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769072728/rzippzsjuq5ky1n3btrt.jpg
+iphone flex sensor/Ip 12 pro أصلي|/65/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769072740/wgomjqnqpgza1eqwfxlr.jpg
+iphone flex sensor/Ip 11 pro أصلي|/65/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769073044/nqkwlkdmspxvbez6ilmn.jpg
+iphone flex sensor/Ip XS max أصلي|/65/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769072817/hsvmcxk2mpcxklkz5ziw.jpg
+iphone flex sensor/Ip XS أصلي|/65/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769072823/oetognx7njypcdgyqote.png
+iphone flex sensor/Ip X أصلي|/65/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769072829/z0wvgyvt4qppsrmw2e8l.jpg
+iphone flex sensor/Ip 17 أصلي|/65/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769072836/vjs9gdgkqdphtfrq63ki.webp
+iphone flex sensor/Ip 16 أصلي|/65/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769072841/xfjmco7ig4deue0tajdu.jpg
+iphone flex sensor/Ip 15 أصلي|/65/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769072897/fkabakdrfts5q0as9ihp.jpg
+iphone flex sensor/Ip 14 أصلي|/65/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769072902/inrmimbymmqdtnrhmuw9.jpg
+iphone flex sensor/Ip 13 أصلي|/65/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769072907/mj0sypjhwemcjfwwaenm.webp
+iphone flex sensor/Ip 12 أصلي|/65/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769072922/zfc2qubrlgjybzqapign.jpg
+iphone flex sensor/Ip 11 أصلي|/65/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769072927/eqshk4xixo0e3rv5zvbu.jpg
+iphone flex sensor/Ip 8 plus أصلي|/65/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769072931/sjhpzth2mmceguuwuil0.jpg
+iphone flex sensor/Ip 8 أصلي|/65/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769072938/j5wepjd1ttbstndi5svv.jpg
+iphone flex sensor/Ip 7 plus أصلي|/65/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769072942/h3tnlg41bq5me444rtck.webp
+iphone flex sensor/Ip 7 أصلي|/65/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769072951/feazht86iqje9j8mvpuz.jpg
