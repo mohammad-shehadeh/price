@@ -58,7 +58,7 @@ iphone flex sensor/Ip 8 plus أصلي|/25/https://res.cloudinary.com/dygc5b8cn/i
 iphone flex sensor/Ip 8 أصلي|/20/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769072938/j5wepjd1ttbstndi5svv.jpg
 iphone flex sensor/Ip 7 plus أصلي|/20/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769072942/h3tnlg41bq5me444rtck.webp
 iphone flex sensor/Ip 7 أصلي|/20/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769072951/feazht86iqje9j8mvpuz.jpg
-mi flex charger/Redmi Note 14 Ori ic|/20/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769074723/nps0aadfi6jlrtry7577.jpg
+mi flex charger/Redmi Note 14 Ori ic|/20/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769103726/i4y9ccrzjq6yyqsrirjh.jpg
 mi flex charger/Redmi Note 13 Ori ic|/15/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769074723/nps0aadfi6jlrtry7577.jpg
 mi flex charger/Redmi Note 12 Ori ic|/15/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769074723/nps0aadfi6jlrtry7577.jpg
 mi flex charger/Redmi Note 11|NOTE 11S Ori ic|/15/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769074723/nps0aadfi6jlrtry7577.jpg
@@ -70,12 +70,12 @@ mi flex charger/Redmi Note 8 2021 Ori ic|/15/https://res.cloudinary.com/dygc5b8c
 mi flex charger/Redmi Note 7 Ori ic|/15/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769074723/nps0aadfi6jlrtry7577.jpg
 mi flex charger/Redmi Note 6 PRO Ori ic|/15/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769074723/nps0aadfi6jlrtry7577.jpg
 mi flex charger/Redmi Note 5 PRO Ori ic|/15/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769074723/nps0aadfi6jlrtry7577.jpg
-mi flex charger/Redmi Note 14 PRO PLIS 5G Ori ic|/20/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769074723/nps0aadfi6jlrtry7577.jpg
-mi flex charger/Redmi Note 14 PRO Ori ic|/20/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769074723/nps0aadfi6jlrtry7577.jpg
-mi flex charger/Redmi Note 13 PRO Ori ic|/20/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769074723/nps0aadfi6jlrtry7577.jpg
+mi flex charger/Redmi Note 14 PRO PLIS 5G Ori ic|/20/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769103726/i4y9ccrzjq6yyqsrirjh.jpg
+mi flex charger/Redmi Note 14 PRO Ori ic|/20/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769103726/i4y9ccrzjq6yyqsrirjh.jpg
+mi flex charger/Redmi Note 13 PRO Ori ic|/20/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769103726/i4y9ccrzjq6yyqsrirjh.jpg
 mi flex charger/Redmi Note 13 PRO PLUS 5G Ori ic|/20/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769074723/nps0aadfi6jlrtry7577.jpg
-mi flex charger/Redmi Note 12 PRO Ori ic|/20/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769074723/nps0aadfi6jlrtry7577.jpg
-mi flex charger/Redmi Note 11 PRO Ori ic|/20/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769074723/nps0aadfi6jlrtry7577.jpg
+mi flex charger/Redmi Note 12 PRO Ori ic|/20/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769103726/i4y9ccrzjq6yyqsrirjh.jpg
+mi flex charger/Redmi Note 11 PRO Ori ic|/20/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769103726/i4y9ccrzjq6yyqsrirjh.jpg
 mi flex charger/Redmi Note 10 PRO Ori ic|/15/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769074723/nps0aadfi6jlrtry7577.jpg
 mi flex charger/Redmi Note 9 PRO Ori ic|/15/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769074723/nps0aadfi6jlrtry7577.jpg
 mi flex charger/Redmi Note 8 PRO Ori ic|/15/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769074723/nps0aadfi6jlrtry7577.jpg
@@ -100,8 +100,8 @@ mi flex charger/Redmi A3 Ori ic|/15/https://res.cloudinary.com/dygc5b8cn/image/u
 mi flex charger/Redmi PAD SE Ori ic|/20/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769074723/nps0aadfi6jlrtry7577.jpg
 mi flex charger/MI 11 LITE 4G|5G Ori ic|/15/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769074723/nps0aadfi6jlrtry7577.jpg
 mi flex charger/Redmi A1+|A2+|A2 Ori ic|/15/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769074723/nps0aadfi6jlrtry7577.jpg
-mi flex charger/POCO X7 PRO Ori ic|/20/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769074723/nps0aadfi6jlrtry7577.jpg
-mi flex charger/POCO X6 PRO Ori ic|/20/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769074723/nps0aadfi6jlrtry7577.jpg
-mi flex charger/POCO X6 PRO Ori ic|/20/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769074723/nps0aadfi6jlrtry7577.jpg
-mi flex charger/POCO X4 PRO Ori ic|/20/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769074723/nps0aadfi6jlrtry7577.jpg
+mi flex charger/POCO X7 PRO Ori ic|/20/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769103726/i4y9ccrzjq6yyqsrirjh.jpg
+mi flex charger/POCO X6 PRO Ori ic|/20/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769103726/i4y9ccrzjq6yyqsrirjh.jpg
+mi flex charger/POCO X6 PRO Ori ic|/20/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769103726/i4y9ccrzjq6yyqsrirjh.jpg
+mi flex charger/POCO X4 PRO Ori ic|/20/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769103726/i4y9ccrzjq6yyqsrirjh.jpg
 mi flex charger/POCO X3 PRO Ori ic|/15/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769074723/nps0aadfi6jlrtry7577.jpg
