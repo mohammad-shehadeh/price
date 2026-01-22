@@ -20,7 +20,7 @@ Tecno/Slim 256|8/670/https://res.cloudinary.com/dygc5b8cn/image/upload/v17606225
 MI/Pad 2 256|8/Aa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1759655366/bsrpwamkyjsfjjxjyvqq.webp
 MI/SE 11" 256|8/aaa/https://www.celletronic.com/wp-content/uploads/2023/09/xiaomi-redmi-pad-se-11-0-6gb-ram-128gb-wifi-gris.jpg
 MI/Redmi 15 256|8/490/https://res.cloudinary.com/dygc5b8cn/image/upload/v1759304172/u2xrt2uhefd3tbhmjroe.webp
-MI/Redmi 15C 256|8/410/https://res.cloudinary.com/dygc5b8cn/image/upload/v1757324304/mijovlzrsdbgsxgcl1lf.webp
+MI/Redmi 15C 256|8/420/https://res.cloudinary.com/dygc5b8cn/image/upload/v1757324304/mijovlzrsdbgsxgcl1lf.webp
 samsung/S25 ultra 256|12/3000/https://assets.mmsrg.com/isr/166325/c1/-/ASSET_MMS_149453259/fee_786_587_png
 samsung/A17 128|4/470/https://res.cloudinary.com/dygc5b8cn/image/upload/v1759304168/d3bqnjrcxoay06rrnjtx.jpg
 samsung/A07 256|8/Aa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1764064978/vvks2bmm3sqhrvyidtnu.jpg
