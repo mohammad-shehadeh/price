@@ -27,3 +27,31 @@ iphone flex charger/Ip 8 PLUS أصلي|/65/https://res.cloudinary.com/dygc5b8cn/
 iphone flex charger/Ip 8 أصلي|/65/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769071186/axu1anjr0pkwxfkbnw9i.jpg
 iphone flex charger/Ip 7 PLUS أصلي|/65/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769071191/wcvgywemioe5drgusxaw.jpg
 iphone flex charger/Ip 7 أصلي|/65/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769071196/l5bzlh6jj4hrtutxbc0x.jpg
+iphone flex sensor/Ip 17 pro max أصلي|/65/
+iphone flex sensor/Ip 16 pro max أصلي|/65/
+iphone flex sensor/Ip 15 pro max أصلي|/65/
+iphone flex sensor/Ip 14 pro max أصلي|/65/
+iphone flex sensor/Ip 13 pro max أصلي|/65/
+iphone flex sensor/Ip 12 pro max أصلي|/65/
+iphone flex sensor/Ip 11 pro max أصلي|/65/
+iphone flex sensor/Ip 17 pro أصلي|/65/
+iphone flex sensor/Ip 16 pro أصلي|/65/
+iphone flex sensor/Ip 15 pro أصلي|/65/
+iphone flex sensor/Ip 14 pro أصلي|/65/
+iphone flex sensor/Ip 13 pro أصلي|/65/
+iphone flex sensor/Ip 12 pro أصلي|/65/
+iphone flex sensor/Ip 11 pro أصلي|/65/
+iphone flex sensor/Ip XS max أصلي|/65/
+iphone flex sensor/Ip XS أصلي|/65/
+iphone flex sensor/Ip X أصلي|/65/
+iphone flex sensor/Ip 17 أصلي|/65/
+iphone flex sensor/Ip 16 أصلي|/65/
+iphone flex sensor/Ip 15 أصلي|/65/
+iphone flex sensor/Ip 14 أصلي|/65/
+iphone flex sensor/Ip 13 أصلي|/65/
+iphone flex sensor/Ip 12 أصلي|/65/
+iphone flex sensor/Ip 11 أصلي|/65/
+iphone flex sensor/Ip 8 plus أصلي|/65/
+iphone flex sensor/Ip 8  أصلي|/65/
+iphone flex sensor/Ip 7 plus أصلي|/65/
+iphone flex sensor/Ip 7 أصلي|/65/
