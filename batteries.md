@@ -34,3 +34,7 @@ IOS batteries/Macbook pro A1708 قريبا|/AAA/undefined
 IOS batteries/Macbook pro A1990 قريبا|/AAA/undefined
 IOS batteries/Macbook pro A1707 قريبا|/AAA/undefined
 IOS batteries/Macbook pro A1989 قريبا|/AAA/undefined
+Household Batteries/GP AAA x4/6/
+Household Batteries/GP AA x4/6/
+Household Batteries/GP D x2/13/
+Household Batteries/GP 9V x1/9/
