@@ -122,11 +122,11 @@ mi flex main/Redmi Note 14 PRO |/20/https://res.cloudinary.com/dygc5b8cn/image/u
 mi flex main/Redmi Note 13 PRO |/20/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769103773/bhpdqw7kjy5gejwggb01.jpg
 mi flex main/Redmi Note 13 PRO PLUS 5G |/20/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769103773/bhpdqw7kjy5gejwggb01.jpg
 mi flex main/Redmi Note 12 PRO O|/20/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769103773/bhpdqw7kjy5gejwggb01.jpg
-mi flex main/ FOR LCD Redmi Note 12 PRO|/15/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769103768/zdzkya37nxoigdkl8cfg.jpg
+mi flex main/FOR LCD Redmi Note 12 PRO|/15/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769103768/zdzkya37nxoigdkl8cfg.jpg
 mi flex main/Redmi Note 11 PRO |/20/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769103773/bhpdqw7kjy5gejwggb01.jpg
-mi flex main/ FOR LCD Redmi Note 11 PRO|/15/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769103768/zdzkya37nxoigdkl8cfg.jpg
+mi flex main/FOR LCD Redmi Note 11 PRO|/15/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769103768/zdzkya37nxoigdkl8cfg.jpg
 mi flex main/Redmi Note 10 PRO |/15/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769103773/bhpdqw7kjy5gejwggb01.jpg
-mi flex main/ FOR LCD Redmi Note 10 PRO|/15/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769103768/zdzkya37nxoigdkl8cfg.jpg
+mi flex main/FOR LCD Redmi Note 10 PRO|/15/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769103768/zdzkya37nxoigdkl8cfg.jpg
 mi flex main/Redmi Note 9 PRO |/15/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769103773/bhpdqw7kjy5gejwggb01.jpg
 mi flex main/Redmi Note 8 PRO |/15/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769103773/bhpdqw7kjy5gejwggb01.jpg
 mi flex main/Redmi 15 |/15/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769103773/bhpdqw7kjy5gejwggb01.jpg
@@ -149,13 +149,13 @@ mi flex main/Redmi A5|POCO C71 |/15/https://res.cloudinary.com/dygc5b8cn/image/u
 mi flex main/Redmi A3 |/15/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769103773/bhpdqw7kjy5gejwggb01.jpg
 mi flex main/Redmi PAD SE |/20/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769103773/bhpdqw7kjy5gejwggb01.jpg
 mi flex main/MI 11 LITE 4G|5G |/15/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769103773/bhpdqw7kjy5gejwggb01.jpg
-mi flex main/ FOR LCD MI 11 LITE|/15/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769103768/zdzkya37nxoigdkl8cfg.jpg
+mi flex main/FOR LCD MI 11 LITE|/15/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769103768/zdzkya37nxoigdkl8cfg.jpg
 mi flex main/Redmi A1+|A2+|A2 |/15/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769103773/bhpdqw7kjy5gejwggb01.jpg
 mi flex main/POCO X7 PRO|/20/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769103773/bhpdqw7kjy5gejwggb01.jpg
 mi flex main/POCO X6 PRO |/20/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769103773/bhpdqw7kjy5gejwggb01.jpg
 mi flex main/POCO X5 PRO |/20/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769103773/bhpdqw7kjy5gejwggb01.jpg
-mi flex main/ FOR LCD X5 PRO|/15/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769103768/zdzkya37nxoigdkl8cfg.jpg
+mi flex main/FOR LCD X5 PRO|/15/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769103768/zdzkya37nxoigdkl8cfg.jpg
 mi flex main/POCO X4 PRO |/20/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769103773/bhpdqw7kjy5gejwggb01.jpg
-mi flex main/ FOR LCD X4 PRO|/15/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769103768/zdzkya37nxoigdkl8cfg.jpg
+mi flex main/FOR LCD X4 PRO|/15/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769103768/zdzkya37nxoigdkl8cfg.jpg
 mi flex main/POCO X3 PRO |/15/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769103773/bhpdqw7kjy5gejwggb01.jpg
-MIX flex/ FOR SIM mi 11 lite|/20/
+MIX flex/FOR SIM mi 11 lite|/20/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769242213/mewr3e3xwoqsj6gfjcis.jpg
