@@ -22,7 +22,7 @@ IOS batteries/Ip 15 |/70/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769
 IOS batteries/Ip 14 |/60/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769254159/zmnlhid433cpeqts4fdi.jpg
 IOS batteries/Ip 13 |/60/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769254165/rjwvow1pvvskntv3vy5p.jpg
 IOS batteries/Ip 12 |/50/undefined
-IOS batteries/Ip 11 |/40/undefined
+IOS batteries/Ip 11 |/40/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769261019/vhey3c45rgvao3wcykfm.jpg
 IOS batteries/Ip 8 PLUS |/25/undefined
 IOS batteries/Ip 8 |/20/undefined
 IOS batteries/Ip 7 PLUS |/25/undefined
