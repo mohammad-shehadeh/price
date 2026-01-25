@@ -1,3 +1,4 @@
+samsung/ |//undefined
 IOS batteries/ip 17 pro max |/aaa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769254111/fjhtx3pyds5kv47uueug.jpg
 IOS batteries/Ip 16 pro max |/80/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769254421/r02tewkrs5irwt31dzay.jpg
 IOS batteries/Ip 15 pro max |/80/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769254192/zcns3zarj3ckc8phdmvq.jpg
@@ -34,7 +35,7 @@ IOS batteries/Macbook pro A1708 قريبا|/AAA/https://res.cloudinary.com/dygc5
 IOS batteries/Macbook pro A1990 قريبا|/AAA/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769330698/wydjl45mjudqihsup0hp.webp
 IOS batteries/Macbook pro A1707 قريبا|/AAA/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769330709/qaipmlzaww2twjgvcrq1.webp
 IOS batteries/Macbook pro A1989 قريبا|/AAA/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769330810/aqu0tubmqlt5kr15du9v.jpg
-Household Batteries/GP AAA x4 |/6/undefined
-Household Batteries/GP AA x4 |/6/undefined
-Household Batteries/GP D x2 |/13/undefined
-Household Batteries/GP 9V x1 |/9/undefined
+Household Batteries/GP AAA x4 |/6/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769331026/nluoztxotsozsuscmita.jpg
+Household Batteries/GP AA x4 |/6/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769331064/bmhjcciqrvfykglzn4dn.jpg
+Household Batteries/GP D x2 |/13/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769331046/qhx7bqgnmpylfcyuf4jf.webp
+Household Batteries/GP 9V x1 |/9/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769331053/dw5ugr5hbcurugofxgvs.webp
