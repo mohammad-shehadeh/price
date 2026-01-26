@@ -1,3 +1,6 @@
+tecno batteries/ |//undefined
+MI batteries/ |//undefined
+samsung batteries/ |//undefined
 IOS batteries/ip 17 pro max |/aaa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769254111/fjhtx3pyds5kv47uueug.jpg
 IOS batteries/Ip 16 pro max |/80/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769254421/r02tewkrs5irwt31dzay.jpg
 IOS batteries/Ip 15 pro max |/80/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769254192/zcns3zarj3ckc8phdmvq.jpg
