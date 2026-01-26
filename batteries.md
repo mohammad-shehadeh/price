@@ -1,6 +1,3 @@
-tecno batteries/ |//undefined
-MI batteries/ |//undefined
-samsung batteries/ |//undefined
 IOS batteries/ip 17 pro max |/aaa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769254111/fjhtx3pyds5kv47uueug.jpg
 IOS batteries/Ip 16 pro max |/80/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769254421/r02tewkrs5irwt31dzay.jpg
 IOS batteries/Ip 15 pro max |/80/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769254192/zcns3zarj3ckc8phdmvq.jpg
@@ -46,3 +43,6 @@ Household Batteries/GP CR2032 x5 |/1/https://res.cloudinary.com/dygc5b8cn/image/
 Household Batteries/GP CR2025 x5 |/1/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769345661/ka1ejdmrkbh1ddftvinl.jpg
 Household Batteries/GP CR2016 x5 |/1/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769345671/b3tjryy8r3eqn47kjhnc.webp
 Household Batteries/GP CR1620 x5 |/1/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769345677/kizvpeaygordpkwjg0l1.png
+tecno batteries/ |//undefined
+MI batteries/ |//undefined
+samsung batteries/A10S|A11|A20S |/AAA/undefined
