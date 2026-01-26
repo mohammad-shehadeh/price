@@ -45,4 +45,4 @@ Household Batteries/GP CR2016 x5 |/1/https://res.cloudinary.com/dygc5b8cn/image/
 Household Batteries/GP CR1620 x5 |/1/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769345677/kizvpeaygordpkwjg0l1.png
 tecno batteries/ |//undefined
 MI batteries/ |//undefined
-samsung batteries/A10S|A11|A20S |/AAA/undefined
+samsung batteries/A10S|A11|A20S |/AAA/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769416901/k8crfy4yahndso46zth6.jpg
