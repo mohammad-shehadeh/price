@@ -1,3 +1,11 @@
+motherboard Connector/P42 A52 A526B A525 A525F
+A72 A725 A725F|78 pin/3/undefined
+motherboard Connector/P41 |/3/undefined
+motherboard Connector/P40 |/3/undefined
+motherboard Connector/P39 |/3/undefined
+motherboard Connector/P38 |/3/undefined
+motherboard Connector/P37 |/3/undefined
+motherboard Connector/P36 |/3/undefined
 iphone flex charger/ip 17 pro max أصلي|/aaa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769068342/bt7wcaixkeqvi9cdj5wh.jpg
 iphone flex charger/Ip 16 pro max أصلي|/80/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769068320/jpxg1uctfmy6f65pfcrj.jpg
 iphone flex charger/Ip 15 pro max أصلي|/80/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769068368/nnpwakprkebfchnlkbjn.webp
