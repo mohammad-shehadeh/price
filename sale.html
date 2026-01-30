@@ -191,21 +191,21 @@
         }
         
 /* =============================
-   Enhanced Filter Buttons - FIXED with text truncation
+   Smart Flexible Filter Buttons
    ============================= */
-.enhanced-filter-buttons {
+.smart-filter-buttons {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 0.8rem;
     margin: 1.5rem auto;
     padding: 0.8rem;
-    max-width: 1200px;
+    max-width: 1400px;
     transition: all 0.3s ease;
 }
 
-.enhanced-filter-btn {
-    padding: 0.8rem 1.2rem;
+.smart-filter-btn {
+    padding: 0.8rem 1.5rem;
     font-size: 0.95rem;
     font-weight: 600;
     border: none;
@@ -225,12 +225,32 @@
     justify-content: center;
     text-align: center;
     white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    max-width: 180px;
+    min-width: fit-content;
+    max-width: 100%;
 }
 
-.enhanced-filter-btn:hover {
+/* أحجام ديناميكية حسب طول النص */
+.smart-filter-btn.short-text { 
+    padding: 0.8rem 1.2rem;
+    font-size: 0.95rem;
+}
+
+.smart-filter-btn.medium-text { 
+    padding: 0.8rem 1.6rem;
+    font-size: 0.95rem;
+}
+
+.smart-filter-btn.long-text { 
+    padding: 0.8rem 1.8rem;
+    font-size: 0.93rem;
+}
+
+.smart-filter-btn.very-long-text { 
+    padding: 0.8rem 2rem;
+    font-size: 0.9rem;
+}
+
+.smart-filter-btn:hover {
     background: #e8f4f8;
     color: var(--primary-color);
     transform: translateY(-3px);
@@ -238,7 +258,7 @@
     border-color: rgba(11, 181, 176, 0.2);
 }
 
-.enhanced-filter-btn.active {
+.smart-filter-btn.active {
     background: linear-gradient(135deg, var(--primary-color), #0a9d98);
     color: white;
     transform: translateY(-2px);
@@ -247,7 +267,7 @@
     font-weight: 700;
 }
 
-.enhanced-filter-btn.active::after {
+.smart-filter-btn.active::after {
     content: '';
     position: absolute;
     bottom: -2px;
@@ -260,49 +280,61 @@
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
-.enhanced-filter-btn.all-btn {
+.smart-filter-btn.all-btn {
     background: #6c757d;
     color: white;
 }
 
-.enhanced-filter-btn.all-btn:hover {
+.smart-filter-btn.all-btn:hover {
     background: #5a6268;
     color: white;
 }
 
-.enhanced-filter-btn.all-btn.active {
+.smart-filter-btn.all-btn.active {
     background: linear-gradient(135deg, #495057, #343a40);
     color: white;
 }
 
 /* تأثير النقر */
-.enhanced-filter-btn:active {
+.smart-filter-btn:active {
     transform: translateY(0);
     transition: transform 0.1s;
 }
 
 /* تصميم للجوال */
 @media (max-width: 768px) {
-    .enhanced-filter-buttons {
+    .smart-filter-buttons {
         gap: 0.6rem;
         padding: 0.6rem;
         margin: 1rem auto;
     }
     
-    .enhanced-filter-btn {
+    .smart-filter-btn {
+        flex: 1 0 auto;
+        min-width: calc(33.333% - 0.6rem);
+        max-width: calc(33.333% - 0.6rem);
         padding: 0.7rem 1rem;
         font-size: 0.88rem;
         min-height: 42px;
         border-radius: 10px;
-        flex: 1 0 calc(33.333% - 0.6rem);
-        min-width: calc(33.333% - 0.6rem);
-        max-width: calc(33.333% - 0.6rem);
+        white-space: normal;
+        line-height: 1.3;
+    }
+    
+    /* على الموبايل، نستخدم نمط مختلف */
+    .smart-filter-btn.short-text,
+    .smart-filter-btn.medium-text,
+    .smart-filter-btn.long-text,
+    .smart-filter-btn.very-long-text {
+        padding: 0.7rem 1rem;
+        font-size: 0.85rem;
+        min-height: 40px;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
     }
     
-    .enhanced-filter-btn.all-btn {
+    .smart-filter-btn.all-btn {
         flex: 1 0 calc(100% - 0.6rem);
         min-width: calc(100% - 0.6rem);
         max-width: calc(100% - 0.6rem);
@@ -312,43 +344,68 @@
 
 /* تصميم للتابلت */
 @media (min-width: 769px) and (max-width: 1024px) {
-    .enhanced-filter-buttons {
+    .smart-filter-buttons {
         gap: 0.7rem;
         padding: 0.7rem;
     }
     
-    .enhanced-filter-btn {
+    .smart-filter-btn {
+        flex: 1 0 auto;
+        min-width: calc(25% - 0.7rem);
+        max-width: calc(25% - 0.7rem);
         padding: 0.75rem 1.2rem;
         font-size: 0.92rem;
         min-height: 45px;
-        flex: 1 0 calc(25% - 0.7rem);
-        min-width: calc(25% - 0.7rem);
-        max-width: calc(25% - 0.7rem);
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
+        white-space: normal;
+        line-height: 1.3;
     }
     
-    .enhanced-filter-btn.all-btn {
+    .smart-filter-btn.all-btn {
         flex: 1 0 calc(50% - 0.7rem);
         min-width: calc(50% - 0.7rem);
         max-width: calc(50% - 0.7rem);
     }
 }
 
-/* تصميم للكمبيوتر */
+/* تصميم للكمبيوتر - التوزيع الذكي */
 @media (min-width: 1025px) {
-    .enhanced-filter-btn {
-        flex: 0 0 auto;
+    .smart-filter-buttons {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 0.8rem;
+    }
+    
+    .smart-filter-btn {
+        width: 100%;
+        margin: 0;
+        justify-self: center;
+    }
+    
+    .smart-filter-btn.all-btn {
+        grid-column: span 1;
+        justify-self: start;
+        min-width: 100px;
+    }
+    
+    /* أبعاد ديناميكية حسب طول النص على الكمبيوتر */
+    .smart-filter-btn.short-text { 
         min-width: 120px;
+        max-width: 150px;
+    }
+    
+    .smart-filter-btn.medium-text { 
+        min-width: 150px;
         max-width: 180px;
     }
     
-    .enhanced-filter-btn.all-btn {
-        order: -1; /* زر "الكل" يكون أول زر */
-        margin-left: 0;
-        margin-right: auto;
-        min-width: 100px;
+    .smart-filter-btn.long-text { 
+        min-width: 180px;
+        max-width: 220px;
+    }
+    
+    .smart-filter-btn.very-long-text { 
+        min-width: 220px;
+        max-width: 260px;
     }
 }
 
@@ -364,23 +421,25 @@
     }
 }
 
-.enhanced-filter-btn {
+.smart-filter-btn {
     animation: fadeInUp 0.4s ease-out forwards;
     opacity: 0;
 }
 
-.enhanced-filter-btn:nth-child(1) { animation-delay: 0.1s; }
-.enhanced-filter-btn:nth-child(2) { animation-delay: 0.15s; }
-.enhanced-filter-btn:nth-child(3) { animation-delay: 0.2s; }
-.enhanced-filter-btn:nth-child(4) { animation-delay: 0.25s; }
-.enhanced-filter-btn:nth-child(5) { animation-delay: 0.3s; }
-.enhanced-filter-btn:nth-child(6) { animation-delay: 0.35s; }
-.enhanced-filter-btn:nth-child(7) { animation-delay: 0.4s; }
-.enhanced-filter-btn:nth-child(8) { animation-delay: 0.45s; }
-.enhanced-filter-btn:nth-child(9) { animation-delay: 0.5s; }
-.enhanced-filter-btn:nth-child(10) { animation-delay: 0.55s; }
-/* خط أنيق تحت الأزرار عند التمرير */
-.enhanced-filter-buttons::after {
+/* تأخيرات متدرجة للظهور */
+.smart-filter-btn:nth-child(1) { animation-delay: 0.1s; }
+.smart-filter-btn:nth-child(2) { animation-delay: 0.15s; }
+.smart-filter-btn:nth-child(3) { animation-delay: 0.2s; }
+.smart-filter-btn:nth-child(4) { animation-delay: 0.25s; }
+.smart-filter-btn:nth-child(5) { animation-delay: 0.3s; }
+.smart-filter-btn:nth-child(6) { animation-delay: 0.35s; }
+.smart-filter-btn:nth-child(7) { animation-delay: 0.4s; }
+.smart-filter-btn:nth-child(8) { animation-delay: 0.45s; }
+.smart-filter-btn:nth-child(9) { animation-delay: 0.5s; }
+.smart-filter-btn:nth-child(10) { animation-delay: 0.55s; }
+
+/* خط أنيق تحت الأزرار */
+.smart-filter-buttons::after {
     content: '';
     position: absolute;
     bottom: 0;
@@ -1778,8 +1837,8 @@
     </div>
 </div>
         
-        <!-- Enhanced Filter Buttons -->
-<div class="enhanced-filter-buttons" id="enhanced-filter-buttons">
+        <!-- Smart Flexible Filter Buttons -->
+<div class="smart-filter-buttons" id="smart-filter-buttons">
     <!-- سيتم إضافة الفئات هنا ديناميكيًا -->
 </div>
         
@@ -2279,14 +2338,14 @@
     }
     
     function createFilterButtons() {
-    const filterContainer = document.getElementById('enhanced-filter-buttons');
+    const filterContainer = document.getElementById('smart-filter-buttons');
     
     // مسح المحتوى القديم
     filterContainer.innerHTML = '';
     
     // إنشاء زر "الكل"
     const allButton = document.createElement('button');
-    allButton.className = 'enhanced-filter-btn all-btn active';
+    allButton.className = 'smart-filter-btn all-btn active';
     allButton.textContent = 'الكل';
     allButton.onclick = (e) => {
         filterProducts('All');
@@ -2299,16 +2358,21 @@
     const categories = [...new Set(products.map(p => p.category))];
     categories.forEach(category => {
         const button = document.createElement('button');
-        button.className = 'enhanced-filter-btn';
+        button.className = 'smart-filter-btn';
+        button.textContent = category;
         
-        // تقصير النصوص الطويلة مع إضافة ...
-        let displayText = category;
-        if (category.length > 12) {
-            displayText = category.substring(0, 10) + '...';
-            button.title = category; // إظهار النص الكامل عند المرور بالمؤشر
+        // تحديد حجم الزر الذكي بناءً على طول النص
+        const textLength = category.length;
+        
+        if (textLength <= 8) {
+            button.classList.add('short-text');
+        } else if (textLength <= 12) {
+            button.classList.add('medium-text');
+        } else if (textLength <= 18) {
+            button.classList.add('long-text');
+        } else {
+            button.classList.add('very-long-text');
         }
-        
-        button.textContent = displayText;
         
         button.onclick = (e) => {
             filterProducts(category);
@@ -2320,7 +2384,7 @@
     
     // دالة لتحديد الزر النشط
     function setActiveButton(activeBtn) {
-        document.querySelectorAll('.enhanced-filter-btn').forEach(btn => {
+        document.querySelectorAll('.smart-filter-btn').forEach(btn => {
             btn.classList.remove('active');
         });
         activeBtn.classList.add('active');
@@ -2340,8 +2404,6 @@ function filterProducts(category) {
         ? products 
         : products.filter(p => p.category === category);
     renderFilteredProducts(filteredProducts);
-    
-    // لا تحتاج إلى تحديث الأزرار هنا لأن setActiveButton في createFilterButtons يقوم بذلك
 }
 
     function renderFilteredProducts(filteredProducts) {
