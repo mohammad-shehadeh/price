@@ -190,42 +190,271 @@
             margin: 0 auto;
         }
         
-        /* Filter Buttons */
-        #filter-buttons {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin: 1rem auto;
-            padding: 0.5rem;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: var(--border-radius);
-            backdrop-filter: blur(5px);
-        }
-        
-        .filter-btn {
-            padding: 0.6rem 1.2rem;
-            font-size: 0.9rem;
-            font-weight: 500;
-            border: none;
-            background: rgba(255, 255, 255, 0.1);
-            color: white;
-            cursor: pointer;
-            transition: var(--transition);
-            border-radius: 50px;
-            white-space: nowrap;
-        }
-        
-        .filter-btn:hover {
-            background: rgba(255, 255, 255, 0.2);
-        }
-        
-        .filter-btn.active {
-            background: linear-gradient(135deg, var(--primary-color), #6e45e2);
-            color: white;
-            font-weight: 600;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
+       /* ===================== */
+/* Filter Bar - Modern Design */
+/* ===================== */
+#filter-buttons-container {
+    position: relative;
+    width: 100%;
+    margin: 1rem auto;
+    padding: 0 0.5rem;
+    max-width: 1400px;
+}
+
+#filter-buttons {
+    display: flex;
+    overflow-x: auto;
+    overflow-y: hidden;
+    gap: 0.5rem;
+    padding: 0.8rem 1rem;
+    margin: 0;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary-color) transparent;
+    background: linear-gradient(135deg, rgba(43, 43, 43, 0.95), rgba(26, 26, 26, 0.95));
+    backdrop-filter: blur(10px);
+    border-radius: var(--border-radius);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+/* إخفاء شريط التمرير في بعض المتصفحات */
+#filter-buttons::-webkit-scrollbar {
+    height: 6px;
+}
+
+#filter-buttons::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+}
+
+#filter-buttons::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, var(--primary-color), #0a9d98);
+    border-radius: 10px;
+}
+
+#filter-buttons::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, #0a9d98, var(--primary-color));
+}
+
+/* أزرار التمرير للشريط */
+.filter-scroll-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, var(--primary-color), #0a9d98);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 100;
+    opacity: 0.9;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.filter-scroll-btn:hover {
+    opacity: 1;
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+.filter-scroll-btn.left {
+    right: -20px;
+}
+
+.filter-scroll-btn.right {
+    left: -20px;
+}
+
+.filter-scroll-btn i {
+    font-size: 1.2rem;
+}
+
+/* أزرار الفلتر الجديدة */
+.filter-btn {
+    padding: 0.7rem 1.4rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border: none;
+    background: rgba(255, 255, 255, 0.08);
+    color: rgba(255, 255, 255, 0.9);
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 12px;
+    white-space: nowrap;
+    flex-shrink: 0;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.filter-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.filter-btn:hover {
+    background: rgba(255, 255, 255, 0.15);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 
+        0 6px 20px rgba(0, 0, 0, 0.2),
+        0 0 0 1px rgba(255, 255, 255, 0.1);
+}
+
+.filter-btn:hover::before {
+    opacity: 1;
+}
+
+.filter-btn.active {
+    background: linear-gradient(135deg, var(--primary-color), #4f46e5);
+    color: white;
+    font-weight: 700;
+    box-shadow: 
+        0 8px 25px rgba(79, 70, 229, 0.4),
+        0 0 0 1px rgba(255, 255, 255, 0.2),
+        inset 0 2px 0 rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+    position: relative;
+    border: none;
+}
+
+.filter-btn.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, white, transparent);
+    border-radius: 2px;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 0.5;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+/* تأثير النشاط عند النقر */
+.filter-btn:active {
+    transform: translateY(0);
+    transition: transform 0.1s ease;
+}
+
+/* عرض العدد داخل الزر */
+.filter-count {
+    display: inline-block;
+    margin-right: 0.4rem;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 0.2rem 0.5rem;
+    border-radius: 10px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    min-width: 24px;
+    text-align: center;
+}
+
+.filter-btn.active .filter-count {
+    background: rgba(255, 255, 255, 0.3);
+    color: white;
+}
+
+/* مؤشر التمرير */
+.scroll-indicator {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, 
+        transparent 0%, 
+        var(--primary-color) 20%, 
+        var(--primary-color) 80%, 
+        transparent 100%
+    );
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+/* استجابة للشاشات الصغيرة */
+@media (max-width: 768px) {
+    #filter-buttons {
+        padding: 0.6rem 0.8rem;
+        gap: 0.4rem;
+    }
+    
+    .filter-btn {
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
+        border-radius: 10px;
+    }
+    
+    .filter-scroll-btn {
+        width: 35px;
+        height: 35px;
+        display: none; /* إخفاء على الموبايل للتبسيط */
+    }
+    
+    .filter-count {
+        font-size: 0.75rem;
+        padding: 0.15rem 0.4rem;
+        min-width: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    #filter-buttons-container {
+        padding: 0;
+    }
+    
+    #filter-buttons {
+        border-radius: 0;
+        padding: 0.5rem 0.8rem;
+    }
+    
+    .filter-btn {
+        padding: 0.5rem 0.8rem;
+        font-size: 0.85rem;
+    }
+}
+
+/* تأثير عند التمرير */
+#filter-buttons.scrolling {
+    cursor: grabbing;
+    cursor: -webkit-grabbing;
+}
+
+/* تفعيل تأثير الجاذبية للتمرير */
+#filter-buttons {
+    scroll-snap-type: x proximity;
+}
+
+.filter-btn {
+    scroll-snap-align: start;
+}
         
         /* Search Box */
         #search-box {
@@ -1614,8 +1843,23 @@
     </div>
 </div>
         
-        <!-- Filter Buttons -->
-        <div id="filter-buttons"></div>
+        <!-- استبدل السطر أعلاه بالكود التالي: -->
+<div id="filter-buttons-container">
+    <!-- أزرار التمرير -->
+    <button class="filter-scroll-btn left" id="scrollLeftBtn">
+        <i class="fas fa-chevron-right"></i>
+    </button>
+    
+    <button class="filter-scroll-btn right" id="scrollRightBtn">
+        <i class="fas fa-chevron-left"></i>
+    </button>
+    
+    <!-- مؤشر التمرير -->
+    <div class="scroll-indicator"></div>
+    
+    <!-- حاوية أزرار الفلتر -->
+    <div id="filter-buttons"></div>
+</div>
         
         <!-- Search Box -->
         <input type="text" id="search-box" placeholder="🔍 ابحث عن منتج...">
