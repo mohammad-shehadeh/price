@@ -190,416 +190,42 @@
             margin: 0 auto;
         }
         
-        /* ===================== */
-/* FILTER WHEEL DESIGN - عجلة الفلاتر الدوارة */
-/* ===================== */
-
-#filter-wheel-container {
-    position: relative;
-    width: 100%;
-    max-width: 600px;
-    margin: 1.5rem auto;
-    padding: 0;
-    text-align: center;
-    z-index: 100;
-}
-
-/* زر العرض العائم */
-.wheel-toggle-btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.8rem;
-    margin: 0 auto 1.5rem;
-    padding: 1rem 2rem;
-    background: linear-gradient(135deg, var(--primary-color), #4f46e5);
-    color: white;
-    border: none;
-    border-radius: 50px;
-    font-size: 1.1rem;
-    font-weight: 700;
-    cursor: pointer;
-    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-    box-shadow: 
-        0 10px 25px rgba(79, 70, 229, 0.4),
-        0 0 0 2px rgba(255, 255, 255, 0.1);
-    position: relative;
-    overflow: hidden;
-    z-index: 101;
-}
-
-.wheel-toggle-btn:hover {
-    transform: translateY(-3px) scale(1.05);
-    box-shadow: 
-        0 15px 35px rgba(79, 70, 229, 0.5),
-        0 0 0 3px rgba(255, 255, 255, 0.2);
-}
-
-.wheel-toggle-btn:active {
-    transform: translateY(0) scale(0.98);
-}
-
-.wheel-toggle-btn i {
-    font-size: 1.3rem;
-    transition: transform 0.5s ease;
-}
-
-.wheel-toggle-btn.active i {
-    transform: rotate(180deg);
-}
-
-.wheel-count-badge {
-    background: rgba(255, 255, 255, 0.3);
-    padding: 0.2rem 0.6rem;
-    border-radius: 20px;
-    font-size: 0.9rem;
-    font-weight: 600;
-    min-width: 30px;
-}
-
-/* العجلة الدوارة */
-.filter-wheel {
-    position: relative;
-    width: 320px;
-    height: 320px;
-    margin: 0 auto;
-    opacity: 0;
-    visibility: hidden;
-    transform: scale(0.5) rotate(-15deg);
-    transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-    z-index: 100;
-}
-
-.filter-wheel.active {
-    opacity: 1;
-    visibility: visible;
-    transform: scale(1) rotate(0deg);
-}
-
-/* الحلقة الخارجية */
-.wheel-ring {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    background: linear-gradient(135deg, 
-        rgba(43, 43, 43, 0.95) 0%,
-        rgba(26, 26, 26, 0.95) 100%);
-    border: 2px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 
-        0 20px 60px rgba(0, 0, 0, 0.4),
-        inset 0 0 50px rgba(0, 0, 0, 0.3),
-        inset 0 0 0 1px rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(15px);
-    overflow: hidden;
-}
-
-/* تأثير الدوران */
-.wheel-ring::before {
-    content: '';
-    position: absolute;
-    top: -2px;
-    left: -2px;
-    right: -2px;
-    bottom: -2px;
-    background: linear-gradient(45deg, 
-        #ff0000, #ff7300, #fffb00, #48ff00,
-        #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
-    border-radius: 50%;
-    z-index: -1;
-    animation: rotate 20s linear infinite;
-    opacity: 0.3;
-    filter: blur(10px);
-}
-
-@keyframes rotate {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
-
-/* العناصر داخل العجلة */
-.wheel-item {
-    position: absolute;
-    width: 80px;
-    height: 80px;
-    transform-origin: 160px 160px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-}
-
-.wheel-item:hover {
-    background: rgba(255, 255, 255, 0.1);
-    transform: scale(1.15);
-    z-index: 2;
-    box-shadow: 
-        0 8px 25px rgba(0, 0, 0, 0.3),
-        0 0 0 2px rgba(255, 255, 255, 0.2);
-}
-
-.wheel-item.active {
-    background: linear-gradient(135deg, var(--primary-color), #4f46e5);
-    transform: scale(1.2);
-    box-shadow: 
-        0 10px 30px rgba(79, 70, 229, 0.5),
-        0 0 0 3px rgba(255, 255, 255, 0.3);
-    z-index: 3;
-    animation: pulse-glow 2s infinite;
-}
-
-@keyframes pulse-glow {
-    0%, 100% { 
-        box-shadow: 
-            0 10px 30px rgba(79, 70, 229, 0.5),
-            0 0 0 3px rgba(255, 255, 255, 0.3);
-    }
-    50% { 
-        box-shadow: 
-            0 10px 40px rgba(79, 70, 229, 0.7),
-            0 0 0 4px rgba(255, 255, 255, 0.4);
-    }
-}
-
-/* أيقونات العناصر */
-.wheel-icon {
-    font-size: 1.5rem;
-    color: rgba(255, 255, 255, 0.9);
-    margin-bottom: 0.3rem;
-    transition: all 0.3s ease;
-}
-
-.wheel-item:hover .wheel-icon {
-    color: white;
-    transform: scale(1.2);
-}
-
-.wheel-item.active .wheel-icon {
-    color: white;
-}
-
-/* نص العنصر */
-.wheel-text {
-    font-size: 0.75rem;
-    font-weight: 600;
-    color: rgba(255, 255, 255, 0.8);
-    text-align: center;
-    line-height: 1.2;
-    max-width: 70px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    transition: all 0.3s ease;
-}
-
-.wheel-item:hover .wheel-text {
-    color: white;
-    font-weight: 700;
-}
-
-.wheel-item.active .wheel-text {
-    color: white;
-    font-weight: 800;
-}
-
-/* العداد داخل العنصر */
-.wheel-count {
-    position: absolute;
-    top: -5px;
-    right: -5px;
-    background: linear-gradient(135deg, #ff5722, #ff9800);
-    color: white;
-    font-size: 0.7rem;
-    font-weight: 800;
-    padding: 0.2rem 0.4rem;
-    border-radius: 10px;
-    min-width: 20px;
-    text-align: center;
-    box-shadow: 0 3px 10px rgba(255, 87, 34, 0.4);
-    z-index: 10;
-}
-
-/* النقطة المركزية */
-.wheel-center {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 80px;
-    height: 80px;
-    background: linear-gradient(135deg, var(--secondary-color), #1a1a1a);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 5;
-    box-shadow: 
-        inset 0 0 20px rgba(0, 0, 0, 0.5),
-        0 0 30px rgba(0, 0, 0, 0.4);
-    border: 2px solid rgba(255, 255, 255, 0.1);
-}
-
-.wheel-center span {
-    color: white;
-    font-size: 0.9rem;
-    font-weight: 700;
-    text-align: center;
-}
-
-/* تأثير الجاذبية */
-.wheel-gravity {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 50%;
-    background: radial-gradient(ellipse at center, 
-        rgba(0, 0, 0, 0.3) 0%, 
-        transparent 70%);
-    border-radius: 0 0 50% 50%;
-    pointer-events: none;
-    z-index: 4;
-}
-
-/* شريط الفلاتر التقليدي (مخفي) */
-#filter-buttons {
-    display: none !important;
-}
-
-/* النافذة الخلفية */
-.wheel-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.7);
-    backdrop-filter: blur(5px);
-    opacity: 0;
-    visibility: hidden;
-    z-index: 99;
-    transition: all 0.3s ease;
-}
-
-.wheel-overlay.active {
-    opacity: 1;
-    visibility: visible;
-}
-
-/* استجابة للشاشات الصغيرة */
-@media (max-width: 768px) {
-    .filter-wheel {
-        width: 280px;
-        height: 280px;
-    }
-    
-    .wheel-item {
-        width: 70px;
-        height: 70px;
-        transform-origin: 140px 140px;
-    }
-    
-    .wheel-toggle-btn {
-        padding: 0.9rem 1.8rem;
-        font-size: 1rem;
-    }
-    
-    .wheel-icon {
-        font-size: 1.3rem;
-    }
-    
-    .wheel-text {
-        font-size: 0.7rem;
-        max-width: 60px;
-    }
-    
-    .wheel-center {
-        width: 70px;
-        height: 70px;
-    }
-}
-
-@media (max-width: 480px) {
-    .filter-wheel {
-        width: 250px;
-        height: 250px;
-    }
-    
-    .wheel-item {
-        width: 65px;
-        height: 65px;
-        transform-origin: 125px 125px;
-    }
-    
-    .wheel-toggle-btn {
-        padding: 0.8rem 1.5rem;
-        font-size: 0.95rem;
-    }
-    
-    .wheel-text {
-        font-size: 0.65rem;
-        max-width: 55px;
-    }
-}
-
-/* تأثير الإضاءة عند التحديد */
-@keyframes select-effect {
-    0% {
-        transform: scale(1);
-        box-shadow: 
-            0 8px 25px rgba(79, 70, 229, 0.5),
-            0 0 0 3px rgba(255, 255, 255, 0.3);
-    }
-    50% {
-        transform: scale(1.25);
-        box-shadow: 
-            0 15px 40px rgba(79, 70, 229, 0.8),
-            0 0 0 5px rgba(255, 255, 255, 0.5);
-    }
-    100% {
-        transform: scale(1.2);
-        box-shadow: 
-            0 10px 30px rgba(79, 70, 229, 0.5),
-            0 0 0 3px rgba(255, 255, 255, 0.3);
-    }
-}
-
-.wheel-item.selecting {
-    animation: select-effect 0.5s ease forwards;
-}
-
-/* مؤشر التمرير */
-.wheel-scroll-hint {
-    position: absolute;
-    bottom: -40px;
-    left: 50%;
-    transform: translateX(-50%);
-    color: rgba(255, 255, 255, 0.6);
-    font-size: 0.8rem;
-    text-align: center;
-    animation: bounce 2s infinite;
-}
-
-@keyframes bounce {
-    0%, 20%, 50%, 80%, 100% {
-        transform: translateX(-50%) translateY(0);
-    }
-    40% {
-        transform: translateX(-50%) translateY(-10px);
-    }
-    60% {
-        transform: translateX(-50%) translateY(-5px);
-    }
-}
+        /* Filter Buttons */
+        #filter-buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin: 1rem auto;
+            padding: 0.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: var(--border-radius);
+            backdrop-filter: blur(5px);
+        }
+        
+        .filter-btn {
+            padding: 0.6rem 1.2rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+            border: none;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            cursor: pointer;
+            transition: var(--transition);
+            border-radius: 50px;
+            white-space: nowrap;
+        }
+        
+        .filter-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+        
+        .filter-btn.active {
+            background: linear-gradient(135deg, var(--primary-color), #6e45e2);
+            color: white;
+            font-weight: 600;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
         
         /* Search Box */
         #search-box {
@@ -1988,48 +1614,8 @@
     </div>
 </div>
         
-        <!-- استبدل هذا الكود في header: -->
-<div id="filter-buttons-container">
-    <button class="filter-scroll-btn left" id="scrollLeftBtn">
-        <i class="fas fa-chevron-right"></i>
-    </button>
-    
-    <button class="filter-scroll-btn right" id="scrollRightBtn">
-        <i class="fas fa-chevron-left"></i>
-    </button>
-    
-    <div class="scroll-indicator"></div>
-    
-    <div id="filter-buttons"></div>
-</div>
-
-<!-- بـ هذا الكود الجديد: -->
-<div id="filter-wheel-container">
-    <!-- زر عرض العجلة -->
-    <button class="wheel-toggle-btn" id="wheelToggleBtn">
-        <i class="fas fa-filter"></i>
-        <span id="current-category">الكل</span>
-        <span class="wheel-count-badge" id="totalProducts">0</span>
-    </button>
-    
-    <!-- النافذة الخلفية -->
-    <div class="wheel-overlay" id="wheelOverlay"></div>
-    
-    <!-- العجلة الدوارة -->
-    <div class="filter-wheel" id="filterWheel">
-        <div class="wheel-ring"></div>
-        <div class="wheel-gravity"></div>
-        <div class="wheel-center">
-            <span>اختر الفئة</span>
-        </div>
-        <!-- سيتم إضافة العناصر هنا -->
-    </div>
-    
-    <!-- تلميح التمرير -->
-    <div class="wheel-scroll-hint">
-        <i class="fas fa-hand-pointer"></i> المس وأدر لاختيار الفئة
-    </div>
-</div>
+        <!-- Filter Buttons -->
+        <div id="filter-buttons"></div>
         
         <!-- Search Box -->
         <input type="text" id="search-box" placeholder="🔍 ابحث عن منتج...">
