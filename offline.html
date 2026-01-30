@@ -1,14 +1,520 @@
 <!DOCTYPE html>
-<html>
+<html lang="ar" dir="rtl">
 <head>
-    <title>لا يوجد اتصال</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الصفحة غير موجودة | Shehadeh Center</title>
+    <meta name="description" content="تم نقل موقع Shehadeh Center - لا يمكن الوصول إلى هذه الصفحة">
+    
+    <!-- Open Graph Metadata -->
+    <meta property="og:title" content="Shehadeh Center - الصفحة غير موجودة">
+    <meta property="og:description" content="تم نقل الموقع، يرجى التواصل مع الدعم الفني">
+    <meta property="og:image" content="https://res.cloudinary.com/dygc5b8cn/image/upload/v1768500756/xvrpeqabqhlbjwuq6u7t.jpg">
+    <meta property="og:type" content="website">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="https://i.postimg.cc/VNssYbVS/IMG-1002.jpg">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&display=swap" rel="stylesheet">
+    
     <style>
-        body { text-align: center; padding: 20px; }
-        h1 { color: #ff4444; }
+        :root {
+            --primary-color: #0bb5b0;
+            --secondary-color: #2b2b2b;
+            --accent-color: #ff5722;
+            --light-color: #f8f9fa;
+            --dark-color: #212529;
+            --success-color: #28a745;
+            --warning-color: #ffc107;
+            --danger-color: #dc3545;
+            --border-radius: 12px;
+            --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Tajawal', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: #333;
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .container {
+            max-width: 800px;
+            width: 100%;
+            background-color: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 3rem;
+            margin: 2rem auto;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+        
+        .logo-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid rgba(11, 181, 176, 0.2);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+            color: var(--secondary-color);
+            position: relative;
+            padding-bottom: 1rem;
+        }
+        
+        h1::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
+            margin: 0.5rem auto 0;
+            opacity: 0.7;
+        }
+        
+        .error-code {
+            font-size: 8rem;
+            font-weight: 900;
+            color: var(--primary-color);
+            margin: 1rem 0;
+            text-shadow: 3px 3px 0 rgba(11, 181, 176, 0.1);
+            line-height: 1;
+        }
+        
+        .error-code span {
+            color: var(--accent-color);
+        }
+        
+        h2 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--dark-color);
+        }
+        
+        .message {
+            font-size: 1.2rem;
+            color: #555;
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+        
+        .highlight {
+            background-color: rgba(11, 181, 176, 0.1);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-weight: 600;
+            color: var(--secondary-color);
+        }
+        
+        .contact-info {
+            background-color: #f8f9fa;
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            margin: 2rem 0;
+            border-right: 4px solid var(--primary-color);
+        }
+        
+        .contact-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--secondary-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .contact-info h3 i {
+            color: var(--primary-color);
+        }
+        
+        .contact-methods {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        
+        .contact-method {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            font-size: 1.1rem;
+        }
+        
+        .contact-method i {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary-color), #0a9d98);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            box-shadow: 0 4px 8px rgba(11, 181, 176, 0.3);
+        }
+        
+        .contact-method a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+        
+        .contact-method a:hover {
+            color: var(--primary-color);
+            text-decoration: underline;
+        }
+        
+        .whatsapp-btn, .call-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.8rem 1.8rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: var(--transition);
+            margin: 0.5rem;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .whatsapp-btn {
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            color: white;
+            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+        }
+        
+        .whatsapp-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4);
+        }
+        
+        .call-btn {
+            background: linear-gradient(135deg, var(--primary-color), #0a9d98);
+            color: white;
+            box-shadow: 0 5px 15px rgba(11, 181, 176, 0.3);
+        }
+        
+        .call-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(11, 181, 176, 0.4);
+        }
+        
+        .whatsapp-btn i, .call-btn i {
+            margin-left: 0.5rem;
+        }
+        
+        .buttons-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        
+        .note {
+            margin-top: 2rem;
+            padding: 1rem;
+            background-color: rgba(255, 193, 7, 0.1);
+            border-radius: var(--border-radius);
+            border-right: 4px solid var(--warning-color);
+            font-size: 0.9rem;
+            color: #856404;
+        }
+        
+        .animation-container {
+            margin: 2rem 0;
+            position: relative;
+            height: 100px;
+        }
+        
+        .error-animation {
+            font-size: 4rem;
+            color: var(--primary-color);
+            opacity: 0.7;
+            position: absolute;
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        .error-animation:nth-child(1) {
+            left: 10%;
+            animation-delay: 0s;
+        }
+        
+        .error-animation:nth-child(2) {
+            left: 30%;
+            animation-delay: 0.5s;
+        }
+        
+        .error-animation:nth-child(3) {
+            left: 50%;
+            animation-delay: 1s;
+        }
+        
+        .error-animation:nth-child(4) {
+            left: 70%;
+            animation-delay: 1.5s;
+        }
+        
+        .error-animation:nth-child(5) {
+            left: 90%;
+            animation-delay: 2s;
+        }
+        
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+        
+        footer {
+            margin-top: 3rem;
+            color: #666;
+            font-size: 0.9rem;
+            text-align: center;
+        }
+        
+        footer a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 2rem 1.5rem;
+            }
+            
+            .error-code {
+                font-size: 6rem;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+            }
+            
+            .contact-method {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .buttons-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .whatsapp-btn, .call-btn {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .error-code {
+                font-size: 4rem;
+            }
+            
+            h1 {
+                font-size: 1.6rem;
+            }
+            
+            .container {
+                padding: 1.5rem 1rem;
+            }
+        }
+        
+        /* شريط التمرير المخصص */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary-color);
+            border-radius: 4px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: #0a9d98;
+        }
     </style>
 </head>
 <body>
-    <h1>⚠️ لا يوجد اتصال بالإنترنت</h1>
-    <p>الرجاء التحقق من اتصالك وحاول مرة أخرى</p>
+    <div class="container">
+        <div class="logo-container">
+            <img src="https://res.cloudinary.com/dygc5b8cn/image/upload/v1768500756/xvrpeqabqhlbjwuq6u7t.jpg" alt="Shehadeh Center Logo" class="logo-img">
+        </div>
+        
+        <h1>SHEHADEH CENTER</h1>
+        
+        <div class="error-code">4<span>0</span>4</div>
+        
+        <h2>عذراً، الصفحة غير موجودة</h2>
+        
+        <div class="message">
+            <p>تم <span class="highlight">نقل موقع Shehadeh Center</span> إلى عنوان جديد ولا يمكن الوصول إلى هذه الصفحة حاليًا.</p>
+            <p>نعتذر للإزعاج، يمكنك التواصل مع فريق الدعم الفني للحصول على المساعدة أو معرفة العنوان الجديد للموقع.</p>
+        </div>
+        
+        <div class="animation-container">
+            <div class="error-animation"><i class="fas fa-exclamation-triangle"></i></div>
+            <div class="error-animation"><i class="fas fa-link-slash"></i></div>
+            <div class="error-animation"><i class="fas fa-map-signs"></i></div>
+            <div class="error-animation"><i class="fas fa-mobile-alt"></i></div>
+            <div class="error-animation"><i class="fas fa-headset"></i></div>
+        </div>
+        
+        <div class="contact-info">
+            <h3><i class="fas fa-headset"></i> للدعم الفني تواصل معنا</h3>
+            
+            <div class="contact-methods">
+                <div class="contact-method">
+                    <i class="fab fa-whatsapp"></i>
+                    <div>
+                        <p>الدعم عبر واتساب:</p>
+                        <a href="https://wa.me/972569813333" target="_blank">+972 56 981 3333</a>
+                    </div>
+                </div>
+                
+                <div class="contact-method">
+                    <i class="fas fa-phone-alt"></i>
+                    <div>
+                        <p>الاتصال المباشر:</p>
+                        <a href="tel:+972569813333">+972 56 981 3333</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="buttons-container">
+            <a href="https://wa.me/972569813333" class="whatsapp-btn" target="_blank">
+                <i class="fab fa-whatsapp"></i>
+                تواصل عبر واتساب
+            </a>
+            
+            <a href="tel:+972569813333" class="call-btn">
+                <i class="fas fa-phone-alt"></i>
+                اتصل الآن
+            </a>
+        </div>
+        
+        <div class="note">
+            <p><i class="fas fa-info-circle"></i> ملاحظة: قد يستغرق تحديث الروابط بعض الوقت. شكرًا لتفهمكم.</p>
+        </div>
+    </div>
+    
+    <footer>
+        <p>© 2023 Shehadeh Center. جميع الحقوق محفوظة.</p>
+        <p>هذه صفحة خطأ 404 - الصفحة غير موجودة أو تم نقلها</p>
+    </footer>
+    
+    <script>
+        // إضافة بعض التأثيرات التفاعلية
+        document.addEventListener('DOMContentLoaded', function() {
+            // تأثير عند تحميل الصفحة
+            const container = document.querySelector('.container');
+            container.style.opacity = '0';
+            container.style.transform = 'translateY(20px)';
+            
+            setTimeout(() => {
+                container.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+                container.style.opacity = '1';
+                container.style.transform = 'translateY(0)';
+            }, 100);
+            
+            // تأثير عند التمرير
+            window.addEventListener('scroll', function() {
+                const scrolled = window.pageYOffset;
+                const parallaxElements = document.querySelectorAll('.error-animation');
+                
+                parallaxElements.forEach((element, index) => {
+                    const speed = 0.1 + (index * 0.05);
+                    const yPos = -(scrolled * speed);
+                    element.style.transform = `translateY(${yPos}px)`;
+                });
+            });
+            
+            // إضافة مؤقت للاتصال التلقائي (اختياري)
+            let timeOnPage = 0;
+            const timerInterval = setInterval(() => {
+                timeOnPage++;
+                
+                // بعد 30 ثانية، عرض رسالة تذكيرية
+                if (timeOnPage === 30) {
+                    console.log('لقد قضيت 30 ثانية على صفحة الخطأ. هل تحتاج إلى مساعدة؟');
+                }
+            }, 1000);
+            
+            // إخفاء المؤقت عند مغادرة الصفحة
+            window.addEventListener('beforeunload', function() {
+                clearInterval(timerInterval);
+            });
+        });
+        
+        // تتبع النقرات على أزرار الاتصال
+        document.querySelectorAll('.whatsapp-btn, .call-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                const buttonType = this.classList.contains('whatsapp-btn') ? 'واتساب' : 'اتصال';
+                console.log(`تم النقر على زر ${buttonType} للاتصال بالدعم الفني`);
+            });
+        });
+    </script>
 </body>
 </html>
