@@ -190,6 +190,216 @@
             margin: 0 auto;
         }
         
+        /* =============================
+   Scrollable Filter Chips
+   ============================= */
+.filter-chips-container {
+    position: relative;
+    margin: 1rem auto;
+    padding: 0.5rem;
+    width: 100%;
+    max-width: 1200px;
+    overflow: hidden;
+}
+
+.chips-scroll-wrapper {
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+    padding: 0.5rem 0;
+    scroll-behavior: smooth;
+}
+
+.chips-scroll-wrapper::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+}
+
+.filter-chips {
+    display: flex;
+    gap: 0.8rem;
+    padding: 0.5rem 1rem;
+    flex-wrap: nowrap;
+    min-width: min-content;
+}
+
+.filter-chip {
+    flex: 0 0 auto;
+    padding: 0.8rem 1.5rem;
+    background: white;
+    color: var(--secondary-color);
+    border: 2px solid #e0e0e0;
+    border-radius: 50px;
+    cursor: pointer;
+    font-family: 'Tajawal', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+    white-space: nowrap;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.filter-chip::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, var(--primary-color), #0a9d98);
+    border-radius: 50px;
+    opacity: 0;
+    z-index: -1;
+    transition: opacity 0.3s ease;
+}
+
+.filter-chip:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(11, 181, 176, 0.2);
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+.filter-chip:hover::before {
+    opacity: 0.1;
+}
+
+.filter-chip.active {
+    background: linear-gradient(135deg, var(--primary-color), #0a9d98);
+    color: white;
+    border-color: var(--primary-color);
+    box-shadow: 0 5px 15px rgba(11, 181, 176, 0.3);
+    transform: translateY(-2px);
+}
+
+.filter-chip.active::before {
+    opacity: 1;
+}
+
+.filter-chip.all-category {
+    background: linear-gradient(135deg, #6c757d, #495057);
+    color: white;
+    border-color: #495057;
+}
+
+.filter-chip.all-category.active {
+    background: linear-gradient(135deg, #495057, #343a40);
+}
+
+/* Scroll Buttons */
+.scroll-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    background: white;
+    border: none;
+    border-radius: 50%;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    color: var(--primary-color);
+    z-index: 10;
+    transition: all 0.3s ease;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.filter-chips-container:hover .scroll-btn {
+    opacity: 1;
+    visibility: visible;
+}
+
+.scroll-btn:hover {
+    background: var(--primary-color);
+    color: white;
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 6px 20px rgba(11, 181, 176, 0.3);
+}
+
+.chips-scroll-left {
+    right: -20px;
+}
+
+.chips-scroll-right {
+    left: -20px;
+}
+
+/* Active scroll button state */
+.scroll-btn.active {
+    opacity: 1;
+    visibility: visible;
+    background: var(--primary-color);
+    color: white;
+}
+
+/* Pulse animation for active filter */
+@keyframes pulse-chip {
+    0% { box-shadow: 0 5px 15px rgba(11, 181, 176, 0.3); }
+    50% { box-shadow: 0 5px 20px rgba(11, 181, 176, 0.5); }
+    100% { box-shadow: 0 5px 15px rgba(11, 181, 176, 0.3); }
+}
+
+.filter-chip.active {
+    animation: pulse-chip 2s infinite;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .filter-chips-container {
+        padding: 0.3rem;
+    }
+    
+    .filter-chips {
+        gap: 0.6rem;
+        padding: 0.3rem 0.8rem;
+    }
+    
+    .filter-chip {
+        padding: 0.7rem 1.2rem;
+        font-size: 0.9rem;
+    }
+    
+    .scroll-btn {
+        display: none; /* إخفاء أزرار التمرير على الموبايل */
+    }
+    
+    .chips-scroll-wrapper {
+        padding-bottom: 10px;
+    }
+}
+
+/* For tablets and larger phones */
+@media (min-width: 481px) and (max-width: 768px) {
+    .filter-chip {
+        padding: 0.7rem 1.3rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* Small animation for new category selection */
+@keyframes slide-in {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.filter-chip {
+    animation: slide-in 0.3s ease-out;
+}
+
         /* Filter Buttons */
         #filter-buttons {
             display: flex;
@@ -1551,190 +1761,6 @@
     font-weight: bold;
     background-color: #ffeb3b;
 }
-
-/* تصميم القائمة المنسدلة للفئات */
-.category-selector {
-    position: relative;
-    width: 250px;
-    margin: 1rem auto;
-    z-index: 100;
-}
-
-.dropdown {
-    position: relative;
-}
-
-.dropdown-toggle {
-    width: 100%;
-    padding: 0.9rem 1.2rem;
-    background: linear-gradient(135deg, var(--primary-color), #0a9d98);
-    color: white;
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
-    font-family: 'Tajawal', sans-serif;
-    font-size: 1rem;
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    box-shadow: 0 4px 12px rgba(11, 181, 176, 0.3);
-    transition: var(--transition);
-}
-
-.dropdown-toggle:hover {
-    background: linear-gradient(135deg, #0a9d98, var(--primary-color));
-    transform: translateY(-2px);
-    box-shadow: 0 6px 15px rgba(11, 181, 176, 0.4);
-}
-
-.dropdown-toggle i:first-child {
-    margin-left: 0.5rem;
-    font-size: 1.1rem;
-}
-
-.dropdown-toggle i:last-child {
-    transition: transform 0.3s ease;
-}
-
-.dropdown.open .dropdown-toggle i:last-child {
-    transform: rotate(180deg);
-}
-
-.dropdown-menu {
-    position: absolute;
-    top: 100%;
-    right: 0;
-    width: 100%;
-    background: white;
-    border-radius: var(--border-radius);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-    margin-top: 8px;
-    overflow: hidden;
-    max-height: 0;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s ease;
-    z-index: 1000;
-}
-
-.dropdown.open .dropdown-menu {
-    max-height: 400px;
-    opacity: 1;
-    visibility: visible;
-}
-
-.search-container {
-    padding: 0.8rem;
-    border-bottom: 1px solid #eee;
-}
-
-#category-search {
-    width: 100%;
-    padding: 0.7rem 1rem;
-    border: 1px solid #ddd;
-    border-radius: 30px;
-    font-family: 'Tajawal', sans-serif;
-    font-size: 0.9rem;
-    transition: var(--transition);
-}
-
-#category-search:focus {
-    border-color: var(--primary-color);
-    outline: none;
-    box-shadow: 0 0 0 3px rgba(11, 181, 176, 0.1);
-}
-
-.category-list {
-    max-height: 300px;
-    overflow-y: auto;
-    padding: 0.5rem;
-}
-
-.category-item {
-    width: 100%;
-    padding: 0.8rem 1rem;
-    text-align: right;
-    background: none;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-family: 'Tajawal', sans-serif;
-    font-size: 0.95rem;
-    color: var(--dark-color);
-    display: flex;
-    align-items: center;
-    transition: var(--transition);
-    margin-bottom: 2px;
-}
-
-.category-item:hover {
-    background-color: #f8f9fa;
-    color: var(--primary-color);
-    padding-right: 1.2rem;
-}
-
-.category-item.active {
-    background: linear-gradient(135deg, rgba(11, 181, 176, 0.1), rgba(11, 181, 176, 0.05));
-    color: var(--primary-color);
-    font-weight: 600;
-    border-right: 3px solid var(--primary-color);
-}
-
-.category-item i {
-    margin-left: 0.5rem;
-    font-size: 0.9rem;
-    color: var(--primary-color);
-}
-
-/* تخصيص شريط التمرير */
-.category-list::-webkit-scrollbar {
-    width: 5px;
-}
-
-.category-list::-webkit-scrollbar-track {
-    background: #f1f1f1;
-    border-radius: 10px;
-}
-
-.category-list::-webkit-scrollbar-thumb {
-    background: var(--primary-color);
-    border-radius: 10px;
-}
-
-/* زر اختر جميع الفئات */
-.category-item[data-category="all"] {
-    background: linear-gradient(135deg, var(--primary-color), #0a9d98);
-    color: white;
-    margin-bottom: 0.5rem;
-    font-weight: 600;
-}
-
-.category-item[data-category="all"] i {
-    color: white;
-}
-
-.category-item[data-category="all"]:hover {
-    background: linear-gradient(135deg, #0a9d98, var(--primary-color));
-}
-
-/* للأجهزة الصغيرة */
-@media (max-width: 768px) {
-    .category-selector {
-        width: 90%;
-        max-width: 300px;
-    }
-    
-    .dropdown-toggle {
-        padding: 0.8rem 1rem;
-        font-size: 0.95rem;
-    }
-    
-    .category-item {
-        padding: 0.7rem 0.9rem;
-        font-size: 0.9rem;
-    }
-}
     </style>
 </head>
 <body>
@@ -1798,30 +1824,19 @@
     </div>
 </div>
         
-        <!-- بدلاً من: -->
-<!-- <div id="filter-buttons"></div> -->
-
-<!-- استخدم هذا: -->
-<div class="category-selector">
-    <div class="dropdown" id="category-dropdown">
-        <button class="dropdown-toggle" id="category-toggle">
-            <i class="fas fa-filter"></i>
-            <span id="selected-category">جميع الفئات</span>
-            <i class="fas fa-chevron-down"></i>
-        </button>
-        <div class="dropdown-menu" id="category-menu">
-            <div class="search-container">
-                <input type="text" id="category-search" placeholder="🔍 ابحث عن فئة...">
-            </div>
-            <div class="category-list">
-                <button class="category-item active" data-category="all">
-                    <i class="fas fa-th-large"></i>
-                    جميع الفئات
-                </button>
-                <!-- سيتم إضافة الفئات هنا ديناميكيًا -->
-            </div>
+        <!-- Scrollable Filter Chips -->
+<div class="filter-chips-container">
+    <div class="chips-scroll-wrapper">
+        <div class="filter-chips" id="filter-chips">
+            <!-- سيتم إضافة الفئات هنا ديناميكيًا -->
         </div>
     </div>
+    <button class="scroll-btn chips-scroll-left" id="chips-scroll-left">
+        <i class="fas fa-chevron-right"></i>
+    </button>
+    <button class="scroll-btn chips-scroll-right" id="chips-scroll-right">
+        <i class="fas fa-chevron-left"></i>
+    </button>
 </div>
         
         <!-- Search Box -->
@@ -2319,93 +2334,151 @@
         return productDiv;
     }
     
-    // استبدل دالة createFilterButtons بهذه الدالة:
-function createFilterButtons() {
-    const dropdown = document.getElementById('category-dropdown');
-    const toggle = document.getElementById('category-toggle');
-    const menu = document.getElementById('category-menu');
-    const categoryList = menu.querySelector('.category-list');
-    const categorySearch = document.getElementById('category-search');
+    function createFilterButtons() {
+    const filterChips = document.getElementById('filter-chips');
+    const scrollLeftBtn = document.getElementById('chips-scroll-left');
+    const scrollRightBtn = document.getElementById('chips-scroll-right');
+    const chipsWrapper = document.querySelector('.chips-scroll-wrapper');
     
-    // إضافة زر "جميع الفئات"
+    // مسح المحتوى القديم
+    filterChips.innerHTML = '';
+    
+    // إنشاء زر "الكل"
     const allButton = document.createElement('button');
-    allButton.className = 'category-item active';
-    allButton.dataset.category = 'all';
-    allButton.innerHTML = '<i class="fas fa-th-large"></i> جميع الفئات';
+    allButton.className = 'filter-chip all-category active';
+    allButton.textContent = 'الكل';
     allButton.onclick = () => {
         filterProducts('All');
-        document.getElementById('selected-category').textContent = 'جميع الفئات';
-        dropdown.classList.remove('open');
+        setActiveChip(allButton);
     };
-    categoryList.appendChild(allButton);
+    filterChips.appendChild(allButton);
     
-    // إضافة الفئات
+    // إنشاء أزرار الفئات
     const categories = [...new Set(products.map(p => p.category))];
     categories.forEach(category => {
-        const button = document.createElement('button');
-        button.className = 'category-item';
-        button.dataset.category = category;
-        button.innerHTML = `<i class="fas fa-tag"></i> ${category}`;
-        button.onclick = () => {
+        const chip = document.createElement('button');
+        chip.className = 'filter-chip';
+        chip.textContent = category;
+        chip.onclick = () => {
             filterProducts(category);
-            document.getElementById('selected-category').textContent = category;
-            dropdown.classList.remove('open');
+            setActiveChip(chip);
         };
-        categoryList.appendChild(button);
+        filterChips.appendChild(chip);
     });
     
-    // فتح/إغلاق القائمة
-    toggle.onclick = (e) => {
-        e.stopPropagation();
-        dropdown.classList.toggle('open');
-    };
-    
-    // البحث في الفئات
-    categorySearch.addEventListener('input', (e) => {
-        const searchTerm = e.target.value.toLowerCase();
-        const items = categoryList.querySelectorAll('.category-item');
-        
-        items.forEach(item => {
-            const text = item.textContent.toLowerCase();
-            if (text.includes(searchTerm) || searchTerm === '') {
-                item.style.display = 'flex';
-            } else {
-                item.style.display = 'none';
-            }
+    // دالة لتحديد الزر النشط
+    function setActiveChip(activeChip) {
+        document.querySelectorAll('.filter-chip').forEach(chip => {
+            chip.classList.remove('active');
         });
+        activeChip.classList.add('active');
+    }
+    
+    // التحكم في التمرير الأفقي
+    let isDragging = false;
+    let startX;
+    let scrollLeft;
+    
+    // التمرير بالسحب
+    chipsWrapper.addEventListener('mousedown', (e) => {
+        isDragging = true;
+        startX = e.pageX - chipsWrapper.offsetLeft;
+        scrollLeft = chipsWrapper.scrollLeft;
+        chipsWrapper.style.cursor = 'grabbing';
+        chipsWrapper.style.userSelect = 'none';
     });
     
-    // إغلاق القائمة عند النقر خارجها
-    document.addEventListener('click', (e) => {
-        if (!dropdown.contains(e.target)) {
-            dropdown.classList.remove('open');
-        }
+    chipsWrapper.addEventListener('mousemove', (e) => {
+        if (!isDragging) return;
+        e.preventDefault();
+        const x = e.pageX - chipsWrapper.offsetLeft;
+        const walk = (x - startX) * 2;
+        chipsWrapper.scrollLeft = scrollLeft - walk;
     });
     
-    // إغلاق القائمة عند الضغط على Esc
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') {
-            dropdown.classList.remove('open');
-        }
+    chipsWrapper.addEventListener('mouseup', () => {
+        isDragging = false;
+        chipsWrapper.style.cursor = 'grab';
+        chipsWrapper.style.userSelect = 'auto';
     });
+    
+    chipsWrapper.addEventListener('mouseleave', () => {
+        isDragging = false;
+        chipsWrapper.style.cursor = 'grab';
+        chipsWrapper.style.userSelect = 'auto';
+    });
+    
+    // التمرير باللمس للأجهزة المحمولة
+    chipsWrapper.addEventListener('touchstart', (e) => {
+        isDragging = true;
+        startX = e.touches[0].pageX - chipsWrapper.offsetLeft;
+        scrollLeft = chipsWrapper.scrollLeft;
+    });
+    
+    chipsWrapper.addEventListener('touchmove', (e) => {
+        if (!isDragging) return;
+        const x = e.touches[0].pageX - chipsWrapper.offsetLeft;
+        const walk = (x - startX) * 2;
+        chipsWrapper.scrollLeft = scrollLeft - walk;
+    });
+    
+    chipsWrapper.addEventListener('touchend', () => {
+        isDragging = false;
+    });
+    
+    // التمرير بأزرار السهم
+    scrollLeftBtn.addEventListener('click', () => {
+        chipsWrapper.scrollBy({
+            left: -200,
+            behavior: 'smooth'
+        });
+        highlightScrollBtn(scrollLeftBtn);
+    });
+    
+    scrollRightBtn.addEventListener('click', () => {
+        chipsWrapper.scrollBy({
+            left: 200,
+            behavior: 'smooth'
+        });
+        highlightScrollBtn(scrollRightBtn);
+    });
+    
+    // إظهار/إخفاء أزرار التمرير حسب الحاجة
+    function updateScrollButtons() {
+        const { scrollLeft, scrollWidth, clientWidth } = chipsWrapper;
+        
+        if (scrollLeft > 0) {
+            scrollLeftBtn.classList.add('active');
+        } else {
+            scrollLeftBtn.classList.remove('active');
+        }
+        
+        if (scrollLeft + clientWidth < scrollWidth - 10) {
+            scrollRightBtn.classList.add('active');
+        } else {
+            scrollRightBtn.classList.remove('active');
+        }
+    }
+    
+    // تحديث أزرار التمرير عند التمرير
+    chipsWrapper.addEventListener('scroll', updateScrollButtons);
+    
+    // تحديث عند تغيير حجم النافذة
+    window.addEventListener('resize', updateScrollButtons);
+    
+    // التهيئة الأولية
+    updateScrollButtons();
+    
+    // إضافة تأثيرات عند الضغط على الزر
+    function highlightScrollBtn(btn) {
+        btn.style.transform = 'translateY(-50%) scale(0.95)';
+        setTimeout(() => {
+            btn.style.transform = 'translateY(-50%)';
+        }, 150);
+    }
 }
 
-// وتعديل دالة filterProducts:
-function filterProducts(category) {
-    const filteredProducts = category === 'All' 
-        ? products 
-        : products.filter(p => p.category === category);
-    renderFilteredProducts(filteredProducts);
-    
-    // تحديد العنصر النشط
-    document.querySelectorAll('.category-item').forEach(item => {
-        item.classList.remove('active');
-        if ((category === 'All' && item.dataset.category === 'all') || 
-            item.dataset.category === category) {
-            item.classList.add('active');
-        }
-    });
-}
+// تأكد من استدعاء createFilterButtons في الدالة init
     
     function filterProducts(category) {
         const filteredProducts = category === 'All' 
