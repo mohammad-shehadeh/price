@@ -189,42 +189,244 @@
             margin: 0 auto;
         }
         
-        /* Filter Buttons */
-        #filter-buttons {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin: 1rem auto;
-            padding: 0.5rem;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: var(--border-radius);
-            backdrop-filter: blur(5px);
-        }
-        
-        .filter-btn {
-            padding: 0.6rem 1.2rem;
-            font-size: 0.9rem;
-            font-weight: 500;
-            border: none;
-            background: rgba(255, 255, 255, 0.1);
-            color: white;
-            cursor: pointer;
-            transition: var(--transition);
-            border-radius: 50px;
-            white-space: nowrap;
-        }
-        
-        .filter-btn:hover {
-            background: rgba(255, 255, 255, 0.2);
-        }
-        
-        .filter-btn.active {
-            background: linear-gradient(135deg, var(--primary-color), #6e45e2);
-            color: white;
-            font-weight: 600;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
+      /* Categories Scroll Container - تصميم جديد */
+.categories-scroll-container {
+    position: relative;
+    max-width: 100%;
+    margin: 1rem auto;
+    padding: 0 40px;
+    direction: ltr; /* لتفعيل التمرير بشكل صحيح */
+}
+
+.categories-scroller {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    scrollbar-width: none; /* إخفاء شريط التمرير في Firefox */
+    -ms-overflow-style: none; /* إخفاء شريط التمرير في IE */
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 50px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.categories-scroller::-webkit-scrollbar {
+    display: none; /* إخفاء شريط التمرير في Chrome/Safari */
+}
+
+/* Filter Buttons - تصميم جديد */
+.filter-btn {
+    padding: 0.7rem 1.5rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border: none;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 50px;
+    white-space: nowrap;
+    flex-shrink: 0;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.filter-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.filter-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.filter-btn:hover::before {
+    opacity: 1;
+}
+
+.filter-btn.active {
+    background: linear-gradient(135deg, var(--primary-color), #6e45e2);
+    color: white;
+    font-weight: 700;
+    box-shadow: 0 8px 25px rgba(11, 181, 176, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    position: relative;
+    animation: pulse 2s infinite;
+}
+
+.filter-btn.active::after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(135deg, var(--primary-color), #6e45e2);
+    border-radius: 50px;
+    z-index: -1;
+    opacity: 0.5;
+    animation: pulse-border 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        box-shadow: 0 8px 25px rgba(11, 181, 176, 0.3);
+    }
+    50% {
+        box-shadow: 0 8px 35px rgba(11, 181, 176, 0.5);
+    }
+}
+
+@keyframes pulse-border {
+    0%, 100% {
+        opacity: 0.5;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.8;
+        transform: scale(1.02);
+    }
+}
+
+/* Scroll Buttons */
+.scroll-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    background: rgba(11, 181, 176, 0.9);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    z-index: 10;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.scroll-btn:hover {
+    background: var(--primary-color);
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3);
+}
+
+.scroll-btn.left {
+    right: 0;
+}
+
+.scroll-btn.right {
+    left: 0;
+}
+
+.scroll-btn i {
+    transition: transform 0.3s ease;
+}
+
+.scroll-btn:hover i {
+    transform: scale(1.2);
+}
+
+/* Scroll Indicator */
+.categories-scroller::after {
+    content: '';
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, 
+        transparent, 
+        rgba(255, 255, 255, 0.5), 
+        transparent);
+    border-radius: 2px;
+    opacity: 0.5;
+}
+
+/* Fade effect on edges */
+.categories-scroller::before,
+.categories-scroller::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 40px;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.categories-scroller::before {
+    right: 0;
+    background: linear-gradient(to left, 
+        rgba(43, 43, 43, 1) 0%, 
+        rgba(43, 43, 43, 0.8) 50%, 
+        transparent 100%);
+}
+
+.categories-scroller::after {
+    left: 0;
+    background: linear-gradient(to right, 
+        rgba(43, 43, 43, 1) 0%, 
+        rgba(43, 43, 43, 0.8) 50%, 
+        transparent 100%);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .categories-scroll-container {
+        padding: 0 35px;
+    }
+    
+    .scroll-btn {
+        width: 35px;
+        height: 35px;
+        font-size: 0.9rem;
+    }
+    
+    .filter-btn {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .categories-scroll-container {
+        padding: 0 30px;
+    }
+    
+    .scroll-btn {
+        width: 30px;
+        height: 30px;
+        font-size: 0.8rem;
+    }
+    
+    .filter-btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.85rem;
+    }
+}
         
         /* Search Box */
         #search-box {
@@ -1166,8 +1368,18 @@
         <!-- File Buttons -->
         <div id="file-buttons"></div>
         
-        <!-- Filter Buttons -->
-        <div id="filter-buttons"></div>
+  <!-- Filter Buttons Container - تصميم جديد مع تمرير -->
+<div class="categories-scroll-container">
+    <div class="categories-scroller" id="filter-buttons">
+        <!-- سيتم إضافة أزرار الفئات هنا ديناميكيًا -->
+    </div>
+    <button class="scroll-btn left" id="scrollLeft">
+        <i class="fas fa-chevron-right"></i>
+    </button>
+    <button class="scroll-btn right" id="scrollRight">
+        <i class="fas fa-chevron-left"></i>
+    </button>
+</div>
         
         <!-- Search Box -->
         <input type="text" id="search-box" placeholder="🔍 ابحث عن منتج...">
@@ -1267,29 +1479,36 @@
         ];
         
         // Initialize
-        function init() {
-            createFileButtons();
-            loadProductsFromFile('test.md');
-            renderCart();
-            updateCartCount();
-            
-            // Event Listeners
-            showCartButton.addEventListener('click', toggleCart);
-            hideCartButton.addEventListener('click', toggleCart);
-            checkoutButton.addEventListener('click', showPopup);
-            confirmButton.addEventListener('click', confirmOrder);
-            cancelButton.addEventListener('click', hidePopup);
-            scrollUpButton.addEventListener('click', scrollToTop);
-            searchBox.addEventListener('input', handleSearch);
-            
-            // Hide loading screen after 2 seconds
-            setTimeout(() => {
-                document.getElementById('loading-screen').style.opacity = '0';
-                setTimeout(() => {
-                    document.getElementById('loading-screen').style.display = 'none';
-                }, 500);
-            }, 0);
+function init() {
+    createFileButtons();
+    loadProductsFromFile('test.md');
+    renderCart();
+    updateCartCount();
+    
+    // Event Listeners الأساسية
+    showCartButton.addEventListener('click', toggleCart);
+    hideCartButton.addEventListener('click', toggleCart);
+    checkoutButton.addEventListener('click', showPopup);
+    confirmButton.addEventListener('click', confirmOrder);
+    cancelButton.addEventListener('click', hidePopup);
+    scrollUpButton.addEventListener('click', scrollToTop);
+    searchBox.addEventListener('input', handleSearch);
+    
+    // تهيئة أزرار التمرير بعد تحميل الصفحة
+    setTimeout(() => {
+        if (document.querySelector('.categories-scroller')) {
+            initScrollButtons();
         }
+    }, 500);
+    
+    // Hide loading screen after 2 seconds
+    setTimeout(() => {
+        document.getElementById('loading-screen').style.opacity = '0';
+        setTimeout(() => {
+            document.getElementById('loading-screen').style.display = 'none';
+        }, 500);
+    }, 2000);
+}
         
         // Create File Buttons
         function createFileButtons() {
@@ -1458,26 +1677,134 @@
         }
         
         // Create Filter Buttons
-        function createFilterButtons() {
-            filterButtonsContainer.innerHTML = '';
-            
-            // All Button
-            const allButton = document.createElement('button');
-            allButton.textContent = 'الكل';
-            allButton.className = 'filter-btn active';
-            allButton.onclick = () => filterProducts('All');
-            filterButtonsContainer.appendChild(allButton);
-            
-            // Category Buttons
-            const categories = [...new Set(products.map(p => p.category))];
-            categories.forEach(category => {
-                const button = document.createElement('button');
-                button.textContent = category;
-                button.className = 'filter-btn';
-                button.onclick = () => filterProducts(category);
-                filterButtonsContainer.appendChild(button);
-            });
-        }
+      // إضافة أزرار التمرير إلى DOM
+function addScrollButtonsToFilterContainer() {
+    // إذا لم يكن هناك أزرار تمرير مضافة بعد
+    if (!document.querySelector('.categories-scroll-container')) {
+        const filterButtons = document.getElementById('filter-buttons');
+        const scrollContainer = document.createElement('div');
+        scrollContainer.className = 'categories-scroll-container';
+        
+        // نقل محتوى filter-buttons إلى الحاوية الجديدة
+        scrollContainer.innerHTML = `
+            <div class="categories-scroller" id="filter-buttons">
+                ${filterButtons.innerHTML}
+            </div>
+            <button class="scroll-btn left" id="scrollLeft">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+            <button class="scroll-btn right" id="scrollRight">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+        `;
+        
+        // استبدال الحاوية القديمة بالجديدة
+        filterButtons.parentNode.replaceChild(scrollContainer, filterButtons);
+    }
+}
+
+// تهيئة أزرار التمرير
+function initScrollButtons() {
+    const categoriesScroller = document.querySelector('.categories-scroller');
+    const scrollLeftBtn = document.getElementById('scrollLeft');
+    const scrollRightBtn = document.getElementById('scrollRight');
+    
+    if (!categoriesScroller || !scrollLeftBtn || !scrollRightBtn) return;
+    
+    // التحقق من إمكانية التمرير
+    function updateScrollButtons() {
+        const canScrollLeft = categoriesScroller.scrollLeft > 0;
+        const canScrollRight = 
+            categoriesScroller.scrollLeft + categoriesScroller.clientWidth < 
+            categoriesScroller.scrollWidth - 1;
+        
+        scrollLeftBtn.style.opacity = canScrollLeft ? '1' : '0.5';
+        scrollLeftBtn.style.cursor = canScrollLeft ? 'pointer' : 'not-allowed';
+        
+        scrollRightBtn.style.opacity = canScrollRight ? '1' : '0.5';
+        scrollRightBtn.style.cursor = canScrollRight ? 'pointer' : 'not-allowed';
+    }
+    
+    // تمرير لليسار
+    scrollLeftBtn.addEventListener('click', () => {
+        categoriesScroller.scrollBy({ left: -200, behavior: 'smooth' });
+    });
+    
+    // تمرير لليمين
+    scrollRightBtn.addEventListener('click', () => {
+        categoriesScroller.scrollBy({ left: 200, behavior: 'smooth' });
+    });
+    
+    // تحديث حالة أزرار التمرير عند التمرير
+    categoriesScroller.addEventListener('scroll', updateScrollButtons);
+    
+    // تحديث عند تغيير حجم النافذة
+    window.addEventListener('resize', updateScrollButtons);
+    
+    // التهيئة الأولية
+    updateScrollButtons();
+    
+    // إضافة تأثير عند النقر على الأزرار
+    [scrollLeftBtn, scrollRightBtn].forEach(btn => {
+        btn.addEventListener('click', function() {
+            this.style.transform = 'translateY(-50%) scale(0.9)';
+            setTimeout(() => {
+                this.style.transform = 'translateY(-50%) scale(1)';
+            }, 150);
+        });
+    });
+}
+
+// تحديث دالة createFilterButtons لاستخدام النظام الجديد
+function createFilterButtons() {
+    const filterContainer = document.getElementById('filter-buttons');
+    filterContainer.innerHTML = '';
+    
+    // زر "الكل" مع تصميم خاص
+    const allButton = document.createElement('button');
+    allButton.textContent = 'الكل';
+    allButton.className = 'filter-btn active';
+    allButton.onclick = (e) => {
+        filterProducts('All');
+        setActiveButton(allButton);
+    };
+    filterContainer.appendChild(allButton);
+    
+    // أزرار الفئات مع تأثيرات مختلفة
+    const categories = [...new Set(products.map(p => p.category))];
+    categories.forEach((category, index) => {
+        const button = document.createElement('button');
+        button.textContent = category;
+        button.className = 'filter-btn';
+        
+        // إضافة تأخير بسيط للظهور المتتالي
+        button.style.animationDelay = `${index * 0.05}s`;
+        button.style.animation = 'fadeIn 0.3s ease forwards';
+        button.style.opacity = '0';
+        
+        button.onclick = (e) => {
+            filterProducts(category);
+            setActiveButton(button);
+        };
+        filterContainer.appendChild(button);
+    });
+    
+    // إضافة أزرار التمرير
+    addScrollButtonsToFilterContainer();
+    
+    // تهيئة أزرار التمرير بعد إضافة الأزرار
+    setTimeout(initScrollButtons, 100);
+}
+
+// دالة لتعيين الزر النشط
+function setActiveButton(activeBtn) {
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.classList.remove('active');
+        btn.style.background = 'rgba(255, 255, 255, 0.1)';
+    });
+    
+    activeBtn.classList.add('active');
+}
         
        // Filter Products
 function filterProducts(category) {
