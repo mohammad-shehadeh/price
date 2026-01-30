@@ -1,4 +1,3 @@
-N\A/Nokia 105 4G ori |/110/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769789789/unvvxjjvwktvugwpdv8u.jpg
 Honor/X7D 256|8/530/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769508671/xkjcincirbyzfyqyfg3s.png
 Tecno/Go3 128|4/330/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769433712/rwkj73icwxmb1uucngjt.webp
 Tecno/Go3 64|4/300/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769433709/or8ge3cehifuwlfq5ozn.jpg
@@ -6,6 +5,7 @@ MI/NOTE 15 PRO 512|12/1010/https://res.cloudinary.com/dygc5b8cn/image/upload/v17
 MI/NOTE 15 PRO 256|8/835/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769083899/cxucuyswalsqf24gqprl.webp
 MI/NOTE 15 256|8/660/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769083825/bytesdd6t344fn7bnhou.jpg
 Nokia/Nokia 108 4G ori |/125/https://res.cloudinary.com/dygc5b8cn/image/upload/v1768648661/gat9whx1e07qi9ilswpg.webp
+Nokia/Nokia 105 4G ori |/110/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769789789/unvvxjjvwktvugwpdv8u.jpg
 Nokia/Nokia 110 4G ori |/120/https://res.cloudinary.com/dygc5b8cn/image/upload/v1768648574/g1gljaqe1lwqaafpobf0.jpg
 samsung/Tab a11 ‏64|‏4/430/https://res.cloudinary.com/dygc5b8cn/image/upload/v1768648464/upearlshkahnpk5bgd3v.jpg
 huawei/GT  6 Black |/700/https://res.cloudinary.com/dygc5b8cn/image/upload/v1768227581/nffehziqmd7dfnioefmp.webp
@@ -18,7 +18,6 @@ samsung/TAB A11 128|8/580/https://res.cloudinary.com/dygc5b8cn/image/upload/v176
 MI/C71 64|3/240/https://res.cloudinary.com/dygc5b8cn/image/upload/v1766568493/kwt5ow5wuofjizgiweqe.webp
 samsung/A26 256|8/750/https://res.cloudinary.com/dygc5b8cn/image/upload/v1764065061/khfpksu8x13khbj6rok2.jpg
 Honor/X9d 256|12/1120/https://res.cloudinary.com/dygc5b8cn/image/upload/v1763373225/j3170qc31xs8tyqnkoju.webp
-Sony/PS5 1T|SD/2000/https://res.cloudinary.com/dygc5b8cn/image/upload/v1761125137/opry0rsvlx9wvw8vvmlr.webp
 Tecno/Slim 256|8/670/https://res.cloudinary.com/dygc5b8cn/image/upload/v1760622512/yze1nsxdm3lgmny2tjyo.webp
 MI/Pad 2 256|8/Aa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1759655366/bsrpwamkyjsfjjxjyvqq.webp
 MI/SE 11" 256|8/aaa/https://www.celletronic.com/wp-content/uploads/2023/09/xiaomi-redmi-pad-se-11-0-6gb-ram-128gb-wifi-gris.jpg
@@ -34,10 +33,6 @@ MI/Redmi 15C 128|6/Aa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1757324
 MI/Redmi 15C 128|4/Aa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1757324301/ilyhjiezyfz5khp30p5e.webp
 Apple/Ipad 11 128|كفالة ضفة |/1240/https://res.cloudinary.com/dygc5b8cn/image/upload/v1756986041/ajb0lks9smgql3bccyjx.webp
 samsung/A07 128|4/310/https://res.cloudinary.com/dygc5b8cn/image/upload/v1756559491/wokzeyy83lncbbewic1v.jpg
-N\A/Pad 100 128|12/700/https://res.cloudinary.com/dygc5b8cn/image/upload/v1756119440/ahwstejrduarizr8gieh.jpg
-N\A/Pad 30 Wifi 64|4/280/https://res.cloudinary.com/dygc5b8cn/image/upload/v1756119325/totf8uapgixfxtzrcy0n.webp
-N\A/Pad 60 kids 128|8/350/https://res.cloudinary.com/dygc5b8cn/image/upload/v1751890041/r4eaq4are5z25deyfaib.webp
-N\A/Pad 30 wifi 128|8/320/https://res.cloudinary.com/dygc5b8cn/image/upload/v1751890033/r6jbwv5uir9dapr7gqre.webp
 Honor/400 pro 512|12/2320/https://res.cloudinary.com/dygc5b8cn/image/upload/v1749889558/fmzaah1o7lludxn31jts.jpg
 Honor/400 512|12/1420/https://res.cloudinary.com/dygc5b8cn/image/upload/v1749890166/zudnes5gdxiihzll14p1.jpg
 Honor/400 LITE 256|8/830/https://res.cloudinary.com/dygc5b8cn/image/upload/v1754815540/i5mtqw9pbcm7nstx5wy1.jpg
@@ -52,9 +47,6 @@ Tecno/Go2 64|6/230/https://res.cloudinary.com/dygc5b8cn/image/upload/v1753777830
 Tecno/Go1 128|8/Aa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1753777748/hfymoxudmn6gt41pqhoi.jpg
 Honor/X7C 256|8/500/https://res.cloudinary.com/dygc5b8cn/image/upload/v1753694752/kw0rwr4ygtl6vcsorjhv.webp
 Honor/X6C 128|6/370/https://res.cloudinary.com/dygc5b8cn/image/upload/v1753694659/qgw3j4v8b2byfx3zp99s.jpg
-N\A/Nokia 108 |/aaa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1751890269/gubix3upttuhrz5y7gxm.jpg
-N\A/Pad 50 kids 64|2/240/https://res.cloudinary.com/dygc5b8cn/image/upload/v1751890187/oy87yjjt6zln8qu7cz21.jpg
-N\A/Pad 5 kids |/370/https://res.cloudinary.com/dygc5b8cn/image/upload/v1751890058/nlafdz4fsrxjtbcpezqt.jpg
 Honor/X9C Smart |/870/https://res.cloudinary.com/dygc5b8cn/image/upload/v1748939036/fmnbqj4pn9g6a759fwja.jpg
 samsung/A56 256|12/1210/https://res.cloudinary.com/dygc5b8cn/image/upload/v1749459188/y0z6o06cd6vd4duldj4x.webp
 samsung/A56 256|8/Aa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1754820726/old4z9el309kurxmnjsi.jpg
@@ -102,9 +94,5 @@ ZTE/A35 64|12/270/https://cdn.salla.sa/vzoPn/3e76ec41-f0fc-4349-a7b2-f5f6ef94390
 ZTE/nubia Music 128 |/330/https://promart.vteximg.com.br/arquivos/ids/8633792-1000-1000/imageUrl_1.jpg?v=638766667087600000
 ZTE/nubia V60 design 256|16/410/https://www.innwa.com.mm/storage/product/1430/202408181124zte-blade-v60-design-blue.webp
 ZTE/nubia V60 256|20/510/https://www.innwa.com.mm/storage/product/1430/202408181124zte-blade-v60-design-blue.webp
-N\A/Nokia 105 4G ori |/110/https://celloplanet.com/wp-content/uploads/2024/01/Nokia-105-2023-500x500-1.jpg
-N\A/Oscal pad 50 kids 64|2/280/https://res.cloudinary.com/dygc5b8cn/image/upload/v1757492490/nu3zpahlkogtittxrqtk.jpg
-N\A/Teclast p85 kids 64|4/270/https://en.teclast.com/cdn/shop/files/P85Tkids_2.png?v=1713948270&width=1000
-N\A/Teclast M50 128|8/440/https://en.teclast.com/cdn/shop/files/12_025ea586-e65f-447b-a78a-32f342dc516f.jpg?v=1690282129&width=1500
-N\A/H2163 |/35/https://s9.pik.ba/galerija/2021-04/26/06/slika-2830089-6086f09649711-velika.jpg
+Nokia/H2163 كشاف صيني |/35/https://s9.pik.ba/galerija/2021-04/26/06/slika-2830089-6086f09649711-velika.jpg
 samsung/A17 128|‏6/‏510/https://res.cloudinary.com/dygc5b8cn/image/upload/v1766568210/sra8gy0ybsftajzelwqy.jpg
