@@ -4,7 +4,7 @@ motherboard Connector/P40 |/3/https://res.cloudinary.com/dygc5b8cn/image/upload/
 motherboard Connector/P39 |/3/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769793627/yuekomcvokok7tpdixkk.jpg
 motherboard Connector/P38 |/3/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769793354/ayel7cwxtujaxiqyzvob.webp
 motherboard Connector/P37 |/3/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769794126/grl0mjkbbwlmmt0fzbxz.jpg
-motherboard Connector/P36 |/3/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769794119/l2rylzkhcfivdz3b9gxe.jpg
+motherboard Connector/P36 |/3/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769795102/azdmlybq2ptsedk8x46r.jpg
 iphone flex charger/ip 17 pro max أصلي|/aaa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769068342/bt7wcaixkeqvi9cdj5wh.jpg
 iphone flex charger/Ip 16 pro max أصلي|/80/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769068320/jpxg1uctfmy6f65pfcrj.jpg
 iphone flex charger/Ip 15 pro max أصلي|/80/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769068368/nnpwakprkebfchnlkbjn.webp
