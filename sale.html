@@ -2357,23 +2357,52 @@
     }
     
     function createFilterButtons() {
-        filterButtonsContainer.innerHTML = '';
+    const filterButtons = document.getElementById('filter-buttons');
+    filterButtons.innerHTML = '';
+    
+    // حساب عدد المنتجات في كل فئة
+    const categoryCounts = {};
+    products.forEach(product => {
+        categoryCounts[product.category] = (categoryCounts[product.category] || 0) + 1;
+    });
+    
+    // زر "الكل"
+    const allButton = document.createElement('button');
+    allButton.textContent = 'الكل';
+    allButton.className = 'filter-btn active';
+    
+    // إضافة عداد للمنتجات
+    const allCount = document.createElement('span');
+    allCount.className = 'filter-count';
+    allCount.textContent = products.length;
+    allButton.prepend(allCount);
+    
+    allButton.onclick = () => filterProducts('All');
+    filterButtons.appendChild(allButton);
+    
+    // أزرار الفئات
+    const categories = [...new Set(products.map(p => p.category))];
+    categories.forEach(category => {
+        const button = document.createElement('button');
+        button.textContent = category;
+        button.className = 'filter-btn';
         
-        const allButton = document.createElement('button');
-        allButton.textContent = 'الكل';
-        allButton.className = 'filter-btn active';
-        allButton.onclick = () => filterProducts('All');
-        filterButtonsContainer.appendChild(allButton);
+        // إضافة عداد للمنتجات
+        const count = document.createElement('span');
+        count.className = 'filter-count';
+        count.textContent = categoryCounts[category] || 0;
+        button.prepend(count);
         
-        const categories = [...new Set(products.map(p => p.category))];
-        categories.forEach(category => {
-            const button = document.createElement('button');
-            button.textContent = category;
-            button.className = 'filter-btn';
-            button.onclick = () => filterProducts(category);
-            filterButtonsContainer.appendChild(button);
-        });
-    }
+        button.onclick = () => filterProducts(category);
+        filterButtons.appendChild(button);
+    });
+    
+    // تهيئة التمرير
+    setTimeout(() => {
+        initFilterScroll();
+        updateScrollButtons();
+    }, 100);
+}
     
     function filterProducts(category) {
         const filteredProducts = category === 'All' 
