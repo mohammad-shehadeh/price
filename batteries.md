@@ -1,3 +1,7 @@
+Household Batteries/GP 27A |/10/https://res.cloudinary.com/dygc5b8cn/image/upload/v1770199802/dnuimb5e7xjkhcar3oeh.jpg
+Household Batteries/GP 23A |/10/https://res.cloudinary.com/dygc5b8cn/image/upload/v1770199795/ygefwxu1xsfbbebmwmrs.jpg
+Household Batteries/GP CR2450 x5 |/30/https://res.cloudinary.com/dygc5b8cn/image/upload/v1770199636/l9qab7t7l6i4ycpji1lk.webp
+Household Batteries/GP CR2430 x5 |/30/https://res.cloudinary.com/dygc5b8cn/image/upload/v1770199632/zqe55wrhf2qnkrnbgx43.webp
 IOS batteries/ip 17 pro max |/aaa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769254111/fjhtx3pyds5kv47uueug.jpg
 IOS batteries/Ip 16 pro max |/80/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769254421/r02tewkrs5irwt31dzay.jpg
 IOS batteries/Ip 15 pro max |/80/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769254192/zcns3zarj3ckc8phdmvq.jpg
@@ -37,7 +41,7 @@ IOS batteries/Macbook pro A1989 قريبا|/AAA/https://res.cloudinary.com/dygc5
 Household Batteries/GP AAA x4 |/6/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769331026/nluoztxotsozsuscmita.jpg
 Household Batteries/GP AA x4 |/6/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769331064/bmhjcciqrvfykglzn4dn.jpg
 Household Batteries/GP D x2 |/13/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769331046/qhx7bqgnmpylfcyuf4jf.webp
-Household Batteries/GP C x2 |/8/undefined
+Household Batteries/GP C x2 |/8/https://res.cloudinary.com/dygc5b8cn/image/upload/v1770199618/gohmm4vmts0eysx1hsre.webp
 Household Batteries/GP 9V x1 |/9/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769331053/dw5ugr5hbcurugofxgvs.webp
 Household Batteries/GP CR2032 x5 |/1/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769345655/v6lozyrakhpfd1qz7bvl.webp
 Household Batteries/GP CR2025 x5 |/1/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769345661/ka1ejdmrkbh1ddftvinl.jpg
