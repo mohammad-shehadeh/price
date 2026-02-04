@@ -85,25 +85,22 @@ MI batteries/14C /25/undefined
 MI batteries/NOTE 9S /25/undefined
 MI batteries/BN59 /25/undefined
 MI batteries/NOTE 11S|NOTE 11 /25/undefined
-MI batteries/NOTE 8 PRO /25/undefined
-MI batteries/NOTE 8 PRO /25/undefined
-MI batteries/NOTE 8 PRO /25/undefined
-MI batteries/NOTE 8 PRO /25/undefined
-MI batteries/NOTE 8 PRO /25/undefined
-MI batteries/NOTE 8 PRO /25/undefined
-MI batteries/NOTE 8 PRO /25/undefined
-MI batteries/NOTE 8 PRO /25/undefined
-MI batteries/NOTE 8 PRO /25/undefined
-MI batteries/NOTE 8 PRO /25/undefined
-MI batteries/NOTE 8 PRO /25/undefined
-MI batteries/NOTE 8 PRO /25/undefined
-MI batteries/NOTE 8 PRO /25/undefined
-MI batteries/NOTE 8 PRO /25/undefined
-MI batteries/NOTE 8 PRO /25/undefined
-MI batteries/NOTE 8 PRO /25/undefined
-MI batteries/NOTE 8 PRO /25/undefined
-MI batteries/NOTE 8 PRO /25/undefined
-MI batteries/NOTE 8 PRO /25/undefined
-MI batteries/NOTE 8 PRO /25/undefined
-MI batteries/NOTE 8 PRO /25/undefined
-MI batteries/NOTE 8 PRO /25/undefined
+MI batteries/REDMI 13 /25/undefined
+MI batteries/11 LITE/25/undefined
+MI batteries/NOTE 10S /25/undefined
+MI batteries/A3/25/undefined
+MI batteries/NOTE 8/25/undefined
+MI batteries/NOTE 13 PRO /25/undefined
+MI batteries/X3 PRO /25/undefined
+MI batteries/9A/25/undefined
+MI batteries/12C/25/undefined
+MI batteries/X4 PRO /25/undefined
+MI batteries/ BM4J /25/undefined
+MI batteries/REDMOI 10 /25/undefined
+MI batteries/NOTE 13 /25/undefined
+MI batteries/NOTE 5 /25/undefined
+MI batteries/NOTE 6 pro /25/undefined
+MI batteries/redmi 8|8A /25/undefined
+MI batteries/REDMI 12 /25/undefined
+MI batteries/NOTE 12 /25/undefined
+
