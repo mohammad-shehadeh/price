@@ -1,35 +1,35 @@
-Charging Connector/P1 |/1.5/
-Charging Connector/P2 |/1.5/
-Charging Connector/P3 |/1.5/
-Charging Connector/P4 |/1.5/
-Charging Connector/P5 |/1.5/
-Charging Connector/P6 |/1.5/
-Charging Connector/P7 |/1.5/
-Charging Connector/P8 |/1.5/
-Charging Connector/P9 |/1.5/
-Charging Connector/P10 |/1.5/
-Charging Connector/P11 |/1.5/
-Charging Connector/P12 |/1.5/
-Charging Connector/P13 |/1.5/
-Charging Connector/P14 |/1.5/
-Charging Connector/P15 |/1.5/
-Charging Connector/P16 |/1.5/
-Charging Connector/P17 |/1.5/
-Charging Connector/P18 |/1.5/
-Charging Connector/P19 |/1.5/
-Charging Connector/P20 |/1.5/
-Charging Connector/P21 |/1.5/
-Charging Connector/P22 |/1.5/
-Charging Connector/P23 |/1.5/
-Charging Connector/P24 |/1.5/
-Charging Connector/P25 |/1.5/
-Charging Connector/P26 |/1.5/
-Charging Connector/P27 |/1.5/
-Charging Connector/P28 |/1.5/
-Charging Connector/P29 |/1.5/
-Charging Connector/P30 |/1.5/
-Charging Connector/P31 |/1.5/
-Charging Connector/P32 |/1.5/
+Charging Connector/P1 |/1.5/undefined
+Charging Connector/P2 |/1.5/undefined
+Charging Connector/P3 |/1.5/undefined
+Charging Connector/P4 |/1.5/undefined
+Charging Connector/P5 |/1.5/undefined
+Charging Connector/P6 |/1.5/undefined
+Charging Connector/P7 |/1.5/undefined
+Charging Connector/P8 |/1.5/undefined
+Charging Connector/P9 |/1.5/undefined
+Charging Connector/P10 |/1.5/undefined
+Charging Connector/P11 |/1.5/undefined
+Charging Connector/P12 |/1.5/undefined
+Charging Connector/P13 |/1.5/undefined
+Charging Connector/P14 |/1.5/undefined
+Charging Connector/P15 |/1.5/undefined
+Charging Connector/P16 |/1.5/undefined
+Charging Connector/P17 |/1.5/undefined
+Charging Connector/P18 |/1.5/undefined
+Charging Connector/P19 |/1.5/undefined
+Charging Connector/P20 |/1.5/undefined
+Charging Connector/P21 |/1.5/undefined
+Charging Connector/P22 |/1.5/undefined
+Charging Connector/P23 |/1.5/undefined
+Charging Connector/P24 |/1.5/undefined
+Charging Connector/P25 |/1.5/undefined
+Charging Connector/P26 |/1.5/undefined
+Charging Connector/P27 |/1.5/undefined
+Charging Connector/P28 |/1.5/undefined
+Charging Connector/P29 |/1.5/undefined
+Charging Connector/P30 |/1.5/undefined
+Charging Connector/P31 |/1.5/undefined
+Charging Connector/P32 |/1.5/undefined
 motherboard Connector/P42 |/3/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769793003/ywqujxucb2bli2dekfnq.jpg
 motherboard Connector/P41 |/3/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769793008/jygdrjqcdvlghhml7od5.jpg
 motherboard Connector/P40 |/3/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769793934/fgdbsalzdzgtmg5wge7e.jpg
@@ -195,48 +195,48 @@ mi flex main/POCO X4 PRO |/20/https://res.cloudinary.com/dygc5b8cn/image/upload/
 mi flex main/FOR LCD X4 PRO|/15/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769103768/zdzkya37nxoigdkl8cfg.jpg
 mi flex main/POCO X3 PRO |/15/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769103773/bhpdqw7kjy5gejwggb01.jpg
 MIX flex/FOR SIM mi 11 lite|/20/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769242213/mewr3e3xwoqsj6gfjcis.jpg
-tecno flex charger/spark GO 2024 Ori ic|/15/
-tecno flex charger/spark GO 2023 Ori ic|/15/
-tecno flex charger/spark GO 1 Ori ic|/15/
-tecno flex charger/ spark GO 2 Ori ic|/15/
-tecno flex charger/spark 10 pro  Ori ic|/15/
-tecno flex charger/camon 20 pro Ori ic|/15/
-tecno flex charger/spark 30C  Ori ic|/15/
-tecno flex charger/spark pop 5 lite Ori ic|/15/
-tecno flex charger/spark 9 Ori ic|/15/
-tecno flex charger/spark 20 pro Ori ic|/15/
-tecno flex charger/pova 7 Ori ic|/aaa/
-tecno flex charger/pova 6 Ori ic|/15/
-tecno flex charger/pova 5 Ori ic|/15/
-tecno flex charger/pova 4 Ori ic|/15/
-tecno flex charger/pova 3 Ori ic|/aaa/
-tecno flex charger/pova 2 Ori ic|/15/
-tecno flex charger/pova 1 Ori ic|/15/
-tecno flex charger/pova new Ori ic|/15/
-tecno flex charger/pova new 2 Ori ic|/15/
-tecno flex charger/camon 18 primer Ori ic|/15/
-tecno flex charger/camon 20 pro Ori ic|/15/
-tecno flex charger/pop 7 Ori ic|/15/
-tecno flex charger/pop 6 pro Ori ic|/15/
-tecno flex charger/spark 20 pro Ori ic|/15/
-tecno flex charger/spark 20  Ori ic|/15/
-tecno flex charger/spark 20C Ori ic|/15/
-tecno flex charger/spark 10 pro Ori ic|/15/
-tecno flex charger/spark 10 Ori ic|/15/
-tecno flex charger/spark 10C Ori ic|/15/
-tecno flex charger/spark 8C pro Ori ic|/15/
-tecno flex charger/spark 9C Ori ic|/15/
-tecno flex charger/camon 18 Ori ic|/15/
-tecno flex charger/camon 18P Ori ic|/15/
-infinix flex charger/ HOT 40I Ori ic|/15/
-infinix flex charger/ HOT 50I Ori ic|/15/
-infinix flex charger/ smart 8 Ori ic|/15/
-infinix flex charger/ smart 9 ic|/15/
-infinix flex charger/ HOT 40I Ori ic|/15/
-HONOR flex charger/ X6C  Ori ic|/15/
-HONOR flex charger/ X6B  Ori ic|/15/
-HONOR flex charger/ X7B  Ori ic|/15/
-HONOR flex charger/ X9B  Ori ic|/15/
-HONOR flex charger/ X5B  Ori ic|/15/
-HONOR flex charger/ X5B PLUS  Ori ic|/15/
-HONOR flex charger/ X7C  Ori ic|/15/
+tecno flex charger/spark GO 2024 Ori ic|/15/https://res.cloudinary.com/dygc5b8cn/image/upload/v1770195288/oiw7z12cek9pitgiraos.jpg
+tecno flex charger/spark GO 2023 Ori ic|/15/undefined
+tecno flex charger/spark GO 1 Ori ic|/15/undefined
+tecno flex charger/spark GO 2 Ori ic|/15/undefined
+tecno flex charger/spark 10 pro  Ori ic|/15/undefined
+tecno flex charger/camon 20 pro Ori ic|/15/undefined
+tecno flex charger/spark 30C  Ori ic|/15/undefined
+tecno flex charger/spark pop 5 lite Ori ic|/15/undefined
+tecno flex charger/spark 9 Ori ic|/15/undefined
+tecno flex charger/spark 20 pro Ori ic|/15/undefined
+tecno flex charger/pova 7 Ori ic|/aaa/undefined
+tecno flex charger/pova 6 Ori ic|/15/undefined
+tecno flex charger/pova 5 Ori ic|/15/undefined
+tecno flex charger/pova 4 Ori ic|/15/undefined
+tecno flex charger/pova 3 Ori ic|/aaa/undefined
+tecno flex charger/pova 2 Ori ic|/15/undefined
+tecno flex charger/pova 1 Ori ic|/15/undefined
+tecno flex charger/pova new Ori ic|/15/undefined
+tecno flex charger/pova new 2 Ori ic|/15/undefined
+tecno flex charger/camon 18 primer Ori ic|/15/undefined
+tecno flex charger/camon 20 pro Ori ic|/15/undefined
+tecno flex charger/pop 7 Ori ic|/15/undefined
+tecno flex charger/pop 6 pro Ori ic|/15/undefined
+tecno flex charger/spark 20 pro Ori ic|/15/undefined
+tecno flex charger/spark 20  Ori ic|/15/undefined
+tecno flex charger/spark 20C Ori ic|/15/undefined
+tecno flex charger/spark 10 pro Ori ic|/15/undefined
+tecno flex charger/spark 10 Ori ic|/15/undefined
+tecno flex charger/spark 10C Ori ic|/15/undefined
+tecno flex charger/spark 8C pro Ori ic|/15/undefined
+tecno flex charger/spark 9C Ori ic|/15/undefined
+tecno flex charger/camon 18 Ori ic|/15/undefined
+tecno flex charger/camon 18P Ori ic|/15/undefined
+infinix flex charger/HOT 40I Ori ic|/15/https://res.cloudinary.com/dygc5b8cn/image/upload/v1770195280/ylhoimt1hmbe7grwai9p.jpg
+infinix flex charger/HOT 50I Ori ic|/15/undefined
+infinix flex charger/smart 8 Ori ic|/15/undefined
+infinix flex charger/smart 9 ic|/15/undefined
+infinix flex charger/HOT 40I Ori ic|/15/undefined
+HONOR flex charger/X6C  Ori ic|/15/https://res.cloudinary.com/dygc5b8cn/image/upload/v1770195272/ecojo8oo9obm0txqiaub.jpg
+HONOR flex charger/X6B  Ori ic|/15/undefined
+HONOR flex charger/X7B  Ori ic|/15/undefined
+HONOR flex charger/X9B  Ori ic|/15/undefined
+HONOR flex charger/X5B  Ori ic|/15/undefined
+HONOR flex charger/X5B PLUS  Ori ic|/15/undefined
+HONOR flex charger/X7C  Ori ic|/15/undefined
