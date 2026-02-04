@@ -1,8 +1,8 @@
 Charging Connector/P1 |/1.5/https://res.cloudinary.com/dygc5b8cn/image/upload/v1770196515/x28kg4jxrptjnsvmefvm.jpg
-Charging Connector/P2 |/1.5/undefined
+Charging Connector/P2 |/1.5/https://res.cloudinary.com/dygc5b8cn/image/upload/v1770197893/yfelktn3rzitmenajbti.jpg
 Charging Connector/P3 |/1.5/https://res.cloudinary.com/dygc5b8cn/image/upload/v1770196528/efvotmslqx9vlfpm9qij.jpg
 Charging Connector/P4 |/1.5/https://res.cloudinary.com/dygc5b8cn/image/upload/v1770196533/ne2liib5ou7iqbpgg8d1.webp
-Charging Connector/P5 |/1.5/undefined
+Charging Connector/P5 |/1.5/https://res.cloudinary.com/dygc5b8cn/image/upload/v1770197897/vlvelienmrsiccmuvkuf.jpg
 Charging Connector/P6 |/1.5/https://res.cloudinary.com/dygc5b8cn/image/upload/v1770196544/afd9qxcq1adzjslqnrtx.jpg
 Charging Connector/P7 |/1.5/https://res.cloudinary.com/dygc5b8cn/image/upload/v1770196551/q9iunj6rslv1lgrmtr3q.jpg
 Charging Connector/P8 |/1.5/https://res.cloudinary.com/dygc5b8cn/image/upload/v1770196558/azbaa4pwoqjcuvgqudp8.jpg
