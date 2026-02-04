@@ -47,8 +47,6 @@ Household Batteries/GP CR2032 x5 |/1/https://res.cloudinary.com/dygc5b8cn/image/
 Household Batteries/GP CR2025 x5 |/1/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769345661/ka1ejdmrkbh1ddftvinl.jpg
 Household Batteries/GP CR2016 x5 |/1/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769345671/b3tjryy8r3eqn47kjhnc.webp
 Household Batteries/GP CR1620 x5 |/1/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769345677/kizvpeaygordpkwjg0l1.png
-tecno batteries/ |//undefined
-MI batteries/ |//undefined
 samsung batteries/A10S|A11|A20S |/AAA/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769416901/k8crfy4yahndso46zth6.jpg
 samsung batteries/note 20 ultra |/AAA/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769416901/k8crfy4yahndso46zth6.jpg
 samsung batteries/A54 |/AAA/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769416901/k8crfy4yahndso46zth6.jpg
@@ -103,4 +101,5 @@ MI batteries/NOTE 6 pro /25/undefined
 MI batteries/redmi 8|8A /25/undefined
 MI batteries/REDMI 12 /25/undefined
 MI batteries/NOTE 12 /25/undefined
+tecno batteries/spark GO 2024/25/undefined
 
