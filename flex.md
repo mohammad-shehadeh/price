@@ -195,3 +195,48 @@ mi flex main/POCO X4 PRO |/20/https://res.cloudinary.com/dygc5b8cn/image/upload/
 mi flex main/FOR LCD X4 PRO|/15/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769103768/zdzkya37nxoigdkl8cfg.jpg
 mi flex main/POCO X3 PRO |/15/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769103773/bhpdqw7kjy5gejwggb01.jpg
 MIX flex/FOR SIM mi 11 lite|/20/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769242213/mewr3e3xwoqsj6gfjcis.jpg
+tecno flex charger/spark GO 2024 Ori ic|/15/
+tecno flex charger/spark GO 2023 Ori ic|/15/
+tecno flex charger/spark GO 1 Ori ic|/15/
+tecno flex charger/ spark GO 2 Ori ic|/15/
+tecno flex charger/spark 10 pro  Ori ic|/15/
+tecno flex charger/camon 20 pro Ori ic|/15/
+tecno flex charger/spark 30C  Ori ic|/15/
+tecno flex charger/spark pop 5 lite Ori ic|/15/
+tecno flex charger/spark 9 Ori ic|/15/
+tecno flex charger/spark 20 pro Ori ic|/15/
+tecno flex charger/pova 7 Ori ic|/aaa/
+tecno flex charger/pova 6 Ori ic|/15/
+tecno flex charger/pova 5 Ori ic|/15/
+tecno flex charger/pova 4 Ori ic|/15/
+tecno flex charger/pova 3 Ori ic|/aaa/
+tecno flex charger/pova 2 Ori ic|/15/
+tecno flex charger/pova 1 Ori ic|/15/
+tecno flex charger/pova new Ori ic|/15/
+tecno flex charger/pova new 2 Ori ic|/15/
+tecno flex charger/camon 18 primer Ori ic|/15/
+tecno flex charger/camon 20 pro Ori ic|/15/
+tecno flex charger/pop 7 Ori ic|/15/
+tecno flex charger/pop 6 pro Ori ic|/15/
+tecno flex charger/spark 20 pro Ori ic|/15/
+tecno flex charger/spark 20  Ori ic|/15/
+tecno flex charger/spark 20C Ori ic|/15/
+tecno flex charger/spark 10 pro Ori ic|/15/
+tecno flex charger/spark 10 Ori ic|/15/
+tecno flex charger/spark 10C Ori ic|/15/
+tecno flex charger/spark 8C pro Ori ic|/15/
+tecno flex charger/spark 9C Ori ic|/15/
+tecno flex charger/camon 18 Ori ic|/15/
+tecno flex charger/camon 18P Ori ic|/15/
+infinix flex charger/ HOT 40I Ori ic|/15/
+infinix flex charger/ HOT 50I Ori ic|/15/
+infinix flex charger/ smart 8 Ori ic|/15/
+infinix flex charger/ smart 9 ic|/15/
+infinix flex charger/ HOT 40I Ori ic|/15/
+HONOR flex charger/ X6C  Ori ic|/15/
+HONOR flex charger/ X6B  Ori ic|/15/
+HONOR flex charger/ X7B  Ori ic|/15/
+HONOR flex charger/ X9B  Ori ic|/15/
+HONOR flex charger/ X5B  Ori ic|/15/
+HONOR flex charger/ X5B PLUS  Ori ic|/15/
+HONOR flex charger/ X7C  Ori ic|/15/
