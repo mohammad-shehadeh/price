@@ -50,3 +50,60 @@ Household Batteries/GP CR1620 x5 |/1/https://res.cloudinary.com/dygc5b8cn/image/
 tecno batteries/ |//undefined
 MI batteries/ |//undefined
 samsung batteries/A10S|A11|A20S |/AAA/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769416901/k8crfy4yahndso46zth6.jpg
+samsung batteries/note 20 ultra |/AAA/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769416901/k8crfy4yahndso46zth6.jpg
+samsung batteries/A54 |/AAA/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769416901/k8crfy4yahndso46zth6.jpg
+samsung batteries/A34 |/AAA/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769416901/k8crfy4yahndso46zth6.jpg
+samsung batteries/A15 |/AAA/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769416901/k8crfy4yahndso46zth6.jpg
+samsung batteries/A52 |/AAA/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769416901/k8crfy4yahndso46zth6.jpg
+samsung batteries/A14 |/AAA/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769416901/k8crfy4yahndso46zth6.jpg
+samsung batteries/A13 |/AAA/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769416901/k8crfy4yahndso46zth6.jpg
+samsung batteries/A05S |/AAA/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769416901/k8crfy4yahndso46zth6.jpg
+samsung batteries/A05 |/AAA/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769416901/k8crfy4yahndso46zth6.jpg
+samsung batteries/G532 |/AAA/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769416901/k8crfy4yahndso46zth6.jpg
+samsung batteries/S8+ |/AAA/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769416901/k8crfy4yahndso46zth6.jpg
+samsung batteries/A71 |/AAA/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769416901/k8crfy4yahndso46zth6.jpg
+samsung batteries/A51 |/AAA/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769416901/k8crfy4yahndso46zth6.jpg
+samsung batteries/NOTE 5 |/AAA/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769416901/k8crfy4yahndso46zth6.jpg
+samsung batteries/A33 |/AAA/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769416901/k8crfy4yahndso46zth6.jpg
+samsung batteries/A53 |/AAA/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769416901/k8crfy4yahndso46zth6.jpg
+samsung batteries/A73 |/AAA/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769416901/k8crfy4yahndso46zth6.jpg
+samsung batteries/NOTE 10+ |/AAA/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769416901/k8crfy4yahndso46zth6.jpg
+samsung batteries/J730 |/AAA/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769416901/k8crfy4yahndso46zth6.jpg
+samsung batteries/J7 PRIME |/AAA/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769416901/k8crfy4yahndso46zth6.jpg
+samsung batteries/J4+ |/AAA/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769416901/k8crfy4yahndso46zth6.jpg
+samsung batteries/S7 EDGE |/AAA/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769416901/k8crfy4yahndso46zth6.jpg
+samsung batteries/A70 |/AAA/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769416901/k8crfy4yahndso46zth6.jpg
+samsung batteries/A30S |/AAA/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769416901/k8crfy4yahndso46zth6.jpg
+samsung batteries/A10 |/AAA/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769416901/k8crfy4yahndso46zth6.jpg
+samsung batteries/A12 |/AAA/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769416901/k8crfy4yahndso46zth6.jpg
+samsung batteries/A20|A50 |/AAA/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769416901/k8crfy4yahndso46zth6.jpg
+samsung batteries/NOTE 5 |/AAA/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769416901/k8crfy4yahndso46zth6.jpg
+MI batteries/9T|M3 /25/undefined
+MI batteries/13C /25/undefined
+MI batteries/NOTE 8 PRO /25/undefined
+MI batteries/14C /25/undefined
+MI batteries/NOTE 9S /25/undefined
+MI batteries/BN59 /25/undefined
+MI batteries/NOTE 11S|NOTE 11 /25/undefined
+MI batteries/NOTE 8 PRO /25/undefined
+MI batteries/NOTE 8 PRO /25/undefined
+MI batteries/NOTE 8 PRO /25/undefined
+MI batteries/NOTE 8 PRO /25/undefined
+MI batteries/NOTE 8 PRO /25/undefined
+MI batteries/NOTE 8 PRO /25/undefined
+MI batteries/NOTE 8 PRO /25/undefined
+MI batteries/NOTE 8 PRO /25/undefined
+MI batteries/NOTE 8 PRO /25/undefined
+MI batteries/NOTE 8 PRO /25/undefined
+MI batteries/NOTE 8 PRO /25/undefined
+MI batteries/NOTE 8 PRO /25/undefined
+MI batteries/NOTE 8 PRO /25/undefined
+MI batteries/NOTE 8 PRO /25/undefined
+MI batteries/NOTE 8 PRO /25/undefined
+MI batteries/NOTE 8 PRO /25/undefined
+MI batteries/NOTE 8 PRO /25/undefined
+MI batteries/NOTE 8 PRO /25/undefined
+MI batteries/NOTE 8 PRO /25/undefined
+MI batteries/NOTE 8 PRO /25/undefined
+MI batteries/NOTE 8 PRO /25/undefined
+MI batteries/NOTE 8 PRO /25/undefined
