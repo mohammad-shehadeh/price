@@ -184,17 +184,19 @@ Samsung/A51 olbig +FRAME |/100/undefined
 Samsung/A52 incell+FRAME |/60/undefined
 Samsung/A52 olbig +FRAME |/120/undefined
 Samsung/A52 original +FRAME |/250/undefined
-Samsung/A53 +FRAME |/65/undefined
+Samsung/A33 incell +FRAME |/65/undefined
+Samsung/A53 incell +FRAME |/65/undefined
 Samsung/A53 olbig +FRAME |/120/undefined
-Samsung/A54 original +FRAME |/250/undefined
-Samsung/A55 original +FRAME |/aaa/undefined
+Samsung/A54 incell +FRAME |/70/undefined
+Samsung/A34 incell +FRAME |/65/undefined
+Samsung/A55 incell +FRAME |/70/undefined
 Samsung/A70 incell +FRAME |/60/undefined
 Samsung/A70 olbig +FRAME |/120/undefined
 Samsung/A71 incell +FRAME |/60/undefined
 Samsung/A71 oled +FRAME |/aaa/undefined
 Samsung/A72 incell +FRAME |/65/undefined
 Samsung/A72 olbig +FRAME |/120/undefined
-Samsung/A73 incell +FRAME |/aaa/undefined
+Samsung/A73 incell +FRAME |/65/undefined
 Samsung/A73 olbig +FRAME |/130/undefined
 Samsung/J4+-J6+ |/45/undefined
 Samsung/J7 prime |/45/undefined
