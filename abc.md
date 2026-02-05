@@ -1,3 +1,19 @@
+AMAYA/C66//
+AMAYA/L66//
+AMAYA/C77//
+AMAYA/CC77//
+AMAYA/CL77//
+AMAYA/S13//
+AMAYA/ALT-31W//
+AMAYA/APS-65W//
+AMAYA/ALT-32WT//
+AMAYA/ALT-30W//
+AMAYA/C72//
+AMAYA/L72//
+AMAYA/C83//
+AMAYA/L83//
+AMAYA/APH-21//
+AMAYA/APH-22//
 yesido/C295 |/1/https://res.cloudinary.com/dygc5b8cn/image/upload/v1767123799/trawbwvocecx6e2bkp64.png
 yesido/YH41 |/1/https://res.cloudinary.com/dygc5b8cn/image/upload/v1767123800/utxpbfw4xaie8w99hmn0.png
 yesido/YSW11 |/1/https://res.cloudinary.com/dygc5b8cn/image/upload/v1767123801/syp5hci3go9a6bhh8foa.jpg
