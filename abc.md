@@ -1,19 +1,19 @@
-AMAYA/C66//
-AMAYA/L66//
-AMAYA/C77//
-AMAYA/CC77//
-AMAYA/CL77//
-AMAYA/S13//
-AMAYA/ALT-31W//
-AMAYA/APS-65W//
-AMAYA/ALT-32WT//
-AMAYA/ALT-30W//
-AMAYA/C72//
-AMAYA/L72//
-AMAYA/C83//
-AMAYA/L83//
-AMAYA/APH-21//
-AMAYA/APH-22//
+AMAYA/C66 |/1.5/https://res.cloudinary.com/dygc5b8cn/image/upload/v1770322442/otcilrakmemmuuay6zgh.webp
+AMAYA/L66 |/2/https://res.cloudinary.com/dygc5b8cn/image/upload/v1770322455/ut1jeqofi8rkrjbgaois.webp
+AMAYA/C77 |//https://res.cloudinary.com/dygc5b8cn/image/upload/v1770322487/lqs8yj3zafv60dbefhan.jpg
+AMAYA/CC77 |//https://res.cloudinary.com/dygc5b8cn/image/upload/v1770322480/vvp0hwavqlvd74xgtgwm.jpg
+AMAYA/CL77 |//https://res.cloudinary.com/dygc5b8cn/image/upload/v1770322503/ucf6njcp85lglacgw64a.webp
+AMAYA/S13 |//https://res.cloudinary.com/dygc5b8cn/image/upload/v1770322510/ll5nlrvn19tqea1wtv7d.png
+AMAYA/ALT-31W |//https://res.cloudinary.com/dygc5b8cn/image/upload/v1770322521/l9ctjcsfw5o5dzi6j3ce.png
+AMAYA/APS-65W |//undefined
+AMAYA/ALT-32WT |//undefined
+AMAYA/ALT-30W |//undefined
+AMAYA/C72 |//undefined
+AMAYA/L72 |//undefined
+AMAYA/C83 |//undefined
+AMAYA/L83 |//undefined
+AMAYA/APH-21 |//undefined
+AMAYA/APH-22 |//undefined
 yesido/C295 |/1/https://res.cloudinary.com/dygc5b8cn/image/upload/v1767123799/trawbwvocecx6e2bkp64.png
 yesido/YH41 |/1/https://res.cloudinary.com/dygc5b8cn/image/upload/v1767123800/utxpbfw4xaie8w99hmn0.png
 yesido/YSW11 |/1/https://res.cloudinary.com/dygc5b8cn/image/upload/v1767123801/syp5hci3go9a6bhh8foa.jpg
