@@ -47,6 +47,16 @@
             direction: ltr;
             text-align: left;
         }
+        .country-flag {
+            width: 24px;
+            height: 16px;
+            object-fit: cover;
+            border-radius: 2px;
+        }
+        .dropdown-content {
+            max-height: 200px;
+            overflow-y: auto;
+        }
     </style>
 </head>
 <body class="flex flex-col items-center justify-center p-4">
@@ -56,7 +66,7 @@
                 <i class="fas fa-mobile-alt text-indigo-600 mr-2"></i>
                 تسجيل الدخول برقم الهاتف
             </h1>
-            <p class="text-gray-600">أدخل رقم هاتفك لتلقي رمز التحقق عبر الرسائل النصية</p>
+            <p class="text-gray-600">اختر رمز الدولة وأدخل رقم هاتفك لتلقي رمز التحقق</p>
         </header>
 
         <!-- مؤشر الخطوات -->
@@ -80,23 +90,89 @@
             <!-- نموذج إدخال رقم الهاتف -->
             <div id="phone-auth-container">
                 <div class="mb-6">
-                    <label for="phone" class="block text-gray-700 mb-2 font-medium">
-                        <i class="fas fa-phone text-indigo-600 mr-2"></i>
-                        رقم الهاتف
+                    <label class="block text-gray-700 mb-2 font-medium">
+                        <i class="fas fa-globe text-indigo-600 mr-2"></i>
+                        الدولة ورقم الهاتف
                     </label>
+                    
+                    <!-- اختيار رمز الدولة -->
+                    <div class="mb-4">
+                        <div class="relative">
+                            <button 
+                                id="country-dropdown-btn"
+                                class="w-full p-3 border border-gray-300 rounded-lg flex items-center justify-between bg-white hover:bg-gray-50 transition"
+                            >
+                                <div class="flex items-center">
+                                    <img id="selected-flag" src="https://flagcdn.com/w20/ps.png" alt="علم فلسطين" class="country-flag mr-2">
+                                    <span id="selected-country" class="font-medium">فلسطين (+972)</span>
+                                </div>
+                                <i class="fas fa-chevron-down text-gray-500"></i>
+                            </button>
+                            
+                            <div id="country-dropdown" class="hidden absolute z-10 w-full mt-1 bg-white border border-gray-300 rounded-lg shadow-lg">
+                                <div class="dropdown-content p-2">
+                                    <!-- فلسطين -->
+                                    <div 
+                                        class="country-option flex items-center p-3 rounded hover:bg-gray-100 cursor-pointer mb-1"
+                                        data-code="972"
+                                        data-flag="https://flagcdn.com/w20/ps.png"
+                                        data-name="فلسطين"
+                                    >
+                                        <img src="https://flagcdn.com/w20/ps.png" alt="علم فلسطين" class="country-flag mr-3">
+                                        <div>
+                                            <div class="font-medium">فلسطين</div>
+                                            <div class="text-sm text-gray-600">+972</div>
+                                        </div>
+                                        <div class="ml-auto">
+                                            <i class="fas fa-check text-indigo-600 hidden"></i>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- الضفة الغربية وغزة -->
+                                    <div 
+                                        class="country-option flex items-center p-3 rounded hover:bg-gray-100 cursor-pointer"
+                                        data-code="970"
+                                        data-flag="https://flagcdn.com/w20/ps.png"
+                                        data-name="الضفة الغربية وغزة"
+                                    >
+                                        <img src="https://flagcdn.com/w20/ps.png" alt="علم فلسطين" class="country-flag mr-3">
+                                        <div>
+                                            <div class="font-medium">الضفة الغربية وغزة</div>
+                                            <div class="text-sm text-gray-600">+970</div>
+                                        </div>
+                                        <div class="ml-auto">
+                                            <i class="fas fa-check text-indigo-600 hidden"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <input type="hidden" id="country-code" value="972">
+                    </div>
+                    
+                    <!-- إدخال رقم الهاتف -->
                     <div class="phone-input-container flex">
                         <div class="flex items-center justify-center bg-gray-100 rounded-r-lg px-3 border border-gray-300 border-l-0">
-                            <span class="text-gray-700">+972</span>
+                            <span id="country-code-display" class="text-gray-700 font-medium">+972</span>
                         </div>
                         <input 
                             type="tel" 
                             id="phone" 
                             class="w-full p-3 border border-gray-300 rounded-l-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition"
-                            placeholder="5XXXXXXXX"
+                            placeholder="59XXXXXXX"
                             dir="ltr"
                         >
                     </div>
-                    <p class="text-sm text-gray-500 mt-2">سنرسل رمز تحقق إلى هذا الرقم</p>
+                    
+                    <!-- أمثلة على تنسيق الأرقام -->
+                    <div class="mt-3 p-3 bg-gray-50 rounded-lg">
+                        <p class="text-sm text-gray-700 mb-1"><strong>أمثلة على تنسيق الأرقام:</strong></p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs bg-white px-2 py-1 rounded border" id="example-1">59XXXXXXX</span>
+                            <span class="text-xs bg-white px-2 py-1 rounded border" id="example-2">56XXXXXXX</span>
+                        </div>
+                        <p class="text-sm text-gray-500 mt-2">سنرسل رمز تحقق إلى هذا الرقم عبر الرسائل النصية</p>
+                    </div>
                 </div>
                 
                 <button 
@@ -111,11 +187,25 @@
             <!-- نموذج إدخال رمز التحقق -->
             <div id="verify-code-container" class="hidden">
                 <div class="mb-6">
+                    <div class="flex items-center justify-between mb-4">
+                        <div>
+                            <div class="flex items-center">
+                                <img id="verify-country-flag" src="https://flagcdn.com/w20/ps.png" alt="علم فلسطين" class="country-flag mr-2">
+                                <span id="verify-phone-number" class="font-medium">+972 59XXXXXXX</span>
+                            </div>
+                            <p class="text-sm text-gray-500">تم إرسال الرمز إلى هذا الرقم</p>
+                        </div>
+                        <button id="change-number-btn" class="text-indigo-600 text-sm font-medium">
+                            <i class="fas fa-edit mr-1"></i>
+                            تغيير
+                        </button>
+                    </div>
+                    
                     <label for="code" class="block text-gray-700 mb-2 font-medium">
                         <i class="fas fa-key text-indigo-600 mr-2"></i>
                         رمز التحقق
                     </label>
-                    <div class="flex justify-center space-x-2">
+                    <div class="flex justify-center space-x-2 mb-4">
                         <input type="text" maxlength="1" class="code-input w-12 h-12 text-center text-2xl font-bold border-2 border-gray-300 rounded-lg focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 outline-none transition">
                         <input type="text" maxlength="1" class="code-input w-12 h-12 text-center text-2xl font-bold border-2 border-gray-300 rounded-lg focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 outline-none transition">
                         <input type="text" maxlength="1" class="code-input w-12 h-12 text-center text-2xl font-bold border-2 border-gray-300 rounded-lg focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 outline-none transition">
@@ -124,7 +214,7 @@
                         <input type="text" maxlength="1" class="code-input w-12 h-12 text-center text-2xl font-bold border-2 border-gray-300 rounded-lg focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 outline-none transition">
                     </div>
                     <input type="hidden" id="verification-code">
-                    <p class="text-sm text-gray-500 mt-2 text-center">أدخل الرمز المكون من 6 أرقام الذي استلمته</p>
+                    <p class="text-sm text-gray-500 text-center">أدخل الرمز المكون من 6 أرقام الذي استلمته</p>
                 </div>
                 
                 <div class="flex space-x-3">
@@ -134,13 +224,6 @@
                     >
                         <i class="fas fa-check-circle mr-2"></i>
                         تأكيد الرمز
-                    </button>
-                    <button 
-                        id="back-btn" 
-                        class="flex-1 border border-gray-300 text-gray-700 font-bold py-3 px-4 rounded-lg flex items-center justify-center"
-                    >
-                        <i class="fas fa-arrow-right mr-2"></i>
-                        رجوع
                     </button>
                 </div>
                 
@@ -156,18 +239,40 @@
         <!-- معلومات المستخدم بعد التسجيل -->
         <div id="user-info" class="hidden card rounded-2xl shadow-xl p-6">
             <div class="text-center">
-                <div class="w-16 h-16 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <i class="fas fa-user text-white text-2xl"></i>
+                <div class="flex justify-center mb-4">
+                    <div class="relative">
+                        <div class="w-16 h-16 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-full flex items-center justify-center">
+                            <i class="fas fa-user text-white text-2xl"></i>
+                        </div>
+                        <img id="user-country-flag" src="https://flagcdn.com/w20/ps.png" alt="علم الدولة" class="country-flag absolute -bottom-1 -right-1 border-2 border-white rounded">
+                    </div>
                 </div>
-                <h2 class="text-xl font-bold text-gray-800 mb-2">مرحباً <span id="user-phone"></span></h2>
+                <h2 class="text-xl font-bold text-gray-800 mb-1">مرحباً</h2>
+                <p id="user-phone" class="text-gray-700 mb-4">+972 59XXXXXXX</p>
                 <p class="text-gray-600 mb-4">لقد سجلت الدخول بنجاح باستخدام رمز OTP</p>
-                <div class="bg-gray-100 p-4 rounded-lg">
-                    <p class="text-sm text-gray-700 mb-2"><strong>معرف المستخدم:</strong> <span id="user-id" class="text-xs truncate block"></span></p>
-                    <p class="text-sm text-gray-700"><strong>وقت التسجيل:</strong> <span id="login-time"></span></p>
+                <div class="bg-gray-100 p-4 rounded-lg mb-4">
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="text-sm text-gray-700"><strong>البلد:</strong></span>
+                        <span id="user-country" class="text-sm font-medium">فلسطين</span>
+                    </div>
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="text-sm text-gray-700"><strong>رمز الدولة:</strong></span>
+                        <span id="user-country-code" class="text-sm font-medium">+972</span>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <span class="text-sm text-gray-700"><strong>وقت التسجيل:</strong></span>
+                        <span id="login-time" class="text-sm font-medium">--:--</span>
+                    </div>
+                </div>
+                <div class="bg-indigo-50 p-3 rounded-lg mb-6">
+                    <p class="text-xs text-indigo-700">
+                        <i class="fas fa-info-circle mr-1"></i>
+                        معرف المستخدم: <span id="user-id" class="font-mono text-xs truncate block"></span>
+                    </p>
                 </div>
                 <button 
                     id="logout-btn" 
-                    class="mt-6 w-full bg-gray-200 text-gray-800 font-bold py-3 px-4 rounded-lg flex items-center justify-center hover:bg-gray-300 transition"
+                    class="w-full bg-gray-200 text-gray-800 font-bold py-3 px-4 rounded-lg flex items-center justify-center hover:bg-gray-300 transition"
                 >
                     <i class="fas fa-sign-out-alt mr-2"></i>
                     تسجيل الخروج
@@ -198,18 +303,39 @@
         firebase.initializeApp(firebaseConfig);
         const auth = firebase.auth();
 
+        // بيانات الدول المتاحة
+        const countries = [
+            {
+                code: "972",
+                name: "فلسطين",
+                flag: "https://flagcdn.com/w20/ps.png",
+                example: "59XXXXXXX",
+                pattern: /^5[0-9]{8}$/,
+                placeholder: "59XXXXXXX"
+            },
+            {
+                code: "970",
+                name: "الضفة الغربية وغزة",
+                flag: "https://flagcdn.com/w20/ps.png",
+                example: "59XXXXXXX",
+                pattern: /^5[0-9]{8}$/,
+                placeholder: "59XXXXXXX"
+            }
+        ];
+
         // متغيرات التطبيق
         let confirmationResult = null;
         let countdownInterval = null;
         let countdownTime = 60;
+        let selectedCountry = countries[0]; // فلسطين كإفتراضي
 
         // عناصر DOM
         const phoneInput = document.getElementById('phone');
         const sendCodeBtn = document.getElementById('send-code-btn');
         const verifyCodeBtn = document.getElementById('verify-code-btn');
         const resendCodeBtn = document.getElementById('resend-code-btn');
-        const backBtn = document.getElementById('back-btn');
         const logoutBtn = document.getElementById('logout-btn');
+        const changeNumberBtn = document.getElementById('change-number-btn');
         const phoneAuthContainer = document.getElementById('phone-auth-container');
         const verifyCodeContainer = document.getElementById('verify-code-container');
         const userInfoContainer = document.getElementById('user-info');
@@ -217,14 +343,93 @@
         const codeInputs = document.querySelectorAll('.code-input');
         const verificationCodeInput = document.getElementById('verification-code');
         const userPhoneSpan = document.getElementById('user-phone');
+        const userCountrySpan = document.getElementById('user-country');
+        const userCountryCodeSpan = document.getElementById('user-country-code');
         const userIdSpan = document.getElementById('user-id');
         const loginTimeSpan = document.getElementById('login-time');
         const stepIndicators = document.querySelectorAll('.step-indicator');
         const countdownSpan = document.getElementById('countdown');
+        const countryCodeInput = document.getElementById('country-code');
+        const countryCodeDisplay = document.getElementById('country-code-display');
+        const selectedCountryFlag = document.getElementById('selected-flag');
+        const selectedCountryName = document.getElementById('selected-country');
+        const verifyCountryFlag = document.getElementById('verify-country-flag');
+        const verifyPhoneNumber = document.getElementById('verify-phone-number');
+        const userCountryFlag = document.getElementById('user-country-flag');
+        const countryDropdownBtn = document.getElementById('country-dropdown-btn');
+        const countryDropdown = document.getElementById('country-dropdown');
+        const countryOptions = document.querySelectorAll('.country-option');
+        const example1 = document.getElementById('example-1');
+        const example2 = document.getElementById('example-2');
+
+        // تحديث أمثلة تنسيق الأرقام بناءً على الدولة المختارة
+        function updatePhoneExamples() {
+            example1.textContent = selectedCountry.example;
+            example2.textContent = selectedCountry.example.replace('9', '6'); // مثال آخر
+            phoneInput.placeholder = selectedCountry.placeholder;
+        }
+
+        // تحديث واجهة اختيار الدولة
+        function updateCountrySelection() {
+            countryCodeInput.value = selectedCountry.code;
+            countryCodeDisplay.textContent = `+${selectedCountry.code}`;
+            selectedCountryFlag.src = selectedCountry.flag;
+            selectedCountryName.textContent = `${selectedCountry.name} (+${selectedCountry.code})`;
+            
+            // تحديث علامة الاختيار في القائمة
+            countryOptions.forEach(option => {
+                const checkIcon = option.querySelector('.fa-check');
+                if (option.dataset.code === selectedCountry.code) {
+                    checkIcon.classList.remove('hidden');
+                    option.classList.add('bg-indigo-50', 'border', 'border-indigo-200');
+                } else {
+                    checkIcon.classList.add('hidden');
+                    option.classList.remove('bg-indigo-50', 'border', 'border-indigo-200');
+                }
+            });
+            
+            updatePhoneExamples();
+        }
+
+        // تهيئة اختيار الدولة
+        function initCountrySelection() {
+            // تحديث الواجهة بالدولة الافتراضية
+            updateCountrySelection();
+            
+            // إظهار/إخفاء قائمة الدول
+            countryDropdownBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                countryDropdown.classList.toggle('hidden');
+            });
+            
+            // اختيار دولة من القائمة
+            countryOptions.forEach(option => {
+                option.addEventListener('click', () => {
+                    const code = option.dataset.code;
+                    selectedCountry = countries.find(c => c.code === code);
+                    updateCountrySelection();
+                    countryDropdown.classList.add('hidden');
+                    phoneInput.focus();
+                });
+            });
+            
+            // إغلاق القائمة عند النقر خارجها
+            document.addEventListener('click', (e) => {
+                if (!countryDropdown.contains(e.target) && !countryDropdownBtn.contains(e.target)) {
+                    countryDropdown.classList.add('hidden');
+                }
+            });
+        }
 
         // معالجة إدخال رمز التحقق
         codeInputs.forEach((input, index) => {
             input.addEventListener('input', (e) => {
+                // التحقق من أن المدخل رقم فقط
+                if (!/^\d*$/.test(e.target.value)) {
+                    e.target.value = '';
+                    return;
+                }
+                
                 // الانتقال إلى الحقل التالي عند الإدخال
                 if (e.target.value && index < codeInputs.length - 1) {
                     codeInputs[index + 1].focus();
@@ -238,6 +443,30 @@
                 // الانتقال إلى الحقل السابق عند الضغط على backspace
                 if (e.key === 'Backspace' && !e.target.value && index > 0) {
                     codeInputs[index - 1].focus();
+                }
+                
+                // السماح بالتنقل بين الحقول باستخدام الأسهم
+                if (e.key === 'ArrowLeft' && index > 0) {
+                    codeInputs[index - 1].focus();
+                }
+                if (e.key === 'ArrowRight' && index < codeInputs.length - 1) {
+                    codeInputs[index + 1].focus();
+                }
+            });
+            
+            input.addEventListener('paste', (e) => {
+                e.preventDefault();
+                const pastedData = e.clipboardData.getData('text').trim();
+                
+                if (/^\d{6}$/.test(pastedData)) {
+                    // توزيع الأرقام المنسوخة على الحقول
+                    for (let i = 0; i < 6; i++) {
+                        if (codeInputs[i]) {
+                            codeInputs[i].value = pastedData[i];
+                        }
+                    }
+                    updateVerificationCode();
+                    codeInputs[5].focus();
                 }
             });
         });
@@ -265,6 +494,13 @@
             }
             
             messageDiv.classList.remove('hidden');
+            
+            // إخفاء الرسالة تلقائياً بعد 5 ثواني
+            if (type === 'success') {
+                setTimeout(() => {
+                    messageDiv.classList.add('hidden');
+                }, 5000);
+            }
         }
 
         // إخفاء الرسالة
@@ -291,32 +527,50 @@
             }, 1000);
         }
 
+        // التحقق من صحة رقم الهاتف
+        function validatePhoneNumber(phone) {
+            if (!phone.trim()) {
+                return { valid: false, message: 'يرجى إدخال رقم الهاتف' };
+            }
+            
+            if (!selectedCountry.pattern.test(phone.trim())) {
+                return { 
+                    valid: false, 
+                    message: `يرجى إدخال رقم هاتف صحيح للدولة ${selectedCountry.name} (مثال: ${selectedCountry.example})` 
+                };
+            }
+            
+            return { valid: true };
+        }
+
         // إرسال رمز التحقق
         sendCodeBtn.addEventListener('click', async () => {
-            const phoneNumber = '+966' + phoneInput.value.trim();
+            const phoneNumber = phoneInput.value.trim();
             
-            if (!phoneInput.value.trim()) {
-                showMessage('يرجى إدخال رقم الهاتف', 'error');
+            // التحقق من صحة الرقم
+            const validation = validatePhoneNumber(phoneNumber);
+            if (!validation.valid) {
+                showMessage(validation.message, 'error');
                 phoneInput.focus();
                 return;
             }
             
-            if (!/^5\d{8}$/.test(phoneInput.value.trim())) {
-                showMessage('يرجى إدخال رقم هاتف سعودي صحيح (مثال: 512345678)', 'error');
-                phoneInput.focus();
-                return;
-            }
+            const fullPhoneNumber = `+${selectedCountry.code}${phoneNumber}`;
             
             hideMessage();
-            showMessage('جاري إرسال رمز التحقق...', 'info');
+            showMessage(`جاري إرسال رمز التحقق إلى ${fullPhoneNumber}...`, 'info');
             sendCodeBtn.disabled = true;
             sendCodeBtn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i> جاري الإرسال...';
             
             try {
                 // إرسال رمز OTP
-                confirmationResult = await auth.signInWithPhoneNumber(phoneNumber, window.recaptchaVerifier);
+                confirmationResult = await auth.signInWithPhoneNumber(fullPhoneNumber, window.recaptchaVerifier);
                 
-                showMessage('تم إرسال رمز التحقق إلى هاتفك', 'success');
+                showMessage(`تم إرسال رمز التحقق إلى ${fullPhoneNumber}`, 'success');
+                
+                // تحديث شاشة التحقق بالمعلومات
+                verifyCountryFlag.src = selectedCountry.flag;
+                verifyPhoneNumber.textContent = fullPhoneNumber;
                 
                 // الانتقال إلى شاشة إدخال الرمز
                 phoneAuthContainer.classList.add('hidden');
@@ -333,7 +587,17 @@
                 codeInputs[0].focus();
             } catch (error) {
                 console.error('خطأ في إرسال الرمز:', error);
-                showMessage(`خطأ: ${error.message}`, 'error');
+                
+                let errorMessage = 'حدث خطأ أثناء إرسال الرمز';
+                if (error.code === 'auth/invalid-phone-number') {
+                    errorMessage = 'رقم الهاتف غير صحيح. يرجى التحقق وإعادة المحاولة';
+                } else if (error.code === 'auth/too-many-requests') {
+                    errorMessage = 'لقد تجاوزت الحد المسموح لمحاولات الإرسال. يرجى المحاولة لاحقاً';
+                } else if (error.code === 'auth/quota-exceeded') {
+                    errorMessage = 'تم تجاوز عدد الطلبات المسموح به. يرجى المحاولة لاحقاً';
+                }
+                
+                showMessage(`${errorMessage}`, 'error');
             } finally {
                 sendCodeBtn.disabled = false;
                 sendCodeBtn.innerHTML = '<i class="fas fa-paper-plane mr-2"></i> إرسال رمز التحقق';
@@ -361,14 +625,17 @@
                 
                 showMessage('تم تسجيل الدخول بنجاح!', 'success');
                 
+                // تحديث شاشة معلومات المستخدم
+                userPhoneSpan.textContent = user.phoneNumber;
+                userCountrySpan.textContent = selectedCountry.name;
+                userCountryCodeSpan.textContent = `+${selectedCountry.code}`;
+                userCountryFlag.src = selectedCountry.flag;
+                userIdSpan.textContent = user.uid;
+                loginTimeSpan.textContent = new Date().toLocaleString('ar-SA');
+                
                 // الانتقال إلى شاشة معلومات المستخدم
                 verifyCodeContainer.classList.add('hidden');
                 userInfoContainer.classList.remove('hidden');
-                
-                // عرض بيانات المستخدم
-                userPhoneSpan.textContent = user.phoneNumber;
-                userIdSpan.textContent = user.uid;
-                loginTimeSpan.textContent = new Date().toLocaleString('ar-SA');
                 
                 // إيقاف المؤقت إذا كان شغالاً
                 if (countdownInterval) {
@@ -377,7 +644,23 @@
                 
             } catch (error) {
                 console.error('خطأ في التحقق:', error);
-                showMessage(`رمز التحقق غير صحيح. يرجى المحاولة مرة أخرى`, 'error');
+                
+                let errorMessage = 'رمز التحقق غير صحيح. يرجى المحاولة مرة أخرى';
+                if (error.code === 'auth/invalid-verification-code') {
+                    errorMessage = 'رمز التحقق غير صحيح أو منتهي الصلاحية';
+                } else if (error.code === 'auth/code-expired') {
+                    errorMessage = 'انتهت صلاحية رمز التحقق. يرجى طلب رمز جديد';
+                }
+                
+                showMessage(errorMessage, 'error');
+                
+                // اهتزاز حقول الإدخال للإشارة إلى الخطأ
+                codeInputs.forEach(input => {
+                    input.classList.add('border-red-500');
+                    setTimeout(() => {
+                        input.classList.remove('border-red-500');
+                    }, 1000);
+                });
             } finally {
                 verifyCodeBtn.disabled = false;
                 verifyCodeBtn.innerHTML = '<i class="fas fa-check-circle mr-2"></i> تأكيد الرمز';
@@ -386,13 +669,15 @@
 
         // إعادة إرسال رمز التحقق
         resendCodeBtn.addEventListener('click', async () => {
-            const phoneNumber = '+972' + phoneInput.value.trim();
+            const phoneNumber = phoneInput.value.trim();
+            const fullPhoneNumber = `+${selectedCountry.code}${phoneNumber}`;
             
             hideMessage();
             showMessage('جاري إعادة إرسال الرمز...', 'info');
+            resendCodeBtn.disabled = true;
             
             try {
-                confirmationResult = await auth.signInWithPhoneNumber(phoneNumber, window.recaptchaVerifier);
+                confirmationResult = await auth.signInWithPhoneNumber(fullPhoneNumber, window.recaptchaVerifier);
                 showMessage('تم إعادة إرسال رمز التحقق', 'success');
                 startCountdown();
                 
@@ -402,12 +687,12 @@
                 codeInputs[0].focus();
             } catch (error) {
                 console.error('خطأ في إعادة الإرسال:', error);
-                showMessage(`خطأ: ${error.message}`, 'error');
+                showMessage(`خطأ في إعادة الإرسال: ${error.message}`, 'error');
             }
         });
 
-        // الرجوع إلى شاشة إدخال رقم الهاتف
-        backBtn.addEventListener('click', () => {
+        // تغيير رقم الهاتف
+        changeNumberBtn.addEventListener('click', () => {
             verifyCodeContainer.classList.add('hidden');
             phoneAuthContainer.classList.remove('hidden');
             
@@ -449,7 +734,7 @@
                 }
             } catch (error) {
                 console.error('خطأ في تسجيل الخروج:', error);
-                showMessage(`خطأ: ${error.message}`, 'error');
+                showMessage(`خطأ في تسجيل الخروج: ${error.message}`, 'error');
             }
         });
 
@@ -464,26 +749,52 @@
         // التحقق من حالة تسجيل الدخول عند تحميل الصفحة
         auth.onAuthStateChanged((user) => {
             if (user) {
-                // إذا كان المستخدم مسجل الدخول بالفعل
+                // استخراج رمز الدولة ورقم الهاتف من رقم الهاتف الكامل
+                const phoneNumber = user.phoneNumber;
+                let countryCode = '';
+                let phoneWithoutCode = '';
+                
+                if (phoneNumber) {
+                    // البحث عن رمز الدولة المطابق
+                    for (const country of countries) {
+                        if (phoneNumber.startsWith(`+${country.code}`)) {
+                            countryCode = country.code;
+                            phoneWithoutCode = phoneNumber.replace(`+${country.code}`, '');
+                            selectedCountry = country;
+                            break;
+                        }
+                    }
+                }
+                
+                // تحديث الواجهة
                 userInfoContainer.classList.remove('hidden');
                 phoneAuthContainer.classList.add('hidden');
                 verifyCodeContainer.classList.add('hidden');
                 
-                userPhoneSpan.textContent = user.phoneNumber;
+                userPhoneSpan.textContent = phoneNumber || 'غير متوفر';
+                userCountrySpan.textContent = selectedCountry.name;
+                userCountryCodeSpan.textContent = `+${countryCode}`;
+                userCountryFlag.src = selectedCountry.flag;
                 userIdSpan.textContent = user.uid;
                 loginTimeSpan.textContent = new Date().toLocaleString('ar-SA');
                 
                 // تحديث مؤشر الخطوات
                 stepIndicators[0].classList.remove('step-active');
-                stepIndicators[1].classList.add('step-active');
+                stepIndicators[1].classlist.add('step-active');
             }
         });
 
-        // إضافة تأثيرات عند التحميل
+        // تهيئة اختيار الدولة عند تحميل الصفحة
         document.addEventListener('DOMContentLoaded', () => {
+            initCountrySelection();
+            
+            // إضافة تأثيرات عند التحميل
             setTimeout(() => {
                 document.querySelector('.card').classList.add('opacity-100', 'translate-y-0');
             }, 100);
+            
+            // التركيز على حقل إدخال الهاتف
+            phoneInput.focus();
         });
     </script>
 </body>
