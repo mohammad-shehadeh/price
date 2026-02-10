@@ -2141,6 +2141,76 @@
     const filesMenu = document.getElementById('files-menu');
     const currentFileLabel = document.getElementById('current-file-label');
     let filesMenuOverlay;
+    
+    
+// ===== نظام التحقق من تسجيل الدخول =====
+
+// مفتاح التخزين للجلسة
+const SESSION_KEY = 'shehadeh_login_session';
+
+// التحقق من الجلسة عند تحميل الصفحة
+function checkLoginSession() {
+    const session = localStorage.getItem(SESSION_KEY);
+    
+    if (session) {
+        const sessionData = JSON.parse(session);
+        const now = new Date();
+        const loginTime = new Date(sessionData.loginTime);
+        const hoursDiff = (now - loginTime) / (1000 * 60 * 60);
+        
+        // إذا مرت أقل من 24 ساعة
+        if (hoursDiff < 24) {
+            // إخفاء صفحة الدخول وإظهار الموقع
+            document.getElementById('login-overlay').style.display = 'none';
+            document.getElementById('main-content').style.display = 'block';
+            return true;
+        } else {
+            // الجلسة منتهية، حذفها
+            localStorage.removeItem(SESSION_KEY);
+        }
+    }
+    
+    return false;
+}
+
+// تسجيل الدخول (يتم استدعاؤها من صفحة login.html)
+function loginUser(phoneNumber, countryCode) {
+    const sessionData = {
+        phoneNumber: phoneNumber,
+        countryCode: countryCode,
+        loginTime: new Date().toISOString(),
+        userAgent: navigator.userAgent
+    };
+    
+    localStorage.setItem(SESSION_KEY, JSON.stringify(sessionData));
+    
+    // إعادة تحميل الصفحة أو توجيه للموقع الرئيسي
+    window.location.href = 'index.html';
+}
+
+// تسجيل الخروج
+function logoutUser() {
+    localStorage.removeItem(SESSION_KEY);
+    window.location.reload();
+}
+
+// إضافة زر تسجيل الخروج في شريط التنقل
+function addLogoutButton() {
+    const navActions = document.querySelector('.nav-actions');
+    
+    if (navActions) {
+        const logoutBtn = document.createElement('a');
+        logoutBtn.className = 'nav-btn';
+        logoutBtn.href = '#';
+        logoutBtn.innerHTML = '<i class="fas fa-sign-out-alt"></i><span>تسجيل الخروج</span>';
+        logoutBtn.onclick = (e) => {
+            e.preventDefault();
+            logoutUser();
+        };
+        
+        navActions.insertBefore(logoutBtn, navActions.firstChild);
+    }
+}
 
     // إنشاء زر تبديل الملفات
     function createFileButtons() {
@@ -3124,74 +3194,6 @@ function filterProducts(category) {
             });
     }
 
-// ===== نظام التحقق من تسجيل الدخول =====
-
-// مفتاح التخزين للجلسة
-const SESSION_KEY = 'shehadeh_login_session';
-
-// التحقق من الجلسة عند تحميل الصفحة
-function checkLoginSession() {
-    const session = localStorage.getItem(SESSION_KEY);
-    
-    if (session) {
-        const sessionData = JSON.parse(session);
-        const now = new Date();
-        const loginTime = new Date(sessionData.loginTime);
-        const hoursDiff = (now - loginTime) / (1000 * 60 * 60);
-        
-        // إذا مرت أقل من 24 ساعة
-        if (hoursDiff < 24) {
-            // إخفاء صفحة الدخول وإظهار الموقع
-            document.getElementById('login-overlay').style.display = 'none';
-            document.getElementById('main-content').style.display = 'block';
-            return true;
-        } else {
-            // الجلسة منتهية، حذفها
-            localStorage.removeItem(SESSION_KEY);
-        }
-    }
-    
-    return false;
-}
-
-// تسجيل الدخول (يتم استدعاؤها من صفحة login.html)
-function loginUser(phoneNumber, countryCode) {
-    const sessionData = {
-        phoneNumber: phoneNumber,
-        countryCode: countryCode,
-        loginTime: new Date().toISOString(),
-        userAgent: navigator.userAgent
-    };
-    
-    localStorage.setItem(SESSION_KEY, JSON.stringify(sessionData));
-    
-    // إعادة تحميل الصفحة أو توجيه للموقع الرئيسي
-    window.location.href = 'index.html';
-}
-
-// تسجيل الخروج
-function logoutUser() {
-    localStorage.removeItem(SESSION_KEY);
-    window.location.reload();
-}
-
-// إضافة زر تسجيل الخروج في شريط التنقل
-function addLogoutButton() {
-    const navActions = document.querySelector('.nav-actions');
-    
-    if (navActions) {
-        const logoutBtn = document.createElement('a');
-        logoutBtn.className = 'nav-btn';
-        logoutBtn.href = '#';
-        logoutBtn.innerHTML = '<i class="fas fa-sign-out-alt"></i><span>تسجيل الخروج</span>';
-        logoutBtn.onclick = (e) => {
-            e.preventDefault();
-            logoutUser();
-        };
-        
-        navActions.insertBefore(logoutBtn, navActions.firstChild);
-    }
-}
 
     // Initialize App
     window.addEventListener('load', init);
