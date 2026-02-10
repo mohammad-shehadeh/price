@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الصفحة غير موجودة | Shehadeh Center</title>
+    <meta name="description" content="تم نقل موقع Shehadeh Center - لا يمكن الوصول إلى هذه الصفحة">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="https://i.postimg.cc/VNssYbVS/IMG-1002.jpg">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: #0bb5b0;
+            --secondary-color: #2b2b2b;
+            --light-color: #f8f9fa;
+            --dark-color: #212529;
+            --border-radius: 10px;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Tajawal', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f5f7fa;
+            color: #333;
+            line-height: 1.5;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .container {
+            max-width: 500px;
+            width: 100%;
+            background-color: white;
+            border-radius: var(--border-radius);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            padding: 2rem;
+            margin: 1rem auto;
+        }
+        
+        .logo-container {
+            margin-bottom: 1.5rem;
+        }
+        
+        .logo-img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid rgba(11, 181, 176, 0.2);
+        }
+        
+        h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--secondary-color);
+        }
+        
+        .error-code {
+            font-size: 5rem;
+            font-weight: 900;
+            color: var(--primary-color);
+            margin: 1rem 0;
+            line-height: 1;
+        }
+        
+        h2 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--dark-color);
+        }
+        
+        .message {
+            font-size: 1rem;
+            color: #555;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+        
+        .highlight {
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+        
+        .contact-info {
+            background-color: #f8f9fa;
+            border-radius: var(--border-radius);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        
+        .contact-info h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: var(--secondary-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        
+        .contact-info h3 i {
+            color: var(--primary-color);
+        }
+        
+        .contact-method {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 1rem;
+        }
+        
+        .contact-method:last-child {
+            margin-bottom: 0;
+        }
+        
+        .contact-method i {
+            width: 40px;
+            height: 40px;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+        }
+        
+        .contact-method a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .contact-method a:hover {
+            color: var(--primary-color);
+            text-decoration: underline;
+        }
+        
+        .buttons-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.8rem;
+            margin-top: 1.5rem;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.7rem 1.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            margin: 0.2rem;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .whatsapp-btn {
+            background: #25D366;
+            color: white;
+        }
+        
+        .call-btn {
+            background: var(--primary-color);
+            color: white;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn i {
+            margin-left: 0.5rem;
+        }
+        
+        .note {
+            margin-top: 1.5rem;
+            padding: 0.8rem;
+            background-color: rgba(255, 193, 7, 0.1);
+            border-radius: var(--border-radius);
+            font-size: 0.85rem;
+            color: #856404;
+        }
+        
+        .error-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin: 1rem 0;
+        }
+        
+        footer {
+            margin-top: 2rem;
+            color: #666;
+            font-size: 0.85rem;
+            text-align: center;
+        }
+        
+        footer a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+        
+        @media (max-width: 600px) {
+            .container {
+                padding: 1.5rem;
+            }
+            
+            .error-code {
+                font-size: 4rem;
+            }
+            
+            h1 {
+                font-size: 1.5rem;
+            }
+            
+            h2 {
+                font-size: 1.2rem;
+            }
+            
+            .buttons-container {
+                flex-direction: column;
+            }
+            
+            .btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo-container">
+            <img src="https://res.cloudinary.com/dygc5b8cn/image/upload/v1768500756/xvrpeqabqhlbjwuq6u7t.jpg" alt="Shehadeh Center Logo" class="logo-img">
+        </div>
+        
+        <h1>SHEHADEH CENTER</h1>
+        
+        <div class="error-icon">
+            <i class="fas fa-exclamation-triangle"></i>
+        </div>
+        
+        <div class="error-code">404</div>
+        
+        <h2>الصفحة غير موجودة</h2>
+        
+        <div class="message">
+            <p>تم نقل موقع <span class="highlight">Shehadeh Center</span> ولا يمكن الوصول إلى هذه الصفحة.</p>
+            <p>يرجى التواصل مع الدعم الفني للمساعدة.</p>
+        </div>
+        
+        <div class="contact-info">
+            <h3><i class="fas fa-headset"></i> للدعم الفني تواصل معنا</h3>
+            
+            <div class="contact-method">
+                <i class="fab fa-whatsapp"></i>
+                <div>
+                    <a href="https://wa.me/972569813333" target="_blank">+972 56 981 3333</a>
+                </div>
+            </div>
+            
+            <div class="contact-method">
+                <i class="fas fa-phone-alt"></i>
+                <div>
+                    <a href="tel:+972569813333">+972 56 981 3333</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="buttons-container">
+            <a href="https://wa.me/972569813333" class="btn whatsapp-btn" target="_blank">
+                <i class="fab fa-whatsapp"></i>
+                واتساب
+            </a>
+            
+            <a href="tel:+972569813333" class="btn call-btn">
+                <i class="fas fa-phone-alt"></i>
+                اتصل الآن
+            </a>
+        </div>
+        
+        <div class="note">
+            <p><i class="fas fa-info-circle"></i> تم نقل الموقع. شكرًا لتفهمكم.</p>
+        </div>
+    </div>
+    
+    <footer>
+        <p>© 2023 Shehadeh Center. جميع الحقوق محفوظة.</p>
+    </footer>
+</body>
+</html>
