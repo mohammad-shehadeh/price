@@ -961,6 +961,20 @@
             elements.manualRedirectBtn.href = TARGET_URL;
         }
 
+// بعد تسجيل الدخول الناجح مع Firebase
+firebase.auth().onAuthStateChanged(function(user) {
+    if (user) {
+        // تخزين حالة الدخول
+        localStorage.setItem('firebaseUID', user.uid);
+        localStorage.setItem('loginTime', Date.now());
+        
+        // التوجيه لصفحة index.html
+        window.location.href = 'index.html';
+    } else {
+        // المستخدم غير مسجل
+    }
+});
+
         // بدء التطبيق
         document.addEventListener('DOMContentLoaded', initializeApp);
     </script>
