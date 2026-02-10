@@ -1904,7 +1904,7 @@
 </head>
 <body>
     <!-- صفحة تسجيل الدخول -->
-<div id="login-overlay" class="login-overlay">
+<div id="login-overlay" class="login-overlay" style="display: none;">
     <div class="login-container">
         <div class="login-card">
             <div class="login-header">
@@ -1914,7 +1914,6 @@
                 <p>يجب تسجيل الدخول للمتابعة</p>
             </div>
             
-            <!-- رابط التوجيه إلى صفحة تسجيل الدخول -->
             <div class="login-content">
                 <div class="login-message">
                     <i class="fas fa-lock"></i>
@@ -1937,7 +1936,7 @@
 </div>
 
 <!-- محتوى الموقع الأصلي (مخفي حتى تسجيل الدخول) -->
-<div id="main-content" style="display: none;">
+<div id="main-content">
     
     <!-- Loading Screen -->
     <div id="loading-screen">
@@ -3125,7 +3124,7 @@ function filterProducts(category) {
             });
     }
 
-    // ===== نظام التحقق من تسجيل الدخول =====
+// ===== نظام التحقق من تسجيل الدخول =====
 
 // مفتاح التخزين للجلسة
 const SESSION_KEY = 'shehadeh_login_session';
@@ -3194,25 +3193,6 @@ function addLogoutButton() {
     }
 }
 
-// تحديث التهيئة
-window.addEventListener('load', function() {
-    // التحقق من تسجيل الدخول
-    if (checkLoginSession()) {
-        // المستخدم مسجل الدخول
-        addLogoutButton();
-    } else {
-        // المستخدم غير مسجل، إظهار صفحة الدخول
-        document.getElementById('login-overlay').style.display = 'flex';
-    }
-    
-    // باقي كود التهيئة الأصلي
-    init();
-});
-        // Initialize App
-        window.addEventListener('load', init);
-        
-
-
-    </script>
-</body>
-</html>
+    // Initialize App
+    window.addEventListener('load', init);
+</script>
