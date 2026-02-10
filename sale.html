@@ -1773,171 +1773,9 @@
     font-weight: bold;
     background-color: #ffeb3b;
 }
-
-/* أنماط صفحة تسجيل الدخول */
-.login-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
-    z-index: 9999;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-}
-
-.login-container {
-    width: 100%;
-    max-width: 500px;
-}
-
-.login-card {
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
-    border-radius: 20px;
-    padding: 30px;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-    text-align: center;
-}
-
-.login-logo {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 15px;
-    border: 3px solid #0bb5b0;
-}
-
-.login-header h1 {
-    color: #1e3a8a;
-    font-size: 2rem;
-    margin-bottom: 10px;
-}
-
-.login-header p {
-    color: #666;
-    font-size: 1rem;
-    margin-bottom: 30px;
-}
-
-.login-content {
-    margin: 30px 0;
-}
-
-.login-message {
-    background: #f0f8ff;
-    padding: 20px;
-    border-radius: 15px;
-    margin-bottom: 30px;
-    border-left: 5px solid #0bb5b0;
-}
-
-.login-message i {
-    font-size: 2.5rem;
-    color: #0bb5b0;
-    margin-bottom: 15px;
-}
-
-.login-message h2 {
-    color: #1e3a8a;
-    margin-bottom: 10px;
-    font-size: 1.3rem;
-}
-
-.login-message p {
-    color: #666;
-    font-size: 1rem;
-}
-
-.login-btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(135deg, #0bb5b0, #1e3a8a);
-    color: white;
-    padding: 15px 30px;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 1.1rem;
-    transition: all 0.3s ease;
-    box-shadow: 0 10px 20px rgba(11, 181, 176, 0.3);
-}
-
-.login-btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 15px 30px rgba(11, 181, 176, 0.4);
-    background: linear-gradient(135deg, #1e3a8a, #0bb5b0);
-}
-
-.login-btn i {
-    margin-left: 10px;
-    font-size: 1.2rem;
-}
-
-.login-info {
-    margin-top: 30px;
-    padding: 15px;
-    background: #f8f9fa;
-    border-radius: 10px;
-    font-size: 0.9rem;
-    color: #666;
-}
-
-.login-info p {
-    margin: 8px 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.login-info i {
-    margin-left: 8px;
-    color: #0bb5b0;
-}
-
     </style>
 </head>
 <body>
-    <!-- صفحة تسجيل الدخول -->
-<div id="login-overlay" class="login-overlay" style="display: none;">
-    <div class="login-container">
-        <div class="login-card">
-            <div class="login-header">
-                <img src="https://res.cloudinary.com/dygc5b8cn/image/upload/v1768500756/xvrpeqabqhlbjwuq6u7t.jpg" 
-                     alt="Shehadeh Center Logo" class="login-logo">
-                <h1>SHEHADEH CENTER</h1>
-                <p>يجب تسجيل الدخول للمتابعة</p>
-            </div>
-            
-            <div class="login-content">
-                <div class="login-message">
-                    <i class="fas fa-lock"></i>
-                    <h2>مرحباً بك في Shehadeh Center</h2>
-                    <p>يجب تسجيل الدخول برقم هاتفك للوصول إلى الأسعار</p>
-                </div>
-                
-                <a href="login.html" class="login-btn">
-                    <i class="fas fa-sign-in-alt"></i>
-                    تسجيل الدخول الآن
-                </a>
-                
-                <div class="login-info">
-                    <p><i class="fas fa-info-circle"></i> تستخدم 972 أو 970 حسب رقم هاتفك</p>
-                    <p><i class="fas fa-shield-alt"></i> نظام آمن ومحمي</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- محتوى الموقع الأصلي (مخفي حتى تسجيل الدخول) -->
-<div id="main-content" style="display: none;">
-    
     <!-- Loading Screen -->
     <div id="loading-screen">
         <div class="loader"></div>
@@ -1947,7 +1785,8 @@
     <div class="nav-container">
     <a href="#" class="nav-logo">Shehadeh <span>Center</span></a>
     
-    <div class="nav-actions">
+  
+        
         <!-- زر تبديل العرض الجديد -->
         <button class="nav-btn view-toggle-btn" id="view-toggle-btn">
             <i class="fas fa-th-large" id="view-icon"></i>
@@ -2062,13 +1901,9 @@
         <i class="fas fa-check-circle"></i>
         <span id="notification-text">تمت الإضافة إلى السلة</span>
     </div>
-</div>
+</body>
     
 <script>
-    // ===== نظام التحقق من تسجيل الدخول =====
-    // مفتاح التخزين للجلسة
-    const SESSION_KEY = 'shehadeh_login_session';
-    
     // DOM Elements
     const categoriesContainer = document.getElementById('categories');
     const cartItemsContainer = document.getElementById('cart-items');
@@ -2088,6 +1923,8 @@
     const cartCount = document.getElementById('cart-count');
     const cartTotal = document.getElementById('cart-total');
     const scrollUpButton = document.getElementById('scrollUp');
+
+    // DOM Elements الجديدة للتبديل
     const viewToggleBtn = document.getElementById('view-toggle-btn');
     const viewIcon = document.getElementById('view-icon');
     const viewText = document.getElementById('view-text');
@@ -2109,51 +1946,6 @@
     
     // إعدادات الإعلان
     const AD_ENABLED = false;
-    
-    // التحقق من الجلسة عند تحميل الصفحة
-    function checkLoginSession() {
-        const session = localStorage.getItem(SESSION_KEY);
-        
-        if (session) {
-            try {
-                const sessionData = JSON.parse(session);
-                const now = new Date();
-                const loginTime = new Date(sessionData.loginTime);
-                const hoursDiff = (now - loginTime) / (1000 * 60 * 60);
-                
-                // إذا مرت أقل من 30 يوم (720 ساعة) - جلسة دائمة تقريباً
-                if (hoursDiff < 720) {
-                    return true;
-                } else {
-                    // الجلسة منتهية، حذفها
-                    localStorage.removeItem(SESSION_KEY);
-                    return false;
-                }
-            } catch (error) {
-                // إذا كان هناك خطأ في البيانات، احذف الجلسة
-                localStorage.removeItem(SESSION_KEY);
-                return false;
-            }
-        }
-        
-        return false;
-    }
-
-    // تسجيل الدخول (يتم استدعاؤها من صفحة login.html)
-    function loginUser(phoneNumber, countryCode) {
-        const sessionData = {
-            phoneNumber: phoneNumber,
-            countryCode: countryCode,
-            loginTime: new Date().toISOString(),
-            userAgent: navigator.userAgent,
-            expiresAt: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000).toISOString() // 30 يوم
-        };
-        
-        localStorage.setItem(SESSION_KEY, JSON.stringify(sessionData));
-        
-        // إعادة تحميل الصفحة
-        window.location.href = 'index.html';
-    }
 
     // Initialize
     function init() {
@@ -2173,7 +1965,6 @@
         searchBox.addEventListener('input', handleSearch);
         viewToggleBtn.addEventListener('click', toggleView);
         
-        // إخفاء شاشة التحميل
         setTimeout(() => {
             document.getElementById('loading-screen').style.opacity = '0';
             setTimeout(() => {
@@ -2277,6 +2068,7 @@
     }
 
     function renderProducts() {
+        const categoriesContainer = document.getElementById('categories');
         categoriesContainer.innerHTML = '';
         
         if (currentView === 'store') {
@@ -3170,25 +2962,6 @@ function filterProducts(category) {
             });
     }
 
-    // Initialize App عند تحميل الصفحة
-    window.addEventListener('load', function() {
-        // التحقق من تسجيل الدخول
-        if (checkLoginSession()) {
-            // المستخدم مسجل الدخول - إظهار المحتوى
-            document.getElementById('login-overlay').style.display = 'none';
-            document.getElementById('main-content').style.display = 'block';
-            
-            // تهيئة التطبيق
-            init();
-        } else {
-            // المستخدم غير مسجل - إظهار صفحة تسجيل الدخول
-            document.getElementById('login-overlay').style.display = 'flex';
-            document.getElementById('main-content').style.display = 'none';
-            
-            // إخفاء شاشة التحميل
-            setTimeout(() => {
-                document.getElementById('loading-screen').style.display = 'none';
-            }, 500);
-        }
-    });
+    // Initialize App
+    window.addEventListener('load', init);
 </script>
