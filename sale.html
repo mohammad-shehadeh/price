@@ -1936,7 +1936,7 @@
 </div>
 
 <!-- محتوى الموقع الأصلي (مخفي حتى تسجيل الدخول) -->
-<div id="main-content">
+<div id="main-content" style="display: none;">
     
     <!-- Loading Screen -->
     <div id="loading-screen">
@@ -1947,8 +1947,7 @@
     <div class="nav-container">
     <a href="#" class="nav-logo">Shehadeh <span>Center</span></a>
     
-  
-        
+    <div class="nav-actions">
         <!-- زر تبديل العرض الجديد -->
         <button class="nav-btn view-toggle-btn" id="view-toggle-btn">
             <i class="fas fa-th-large" id="view-icon"></i>
@@ -2063,9 +2062,13 @@
         <i class="fas fa-check-circle"></i>
         <span id="notification-text">تمت الإضافة إلى السلة</span>
     </div>
-</body>
+</div>
     
 <script>
+    // ===== نظام التحقق من تسجيل الدخول =====
+    // مفتاح التخزين للجلسة
+    const SESSION_KEY = 'shehadeh_login_session';
+    
     // DOM Elements
     const categoriesContainer = document.getElementById('categories');
     const cartItemsContainer = document.getElementById('cart-items');
@@ -2085,8 +2088,6 @@
     const cartCount = document.getElementById('cart-count');
     const cartTotal = document.getElementById('cart-total');
     const scrollUpButton = document.getElementById('scrollUp');
-
-    // DOM Elements الجديدة للتبديل
     const viewToggleBtn = document.getElementById('view-toggle-btn');
     const viewIcon = document.getElementById('view-icon');
     const viewText = document.getElementById('view-text');
@@ -2108,6 +2109,51 @@
     
     // إعدادات الإعلان
     const AD_ENABLED = false;
+    
+    // التحقق من الجلسة عند تحميل الصفحة
+    function checkLoginSession() {
+        const session = localStorage.getItem(SESSION_KEY);
+        
+        if (session) {
+            try {
+                const sessionData = JSON.parse(session);
+                const now = new Date();
+                const loginTime = new Date(sessionData.loginTime);
+                const hoursDiff = (now - loginTime) / (1000 * 60 * 60);
+                
+                // إذا مرت أقل من 30 يوم (720 ساعة) - جلسة دائمة تقريباً
+                if (hoursDiff < 720) {
+                    return true;
+                } else {
+                    // الجلسة منتهية، حذفها
+                    localStorage.removeItem(SESSION_KEY);
+                    return false;
+                }
+            } catch (error) {
+                // إذا كان هناك خطأ في البيانات، احذف الجلسة
+                localStorage.removeItem(SESSION_KEY);
+                return false;
+            }
+        }
+        
+        return false;
+    }
+
+    // تسجيل الدخول (يتم استدعاؤها من صفحة login.html)
+    function loginUser(phoneNumber, countryCode) {
+        const sessionData = {
+            phoneNumber: phoneNumber,
+            countryCode: countryCode,
+            loginTime: new Date().toISOString(),
+            userAgent: navigator.userAgent,
+            expiresAt: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000).toISOString() // 30 يوم
+        };
+        
+        localStorage.setItem(SESSION_KEY, JSON.stringify(sessionData));
+        
+        // إعادة تحميل الصفحة
+        window.location.href = 'index.html';
+    }
 
     // Initialize
     function init() {
@@ -2127,6 +2173,7 @@
         searchBox.addEventListener('input', handleSearch);
         viewToggleBtn.addEventListener('click', toggleView);
         
+        // إخفاء شاشة التحميل
         setTimeout(() => {
             document.getElementById('loading-screen').style.opacity = '0';
             setTimeout(() => {
@@ -2141,76 +2188,6 @@
     const filesMenu = document.getElementById('files-menu');
     const currentFileLabel = document.getElementById('current-file-label');
     let filesMenuOverlay;
-    
-    
-// ===== نظام التحقق من تسجيل الدخول =====
-
-// مفتاح التخزين للجلسة
-const SESSION_KEY = 'shehadeh_login_session';
-
-// التحقق من الجلسة عند تحميل الصفحة
-function checkLoginSession() {
-    const session = localStorage.getItem(SESSION_KEY);
-    
-    if (session) {
-        const sessionData = JSON.parse(session);
-        const now = new Date();
-        const loginTime = new Date(sessionData.loginTime);
-        const hoursDiff = (now - loginTime) / (1000 * 60 * 60);
-        
-        // إذا مرت أقل من 24 ساعة
-        if (hoursDiff < 24) {
-            // إخفاء صفحة الدخول وإظهار الموقع
-            document.getElementById('login-overlay').style.display = 'none';
-            document.getElementById('main-content').style.display = 'block';
-            return true;
-        } else {
-            // الجلسة منتهية، حذفها
-            localStorage.removeItem(SESSION_KEY);
-        }
-    }
-    
-    return false;
-}
-
-// تسجيل الدخول (يتم استدعاؤها من صفحة login.html)
-function loginUser(phoneNumber, countryCode) {
-    const sessionData = {
-        phoneNumber: phoneNumber,
-        countryCode: countryCode,
-        loginTime: new Date().toISOString(),
-        userAgent: navigator.userAgent
-    };
-    
-    localStorage.setItem(SESSION_KEY, JSON.stringify(sessionData));
-    
-    // إعادة تحميل الصفحة أو توجيه للموقع الرئيسي
-    window.location.href = 'index.html';
-}
-
-// تسجيل الخروج
-function logoutUser() {
-    localStorage.removeItem(SESSION_KEY);
-    window.location.reload();
-}
-
-// إضافة زر تسجيل الخروج في شريط التنقل
-function addLogoutButton() {
-    const navActions = document.querySelector('.nav-actions');
-    
-    if (navActions) {
-        const logoutBtn = document.createElement('a');
-        logoutBtn.className = 'nav-btn';
-        logoutBtn.href = '#';
-        logoutBtn.innerHTML = '<i class="fas fa-sign-out-alt"></i><span>تسجيل الخروج</span>';
-        logoutBtn.onclick = (e) => {
-            e.preventDefault();
-            logoutUser();
-        };
-        
-        navActions.insertBefore(logoutBtn, navActions.firstChild);
-    }
-}
 
     // إنشاء زر تبديل الملفات
     function createFileButtons() {
@@ -2300,7 +2277,6 @@ function addLogoutButton() {
     }
 
     function renderProducts() {
-        const categoriesContainer = document.getElementById('categories');
         categoriesContainer.innerHTML = '';
         
         if (currentView === 'store') {
@@ -3194,7 +3170,25 @@ function filterProducts(category) {
             });
     }
 
-
-    // Initialize App
-    window.addEventListener('load', init);
+    // Initialize App عند تحميل الصفحة
+    window.addEventListener('load', function() {
+        // التحقق من تسجيل الدخول
+        if (checkLoginSession()) {
+            // المستخدم مسجل الدخول - إظهار المحتوى
+            document.getElementById('login-overlay').style.display = 'none';
+            document.getElementById('main-content').style.display = 'block';
+            
+            // تهيئة التطبيق
+            init();
+        } else {
+            // المستخدم غير مسجل - إظهار صفحة تسجيل الدخول
+            document.getElementById('login-overlay').style.display = 'flex';
+            document.getElementById('main-content').style.display = 'none';
+            
+            // إخفاء شاشة التحميل
+            setTimeout(() => {
+                document.getElementById('loading-screen').style.display = 'none';
+            }, 500);
+        }
+    });
 </script>
