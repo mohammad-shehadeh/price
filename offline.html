@@ -1,837 +1,121 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>تسجيل الدخول - حل مشكلة الرمز</title>
-    <!-- Firebase SDK -->
-    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        * {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        body {
-            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
-            min-height: 100vh;
-        }
-        .card {
-            background: rgba(255, 255, 255, 0.98);
-            backdrop-filter: blur(10px);
-        }
-        .btn-primary {
-            background: linear-gradient(to right, #4f46e5, #7c3aed);
-            transition: all 0.3s ease;
-        }
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(79, 70, 229, 0.3);
-        }
-        .solution-card {
-            border-left: 4px solid #10b981;
-            transition: all 0.3s ease;
-        }
-        .solution-card:hover {
-            transform: translateX(-5px);
-        }
-    </style>
+  <meta charset="UTF-8">
+  <title>تسجيل دخول برقم الهاتف</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f6f8;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .box {
+      background: #fff;
+      padding: 25px;
+      border-radius: 10px;
+      width: 320px;
+      box-shadow: 0 10px 30px rgba(0,0,0,.1);
+      text-align: center;
+    }
+    input {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      font-size: 16px;
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+      background: #0d6efd;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #0b5ed7;
+    }
+    #otp-section {
+      display: none;
+    }
+  </style>
 </head>
-<body class="flex flex-col items-center justify-center p-4 min-h-screen">
-    <div class="w-full max-w-4xl mx-auto">
-        <!-- العنوان -->
-        <header class="text-center mb-8">
-            <h1 class="text-3xl font-bold text-white mb-2">
-                🔧 حل مشكلة عدم وصول رمز التحقق
-            </h1>
-            <p class="text-gray-200">الإرسال يعمل ولكن الرمز لا يصل إلى هاتفك</p>
-        </header>
+<body>
 
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
-            <!-- البطاقة اليسرى: نموذج تسجيل الدخول -->
-            <div class="card rounded-2xl shadow-2xl p-6">
-                <h2 class="text-xl font-bold text-gray-800 mb-4">📱 تجربة الإرسال</h2>
-                
-                <!-- حالة النظام -->
-                <div class="mb-6 p-4 bg-green-50 border border-green-200 rounded-lg">
-                    <div class="flex items-center">
-                        <div class="w-3 h-3 bg-green-500 rounded-full mr-2 animate-pulse"></div>
-                        <span class="text-green-700 font-medium">Firebase متصل وجاهز للإرسال</span>
-                    </div>
-                </div>
-                
-                <!-- reCAPTCHA Container -->
-                <div id="recaptcha-container" class="mb-4"></div>
-                
-                <!-- نموذج إدخال رقم الهاتف -->
-                <div id="phone-auth-container">
-                    <div class="mb-6">
-                        <label class="block text-gray-700 mb-2 font-medium">
-                            رقم الهاتف الحقيقي للاختبار
-                        </label>
-                        
-                        <div class="flex">
-                            <div class="flex items-center justify-center bg-gray-100 rounded-r-lg px-4 border border-gray-300 border-l-0 font-bold text-gray-700">
-                                +972
-                            </div>
-                            <input 
-                                type="tel" 
-                                id="phone" 
-                                class="flex-1 p-3 border border-gray-300 rounded-l-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition"
-                                placeholder="أدخل رقم هاتف حقيقي"
-                                dir="ltr"
-                                maxlength="9"
-                            >
-                        </div>
-                        <p class="text-xs text-gray-500 mt-2">
-                            ⚠️ <strong>هام:</strong> يجب أن يكون رقم هاتف حقيقي وقابل للاستقبال
-                        </p>
-                    </div>
-                    
-                    <div class="space-y-3">
-                        <button 
-                            id="send-real-btn" 
-                            class="btn-primary w-full text-white font-bold py-3 px-4 rounded-lg"
-                        >
-                            إرسال رمز حقيقي إلى هاتفي
-                        </button>
-                        
-                        <button 
-                            id="send-test-btn" 
-                            class="w-full bg-yellow-100 text-yellow-800 border border-yellow-300 font-bold py-3 px-4 rounded-lg hover:bg-yellow-200 transition"
-                        >
-                            🧪 وضع الاختبار (بدون إرسال فعلي)
-                        </button>
-                    </div>
-                </div>
-                
-                <!-- نموذج إدخال رمز التحقق -->
-                <div id="verify-code-container" class="hidden">
-                    <div class="mb-6">
-                        <div class="mb-4 p-3 bg-blue-50 rounded-lg">
-                            <p class="text-sm text-blue-700">
-                                <strong>تم الإرسال إلى:</strong> 
-                                <span id="verify-phone-number" class="font-mono">+972 XXXXXXXX</span>
-                            </p>
-                            <p class="text-xs text-blue-600 mt-1" id="send-status">
-                                ✅ تمت عملية الإرسال بنجاح من Firebase
-                            </p>
-                        </div>
-                        
-                        <label class="block text-gray-700 mb-2 font-medium">
-                            رمز التحقق
-                        </label>
-                        
-                        <div class="mb-4">
-                            <div class="flex justify-center space-x-2 mb-4">
-                                <input type="text" maxlength="1" class="code-input w-12 h-12 text-center text-2xl font-bold border-2 border-gray-300 rounded-lg focus:border-indigo-500">
-                                <input type="text" maxlength="1" class="code-input w-12 h-12 text-center text-2xl font-bold border-2 border-gray-300 rounded-lg focus:border-indigo-500">
-                                <input type="text" maxlength="1" class="code-input w-12 h-12 text-center text-2xl font-bold border-2 border-gray-300 rounded-lg focus:border-indigo-500">
-                                <input type="text" maxlength="1" class="code-input w-12 h-12 text-center text-2xl font-bold border-2 border-gray-300 rounded-lg focus:border-indigo-500">
-                                <input type="text" maxlength="1" class="code-input w-12 h-12 text-center text-2xl font-bold border-2 border-gray-300 rounded-lg focus:border-indigo-500">
-                                <input type="text" maxlength="1" class="code-input w-12 h-12 text-center text-2xl font-bold border-2 border-gray-300 rounded-lg focus:border-indigo-500">
-                            </div>
-                            <input type="hidden" id="verification-code">
-                            
-                            <div class="text-center">
-                                <button 
-                                    id="simulate-receive-btn" 
-                                    class="text-sm text-indigo-600 hover:text-indigo-800"
-                                >
-                                    🔄 محاكاة استقبال الرمز
-                                </button>
-                            </div>
-                        </div>
-                        
-                        <div class="flex space-x-3">
-                            <button 
-                                id="verify-code-btn" 
-                                class="btn-primary flex-1 text-white font-bold py-3 px-4 rounded-lg"
-                            >
-                                تأكيد الرمز
-                            </button>
-                            <button 
-                                id="back-btn" 
-                                class="flex-1 border border-gray-300 text-gray-700 font-bold py-3 px-4 rounded-lg"
-                            >
-                                رجوع
-                            </button>
-                        </div>
-                        
-                        <div class="mt-4 text-center">
-                            <button id="resend-code-btn" class="text-indigo-600 font-medium">
-                                إعادة إرسال الرمز (<span id="countdown">60</span> ثانية)
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- معلومات المستخدم -->
-                <div id="user-info" class="hidden">
-                    <div class="p-4 bg-green-50 border border-green-200 rounded-lg">
-                        <div class="text-center">
-                            <div class="text-4xl mb-2">🎉</div>
-                            <h3 class="font-bold text-green-800 mb-1">تم التسجيل بنجاح!</h3>
-                            <p id="user-phone" class="text-green-700 mb-3">+972 XXXXXXXX</p>
-                            <button 
-                                id="logout-btn" 
-                                class="w-full bg-white text-green-700 border border-green-300 font-bold py-2 px-4 rounded-lg hover:bg-green-50"
-                            >
-                                تسجيل الخروج
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+<div class="box">
+  <h3>تسجيل الدخول</h3>
 
-            <!-- البطاقة اليمنى: حلول المشكلة -->
-            <div class="space-y-4">
-                <!-- الحل 1: رقم حقيقي -->
-                <div class="card rounded-2xl shadow-xl p-5 solution-card">
-                    <div class="flex items-start mb-3">
-                        <div class="text-2xl mr-3">📱</div>
-                        <div>
-                            <h3 class="font-bold text-gray-800 mb-2">1. استخدم رقم هاتف حقيقي</h3>
-                            <p class="text-sm text-gray-600">
-                                Firebase <strong>لا يرسل رموز لأرقام وهمية</strong>. يجب أن يكون الرقم مسجل لدى شركة اتصالات حقيقية.
-                            </p>
-                            <div class="mt-3">
-                                <button 
-                                    onclick="document.getElementById('phone').value = prompt('أدخل رقم هاتفك الحقيقي (بدون +972):')"
-                                    class="text-sm bg-indigo-100 text-indigo-700 px-3 py-1 rounded hover:bg-indigo-200"
-                                >
-                                    إدخال رقم حقيقي
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+  <input id="phone" placeholder="+9705XXXXXXXX">
+  <button id="send">إرسال رمز OTP</button>
 
-                <!-- الحل 2: رصيد Firebase -->
-                <div class="card rounded-2xl shadow-xl p-5 solution-card">
-                    <div class="flex items-start mb-3">
-                        <div class="text-2xl mr-3">💰</div>
-                        <div>
-                            <h3 class="font-bold text-gray-800 mb-2">2. تحقق من رصيد Firebase</h3>
-                            <p class="text-sm text-gray-600">
-                                مشروع Firebase قد يكون <strong>تجاوز الحد المجاني</strong> (10,000 رسالة شهرية).
-                            </p>
-                            <div class="mt-3">
-                                <a href="https://console.firebase.google.com/project/aasa-8a079/usage" 
-                                   target="_blank"
-                                   class="text-sm bg-red-100 text-red-700 px-3 py-1 rounded hover:bg-red-200 inline-block mr-2">
-                                    تحقق من الاستخدام
-                                </a>
-                                <button 
-                                    onclick="checkFirebaseQuota()"
-                                    class="text-sm bg-blue-100 text-blue-700 px-3 py-1 rounded hover:bg-blue-200"
-                                >
-                                    اختبار الرصيد
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+  <div id="otp-section">
+    <input id="code" placeholder="رمز التحقق">
+    <button id="verify">تأكيد</button>
+  </div>
 
-                <!-- الحل 3: مزود الخدمة -->
-                <div class="card rounded-2xl shadow-xl p-5 solution-card">
-                    <div class="flex items-start mb-3">
-                        <div class="text-2xl mr-3">🏢</div>
-                        <div>
-                            <h3 class="font-bold text-gray-800 mb-2">3. مشكلة مزود الخدمة</h3>
-                            <p class="text-sm text-gray-600">
-                                بعض شركات الاتصالات <strong>تحجب رسائل Firebase</strong>. جرب مع شركة اتصالات مختلفة.
-                            </p>
-                            <div class="mt-3">
-                                <button 
-                                    onclick="showCarrierInfo()"
-                                    class="text-sm bg-purple-100 text-purple-700 px-3 py-1 rounded hover:bg-purple-200"
-                                >
-                                    معلومات مزودي الخدمة
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+  <div id="recaptcha-container"></div>
+  <p id="status"></p>
+</div>
 
-                <!-- الحل 4: بدائل -->
-                <div class="card rounded-2xl shadow-xl p-5 solution-card">
-                    <div class="flex items-start mb-3">
-                        <div class="text-2xl mr-3">🔄</div>
-                        <div>
-                            <h3 class="font-bold text-gray-800 mb-2">4. بدائل وحلول أخرى</h3>
-                            <div class="space-y-2 text-sm text-gray-600">
-                                <p>• استخدام <strong>رقم هاتف أجنبي</strong> للاختبار</p>
-                                <p>• تفعيل <strong>بيئة الإنتاج</strong> في Firebase</p>
-                                <p>• تجربة <strong>إرسال من خلال تطبيق</strong> بدلاً من الويب</p>
-                            </div>
-                            <div class="mt-3">
-                                <button 
-                                    onclick="showAlternativeNumbers()"
-                                    class="text-sm bg-green-100 text-green-700 px-3 py-1 rounded hover:bg-green-200"
-                                >
-                                    أرقام بديلة للاختبار
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.9.0/firebase-app.js";
+  import { getAuth, signInWithPhoneNumber, RecaptchaVerifier, onAuthStateChanged } 
+    from "https://www.gstatic.com/firebasejs/12.9.0/firebase-auth.js";
 
-                <!-- لوحة التحكم -->
-                <div class="card rounded-2xl shadow-xl p-5 bg-gray-50">
-                    <h3 class="font-bold text-gray-800 mb-3">🎛️ لوحة التحكم</h3>
-                    <div class="grid grid-cols-2 gap-3">
-                        <button 
-                            onclick="testFirebaseConnection()"
-                            class="p-3 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 text-sm"
-                        >
-                            🔗 اختبار اتصال Firebase
-                        </button>
-                        <button 
-                            onclick="resetRecaptcha()"
-                            class="p-3 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 text-sm"
-                        >
-                            🔄 إعادة تعيين reCAPTCHA
-                        </button>
-                        <button 
-                            onclick="viewConsoleLogs()"
-                            class="p-3 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 text-sm"
-                        >
-                            📋 عرض سجلات النظام
-                        </button>
-                        <button 
-                            onclick="simulateSuccess()"
-                            class="p-3 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 text-sm"
-                        >
-                            ✅ محاكاة نجاح
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
+  const firebaseConfig = {
+    apiKey: "AIzaSyBWfV0Z1yKxJ-lGJHzi5gStMGTE3CNxmMg",
+    authDomain: "aasa-8a079.firebaseapp.com",
+    projectId: "aasa-8a079",
+    storageBucket: "aasa-8a079.firebasestorage.app",
+    messagingSenderId: "849330713582",
+    appId: "1:849330713582:web:7a11b11ebdb5cdcc8b14ff",
+    measurementId: "G-LY2WSQ21GE"
+  };
 
-        <!-- رسالة الحالة العامة -->
-        <div id="global-message" class="hidden fixed bottom-4 left-4 right-4 bg-white border border-gray-300 rounded-lg shadow-xl p-4 max-w-md mx-auto z-50">
-            <div class="flex justify-between items-start">
-                <div id="message-content"></div>
-                <button onclick="document.getElementById('global-message').classList.add('hidden')" class="text-gray-500 hover:text-gray-700">
-                    ✕
-                </button>
-            </div>
-        </div>
-    </div>
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth(app);
 
-    <script>
-        // تكوين Firebase
-        const firebaseConfig = {
-            apiKey: "AIzaSyBWfV0Z1yKxJ-lGJHzi5gStMGTE3CNxmMg",
-            authDomain: "aasa-8a079.firebaseapp.com",
-            projectId: "aasa-8a079",
-            storageBucket: "aasa-8a079.firebasestorage.app",
-            messagingSenderId: "849330713582",
-            appId: "1:849330713582:web:7a11b11ebdb5cdcc8b14ff",
-            measurementId: "G-LY2WSQ21GE"
-        };
+  const status = document.getElementById("status");
+  const otpSection = document.getElementById("otp-section");
 
-        // تهيئة Firebase
-        let app;
-        let auth;
-        let recaptchaVerifier;
-        let confirmationResult = null;
-        let countdownInterval = null;
-        let countdownTime = 60;
-        let isTestMode = false;
+  window.recaptchaVerifier = new RecaptchaVerifier(
+    auth,
+    'recaptcha-container',
+    { size: 'invisible' }
+  );
 
-        // عناصر DOM
-        const elements = {
-            phoneInput: document.getElementById('phone'),
-            sendRealBtn: document.getElementById('send-real-btn'),
-            sendTestBtn: document.getElementById('send-test-btn'),
-            verifyCodeBtn: document.getElementById('verify-code-btn'),
-            resendCodeBtn: document.getElementById('resend-code-btn'),
-            backBtn: document.getElementById('back-btn'),
-            logoutBtn: document.getElementById('logout-btn'),
-            simulateReceiveBtn: document.getElementById('simulate-receive-btn'),
-            phoneAuthContainer: document.getElementById('phone-auth-container'),
-            verifyCodeContainer: document.getElementById('verify-code-container'),
-            userInfo: document.getElementById('user-info'),
-            verifyPhoneNumber: document.getElementById('verify-phone-number'),
-            sendStatus: document.getElementById('send-status'),
-            userPhone: document.getElementById('user-phone'),
-            countdownSpan: document.getElementById('countdown'),
-            recaptchaContainer: document.getElementById('recaptcha-container'),
-            codeInputs: document.querySelectorAll('.code-input'),
-            verificationCode: document.getElementById('verification-code'),
-            globalMessage: document.getElementById('global-message'),
-            messageContent: document.getElementById('message-content')
-        };
+  document.getElementById("send").onclick = () => {
+    const phone = document.getElementById("phone").value;
+    status.innerText = "جارٍ إرسال الرمز...";
 
-        // عرض رسالة عامة
-        function showGlobalMessage(text, type = 'info') {
-            elements.messageContent.innerHTML = text;
-            elements.globalMessage.className = 'fixed bottom-4 left-4 right-4 bg-white border rounded-lg shadow-xl p-4 max-w-md mx-auto z-50';
-            
-            if (type === 'success') {
-                elements.globalMessage.classList.add('border-green-300', 'bg-green-50');
-            } else if (type === 'error') {
-                elements.globalMessage.classList.add('border-red-300', 'bg-red-50');
-            } else if (type === 'warning') {
-                elements.globalMessage.classList.add('border-yellow-300', 'bg-yellow-50');
-            } else {
-                elements.globalMessage.classList.add('border-blue-300', 'bg-blue-50');
-            }
-            
-            elements.globalMessage.classList.remove('hidden');
-            
-            setTimeout(() => {
-                elements.globalMessage.classList.add('hidden');
-            }, 5000);
-        }
+    signInWithPhoneNumber(auth, phone, window.recaptchaVerifier)
+      .then(result => {
+        window.confirmationResult = result;
+        otpSection.style.display = "block";
+        status.innerText = "تم إرسال الرمز ✅";
+      })
+      .catch(err => status.innerText = err.message);
+  };
 
-        // تهيئة reCAPTCHA
-        function initializeRecaptcha() {
-            try {
-                if (recaptchaVerifier) {
-                    recaptchaVerifier.clear();
-                }
-                
-                recaptchaVerifier = new firebase.auth.RecaptchaVerifier(elements.recaptchaContainer, {
-                    'size': 'normal',
-                    'callback': function(response) {
-                        console.log("reCAPTCHA solved:", response);
-                        elements.sendRealBtn.disabled = false;
-                    },
-                    'expired-callback': function() {
-                        console.log("reCAPTCHA expired");
-                        showGlobalMessage('انتهت صلاحية التحقق، يرجى المحاولة مرة أخرى', 'warning');
-                        elements.sendRealBtn.disabled = true;
-                    }
-                });
-                
-                recaptchaVerifier.render();
-                console.log("✅ reCAPTCHA initialized");
-                
-            } catch (error) {
-                console.error("❌ reCAPTCHA error:", error);
-                showGlobalMessage('خطأ في نظام التحقق الأمني', 'error');
-            }
-        }
+  document.getElementById("verify").onclick = () => {
+    const code = document.getElementById("code").value;
+    window.confirmationResult.confirm(code)
+      .then(() => status.innerText = "تم تسجيل الدخول بنجاح 🎉")
+      .catch(() => status.innerText = "رمز غير صحيح ❌");
+  };
 
-        // معالجة إدخال رمز التحقق
-        elements.codeInputs.forEach((input, index) => {
-            input.addEventListener('input', (e) => {
-                if (!/^\d*$/.test(e.target.value)) {
-                    e.target.value = '';
-                    return;
-                }
-                
-                if (e.target.value && index < elements.codeInputs.length - 1) {
-                    elements.codeInputs[index + 1].focus();
-                }
-                
-                updateVerificationCode();
-            });
-            
-            input.addEventListener('keydown', (e) => {
-                if (e.key === 'Backspace' && !e.target.value && index > 0) {
-                    elements.codeInputs[index - 1].focus();
-                }
-            });
-        });
+  onAuthStateChanged(auth, user => {
+    if (user) {
+      status.innerText = "أنت مسجّل دخول بالفعل ✔";
+    }
+  });
+</script>
 
-        function updateVerificationCode() {
-            let code = '';
-            elements.codeInputs.forEach(input => {
-                code += input.value;
-            });
-            elements.verificationCode.value = code;
-        }
-
-        // التحقق من صحة رقم الهاتف
-        function validatePhoneNumber(phone) {
-            if (!phone.trim()) {
-                return { valid: false, message: 'يرجى إدخال رقم الهاتف' };
-            }
-            
-            const pattern = /^5[0-9]{8}$/;
-            if (!pattern.test(phone.trim())) {
-                return { 
-                    valid: false, 
-                    message: 'رقم الهاتف غير صحيح. يجب أن يبدأ بـ 5 ويتكون من 9 أرقام' 
-                };
-            }
-            
-            return { valid: true };
-        }
-
-        // إرسال رمز حقيقي
-        async function sendRealCode() {
-            const phone = elements.phoneInput.value.trim();
-            const validation = validatePhoneNumber(phone);
-            
-            if (!validation.valid) {
-                showGlobalMessage(validation.message, 'error');
-                return;
-            }
-            
-            const fullPhoneNumber = `+972${phone}`;
-            
-            showGlobalMessage(`جاري إرسال رمز حقيقي إلى ${fullPhoneNumber}...`, 'info');
-            elements.sendRealBtn.disabled = true;
-            elements.sendRealBtn.textContent = 'جاري الإرسال...';
-            
-            try {
-                confirmationResult = await auth.signInWithPhoneNumber(fullPhoneNumber, recaptchaVerifier);
-                
-                showGlobalMessage(`✅ تم إرسال رمز التحقق إلى ${fullPhoneNumber}`, 'success');
-                
-                // تحديث الواجهة
-                elements.verifyPhoneNumber.textContent = fullPhoneNumber;
-                elements.sendStatus.innerHTML = `
-                    <div class="flex items-center">
-                        <div class="w-2 h-2 bg-green-500 rounded-full mr-2 animate-pulse"></div>
-                        <span>تم الإرسال بنجاح - انتظر الرسالة على هاتفك</span>
-                    </div>
-                `;
-                
-                elements.phoneAuthContainer.classList.add('hidden');
-                elements.verifyCodeContainer.classList.remove('hidden');
-                
-                startCountdown();
-                elements.codeInputs[0].focus();
-                
-            } catch (error) {
-                console.error("Firebase error:", error);
-                
-                let errorMessage = 'حدث خطأ أثناء الإرسال';
-                let errorDetails = '';
-                
-                if (error.code === 'auth/quota-exceeded') {
-                    errorMessage = 'تم تجاوز الحد المسموح للرسائل';
-                    errorDetails = 'تحقق من رصيد مشروع Firebase';
-                } else if (error.code === 'auth/invalid-phone-number') {
-                    errorMessage = 'رقم الهاتف غير صالح';
-                    errorDetails = 'تأكد من صحة الرقم';
-                } else {
-                    errorMessage = `خطأ: ${error.code}`;
-                }
-                
-                showGlobalMessage(`${errorMessage}. ${errorDetails}`, 'error');
-                
-            } finally {
-                elements.sendRealBtn.disabled = false;
-                elements.sendRealBtn.textContent = 'إرسال رمز حقيقي إلى هاتفي';
-            }
-        }
-
-        // وضع الاختبار (بدون إرسال فعلي)
-        function sendTestCode() {
-            const phone = elements.phoneInput.value.trim();
-            const validation = validatePhoneNumber(phone);
-            
-            if (!validation.valid) {
-                // استخدام رقم افتراضي للاختبار
-                elements.phoneInput.value = "599123456";
-            }
-            
-            const fullPhoneNumber = `+972${elements.phoneInput.value.trim()}`;
-            
-            showGlobalMessage(`🧪 [وضع اختبار] تم محاكاة إرسال رمز إلى ${fullPhoneNumber}`, 'info');
-            
-            // محاكاة الإرسال الناجح
-            elements.verifyPhoneNumber.textContent = fullPhoneNumber;
-            elements.sendStatus.innerHTML = `
-                <div class="flex items-center">
-                    <div class="w-2 h-2 bg-yellow-500 rounded-full mr-2 animate-pulse"></div>
-                    <span>وضع الاختبار - الرمز الافتراضي: <strong>123456</strong></span>
-                </div>
-            `;
-            
-            elements.phoneAuthContainer.classList.add('hidden');
-            elements.verifyCodeContainer.classList.remove('hidden');
-            
-            startCountdown();
-            elements.codeInputs[0].focus();
-            
-            isTestMode = true;
-        }
-
-        // محاكاة استقبال الرمز
-        function simulateCodeReceive() {
-            const testCode = "123456";
-            
-            // تعبئة الحقول تلقائياً
-            elements.codeInputs.forEach((input, index) => {
-                input.value = testCode[index];
-            });
-            
-            updateVerificationCode();
-            
-            showGlobalMessage(`تم محاكاة استقبال الرمز: ${testCode}`, 'success');
-            
-            // الانتقال للحقل الأخير
-            elements.codeInputs[5].focus();
-        }
-
-        // التحقق من الرمز
-        async function verifyCode() {
-            const code = elements.verificationCode.value;
-            
-            if (code.length !== 6) {
-                showGlobalMessage('يرجى إدخال الرمز المكون من 6 أرقام', 'error');
-                return;
-            }
-            
-            elements.verifyCodeBtn.disabled = true;
-            elements.verifyCodeBtn.textContent = 'جاري التحقق...';
-            
-            if (isTestMode) {
-                // وضع الاختبار
-                setTimeout(() => {
-                    showGlobalMessage('✅ تم التحقق بنجاح (وضع اختبار)', 'success');
-                    
-                    elements.userPhone.textContent = elements.verifyPhoneNumber.textContent;
-                    elements.verifyCodeContainer.classList.add('hidden');
-                    elements.userInfo.classList.remove('hidden');
-                    
-                    elements.verifyCodeBtn.disabled = false;
-                    elements.verifyCodeBtn.textContent = 'تأكيد الرمز';
-                    
-                    if (countdownInterval) {
-                        clearInterval(countdownInterval);
-                    }
-                }, 1000);
-                
-            } else {
-                // وضع حقيقي
-                try {
-                    const result = await confirmationResult.confirm(code);
-                    const user = result.user;
-                    
-                    showGlobalMessage('✅ تم التحقق بنجاح!', 'success');
-                    
-                    elements.userPhone.textContent = user.phoneNumber;
-                    elements.verifyCodeContainer.classList.add('hidden');
-                    elements.userInfo.classList.remove('hidden');
-                    
-                } catch (error) {
-                    console.error("Verification error:", error);
-                    showGlobalMessage('رمز التحقق غير صحيح', 'error');
-                    
-                    elements.codeInputs.forEach(input => {
-                        input.classList.add('border-red-500');
-                        setTimeout(() => input.classList.remove('border-red-500'), 1000);
-                    });
-                    
-                } finally {
-                    elements.verifyCodeBtn.disabled = false;
-                    elements.verifyCodeBtn.textContent = 'تأكيد الرمز';
-                }
-            }
-        }
-
-        // بدء المؤقت
-        function startCountdown() {
-            countdownTime = 60;
-            elements.countdownSpan.textContent = countdownTime;
-            elements.resendCodeBtn.disabled = true;
-            elements.resendCodeBtn.classList.add('opacity-50', 'cursor-not-allowed');
-            
-            countdownInterval = setInterval(() => {
-                countdownTime--;
-                elements.countdownSpan.textContent = countdownTime;
-                
-                if (countdownTime <= 0) {
-                    clearInterval(countdownInterval);
-                    elements.resendCodeBtn.disabled = false;
-                    elements.resendCodeBtn.classList.remove('opacity-50', 'cursor-not-allowed');
-                }
-            }, 1000);
-        }
-
-        // إعادة الإرسال
-        function resendCode() {
-            if (isTestMode) {
-                showGlobalMessage('تم إعادة إرسال الرمز (وضع اختبار)', 'info');
-                startCountdown();
-                
-                elements.codeInputs.forEach(input => input.value = '');
-                updateVerificationCode();
-                elements.codeInputs[0].focus();
-                
-            } else if (confirmationResult) {
-                showGlobalMessage('جاري إعادة الإرسال...', 'info');
-                sendRealCode();
-            }
-        }
-
-        // اختبار اتصال Firebase
-        async function testFirebaseConnection() {
-            try {
-                showGlobalMessage('جاري اختبار اتصال Firebase...', 'info');
-                
-                const response = await fetch(`https://${firebaseConfig.projectId}.firebaseapp.com/__/auth/iframe`);
-                
-                if (response.ok) {
-                    showGlobalMessage('✅ اتصال Firebase يعمل بشكل صحيح', 'success');
-                } else {
-                    throw new Error('فشل الاتصال');
-                }
-                
-            } catch (error) {
-                showGlobalMessage('❌ فشل اختبار الاتصال بـ Firebase', 'error');
-            }
-        }
-
-        // التحقق من رصيد Firebase
-        async function checkFirebaseQuota() {
-            showGlobalMessage(`
-                <div>
-                    <p class="font-medium mb-2">💰 تحقق من رصيد Firebase:</p>
-                    <ol class="text-sm list-decimal list-inside space-y-1">
-                        <li>اذهب إلى <a href="https://console.firebase.google.com/project/aasa-8a079/usage" target="_blank" class="text-blue-600 hover:underline">صفحة الاستخدام</a></li>
-                        <li>تحقق من قسم <strong>Authentication</strong></li>
-                        <li>انظر إلى <strong>Phone Authentication</strong></li>
-                        <li>الحد المجاني: 10,000 رسالة/شهر</li>
-                    </ol>
-                </div>
-            `, 'info');
-        }
-
-        // إعادة تعيين reCAPTCHA
-        function resetRecaptcha() {
-            if (recaptchaVerifier) {
-                recaptchaVerifier.clear();
-                elements.recaptchaContainer.innerHTML = '';
-                initializeRecaptcha();
-                showGlobalMessage('تم إعادة تعيين نظام التحقق', 'success');
-            }
-        }
-
-        // عرض معلومات مزودي الخدمة
-        function showCarrierInfo() {
-            showGlobalMessage(`
-                <div>
-                    <p class="font-medium mb-2">🏢 مشاكل مزودي الخدمة:</p>
-                    <ul class="text-sm list-disc list-inside space-y-1">
-                        <li>بعض الشركات تحجب رسائل Firebase</li>
-                        <li>جرب مع <strong>Jawwal</strong> أو <strong>Ooredoo</strong></li>
-                        <li>قد تحتاج لتجربة رقم من دولة أخرى</li>
-                        <li>استخدم تطبيق <strong>TextNow</strong> للحصول على رقم أجنبي مجاني</li>
-                    </ul>
-                </div>
-            `, 'info');
-        }
-
-        // عرض أرقام بديلة للاختبار
-        function showAlternativeNumbers() {
-            showGlobalMessage(`
-                <div>
-                    <p class="font-medium mb-2">🌍 أرقام بديلة للاختبار:</p>
-                    <ul class="text-sm space-y-1">
-                        <li>🇺🇸 أمريكا: <code>+1 555 123 4567</code></li>
-                        <li>🇬🇧 بريطانيا: <code>+44 7911 123456</code></li>
-                        <li>🇩🇪 ألمانيا: <code>+49 151 12345678</code></li>
-                        <li>خدمات أرقام وهمية:
-                            <a href="https://receive-sms.com" target="_blank" class="text-blue-600 hover:underline ml-2">receive-sms.com</a>
-                        </li>
-                    </ul>
-                </div>
-            `, 'info');
-        }
-
-        // عرض سجلات النظام
-        function viewConsoleLogs() {
-            showGlobalMessage(`
-                <div>
-                    <p class="font-medium mb-2">📋 سجلات النظام:</p>
-                    <div class="text-xs bg-gray-100 p-2 rounded font-mono">
-                        1. ✅ Firebase initialized<br>
-                        2. ✅ reCAPTCHA loaded<br>
-                        3. ${confirmationResult ? '✅ Code sent successfully' : '⏳ Waiting for send'}<br>
-                        4. ${isTestMode ? '🧪 Test mode active' : '🔐 Real mode active'}
-                    </div>
-                    <p class="text-xs text-gray-600 mt-2">افتح أدوات المطور (F12) لمزيد من التفاصيل</p>
-                </div>
-            `, 'info');
-        }
-
-        // محاكاة نجاح كامل
-        function simulateSuccess() {
-            elements.phoneInput.value = "599123456";
-            elements.verifyPhoneNumber.textContent = "+972599123456";
-            elements.userPhone.textContent = "+972599123456";
-            
-            showGlobalMessage(`
-                <div class="text-center">
-                    <div class="text-2xl mb-2">🎉</div>
-                    <p class="font-medium">محاكاة نجاح كاملة!</p>
-                    <p class="text-sm">يمكنك تجربة سيناريو التسجيل الكامل</p>
-                </div>
-            `, 'success');
-        }
-
-        // إعداد معالجات الأحداث
-        function setupEventListeners() {
-            elements.sendRealBtn.addEventListener('click', sendRealCode);
-            elements.sendTestBtn.addEventListener('click', sendTestCode);
-            elements.verifyCodeBtn.addEventListener('click', verifyCode);
-            elements.resendCodeBtn.addEventListener('click', resendCode);
-            elements.backBtn.addEventListener('click', () => {
-                elements.verifyCodeContainer.classList.add('hidden');
-                elements.phoneAuthContainer.classList.remove('hidden');
-                elements.userInfo.classList.add('hidden');
-                
-                if (countdownInterval) {
-                    clearInterval(countdownInterval);
-                }
-            });
-            elements.simulateReceiveBtn.addEventListener('click', simulateCodeReceive);
-            elements.logoutBtn.addEventListener('click', () => {
-                if (auth && auth.currentUser) {
-                    auth.signOut();
-                }
-                
-                elements.userInfo.classList.add('hidden');
-                elements.phoneAuthContainer.classList.remove('hidden');
-                
-                showGlobalMessage('تم تسجيل الخروج', 'success');
-                
-                if (countdownInterval) {
-                    clearInterval(countdownInterval);
-                }
-            });
-        }
-
-        // تهيئة التطبيق
-        async function initializeApp() {
-            try {
-                app = firebase.initializeApp(firebaseConfig);
-                auth = firebase.auth();
-                console.log("✅ Firebase initialized");
-                
-                initializeRecaptcha();
-                setupEventListeners();
-                
-                // التحقق من حالة المستخدم
-                auth.onAuthStateChanged((user) => {
-                    if (user) {
-                        elements.userPhone.textContent = user.phoneNumber;
-                        elements.phoneAuthContainer.classList.add('hidden');
-                        elements.verifyCodeContainer.classList.add('hidden');
-                        elements.userInfo.classList.remove('hidden');
-                    }
-                });
-                
-            } catch (error) {
-                console.error("❌ Initialization error:", error);
-                showGlobalMessage('خطأ في تهيئة النظام', 'error');
-            }
-        }
-
-        // بدء التطبيق
-        document.addEventListener('DOMContentLoaded', initializeApp);
-    </script>
 </body>
 </html>
