@@ -1773,150 +1773,83 @@
     font-weight: bold;
     background-color: #ffeb3b;
 }
-
-/* أنماط صفحة تسجيل الدخول *//* تحسين شاشة تسجيل الدخول */
-#login-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
-    z-index: 10000; /* تأكد من أن Z-index أعلى من كل شيء */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    transition: opacity 0.3s ease;
-}
-
-/* التأكد من إخفاء شاشة الدخول */
-#login-overlay.hidden {
-    opacity: 0;
-    pointer-events: none;
-    visibility: hidden;
-}
-
-/* التأكد من إخفاء المحتوى الرئيسي عندما يكون المستخدم غير مسجل */
-body:not(.logged-in) #main-content {
-    display: none !important;
-    opacity: 0 !important;
-    visibility: hidden !important;
-}
-
-/* إضافة كلاس logged-in عند تسجيل الدخول */
-body.logged-in #login-overlay {
-    display: none !important;
-}
-
-body.logged-in #main-content {
-    display: block !important;
-    opacity: 1 !important;
-    visibility: visible !important;
-}
     </style>
 </head>
 <body>
-
-<!-- صفحة تسجيل الدخول -->
-<div id="login-overlay" class="login-overlay">
-    <div class="login-container">
-        <div class="login-card">
-            <div class="login-header">
-                <img src="https://res.cloudinary.com/dygc5b8cn/image/upload/v1768500756/xvrpeqabqhlbjwuq6u7t.jpg"
-                     alt="Shehadeh Center Logo" class="login-logo">
-                <h1>SHEHADEH CENTER</h1>
-                <p>يجب تسجيل الدخول للمتابعة</p>
-            </div>
-
-            <div class="login-content">
-                <div class="login-message">
-                    <i class="fas fa-lock"></i>
-                    <h2>مرحباً بك في Shehadeh Center</h2>
-                    <p>يجب تسجيل الدخول برقم هاتفك للوصول إلى الأسعار</p>
-                </div>
-
-                <a href="login.html" class="login-btn">
-                    <i class="fas fa-sign-in-alt"></i>
-                    تسجيل الدخول الآن
-                </a>
-
-                <div class="login-info">
-                    <p><i class="fas fa-info-circle"></i> تستخدم 972 أو 970 حسب رقم هاتفك</p>
-                    <p><i class="fas fa-shield-alt"></i> نظام آمن ومحمي</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- محتوى الموقع الأصلي (مخفي حتى تسجيل الدخول) -->
-<div id="main-content" style="display:none;">
-
     <!-- Loading Screen -->
     <div id="loading-screen">
         <div class="loader"></div>
         <div class="loading-text">جاري التحميل...</div>
     </div>
-
-    <!-- Nav -->
+    
     <div class="nav-container">
-        <a href="#" class="nav-logo">Shehadeh <span>Center</span></a>
-
+    <a href="#" class="nav-logo">Shehadeh <span>Center</span></a>
+    
+  
+        
+        <!-- زر تبديل العرض الجديد -->
         <button class="nav-btn view-toggle-btn" id="view-toggle-btn">
             <i class="fas fa-th-large" id="view-icon"></i>
             <span id="view-text">عرض متجر</span>
         </button>
-
+        
         <div class="nav-cart" id="show-cart-button">
             <span class="cart-count" id="cart-count">0</span>
             <i class="fas fa-shopping-cart"></i>
             <span class="cart-text">السلة</span>
         </div>
     </div>
-
-    <!-- النافذة الإعلانية -->
-    <div class="ad-popup" id="adPopup">
-        <div class="ad-content">
-            <span class="close-ad" id="closeAd">&times;</span>
-            <a href="https://mohammad-shehadeh.github.io/price/download" target="_blank">
-                <img src="https://i.postimg.cc/kXJr2mPN/9-F82-C114-0819-49-C1-A757-D69519179-DE7.png"
-                     alt="إعلان" class="ad-image">
-            </a>
-            <div class="ad-options">
-                <label>
-                    <input type="checkbox" id="dontShowAgain"> عدم الإظهار مرة أخرى
-                </label>
-            </div>
+</div>
+    
+<!-- النافذة الإعلانية -->
+<div class="ad-popup" id="adPopup">
+    <div class="ad-content">
+        <span class="close-ad" id="closeAd">&times;</span>
+        <a href="https://mohammad-shehadeh.github.io/price/download" target="_blank">
+            <img src="https://i.postimg.cc/kXJr2mPN/9-F82-C114-0819-49-C1-A757-D69519179-DE7.png" alt="إعلان" class="ad-image">
+        </a>
+        <div class="ad-options">
+            <label>
+                <input type="checkbox" id="dontShowAgain"> عدم الإظهار مرة أخرى
+            </label>
         </div>
     </div>
+</div>
 
     <!-- Header -->
     <header>
         <div class="logo-container">
-            <img src="https://res.cloudinary.com/dygc5b8cn/image/upload/v1768501375/smzshfxxouffjvgrrdnq.jpg"
-                 alt="Shehadeh Center Logo" class="logo-img">
+            <img src="https://res.cloudinary.com/dygc5b8cn/image/upload/v1768501375/smzshfxxouffjvgrrdnq.jpg" alt="Shehadeh Center Logo" class="logo-img">
         </div>
         <h1>SHEHADEH CENTER</h1>
-
-        <div class="toggle-files-container">
-            <button class="toggle-files-btn" id="toggle-files-btn">
-                <i class="fas fa-list"></i>
-                <span id="current-file-label">أسعار الأجهزة</span>
-                <i class="fas fa-chevron-down" id="toggle-icon"></i>
-            </button>
-            <div class="files-menu" id="files-menu"></div>
-        </div>
-
-        <div class="smart-filter-buttons" id="smart-filter-buttons"></div>
-
+        
+<!-- زر التبديل لقائمة الملفات -->
+<div class="toggle-files-container">
+    <button class="toggle-files-btn" id="toggle-files-btn">
+        <i class="fas fa-list"></i>
+        <span id="current-file-label">أسعار الأجهزة</span>
+        <i class="fas fa-chevron-down" id="toggle-icon"></i>
+    </button>
+    
+    <div class="files-menu" id="files-menu">
+        <!-- سيتم إضافة الخيارات هنا عبر JavaScript -->
+    </div>
+</div>
+        
+        <!-- Smart Flexible Filter Buttons -->
+<div class="smart-filter-buttons" id="smart-filter-buttons">
+    <!-- سيتم إضافة الفئات هنا ديناميكيًا -->
+</div>
+        
+        <!-- Search Box -->
         <input type="text" id="search-box" placeholder="🔍 ابحث عن منتج...">
     </header>
-
+    
+    <!-- Main Content -->
     <main>
         <div id="categories" class="products-container"></div>
     </main>
-
+    
     <!-- Shopping Cart -->
     <div class="cart" id="cart">
         <div class="cart-header">
@@ -1934,7 +1867,7 @@ body.logged-in #main-content {
             <button class="checkout-btn" id="checkout-button">إتمام الطلب</button>
         </div>
     </div>
-
+    
     <!-- Checkout Popup -->
     <div class="popup" id="popup">
         <div class="popup-content">
@@ -1942,30 +1875,34 @@ body.logged-in #main-content {
                 <h3>نموذج إتمام الطلب</h3>
             </div>
             <div class="popup-body">
-                <input type="text" id="customer-name" placeholder="ادخل اسمك">
-                <input type="tel" id="customer-phone" placeholder="ادخل رقم هاتفك">
+                <div class="form-group">
+                    <input type="text" id="customer-name" class="form-control" placeholder="ادخل اسمك">
+                </div>
+                <div class="form-group">
+                    <input type="tel" id="customer-phone" class="form-control" placeholder="ادخل رقم هاتفك">
+                </div>
             </div>
             <div class="popup-footer">
-                <button id="cancel-button">إلغاء</button>
-                <button id="confirm-button">إرسال</button>
+                <button class="popup-btn cancel" id="cancel-button">إلغاء</button>
+                <button class="popup-btn confirm" id="confirm-button">إرسال</button>
             </div>
         </div>
     </div>
-
+    
+    <!-- Scroll to Top Button -->
     <div class="scroll-btn">
-        <button id="scrollUp">
+        <button id="scrollUp" title="الصعود للأعلى">
             <i class="fas fa-arrow-up"></i>
         </button>
     </div>
-
+    
+    <!-- Notification -->
     <div class="notification" id="notification">
         <i class="fas fa-check-circle"></i>
         <span id="notification-text">تمت الإضافة إلى السلة</span>
     </div>
-
-</div>
-
 </body>
+    
 <script>
     // DOM Elements
     const categoriesContainer = document.getElementById('categories');
@@ -3025,94 +2962,6 @@ function filterProducts(category) {
             });
     }
 
-// ===== نظام التحقق من تسجيل الدخول =====
-
-// مفتاح التخزين للجلسة
-const SESSION_KEY = 'shehadeh_login_session';
-
-// التحقق من الجلسة عند تحميل الصفحة
-function checkLoginSession() {
-    const session = localStorage.getItem(SESSION_KEY);
-    
-    if (session) {
-        const sessionData = JSON.parse(session);
-        const now = new Date();
-        const loginTime = new Date(sessionData.loginTime);
-        const hoursDiff = (now - loginTime) / (1000 * 60 * 60);
-        
-        // إذا مرت أقل من 24 ساعة
-        if (hoursDiff < 24) {
-            // إخفاء صفحة الدخول وإظهار الموقع
-            document.getElementById('login-overlay').style.display = 'none';
-            document.getElementById('main-content').style.display = 'block';
-            return true;
-        } else {
-            // الجلسة منتهية، حذفها
-            localStorage.removeItem(SESSION_KEY);
-        }
-    }
-    
-    return false;
-}
-
-// تسجيل الدخول (يتم استدعاؤها من صفحة login.html)
-function loginUser(phoneNumber, countryCode) {
-    const sessionData = {
-        phoneNumber: phoneNumber,
-        countryCode: countryCode,
-        loginTime: new Date().toISOString(),
-        userAgent: navigator.userAgent
-    };
-    
-    localStorage.setItem(SESSION_KEY, JSON.stringify(sessionData));
-    
-    // إعادة تحميل الصفحة أو توجيه للموقع الرئيسي
-    window.location.href = 'index.html';
-}
-
-// تسجيل الخروج
-function logoutUser() {
-    localStorage.removeItem(SESSION_KEY);
-    window.location.reload();
-}
-
-// إضافة زر تسجيل الخروج في شريط التنقل
-function addLogoutButton() {
-    const navActions = document.querySelector('.nav-actions');
-    
-    if (navActions) {
-        const logoutBtn = document.createElement('a');
-        logoutBtn.className = 'nav-btn';
-        logoutBtn.href = '#';
-        logoutBtn.innerHTML = '<i class="fas fa-sign-out-alt"></i><span>تسجيل الخروج</span>';
-        logoutBtn.onclick = (e) => {
-            e.preventDefault();
-            logoutUser();
-        };
-        
-        navActions.insertBefore(logoutBtn, navActions.firstChild);
-    }
-}
-
-// تحديث التهيئة
-window.addEventListener('load', function() {
-    // التحقق من تسجيل الدخول
-    if (checkLoginSession()) {
-        // المستخدم مسجل الدخول
-        addLogoutButton();
-    } else {
-        // المستخدم غير مسجل، إظهار صفحة الدخول
-        document.getElementById('login-overlay').style.display = 'flex';
-    }
-    
-    // باقي كود التهيئة الأصلي
-    init();
-});
-
-
     // Initialize App
     window.addEventListener('load', init);
 </script>
-
-</body>
-</html>
