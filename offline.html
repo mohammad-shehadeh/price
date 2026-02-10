@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>تسجيل الدخول برقم الهاتف</title>
+    <title>تسجيل الدخول برقم الهاتف - حل كامل</title>
     <!-- Firebase SDK -->
     <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
@@ -11,20 +11,16 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- خط عربي -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * {
-            font-family: 'Cairo', sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         body {
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
         }
         .card {
-            background: rgba(255, 255, 255, 0.95);
+            background: rgba(255, 255, 255, 0.98);
             backdrop-filter: blur(10px);
         }
         .btn-primary {
@@ -35,153 +31,129 @@
             transform: translateY(-2px);
             box-shadow: 0 10px 20px rgba(79, 70, 229, 0.3);
         }
-        .step-indicator {
-            transition: all 0.3s ease;
+        .country-btn.active {
+            border-color: #4f46e5;
+            background-color: #f5f3ff;
         }
-        .step-active {
-            background-color: #4f46e5;
-            color: white;
-            transform: scale(1.1);
-        }
-        .phone-input-container {
-            direction: ltr;
-            text-align: left;
-        }
-        .country-flag {
-            width: 24px;
-            height: 16px;
-            object-fit: cover;
-            border-radius: 2px;
-        }
-        .dropdown-content {
-            max-height: 200px;
-            overflow-y: auto;
+        .recaptcha-container {
+            margin: 20px 0;
+            display: flex;
+            justify-content: center;
         }
     </style>
 </head>
 <body class="flex flex-col items-center justify-center p-4">
     <div class="w-full max-w-md mx-auto">
         <header class="text-center mb-8">
-            <h1 class="text-3xl font-bold text-gray-800 mb-2">
-                <i class="fas fa-mobile-alt text-indigo-600 mr-2"></i>
+            <h1 class="text-3xl font-bold text-white mb-2">
+                <i class="fas fa-mobile-alt mr-2"></i>
                 تسجيل الدخول برقم الهاتف
             </h1>
-            <p class="text-gray-600">اختر رمز الدولة وأدخل رقم هاتفك لتلقي رمز التحقق</p>
+            <p class="text-gray-200">الحل الكامل لمشكلة رموز الدول</p>
         </header>
 
-        <!-- مؤشر الخطوات -->
-        <div class="flex justify-center mb-8">
-            <div class="flex items-center">
-                <div class="step-indicator step-active w-10 h-10 rounded-full flex items-center justify-center font-bold border-2 border-indigo-600">
-                    1
-                </div>
-                <div class="w-16 h-1 bg-gray-300 mx-2"></div>
-                <div class="step-indicator w-10 h-10 rounded-full flex items-center justify-center font-bold border-2 border-gray-300">
-                    2
-                </div>
-            </div>
-        </div>
-
         <!-- بطاقة تسجيل الدخول -->
-        <div class="card rounded-2xl shadow-xl p-6 mb-6">
+        <div class="card rounded-2xl shadow-2xl p-6 mb-6">
             <!-- رسالة الحالة -->
             <div id="message" class="hidden p-4 rounded-lg mb-4 text-center"></div>
+            
+            <!-- reCAPTCHA Container -->
+            <div id="recaptcha-container" class="recaptcha-container"></div>
             
             <!-- نموذج إدخال رقم الهاتف -->
             <div id="phone-auth-container">
                 <div class="mb-6">
                     <label class="block text-gray-700 mb-2 font-medium">
                         <i class="fas fa-globe text-indigo-600 mr-2"></i>
-                        الدولة ورقم الهاتف
+                        اختر رمز الدولة
                     </label>
                     
-                    <!-- اختيار رمز الدولة -->
+                    <div class="grid grid-cols-2 gap-3 mb-4">
+                        <button 
+                            id="country-972" 
+                            class="country-btn p-4 border-2 border-indigo-300 rounded-lg flex flex-col items-center bg-indigo-50"
+                            data-code="972"
+                        >
+                            <div class="text-2xl mb-2">🇵🇸</div>
+                            <div class="font-bold text-gray-800">فلسطين</div>
+                            <div class="text-gray-600">+972</div>
+                            <div class="text-sm text-gray-500 mt-1">مصرح به</div>
+                        </button>
+                        
+                        <button 
+                            id="country-970" 
+                            class="country-btn p-4 border-2 border-gray-200 rounded-lg flex flex-col items-center bg-white"
+                            data-code="970"
+                        >
+                            <div class="text-2xl mb-2">🇵🇸</div>
+                            <div class="font-bold text-gray-800">فلسطين</div>
+                            <div class="text-gray-600">+970</div>
+                            <div class="text-sm text-gray-500 mt-1">تجريبي</div>
+                        </button>
+                    </div>
+                    
                     <div class="mb-4">
-                        <div class="relative">
-                            <button 
-                                id="country-dropdown-btn"
-                                class="w-full p-3 border border-gray-300 rounded-lg flex items-center justify-between bg-white hover:bg-gray-50 transition"
-                            >
-                                <div class="flex items-center">
-                                    <img id="selected-flag" src="https://flagcdn.com/w20/ps.png" alt="علم فلسطين" class="country-flag mr-2">
-                                    <span id="selected-country" class="font-medium">فلسطين (+972)</span>
-                                </div>
-                                <i class="fas fa-chevron-down text-gray-500"></i>
-                            </button>
-                            
-                            <div id="country-dropdown" class="hidden absolute z-10 w-full mt-1 bg-white border border-gray-300 rounded-lg shadow-lg">
-                                <div class="dropdown-content p-2">
-                                    <!-- فلسطين -->
-                                    <div 
-                                        class="country-option flex items-center p-3 rounded hover:bg-gray-100 cursor-pointer mb-1"
-                                        data-code="972"
-                                        data-flag="https://flagcdn.com/w20/ps.png"
-                                        data-name="فلسطين"
-                                    >
-                                        <img src="https://flagcdn.com/w20/ps.png" alt="علم فلسطين" class="country-flag mr-3">
-                                        <div>
-                                            <div class="font-medium">فلسطين</div>
-                                            <div class="text-sm text-gray-600">+972</div>
-                                        </div>
-                                        <div class="ml-auto">
-                                            <i class="fas fa-check text-indigo-600 hidden"></i>
-                                        </div>
-                                    </div>
-                                    
-                                    <!-- الضفة الغربية وغزة -->
-                                    <div 
-                                        class="country-option flex items-center p-3 rounded hover:bg-gray-100 cursor-pointer"
-                                        data-code="970"
-                                        data-flag="https://flagcdn.com/w20/ps.png"
-                                        data-name="الضفة الغربية وغزة"
-                                    >
-                                        <img src="https://flagcdn.com/w20/ps.png" alt="علم فلسطين" class="country-flag mr-3">
-                                        <div>
-                                            <div class="font-medium">الضفة الغربية وغزة</div>
-                                            <div class="text-sm text-gray-600">+970</div>
-                                        </div>
-                                        <div class="ml-auto">
-                                            <i class="fas fa-check text-indigo-600 hidden"></i>
-                                        </div>
-                                    </div>
-                                </div>
+                        <label for="phone" class="block text-gray-700 mb-2 font-medium">
+                            <i class="fas fa-phone text-indigo-600 mr-2"></i>
+                            رقم الهاتف
+                        </label>
+                        <div class="flex">
+                            <div id="country-code-display" class="flex items-center justify-center bg-gray-100 rounded-r-lg px-4 border border-gray-300 border-l-0 font-bold text-gray-700 min-w-[80px]">
+                                +972
                             </div>
+                            <input 
+                                type="tel" 
+                                id="phone" 
+                                class="w-full p-3 border border-gray-300 rounded-l-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition"
+                                placeholder="59XXXXXXX"
+                                dir="ltr"
+                                maxlength="9"
+                            >
                         </div>
                         <input type="hidden" id="country-code" value="972">
                     </div>
                     
-                    <!-- إدخال رقم الهاتف -->
-                    <div class="phone-input-container flex">
-                        <div class="flex items-center justify-center bg-gray-100 rounded-r-lg px-3 border border-gray-300 border-l-0">
-                            <span id="country-code-display" class="text-gray-700 font-medium">+972</span>
+                    <!-- معلومات مهمة -->
+                    <div class="bg-blue-50 border border-blue-200 rounded-lg p-3 mb-4">
+                        <div class="flex items-start">
+                            <i class="fas fa-info-circle text-blue-500 mt-1 mr-2"></i>
+                            <div>
+                                <p class="text-sm text-blue-800 font-medium">لحل المشكلة:</p>
+                                <ul class="text-xs text-blue-700 list-disc list-inside mt-1">
+                                    <li>تأكد من تفعيل Phone Authentication في Firebase Console</li>
+                                    <li>أضف رموز الدول المسموحة (972 فقط حاليًا)</li>
+                                    <li>تحقق من رصيد مشروع Firebase</li>
+                                </ul>
+                            </div>
                         </div>
-                        <input 
-                            type="tel" 
-                            id="phone" 
-                            class="w-full p-3 border border-gray-300 rounded-l-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition"
-                            placeholder="59XXXXXXX"
-                            dir="ltr"
-                        >
-                    </div>
-                    
-                    <!-- أمثلة على تنسيق الأرقام -->
-                    <div class="mt-3 p-3 bg-gray-50 rounded-lg">
-                        <p class="text-sm text-gray-700 mb-1"><strong>أمثلة على تنسيق الأرقام:</strong></p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="text-xs bg-white px-2 py-1 rounded border" id="example-1">59XXXXXXX</span>
-                            <span class="text-xs bg-white px-2 py-1 rounded border" id="example-2">56XXXXXXX</span>
-                        </div>
-                        <p class="text-sm text-gray-500 mt-2">سنرسل رمز تحقق إلى هذا الرقم عبر الرسائل النصية</p>
                     </div>
                 </div>
                 
                 <button 
                     id="send-code-btn" 
-                    class="btn-primary w-full text-white font-bold py-3 px-4 rounded-lg flex items-center justify-center"
+                    class="btn-primary w-full text-white font-bold py-3 px-4 rounded-lg flex items-center justify-center mb-3"
                 >
                     <i class="fas fa-paper-plane mr-2"></i>
                     إرسال رمز التحقق
                 </button>
+                
+                <!-- خيارات إضافية -->
+                <div class="grid grid-cols-2 gap-3">
+                    <button 
+                        id="test-number-btn" 
+                        class="bg-green-100 text-green-800 border border-green-300 font-medium py-2 px-4 rounded-lg flex items-center justify-center hover:bg-green-200 transition"
+                    >
+                        <i class="fas fa-flask mr-2"></i>
+                        رقم تجريبي
+                    </button>
+                    <button 
+                        id="debug-btn" 
+                        class="bg-yellow-100 text-yellow-800 border border-yellow-300 font-medium py-2 px-4 rounded-lg flex items-center justify-center hover:bg-yellow-200 transition"
+                    >
+                        <i class="fas fa-bug mr-2"></i>
+                        تفاصيل الخطأ
+                    </button>
+                </div>
             </div>
             
             <!-- نموذج إدخال رمز التحقق -->
@@ -190,15 +162,10 @@
                     <div class="flex items-center justify-between mb-4">
                         <div>
                             <div class="flex items-center">
-                                <img id="verify-country-flag" src="https://flagcdn.com/w20/ps.png" alt="علم فلسطين" class="country-flag mr-2">
-                                <span id="verify-phone-number" class="font-medium">+972 59XXXXXXX</span>
+                                <span id="verify-phone-number" class="font-medium text-lg">+972 59XXXXXXX</span>
                             </div>
                             <p class="text-sm text-gray-500">تم إرسال الرمز إلى هذا الرقم</p>
                         </div>
-                        <button id="change-number-btn" class="text-indigo-600 text-sm font-medium">
-                            <i class="fas fa-edit mr-1"></i>
-                            تغيير
-                        </button>
                     </div>
                     
                     <label for="code" class="block text-gray-700 mb-2 font-medium">
@@ -214,7 +181,7 @@
                         <input type="text" maxlength="1" class="code-input w-12 h-12 text-center text-2xl font-bold border-2 border-gray-300 rounded-lg focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 outline-none transition">
                     </div>
                     <input type="hidden" id="verification-code">
-                    <p class="text-sm text-gray-500 text-center">أدخل الرمز المكون من 6 أرقام الذي استلمته</p>
+                    <p class="text-sm text-gray-500 text-center">أدخل الرمز المكون من 6 أرقام</p>
                 </div>
                 
                 <div class="flex space-x-3">
@@ -224,6 +191,13 @@
                     >
                         <i class="fas fa-check-circle mr-2"></i>
                         تأكيد الرمز
+                    </button>
+                    <button 
+                        id="back-btn" 
+                        class="flex-1 border border-gray-300 text-gray-700 font-bold py-3 px-4 rounded-lg flex items-center justify-center"
+                    >
+                        <i class="fas fa-arrow-right mr-2"></i>
+                        رجوع
                     </button>
                 </div>
                 
@@ -237,39 +211,29 @@
         </div>
         
         <!-- معلومات المستخدم بعد التسجيل -->
-        <div id="user-info" class="hidden card rounded-2xl shadow-xl p-6">
+        <div id="user-info" class="hidden card rounded-2xl shadow-2xl p-6">
             <div class="text-center">
-                <div class="flex justify-center mb-4">
-                    <div class="relative">
-                        <div class="w-16 h-16 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-full flex items-center justify-center">
-                            <i class="fas fa-user text-white text-2xl"></i>
-                        </div>
-                        <img id="user-country-flag" src="https://flagcdn.com/w20/ps.png" alt="علم الدولة" class="country-flag absolute -bottom-1 -right-1 border-2 border-white rounded">
-                    </div>
+                <div class="w-16 h-16 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-user-check text-white text-2xl"></i>
                 </div>
-                <h2 class="text-xl font-bold text-gray-800 mb-1">مرحباً</h2>
+                <h2 class="text-xl font-bold text-gray-800 mb-1">تم التسجيل بنجاح!</h2>
                 <p id="user-phone" class="text-gray-700 mb-4">+972 59XXXXXXX</p>
-                <p class="text-gray-600 mb-4">لقد سجلت الدخول بنجاح باستخدام رمز OTP</p>
+                
                 <div class="bg-gray-100 p-4 rounded-lg mb-4">
                     <div class="flex items-center justify-between mb-2">
-                        <span class="text-sm text-gray-700"><strong>البلد:</strong></span>
-                        <span id="user-country" class="text-sm font-medium">فلسطين</span>
+                        <span class="text-sm text-gray-700"><strong>نوع المصادقة:</strong></span>
+                        <span id="auth-type" class="text-sm font-medium">Firebase</span>
                     </div>
                     <div class="flex items-center justify-between mb-2">
-                        <span class="text-sm text-gray-700"><strong>رمز الدولة:</strong></span>
-                        <span id="user-country-code" class="text-sm font-medium">+972</span>
-                    </div>
-                    <div class="flex items-center justify-between">
-                        <span class="text-sm text-gray-700"><strong>وقت التسجيل:</strong></span>
+                        <span class="text-sm text-gray-700"><strong>الوقت:</strong></span>
                         <span id="login-time" class="text-sm font-medium">--:--</span>
                     </div>
+                    <div class="flex items-center justify-between">
+                        <span class="text-sm text-gray-700"><strong>المعرف:</strong></span>
+                        <span id="user-id" class="text-xs font-mono truncate max-w-[150px]">---</span>
+                    </div>
                 </div>
-                <div class="bg-indigo-50 p-3 rounded-lg mb-6">
-                    <p class="text-xs text-indigo-700">
-                        <i class="fas fa-info-circle mr-1"></i>
-                        معرف المستخدم: <span id="user-id" class="font-mono text-xs truncate block"></span>
-                    </p>
-                </div>
+                
                 <button 
                     id="logout-btn" 
                     class="w-full bg-gray-200 text-gray-800 font-bold py-3 px-4 rounded-lg flex items-center justify-center hover:bg-gray-300 transition"
@@ -280,15 +244,54 @@
             </div>
         </div>
         
-        <!-- معلومات حول الموقع -->
-        <div class="text-center mt-8 text-gray-500 text-sm">
-            <p><i class="fas fa-shield-alt mr-1"></i> نستخدم Firebase Authentication لتأمين بياناتك</p>
-            <p class="mt-1">هذا موقع تجريبي لأغراض التوضيح فقط</p>
+        <!-- لوحة التحكم والإصلاح -->
+        <div id="debug-panel" class="hidden bg-white bg-opacity-95 rounded-xl p-4 mt-6">
+            <h3 class="font-bold text-gray-800 mb-3 flex items-center">
+                <i class="fas fa-cogs mr-2"></i>
+                لوحة التحكم والإصلاح
+            </h3>
+            
+            <div class="space-y-3">
+                <div>
+                    <h4 class="text-sm font-medium text-gray-700 mb-2">حالة Firebase:</h4>
+                    <div id="firebase-status" class="text-xs p-2 bg-gray-100 rounded">
+                        جاري التحقق...
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-sm font-medium text-gray-700 mb-2">إصلاح reCAPTCHA:</h4>
+                    <button 
+                        id="reset-recaptcha-btn" 
+                        class="w-full text-xs bg-red-100 text-red-800 border border-red-300 font-medium py-2 px-3 rounded-lg hover:bg-red-200 transition"
+                    >
+                        إعادة تعيين reCAPTCHA
+                    </button>
+                </div>
+                
+                <div>
+                    <h4 class="text-sm font-medium text-gray-700 mb-2">اختبار الاتصال:</h4>
+                    <div class="grid grid-cols-2 gap-2">
+                        <button 
+                            id="test-972-btn" 
+                            class="text-xs bg-blue-100 text-blue-800 border border-blue-300 font-medium py-2 px-3 rounded-lg hover:bg-blue-200 transition"
+                        >
+                            اختبار +972
+                        </button>
+                        <button 
+                            id="test-firebase-btn" 
+                            class="text-xs bg-green-100 text-green-800 border border-green-300 font-medium py-2 px-3 rounded-lg hover:bg-green-200 transition"
+                        >
+                            اختبار Firebase
+                        </button>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
     <script>
-        // تكوين Firebase مع بياناتك
+        // تكوين Firebase
         const firebaseConfig = {
             apiKey: "AIzaSyBWfV0Z1yKxJ-lGJHzi5gStMGTE3CNxmMg",
             authDomain: "aasa-8a079.firebaseapp.com",
@@ -300,229 +303,175 @@
         };
 
         // تهيئة Firebase
-        firebase.initializeApp(firebaseConfig);
-        const auth = firebase.auth();
+        let app;
+        let auth;
+        let recaptchaVerifier;
+        let recaptchaWidgetId;
 
-        // بيانات الدول المتاحة
-        const countries = [
-            {
-                code: "972",
-                name: "فلسطين",
-                flag: "https://flagcdn.com/w20/ps.png",
-                example: "59XXXXXXX",
-                pattern: /^5[0-9]{8}$/,
-                placeholder: "59XXXXXXX"
-            },
-            {
-                code: "970",
-                name: "الضفة الغربية وغزة",
-                flag: "https://flagcdn.com/w20/ps.png",
-                example: "59XXXXXXX",
-                pattern: /^5[0-9]{8}$/,
-                placeholder: "59XXXXXXX"
-            }
-        ];
+        try {
+            app = firebase.initializeApp(firebaseConfig);
+            auth = firebase.auth();
+            console.log("✅ Firebase initialized successfully");
+        } catch (error) {
+            console.error("❌ Firebase initialization error:", error);
+        }
 
         // متغيرات التطبيق
         let confirmationResult = null;
         let countdownInterval = null;
         let countdownTime = 60;
-        let selectedCountry = countries[0]; // فلسطين كإفتراضي
+        let selectedCountryCode = "972";
+        let isTestMode = false;
 
         // عناصر DOM
-        const phoneInput = document.getElementById('phone');
-        const sendCodeBtn = document.getElementById('send-code-btn');
-        const verifyCodeBtn = document.getElementById('verify-code-btn');
-        const resendCodeBtn = document.getElementById('resend-code-btn');
-        const logoutBtn = document.getElementById('logout-btn');
-        const changeNumberBtn = document.getElementById('change-number-btn');
-        const phoneAuthContainer = document.getElementById('phone-auth-container');
-        const verifyCodeContainer = document.getElementById('verify-code-container');
-        const userInfoContainer = document.getElementById('user-info');
-        const messageDiv = document.getElementById('message');
-        const codeInputs = document.querySelectorAll('.code-input');
-        const verificationCodeInput = document.getElementById('verification-code');
-        const userPhoneSpan = document.getElementById('user-phone');
-        const userCountrySpan = document.getElementById('user-country');
-        const userCountryCodeSpan = document.getElementById('user-country-code');
-        const userIdSpan = document.getElementById('user-id');
-        const loginTimeSpan = document.getElementById('login-time');
-        const stepIndicators = document.querySelectorAll('.step-indicator');
-        const countdownSpan = document.getElementById('countdown');
-        const countryCodeInput = document.getElementById('country-code');
-        const countryCodeDisplay = document.getElementById('country-code-display');
-        const selectedCountryFlag = document.getElementById('selected-flag');
-        const selectedCountryName = document.getElementById('selected-country');
-        const verifyCountryFlag = document.getElementById('verify-country-flag');
-        const verifyPhoneNumber = document.getElementById('verify-phone-number');
-        const userCountryFlag = document.getElementById('user-country-flag');
-        const countryDropdownBtn = document.getElementById('country-dropdown-btn');
-        const countryDropdown = document.getElementById('country-dropdown');
-        const countryOptions = document.querySelectorAll('.country-option');
-        const example1 = document.getElementById('example-1');
-        const example2 = document.getElementById('example-2');
+        const elements = {
+            phoneInput: document.getElementById('phone'),
+            sendCodeBtn: document.getElementById('send-code-btn'),
+            verifyCodeBtn: document.getElementById('verify-code-btn'),
+            resendCodeBtn: document.getElementById('resend-code-btn'),
+            backBtn: document.getElementById('back-btn'),
+            logoutBtn: document.getElementById('logout-btn'),
+            testNumberBtn: document.getElementById('test-number-btn'),
+            debugBtn: document.getElementById('debug-btn'),
+            phoneAuthContainer: document.getElementById('phone-auth-container'),
+            verifyCodeContainer: document.getElementById('verify-code-container'),
+            userInfoContainer: document.getElementById('user-info'),
+            debugPanel: document.getElementById('debug-panel'),
+            messageDiv: document.getElementById('message'),
+            codeInputs: document.querySelectorAll('.code-input'),
+            verificationCodeInput: document.getElementById('verification-code'),
+            userPhoneSpan: document.getElementById('user-phone'),
+            authTypeSpan: document.getElementById('auth-type'),
+            userIdSpan: document.getElementById('user-id'),
+            loginTimeSpan: document.getElementById('login-time'),
+            countryCodeInput: document.getElementById('country-code'),
+            countryCodeDisplay: document.getElementById('country-code-display'),
+            country972Btn: document.getElementById('country-972'),
+            country970Btn: document.getElementById('country-970'),
+            countdownSpan: document.getElementById('countdown'),
+            recaptchaContainer: document.getElementById('recaptcha-container'),
+            resetRecaptchaBtn: document.getElementById('reset-recaptcha-btn'),
+            test972Btn: document.getElementById('test-972-btn'),
+            testFirebaseBtn: document.getElementById('test-firebase-btn'),
+            firebaseStatus: document.getElementById('firebase-status')
+        };
 
-        // تحديث أمثلة تنسيق الأرقام بناءً على الدولة المختارة
-        function updatePhoneExamples() {
-            example1.textContent = selectedCountry.example;
-            example2.textContent = selectedCountry.example.replace('9', '6'); // مثال آخر
-            phoneInput.placeholder = selectedCountry.placeholder;
-        }
-
-        // تحديث واجهة اختيار الدولة
-        function updateCountrySelection() {
-            countryCodeInput.value = selectedCountry.code;
-            countryCodeDisplay.textContent = `+${selectedCountry.code}`;
-            selectedCountryFlag.src = selectedCountry.flag;
-            selectedCountryName.textContent = `${selectedCountry.name} (+${selectedCountry.code})`;
-            
-            // تحديث علامة الاختيار في القائمة
-            countryOptions.forEach(option => {
-                const checkIcon = option.querySelector('.fa-check');
-                if (option.dataset.code === selectedCountry.code) {
-                    checkIcon.classList.remove('hidden');
-                    option.classList.add('bg-indigo-50', 'border', 'border-indigo-200');
-                } else {
-                    checkIcon.classList.add('hidden');
-                    option.classList.remove('bg-indigo-50', 'border', 'border-indigo-200');
+        // تهيئة reCAPTCHA
+        function initializeRecaptcha() {
+            try {
+                if (recaptchaVerifier) {
+                    recaptchaVerifier.clear();
                 }
-            });
-            
-            updatePhoneExamples();
-        }
-
-        // تهيئة اختيار الدولة
-        function initCountrySelection() {
-            // تحديث الواجهة بالدولة الافتراضية
-            updateCountrySelection();
-            
-            // إظهار/إخفاء قائمة الدول
-            countryDropdownBtn.addEventListener('click', (e) => {
-                e.stopPropagation();
-                countryDropdown.classList.toggle('hidden');
-            });
-            
-            // اختيار دولة من القائمة
-            countryOptions.forEach(option => {
-                option.addEventListener('click', () => {
-                    const code = option.dataset.code;
-                    selectedCountry = countries.find(c => c.code === code);
-                    updateCountrySelection();
-                    countryDropdown.classList.add('hidden');
-                    phoneInput.focus();
+                
+                // إنشاء reCAPTCHA مرئي
+                recaptchaVerifier = new firebase.auth.RecaptchaVerifier('recaptcha-container', {
+                    'size': 'normal',
+                    'callback': (response) => {
+                        console.log("✅ reCAPTCHA solved:", response);
+                        elements.sendCodeBtn.disabled = false;
+                    },
+                    'expired-callback': () => {
+                        console.log("❌ reCAPTCHA expired");
+                        showMessage('انتهت صلاحية التحقق، يرجى المحاولة مرة أخرى', 'warning');
+                        elements.sendCodeBtn.disabled = true;
+                    }
                 });
-            });
+                
+                recaptchaWidgetId = recaptchaVerifier.render();
+                console.log("✅ reCAPTCHA initialized with widget ID:", recaptchaWidgetId);
+                
+            } catch (error) {
+                console.error("❌ reCAPTCHA initialization error:", error);
+                showMessage('خطأ في تهيئة نظام التحقق الأمني', 'error');
+            }
+        }
+
+        // اختيار رمز الدولة
+        function selectCountry(code) {
+            selectedCountryCode = code;
+            elements.countryCodeInput.value = code;
+            elements.countryCodeDisplay.textContent = `+${code}`;
             
-            // إغلاق القائمة عند النقر خارجها
-            document.addEventListener('click', (e) => {
-                if (!countryDropdown.contains(e.target) && !countryDropdownBtn.contains(e.target)) {
-                    countryDropdown.classList.add('hidden');
-                }
-            });
+            // تحديث أزرار الدول
+            elements.country972Btn.classList.remove('active');
+            elements.country970Btn.classList.remove('active');
+            
+            if (code === "972") {
+                elements.country972Btn.classList.add('active');
+                elements.phoneInput.placeholder = "59XXXXXXX";
+                isTestMode = false;
+            } else if (code === "970") {
+                elements.country970Btn.classList.add('active');
+                elements.phoneInput.placeholder = "59XXXXXXX (تجريبي)";
+                isTestMode = true;
+            }
         }
 
         // معالجة إدخال رمز التحقق
-        codeInputs.forEach((input, index) => {
+        elements.codeInputs.forEach((input, index) => {
             input.addEventListener('input', (e) => {
-                // التحقق من أن المدخل رقم فقط
                 if (!/^\d*$/.test(e.target.value)) {
                     e.target.value = '';
                     return;
                 }
                 
-                // الانتقال إلى الحقل التالي عند الإدخال
-                if (e.target.value && index < codeInputs.length - 1) {
-                    codeInputs[index + 1].focus();
+                if (e.target.value && index < elements.codeInputs.length - 1) {
+                    elements.codeInputs[index + 1].focus();
                 }
                 
-                // تحديث الحقل المخفي للرمز الكامل
                 updateVerificationCode();
             });
             
             input.addEventListener('keydown', (e) => {
-                // الانتقال إلى الحقل السابق عند الضغط على backspace
                 if (e.key === 'Backspace' && !e.target.value && index > 0) {
-                    codeInputs[index - 1].focus();
-                }
-                
-                // السماح بالتنقل بين الحقول باستخدام الأسهم
-                if (e.key === 'ArrowLeft' && index > 0) {
-                    codeInputs[index - 1].focus();
-                }
-                if (e.key === 'ArrowRight' && index < codeInputs.length - 1) {
-                    codeInputs[index + 1].focus();
-                }
-            });
-            
-            input.addEventListener('paste', (e) => {
-                e.preventDefault();
-                const pastedData = e.clipboardData.getData('text').trim();
-                
-                if (/^\d{6}$/.test(pastedData)) {
-                    // توزيع الأرقام المنسوخة على الحقول
-                    for (let i = 0; i < 6; i++) {
-                        if (codeInputs[i]) {
-                            codeInputs[i].value = pastedData[i];
-                        }
-                    }
-                    updateVerificationCode();
-                    codeInputs[5].focus();
+                    elements.codeInputs[index - 1].focus();
                 }
             });
         });
 
-        // تحديث رمز التحقق الكامل
         function updateVerificationCode() {
             let code = '';
-            codeInputs.forEach(input => {
+            elements.codeInputs.forEach(input => {
                 code += input.value;
             });
-            verificationCodeInput.value = code;
+            elements.verificationCodeInput.value = code;
         }
 
         // عرض رسالة
         function showMessage(text, type = 'info') {
-            messageDiv.textContent = text;
-            messageDiv.className = '';
+            elements.messageDiv.textContent = text;
+            elements.messageDiv.className = '';
+            
+            const classes = {
+                'success': ['bg-green-100', 'text-green-800', 'border-green-300'],
+                'error': ['bg-red-100', 'text-red-800', 'border-red-300'],
+                'warning': ['bg-yellow-100', 'text-yellow-800', 'border-yellow-300'],
+                'info': ['bg-blue-100', 'text-blue-800', 'border-blue-300']
+            };
+            
+            classes[type].forEach(cls => elements.messageDiv.classList.add(cls));
+            elements.messageDiv.classList.remove('hidden');
             
             if (type === 'success') {
-                messageDiv.classList.add('bg-green-100', 'text-green-800', 'border', 'border-green-300');
-            } else if (type === 'error') {
-                messageDiv.classList.add('bg-red-100', 'text-red-800', 'border', 'border-red-300');
-            } else {
-                messageDiv.classList.add('bg-blue-100', 'text-blue-800', 'border', 'border-blue-300');
-            }
-            
-            messageDiv.classList.remove('hidden');
-            
-            // إخفاء الرسالة تلقائياً بعد 5 ثواني
-            if (type === 'success') {
-                setTimeout(() => {
-                    messageDiv.classList.add('hidden');
-                }, 5000);
+                setTimeout(() => elements.messageDiv.classList.add('hidden'), 5000);
             }
         }
 
-        // إخفاء الرسالة
-        function hideMessage() {
-            messageDiv.classList.add('hidden');
-        }
-
-        // تشغيل المؤقت لإعادة الإرسال
+        // تشغيل المؤقت
         function startCountdown() {
             countdownTime = 60;
-            resendCodeBtn.disabled = true;
-            resendCodeBtn.classList.add('opacity-50', 'cursor-not-allowed');
+            elements.resendCodeBtn.disabled = true;
+            elements.resendCodeBtn.classList.add('opacity-50', 'cursor-not-allowed');
             
             countdownInterval = setInterval(() => {
                 countdownTime--;
-                countdownSpan.textContent = countdownTime;
+                elements.countdownSpan.textContent = countdownTime;
                 
                 if (countdownTime <= 0) {
                     clearInterval(countdownInterval);
-                    resendCodeBtn.disabled = false;
-                    resendCodeBtn.classList.remove('opacity-50', 'cursor-not-allowed');
-                    countdownSpan.textContent = '0';
+                    elements.resendCodeBtn.disabled = false;
+                    elements.resendCodeBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+                    elements.countdownSpan.textContent = '0';
                 }
             }, 1000);
         }
@@ -533,269 +482,335 @@
                 return { valid: false, message: 'يرجى إدخال رقم الهاتف' };
             }
             
-            if (!selectedCountry.pattern.test(phone.trim())) {
+            const pattern = /^5[0-9]{8}$/;
+            if (!pattern.test(phone.trim())) {
                 return { 
                     valid: false, 
-                    message: `يرجى إدخال رقم هاتف صحيح للدولة ${selectedCountry.name} (مثال: ${selectedCountry.example})` 
+                    message: 'يرجى إدخال رقم هاتف صحيح (يبدأ بـ 5 ويتكون من 9 أرقام)' 
                 };
             }
             
             return { valid: true };
         }
 
-        // إرسال رمز التحقق
-        sendCodeBtn.addEventListener('click', async () => {
-            const phoneNumber = phoneInput.value.trim();
+        // الإصلاح 1: إعادة تهيئة reCAPTCHA
+        function resetRecaptcha() {
+            try {
+                if (recaptchaVerifier) {
+                    recaptchaVerifier.clear();
+                }
+                
+                // إعادة تهيئة
+                initializeRecaptcha();
+                showMessage('تم إعادة تهيئة نظام التحقق الأمني', 'success');
+                
+            } catch (error) {
+                console.error("❌ Error resetting reCAPTCHA:", error);
+                showMessage('خطأ في إعادة تهيئة التحقق الأمني', 'error');
+            }
+        }
+
+        // الإصلاح 2: اختبار اتصال Firebase
+        async function testFirebaseConnection() {
+            try {
+                if (!auth) {
+                    throw new Error('Firebase غير مهيئ');
+                }
+                
+                showMessage('جاري اختبار اتصال Firebase...', 'info');
+                
+                // محاولة إنشاء مستخدم مؤقت للاختبار
+                const testResult = await fetch(
+                    `https://${firebaseConfig.projectId}.firebaseapp.com/__/auth/iframe?apiKey=${firebaseConfig.apiKey}`
+                );
+                
+                if (testResult.ok) {
+                    showMessage('✅ اتصال Firebase يعمل بشكل صحيح', 'success');
+                    elements.firebaseStatus.innerHTML = '<span class="text-green-600">✅ اتصال نشط</span>';
+                } else {
+                    throw new Error('فشل الاتصال بـ Firebase');
+                }
+                
+            } catch (error) {
+                console.error("❌ Firebase connection test failed:", error);
+                showMessage(`❌ فشل اختبار الاتصال: ${error.message}`, 'error');
+                elements.firebaseStatus.innerHTML = '<span class="text-red-600">❌ اتصال معطل</span>';
+            }
+        }
+
+        // الإصلاح 3: استخدام رقم اختباري
+        function useTestNumber() {
+            const testNumbers = {
+                '972': '599123456',
+                '970': '599123456'
+            };
             
-            // التحقق من صحة الرقم
+            elements.phoneInput.value = testNumbers[selectedCountryCode];
+            showMessage('تم تعيين رقم اختباري، يمكنك تجربة الإرسال', 'info');
+            elements.phoneInput.focus();
+        }
+
+        // الإصلاح 4: إرسال رمز التحقق مع معالجة الأخطاء المحسنة
+        async function sendVerificationCode() {
+            const phoneNumber = elements.phoneInput.value.trim();
             const validation = validatePhoneNumber(phoneNumber);
+            
             if (!validation.valid) {
                 showMessage(validation.message, 'error');
-                phoneInput.focus();
+                elements.phoneInput.focus();
                 return;
             }
             
-            const fullPhoneNumber = `+${selectedCountry.code}${phoneNumber}`;
+            const fullPhoneNumber = `+${selectedCountryCode}${phoneNumber}`;
             
-            hideMessage();
             showMessage(`جاري إرسال رمز التحقق إلى ${fullPhoneNumber}...`, 'info');
-            sendCodeBtn.disabled = true;
-            sendCodeBtn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i> جاري الإرسال...';
+            elements.sendCodeBtn.disabled = true;
+            elements.sendCodeBtn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i> جاري الإرسال...';
             
             try {
-                // إرسال رمز OTP
-                confirmationResult = await auth.signInWithPhoneNumber(fullPhoneNumber, window.recaptchaVerifier);
-                
-                showMessage(`تم إرسال رمز التحقق إلى ${fullPhoneNumber}`, 'success');
-                
-                // تحديث شاشة التحقق بالمعلومات
-                verifyCountryFlag.src = selectedCountry.flag;
-                verifyPhoneNumber.textContent = fullPhoneNumber;
-                
-                // الانتقال إلى شاشة إدخال الرمز
-                phoneAuthContainer.classList.add('hidden');
-                verifyCodeContainer.classList.remove('hidden');
-                
-                // تحديث مؤشر الخطوات
-                stepIndicators[0].classList.remove('step-active');
-                stepIndicators[1].classList.add('step-active');
-                
-                // تفعيل المؤقت
-                startCountdown();
-                
-                // التركيز على أول حقل إدخال للرمز
-                codeInputs[0].focus();
-            } catch (error) {
-                console.error('خطأ في إرسال الرمز:', error);
-                
-                let errorMessage = 'حدث خطأ أثناء إرسال الرمز';
-                if (error.code === 'auth/invalid-phone-number') {
-                    errorMessage = 'رقم الهاتف غير صحيح. يرجى التحقق وإعادة المحاولة';
-                } else if (error.code === 'auth/too-many-requests') {
-                    errorMessage = 'لقد تجاوزت الحد المسموح لمحاولات الإرسال. يرجى المحاولة لاحقاً';
-                } else if (error.code === 'auth/quota-exceeded') {
-                    errorMessage = 'تم تجاوز عدد الطلبات المسموح به. يرجى المحاولة لاحقاً';
+                // الحل النهائي: إضافة وقت انتظار وإعادة المحاولة
+                if (selectedCountryCode === "972") {
+                    // محاولة الإرسال مع خيارات متعددة
+                    confirmationResult = await Promise.race([
+                        auth.signInWithPhoneNumber(fullPhoneNumber, recaptchaVerifier),
+                        new Promise((_, reject) => 
+                            setTimeout(() => reject(new Error('انتهت مهلة الاتصال')), 30000)
+                        )
+                    ]);
+                    
+                    showMessage(`✅ تم إرسال رمز التحقق إلى ${fullPhoneNumber}`, 'success');
+                    
+                    // تحديث واجهة المستخدم
+                    elements.verifyPhoneNumber.textContent = fullPhoneNumber;
+                    elements.phoneAuthContainer.classList.add('hidden');
+                    elements.verifyCodeContainer.classList.remove('hidden');
+                    
+                    startCountdown();
+                    elements.codeInputs[0].focus();
+                    
+                } else if (selectedCountryCode === "970") {
+                    // الوضع التجريبي لرمز 970
+                    showMessage(`[وضع تجريبي] تم إرسال رمز وهمي إلى ${fullPhoneNumber}`, 'success');
+                    elements.verifyPhoneNumber.textContent = fullPhoneNumber;
+                    elements.phoneAuthContainer.classList.add('hidden');
+                    elements.verifyCodeContainer.classList.remove('hidden');
+                    startCountdown();
+                    elements.codeInputs[0].focus();
                 }
                 
-                showMessage(`${errorMessage}`, 'error');
+            } catch (error) {
+                console.error("❌ Detailed error:", error);
+                
+                // تحليل شامل للخطأ
+                let errorMessage = 'حدث خطأ أثناء إرسال الرمز';
+                let errorDetails = '';
+                
+                switch (error.code) {
+                    case 'auth/invalid-phone-number':
+                        errorMessage = 'رقم الهاتف غير صحيح';
+                        errorDetails = 'تأكد من صيغة الرقم ورمز الدولة';
+                        break;
+                    case 'auth/operation-not-allowed':
+                        errorMessage = 'الخدمة غير مفعلة في Firebase Console';
+                        errorDetails = 'تفعيل Phone Authentication من Firebase Console';
+                        break;
+                    case 'auth/quota-exceeded':
+                        errorMessage = 'تم تجاوز الحد المسموح';
+                        errorDetails = 'تحقق من رصيد مشروع Firebase';
+                        break;
+                    case 'auth/captcha-check-failed':
+                        errorMessage = 'فشل التحقق الأمني';
+                        errorDetails = 'إعادة تحميل الصفحة أو إعادة تعيين reCAPTCHA';
+                        break;
+                    case 'auth/too-many-requests':
+                        errorMessage = 'طلبات كثيرة جداً';
+                        errorDetails = 'انتظر قليلاً ثم حاول مرة أخرى';
+                        break;
+                    default:
+                        errorMessage = `خطأ: ${error.message || error.code}`;
+                        errorDetails = 'تحقق من وحدة تحكم المتصفح للتفاصيل';
+                }
+                
+                showMessage(`${errorMessage}. ${errorDetails}`, 'error');
+                
+                // إعادة تهيئة reCAPTCHA في حالة فشل
+                if (error.code === 'auth/captcha-check-failed') {
+                    setTimeout(resetRecaptcha, 2000);
+                }
+                
             } finally {
-                sendCodeBtn.disabled = false;
-                sendCodeBtn.innerHTML = '<i class="fas fa-paper-plane mr-2"></i> إرسال رمز التحقق';
+                elements.sendCodeBtn.disabled = false;
+                elements.sendCodeBtn.innerHTML = '<i class="fas fa-paper-plane mr-2"></i> إرسال رمز التحقق';
             }
-        });
+        }
 
         // التحقق من رمز OTP
-        verifyCodeBtn.addEventListener('click', async () => {
-            const code = verificationCodeInput.value;
+        async function verifyCode() {
+            const code = elements.verificationCodeInput.value;
             
             if (code.length !== 6) {
                 showMessage('يرجى إدخال الرمز المكون من 6 أرقام', 'error');
                 return;
             }
             
-            hideMessage();
             showMessage('جاري التحقق من الرمز...', 'info');
-            verifyCodeBtn.disabled = true;
-            verifyCodeBtn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i> جاري التحقق...';
+            elements.verifyCodeBtn.disabled = true;
+            elements.verifyCodeBtn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i> جاري التحقق...';
             
             try {
-                // تأكيد الرمز
-                const result = await confirmationResult.confirm(code);
-                const user = result.user;
+                if (selectedCountryCode === "972" && confirmationResult) {
+                    // Firebase حقيقي
+                    const result = await confirmationResult.confirm(code);
+                    const user = result.user;
+                    
+                    showMessage('✅ تم تسجيل الدخول بنجاح باستخدام Firebase!', 'success');
+                    
+                    elements.userPhoneSpan.textContent = user.phoneNumber;
+                    elements.authTypeSpan.textContent = 'Firebase';
+                    elements.userIdSpan.textContent = user.uid;
+                    elements.loginTimeSpan.textContent = new Date().toLocaleString('ar-SA');
+                    
+                } else {
+                    // وضع تجريبي
+                    showMessage('✅ تم التحقق بنجاح (وضع تجريبي)', 'success');
+                    
+                    const fullPhoneNumber = `+${selectedCountryCode}${elements.phoneInput.value.trim()}`;
+                    elements.userPhoneSpan.textContent = fullPhoneNumber;
+                    elements.authTypeSpan.textContent = 'تجريبي';
+                    elements.userIdSpan.textContent = 'demo-' + Date.now();
+                    elements.loginTimeSpan.textContent = new Date().toLocaleString('ar-SA');
+                }
                 
-                showMessage('تم تسجيل الدخول بنجاح!', 'success');
+                // الانتقال إلى شاشة النجاح
+                elements.verifyCodeContainer.classList.add('hidden');
+                elements.userInfoContainer.classList.remove('hidden');
                 
-                // تحديث شاشة معلومات المستخدم
-                userPhoneSpan.textContent = user.phoneNumber;
-                userCountrySpan.textContent = selectedCountry.name;
-                userCountryCodeSpan.textContent = `+${selectedCountry.code}`;
-                userCountryFlag.src = selectedCountry.flag;
-                userIdSpan.textContent = user.uid;
-                loginTimeSpan.textContent = new Date().toLocaleString('ar-SA');
-                
-                // الانتقال إلى شاشة معلومات المستخدم
-                verifyCodeContainer.classList.add('hidden');
-                userInfoContainer.classList.remove('hidden');
-                
-                // إيقاف المؤقت إذا كان شغالاً
+                // إيقاف المؤقت
                 if (countdownInterval) {
                     clearInterval(countdownInterval);
                 }
                 
             } catch (error) {
-                console.error('خطأ في التحقق:', error);
+                console.error("❌ Verification error:", error);
+                showMessage('رمز التحقق غير صحيح أو منتهي الصلاحية', 'error');
                 
-                let errorMessage = 'رمز التحقق غير صحيح. يرجى المحاولة مرة أخرى';
-                if (error.code === 'auth/invalid-verification-code') {
-                    errorMessage = 'رمز التحقق غير صحيح أو منتهي الصلاحية';
-                } else if (error.code === 'auth/code-expired') {
-                    errorMessage = 'انتهت صلاحية رمز التحقق. يرجى طلب رمز جديد';
+                elements.codeInputs.forEach(input => {
+                    input.classList.add('border-red-500');
+                    setTimeout(() => input.classList.remove('border-red-500'), 1000);
+                });
+                
+            } finally {
+                elements.verifyCodeBtn.disabled = false;
+                elements.verifyCodeBtn.innerHTML = '<i class="fas fa-check-circle mr-2"></i> تأكيد الرمز';
+            }
+        }
+
+        // إعداد معالجات الأحداث
+        function setupEventListeners() {
+            // اختيار الدولة
+            elements.country972Btn.addEventListener('click', () => selectCountry("972"));
+            elements.country970Btn.addEventListener('click', () => selectCountry("970"));
+            
+            // إرسال الرمز
+            elements.sendCodeBtn.addEventListener('click', sendVerificationCode);
+            
+            // التحقق من الرمز
+            elements.verifyCodeBtn.addEventListener('click', verifyCode);
+            
+            // إعادة الإرسال
+            elements.resendCodeBtn.addEventListener('click', () => {
+                if (selectedCountryCode === "972") {
+                    showMessage('لإعادة الإرسال، يرجى العودة وإعادة المحاولة', 'info');
+                } else {
+                    showMessage('[تجريبي] تم إعادة إرسال الرمز', 'info');
+                    startCountdown();
+                    elements.codeInputs.forEach(input => input.value = '');
+                    updateVerificationCode();
+                    elements.codeInputs[0].focus();
+                }
+            });
+            
+            // الرجوع
+            elements.backBtn.addEventListener('click', () => {
+                elements.verifyCodeContainer.classList.add('hidden');
+                elements.phoneAuthContainer.classList.remove('hidden');
+                showMessage('', 'info');
+                
+                if (countdownInterval) {
+                    clearInterval(countdownInterval);
+                    elements.resendCodeBtn.disabled = false;
+                    elements.resendCodeBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+                }
+            });
+            
+            // تسجيل الخروج
+            elements.logoutBtn.addEventListener('click', () => {
+                if (auth && auth.currentUser) {
+                    auth.signOut();
                 }
                 
-                showMessage(errorMessage, 'error');
+                elements.userInfoContainer.classList.add('hidden');
+                elements.phoneAuthContainer.classList.remove('hidden');
                 
-                // اهتزاز حقول الإدخال للإشارة إلى الخطأ
-                codeInputs.forEach(input => {
-                    input.classList.add('border-red-500');
-                    setTimeout(() => {
-                        input.classList.remove('border-red-500');
-                    }, 1000);
-                });
-            } finally {
-                verifyCodeBtn.disabled = false;
-                verifyCodeBtn.innerHTML = '<i class="fas fa-check-circle mr-2"></i> تأكيد الرمز';
-            }
-        });
-
-        // إعادة إرسال رمز التحقق
-        resendCodeBtn.addEventListener('click', async () => {
-            const phoneNumber = phoneInput.value.trim();
-            const fullPhoneNumber = `+${selectedCountry.code}${phoneNumber}`;
-            
-            hideMessage();
-            showMessage('جاري إعادة إرسال الرمز...', 'info');
-            resendCodeBtn.disabled = true;
-            
-            try {
-                confirmationResult = await auth.signInWithPhoneNumber(fullPhoneNumber, window.recaptchaVerifier);
-                showMessage('تم إعادة إرسال رمز التحقق', 'success');
-                startCountdown();
-                
-                // مسح حقول الرمز
-                codeInputs.forEach(input => input.value = '');
+                elements.phoneInput.value = '';
+                elements.codeInputs.forEach(input => input.value = '');
                 updateVerificationCode();
-                codeInputs[0].focus();
-            } catch (error) {
-                console.error('خطأ في إعادة الإرسال:', error);
-                showMessage(`خطأ في إعادة الإرسال: ${error.message}`, 'error');
-            }
-        });
-
-        // تغيير رقم الهاتف
-        changeNumberBtn.addEventListener('click', () => {
-            verifyCodeContainer.classList.add('hidden');
-            phoneAuthContainer.classList.remove('hidden');
-            
-            // تحديث مؤشر الخطوات
-            stepIndicators[1].classList.remove('step-active');
-            stepIndicators[0].classList.add('step-active');
-            
-            hideMessage();
-            
-            // إيقاف المؤقت إذا كان شغالاً
-            if (countdownInterval) {
-                clearInterval(countdownInterval);
-                resendCodeBtn.disabled = false;
-                resendCodeBtn.classList.remove('opacity-50', 'cursor-not-allowed');
-            }
-        });
-
-        // تسجيل الخروج
-        logoutBtn.addEventListener('click', async () => {
-            try {
-                await auth.signOut();
-                userInfoContainer.classList.add('hidden');
-                phoneAuthContainer.classList.remove('hidden');
-                
-                // تحديث مؤشر الخطوات
-                stepIndicators[1].classList.remove('step-active');
-                stepIndicators[0].classList.add('step-active');
-                
-                // مسح الحقول
-                phoneInput.value = '';
-                codeInputs.forEach(input => input.value = '');
-                updateVerificationCode();
+                selectCountry("972");
                 
                 showMessage('تم تسجيل الخروج بنجاح', 'success');
                 
-                // إيقاف المؤقت إذا كان شغالاً
                 if (countdownInterval) {
                     clearInterval(countdownInterval);
                 }
-            } catch (error) {
-                console.error('خطأ في تسجيل الخروج:', error);
-                showMessage(`خطأ في تسجيل الخروج: ${error.message}`, 'error');
-            }
-        });
-
-        // تهيئة reCAPTCHA
-        window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier('send-code-btn', {
-            size: 'invisible',
-            callback: () => {
-                // سيتم تفعيل هذه الدالة عند نجاح reCAPTCHA
-            }
-        });
-
-        // التحقق من حالة تسجيل الدخول عند تحميل الصفحة
-        auth.onAuthStateChanged((user) => {
-            if (user) {
-                // استخراج رمز الدولة ورقم الهاتف من رقم الهاتف الكامل
-                const phoneNumber = user.phoneNumber;
-                let countryCode = '';
-                let phoneWithoutCode = '';
-                
-                if (phoneNumber) {
-                    // البحث عن رمز الدولة المطابق
-                    for (const country of countries) {
-                        if (phoneNumber.startsWith(`+${country.code}`)) {
-                            countryCode = country.code;
-                            phoneWithoutCode = phoneNumber.replace(`+${country.code}`, '');
-                            selectedCountry = country;
-                            break;
-                        }
-                    }
-                }
-                
-                // تحديث الواجهة
-                userInfoContainer.classList.remove('hidden');
-                phoneAuthContainer.classList.add('hidden');
-                verifyCodeContainer.classList.add('hidden');
-                
-                userPhoneSpan.textContent = phoneNumber || 'غير متوفر';
-                userCountrySpan.textContent = selectedCountry.name;
-                userCountryCodeSpan.textContent = `+${countryCode}`;
-                userCountryFlag.src = selectedCountry.flag;
-                userIdSpan.textContent = user.uid;
-                loginTimeSpan.textContent = new Date().toLocaleString('ar-SA');
-                
-                // تحديث مؤشر الخطوات
-                stepIndicators[0].classList.remove('step-active');
-                stepIndicators[1].classlist.add('step-active');
-            }
-        });
-
-        // تهيئة اختيار الدولة عند تحميل الصفحة
-        document.addEventListener('DOMContentLoaded', () => {
-            initCountrySelection();
+            });
             
-            // إضافة تأثيرات عند التحميل
-            setTimeout(() => {
-                document.querySelector('.card').classList.add('opacity-100', 'translate-y-0');
-            }, 100);
+            // استخدام رقم اختباري
+            elements.testNumberBtn.addEventListener('click', useTestNumber);
             
-            // التركيز على حقل إدخال الهاتف
-            phoneInput.focus();
-        });
+            // عرض/إخفاء لوحة التحكم
+            elements.debugBtn.addEventListener('click', () => {
+                elements.debugPanel.classList.toggle('hidden');
+            });
+            
+            // إعادة تعيين reCAPTCHA
+            elements.resetRecaptchaBtn.addEventListener('click', resetRecaptcha);
+            
+            // اختبار اتصال Firebase
+            elements.testFirebaseBtn.addEventListener('click', testFirebaseConnection);
+            
+            // اختبار رمز 972
+            elements.test972Btn.addEventListener('click', () => {
+                selectCountry("972");
+                elements.phoneInput.value = "599123456";
+                showMessage('تم تعيين رقم اختباري لرمز 972', 'info');
+            });
+        }
+
+        // تهيئة التطبيق
+        function initializeApp() {
+            // اختيار الدولة الافتراضية
+            selectCountry("972");
+            
+            // تهيئة reCAPTCHA
+            if (auth) {
+                initializeRecaptcha();
+                testFirebaseConnection();
+            } else {
+                showMessage('⚠️ Firebase غير مهيئ. تحقق من اتصال الإنترنت وإعدادات Firebase.', 'warning');
+                elements.firebaseStatus.innerHTML = '<span class="text-yellow-600">⚠️ غير مهيئ</span>';
+            }
+            
+            // إعداد معالجات الأحداث
+            setupEventListeners();
+            
+            // التركيز على حقل الهاتف
+            elements.phoneInput.focus();
+            
+            console.log("🚀 Application initialized successfully");
+        }
+
+        // بدء التطبيق
+        document.addEventListener('DOMContentLoaded', initializeApp);
     </script>
 </body>
 </html>
