@@ -3127,7 +3127,7 @@ function filterProducts(category) {
             });
     }
 
-// ===== نظام التحقق من تسجيل الدخول =====// مفتاح التخزين للجلسة
+// ===== نظام التحقق من تسجيل الدخول =====// مفتاح التخزين للجلسة// ===== نظام التحقق من تسجيل الدخول - الإصدار المصحح =====
 const SESSION_KEY = 'shehadeh_login_session';
 
 // التحقق من الجلسة عند تحميل الصفحة
@@ -3136,12 +3136,13 @@ function checkLoginSession() {
         const session = localStorage.getItem(SESSION_KEY);
         
         if (!session) {
-            console.log('لا توجد جلسة مسجلة');
+            console.log('❌ لا توجد جلسة مسجلة');
+            showLoginScreen();
             return false;
         }
         
         const sessionData = JSON.parse(session);
-        console.log('بيانات الجلسة:', sessionData);
+        console.log('✅ بيانات الجلسة موجودة:', sessionData);
         
         const now = new Date();
         const loginTime = new Date(sessionData.loginTime);
@@ -3149,41 +3150,72 @@ function checkLoginSession() {
         
         // إذا مرت أقل من 24 ساعة
         if (hoursDiff < 24) {
-            console.log('الجلسة نشطة (منذ ' + hoursDiff.toFixed(1) + ' ساعة)');
+            console.log('✅ الجلسة نشطة (منذ ' + hoursDiff.toFixed(1) + ' ساعة)');
             
-            // العثور على أي عنصر يحجب المحتوى وإزالته
-            const overlay = document.getElementById('login-overlay');
-            const blocker = document.getElementById('login-blocker');
-            const restrictor = document.getElementById('restrictor');
-            
-            // إزالة جميع العناصر الحاجبة
-            [overlay, blocker, restrictor].forEach(element => {
-                if (element) {
-                    console.log('إزالة العنصر الحاجب:', element.id);
-                    element.remove();
-                }
-            });
-            
-            // إظهار المحتوى الرئيسي إذا كان مخفياً
-            const mainContent = document.getElementById('main-content');
-            if (mainContent && mainContent.style.display === 'none') {
-                mainContent.style.display = 'block';
-            }
-            
-            // إضافة زر تسجيل الخروج
-            addLogoutButton();
-            
+            // إظهار المحتوى الرئيسي
+            showMainContent();
             return true;
         } else {
             // الجلسة منتهية، حذفها
-            console.log('الجلسة منتهية (منذ ' + hoursDiff.toFixed(1) + ' ساعة)');
+            console.log('❌ الجلسة منتهية (منذ ' + hoursDiff.toFixed(1) + ' ساعة)');
             localStorage.removeItem(SESSION_KEY);
+            showLoginScreen();
             return false;
         }
         
     } catch (error) {
-        console.error('خطأ في التحقق من الجلسة:', error);
+        console.error('❌ خطأ في التحقق من الجلسة:', error);
+        showLoginScreen();
         return false;
+    }
+}
+
+// إظهار المحتوى الرئيسي
+function showMainContent() {
+    console.log('🔄 إظهار المحتوى الرئيسي...');
+    
+    // إخفاء شاشة الدخول إذا كانت موجودة
+    const loginOverlay = document.getElementById('login-overlay');
+    if (loginOverlay) {
+        loginOverlay.style.display = 'none';
+        console.log('✅ تم إخفاء شاشة الدخول');
+    }
+    
+    // إظهار المحتوى الرئيسي
+    const mainContent = document.getElementById('main-content');
+    if (mainContent) {
+        mainContent.style.display = 'block';
+        mainContent.style.opacity = '1';
+        mainContent.style.visibility = 'visible';
+        mainContent.style.pointerEvents = 'all';
+        console.log('✅ تم إظهار المحتوى الرئيسي');
+    }
+    
+    // إضافة زر تسجيل الخروج
+    setTimeout(() => {
+        addLogoutButton();
+    }, 500);
+    
+    // إزالة أي حواجز أخرى
+    removeAllBlockers();
+}
+
+// إظهار شاشة الدخول
+function showLoginScreen() {
+    console.log('🔄 إظهار شاشة الدخول...');
+    
+    // إخفاء المحتوى الرئيسي
+    const mainContent = document.getElementById('main-content');
+    if (mainContent) {
+        mainContent.style.display = 'none';
+        console.log('✅ تم إخفاء المحتوى الرئيسي');
+    }
+    
+    // إظهار شاشة الدخول
+    const loginOverlay = document.getElementById('login-overlay');
+    if (loginOverlay) {
+        loginOverlay.style.display = 'flex';
+        console.log('✅ تم إظهار شاشة الدخول');
     }
 }
 
@@ -3198,18 +3230,18 @@ function loginUser(phoneNumber, countryCode) {
             timestamp: Date.now()
         };
         
-        console.log('تسجيل الدخول:', phoneNumber);
+        console.log('✅ تسجيل الدخول:', phoneNumber);
         localStorage.setItem(SESSION_KEY, JSON.stringify(sessionData));
         
-        // الانتقال إلى الصفحة الرئيسية بعد تأخير بسيط
+        // الانتقال إلى الصفحة الرئيسية
         setTimeout(() => {
             window.location.href = 'index.html';
-        }, 500);
+        }, 300);
         
         return true;
         
     } catch (error) {
-        console.error('خطأ في تسجيل الدخول:', error);
+        console.error('❌ خطأ في تسجيل الدخول:', error);
         return false;
     }
 }
@@ -3218,8 +3250,6 @@ function loginUser(phoneNumber, countryCode) {
 function logoutUser() {
     if (confirm('هل تريد تسجيل الخروج؟')) {
         localStorage.removeItem(SESSION_KEY);
-        
-        // إعادة تحميل الصفحة بعد التأخير
         setTimeout(() => {
             window.location.reload();
         }, 300);
@@ -3229,264 +3259,88 @@ function logoutUser() {
 // إضافة زر تسجيل الخروج في شريط التنقل
 function addLogoutButton() {
     try {
-        // البحث عن مكان لوضع زر تسجيل الخروج
-        const possibleLocations = [
-            '.nav-actions',
-            '.navbar',
-            'header',
-            '.header-actions',
-            '#navbar'
-        ];
+        // البحث عن حاوية التنقل
+        const navContainer = document.querySelector('.nav-container');
         
-        let targetContainer = null;
-        
-        for (const selector of possibleLocations) {
-            const element = document.querySelector(selector);
-            if (element) {
-                targetContainer = element;
-                console.log('تم العثور على حاوية للزر:', selector);
-                break;
-            }
+        if (!navContainer) {
+            console.log('❌ لم يتم العثور على شريط التنقل');
+            return;
         }
         
-        // إذا لم يتم العثور على حاوية مناسبة، أنشئ واحدة
-        if (!targetContainer) {
-            // ابحث عن أي شريط تنقل أو أنشئ واحداً
-            const header = document.querySelector('header');
-            if (header) {
-                targetContainer = document.createElement('div');
-                targetContainer.className = 'logout-container';
-                targetContainer.style.marginLeft = 'auto';
-                targetContainer.style.display = 'flex';
-                targetContainer.style.alignItems = 'center';
-                header.appendChild(targetContainer);
-            } else {
-                // أنشئ زر عائم إذا لم يكن هناك مكان مناسب
-                createFloatingLogoutButton();
-                return;
-            }
-        }
-        
-        // تأكد من عدم وجود زر تسجيل خروج مسبقاً
-        const existingLogout = document.querySelector('.logout-btn');
-        if (existingLogout) {
-            existingLogout.remove();
+        // حذف الزر السابق إذا كان موجوداً
+        const existingBtn = document.querySelector('.logout-btn');
+        if (existingBtn) {
+            existingBtn.remove();
         }
         
         // إنشاء زر تسجيل الخروج
-        const logoutBtn = document.createElement('button');
-        logoutBtn.className = 'logout-btn';
-        logoutBtn.innerHTML = `
-            <i class="fas fa-sign-out-alt" style="margin-left: 5px;"></i>
-            <span>تسجيل الخروج</span>
-        `;
-        logoutBtn.style.cssText = `
-            background: linear-gradient(to right, #ef4444, #dc2626);
-            color: white;
-            border: none;
-            padding: 8px 16px;
-            border-radius: 6px;
-            cursor: pointer;
-            font-size: 14px;
-            display: flex;
-            align-items: center;
-            transition: all 0.3s;
-            margin-right: 10px;
-        `;
-        
-        logoutBtn.onmouseover = () => {
-            logoutBtn.style.transform = 'translateY(-2px)';
-            logoutBtn.style.boxShadow = '0 4px 12px rgba(239, 68, 68, 0.3)';
-        };
-        
-        logoutBtn.onmouseout = () => {
-            logoutBtn.style.transform = 'translateY(0)';
-            logoutBtn.style.boxShadow = 'none';
-        };
+        const logoutBtn = document.createElement('a');
+        logoutBtn.className = 'nav-btn logout-btn';
+        logoutBtn.href = '#';
+        logoutBtn.innerHTML = '<i class="fas fa-sign-out-alt"></i><span>تسجيل الخروج</span>';
         
         logoutBtn.onclick = (e) => {
             e.preventDefault();
             logoutUser();
         };
         
-        // إضافة الزر للحاوية
-        targetContainer.prepend(logoutBtn);
-        console.log('تم إضافة زر تسجيل الخروج');
+        // إضافة الزر إلى شريط التنقل
+        navContainer.insertBefore(logoutBtn, navContainer.children[1]);
+        console.log('✅ تم إضافة زر تسجيل الخروج');
         
     } catch (error) {
-        console.error('خطأ في إضافة زر تسجيل الخروج:', error);
-        createFloatingLogoutButton();
+        console.error('❌ خطأ في إضافة زر تسجيل الخروج:', error);
     }
 }
 
-// إنشاء زر تسجيل خروج عائم (بديل)
-function createFloatingLogoutButton() {
-    const floatingBtn = document.createElement('div');
-    floatingBtn.id = 'floating-logout';
-    floatingBtn.innerHTML = `
-        <button onclick="logoutUser()" style="
-            position: fixed;
-            top: 20px;
-            left: 20px;
-            z-index: 9999;
-            background: #ef4444;
-            color: white;
-            border: none;
-            border-radius: 50%;
-            width: 50px;
-            height: 50px;
-            cursor: pointer;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 20px;
-        ">
-            <i class="fas fa-sign-out-alt"></i>
-        </button>
-    `;
-    
-    document.body.appendChild(floatingBtn);
-    console.log('تم إنشاء زر تسجيل خروج عائم');
-}
-
-// وظيفة مساعدة لإزالة جميع الحواجز
+// إزالة جميع الحواجز
 function removeAllBlockers() {
-    // إزالة أي عناصر تحجب المحتوى
-    const blockers = document.querySelectorAll('body > *');
+    // إزالة أي عناصر قد تحجب المحتوى
+    const blockers = [
+        'login-blocker',
+        'restrictor',
+        'access-blocker'
+    ];
     
-    blockers.forEach(element => {
-        if (element.id && element.id.includes('overlay') || 
-            element.id && element.id.includes('blocker') ||
-            element.id && element.id.includes('restrict') ||
-            element.className && element.className.includes('overlay') ||
-            element.className && element.className.includes('blocker') ||
-            element.className && element.className.includes('restrict')) {
-            
-            console.log('إزالة حاجب:', element.id || element.className);
+    blockers.forEach(id => {
+        const element = document.getElementById(id);
+        if (element) {
             element.remove();
-        }
-    });
-    
-    // إزالة أي أنماط CSS تحجب المحتوى
-    const styleBlocks = document.querySelectorAll('style');
-    styleBlocks.forEach(style => {
-        if (style.textContent.includes('display: none') || 
-            style.textContent.includes('visibility: hidden') ||
-            style.textContent.includes('opacity: 0')) {
-            style.remove();
+            console.log('✅ تم إزالة الحاجب:', id);
         }
     });
 }
 
-// تهيئة الصفحة الرئيسية
-function initializeMainPage() {
-    console.log('تهيئة الصفحة الرئيسية...');
+// تهيئة النظام الرئيسي
+function initializeAuthSystem() {
+    console.log('🚀 بدء نظام المصادقة...');
     
-    // التحقق من تسجيل الدخول أولاً
+    // التحقق من الجلسة فوراً
     const isLoggedIn = checkLoginSession();
     
-    if (!isLoggedIn) {
-        // المستخدم غير مسجل، إظهار رسالة أو توجيه للدخول
-        console.log('المستخدم غير مسجل، توجيه للصفحة الرئيسية');
-        
-        // إخفاء المحتوى الرئيسي مؤقتاً
-        const mainContent = document.getElementById('main-content');
-        if (mainContent) {
-            mainContent.style.opacity = '0.3';
-            mainContent.style.pointerEvents = 'none';
-        }
-        
-        // إنشاء شاشة الدخول إذا لم تكن موجودة
-        if (!document.getElementById('login-overlay')) {
-            createLoginOverlay();
-        }
-        
-        // إظهار شاشة الدخول
-        document.getElementById('login-overlay').style.display = 'flex';
+    if (isLoggedIn) {
+        console.log('✅ المستخدم مسجل الدخول');
     } else {
-        // المستخدم مسجل، إظهار المحتوى كاملاً
-        console.log('المستخدم مسجل، إظهار المحتوى');
-        removeAllBlockers();
+        console.log('❌ المستخدم غير مسجل، إظهار شاشة الدخول');
     }
 }
 
-// إنشاء شاشة الدخول إذا لزم الأمر
-function createLoginOverlay() {
-    const overlay = document.createElement('div');
-    overlay.id = 'login-overlay';
-    overlay.style.cssText = `
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: rgba(0, 0, 0, 0.9);
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        z-index: 99999;
-        color: white;
-        font-family: Arial, sans-serif;
-    `;
+// بدء التشغيل
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('📄 صفحة index.html جاهزة');
     
-    overlay.innerHTML = `
-        <div style="text-align: center; max-width: 500px; padding: 20px;">
-            <h1 style="font-size: 2.5rem; margin-bottom: 20px;">
-                <i class="fas fa-lock" style="color: #3b82f6;"></i>
-                الدخول مطلوب
-            </h1>
-            <p style="font-size: 1.2rem; margin-bottom: 30px; opacity: 0.9;">
-                يجب عليك تسجيل الدخول للوصول إلى المحتوى
-            </p>
-            <a href="login.html" 
-               style="display: inline-block; 
-                      background: linear-gradient(to right, #3b82f6, #2563eb);
-                      color: white;
-                      padding: 15px 30px;
-                      border-radius: 8px;
-                      text-decoration: none;
-                      font-size: 1.1rem;
-                      transition: transform 0.3s;">
-                <i class="fas fa-sign-in-alt" style="margin-left: 8px;"></i>
-                الانتقال لصفحة الدخول
-            </a>
-            <p style="margin-top: 20px; font-size: 0.9rem; opacity: 0.7;">
-                إذا كنت تظن أن هذا خطأ، حاول <a href="#" onclick="location.reload()" style="color: #60a5fa;">تحديث الصفحة</a>
-            </p>
-        </div>
-    `;
+    // تشغيل نظام المصادقة أولاً
+    initializeAuthSystem();
     
-    document.body.appendChild(overlay);
-}
-
-// تهيئة النظام
-window.addEventListener('DOMContentLoaded', function() {
-    console.log('صفحة index.html جاهزة');
-    
-    // التحقق من الموقع الحالي
-    if (window.location.pathname.includes('index.html') || 
-        window.location.pathname === '/' ||
-        window.location.pathname.endsWith('/')) {
-        
-        initializeMainPage();
-    }
-    
-    // استمع لتغيرات التخزين (للتحديث التلقائي)
-    window.addEventListener('storage', function(e) {
-        if (e.key === SESSION_KEY) {
-            console.log('تغيرت حالة الجلسة، إعادة تحميل...');
-            setTimeout(() => location.reload(), 100);
-        }
-    });
+    // ثم تشغيل باقي التطبيق
+    window.addEventListener('load', init);
 });
 
 // جعل الدوال متاحة عالمياً
-window.checkLoginSession = checkLoginSession;
 window.loginUser = loginUser;
 window.logoutUser = logoutUser;
-window.initializeMainPage = initializeMainPage;
+window.checkLoginSession = checkLoginSession;
+
     // Initialize App
     window.addEventListener('load', init);
 </script>
