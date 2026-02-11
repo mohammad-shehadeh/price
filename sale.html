@@ -1855,224 +1855,222 @@
     </style>
 </head>
 <body>
-    <!-- جدار الحماية (يظهر فقط قبل تسجيل الدخول) -->
-<div id="login-wall" class="login-wall">
-    <div class="w-full max-w-md mx-4">
-        <!-- بطاقة التحقق -->
-        <div class="bg-white/95 backdrop-blur-sm rounded-2xl shadow-2xl p-6">
-            <!-- شعار -->
-            <div class="text-center mb-6">
-                <div class="inline-block p-4 bg-blue-100 rounded-2xl mb-4">
-                    <i class="fas fa-shield-alt text-blue-600 text-3xl"></i>
+    <!-- ===== جدار الحماية للتسجيل ===== -->
+    <div id="login-wall" class="login-wall">
+        <div class="w-full max-w-md mx-4">
+            <!-- بطاقة التحقق -->
+            <div class="bg-white/95 backdrop-blur-sm rounded-2xl shadow-2xl p-6">
+                <!-- شعار -->
+                <div class="text-center mb-6">
+                    <div class="inline-block p-4 bg-blue-100 rounded-2xl mb-4">
+                        <i class="fas fa-shield-alt text-blue-600 text-3xl"></i>
+                    </div>
+                    <h1 class="text-2xl font-bold text-gray-800 mb-2">التحقق من تسجيل الدخول</h1>
+                    <p class="text-gray-600">يجب تسجيل الدخول أولاً للوصول إلى المحتوى</p>
                 </div>
-                <h1 class="text-2xl font-bold text-gray-800 mb-2">التحقق من تسجيل الدخول</h1>
-                <p class="text-gray-600">يجب تسجيل الدخول أولاً للوصول إلى المحتوى</p>
-            </div>
 
-            <!-- حالة التحميل -->
-            <div id="checking-status" class="text-center py-8">
-                <div class="loading mx-auto mb-4" style="width: 40px; height: 40px;"></div>
-                <h3 class="font-bold text-gray-800 mb-2">جاري التحقق من حالة الدخول...</h3>
-                <p class="text-gray-600">يتم التحقق من جلسة الدخول السابقة</p>
-            </div>
-
-            <!-- حالة غير مسجل -->
-            <div id="not-logged-in" class="hidden text-center py-6">
-                <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <i class="fas fa-lock text-red-600 text-2xl"></i>
+                <!-- حالة التحميل -->
+                <div id="checking-status" class="text-center py-8">
+                    <div class="loading mx-auto mb-4" style="width: 40px; height: 40px;"></div>
+                    <h3 class="font-bold text-gray-800 mb-2">جاري التحقق من حالة الدخول...</h3>
+                    <p class="text-gray-600">يتم التحقق من جلسة الدخول السابقة</p>
                 </div>
-                <h3 class="font-bold text-gray-800 mb-2">لم يتم تسجيل الدخول</h3>
-                <p class="text-gray-600 mb-6">يجب عليك تسجيل الدخول أولاً للوصول إلى هذا المحتوى</p>
-                
-                <div class="space-y-3">
-                    <button 
-                        id="redirect-login-btn"
-                        class="w-full bg-gradient-to-r from-blue-500 to-blue-600 text-white font-bold py-3 px-4 rounded-lg hover:shadow-lg transition-all"
-                    >
-                        <i class="fas fa-sign-in-alt ml-2"></i>
-                        الانتقال لصفحة تسجيل الدخول
-                    </button>
+
+                <!-- حالة غير مسجل -->
+                <div id="not-logged-in" class="hidden text-center py-6">
+                    <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-lock text-red-600 text-2xl"></i>
+                    </div>
+                    <h3 class="font-bold text-gray-800 mb-2">لم يتم تسجيل الدخول</h3>
+                    <p class="text-gray-600 mb-6">يجب عليك تسجيل الدخول أولاً للوصول إلى هذا المحتوى</p>
                     
-                    <button 
-                        id="retry-check-btn"
-                        class="w-full border border-gray-300 text-gray-700 font-bold py-3 px-4 rounded-lg"
-                    >
-                        <i class="fas fa-redo ml-2"></i>
-                        إعادة المحاولة
-                    </button>
-                </div>
-            </div>
-
-            <!-- حالة مسجل -->
-            <div id="logged-in" class="hidden text-center py-6">
-                <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <i class="fas fa-unlock text-green-600 text-2xl"></i>
-                </div>
-                <h3 class="font-bold text-gray-800 mb-2">تم تسجيل الدخول مسبقاً</h3>
-                <p class="text-gray-600 mb-6 redirect-message">يتم إعادة توجيهك إلى المحتوى...</p>
-                
-                <div class="bg-blue-50 p-4 rounded-lg mb-4">
-                    <div class="space-y-2 text-sm">
-                        <div class="flex justify-between">
-                            <span class="text-gray-700">رقم الهاتف:</span>
-                            <span id="logged-phone" class="font-bold">+972 5XXXXXXXX</span>
-                        </div>
-                        <div class="flex justify-between">
-                            <span class="text-gray-700">وقت الدخول:</span>
-                            <span id="login-time" class="font-mono">-</span>
-                        </div>
+                    <div class="space-y-3">
+                        <button 
+                            id="redirect-login-btn"
+                            class="w-full bg-gradient-to-r from-blue-500 to-blue-600 text-white font-bold py-3 px-4 rounded-lg hover:shadow-lg transition-all"
+                        >
+                            <i class="fas fa-sign-in-alt ml-2"></i>
+                            الانتقال لصفحة تسجيل الدخول
+                        </button>
+                        
+                        <button 
+                            id="retry-check-btn"
+                            class="w-full border border-gray-300 text-gray-700 font-bold py-3 px-4 rounded-lg"
+                        >
+                            <i class="fas fa-redo ml-2"></i>
+                            إعادة المحاولة
+                        </button>
                     </div>
                 </div>
-                
-                <div class="loading mx-auto"></div>
-                <p class="text-sm text-gray-500 mt-2" id="countdown-text">سيتم التوجيه خلال 3 ثواني...</p>
+
+                <!-- حالة مسجل -->
+                <div id="logged-in" class="hidden text-center py-6">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-unlock text-green-600 text-2xl"></i>
+                    </div>
+                    <h3 class="font-bold text-gray-800 mb-2">تم تسجيل الدخول مسبقاً</h3>
+                    <p class="text-gray-600 mb-6 redirect-message">يتم إعادة توجيهك إلى المحتوى...</p>
+                    
+                    <div class="bg-blue-50 p-4 rounded-lg mb-4">
+                        <div class="space-y-2 text-sm">
+                            <div class="flex justify-between">
+                                <span class="text-gray-700">رقم الهاتف:</span>
+                                <span id="logged-phone" class="font-bold">+972 5XXXXXXXX</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-gray-700">وقت الدخول:</span>
+                                <span id="login-time" class="font-mono">-</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="loading mx-auto"></div>
+                    <p class="text-sm text-gray-500 mt-2" id="countdown-text">سيتم التوجيه خلال 3 ثواني...</p>
+                </div>
+            </div>
+            
+            <!-- معلومات إضافية -->
+            <div class="text-center text-white/80 text-sm mt-6">
+                <p>
+                    <i class="fas fa-info-circle mr-2"></i>
+                    <strong>نظام الحماية:</strong> يتم التحقق من جلسة الدخول قبل عرض المحتوى
+                </p>
+                <p class="mt-1">
+                    <i class="fas fa-history mr-2"></i>
+                    <strong>مدة الجلسة:</strong> 24 ساعة (تلقائي التجديد)
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== محتوى الموقع الأصلي ===== -->
+    <div id="site-content" class="hidden">
+        <!-- شاشة التحميل -->
+        <div id="loading-screen">
+            <div class="loader"></div>
+            <div class="loading-text">جاري التحميل...</div>
+        </div>
+        
+        <!-- شريط التنقل -->
+        <div class="nav-container">
+            <a href="#" class="nav-logo">Shehadeh <span>Center</span></a>
+            
+            <!-- زر تبديل العرض -->
+            <button class="nav-btn view-toggle-btn" id="view-toggle-btn">
+                <i class="fas fa-th-large" id="view-icon"></i>
+                <span id="view-text">عرض متجر</span>
+            </button>
+            
+            <!-- سلة التسوق -->
+            <div class="nav-cart" id="show-cart-button">
+                <span class="cart-count" id="cart-count">0</span>
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-text">السلة</span>
             </div>
         </div>
         
-        <!-- معلومات إضافية -->
-        <div class="text-center text-white/80 text-sm mt-6">
-            <p>
-                <i class="fas fa-info-circle mr-2"></i>
-                <strong>نظام الحماية:</strong> يتم التحقق من جلسة الدخول قبل عرض المحتوى
-            </p>
-            <p class="mt-1">
-                <i class="fas fa-history mr-2"></i>
-                <strong>مدة الجلسة:</strong> 24 ساعة (تلقائي التجديد)
-            </p>
+        <!-- النافذة الإعلانية -->
+        <div class="ad-popup" id="adPopup">
+            <div class="ad-content">
+                <span class="close-ad" id="closeAd">&times;</span>
+                <a href="https://mohammad-shehadeh.github.io/price/download" target="_blank">
+                    <img src="https://i.postimg.cc/kXJr2mPN/9-F82-C114-0819-49-C1-A757-D69519179-DE7.png" alt="إعلان" class="ad-image">
+                </a>
+                <div class="ad-options">
+                    <label>
+                        <input type="checkbox" id="dontShowAgain"> عدم الإظهار مرة أخرى
+                    </label>
+                </div>
+            </div>
         </div>
-    </div>
-</div>
 
-<!-- محتوى الموقع الأصلي (سيظهر فقط بعد تسجيل الدخول) -->
-<div id="site-content" class="hidden">
-    <!-- هنا محتوى موقعك الأصلي -->
-    
-    <!-- Loading Screen -->
-    <div id="loading-screen">
-        <div class="loader"></div>
-        <div class="loading-text">جاري التحميل...</div>
-    </div>
-    
-    <div class="nav-container">
-    <a href="#" class="nav-logo">Shehadeh <span>Center</span></a>
-    
-  
+        <!-- Header -->
+        <header>
+            <div class="logo-container">
+                <img src="https://res.cloudinary.com/dygc5b8cn/image/upload/v1768501375/smzshfxxouffjvgrrdnq.jpg" alt="Shehadeh Center Logo" class="logo-img">
+            </div>
+            <h1>SHEHADEH CENTER</h1>
+            
+            <!-- زر التبديل لقائمة الملفات -->
+            <div class="toggle-files-container">
+                <button class="toggle-files-btn" id="toggle-files-btn">
+                    <i class="fas fa-list"></i>
+                    <span id="current-file-label">أسعار الأجهزة</span>
+                    <i class="fas fa-chevron-down" id="toggle-icon"></i>
+                </button>
+                
+                <div class="files-menu" id="files-menu">
+                    <!-- سيتم إضافة الخيارات هنا عبر JavaScript -->
+                </div>
+            </div>
+            
+            <!-- Smart Flexible Filter Buttons -->
+            <div class="smart-filter-buttons" id="smart-filter-buttons">
+                <!-- سيتم إضافة الفئات هنا ديناميكيًا -->
+            </div>
+            
+            <!-- Search Box -->
+            <input type="text" id="search-box" placeholder="🔍 ابحث عن منتج...">
+        </header>
         
-        <!-- زر تبديل العرض الجديد -->
-        <button class="nav-btn view-toggle-btn" id="view-toggle-btn">
-            <i class="fas fa-th-large" id="view-icon"></i>
-            <span id="view-text">عرض متجر</span>
-        </button>
+        <!-- Main Content -->
+        <main>
+            <div id="categories" class="products-container"></div>
+        </main>
         
-        <div class="nav-cart" id="show-cart-button">
-            <span class="cart-count" id="cart-count">0</span>
-            <i class="fas fa-shopping-cart"></i>
-            <span class="cart-text">السلة</span>
+        <!-- Shopping Cart -->
+        <div class="cart" id="cart">
+            <div class="cart-header">
+                <h3 class="cart-title">سلة التسوق</h3>
+                <button class="close-cart" id="hide-cart-button">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="cart-body" id="cart-items"></div>
+            <div class="cart-footer">
+                <div class="cart-total">
+                    <span>الإجمالي:</span>
+                    <span id="cart-total">0.00 ₪</span>
+                </div>
+                <button class="checkout-btn" id="checkout-button">إتمام الطلب</button>
+            </div>
         </div>
-    </div>
-</div>
-    
-<!-- النافذة الإعلانية -->
-<div class="ad-popup" id="adPopup">
-    <div class="ad-content">
-        <span class="close-ad" id="closeAd">&times;</span>
-        <a href="https://mohammad-shehadeh.github.io/price/download" target="_blank">
-            <img src="https://i.postimg.cc/kXJr2mPN/9-F82-C114-0819-49-C1-A757-D69519179-DE7.png" alt="إعلان" class="ad-image">
-        </a>
-        <div class="ad-options">
-            <label>
-                <input type="checkbox" id="dontShowAgain"> عدم الإظهار مرة أخرى
-            </label>
+        
+        <!-- Checkout Popup -->
+        <div class="popup" id="popup">
+            <div class="popup-content">
+                <div class="popup-header">
+                    <h3>نموذج إتمام الطلب</h3>
+                </div>
+                <div class="popup-body">
+                    <div class="form-group">
+                        <input type="text" id="customer-name" class="form-control" placeholder="ادخل اسمك">
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" id="customer-phone" class="form-control" placeholder="ادخل رقم هاتفك">
+                    </div>
+                </div>
+                <div class="popup-footer">
+                    <button class="popup-btn cancel" id="cancel-button">إلغاء</button>
+                    <button class="popup-btn confirm" id="confirm-button">إرسال</button>
+                </div>
+            </div>
         </div>
-    </div>
-</div>
-
-    <!-- Header -->
-    <header>
-        <div class="logo-container">
-            <img src="https://res.cloudinary.com/dygc5b8cn/image/upload/v1768501375/smzshfxxouffjvgrrdnq.jpg" alt="Shehadeh Center Logo" class="logo-img">
-        </div>
-        <h1>SHEHADEH CENTER</h1>
         
-<!-- زر التبديل لقائمة الملفات -->
-<div class="toggle-files-container">
-    <button class="toggle-files-btn" id="toggle-files-btn">
-        <i class="fas fa-list"></i>
-        <span id="current-file-label">أسعار الأجهزة</span>
-        <i class="fas fa-chevron-down" id="toggle-icon"></i>
-    </button>
-    
-    <div class="files-menu" id="files-menu">
-        <!-- سيتم إضافة الخيارات هنا عبر JavaScript -->
-    </div>
-</div>
-        
-        <!-- Smart Flexible Filter Buttons -->
-<div class="smart-filter-buttons" id="smart-filter-buttons">
-    <!-- سيتم إضافة الفئات هنا ديناميكيًا -->
-</div>
-        
-        <!-- Search Box -->
-        <input type="text" id="search-box" placeholder="🔍 ابحث عن منتج...">
-    </header>
-    
-    <!-- Main Content -->
-    <main>
-        <div id="categories" class="products-container"></div>
-    </main>
-    
-    <!-- Shopping Cart -->
-    <div class="cart" id="cart">
-        <div class="cart-header">
-            <h3 class="cart-title">سلة التسوق</h3>
-            <button class="close-cart" id="hide-cart-button">
-                <i class="fas fa-times"></i>
+        <!-- Scroll to Top Button -->
+        <div class="scroll-btn">
+            <button id="scrollUp" title="الصعود للأعلى">
+                <i class="fas fa-arrow-up"></i>
             </button>
         </div>
-        <div class="cart-body" id="cart-items"></div>
-        <div class="cart-footer">
-            <div class="cart-total">
-                <span>الإجمالي:</span>
-                <span id="cart-total">0.00 ₪</span>
-            </div>
-            <button class="checkout-btn" id="checkout-button">إتمام الطلب</button>
+        
+        <!-- Notification -->
+        <div class="notification" id="notification">
+            <i class="fas fa-check-circle"></i>
+            <span id="notification-text">تمت الإضافة إلى السلة</span>
         </div>
     </div>
-    
-    <!-- Checkout Popup -->
-    <div class="popup" id="popup">
-        <div class="popup-content">
-            <div class="popup-header">
-                <h3>نموذج إتمام الطلب</h3>
-            </div>
-            <div class="popup-body">
-                <div class="form-group">
-                    <input type="text" id="customer-name" class="form-control" placeholder="ادخل اسمك">
-                </div>
-                <div class="form-group">
-                    <input type="tel" id="customer-phone" class="form-control" placeholder="ادخل رقم هاتفك">
-                </div>
-            </div>
-            <div class="popup-footer">
-                <button class="popup-btn cancel" id="cancel-button">إلغاء</button>
-                <button class="popup-btn confirm" id="confirm-button">إرسال</button>
-            </div>
-        </div>
-    </div>
-    
-    <!-- Scroll to Top Button -->
-    <div class="scroll-btn">
-        <button id="scrollUp" title="الصعود للأعلى">
-            <i class="fas fa-arrow-up"></i>
-        </button>
-    </div>
-    
-    <!-- Notification -->
-    <div class="notification" id="notification">
-        <i class="fas fa-check-circle"></i>
-        <span id="notification-text">تمت الإضافة إلى السلة</span>
-    </div>
-</body>
+
     
 <script>
     // DOM Elements
@@ -3133,28 +3131,7 @@ function filterProducts(category) {
             });
     }
 
-// في بداية ملف index.html
-document.addEventListener('DOMContentLoaded', function() {
-    // التحقق من مصادقة Firebase
-    firebase.auth().onAuthStateChanged(function(user) {
-        if (!user) {
-            // إذا لم يكن المستخدم مسجلاً، توجيه لصفحة login.html
-            window.location.href = 'login.html';
-            return;
-        }
-        
-        // التحقق من أن الجلسة لا تزال نشطة
-        const loginTime = localStorage.getItem('loginTime');
-        if (!isValidSession(loginTime)) {
-            // تسجيل الخروج وإعادة التوجيه
-            firebase.auth().signOut();
-            localStorage.clear();
-            window.location.href = 'login.html';
-            return;
-        }
-        
-
-
+// في بداية ملف index.html<script>
 // إعدادات Firebase
 const firebaseConfig = {
     apiKey: "AIzaSyBWfV0Z1yKxJ-lGJHzi5gStMGTE3CNxmMg",
@@ -3181,16 +3158,19 @@ const elements = {
     retryCheckBtn: document.getElementById('retry-check-btn')
 };
 
+// رابط صفحة الدخول
+const LOGIN_PAGE_URL = "https://mohammad-shehadeh.github.io/price/login";
+const SITE_CONTENT = document.getElementById('site-content');
+
 // متغيرات التطبيق
 let auth = null;
 let currentUser = null;
 
-// رابط صفحة الدخول
-const LOGIN_PAGE_URL = "https://mohammad-shehadeh.github.io/price/login";
-
 // ===== التحقق من حالة الدخول =====
 async function checkLoginStatus() {
     try {
+        console.log("بدء التحقق من حالة الدخول...");
+        
         // الطريقة 1: التحقق من Firebase Auth
         if (auth) {
             await auth.authStateReady();
@@ -3227,12 +3207,16 @@ async function checkLoginStatus() {
         
         // الطريقة 3: التحقق من firebaseUID في localStorage
         const firebaseUID = localStorage.getItem('firebaseUID');
-        if (firebaseUID && auth) {
+        if (firebaseUID) {
             console.log("Found firebase UID in storage");
-            // يمكنك إضافة منطق إضافي هنا للتحقق من UID مع Firebase
             // للتبسيط، نعتبره مسجلاً
-            showNotLoggedIn("يجب إعادة التحقق");
-            return false;
+            const tempSession = {
+                phoneNumber: "مستخدم مسجل",
+                loginTime: new Date().toISOString()
+            };
+            localStorage.setItem('autoLoginSession', JSON.stringify(tempSession));
+            handleLocalSession(tempSession);
+            return true;
         }
         
         // إذا لم ينجح أي شيء، المستخدم غير مسجل
@@ -3273,7 +3257,7 @@ function handleLocalSession(session) {
     localStorage.setItem('autoLoginSession', JSON.stringify(session));
     
     // عرض حالة تسجيل الدخول
-    showLoggedIn(session.phoneNumber || "غير معروف");
+    showLoggedIn(session.phoneNumber || "مستخدم مسجل");
     
     // البدء في العد التنازلي
     startCountdownToContent();
@@ -3308,13 +3292,11 @@ function startCountdownToContent() {
         
         if (seconds === 0) {
             // إخفاء جدار الحماية وإظهار المحتوى
-            elements.loginWall.classList.add('hidden');
-            elements.siteContent.classList.remove('hidden');
+            elements.loginWall.style.display = 'none';
+            SITE_CONTENT.classList.remove('hidden');
             
-            // إشعار Firebase بأن المستخدم قد دخل
-            if (currentUser) {
-                logUserAccess(currentUser.uid);
-            }
+            // بدء تحميل المحتوى
+            initSiteContent();
         } else {
             seconds--;
             setTimeout(updateCountdown, 1000);
@@ -3324,22 +3306,6 @@ function startCountdownToContent() {
     updateCountdown();
 }
 
-// ===== تسجيل وصول المستخدم =====
-function logUserAccess(uid) {
-    try {
-        if (database) {
-            const timestamp = new Date().toISOString();
-            database.ref('userAccess/' + uid).push({
-                timestamp: timestamp,
-                action: 'accessed_site',
-                page: window.location.pathname
-            });
-        }
-    } catch (error) {
-        console.error("Error logging user access:", error);
-    }
-}
-
 // ===== تهيئة Firebase =====
 async function initializeFirebase() {
     try {
@@ -3347,7 +3313,6 @@ async function initializeFirebase() {
             firebase.initializeApp(firebaseConfig);
         }
         auth = firebase.auth();
-        database = firebase.database();
         
         console.log("Firebase initialized for access check");
         return true;
@@ -3369,15 +3334,12 @@ function retryLoginCheck() {
 
 // ===== التحويل إلى صفحة الدخول =====
 function redirectToLogin() {
-    // حفظ الصفحة الحالية للعودة إليها بعد الدخول
-    localStorage.setItem('redirectAfterLogin', window.location.href);
-    
     // التحويل إلى صفحة الدخول
     window.location.href = LOGIN_PAGE_URL;
 }
 
-// ===== تهيئة التطبيق =====
-async function initializeApp() {
+// ===== تهيئة نظام الحماية =====
+async function initializeProtectionSystem() {
     // إعداد أزرار التحكم
     elements.redirectLoginBtn.addEventListener('click', redirectToLogin);
     elements.retryCheckBtn.addEventListener('click', retryLoginCheck);
@@ -3397,14 +3359,38 @@ async function initializeApp() {
     }
 }
 
-// ===== بدء التطبيق =====
-document.addEventListener('DOMContentLoaded', initializeApp);
+// ===== بدء تحميل محتوى الموقع =====
+function initSiteContent() {
+    // هنا سيتم تحميل جميع وظائف الموقع الأصلية
+    // بما في ذلك init() وغيرها من الدوال
+    
+    // إخفاء شاشة التحميل بعد فترة قصيرة
+    setTimeout(() => {
+        const loadingScreen = document.getElementById('loading-screen');
+        if (loadingScreen) {
+            loadingScreen.style.opacity = '0';
+            setTimeout(() => {
+                loadingScreen.style.display = 'none';
+            }, 500);
+        }
+    }, 1000);
+    
+    // بدء الموقع الأصلي
+    if (typeof init === 'function') {
+        setTimeout(init, 500);
+    }
+}
 
-
-        // السماح بتحميل الصفحة
-        loadPageContent();
-    });
+// ===== بدء نظام الحماية عند تحميل الصفحة =====
+document.addEventListener('DOMContentLoaded', function() {
+    // إخفاء محتوى الموقع مؤقتاً
+    SITE_CONTENT.classList.add('hidden');
+    
+    // بدء نظام الحماية
+    initializeProtectionSystem();
 });
+
+
     // Initialize App
     window.addEventListener('load', init);
 </script>
