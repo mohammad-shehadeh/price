@@ -348,16 +348,20 @@
 
     <script>
         // تكوين Firebase
-        const firebaseConfig = {
-            apiKey: "AIzaSyBWfV0Z1yKxJ-lGJHzi5gStMGTE3CNxmMg",
-            authDomain: "aasa-8a079.firebaseapp.com",
-            projectId: "aasa-8a079",
-            storageBucket: "aasa-8a079.firebasestorage.app",
-            databaseURL: "https://aasa-8a079-default-rtdb.firebaseio.com",
-            messagingSenderId: "849330713582",
-            appId: "1:849330713582:web:7a11b11ebdb5cdcc8b14ff",
-            measurementId: "G-LY2WSQ21GE"
-        };
+        // في ملف JavaScript الجديد
+const firebaseConfig = {
+  apiKey: "AIzaSyBWfV0Z1yKxJ-lGJHzi5gStMGTE3CNxmMg",
+  authDomain: "aasa-8a079.firebaseapp.com",
+  projectId: "aasa-8a079",
+  storageBucket: "aasa-8a079.firebasestorage.app",
+  databaseURL: "https://aasa-8a079-default-rtdb.firebaseio.com", // أضف هذا
+  messagingSenderId: "849330713582",
+  appId: "1:849330713582:web:7a11b11ebdb5cdcc8b14ff",
+  measurementId: "G-LY2WSQ21GE"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
 
         // تهيئة Firebase
         let app;
