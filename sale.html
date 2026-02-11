@@ -1807,9 +1807,145 @@
     font-size: 16px;
     cursor: pointer;
 }
+
+/* ستايل جدار الحماية */
+.login-wall {
+    background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+    min-height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.5s ease;
+}
+.login-wall.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+.loading {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid #3b82f6;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+.hidden {
+    display: none !important;
+}
+.redirect-message {
+    animation: pulse 2s infinite;
+}
+@keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.7; }
+    100% { opacity: 1; }
+}
+
     </style>
 </head>
 <body>
+    <!-- جدار الحماية (يظهر فقط قبل تسجيل الدخول) -->
+<div id="login-wall" class="login-wall">
+    <div class="w-full max-w-md mx-4">
+        <!-- بطاقة التحقق -->
+        <div class="bg-white/95 backdrop-blur-sm rounded-2xl shadow-2xl p-6">
+            <!-- شعار -->
+            <div class="text-center mb-6">
+                <div class="inline-block p-4 bg-blue-100 rounded-2xl mb-4">
+                    <i class="fas fa-shield-alt text-blue-600 text-3xl"></i>
+                </div>
+                <h1 class="text-2xl font-bold text-gray-800 mb-2">التحقق من تسجيل الدخول</h1>
+                <p class="text-gray-600">يجب تسجيل الدخول أولاً للوصول إلى المحتوى</p>
+            </div>
+
+            <!-- حالة التحميل -->
+            <div id="checking-status" class="text-center py-8">
+                <div class="loading mx-auto mb-4" style="width: 40px; height: 40px;"></div>
+                <h3 class="font-bold text-gray-800 mb-2">جاري التحقق من حالة الدخول...</h3>
+                <p class="text-gray-600">يتم التحقق من جلسة الدخول السابقة</p>
+            </div>
+
+            <!-- حالة غير مسجل -->
+            <div id="not-logged-in" class="hidden text-center py-6">
+                <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-lock text-red-600 text-2xl"></i>
+                </div>
+                <h3 class="font-bold text-gray-800 mb-2">لم يتم تسجيل الدخول</h3>
+                <p class="text-gray-600 mb-6">يجب عليك تسجيل الدخول أولاً للوصول إلى هذا المحتوى</p>
+                
+                <div class="space-y-3">
+                    <button 
+                        id="redirect-login-btn"
+                        class="w-full bg-gradient-to-r from-blue-500 to-blue-600 text-white font-bold py-3 px-4 rounded-lg hover:shadow-lg transition-all"
+                    >
+                        <i class="fas fa-sign-in-alt ml-2"></i>
+                        الانتقال لصفحة تسجيل الدخول
+                    </button>
+                    
+                    <button 
+                        id="retry-check-btn"
+                        class="w-full border border-gray-300 text-gray-700 font-bold py-3 px-4 rounded-lg"
+                    >
+                        <i class="fas fa-redo ml-2"></i>
+                        إعادة المحاولة
+                    </button>
+                </div>
+            </div>
+
+            <!-- حالة مسجل -->
+            <div id="logged-in" class="hidden text-center py-6">
+                <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-unlock text-green-600 text-2xl"></i>
+                </div>
+                <h3 class="font-bold text-gray-800 mb-2">تم تسجيل الدخول مسبقاً</h3>
+                <p class="text-gray-600 mb-6 redirect-message">يتم إعادة توجيهك إلى المحتوى...</p>
+                
+                <div class="bg-blue-50 p-4 rounded-lg mb-4">
+                    <div class="space-y-2 text-sm">
+                        <div class="flex justify-between">
+                            <span class="text-gray-700">رقم الهاتف:</span>
+                            <span id="logged-phone" class="font-bold">+972 5XXXXXXXX</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-700">وقت الدخول:</span>
+                            <span id="login-time" class="font-mono">-</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="loading mx-auto"></div>
+                <p class="text-sm text-gray-500 mt-2" id="countdown-text">سيتم التوجيه خلال 3 ثواني...</p>
+            </div>
+        </div>
+        
+        <!-- معلومات إضافية -->
+        <div class="text-center text-white/80 text-sm mt-6">
+            <p>
+                <i class="fas fa-info-circle mr-2"></i>
+                <strong>نظام الحماية:</strong> يتم التحقق من جلسة الدخول قبل عرض المحتوى
+            </p>
+            <p class="mt-1">
+                <i class="fas fa-history mr-2"></i>
+                <strong>مدة الجلسة:</strong> 24 ساعة (تلقائي التجديد)
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- محتوى الموقع الأصلي (سيظهر فقط بعد تسجيل الدخول) -->
+<div id="site-content" class="hidden">
+    <!-- هنا محتوى موقعك الأصلي -->
     
     <!-- Loading Screen -->
     <div id="loading-screen">
@@ -3017,6 +3153,254 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
         
+
+
+// إعدادات Firebase
+const firebaseConfig = {
+    apiKey: "AIzaSyBWfV0Z1yKxJ-lGJHzi5gStMGTE3CNxmMg",
+    authDomain: "aasa-8a079.firebaseapp.com",
+    projectId: "aasa-8a079",
+    storageBucket: "aasa-8a079.firebasestorage.app",
+    databaseURL: "https://aasa-8a079-default-rtdb.firebaseio.com",
+    messagingSenderId: "849330713582",
+    appId: "1:849330713582:web:7a11b11ebdb5cdcc8b14ff",
+    measurementId: "G-LY2WSQ21GE"
+};
+
+// عناصر DOM
+const elements = {
+    loginWall: document.getElementById('login-wall'),
+    siteContent: document.getElementById('site-content'),
+    checkingStatus: document.getElementById('checking-status'),
+    notLoggedIn: document.getElementById('not-logged-in'),
+    loggedIn: document.getElementById('logged-in'),
+    loggedPhone: document.getElementById('logged-phone'),
+    loginTime: document.getElementById('login-time'),
+    countdownText: document.getElementById('countdown-text'),
+    redirectLoginBtn: document.getElementById('redirect-login-btn'),
+    retryCheckBtn: document.getElementById('retry-check-btn')
+};
+
+// متغيرات التطبيق
+let auth = null;
+let currentUser = null;
+
+// رابط صفحة الدخول
+const LOGIN_PAGE_URL = "https://mohammad-shehadeh.github.io/price/login";
+
+// ===== التحقق من حالة الدخول =====
+async function checkLoginStatus() {
+    try {
+        // الطريقة 1: التحقق من Firebase Auth
+        if (auth) {
+            await auth.authStateReady();
+            currentUser = auth.currentUser;
+            
+            if (currentUser) {
+                console.log("Firebase user authenticated:", currentUser.uid);
+                handleLoggedInUser(currentUser);
+                return true;
+            }
+        }
+        
+        // الطريقة 2: التحقق من Local Storage
+        const savedSession = localStorage.getItem('autoLoginSession');
+        if (savedSession) {
+            const session = JSON.parse(savedSession);
+            
+            // التحقق من صلاحية الجلسة (24 ساعة)
+            const loginTime = new Date(session.loginTime);
+            const now = new Date();
+            const hoursDiff = (now - loginTime) / (1000 * 60 * 60);
+            
+            if (hoursDiff < 24) {
+                console.log("Valid local session found");
+                handleLocalSession(session);
+                return true;
+            } else {
+                // جلسة منتهية الصلاحية
+                localStorage.removeItem('autoLoginSession');
+                localStorage.removeItem('firebaseUID');
+                console.log("Session expired");
+            }
+        }
+        
+        // الطريقة 3: التحقق من firebaseUID في localStorage
+        const firebaseUID = localStorage.getItem('firebaseUID');
+        if (firebaseUID && auth) {
+            console.log("Found firebase UID in storage");
+            // يمكنك إضافة منطق إضافي هنا للتحقق من UID مع Firebase
+            // للتبسيط، نعتبره مسجلاً
+            showNotLoggedIn("يجب إعادة التحقق");
+            return false;
+        }
+        
+        // إذا لم ينجح أي شيء، المستخدم غير مسجل
+        showNotLoggedIn("لم يتم تسجيل الدخول");
+        return false;
+        
+    } catch (error) {
+        console.error("Login check error:", error);
+        showNotLoggedIn("خطأ في التحقق");
+        return false;
+    }
+}
+
+// ===== معالجة حالة المستخدم المسجل =====
+function handleLoggedInUser(user) {
+    // حفظ معلومات الجلسة
+    const sessionData = {
+        uid: user.uid,
+        phoneNumber: user.phoneNumber || "غير معروف",
+        loginTime: new Date().toISOString(),
+        method: 'firebase-auth'
+    };
+    
+    localStorage.setItem('autoLoginSession', JSON.stringify(sessionData));
+    localStorage.setItem('firebaseUID', user.uid);
+    
+    // عرض حالة تسجيل الدخول
+    showLoggedIn(user.phoneNumber || "غير معروف");
+    
+    // البدء في العد التنازلي
+    startCountdownToContent();
+}
+
+// ===== معالجة الجلسة المحلية =====
+function handleLocalSession(session) {
+    // تحديث وقت الدخول
+    session.loginTime = new Date().toISOString();
+    localStorage.setItem('autoLoginSession', JSON.stringify(session));
+    
+    // عرض حالة تسجيل الدخول
+    showLoggedIn(session.phoneNumber || "غير معروف");
+    
+    // البدء في العد التنازلي
+    startCountdownToContent();
+}
+
+// ===== عرض حالة "غير مسجل" =====
+function showNotLoggedIn(message = "") {
+    elements.checkingStatus.classList.add('hidden');
+    elements.notLoggedIn.classList.remove('hidden');
+    
+    if (message) {
+        document.querySelector('#not-logged-in h3').textContent = message;
+    }
+}
+
+// ===== عرض حالة "مسجل" =====
+function showLoggedIn(phoneNumber) {
+    elements.checkingStatus.classList.add('hidden');
+    elements.loggedIn.classList.remove('hidden');
+    
+    // عرض معلومات المستخدم
+    elements.loggedPhone.textContent = phoneNumber;
+    elements.loginTime.textContent = new Date().toLocaleString('ar-SA');
+}
+
+// ===== العد التنازلي للتحويل =====
+function startCountdownToContent() {
+    let seconds = 3;
+    
+    function updateCountdown() {
+        elements.countdownText.textContent = `سيتم التوجيه خلال ${seconds} ثواني...`;
+        
+        if (seconds === 0) {
+            // إخفاء جدار الحماية وإظهار المحتوى
+            elements.loginWall.classList.add('hidden');
+            elements.siteContent.classList.remove('hidden');
+            
+            // إشعار Firebase بأن المستخدم قد دخل
+            if (currentUser) {
+                logUserAccess(currentUser.uid);
+            }
+        } else {
+            seconds--;
+            setTimeout(updateCountdown, 1000);
+        }
+    }
+    
+    updateCountdown();
+}
+
+// ===== تسجيل وصول المستخدم =====
+function logUserAccess(uid) {
+    try {
+        if (database) {
+            const timestamp = new Date().toISOString();
+            database.ref('userAccess/' + uid).push({
+                timestamp: timestamp,
+                action: 'accessed_site',
+                page: window.location.pathname
+            });
+        }
+    } catch (error) {
+        console.error("Error logging user access:", error);
+    }
+}
+
+// ===== تهيئة Firebase =====
+async function initializeFirebase() {
+    try {
+        if (!firebase.apps.length) {
+            firebase.initializeApp(firebaseConfig);
+        }
+        auth = firebase.auth();
+        database = firebase.database();
+        
+        console.log("Firebase initialized for access check");
+        return true;
+    } catch (error) {
+        console.error("Firebase initialization failed:", error);
+        return false;
+    }
+}
+
+// ===== إعادة التحقق =====
+function retryLoginCheck() {
+    elements.notLoggedIn.classList.add('hidden');
+    elements.checkingStatus.classList.remove('hidden');
+    
+    setTimeout(() => {
+        checkLoginStatus();
+    }, 1000);
+}
+
+// ===== التحويل إلى صفحة الدخول =====
+function redirectToLogin() {
+    // حفظ الصفحة الحالية للعودة إليها بعد الدخول
+    localStorage.setItem('redirectAfterLogin', window.location.href);
+    
+    // التحويل إلى صفحة الدخول
+    window.location.href = LOGIN_PAGE_URL;
+}
+
+// ===== تهيئة التطبيق =====
+async function initializeApp() {
+    // إعداد أزرار التحكم
+    elements.redirectLoginBtn.addEventListener('click', redirectToLogin);
+    elements.retryCheckBtn.addEventListener('click', retryLoginCheck);
+    
+    // تهيئة Firebase
+    await initializeFirebase();
+    
+    // التحقق من حالة الدخول
+    const isLoggedIn = await checkLoginStatus();
+    
+    // إذا لم يكن مسجلاً ولم نتمكن من التحقق مع Firebase، نعرض رسالة
+    if (!isLoggedIn) {
+        // جرب مرة أخرى بعد 2 ثانية للسماح لـ Firebase بالتهيئة
+        setTimeout(() => {
+            checkLoginStatus();
+        }, 2000);
+    }
+}
+
+// ===== بدء التطبيق =====
+document.addEventListener('DOMContentLoaded', initializeApp);
+
+
         // السماح بتحميل الصفحة
         loadPageContent();
     });
