@@ -3139,13 +3139,21 @@ function checkLoginSession() {
 
 // التحويل إلى صفحة الدخول إذا لم تكن هناك جلسة نشطة
 function redirectToLoginIfNeeded() {
-    if (!checkLoginSession()) {
-        console.log('🔄 تحويل إلى صفحة الدخول...');
-        window.location.href = LOGIN_PAGE_URL;
+    // تأكد أننا في صفحة index.html ولسنا في صفحة login.html
+    if (window.location.pathname.includes('index.html') || 
+        window.location.pathname === '/' || 
+        window.location.pathname.endsWith('/')) {
+        
+        if (!checkLoginSession()) {
+            console.log('🔄 تحويل إلى صفحة الدخول...');
+            window.location.href = LOGIN_PAGE_URL;
+        } else {
+            console.log('✅ جلسة نشطة، البقاء في الصفحة الرئيسية');
+        }
     }
 }
 
-// تسجيل الدخول
+// تسجيل الدخول - استخدم هذا في صفحة login.html
 function loginUser(phoneNumber, countryCode) {
     try {
         const sessionData = {
@@ -3157,7 +3165,7 @@ function loginUser(phoneNumber, countryCode) {
         
         localStorage.setItem(SESSION_KEY, JSON.stringify(sessionData));
         console.log('✅ تم تسجيل الدخول');
-        window.location.href = 'index.html';
+        window.location.href = 'index.html'; // تحويل إلى الصفحة الرئيسية
         return true;
     } catch (error) {
         console.error('❌ خطأ في تسجيل الدخول:', error);
@@ -3173,9 +3181,15 @@ function logoutUser() {
     }
 }
 
-// التنفيذ عند تحميل الصفحة
-document.addEventListener('DOMContentLoaded', redirectToLoginIfNeeded);
+// التنفيذ عند تحميل الصفحة - فقط في index.html
+document.addEventListener('DOMContentLoaded', function() {
+    // تأكد أننا في صفحة index.html
+    if (window.location.pathname.includes('index.html') || 
+        window.location.pathname === '/' || 
+        window.location.pathname.endsWith('/')) {
+        redirectToLoginIfNeeded();
+    }
+});
 
-    // Initialize App
     window.addEventListener('load', init);
 </script>
