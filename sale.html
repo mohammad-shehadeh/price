@@ -1908,80 +1908,78 @@
 </head>
 <body>
     <!-- صفحة تسجيل الدخول -->
-<div id="login-overlay" class="login-overlay">
-    <div class="login-container">
-        <div class="login-card">
-            <div class="login-header">
-                <img src="https://res.cloudinary.com/dygc5b8cn/image/upload/v1768500756/xvrpeqabqhlbjwuq6u7t.jpg" 
-                     alt="Shehadeh Center Logo" class="login-logo">
-                <h1>SHEHADEH CENTER</h1>
-                <p>يجب تسجيل الدخول للمتابعة</p>
-            </div>
-            
-            <!-- رابط التوجيه إلى صفحة تسجيل الدخول -->
-            <div class="login-content">
-                <div class="login-message">
-                    <i class="fas fa-lock"></i>
-                    <h2>مرحباً بك في Shehadeh Center</h2>
-                    <p>يجب تسجيل الدخول برقم هاتفك للوصول إلى الأسعار</p>
+    <div id="login-overlay" class="login-overlay">
+        <div class="login-container">
+            <div class="login-card">
+                <div class="login-header">
+                    <img src="https://res.cloudinary.com/dygc5b8cn/image/upload/v1768500756/xvrpeqabqhlbjwuq6u7t.jpg" 
+                         alt="Shehadeh Center Logo" class="login-logo">
+                    <h1>SHEHADEH CENTER</h1>
+                    <p>يجب تسجيل الدخول للمتابعة</p>
                 </div>
                 
-                <a href="login.html" class="login-btn">
-                    <i class="fas fa-sign-in-alt"></i>
-                    تسجيل الدخول الآن
-                </a>
-                
-                <div class="login-info">
-                    <p><i class="fas fa-info-circle"></i> تستخدم 972 أو 970 حسب رقم هاتفك</p>
-                    <p><i class="fas fa-shield-alt"></i> نظام آمن ومحمي</p>
+                <!-- رابط التوجيه إلى صفحة تسجيل الدخول -->
+                <div class="login-content">
+                    <div class="login-message">
+                        <i class="fas fa-lock"></i>
+                        <h2>مرحباً بك في Shehadeh Center</h2>
+                        <p>يجب تسجيل الدخول برقم هاتفك للوصول إلى الأسعار</p>
+                    </div>
+                    
+                    <a href="login.html" class="login-btn">
+                        <i class="fas fa-sign-in-alt"></i>
+                        تسجيل الدخول الآن
+                    </a>
+                    
+                    <div class="login-info">
+                        <p><i class="fas fa-info-circle"></i> تستخدم 972 أو 970 حسب رقم هاتفك</p>
+                        <p><i class="fas fa-shield-alt"></i> نظام آمن ومحمي</p>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 
-<!-- محتوى الموقع الأصلي (مخفي حتى تسجيل الدخول) -->
-<div id="main-content" style="display: none;">
-    
-    <!-- Loading Screen -->
-    <div id="loading-screen">
-        <div class="loader"></div>
-        <div class="loading-text">جاري التحميل...</div>
-    </div>
-    
-    <div class="nav-container">
-    <a href="#" class="nav-logo">Shehadeh <span>Center</span></a>
-    
-  
+    <!-- محتوى الموقع الأصلي (سيظهر بعد تسجيل الدخول) -->
+    <div id="main-content" style="display: none;">
         
-        <!-- زر تبديل العرض الجديد -->
-        <button class="nav-btn view-toggle-btn" id="view-toggle-btn">
-            <i class="fas fa-th-large" id="view-icon"></i>
-            <span id="view-text">عرض متجر</span>
-        </button>
+        <!-- Loading Screen -->
+        <div id="loading-screen">
+            <div class="loader"></div>
+            <div class="loading-text">جاري التحميل...</div>
+        </div>
         
-        <div class="nav-cart" id="show-cart-button">
-            <span class="cart-count" id="cart-count">0</span>
-            <i class="fas fa-shopping-cart"></i>
-            <span class="cart-text">السلة</span>
+        <div class="nav-container">
+            <a href="#" class="nav-logo">Shehadeh <span>Center</span></a>
+            
+            <!-- زر تبديل العرض الجديد -->
+            <button class="nav-btn view-toggle-btn" id="view-toggle-btn">
+                <i class="fas fa-th-large" id="view-icon"></i>
+                <span id="view-text">عرض متجر</span>
+            </button>
+            
+            <div class="nav-cart" id="show-cart-button">
+                <span class="cart-count" id="cart-count">0</span>
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-text">السلة</span>
+            </div>
         </div>
     </div>
-</div>
     
-<!-- النافذة الإعلانية -->
-<div class="ad-popup" id="adPopup">
-    <div class="ad-content">
-        <span class="close-ad" id="closeAd">&times;</span>
-        <a href="https://mohammad-shehadeh.github.io/price/download" target="_blank">
-            <img src="https://i.postimg.cc/kXJr2mPN/9-F82-C114-0819-49-C1-A757-D69519179-DE7.png" alt="إعلان" class="ad-image">
-        </a>
-        <div class="ad-options">
-            <label>
-                <input type="checkbox" id="dontShowAgain"> عدم الإظهار مرة أخرى
-            </label>
+    <!-- النافذة الإعلانية -->
+    <div class="ad-popup" id="adPopup">
+        <div class="ad-content">
+            <span class="close-ad" id="closeAd">&times;</span>
+            <a href="https://mohammad-shehadeh.github.io/price/download" target="_blank">
+                <img src="https://i.postimg.cc/kXJr2mPN/9-F82-C114-0819-49-C1-A757-D69519179-DE7.png" alt="إعلان" class="ad-image">
+            </a>
+            <div class="ad-options">
+                <label>
+                    <input type="checkbox" id="dontShowAgain"> عدم الإظهار مرة أخرى
+                </label>
+            </div>
         </div>
     </div>
-</div>
 
     <!-- Header -->
     <header>
@@ -1990,23 +1988,23 @@
         </div>
         <h1>SHEHADEH CENTER</h1>
         
-<!-- زر التبديل لقائمة الملفات -->
-<div class="toggle-files-container">
-    <button class="toggle-files-btn" id="toggle-files-btn">
-        <i class="fas fa-list"></i>
-        <span id="current-file-label">أسعار الأجهزة</span>
-        <i class="fas fa-chevron-down" id="toggle-icon"></i>
-    </button>
-    
-    <div class="files-menu" id="files-menu">
-        <!-- سيتم إضافة الخيارات هنا عبر JavaScript -->
-    </div>
-</div>
+        <!-- زر التبديل لقائمة الملفات -->
+        <div class="toggle-files-container">
+            <button class="toggle-files-btn" id="toggle-files-btn">
+                <i class="fas fa-list"></i>
+                <span id="current-file-label">أسعار الأجهزة</span>
+                <i class="fas fa-chevron-down" id="toggle-icon"></i>
+            </button>
+            
+            <div class="files-menu" id="files-menu">
+                <!-- سيتم إضافة الخيارات هنا عبر JavaScript -->
+            </div>
+        </div>
         
         <!-- Smart Flexible Filter Buttons -->
-<div class="smart-filter-buttons" id="smart-filter-buttons">
-    <!-- سيتم إضافة الفئات هنا ديناميكيًا -->
-</div>
+        <div class="smart-filter-buttons" id="smart-filter-buttons">
+            <!-- سيتم إضافة الفئات هنا ديناميكيًا -->
+        </div>
         
         <!-- Search Box -->
         <input type="text" id="search-box" placeholder="🔍 ابحث عن منتج...">
