@@ -84,82 +84,130 @@
             z-index: 1000;
         }
         
-        .login-overlay {
+        
+.login-overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0,0,0,0.85);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-}
-
-.login-box {
-    background: #fff;
-    padding: 30px;
-    border-radius: 8px;
-    text-align: center;
-    width: 300px;
-}
-
-.login-box input {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    font-size: 16px;
-}
-
-.login-box button {
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-/* ستايل جدار الحماية */
-.login-wall {
     background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
-    min-height: 100vh;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
     z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.login-container {
+    width: 100%;
+    max-width: 500px;
+}
+
+.login-card {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+.login-logo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 3px solid #0bb5b0;
+}
+
+.login-header h1 {
+    color: #1e3a8a;
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.login-header p {
+    color: #666;
+    font-size: 1rem;
+    margin-bottom: 30px;
+}
+
+.login-content {
+    margin: 30px 0;
+}
+
+.login-message {
+    background: #f0f8ff;
+    padding: 20px;
+    border-radius: 15px;
+    margin-bottom: 30px;
+    border-left: 5px solid #0bb5b0;
+}
+
+.login-message i {
+    font-size: 2.5rem;
+    color: #0bb5b0;
+    margin-bottom: 15px;
+}
+
+.login-message h2 {
+    color: #1e3a8a;
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+}
+
+.login-message p {
+    color: #666;
+    font-size: 1rem;
+}
+
+.login-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #0bb5b0, #1e3a8a);
+    color: white;
+    padding: 15px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 20px rgba(11, 181, 176, 0.3);
+}
+
+.login-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(11, 181, 176, 0.4);
+    background: linear-gradient(135deg, #1e3a8a, #0bb5b0);
+}
+
+.login-btn i {
+    margin-left: 10px;
+    font-size: 1.2rem;
+}
+
+.login-info {
+    margin-top: 30px;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.login-info p {
+    margin: 8px 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: opacity 0.5s ease;
 }
-.login-wall.hidden {
-    opacity: 0;
-    pointer-events: none;
-}
-.loading {
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    border: 3px solid #f3f3f3;
-    border-top: 3px solid #3b82f6;
-    border-radius: 50%;
-    animation: spin 1s linear infinite;
-}
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
-.hidden {
-    display: none !important;
-}
-.redirect-message {
-    animation: pulse 2s infinite;
-}
-@keyframes pulse {
-    0% { opacity: 1; }
-    50% { opacity: 0.7; }
-    100% { opacity: 1; }
+
+.login-info i {
+    margin-left: 8px;
+    color: #0bb5b0;
 }
 
         .logo-container {
@@ -1852,227 +1900,173 @@
     background-color: #ffeb3b;
 }
 
-
+/* أنماط صفحة تسجيل الدخول */
 
     </style>
 </head>
 <body>
-    <!-- ===== جدار الحماية للتسجيل ===== -->
-    <div id="login-wall" class="login-wall">
-        <div class="w-full max-w-md mx-4">
-            <!-- بطاقة التحقق -->
-            <div class="bg-white/95 backdrop-blur-sm rounded-2xl shadow-2xl p-6">
-                <!-- شعار -->
-                <div class="text-center mb-6">
-                    <div class="inline-block p-4 bg-blue-100 rounded-2xl mb-4">
-                        <i class="fas fa-shield-alt text-blue-600 text-3xl"></i>
-                    </div>
-                    <h1 class="text-2xl font-bold text-gray-800 mb-2">التحقق من تسجيل الدخول</h1>
-                    <p class="text-gray-600">يجب تسجيل الدخول أولاً للوصول إلى المحتوى</p>
-                </div>
-
-                <!-- حالة التحميل -->
-                <div id="checking-status" class="text-center py-8">
-                    <div class="loading mx-auto mb-4" style="width: 40px; height: 40px;"></div>
-                    <h3 class="font-bold text-gray-800 mb-2">جاري التحقق من حالة الدخول...</h3>
-                    <p class="text-gray-600">يتم التحقق من جلسة الدخول السابقة</p>
-                </div>
-
-                <!-- حالة غير مسجل -->
-                <div id="not-logged-in" class="hidden text-center py-6">
-                    <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-lock text-red-600 text-2xl"></i>
-                    </div>
-                    <h3 class="font-bold text-gray-800 mb-2">لم يتم تسجيل الدخول</h3>
-                    <p class="text-gray-600 mb-6">يجب عليك تسجيل الدخول أولاً للوصول إلى هذا المحتوى</p>
-                    
-                    <div class="space-y-3">
-                        <button 
-                            id="redirect-login-btn"
-                            class="w-full bg-gradient-to-r from-blue-500 to-blue-600 text-white font-bold py-3 px-4 rounded-lg hover:shadow-lg transition-all"
-                        >
-                            <i class="fas fa-sign-in-alt ml-2"></i>
-                            الانتقال لصفحة تسجيل الدخول
-                        </button>
-                        
-                        <button 
-                            id="retry-check-btn"
-                            class="w-full border border-gray-300 text-gray-700 font-bold py-3 px-4 rounded-lg"
-                        >
-                            <i class="fas fa-redo ml-2"></i>
-                            إعادة المحاولة
-                        </button>
-                    </div>
-                </div>
-
-                <!-- حالة مسجل -->
-                <div id="logged-in" class="hidden text-center py-6">
-                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-unlock text-green-600 text-2xl"></i>
-                    </div>
-                    <h3 class="font-bold text-gray-800 mb-2">تم تسجيل الدخول مسبقاً</h3>
-                    <p class="text-gray-600 mb-6 redirect-message">يتم إعادة توجيهك إلى المحتوى...</p>
-                    
-                    <div class="bg-blue-50 p-4 rounded-lg mb-4">
-                        <div class="space-y-2 text-sm">
-                            <div class="flex justify-between">
-                                <span class="text-gray-700">رقم الهاتف:</span>
-                                <span id="logged-phone" class="font-bold">+972 5XXXXXXXX</span>
-                            </div>
-                            <div class="flex justify-between">
-                                <span class="text-gray-700">وقت الدخول:</span>
-                                <span id="login-time" class="font-mono">-</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="loading mx-auto"></div>
-                    <p class="text-sm text-gray-500 mt-2" id="countdown-text">سيتم التوجيه خلال 3 ثواني...</p>
-                </div>
+    <!-- صفحة تسجيل الدخول -->
+<div id="login-overlay" class="login-overlay">
+    <div class="login-container">
+        <div class="login-card">
+            <div class="login-header">
+                <img src="https://res.cloudinary.com/dygc5b8cn/image/upload/v1768500756/xvrpeqabqhlbjwuq6u7t.jpg" 
+                     alt="Shehadeh Center Logo" class="login-logo">
+                <h1>SHEHADEH CENTER</h1>
+                <p>يجب تسجيل الدخول للمتابعة</p>
             </div>
             
-            <!-- معلومات إضافية -->
-            <div class="text-center text-white/80 text-sm mt-6">
-                <p>
-                    <i class="fas fa-info-circle mr-2"></i>
-                    <strong>نظام الحماية:</strong> يتم التحقق من جلسة الدخول قبل عرض المحتوى
-                </p>
-                <p class="mt-1">
-                    <i class="fas fa-history mr-2"></i>
-                    <strong>مدة الجلسة:</strong> 24 ساعة (تلقائي التجديد)
-                </p>
-            </div>
-        </div>
-    </div>
-
-    <!-- ===== محتوى الموقع الأصلي ===== -->
-    <div id="site-content" class="hidden">
-        <!-- شاشة التحميل -->
-        <div id="loading-screen">
-            <div class="loader"></div>
-            <div class="loading-text">جاري التحميل...</div>
-        </div>
-        
-        <!-- شريط التنقل -->
-        <div class="nav-container">
-            <a href="#" class="nav-logo">Shehadeh <span>Center</span></a>
-            
-            <!-- زر تبديل العرض -->
-            <button class="nav-btn view-toggle-btn" id="view-toggle-btn">
-                <i class="fas fa-th-large" id="view-icon"></i>
-                <span id="view-text">عرض متجر</span>
-            </button>
-            
-            <!-- سلة التسوق -->
-            <div class="nav-cart" id="show-cart-button">
-                <span class="cart-count" id="cart-count">0</span>
-                <i class="fas fa-shopping-cart"></i>
-                <span class="cart-text">السلة</span>
-            </div>
-        </div>
-        
-        <!-- النافذة الإعلانية -->
-        <div class="ad-popup" id="adPopup">
-            <div class="ad-content">
-                <span class="close-ad" id="closeAd">&times;</span>
-                <a href="https://mohammad-shehadeh.github.io/price/download" target="_blank">
-                    <img src="https://i.postimg.cc/kXJr2mPN/9-F82-C114-0819-49-C1-A757-D69519179-DE7.png" alt="إعلان" class="ad-image">
-                </a>
-                <div class="ad-options">
-                    <label>
-                        <input type="checkbox" id="dontShowAgain"> عدم الإظهار مرة أخرى
-                    </label>
+            <!-- رابط التوجيه إلى صفحة تسجيل الدخول -->
+            <div class="login-content">
+                <div class="login-message">
+                    <i class="fas fa-lock"></i>
+                    <h2>مرحباً بك في Shehadeh Center</h2>
+                    <p>يجب تسجيل الدخول برقم هاتفك للوصول إلى الأسعار</p>
                 </div>
-            </div>
-        </div>
-
-        <!-- Header -->
-        <header>
-            <div class="logo-container">
-                <img src="https://res.cloudinary.com/dygc5b8cn/image/upload/v1768501375/smzshfxxouffjvgrrdnq.jpg" alt="Shehadeh Center Logo" class="logo-img">
-            </div>
-            <h1>SHEHADEH CENTER</h1>
-            
-            <!-- زر التبديل لقائمة الملفات -->
-            <div class="toggle-files-container">
-                <button class="toggle-files-btn" id="toggle-files-btn">
-                    <i class="fas fa-list"></i>
-                    <span id="current-file-label">أسعار الأجهزة</span>
-                    <i class="fas fa-chevron-down" id="toggle-icon"></i>
-                </button>
                 
-                <div class="files-menu" id="files-menu">
-                    <!-- سيتم إضافة الخيارات هنا عبر JavaScript -->
+                <a href="login.html" class="login-btn">
+                    <i class="fas fa-sign-in-alt"></i>
+                    تسجيل الدخول الآن
+                </a>
+                
+                <div class="login-info">
+                    <p><i class="fas fa-info-circle"></i> تستخدم 972 أو 970 حسب رقم هاتفك</p>
+                    <p><i class="fas fa-shield-alt"></i> نظام آمن ومحمي</p>
                 </div>
             </div>
-            
-            <!-- Smart Flexible Filter Buttons -->
-            <div class="smart-filter-buttons" id="smart-filter-buttons">
-                <!-- سيتم إضافة الفئات هنا ديناميكيًا -->
-            </div>
-            
-            <!-- Search Box -->
-            <input type="text" id="search-box" placeholder="🔍 ابحث عن منتج...">
-        </header>
-        
-        <!-- Main Content -->
-        <main>
-            <div id="categories" class="products-container"></div>
-        </main>
-        
-        <!-- Shopping Cart -->
-        <div class="cart" id="cart">
-            <div class="cart-header">
-                <h3 class="cart-title">سلة التسوق</h3>
-                <button class="close-cart" id="hide-cart-button">
-                    <i class="fas fa-times"></i>
-                </button>
-            </div>
-            <div class="cart-body" id="cart-items"></div>
-            <div class="cart-footer">
-                <div class="cart-total">
-                    <span>الإجمالي:</span>
-                    <span id="cart-total">0.00 ₪</span>
-                </div>
-                <button class="checkout-btn" id="checkout-button">إتمام الطلب</button>
-            </div>
-        </div>
-        
-        <!-- Checkout Popup -->
-        <div class="popup" id="popup">
-            <div class="popup-content">
-                <div class="popup-header">
-                    <h3>نموذج إتمام الطلب</h3>
-                </div>
-                <div class="popup-body">
-                    <div class="form-group">
-                        <input type="text" id="customer-name" class="form-control" placeholder="ادخل اسمك">
-                    </div>
-                    <div class="form-group">
-                        <input type="tel" id="customer-phone" class="form-control" placeholder="ادخل رقم هاتفك">
-                    </div>
-                </div>
-                <div class="popup-footer">
-                    <button class="popup-btn cancel" id="cancel-button">إلغاء</button>
-                    <button class="popup-btn confirm" id="confirm-button">إرسال</button>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Scroll to Top Button -->
-        <div class="scroll-btn">
-            <button id="scrollUp" title="الصعود للأعلى">
-                <i class="fas fa-arrow-up"></i>
-            </button>
-        </div>
-        
-        <!-- Notification -->
-        <div class="notification" id="notification">
-            <i class="fas fa-check-circle"></i>
-            <span id="notification-text">تمت الإضافة إلى السلة</span>
         </div>
     </div>
+</div>
 
+<!-- محتوى الموقع الأصلي (مخفي حتى تسجيل الدخول) -->
+<div id="main-content" style="display: none;">
+    
+    <!-- Loading Screen -->
+    <div id="loading-screen">
+        <div class="loader"></div>
+        <div class="loading-text">جاري التحميل...</div>
+    </div>
+    
+    <div class="nav-container">
+    <a href="#" class="nav-logo">Shehadeh <span>Center</span></a>
+    
+  
+        
+        <!-- زر تبديل العرض الجديد -->
+        <button class="nav-btn view-toggle-btn" id="view-toggle-btn">
+            <i class="fas fa-th-large" id="view-icon"></i>
+            <span id="view-text">عرض متجر</span>
+        </button>
+        
+        <div class="nav-cart" id="show-cart-button">
+            <span class="cart-count" id="cart-count">0</span>
+            <i class="fas fa-shopping-cart"></i>
+            <span class="cart-text">السلة</span>
+        </div>
+    </div>
+</div>
+    
+<!-- النافذة الإعلانية -->
+<div class="ad-popup" id="adPopup">
+    <div class="ad-content">
+        <span class="close-ad" id="closeAd">&times;</span>
+        <a href="https://mohammad-shehadeh.github.io/price/download" target="_blank">
+            <img src="https://i.postimg.cc/kXJr2mPN/9-F82-C114-0819-49-C1-A757-D69519179-DE7.png" alt="إعلان" class="ad-image">
+        </a>
+        <div class="ad-options">
+            <label>
+                <input type="checkbox" id="dontShowAgain"> عدم الإظهار مرة أخرى
+            </label>
+        </div>
+    </div>
+</div>
+
+    <!-- Header -->
+    <header>
+        <div class="logo-container">
+            <img src="https://res.cloudinary.com/dygc5b8cn/image/upload/v1768501375/smzshfxxouffjvgrrdnq.jpg" alt="Shehadeh Center Logo" class="logo-img">
+        </div>
+        <h1>SHEHADEH CENTER</h1>
+        
+<!-- زر التبديل لقائمة الملفات -->
+<div class="toggle-files-container">
+    <button class="toggle-files-btn" id="toggle-files-btn">
+        <i class="fas fa-list"></i>
+        <span id="current-file-label">أسعار الأجهزة</span>
+        <i class="fas fa-chevron-down" id="toggle-icon"></i>
+    </button>
+    
+    <div class="files-menu" id="files-menu">
+        <!-- سيتم إضافة الخيارات هنا عبر JavaScript -->
+    </div>
+</div>
+        
+        <!-- Smart Flexible Filter Buttons -->
+<div class="smart-filter-buttons" id="smart-filter-buttons">
+    <!-- سيتم إضافة الفئات هنا ديناميكيًا -->
+</div>
+        
+        <!-- Search Box -->
+        <input type="text" id="search-box" placeholder="🔍 ابحث عن منتج...">
+    </header>
+    
+    <!-- Main Content -->
+    <main>
+        <div id="categories" class="products-container"></div>
+    </main>
+    
+    <!-- Shopping Cart -->
+    <div class="cart" id="cart">
+        <div class="cart-header">
+            <h3 class="cart-title">سلة التسوق</h3>
+            <button class="close-cart" id="hide-cart-button">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="cart-body" id="cart-items"></div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>الإجمالي:</span>
+                <span id="cart-total">0.00 ₪</span>
+            </div>
+            <button class="checkout-btn" id="checkout-button">إتمام الطلب</button>
+        </div>
+    </div>
+    
+    <!-- Checkout Popup -->
+    <div class="popup" id="popup">
+        <div class="popup-content">
+            <div class="popup-header">
+                <h3>نموذج إتمام الطلب</h3>
+            </div>
+            <div class="popup-body">
+                <div class="form-group">
+                    <input type="text" id="customer-name" class="form-control" placeholder="ادخل اسمك">
+                </div>
+                <div class="form-group">
+                    <input type="tel" id="customer-phone" class="form-control" placeholder="ادخل رقم هاتفك">
+                </div>
+            </div>
+            <div class="popup-footer">
+                <button class="popup-btn cancel" id="cancel-button">إلغاء</button>
+                <button class="popup-btn confirm" id="confirm-button">إرسال</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Scroll to Top Button -->
+    <div class="scroll-btn">
+        <button id="scrollUp" title="الصعود للأعلى">
+            <i class="fas fa-arrow-up"></i>
+        </button>
+    </div>
+    
+    <!-- Notification -->
+    <div class="notification" id="notification">
+        <i class="fas fa-check-circle"></i>
+        <span id="notification-text">تمت الإضافة إلى السلة</span>
+    </div>
+</body>
     
 <script>
     // DOM Elements
@@ -3133,266 +3127,89 @@ function filterProducts(category) {
             });
     }
 
-// في بداية ملف index.html<script>
-// إعدادات Firebase
-const firebaseConfig = {
-    apiKey: "AIzaSyBWfV0Z1yKxJ-lGJHzi5gStMGTE3CNxmMg",
-    authDomain: "aasa-8a079.firebaseapp.com",
-    projectId: "aasa-8a079",
-    storageBucket: "aasa-8a079.firebasestorage.app",
-    databaseURL: "https://aasa-8a079-default-rtdb.firebaseio.com",
-    messagingSenderId: "849330713582",
-    appId: "1:849330713582:web:7a11b11ebdb5cdcc8b14ff",
-    measurementId: "G-LY2WSQ21GE"
-};
+// ===== نظام التحقق من تسجيل الدخول =====
 
-// عناصر DOM
-const elements = {
-    loginWall: document.getElementById('login-wall'),
-    siteContent: document.getElementById('site-content'),
-    checkingStatus: document.getElementById('checking-status'),
-    notLoggedIn: document.getElementById('not-logged-in'),
-    loggedIn: document.getElementById('logged-in'),
-    loggedPhone: document.getElementById('logged-phone'),
-    loginTime: document.getElementById('login-time'),
-    countdownText: document.getElementById('countdown-text'),
-    redirectLoginBtn: document.getElementById('redirect-login-btn'),
-    retryCheckBtn: document.getElementById('retry-check-btn')
-};
+// مفتاح التخزين للجلسة
+const SESSION_KEY = 'shehadeh_login_session';
 
-// رابط صفحة الدخول
-const LOGIN_PAGE_URL = "https://mohammad-shehadeh.github.io/price/login";
-const SITE_CONTENT = document.getElementById('site-content');
-
-// متغيرات التطبيق
-let auth = null;
-let currentUser = null;
-
-// ===== التحقق من حالة الدخول =====
-async function checkLoginStatus() {
-    try {
-        console.log("بدء التحقق من حالة الدخول...");
+// التحقق من الجلسة عند تحميل الصفحة
+function checkLoginSession() {
+    const session = localStorage.getItem(SESSION_KEY);
+    
+    if (session) {
+        const sessionData = JSON.parse(session);
+        const now = new Date();
+        const loginTime = new Date(sessionData.loginTime);
+        const hoursDiff = (now - loginTime) / (1000 * 60 * 60);
         
-        // الطريقة 1: التحقق من Firebase Auth
-        if (auth) {
-            await auth.authStateReady();
-            currentUser = auth.currentUser;
-            
-            if (currentUser) {
-                console.log("Firebase user authenticated:", currentUser.uid);
-                handleLoggedInUser(currentUser);
-                return true;
-            }
-        }
-        
-        // الطريقة 2: التحقق من Local Storage
-        const savedSession = localStorage.getItem('autoLoginSession');
-        if (savedSession) {
-            const session = JSON.parse(savedSession);
-            
-            // التحقق من صلاحية الجلسة (24 ساعة)
-            const loginTime = new Date(session.loginTime);
-            const now = new Date();
-            const hoursDiff = (now - loginTime) / (1000 * 60 * 60);
-            
-            if (hoursDiff < 24) {
-                console.log("Valid local session found");
-                handleLocalSession(session);
-                return true;
-            } else {
-                // جلسة منتهية الصلاحية
-                localStorage.removeItem('autoLoginSession');
-                localStorage.removeItem('firebaseUID');
-                console.log("Session expired");
-            }
-        }
-        
-        // الطريقة 3: التحقق من firebaseUID في localStorage
-        const firebaseUID = localStorage.getItem('firebaseUID');
-        if (firebaseUID) {
-            console.log("Found firebase UID in storage");
-            // للتبسيط، نعتبره مسجلاً
-            const tempSession = {
-                phoneNumber: "مستخدم مسجل",
-                loginTime: new Date().toISOString()
-            };
-            localStorage.setItem('autoLoginSession', JSON.stringify(tempSession));
-            handleLocalSession(tempSession);
+        // إذا مرت أقل من 24 ساعة
+        if (hoursDiff < 24) {
+            // إخفاء صفحة الدخول وإظهار الموقع
+            document.getElementById('login-overlay').style.display = 'none';
+            document.getElementById('main-content').style.display = 'block';
             return true;
+        } else {
+            // الجلسة منتهية، حذفها
+            localStorage.removeItem(SESSION_KEY);
         }
-        
-        // إذا لم ينجح أي شيء، المستخدم غير مسجل
-        showNotLoggedIn("لم يتم تسجيل الدخول");
-        return false;
-        
-    } catch (error) {
-        console.error("Login check error:", error);
-        showNotLoggedIn("خطأ في التحقق");
-        return false;
     }
+    
+    return false;
 }
 
-// ===== معالجة حالة المستخدم المسجل =====
-function handleLoggedInUser(user) {
-    // حفظ معلومات الجلسة
+// تسجيل الدخول (يتم استدعاؤها من صفحة login.html)
+function loginUser(phoneNumber, countryCode) {
     const sessionData = {
-        uid: user.uid,
-        phoneNumber: user.phoneNumber || "غير معروف",
+        phoneNumber: phoneNumber,
+        countryCode: countryCode,
         loginTime: new Date().toISOString(),
-        method: 'firebase-auth'
+        userAgent: navigator.userAgent
     };
     
-    localStorage.setItem('autoLoginSession', JSON.stringify(sessionData));
-    localStorage.setItem('firebaseUID', user.uid);
+    localStorage.setItem(SESSION_KEY, JSON.stringify(sessionData));
     
-    // عرض حالة تسجيل الدخول
-    showLoggedIn(user.phoneNumber || "غير معروف");
-    
-    // البدء في العد التنازلي
-    startCountdownToContent();
+    // إعادة تحميل الصفحة أو توجيه للموقع الرئيسي
+    window.location.href = 'index.html';
 }
 
-// ===== معالجة الجلسة المحلية =====
-function handleLocalSession(session) {
-    // تحديث وقت الدخول
-    session.loginTime = new Date().toISOString();
-    localStorage.setItem('autoLoginSession', JSON.stringify(session));
-    
-    // عرض حالة تسجيل الدخول
-    showLoggedIn(session.phoneNumber || "مستخدم مسجل");
-    
-    // البدء في العد التنازلي
-    startCountdownToContent();
+// تسجيل الخروج
+function logoutUser() {
+    localStorage.removeItem(SESSION_KEY);
+    window.location.reload();
 }
 
-// ===== عرض حالة "غير مسجل" =====
-function showNotLoggedIn(message = "") {
-    elements.checkingStatus.classList.add('hidden');
-    elements.notLoggedIn.classList.remove('hidden');
+// إضافة زر تسجيل الخروج في شريط التنقل
+function addLogoutButton() {
+    const navActions = document.querySelector('.nav-actions');
     
-    if (message) {
-        document.querySelector('#not-logged-in h3').textContent = message;
-    }
-}
-
-// ===== عرض حالة "مسجل" =====
-function showLoggedIn(phoneNumber) {
-    elements.checkingStatus.classList.add('hidden');
-    elements.loggedIn.classList.remove('hidden');
-    
-    // عرض معلومات المستخدم
-    elements.loggedPhone.textContent = phoneNumber;
-    elements.loginTime.textContent = new Date().toLocaleString('ar-SA');
-}
-
-// ===== العد التنازلي للتحويل =====
-function startCountdownToContent() {
-    let seconds = 3;
-    
-    function updateCountdown() {
-        elements.countdownText.textContent = `سيتم التوجيه خلال ${seconds} ثواني...`;
+    if (navActions) {
+        const logoutBtn = document.createElement('a');
+        logoutBtn.className = 'nav-btn';
+        logoutBtn.href = '#';
+        logoutBtn.innerHTML = '<i class="fas fa-sign-out-alt"></i><span>تسجيل الخروج</span>';
+        logoutBtn.onclick = (e) => {
+            e.preventDefault();
+            logoutUser();
+        };
         
-        if (seconds === 0) {
-            // إخفاء جدار الحماية وإظهار المحتوى
-            elements.loginWall.style.display = 'none';
-            SITE_CONTENT.classList.remove('hidden');
-            
-            // بدء تحميل المحتوى
-            initSiteContent();
-        } else {
-            seconds--;
-            setTimeout(updateCountdown, 1000);
-        }
-    }
-    
-    updateCountdown();
-}
-
-// ===== تهيئة Firebase =====
-async function initializeFirebase() {
-    try {
-        if (!firebase.apps.length) {
-            firebase.initializeApp(firebaseConfig);
-        }
-        auth = firebase.auth();
-        
-        console.log("Firebase initialized for access check");
-        return true;
-    } catch (error) {
-        console.error("Firebase initialization failed:", error);
-        return false;
+        navActions.insertBefore(logoutBtn, navActions.firstChild);
     }
 }
 
-// ===== إعادة التحقق =====
-function retryLoginCheck() {
-    elements.notLoggedIn.classList.add('hidden');
-    elements.checkingStatus.classList.remove('hidden');
-    
-    setTimeout(() => {
-        checkLoginStatus();
-    }, 1000);
-}
-
-// ===== التحويل إلى صفحة الدخول =====
-function redirectToLogin() {
-    // التحويل إلى صفحة الدخول
-    window.location.href = LOGIN_PAGE_URL;
-}
-
-// ===== تهيئة نظام الحماية =====
-async function initializeProtectionSystem() {
-    // إعداد أزرار التحكم
-    elements.redirectLoginBtn.addEventListener('click', redirectToLogin);
-    elements.retryCheckBtn.addEventListener('click', retryLoginCheck);
-    
-    // تهيئة Firebase
-    await initializeFirebase();
-    
-    // التحقق من حالة الدخول
-    const isLoggedIn = await checkLoginStatus();
-    
-    // إذا لم يكن مسجلاً ولم نتمكن من التحقق مع Firebase، نعرض رسالة
-    if (!isLoggedIn) {
-        // جرب مرة أخرى بعد 2 ثانية للسماح لـ Firebase بالتهيئة
-        setTimeout(() => {
-            checkLoginStatus();
-        }, 2000);
+// تحديث التهيئة
+window.addEventListener('load', function() {
+    // التحقق من تسجيل الدخول
+    if (checkLoginSession()) {
+        // المستخدم مسجل الدخول
+        addLogoutButton();
+    } else {
+        // المستخدم غير مسجل، إظهار صفحة الدخول
+        document.getElementById('login-overlay').style.display = 'flex';
     }
-}
-
-// ===== بدء تحميل محتوى الموقع =====
-function initSiteContent() {
-    // هنا سيتم تحميل جميع وظائف الموقع الأصلية
-    // بما في ذلك init() وغيرها من الدوال
     
-    // إخفاء شاشة التحميل بعد فترة قصيرة
-    setTimeout(() => {
-        const loadingScreen = document.getElementById('loading-screen');
-        if (loadingScreen) {
-            loadingScreen.style.opacity = '0';
-            setTimeout(() => {
-                loadingScreen.style.display = 'none';
-            }, 500);
-        }
-    }, 1000);
-    
-    // بدء الموقع الأصلي
-    if (typeof init === 'function') {
-        setTimeout(init, 500);
-    }
-}
-
-// ===== بدء نظام الحماية عند تحميل الصفحة =====
-document.addEventListener('DOMContentLoaded', function() {
-    // إخفاء محتوى الموقع مؤقتاً
-    SITE_CONTENT.classList.add('hidden');
-    
-    // بدء نظام الحماية
-    initializeProtectionSystem();
+    // باقي كود التهيئة الأصلي
+    init();
 });
-
-
     // Initialize App
     window.addEventListener('load', init);
 </script>
