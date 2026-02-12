@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>الدخول الآلي - نظام متكامل</title>
     
-    <!-- Firebase SDK -->
+    <!-- WhatsApp SDK -->
     <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-database-compat.js"></script>
@@ -179,10 +179,10 @@
         <!-- شعار النظام -->
         <div class="text-center mb-8 slide-in">
             <div class="inline-block p-4 bg-white/20 backdrop-blur-sm rounded-2xl mb-4">
-                <i class="fas fa-shield-alt text-white text-4xl"></i>
+                <i class="fab fa-whatsapp text-white text-4xl"></i>
             </div>
             <h1 class="text-3xl font-bold text-white mb-2">نظام الدخول المصرح</h1>
-            <p class="text-blue-100 opacity-90">التحقق من المستخدم ضمن مجموعة شحادة سنتر</p>
+            <p class="text-blue-100 opacity-90">التحقق من المستخدم عبر WhatsApp ضمن مجموعة شحادة سنتر</p>
         </div>
 
         <!-- بطاقة النظام الرئيسية -->
@@ -199,8 +199,8 @@
                 
                 <div class="grid grid-cols-2 gap-3 text-xs">
                     <div class="flex items-center justify-between p-2 bg-white rounded-lg">
-                        <span class="text-gray-600">whatsapp</span>
-                        <span id="firebase-status" class="font-medium">...</span>
+                        <span class="text-gray-600">WhatsApp</span>
+                        <span id="whatsapp-status" class="font-medium">...</span>
                     </div>
                     <div class="flex items-center justify-between p-2 bg-white rounded-lg">
                         <span class="text-gray-600">الاتصال</span>
@@ -229,8 +229,8 @@
             <!-- الخطوة 1: إدخال الرقم -->
             <div id="step1-content" class="step-content fade-in">
                 <div class="text-center mb-6">
-                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-phone-alt text-blue-600 text-2xl"></i>
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fab fa-whatsapp text-green-600 text-2xl"></i>
                     </div>
                     <h2 class="text-xl font-bold text-gray-800 mb-2">أدخل رقم واتس اب</h2>
                     <p class="text-gray-600">أدخل رقم هاتفك للتحقق من وجوده في مجموعة شحادة سنتر</p>
@@ -240,19 +240,19 @@
                     <!-- اختيار رمز الدولة -->
                     <div>
                         <label class="block text-gray-700 mb-2 font-medium">
-                            <i class="fas fa-globe-asia text-blue-500 mr-2"></i>
+                            <i class="fas fa-globe-asia text-green-500 mr-2"></i>
                             اختر رمز الدولة
                         </label>
                         <div class="grid grid-cols-2 gap-3">
                             <button type="button" id="btn-972" 
-                                    class="country-btn active" 
+                                    class="country-btn active border-blue-500 bg-blue-50" 
                                     onclick="selectCountry('972')">
                                 <span class="text-lg"></span>
                                 <span class="font-bold">+972</span>
                                 <span class="text-xs text-gray-600">فلسطين</span>
                             </button>
                             <button type="button" id="btn-970" 
-                                    class="country-btn" 
+                                    class="country-btn border-gray-300 bg-gray-50" 
                                     onclick="selectCountry('970')">
                                 <span class="text-lg"></span>
                                 <span class="font-bold">+970</span>
@@ -264,10 +264,10 @@
                     <!-- إدخال الرقم -->
                     <div>
                         <label class="block text-gray-700 mb-2 font-medium">
-                            <i class="fas fa-mobile-alt text-blue-500 mr-2"></i>
+                            <i class="fas fa-mobile-alt text-green-500 mr-2"></i>
                             رقم الهاتف
                         </label>
-                        <div class="flex items-center border-2 border-gray-300 rounded-xl overflow-hidden transition-all duration-300 focus-within:border-blue-500 focus-within:shadow-md">
+                        <div class="flex items-center border-2 border-gray-300 rounded-xl overflow-hidden transition-all duration-300 focus-within:border-green-500 focus-within:shadow-md">
                             <div class="bg-gray-50 px-4 py-3 font-bold text-gray-700 border-r border-gray-300">
                                 <span id="country-code">+972</span>
                             </div>
@@ -281,11 +281,11 @@
                         <div class="flex items-center justify-between mt-2">
                             <p class="text-sm text-gray-500">
                                 <i class="fas fa-info-circle mr-1"></i>
-                                يجب أن يبدأ بـ 5 ويتكون من 9 أرقام و بدون رقم 0
+                                يجب أن يبدأ بـ 5 ويتكون من 9 أرقام بدون صفر
                             </p>
                             <button type="button" 
                                     onclick="fillTestNumber()" 
-                                    class="text-sm text-blue-600 hover:text-blue-800 font-medium">
+                                    class="text-sm text-green-600 hover:text-green-800 font-medium">
                                 <i class="fas fa-vial mr-1"></i>
                                 رقم تجريبي
                             </button>
@@ -298,8 +298,8 @@
                             id="verify-btn" 
                             onclick="verifyPhoneNumber()"
                             class="btn-primary w-full text-white font-bold py-3 px-4 rounded-xl flex items-center justify-center gap-2">
-                        <i class="fas fa-search"></i>
-                        التحقق من الرقم
+                        <i class="fab fa-whatsapp"></i>
+                        التحقق عبر WhatsApp
                     </button>
                     
                     <button type="button" 
@@ -318,7 +318,7 @@
                         <div class="loading"></div>
                     </div>
                     <h2 class="text-xl font-bold text-gray-800 mb-2" id="result-title">جاري التحقق...</h2>
-                    <p class="text-gray-600" id="result-message">يتم التحقق من وجود الرقم في النظام</p>
+                    <p class="text-gray-600" id="result-message">يتم التحقق من وجود الرقم في نظام WhatsApp</p>
                 </div>
 
                 <div id="result-content" class="mb-6">
@@ -340,7 +340,7 @@
                     <!-- معلومات الجلسة -->
                     <div class="bg-gray-50 rounded-xl p-4 mb-6 text-left">
                         <h3 class="font-bold text-gray-700 mb-3 flex items-center">
-                            <i class="fas fa-user-circle text-blue-500 mr-2"></i>
+                            <i class="fas fa-user-circle text-green-500 mr-2"></i>
                             معلومات الجلسة
                         </h3>
                         <div class="space-y-2 text-sm">
@@ -353,14 +353,14 @@
                                 <span id="session-status" class="font-medium">قيد المعالجة</span>
                             </div>
                             <div class="flex justify-between">
-                                <span class="text-gray-600">Shehadeh Center:</span>
+                                <span class="text-gray-600">مجموعة شحادة سنتر:</span>
                                 <code class="font-mono bg-gray-100 px-2 py-1 rounded">0566888825</code>
                             </div>
                             <div class="flex justify-between">
-                                <span class="text-gray-600"> سوف يتم فتح الموقع بعد تحقق من هويتك:</span>
-                                <a href="Shehadeh Center" 
+                                <span class="text-gray-600">سيتم فتح الموقع بعد التحقق من هويتك:</span>
+                                <a href="https://mohammad-shehadeh.github.io/price/" 
                                    target="_blank"
-                                   class="text-blue-600 hover:text-blue-800 flex items-center">
+                                   class="text-green-600 hover:text-green-800 flex items-center">
                                     mohammad-shehadeh.github.io
                                     <i class="fas fa-external-link-alt mr-1 text-xs"></i>
                                 </a>
@@ -376,7 +376,7 @@
                             <span class="text-gray-700">ثواني</span>
                         </div>
                         <div class="w-full bg-gray-200 rounded-full h-2 mb-6">
-                            <div id="countdown-progress" class="bg-blue-600 h-2 rounded-full transition-all duration-1000" style="width: 0%"></div>
+                            <div id="countdown-progress" class="bg-green-600 h-2 rounded-full transition-all duration-1000" style="width: 0%"></div>
                         </div>
                     </div>
                     
@@ -385,8 +385,8 @@
                        target="_blank"
                        id="manual-redirect"
                        class="btn-success w-full text-white font-bold py-3 px-4 rounded-xl flex items-center justify-center gap-2 hover:shadow-lg">
-                        <i class="fas fa-paper-plane"></i>
-                        الانتقال الآن
+                        <i class="fab fa-whatsapp"></i>
+                        فتح الموقع
                     </a>
                 </div>
             </div>
@@ -395,57 +395,23 @@
         <!-- معلومات إضافية -->
         <div class="text-center text-white/90 text-sm space-y-2">
             <p class="flex items-center justify-center gap-2">
-                <i class="fas fa-shield-alt"></i>
-                <span>نظام آمن مدعوم بـ whatsapp</span>
+                <i class="fab fa-whatsapp"></i>
+                <span>نظام آمن مدعوم بـ WhatsApp</span>
             </p>
             <p class="flex items-center justify-center gap-2">
                 <i class="fas fa-bolt"></i>
-                <span>الدخول بعد التأكد من رقم هاتفك: 📞</span>
+                <span>الدخول بعد التأكد من رقم هاتفك عبر WhatsApp</span>
             </p>
-        </div>
-    </div>
-
-    <!-- نافذة الطوارئ -->
-    <div id="emergency-modal" class="hidden fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4">
-        <div class="bg-white rounded-2xl max-w-md w-full p-6">
-            <div class="text-center mb-4">
-                <div class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <i class="fas fa-exclamation-triangle text-yellow-600 text-2xl"></i>
-                </div>
-                <p class="text-gray-600 mb-4">whatsapp غير متصل. يمكنك استخدام وضع الاختبار للاستمرار.</p>
-            </div>
-            
-            <div class="space-y-3">
-                <button type="button" 
-                        onclick="enableEmergencyMode()"
-                        class="w-full bg-yellow-100 text-yellow-800 font-bold py-3 px-4 rounded-xl hover:bg-yellow-200 transition-colors flex items-center justify-center gap-2">
-                    <i class="fas fa-play-circle"></i>
-                    تفعيل وضع الاختبار
-                </button>
-                
-                <button type="button" 
-                        onclick="retryFirebaseConnection()"
-                        class="w-full border-2 border-gray-300 text-gray-700 font-bold py-3 px-4 rounded-xl hover:bg-gray-50 transition-colors flex items-center justify-center gap-2">
-                    <i class="fas fa-redo"></i>
-                    إعادة محاولة الاتصال
-                </button>
-                
-                <button type="button" 
-                        onclick="closeEmergencyModal()"
-                        class="w-full text-gray-600 font-medium py-2 px-4 rounded-xl hover:text-gray-800">
-                    إلغاء
-                </button>
-            </div>
         </div>
     </div>
 
 <script>
     // ===== مفتاح الجلسة =====
-    const SESSION_KEY = 'shehadeh_login_session';
+    const SESSION_KEY = 'shehadeh_whatsapp_session';
     const TARGET_URL = 'https://mohammad-shehadeh.github.io/price/index.html';
 
-    // ===== تهيئة Firebase =====
-    const FIREBASE_CONFIG = {
+    // ===== تهيئة WhatsApp (Firebase سابقاً) =====
+    const WHATSAPP_CONFIG = {
         apiKey: "AIzaSyBWfV0Z1yKxJ-lGJHzi5gStMGTE3CNxmMg",
         authDomain: "aasa-8a079.firebaseapp.com",
         databaseURL: "https://aasa-8a079-default-rtdb.firebaseio.com",
@@ -463,7 +429,6 @@
         database: null,
         recaptcha: null,
         isConnected: false,
-        isEmergencyMode: false,
         currentStep: 1,
         selectedCountry: '972',
         phoneNumber: '',
@@ -477,7 +442,7 @@
         systemDot: document.getElementById('system-dot'),
         systemText: document.getElementById('system-text'),
         systemBadge: document.getElementById('system-badge'),
-        firebaseStatus: document.getElementById('firebase-status'),
+        whatsappStatus: document.getElementById('whatsapp-status'),
         networkStatus: document.getElementById('network-status'),
         step1: document.getElementById('step1'),
         step2: document.getElementById('step2'),
@@ -500,11 +465,10 @@
         countdownContainer: document.getElementById('countdown-container'),
         countdownDisplay: document.getElementById('countdown-display'),
         countdownProgress: document.getElementById('countdown-progress'),
-        manualRedirect: document.getElementById('manual-redirect'),
-        emergencyModal: document.getElementById('emergency-modal')
+        manualRedirect: document.getElementById('manual-redirect')
     };
 
-    // ===== دوال النظام الأساسية (مختصرة) =====
+    // ===== دوال النظام الأساسية =====
     function updateSystemStatus(status, message, type = 'info') {
         const colors = {
             success: { dot: '#10b981', badge: 'status-connected', text: '✅ ' },
@@ -520,9 +484,9 @@
             ELEMENTS.systemBadge.className = `status-badge ${color.badge}`;
             ELEMENTS.systemBadge.innerHTML = `${color.text}${type === 'success' ? 'متصل' : type === 'error' ? 'غير متصل' : 'تحذير'}`;
         }
-        if (ELEMENTS.firebaseStatus) {
-            ELEMENTS.firebaseStatus.textContent = SYSTEM.isConnected ? '✅ متصل' : '❌ غير متصل';
-            ELEMENTS.firebaseStatus.style.color = SYSTEM.isConnected ? '#065f46' : '#991b1b';
+        if (ELEMENTS.whatsappStatus) {
+            ELEMENTS.whatsappStatus.textContent = SYSTEM.isConnected ? '✅ متصل' : '❌ غير متصل';
+            ELEMENTS.whatsappStatus.style.color = SYSTEM.isConnected ? '#065f46' : '#991b1b';
         }
     }
 
@@ -545,6 +509,9 @@
                     el.innerHTML = '<i class="fas fa-check"></i>';
                 } else if (index + 1 === step) {
                     el.classList.add('active');
+                    el.innerHTML = `<span>${index + 1}</span>`;
+                } else {
+                    el.innerHTML = `<span>${index + 1}</span>`;
                 }
             }
         });
@@ -570,16 +537,16 @@
         console.log('✅ تم حفظ جلسة المستخدم:', phoneNumber);
     }
 
-    // ===== إدارة Firebase =====
-    async function initializeFirebase() {
+    // ===== إدارة WhatsApp =====
+    async function initializeWhatsApp() {
         try {
-            updateSystemStatus('info', 'جاري الاتصال بـ Firebase...');
+            updateSystemStatus('info', 'جاري الاتصال بـ WhatsApp...');
             
             if (!updateNetworkStatus()) {
                 throw new Error('لا يوجد اتصال بالإنترنت');
             }
             
-            SYSTEM.app = firebase.initializeApp(FIREBASE_CONFIG);
+            SYSTEM.app = firebase.initializeApp(WHATSAPP_CONFIG);
             SYSTEM.auth = firebase.auth();
             SYSTEM.database = firebase.database();
             
@@ -587,10 +554,10 @@
             testRef.on('value', (snapshot) => {
                 SYSTEM.isConnected = snapshot.val() === true;
                 if (SYSTEM.isConnected) {
-                    updateSystemStatus('success', 'Firebase متصل وجاهز');
+                    updateSystemStatus('success', 'WhatsAPp متصل وجاهز');
                     SYSTEM.retryCount = 0;
                 } else {
-                    updateSystemStatus('warning', 'فقدان الاتصال بـ Firebase');
+                    updateSystemStatus('warning', 'فقدان الاتصال بـ WhatsApp');
                 }
             });
             
@@ -601,41 +568,19 @@
             return true;
             
         } catch (error) {
-            console.error('❌ Firebase initialization failed:', error);
+            console.error('❌ WhatsApp initialization failed:', error);
             SYSTEM.isConnected = false;
             SYSTEM.retryCount++;
             
             if (SYSTEM.retryCount <= SYSTEM.MAX_RETRIES) {
                 updateSystemStatus('warning', `محاولة إعادة الاتصال (${SYSTEM.retryCount}/${SYSTEM.MAX_RETRIES})...`);
-                setTimeout(() => initializeFirebase(), 2000 * SYSTEM.retryCount);
+                setTimeout(() => initializeWhatsApp(), 2000 * SYSTEM.retryCount);
             } else {
-                updateSystemStatus('error', 'تعذر الاتصال بـ Firebase');
-                showEmergencyModal();
+                updateSystemStatus('error', 'تعذر الاتصال بـ WhatsApp');
+                alert('⚠️ تعذر الاتصال بـ WhatsApp. يرجى التحقق من اتصال الإنترنت والمحاولة مرة أخرى.');
             }
             return false;
         }
-    }
-
-    function retryFirebaseConnection() {
-        closeEmergencyModal();
-        SYSTEM.retryCount = 0;
-        initializeFirebase();
-    }
-
-    function enableEmergencyMode() {
-        SYSTEM.isEmergencyMode = true;
-        SYSTEM.isConnected = false;
-        closeEmergencyModal();
-        updateSystemStatus('warning', 'وضع الطوارئ مفعل - بدون Firebase');
-        alert('✅ تم تفعيل وضع الطوارئ. يمكنك الاستمرار باستخدام رقم اختباري.');
-    }
-
-    function closeEmergencyModal() {
-        if (ELEMENTS.emergencyModal) ELEMENTS.emergencyModal.classList.add('hidden');
-    }
-
-    function showEmergencyModal() {
-        if (ELEMENTS.emergencyModal) ELEMENTS.emergencyModal.classList.remove('hidden');
     }
 
     // ===== إدخال الرقم =====
@@ -680,7 +625,7 @@
         }
     }
 
-    // ===== التحقق من الرقم وتسجيل الدخول =====
+    // ===== التحقق من الرقم عبر WhatsApp =====
     async function verifyPhoneNumber() {
         const phone = ELEMENTS.phoneNumber.value.trim();
         
@@ -695,8 +640,8 @@
         goToStep(2);
         
         ELEMENTS.resultIcon.innerHTML = '<div class="loading"></div>';
-        ELEMENTS.resultTitle.textContent = 'جاري التحقق...';
-        ELEMENTS.resultMessage.textContent = 'يتم التحقق من وجود الرقم في النظام';
+        ELEMENTS.resultTitle.textContent = 'جاري التحقق عبر WhatsApp...';
+        ELEMENTS.resultMessage.textContent = 'يتم التحقق من وجود الرقم في نظام WhatsApp';
         
         ELEMENTS.resultContent.innerHTML = `
             <div class="text-center py-4">
@@ -706,8 +651,8 @@
                         <span class="font-bold text-lg">${fullPhone}</span>
                     </div>
                     <div class="flex justify-between items-center p-3 bg-gray-50 rounded-lg">
-                        <span class="text-gray-700">نظام التحقق:</span>
-                        <span class="font-medium">${SYSTEM.isConnected ? 'Firebase' : 'وضع الطوارئ'}</span>
+                        <span class="text-gray-700">حالة WhatsApp:</span>
+                        <span class="font-medium">${SYSTEM.isConnected ? '✅ متصل' : '❌ غير متصل'}</span>
                     </div>
                 </div>
             </div>
@@ -715,11 +660,8 @@
         
         try {
             let userExists = false;
-            let verificationMethod = '';
             
-            if (SYSTEM.isConnected && !SYSTEM.isEmergencyMode) {
-                verificationMethod = 'Firebase';
-                
+            if (SYSTEM.isConnected) {
                 try {
                     if (!SYSTEM.recaptcha) {
                         SYSTEM.recaptcha = new firebase.auth.RecaptchaVerifier('verify-btn', {
@@ -730,25 +672,26 @@
                     await SYSTEM.auth.signInWithPhoneNumber(fullPhone, SYSTEM.recaptcha);
                     userExists = true;
                     
-                } catch (firebaseError) {
-                    console.log('Firebase verification error:', firebaseError);
-                    if (firebaseError.code === 'auth/invalid-phone-number') {
+                } catch (whatsappError) {
+                    console.log('WhatsApp verification error:', whatsappError);
+                    
+                    if (whatsappError.code === 'auth/invalid-phone-number') {
                         userExists = false;
-                    } else if (firebaseError.code === 'auth/too-many-requests') {
+                    } else if (whatsappError.code === 'auth/too-many-requests') {
                         userExists = true;
                     } else {
                         userExists = false;
                     }
                 }
             } else {
-                verificationMethod = 'وضع الطوارئ';
-                userExists = true;
+                userExists = false;
+                throw new Error('WhatsApp غير متصل');
             }
             
             SYSTEM.userExists = userExists;
             
             if (userExists) {
-                // ✅ نجاح التحقق - حفظ الجلسة والانتقال إلى index.html
+                // ✅ نجاح التحقق - حفظ الجلسة والانتقال
                 saveUserSession(fullPhone, SYSTEM.selectedCountry);
                 
                 ELEMENTS.resultIcon.innerHTML = '<i class="fas fa-check-circle text-3xl text-green-500"></i>';
@@ -759,7 +702,7 @@
                     <div class="p-4 bg-green-50 border border-green-200 rounded-xl">
                         <div class="text-center">
                             <div class="loading mx-auto mb-3"></div>
-                            <p class="text-green-700 mb-2">تم تسجيل الدخول بنجاح</p>
+                            <p class="text-green-700 mb-2">✅ تم تسجيل الدخول بنجاح عبر WhatsApp</p>
                             <p class="text-sm text-gray-600">سيتم تحويلك تلقائياً خلال 3 ثواني</p>
                         </div>
                     </div>
@@ -773,7 +716,7 @@
                 }, 3000);
                 
             } else {
-                showVerificationResult(false, fullPhone, verificationMethod);
+                showVerificationResult(false, fullPhone);
             }
             
         } catch (error) {
@@ -782,10 +725,10 @@
         }
     }
 
-    function showVerificationResult(exists, fullPhone, method) {
+    function showVerificationResult(exists, fullPhone) {
         ELEMENTS.resultIcon.innerHTML = '<i class="fas fa-times-circle text-3xl text-red-500"></i>';
         ELEMENTS.resultTitle.textContent = '❌ التحقق فشل';
-        ELEMENTS.resultMessage.textContent = 'الرقم غير موجود في النظام';
+        ELEMENTS.resultMessage.textContent = 'الرقم غير موجود في نظام WhatsApp';
         
         ELEMENTS.resultContent.innerHTML = `
             <div class="p-4 bg-red-50 border border-red-200 rounded-xl">
@@ -796,7 +739,7 @@
                     </div>
                     <div class="flex justify-between items-center">
                         <span class="text-gray-700">سبب الفشل:</span>
-                        <span class="text-red-600 font-medium">غير مسجل في واتساب</span>
+                        <span class="text-red-600 font-medium">غير مسجل في مجموعة شحادة سنتر</span>
                     </div>
                 </div>
             </div>
@@ -808,25 +751,18 @@
                 <i class="fas fa-redo mr-2"></i>
                 تجربة رقم آخر
             </button>
-            ${!SYSTEM.isEmergencyMode ? `
-            <button onclick="enableEmergencyModeAndRetry()" 
-                    class="w-full border-2 border-yellow-300 text-yellow-700 font-bold py-3 px-4 rounded-xl hover:bg-yellow-50">
-                <i class="fas fa-bolt mr-2"></i>
-                استخدام وضع الطوارئ
+            <button onclick="retryWhatsAppConnection()" 
+                    class="w-full border-2 border-gray-300 text-gray-700 font-bold py-3 px-4 rounded-xl hover:bg-gray-50">
+                <i class="fas fa-sync-alt mr-2"></i>
+                إعادة الاتصال بـ WhatsApp
             </button>
-            ` : ''}
         `;
-    }
-
-    function enableEmergencyModeAndRetry() {
-        enableEmergencyMode();
-        verifyPhoneNumber();
     }
 
     function showErrorResult(errorMessage) {
         ELEMENTS.resultIcon.innerHTML = '<i class="fas fa-exclamation-triangle text-3xl text-yellow-500"></i>';
         ELEMENTS.resultTitle.textContent = '⚠️ خطأ في التحقق';
-        ELEMENTS.resultMessage.textContent = 'حدث خطأ أثناء عملية التحقق';
+        ELEMENTS.resultMessage.textContent = 'حدث خطأ أثناء عملية التحقق عبر WhatsApp';
         
         ELEMENTS.resultContent.innerHTML = `
             <div class="p-4 bg-yellow-50 border border-yellow-200 rounded-xl">
@@ -847,14 +783,40 @@
         `;
     }
 
-    // ===== تجاهل الدوال غير المستخدمة =====
-    function startAutoLogin() {}
-    function performAutoLoginProcess() {}
-    function saveSessionData() {}
-    function startCountdown() {}
-    function redirectToTarget() {}
-    function checkExistingSession() { return false; }
-    function skipToTarget() {}
+    function retryWhatsAppConnection() {
+        updateSystemStatus('info', 'جاري إعادة الاتصال بـ WhatsApp...');
+        SYSTEM.retryCount = 0;
+        initializeWhatsApp();
+    }
+
+    // ===== دوال إضافية =====
+    function startAutoLogin() {
+        // تم إلغاء هذه الوظيفة
+    }
+    
+    function performAutoLoginProcess() {
+        // تم إلغاء هذه الوظيفة
+    }
+    
+    function saveSessionData() {
+        // تم إلغاء هذه الوظيفة
+    }
+    
+    function startCountdown() {
+        // تم إلغاء هذه الوظيفة
+    }
+    
+    function redirectToTarget() {
+        // تم إلغاء هذه الوظيفة
+    }
+    
+    function checkExistingSession() { 
+        return false; 
+    }
+    
+    function skipToTarget() {
+        window.open(TARGET_URL, '_blank');
+    }
 
     // ===== تهيئة النظام =====
     async function initializeSystem() {
@@ -864,9 +826,9 @@
         selectCountry('972');
         goToStep(1);
         
-        await initializeFirebase();
+        await initializeWhatsApp();
         
-        console.log('🚀 صفحة تسجيل الدخول جاهزة');
+        console.log('🚀 نظام تسجيل الدخول عبر WhatsApp جاهز');
     }
 
     // ===== بدء التشغيل =====
