@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>الدخول الآلي - نظام متكامل</title>
     
-    <!-- WhatsApp SDK -->
+    <!-- Firebase SDK -->
     <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-database-compat.js"></script>
@@ -50,6 +50,17 @@
         .btn-success:hover {
             transform: translateY(-2px);
             box-shadow: 0 10px 25px rgba(16, 185, 129, 0.4);
+        }
+        
+        .btn-disabled {
+            background: linear-gradient(to right, #9ca3af, #6b7280);
+            cursor: not-allowed;
+            opacity: 0.7;
+        }
+        
+        .btn-disabled:hover {
+            transform: none;
+            box-shadow: none;
         }
         
         .loading {
@@ -172,6 +183,18 @@
             font-weight: bold;
             color: #3b82f6;
         }
+        
+        .verification-lock {
+            background: linear-gradient(145deg, #fef9c3, #fef08a);
+            border: 2px solid #eab308;
+            padding: 12px;
+            border-radius: 12px;
+            text-align: center;
+        }
+        
+        .hidden-link {
+            display: none;
+        }
     </style>
 </head>
 <body class="flex flex-col items-center justify-center p-4 min-h-screen">
@@ -179,10 +202,10 @@
         <!-- شعار النظام -->
         <div class="text-center mb-8 slide-in">
             <div class="inline-block p-4 bg-white/20 backdrop-blur-sm rounded-2xl mb-4">
-                <i class="fab fa-whatsapp text-white text-4xl"></i>
+                <i class="fas fa-shield-alt text-white text-4xl"></i>
             </div>
             <h1 class="text-3xl font-bold text-white mb-2">نظام الدخول المصرح</h1>
-            <p class="text-blue-100 opacity-90">التحقق من المستخدم عبر WhatsApp ضمن مجموعة شحادة سنتر</p>
+            <p class="text-blue-100 opacity-90">التحقق الإلزامي من المستخدم - مجموعة شحادة سنتر</p>
         </div>
 
         <!-- بطاقة النظام الرئيسية -->
@@ -226,35 +249,40 @@
                 </div>
             </div>
 
-            <!-- الخطوة 1: إدخال الرقم -->
+            <!-- رسالة تحذير أمني -->
+            <div class="verification-lock mb-6">
+                <i class="fas fa-lock text-yellow-600 text-lg mb-2"></i>
+                <p class="text-yellow-800 font-bold text-sm">التحقق الإلزامي مطلوب</p>
+                <p class="text-yellow-700 text-xs">لا يمكن الوصول للموقع بدون التحقق من رقم الهاتف</p>
+            </div>
+
+            <!-- الخطوة 1: إدخال الرقم (الطريقة الوحيدة) -->
             <div id="step1-content" class="step-content fade-in">
                 <div class="text-center mb-6">
-                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fab fa-whatsapp text-green-600 text-2xl"></i>
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-phone-alt text-blue-600 text-2xl"></i>
                     </div>
-                    <h2 class="text-xl font-bold text-gray-800 mb-2">أدخل رقم واتس اب</h2>
-                    <p class="text-gray-600">أدخل رقم هاتفك للتحقق من وجوده في مجموعة شحادة سنتر</p>
+                    <h2 class="text-xl font-bold text-gray-800 mb-2">التحقق الإلزامي من رقم الهاتف</h2>
+                    <p class="text-gray-600">يجب إدخال رقم هاتف مسجل في مجموعة شحادة سنتر للدخول</p>
                 </div>
 
                 <div class="space-y-4">
                     <!-- اختيار رمز الدولة -->
                     <div>
                         <label class="block text-gray-700 mb-2 font-medium">
-                            <i class="fas fa-globe-asia text-green-500 mr-2"></i>
+                            <i class="fas fa-globe-asia text-blue-500 mr-2"></i>
                             اختر رمز الدولة
                         </label>
                         <div class="grid grid-cols-2 gap-3">
                             <button type="button" id="btn-972" 
-                                    class="country-btn active border-blue-500 bg-blue-50" 
+                                    class="country-btn active border-blue-500 bg-blue-50 p-3 rounded-xl border-2 flex flex-col items-center transition-all" 
                                     onclick="selectCountry('972')">
-                                <span class="text-lg"></span>
                                 <span class="font-bold">+972</span>
                                 <span class="text-xs text-gray-600">فلسطين</span>
                             </button>
                             <button type="button" id="btn-970" 
-                                    class="country-btn border-gray-300 bg-gray-50" 
+                                    class="country-btn border-gray-300 bg-gray-50 p-3 rounded-xl border-2 flex flex-col items-center transition-all" 
                                     onclick="selectCountry('970')">
-                                <span class="text-lg"></span>
                                 <span class="font-bold">+970</span>
                                 <span class="text-xs text-gray-600">فلسطين</span>
                             </button>
@@ -264,10 +292,10 @@
                     <!-- إدخال الرقم -->
                     <div>
                         <label class="block text-gray-700 mb-2 font-medium">
-                            <i class="fas fa-mobile-alt text-green-500 mr-2"></i>
+                            <i class="fas fa-mobile-alt text-blue-500 mr-2"></i>
                             رقم الهاتف
                         </label>
-                        <div class="flex items-center border-2 border-gray-300 rounded-xl overflow-hidden transition-all duration-300 focus-within:border-green-500 focus-within:shadow-md">
+                        <div class="flex items-center border-2 border-gray-300 rounded-xl overflow-hidden transition-all duration-300 focus-within:border-blue-500 focus-within:shadow-md">
                             <div class="bg-gray-50 px-4 py-3 font-bold text-gray-700 border-r border-gray-300">
                                 <span id="country-code">+972</span>
                             </div>
@@ -281,11 +309,11 @@
                         <div class="flex items-center justify-between mt-2">
                             <p class="text-sm text-gray-500">
                                 <i class="fas fa-info-circle mr-1"></i>
-                                يجب أن يبدأ بـ 5 ويتكون من 9 أرقام بدون صفر
+                                يجب أن يبدأ بـ 5 ويتكون من 9 أرقام
                             </p>
                             <button type="button" 
                                     onclick="fillTestNumber()" 
-                                    class="text-sm text-green-600 hover:text-green-800 font-medium">
+                                    class="text-sm text-blue-600 hover:text-blue-800 font-medium">
                                 <i class="fas fa-vial mr-1"></i>
                                 رقم تجريبي
                             </button>
@@ -293,21 +321,18 @@
                     </div>
                 </div>
 
-                <div class="mt-8 space-y-3">
+                <div class="mt-8">
                     <button type="button" 
                             id="verify-btn" 
                             onclick="verifyPhoneNumber()"
-                            class="btn-primary w-full text-white font-bold py-3 px-4 rounded-xl flex items-center justify-center gap-2">
-                        <i class="fab fa-whatsapp"></i>
-                        التحقق عبر WhatsApp
+                            class="btn-primary w-full text-white font-bold py-3 px-4 rounded-xl flex items-center justify-center gap-2 text-lg">
+                        <i class="fas fa-check-circle"></i>
+                        تحقق وادخل
                     </button>
-                    
-                    <button type="button" 
-                            onclick="skipToTarget()" 
-                            class="w-full border-2 border-gray-300 text-gray-700 font-bold py-3 px-4 rounded-xl hover:bg-gray-50 transition-colors">
-                        <i class="fas fa-external-link-alt mr-2"></i>
-                        الانتقال مباشرة
-                    </button>
+                    <p class="text-center text-xs text-gray-500 mt-3">
+                        <i class="fas fa-shield-alt mr-1"></i>
+                        لن تتمكن من الدخول بدون التحقق
+                    </p>
                 </div>
             </div>
 
@@ -318,7 +343,7 @@
                         <div class="loading"></div>
                     </div>
                     <h2 class="text-xl font-bold text-gray-800 mb-2" id="result-title">جاري التحقق...</h2>
-                    <p class="text-gray-600" id="result-message">يتم التحقق من وجود الرقم في نظام WhatsApp</p>
+                    <p class="text-gray-600" id="result-message">يتم التحقق من وجود الرقم في النظام</p>
                 </div>
 
                 <div id="result-content" class="mb-6">
@@ -330,509 +355,549 @@
                 </div>
             </div>
 
-            <!-- الخطوة 3: الدخول الآلي -->
+            <!-- الخطوة 3: الدخول الآلي (يظهر فقط بعد التحقق الناجح) -->
             <div id="step3-content" class="step-content hidden">
                 <div class="text-center py-4">
-                    <div class="loading mx-auto mb-6" style="width: 40px; height: 40px;"></div>
-                    <h2 class="text-xl font-bold text-gray-800 mb-2 pulse-animation" id="auto-login-title">جاري عملية الدخول الآلي...</h2>
-                    <p class="text-gray-600 mb-6" id="auto-login-message">يرجى الانتظار حتى تكتمل العملية</p>
+                    <div class="success-check mx-auto mb-6">
+                        <i class="fas fa-check text-white text-4xl"></i>
+                    </div>
+                    <h2 class="text-xl font-bold text-gray-800 mb-2">✅ تم التحقق بنجاح</h2>
+                    <p class="text-gray-600 mb-6">تم التحقق من هويتك، جاري تحويلك إلى الموقع</p>
                     
                     <!-- معلومات الجلسة -->
-                    <div class="bg-gray-50 rounded-xl p-4 mb-6 text-left">
-                        <h3 class="font-bold text-gray-700 mb-3 flex items-center">
-                            <i class="fas fa-user-circle text-green-500 mr-2"></i>
-                            معلومات الجلسة
+                    <div class="bg-gray-50 rounded-xl p-4 mb-6 text-right">
+                        <h3 class="font-bold text-gray-700 mb-3 flex items-center justify-center gap-2">
+                            <i class="fas fa-check-circle text-green-500"></i>
+                            تم تفعيل الدخول الآلي
                         </h3>
                         <div class="space-y-2 text-sm">
-                            <div class="flex justify-between">
-                                <span class="text-gray-600">رقم الهاتف:</span>
-                                <span id="session-phone" class="font-bold">+972 5XXXXXXXX</span>
+                            <div class="flex justify-between items-center border-b border-gray-200 pb-2">
+                                <span class="font-bold text-green-600">رقم الهاتف الموثق:</span>
+                                <span id="session-phone" class="font-bold bg-white px-3 py-1 rounded-lg">+972 5XXXXXXXX</span>
                             </div>
-                            <div class="flex justify-between">
-                                <span class="text-gray-600">حالة التحقق:</span>
-                                <span id="session-status" class="font-medium">قيد المعالجة</span>
-                            </div>
-                            <div class="flex justify-between">
-                                <span class="text-gray-600">مجموعة شحادة سنتر:</span>
-                                <code class="font-mono bg-gray-100 px-2 py-1 rounded">0566888825</code>
-                            </div>
-                            <div class="flex justify-between">
-                                <span class="text-gray-600">سيتم فتح الموقع بعد التحقق من هويتك:</span>
-                                <a href="https://mohammad-shehadeh.github.io/price/" 
-                                   target="_blank"
-                                   class="text-green-600 hover:text-green-800 flex items-center">
-                                    mohammad-shehadeh.github.io
-                                    <i class="fas fa-external-link-alt mr-1 text-xs"></i>
-                                </a>
+                            <div class="flex justify-between items-center">
+                                <span class="text-gray-600">حالة الدخول:</span>
+                                <span id="session-status" class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-xs font-bold">تم السماح بالدخول</span>
                             </div>
                         </div>
                     </div>
                     
-                    <!-- العد التنازلي -->
-                    <div id="countdown-container" class="hidden">
+                    <!-- العد التنازلي الإجباري -->
+                    <div id="countdown-container">
                         <div class="flex items-center justify-center gap-2 mb-4">
-                            <span class="text-gray-700">سيتم فتح الموقع</span>
-                            <div class="countdown-number" id="countdown-display">5</div>
+                            <span class="text-gray-700">سيتم فتح الموقع خلال</span>
+                            <div class="countdown-number bg-blue-100 w-12 h-12 rounded-full flex items-center justify-center" id="countdown-display">5</div>
                             <span class="text-gray-700">ثواني</span>
                         </div>
-                        <div class="w-full bg-gray-200 rounded-full h-2 mb-6">
-                            <div id="countdown-progress" class="bg-green-600 h-2 rounded-full transition-all duration-1000" style="width: 0%"></div>
+                        <div class="w-full bg-gray-200 rounded-full h-3 mb-6">
+                            <div id="countdown-progress" class="bg-green-600 h-3 rounded-full transition-all duration-1000" style="width: 0%"></div>
                         </div>
                     </div>
                     
-                    <!-- زر التوجيه اليدوي -->
+                    <!-- رابط الدخول المخفي - يظهر فقط بعد التحقق -->
                     <a href="https://mohammad-shehadeh.github.io/price/" 
-                       target="_blank"
-                       id="manual-redirect"
-                       class="btn-success w-full text-white font-bold py-3 px-4 rounded-xl flex items-center justify-center gap-2 hover:shadow-lg">
-                        <i class="fab fa-whatsapp"></i>
-                        فتح الموقع
+                       id="redirect-link"
+                       class="hidden-link">
+                        رابط الدخول المصرح
                     </a>
+                    
+                    <!-- رسالة تأكيد -->
+                    <div class="bg-green-50 border border-green-200 rounded-xl p-4">
+                        <div class="flex items-center justify-center gap-2 text-green-700">
+                            <i class="fas fa-lock-open"></i>
+                            <span class="font-bold">تم فتح الوصول - جاري التوجيه التلقائي</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <!-- معلومات إضافية -->
+        <!-- معلومات إضافية - تأكيد الأمان -->
         <div class="text-center text-white/90 text-sm space-y-2">
             <p class="flex items-center justify-center gap-2">
-                <i class="fab fa-whatsapp"></i>
-                <span>نظام آمن مدعوم بـ WhatsApp</span>
+                <i class="fas fa-shield-alt"></i>
+                <span>نظام دخول آمن - التحقق الإلزامي عبر WhatsApp</span>
             </p>
-            <p class="flex items-center justify-center gap-2">
-                <i class="fas fa-bolt"></i>
-                <span>الدخول بعد التأكد من رقم هاتفك عبر WhatsApp</span>
+            <p class="flex items-center justify-center gap-2 bg-red-500/20 p-2 rounded-lg">
+                <i class="fas fa-ban"></i>
+                <span class="font-bold">ممنوع التجاوز أو التحايل على نظام التحقق</span>
             </p>
         </div>
     </div>
 
-<script>
-    // ===== مفتاح الجلسة =====
-    const SESSION_KEY = 'shehadeh_whatsapp_session';
-    const TARGET_URL = 'https://mohammad-shehadeh.github.io/price/index.html';
+    <!-- لا توجد نافذة طوارئ - تم إلغاؤها بالكامل -->
 
-    // ===== تهيئة WhatsApp (Firebase سابقاً) =====
-    const WHATSAPP_CONFIG = {
-        apiKey: "AIzaSyBWfV0Z1yKxJ-lGJHzi5gStMGTE3CNxmMg",
-        authDomain: "aasa-8a079.firebaseapp.com",
-        databaseURL: "https://aasa-8a079-default-rtdb.firebaseio.com",
-        projectId: "aasa-8a079",
-        storageBucket: "aasa-8a079.firebasestorage.app",
-        messagingSenderId: "849330713582",
-        appId: "1:849330713582:web:7a11b11ebdb5cdcc8b14ff",
-        measurementId: "G-LY2WSQ21GE"
-    };
+    <script>
+        // ===== مفتاح الجلسة =====
+        const SESSION_KEY = 'shehadeh_verified_session';
+        const TARGET_URL = 'https://mohammad-shehadeh.github.io/price/index.html';
+        
+        // قائمة الأرقام المسموح بها تجريبياً
+        const ALLOWED_NUMBERS = [
+            '599123456',
+            '598765432',
+            '597654321',
+            '592345678',
+            '591234567'
+        ];
 
-    // ===== متغيرات النظام =====
-    const SYSTEM = {
-        app: null,
-        auth: null,
-        database: null,
-        recaptcha: null,
-        isConnected: false,
-        currentStep: 1,
-        selectedCountry: '972',
-        phoneNumber: '',
-        userExists: false,
-        retryCount: 0,
-        MAX_RETRIES: 3
-    };
-
-    // ===== عناصر DOM =====
-    const ELEMENTS = {
-        systemDot: document.getElementById('system-dot'),
-        systemText: document.getElementById('system-text'),
-        systemBadge: document.getElementById('system-badge'),
-        whatsappStatus: document.getElementById('whatsapp-status'),
-        networkStatus: document.getElementById('network-status'),
-        step1: document.getElementById('step1'),
-        step2: document.getElementById('step2'),
-        step3: document.getElementById('step3'),
-        step1Content: document.getElementById('step1-content'),
-        step2Content: document.getElementById('step2-content'),
-        step3Content: document.getElementById('step3-content'),
-        countryCode: document.getElementById('country-code'),
-        phoneNumber: document.getElementById('phone-number'),
-        verifyBtn: document.getElementById('verify-btn'),
-        resultIcon: document.getElementById('result-icon'),
-        resultTitle: document.getElementById('result-title'),
-        resultMessage: document.getElementById('result-message'),
-        resultContent: document.getElementById('result-content'),
-        resultActions: document.getElementById('result-actions'),
-        autoLoginTitle: document.getElementById('auto-login-title'),
-        autoLoginMessage: document.getElementById('auto-login-message'),
-        sessionPhone: document.getElementById('session-phone'),
-        sessionStatus: document.getElementById('session-status'),
-        countdownContainer: document.getElementById('countdown-container'),
-        countdownDisplay: document.getElementById('countdown-display'),
-        countdownProgress: document.getElementById('countdown-progress'),
-        manualRedirect: document.getElementById('manual-redirect')
-    };
-
-    // ===== دوال النظام الأساسية =====
-    function updateSystemStatus(status, message, type = 'info') {
-        const colors = {
-            success: { dot: '#10b981', badge: 'status-connected', text: '✅ ' },
-            error: { dot: '#ef4444', badge: 'status-disconnected', text: '❌ ' },
-            warning: { dot: '#f59e0b', badge: 'status-warning', text: '⚠️ ' },
-            info: { dot: '#3b82f6', badge: '', text: 'ℹ️ ' }
+        // ===== تهيئة Firebase (خدمة WhatsApp) =====
+        const WHATSAPP_CONFIG = {
+            apiKey: "AIzaSyBWfV0Z1yKxJ-lGJHzi5gStMGTE3CNxmMg",
+            authDomain: "aasa-8a079.firebaseapp.com",
+            databaseURL: "https://aasa-8a079-default-rtdb.firebaseio.com",
+            projectId: "aasa-8a079",
+            storageBucket: "aasa-8a079.firebasestorage.app",
+            messagingSenderId: "849330713582",
+            appId: "1:849330713582:web:7a11b11ebdb5cdcc8b14ff",
+            measurementId: "G-LY2WSQ21GE"
         };
-        
-        const color = colors[type];
-        if (ELEMENTS.systemDot) ELEMENTS.systemDot.style.backgroundColor = color.dot;
-        if (ELEMENTS.systemText) ELEMENTS.systemText.textContent = message;
-        if (ELEMENTS.systemBadge) {
-            ELEMENTS.systemBadge.className = `status-badge ${color.badge}`;
-            ELEMENTS.systemBadge.innerHTML = `${color.text}${type === 'success' ? 'متصل' : type === 'error' ? 'غير متصل' : 'تحذير'}`;
-        }
-        if (ELEMENTS.whatsappStatus) {
-            ELEMENTS.whatsappStatus.textContent = SYSTEM.isConnected ? '✅ متصل' : '❌ غير متصل';
-            ELEMENTS.whatsappStatus.style.color = SYSTEM.isConnected ? '#065f46' : '#991b1b';
-        }
-    }
 
-    function updateNetworkStatus() {
-        const isOnline = navigator.onLine;
-        if (ELEMENTS.networkStatus) {
-            ELEMENTS.networkStatus.textContent = isOnline ? '✅ متصل' : '❌ غير متصل';
-            ELEMENTS.networkStatus.style.color = isOnline ? '#065f46' : '#991b1b';
-        }
-        return isOnline;
-    }
-
-    function goToStep(step) {
-        SYSTEM.currentStep = step;
-        [ELEMENTS.step1, ELEMENTS.step2, ELEMENTS.step3].forEach((el, index) => {
-            if (el) {
-                el.classList.remove('active', 'completed');
-                if (index + 1 < step) {
-                    el.classList.add('completed');
-                    el.innerHTML = '<i class="fas fa-check"></i>';
-                } else if (index + 1 === step) {
-                    el.classList.add('active');
-                    el.innerHTML = `<span>${index + 1}</span>`;
-                } else {
-                    el.innerHTML = `<span>${index + 1}</span>`;
-                }
-            }
-        });
-        
-        [ELEMENTS.step1Content, ELEMENTS.step2Content, ELEMENTS.step3Content].forEach(el => {
-            if (el) el.classList.add('hidden');
-        });
-        
-        if (step === 1 && ELEMENTS.step1Content) ELEMENTS.step1Content.classList.remove('hidden');
-        else if (step === 2 && ELEMENTS.step2Content) ELEMENTS.step2Content.classList.remove('hidden');
-        else if (step === 3 && ELEMENTS.step3Content) ELEMENTS.step3Content.classList.remove('hidden');
-    }
-
-    // ===== دوال الجلسة =====
-    function saveUserSession(phoneNumber, countryCode) {
-        const sessionData = {
-            phoneNumber: phoneNumber,
-            countryCode: countryCode,
-            loginTime: new Date().toISOString(),
-            timestamp: Date.now()
+        // ===== متغيرات النظام =====
+        const SYSTEM = {
+            app: null,
+            auth: null,
+            database: null,
+            recaptcha: null,
+            isConnected: false,
+            currentStep: 1,
+            selectedCountry: '972',
+            phoneNumber: '',
+            isVerified: false,
+            retryCount: 0,
+            MAX_RETRIES: 3,
+            countdownInterval: null,
+            countdownValue: 5
         };
-        localStorage.setItem(SESSION_KEY, JSON.stringify(sessionData));
-        console.log('✅ تم حفظ جلسة المستخدم:', phoneNumber);
-    }
 
-    // ===== إدارة WhatsApp =====
-    async function initializeWhatsApp() {
-        try {
-            updateSystemStatus('info', 'جاري الاتصال بـ WhatsApp...');
+        // ===== عناصر DOM =====
+        const ELEMENTS = {
+            systemDot: document.getElementById('system-dot'),
+            systemText: document.getElementById('system-text'),
+            systemBadge: document.getElementById('system-badge'),
+            whatsappStatus: document.getElementById('whatsapp-status'),
+            networkStatus: document.getElementById('network-status'),
+            step1: document.getElementById('step1'),
+            step2: document.getElementById('step2'),
+            step3: document.getElementById('step3'),
+            step1Content: document.getElementById('step1-content'),
+            step2Content: document.getElementById('step2-content'),
+            step3Content: document.getElementById('step3-content'),
+            countryCode: document.getElementById('country-code'),
+            phoneNumber: document.getElementById('phone-number'),
+            verifyBtn: document.getElementById('verify-btn'),
+            resultIcon: document.getElementById('result-icon'),
+            resultTitle: document.getElementById('result-title'),
+            resultMessage: document.getElementById('result-message'),
+            resultContent: document.getElementById('result-content'),
+            resultActions: document.getElementById('result-actions'),
+            sessionPhone: document.getElementById('session-phone'),
+            sessionStatus: document.getElementById('session-status'),
+            countdownContainer: document.getElementById('countdown-container'),
+            countdownDisplay: document.getElementById('countdown-display'),
+            countdownProgress: document.getElementById('countdown-progress'),
+            redirectLink: document.getElementById('redirect-link')
+        };
+
+        // ===== دوال النظام الأساسية =====
+        function updateSystemStatus(status, message, type = 'info') {
+            const colors = {
+                success: { dot: '#10b981', badge: 'status-connected', text: '✅ ' },
+                error: { dot: '#ef4444', badge: 'status-disconnected', text: '❌ ' },
+                warning: { dot: '#f59e0b', badge: 'status-warning', text: '⚠️ ' },
+                info: { dot: '#3b82f6', badge: '', text: 'ℹ️ ' }
+            };
             
-            if (!updateNetworkStatus()) {
-                throw new Error('لا يوجد اتصال بالإنترنت');
+            const color = colors[type];
+            if (ELEMENTS.systemDot) ELEMENTS.systemDot.style.backgroundColor = color.dot;
+            if (ELEMENTS.systemText) ELEMENTS.systemText.textContent = message;
+            if (ELEMENTS.systemBadge) {
+                ELEMENTS.systemBadge.className = `status-badge ${color.badge}`;
+                ELEMENTS.systemBadge.innerHTML = `${color.text}${type === 'success' ? 'متصل' : type === 'error' ? 'غير متصل' : 'تحذير'}`;
             }
-            
-            SYSTEM.app = firebase.initializeApp(WHATSAPP_CONFIG);
-            SYSTEM.auth = firebase.auth();
-            SYSTEM.database = firebase.database();
-            
-            const testRef = SYSTEM.database.ref('.info/connected');
-            testRef.on('value', (snapshot) => {
-                SYSTEM.isConnected = snapshot.val() === true;
-                if (SYSTEM.isConnected) {
-                    updateSystemStatus('success', 'WhatsAPp متصل وجاهز');
-                    SYSTEM.retryCount = 0;
-                } else {
-                    updateSystemStatus('warning', 'فقدان الاتصال بـ WhatsApp');
+            if (ELEMENTS.whatsappStatus) {
+                ELEMENTS.whatsappStatus.textContent = SYSTEM.isConnected ? '✅ متصل' : '❌ غير متصل';
+                ELEMENTS.whatsappStatus.style.color = SYSTEM.isConnected ? '#065f46' : '#991b1b';
+            }
+        }
+
+        function updateNetworkStatus() {
+            const isOnline = navigator.onLine;
+            if (ELEMENTS.networkStatus) {
+                ELEMENTS.networkStatus.textContent = isOnline ? '✅ متصل' : '❌ غير متصل';
+                ELEMENTS.networkStatus.style.color = isOnline ? '#065f46' : '#991b1b';
+            }
+            return isOnline;
+        }
+
+        function goToStep(step) {
+            SYSTEM.currentStep = step;
+            [ELEMENTS.step1, ELEMENTS.step2, ELEMENTS.step3].forEach((el, index) => {
+                if (el) {
+                    el.classList.remove('active', 'completed');
+                    if (index + 1 < step) {
+                        el.classList.add('completed');
+                        el.innerHTML = '<i class="fas fa-check"></i>';
+                    } else if (index + 1 === step) {
+                        el.classList.add('active');
+                        el.innerHTML = `<span>${index + 1}</span>`;
+                    } else {
+                        el.innerHTML = `<span>${index + 1}</span>`;
+                    }
                 }
             });
             
-            await SYSTEM.auth.signInAnonymously();
+            [ELEMENTS.step1Content, ELEMENTS.step2Content, ELEMENTS.step3Content].forEach(el => {
+                if (el) el.classList.add('hidden');
+            });
             
-            SYSTEM.isConnected = true;
-            updateSystemStatus('success', 'النظام جاهز للاستخدام');
-            return true;
-            
-        } catch (error) {
-            console.error('❌ WhatsApp initialization failed:', error);
-            SYSTEM.isConnected = false;
-            SYSTEM.retryCount++;
-            
-            if (SYSTEM.retryCount <= SYSTEM.MAX_RETRIES) {
-                updateSystemStatus('warning', `محاولة إعادة الاتصال (${SYSTEM.retryCount}/${SYSTEM.MAX_RETRIES})...`);
-                setTimeout(() => initializeWhatsApp(), 2000 * SYSTEM.retryCount);
-            } else {
-                updateSystemStatus('error', 'تعذر الاتصال بـ WhatsApp');
-                alert('⚠️ تعذر الاتصال بـ WhatsApp. يرجى التحقق من اتصال الإنترنت والمحاولة مرة أخرى.');
-            }
-            return false;
+            if (step === 1 && ELEMENTS.step1Content) ELEMENTS.step1Content.classList.remove('hidden');
+            else if (step === 2 && ELEMENTS.step2Content) ELEMENTS.step2Content.classList.remove('hidden');
+            else if (step === 3 && ELEMENTS.step3Content) ELEMENTS.step3Content.classList.remove('hidden');
         }
-    }
 
-    // ===== إدخال الرقم =====
-    function selectCountry(code) {
-        SYSTEM.selectedCountry = code;
-        if (ELEMENTS.countryCode) ELEMENTS.countryCode.textContent = `+${code}`;
-        
-        document.querySelectorAll('.country-btn').forEach(btn => {
-            btn.classList.remove('active', 'border-blue-500', 'bg-blue-50');
-            btn.classList.add('border-gray-300', 'bg-gray-50');
-        });
-        
-        const activeBtn = document.getElementById(`btn-${code}`);
-        if (activeBtn) {
-            activeBtn.classList.add('active', 'border-blue-500', 'bg-blue-50');
-            activeBtn.classList.remove('border-gray-300', 'bg-gray-50');
+        // ===== دوال الجلسة والتوثيق =====
+        function saveUserSession(phoneNumber) {
+            const sessionData = {
+                phoneNumber: phoneNumber,
+                loginTime: new Date().toISOString(),
+                timestamp: Date.now(),
+                verified: true
+            };
+            localStorage.setItem(SESSION_KEY, JSON.stringify(sessionData));
+            sessionStorage.setItem('verified_phone', phoneNumber);
+            sessionStorage.setItem('access_granted', 'true');
         }
-    }
 
-    function formatPhoneNumber(input) {
-        let value = input.value.replace(/\D/g, '');
-        if (value.length > 9) value = value.substring(0, 9);
-        input.value = value;
-        
-        if (value.length === 9 && value.startsWith('5')) {
-            input.parentElement.classList.add('border-green-500');
-            input.parentElement.classList.remove('border-red-500');
-            if (ELEMENTS.verifyBtn) ELEMENTS.verifyBtn.disabled = false;
-        } else {
-            input.parentElement.classList.add('border-red-500');
-            input.parentElement.classList.remove('border-green-500');
-            if (ELEMENTS.verifyBtn) ELEMENTS.verifyBtn.disabled = true;
-        }
-    }
-
-    function fillTestNumber() {
-        const testNumbers = ['599123456', '598765432', '597654321'];
-        const randomNumber = testNumbers[Math.floor(Math.random() * testNumbers.length)];
-        if (ELEMENTS.phoneNumber) {
-            ELEMENTS.phoneNumber.value = randomNumber;
-            formatPhoneNumber(ELEMENTS.phoneNumber);
-        }
-    }
-
-    // ===== التحقق من الرقم عبر WhatsApp =====
-    async function verifyPhoneNumber() {
-        const phone = ELEMENTS.phoneNumber.value.trim();
-        
-        if (phone.length !== 9 || !phone.startsWith('5')) {
-            alert('⚠️ الرقم غير صحيح. يجب أن يتكون من 9 أرقام ويبدأ بـ 5');
-            return;
-        }
-        
-        SYSTEM.phoneNumber = phone;
-        const fullPhone = `+${SYSTEM.selectedCountry}${phone}`;
-        
-        goToStep(2);
-        
-        ELEMENTS.resultIcon.innerHTML = '<div class="loading"></div>';
-        ELEMENTS.resultTitle.textContent = 'جاري التحقق عبر WhatsApp...';
-        ELEMENTS.resultMessage.textContent = 'يتم التحقق من وجود الرقم في نظام WhatsApp';
-        
-        ELEMENTS.resultContent.innerHTML = `
-            <div class="text-center py-4">
-                <div class="space-y-3">
-                    <div class="flex justify-between items-center p-3 bg-gray-50 rounded-lg">
-                        <span class="text-gray-700">الرقم المدخل:</span>
-                        <span class="font-bold text-lg">${fullPhone}</span>
-                    </div>
-                    <div class="flex justify-between items-center p-3 bg-gray-50 rounded-lg">
-                        <span class="text-gray-700">حالة WhatsApp:</span>
-                        <span class="font-medium">${SYSTEM.isConnected ? '✅ متصل' : '❌ غير متصل'}</span>
-                    </div>
-                </div>
-            </div>
-        `;
-        
-        try {
-            let userExists = false;
-            
-            if (SYSTEM.isConnected) {
-                try {
-                    if (!SYSTEM.recaptcha) {
-                        SYSTEM.recaptcha = new firebase.auth.RecaptchaVerifier('verify-btn', {
-                            size: 'invisible'
-                        });
-                    }
-                    
-                    await SYSTEM.auth.signInWithPhoneNumber(fullPhone, SYSTEM.recaptcha);
-                    userExists = true;
-                    
-                } catch (whatsappError) {
-                    console.log('WhatsApp verification error:', whatsappError);
-                    
-                    if (whatsappError.code === 'auth/invalid-phone-number') {
-                        userExists = false;
-                    } else if (whatsappError.code === 'auth/too-many-requests') {
-                        userExists = true;
+        // ===== إدارة WhatsApp =====
+        async function initializeWhatsApp() {
+            try {
+                updateSystemStatus('info', 'جاري الاتصال بخدمة التحقق...');
+                
+                if (!updateNetworkStatus()) {
+                    throw new Error('لا يوجد اتصال بالإنترنت');
+                }
+                
+                SYSTEM.app = firebase.initializeApp(WHATSAPP_CONFIG);
+                SYSTEM.auth = firebase.auth();
+                SYSTEM.database = firebase.database();
+                
+                const testRef = SYSTEM.database.ref('.info/connected');
+                testRef.on('value', (snapshot) => {
+                    SYSTEM.isConnected = snapshot.val() === true;
+                    if (SYSTEM.isConnected) {
+                        updateSystemStatus('success', 'خدمة التحقق جاهزة');
+                        SYSTEM.retryCount = 0;
                     } else {
-                        userExists = false;
+                        updateSystemStatus('warning', 'جاري إعادة الاتصال...');
                     }
+                });
+                
+                await SYSTEM.auth.signInAnonymously();
+                SYSTEM.isConnected = true;
+                updateSystemStatus('success', 'النظام جاهز - يمكنك التحقق الآن');
+                return true;
+                
+            } catch (error) {
+                console.error('❌ Connection failed:', error);
+                SYSTEM.isConnected = false;
+                SYSTEM.retryCount++;
+                
+                if (SYSTEM.retryCount <= SYSTEM.MAX_RETRIES) {
+                    updateSystemStatus('warning', `محاولة إعادة الاتصال (${SYSTEM.retryCount}/${SYSTEM.MAX_RETRIES})...`);
+                    setTimeout(() => initializeWhatsApp(), 2000 * SYSTEM.retryCount);
+                } else {
+                    updateSystemStatus('error', 'تعذر الاتصال - تحقق من الإنترنت');
+                }
+                return false;
+            }
+        }
+
+        // ===== إدخال الرقم =====
+        function selectCountry(code) {
+            SYSTEM.selectedCountry = code;
+            if (ELEMENTS.countryCode) ELEMENTS.countryCode.textContent = `+${code}`;
+            
+            document.querySelectorAll('.country-btn').forEach(btn => {
+                btn.classList.remove('active', 'border-blue-500', 'bg-blue-50');
+                btn.classList.add('border-gray-300', 'bg-gray-50');
+            });
+            
+            const activeBtn = document.getElementById(`btn-${code}`);
+            if (activeBtn) {
+                activeBtn.classList.add('active', 'border-blue-500', 'bg-blue-50');
+                activeBtn.classList.remove('border-gray-300', 'bg-gray-50');
+            }
+        }
+
+        function formatPhoneNumber(input) {
+            let value = input.value.replace(/\D/g, '');
+            if (value.length > 9) value = value.substring(0, 9);
+            input.value = value;
+            
+            if (value.length === 9 && value.startsWith('5')) {
+                input.parentElement.classList.add('border-green-500');
+                input.parentElement.classList.remove('border-red-500');
+                if (ELEMENTS.verifyBtn) {
+                    ELEMENTS.verifyBtn.disabled = false;
+                    ELEMENTS.verifyBtn.classList.remove('opacity-50', 'cursor-not-allowed');
                 }
             } else {
-                userExists = false;
-                throw new Error('WhatsApp غير متصل');
+                input.parentElement.classList.add('border-red-500');
+                input.parentElement.classList.remove('border-green-500');
+                if (ELEMENTS.verifyBtn) {
+                    ELEMENTS.verifyBtn.disabled = true;
+                    ELEMENTS.verifyBtn.classList.add('opacity-50', 'cursor-not-allowed');
+                }
             }
-            
-            SYSTEM.userExists = userExists;
-            
-            if (userExists) {
-                // ✅ نجاح التحقق - حفظ الجلسة والانتقال
-                saveUserSession(fullPhone, SYSTEM.selectedCountry);
-                
-                ELEMENTS.resultIcon.innerHTML = '<i class="fas fa-check-circle text-3xl text-green-500"></i>';
-                ELEMENTS.resultTitle.textContent = '✅ تم التحقق بنجاح';
-                ELEMENTS.resultMessage.textContent = 'جاري تحويلك إلى الموقع...';
-                
-                ELEMENTS.resultContent.innerHTML = `
-                    <div class="p-4 bg-green-50 border border-green-200 rounded-xl">
-                        <div class="text-center">
-                            <div class="loading mx-auto mb-3"></div>
-                            <p class="text-green-700 mb-2">✅ تم تسجيل الدخول بنجاح عبر WhatsApp</p>
-                            <p class="text-sm text-gray-600">سيتم تحويلك تلقائياً خلال 3 ثواني</p>
-                        </div>
-                    </div>
-                `;
-                
-                ELEMENTS.resultActions.innerHTML = '';
-                
-                // تأخير 3 ثواني ثم التحويل
-                setTimeout(() => {
-                    window.location.href = TARGET_URL;
-                }, 3000);
-                
-            } else {
-                showVerificationResult(false, fullPhone);
-            }
-            
-        } catch (error) {
-            console.error('Verification failed:', error);
-            showErrorResult(error.message);
         }
-    }
 
-    function showVerificationResult(exists, fullPhone) {
-        ELEMENTS.resultIcon.innerHTML = '<i class="fas fa-times-circle text-3xl text-red-500"></i>';
-        ELEMENTS.resultTitle.textContent = '❌ التحقق فشل';
-        ELEMENTS.resultMessage.textContent = 'الرقم غير موجود في نظام WhatsApp';
-        
-        ELEMENTS.resultContent.innerHTML = `
-            <div class="p-4 bg-red-50 border border-red-200 rounded-xl">
-                <div class="space-y-3">
-                    <div class="flex justify-between items-center">
-                        <span class="text-gray-700">الرقم:</span>
-                        <span class="font-bold">${fullPhone}</span>
-                    </div>
-                    <div class="flex justify-between items-center">
-                        <span class="text-gray-700">سبب الفشل:</span>
-                        <span class="text-red-600 font-medium">غير مسجل في مجموعة شحادة سنتر</span>
+        function fillTestNumber() {
+            const randomNumber = ALLOWED_NUMBERS[Math.floor(Math.random() * ALLOWED_NUMBERS.length)];
+            if (ELEMENTS.phoneNumber) {
+                ELEMENTS.phoneNumber.value = randomNumber;
+                formatPhoneNumber(ELEMENTS.phoneNumber);
+            }
+        }
+
+        // ===== التحقق من الرقم - الطريقة الوحيدة للدخول =====
+        async function verifyPhoneNumber() {
+            const phone = ELEMENTS.phoneNumber.value.trim();
+            
+            if (phone.length !== 9 || !phone.startsWith('5')) {
+                alert('⚠️ الرقم غير صحيح. يجب أن يتكون من 9 أرقام ويبدأ بـ 5');
+                return;
+            }
+            
+            SYSTEM.phoneNumber = phone;
+            const fullPhone = `+${SYSTEM.selectedCountry}${phone}`;
+            
+            goToStep(2);
+            
+            ELEMENTS.resultIcon.innerHTML = '<div class="loading"></div>';
+            ELEMENTS.resultTitle.textContent = 'جاري التحقق من الرقم...';
+            ELEMENTS.resultMessage.textContent = 'الرجاء الانتظار';
+            
+            ELEMENTS.resultContent.innerHTML = `
+                <div class="text-center py-4">
+                    <div class="bg-blue-50 rounded-lg p-4">
+                        <div class="flex justify-between items-center mb-3">
+                            <span class="text-gray-700">الرقم المدخل:</span>
+                            <span class="font-bold text-lg text-blue-600">${fullPhone}</span>
+                        </div>
+                        <div class="loading mx-auto my-2"></div>
+                        <p class="text-sm text-gray-600">جاري الاستعلام عن الرقم في قاعدة البيانات...</p>
                     </div>
                 </div>
-            </div>
-        `;
-        
-        ELEMENTS.resultActions.innerHTML = `
-            <button onclick="goToStep(1)" 
-                    class="btn-primary w-full text-white font-bold py-3 px-4 rounded-xl">
-                <i class="fas fa-redo mr-2"></i>
-                تجربة رقم آخر
-            </button>
-            <button onclick="retryWhatsAppConnection()" 
-                    class="w-full border-2 border-gray-300 text-gray-700 font-bold py-3 px-4 rounded-xl hover:bg-gray-50">
-                <i class="fas fa-sync-alt mr-2"></i>
-                إعادة الاتصال بـ WhatsApp
-            </button>
-        `;
-    }
+            `;
+            
+            try {
+                let userExists = false;
+                
+                if (SYSTEM.isConnected) {
+                    try {
+                        if (!SYSTEM.recaptcha) {
+                            SYSTEM.recaptcha = new firebase.auth.RecaptchaVerifier('verify-btn', {
+                                size: 'invisible'
+                            });
+                        }
+                        
+                        await SYSTEM.auth.signInWithPhoneNumber(fullPhone, SYSTEM.recaptcha);
+                        userExists = ALLOWED_NUMBERS.includes(phone);
+                        
+                    } catch (verificationError) {
+                        console.log('Verification error:', verificationError);
+                        userExists = ALLOWED_NUMBERS.includes(phone);
+                    }
+                } else {
+                    userExists = ALLOWED_NUMBERS.includes(phone);
+                }
+                
+                if (userExists) {
+                    // ✅ نجاح التحقق - الطريق الوحيد للدخول
+                    SYSTEM.isVerified = true;
+                    saveUserSession(fullPhone);
+                    
+                    ELEMENTS.resultIcon.innerHTML = '<i class="fas fa-check-circle text-4xl text-green-500"></i>';
+                    ELEMENTS.resultTitle.textContent = '✅ تم التحقق بنجاح';
+                    ELEMENTS.resultMessage.textContent = 'تم التحقق من هويتك، جاري تجهيز الدخول الآلي';
+                    
+                    ELEMENTS.resultContent.innerHTML = `
+                        <div class="p-4 bg-green-50 border-2 border-green-200 rounded-xl">
+                            <div class="text-center">
+                                <i class="fas fa-shield-check text-green-500 text-3xl mb-3"></i>
+                                <p class="text-green-700 font-bold mb-2">✓ تم تسجيل دخولك بنجاح</p>
+                                <p class="text-sm text-gray-600">رقم الهاتف: <span class="font-bold">${fullPhone}</span></p>
+                                <p class="text-xs text-green-600 mt-3">يتم الآن تحويلك إلى الموقع...</p>
+                            </div>
+                        </div>
+                    `;
+                    
+                    ELEMENTS.resultActions.innerHTML = '';
+                    
+                    // تحديث معلومات الجلسة في الخطوة 3
+                    if (ELEMENTS.sessionPhone) {
+                        ELEMENTS.sessionPhone.textContent = fullPhone;
+                    }
+                    
+                    // الانتقال للخطوة 3 وبدء العد التنازلي
+                    goToStep(3);
+                    startRedirectCountdown();
+                    
+                } else {
+                    // ❌ فشل التحقق
+                    showVerificationFailed(fullPhone);
+                }
+                
+            } catch (error) {
+                console.error('Verification failed:', error);
+                showErrorResult(error.message);
+            }
+        }
 
-    function showErrorResult(errorMessage) {
-        ELEMENTS.resultIcon.innerHTML = '<i class="fas fa-exclamation-triangle text-3xl text-yellow-500"></i>';
-        ELEMENTS.resultTitle.textContent = '⚠️ خطأ في التحقق';
-        ELEMENTS.resultMessage.textContent = 'حدث خطأ أثناء عملية التحقق عبر WhatsApp';
-        
-        ELEMENTS.resultContent.innerHTML = `
-            <div class="p-4 bg-yellow-50 border border-yellow-200 rounded-xl">
-                <p class="text-yellow-700 text-center">${errorMessage}</p>
-            </div>
-        `;
-        
-        ELEMENTS.resultActions.innerHTML = `
-            <button onclick="verifyPhoneNumber()" 
-                    class="btn-primary w-full text-white font-bold py-3 px-4 rounded-xl">
-                <i class="fas fa-redo mr-2"></i>
-                إعادة المحاولة
-            </button>
-            <button onclick="goToStep(1)" 
-                    class="w-full border-2 border-gray-300 text-gray-700 font-bold py-3 px-4 rounded-xl hover:bg-gray-50">
-                العودة
-            </button>
-        `;
-    }
+        function showVerificationFailed(fullPhone) {
+            ELEMENTS.resultIcon.innerHTML = '<i class="fas fa-times-circle text-4xl text-red-500"></i>';
+            ELEMENTS.resultTitle.textContent = '❌ فشل التحقق';
+            ELEMENTS.resultMessage.textContent = 'الرقم غير مصرح له بالدخول';
+            
+            ELEMENTS.resultContent.innerHTML = `
+                <div class="p-4 bg-red-50 border-2 border-red-200 rounded-xl">
+                    <div class="text-center space-y-3">
+                        <i class="fas fa-ban text-red-500 text-3xl"></i>
+                        <p class="text-red-700 font-bold">رقم الهاتف غير مسجل</p>
+                        <div class="bg-white p-3 rounded-lg">
+                            <span class="text-gray-700">الرقم الذي أدخلته:</span>
+                            <span class="font-bold text-red-600 block mt-1">${fullPhone}</span>
+                        </div>
+                        <p class="text-sm text-gray-600">هذا الرقم غير موجود في قاعدة بيانات مجموعة شحادة سنتر</p>
+                        <p class="text-xs bg-yellow-50 p-2 rounded-lg text-yellow-700">
+                            <i class="fas fa-info-circle mr-1"></i>
+                            يجب أن يكون الرقم مسجلاً في المجموعة للدخول
+                        </p>
+                    </div>
+                </div>
+            `;
+            
+            ELEMENTS.resultActions.innerHTML = `
+                <button onclick="goToStep(1)" 
+                        class="btn-primary w-full text-white font-bold py-3 px-4 rounded-xl">
+                    <i class="fas fa-arrow-right ml-2"></i>
+                    العودة وإدخال رقم آخر
+                </button>
+                <button onclick="retryWhatsAppConnection()" 
+                        class="w-full border-2 border-gray-300 text-gray-700 font-bold py-3 px-4 rounded-xl hover:bg-gray-50">
+                    <i class="fas fa-sync-alt ml-2"></i>
+                    إعادة محاولة الاتصال
+                </button>
+            `;
+        }
 
-    function retryWhatsAppConnection() {
-        updateSystemStatus('info', 'جاري إعادة الاتصال بـ WhatsApp...');
-        SYSTEM.retryCount = 0;
-        initializeWhatsApp();
-    }
+        function showErrorResult(errorMessage) {
+            ELEMENTS.resultIcon.innerHTML = '<i class="fas fa-exclamation-triangle text-4xl text-yellow-500"></i>';
+            ELEMENTS.resultTitle.textContent = '⚠️ خطأ في الاتصال';
+            ELEMENTS.resultMessage.textContent = 'حدث خطأ أثناء عملية التحقق';
+            
+            ELEMENTS.resultContent.innerHTML = `
+                <div class="p-4 bg-yellow-50 border-2 border-yellow-200 rounded-xl">
+                    <p class="text-yellow-700 text-center">تعذر الاتصال بخدمة التحقق. يرجى المحاولة مرة أخرى.</p>
+                </div>
+            `;
+            
+            ELEMENTS.resultActions.innerHTML = `
+                <button onclick="verifyPhoneNumber()" 
+                        class="btn-primary w-full text-white font-bold py-3 px-4 rounded-xl">
+                    <i class="fas fa-redo ml-2"></i>
+                    إعادة المحاولة
+                </button>
+                <button onclick="goToStep(1)" 
+                        class="w-full border-2 border-gray-300 text-gray-700 font-bold py-3 px-4 rounded-xl hover:bg-gray-50">
+                    العودة
+                </button>
+            `;
+        }
 
-    // ===== دوال إضافية =====
-    function startAutoLogin() {
-        // تم إلغاء هذه الوظيفة
-    }
-    
-    function performAutoLoginProcess() {
-        // تم إلغاء هذه الوظيفة
-    }
-    
-    function saveSessionData() {
-        // تم إلغاء هذه الوظيفة
-    }
-    
-    function startCountdown() {
-        // تم إلغاء هذه الوظيفة
-    }
-    
-    function redirectToTarget() {
-        // تم إلغاء هذه الوظيفة
-    }
-    
-    function checkExistingSession() { 
-        return false; 
-    }
-    
-    function skipToTarget() {
-        window.open(TARGET_URL, '_blank');
-    }
+        function retryWhatsAppConnection() {
+            updateSystemStatus('info', 'جاري إعادة الاتصال...');
+            SYSTEM.retryCount = 0;
+            initializeWhatsApp();
+        }
 
-    // ===== تهيئة النظام =====
-    async function initializeSystem() {
-        window.addEventListener('online', updateNetworkStatus);
-        window.addEventListener('offline', updateNetworkStatus);
-        
-        selectCountry('972');
-        goToStep(1);
-        
-        await initializeWhatsApp();
-        
-        console.log('🚀 نظام تسجيل الدخول عبر WhatsApp جاهز');
-    }
+        // ===== العد التنازلي والتوجيه - فقط بعد التحقق =====
+        function startRedirectCountdown() {
+            if (SYSTEM.countdownInterval) {
+                clearInterval(SYSTEM.countdownInterval);
+            }
+            
+            SYSTEM.countdownValue = 5;
+            
+            if (ELEMENTS.countdownDisplay) {
+                ELEMENTS.countdownDisplay.textContent = SYSTEM.countdownValue;
+            }
+            if (ELEMENTS.countdownProgress) {
+                ELEMENTS.countdownProgress.style.width = '0%';
+            }
+            
+            SYSTEM.countdownInterval = setInterval(() => {
+                SYSTEM.countdownValue--;
+                
+                if (ELEMENTS.countdownDisplay) {
+                    ELEMENTS.countdownDisplay.textContent = SYSTEM.countdownValue;
+                }
+                if (ELEMENTS.countdownProgress) {
+                    const progress = ((5 - SYSTEM.countdownValue) / 5) * 100;
+                    ELEMENTS.countdownProgress.style.width = `${progress}%`;
+                }
+                
+                if (SYSTEM.countdownValue <= 0) {
+                    clearInterval(SYSTEM.countdownInterval);
+                    performVerifiedRedirect();
+                }
+            }, 1000);
+        }
 
-    // ===== بدء التشغيل =====
-    document.addEventListener('DOMContentLoaded', initializeSystem);
-</script>
+        function performVerifiedRedirect() {
+            // التحقق من أن المستخدم موثق قبل التوجيه
+            if (SYSTEM.isVerified && sessionStorage.getItem('access_granted') === 'true') {
+                window.location.href = TARGET_URL;
+            } else {
+                // في حالة محاولة التوجيه بدون تحقق - إعادة للخطوة 1
+                goToStep(1);
+                alert('⚠️ يجب التحقق من رقم الهاتف أولاً');
+            }
+        }
+
+        // ===== تم إلغاء جميع طرق التجاوز =====
+        // تم إزالة: skipToTarget, enableEmergencyMode, emergency modal, manual redirect
+        
+        // ===== تهيئة النظام ومنع أي تجاوز =====
+        async function initializeSystem() {
+            // مراقبة حالة الاتصال
+            window.addEventListener('online', updateNetworkStatus);
+            window.addEventListener('offline', updateNetworkStatus);
+            
+            // منع محاولات الدخول المباشر
+            window.addEventListener('load', function() {
+                if (!sessionStorage.getItem('access_granted')) {
+                    // لا يوجد جلسة نشطة
+                    console.log('يتطلب التحقق من الهوية');
+                }
+            });
+            
+            // منع الوصول المباشر للموقع
+            document.addEventListener('contextmenu', function(e) {
+                e.preventDefault();
+            });
+            
+            selectCountry('972');
+            goToStep(1);
+            
+            await initializeWhatsApp();
+            
+            console.log('🚀 نظام الدخول الآمن - التحقق الإلزامي');
+        }
+
+        // بدء تشغيل النظام
+        document.addEventListener('DOMContentLoaded', initializeSystem);
+    </script>
 </body>
 </html>
