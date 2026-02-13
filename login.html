@@ -203,7 +203,7 @@
                         <span id="whatsapp-status" class="font-medium">...</span>
                     </div>
                     <div class="flex items-center justify-between p-2 bg-white rounded-lg">
-                        <span class="text-gray-600">الاتصال</span>
+                        <span class="text-gray-600">Server</span>
                         <span id="network-status" class="font-medium">...</span>
                     </div>
                 </div>
@@ -477,7 +477,7 @@
         if (ELEMENTS.systemText) ELEMENTS.systemText.textContent = message;
         if (ELEMENTS.systemBadge) {
             ELEMENTS.systemBadge.className = `status-badge ${color.badge}`;
-            ELEMENTS.systemBadge.innerHTML = `${color.text}${type === 'success' ? 'متصل' : type === 'error' ? 'غير متصل' : 'تحذير'}`;
+            ELEMENTS.systemBadge.innerHTML = `${color.text}${type === 'success' ? 'متصل' : type === 'error' ? 'غير متصل' : '🔑'}`;
         }
         if (ELEMENTS.whatsappStatus) {
             ELEMENTS.whatsappStatus.textContent = SYSTEM.isConnected ? '✅ متصل' : '❌ غير متصل';
