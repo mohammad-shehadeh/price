@@ -1,3 +1,4 @@
+samsung/Tap A11+ 5G 256|8/830/https://res.cloudinary.com/dygc5b8cn/image/upload/v1771082599/b497on9imix4xsaztlvf.png
 Honor/X7D 256|8/530/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769508671/xkjcincirbyzfyqyfg3s.png
 Tecno/Go3 128|4/330/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769433712/rwkj73icwxmb1uucngjt.webp
 Tecno/Go3 64|4/300/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769433709/or8ge3cehifuwlfq5ozn.jpg
