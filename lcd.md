@@ -84,7 +84,7 @@ Mi | poco/REDMI Note 10  PRO incell +FRAME |/60/undefined
 Mi | poco/REDMI Note 11  PRO incell +FRAME |/60/undefined
 Mi | poco/POCO X4 PRO incell +FRAME |/60/undefined
 Mi | poco/REDMI Note 11 - REDMI note 11S - REDMI Note 12S - POCO M4 PRO INCELL |/55/undefined
-Mi | poco/REDMI Note 11 - REDMI note 11S - REDMI Note 12S - POCO M4 PRO OLED |/100/undefined
+Mi | poco/REDMI Note 11 - REDMI note 11S - REDMI Note 12S - POCO M4 PRO OLED |/110/undefined
 Mi | poco/REDMI Note 11 - REDMI note 11S +FRAME incell |/65/undefined
 Mi | poco/REDMI Note 12 - NOTE 12 5G - POCO X5 incell |/55/undefined
 Mi | poco/REDMI Note 12 - NOTE 12 5G - POCO X5 OLED |/100/undefined
