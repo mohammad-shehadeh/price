@@ -1,3 +1,5 @@
+N\A/A17 pro max 128|3/290/https://res.cloudinary.com/dygc5b8cn/image/upload/v1771316250/nvlfmrrgmghfglzr3t5x.webp
+N\A/A26 ultra 128|3/300/https://res.cloudinary.com/dygc5b8cn/image/upload/v1771316270/jof5pzc5icvsuecqihdd.webp
 samsung/Tap A11+ 5G 256|8/830/https://res.cloudinary.com/dygc5b8cn/image/upload/v1771082599/b497on9imix4xsaztlvf.png
 Honor/X7D 256|8/530/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769508671/xkjcincirbyzfyqyfg3s.png
 Tecno/Go3 128|4/330/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769433712/rwkj73icwxmb1uucngjt.webp
@@ -88,12 +90,12 @@ Honor/X6b 256|6/410/https://skymil-informatique.com/50645-large_default/smartpho
 Honor/X6b 128|6/360/https://skymil-informatique.com/50645-large_default/smartphone-honor-x6b-6go-128go-vert-.jpg
 Honor/X5b 128|4/290/https://www.honor.com/content/dam/honor/sa-ar/product-list/smartphone/honor-x5b-plus/honor-x5b-list.png
 Honor/X5b 64|4/260/https://www.honor.com/content/dam/honor/sa-ar/product-list/smartphone/honor-x5b-plus/honor-x5b-list.png
-ZTE/A35e 64|4/240/https://res.cloudinary.com/dygc5b8cn/image/upload/v1757492442/l9tkbpeovqme0pxjrsrm.webp
-ZTE/A75 256|14/390/https://m.media-amazon.com/images/I/81lUzTar8HL.jpg
-ZTE/A55 256|12/300/https://media.zid.store/b74f2313-1275-4caa-abca-b5ece66cb8bd/e64dbe11-465b-499d-8fa6-b7ca47ecb1d6.png
-ZTE/A35 64|12/270/https://cdn.salla.sa/vzoPn/3e76ec41-f0fc-4349-a7b2-f5f6ef94390d-1000x1000-c7ZnhNfHRihxRTwVSwrnTq3pnLjbywUwvD15sDd3.png
-ZTE/nubia Music 128 |/330/https://promart.vteximg.com.br/arquivos/ids/8633792-1000-1000/imageUrl_1.jpg?v=638766667087600000
-ZTE/nubia V60 design 256|16/410/https://www.innwa.com.mm/storage/product/1430/202408181124zte-blade-v60-design-blue.webp
-ZTE/nubia V60 256|20/510/https://www.innwa.com.mm/storage/product/1430/202408181124zte-blade-v60-design-blue.webp
+ZTE/A35e 64|4/Aaa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1757492442/l9tkbpeovqme0pxjrsrm.webp
+ZTE/A75 256|14/350/https://m.media-amazon.com/images/I/81lUzTar8HL.jpg
+ZTE/A55 256|12/Aa/https://media.zid.store/b74f2313-1275-4caa-abca-b5ece66cb8bd/e64dbe11-465b-499d-8fa6-b7ca47ecb1d6.png
+ZTE/A35 64|12/220/https://cdn.salla.sa/vzoPn/3e76ec41-f0fc-4349-a7b2-f5f6ef94390d-1000x1000-c7ZnhNfHRihxRTwVSwrnTq3pnLjbywUwvD15sDd3.png
+ZTE/nubia Music 128 |/Aa/https://promart.vteximg.com.br/arquivos/ids/8633792-1000-1000/imageUrl_1.jpg?v=638766667087600000
+ZTE/nubia V60 design 256|16/370/https://www.innwa.com.mm/storage/product/1430/202408181124zte-blade-v60-design-blue.webp
+ZTE/nubia V60 256|20/460/https://www.innwa.com.mm/storage/product/1430/202408181124zte-blade-v60-design-blue.webp
 Nokia/H2163 كشاف صيني |/35/https://s9.pik.ba/galerija/2021-04/26/06/slika-2830089-6086f09649711-velika.jpg
 samsung/A17 128|‏6/‏510/https://res.cloudinary.com/dygc5b8cn/image/upload/v1766568210/sra8gy0ybsftajzelwqy.jpg
