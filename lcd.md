@@ -35,27 +35,32 @@ iphone/11 pro max original |/Aa/undefined
 iphone/12 pro BYH |/65/undefined
 iphone/12 pro original |/230/undefined
 iphone/12 pro max BYH |/80/undefined
+iphone/12 pro max Soft OLED |/160/undefined
 iphone/12 pro max orignal |/300/undefined
 iphone/13 BYH |/80/undefined
 iphone/13 orignal |/250/undefined
 iphone/13 pro BYH |/100/undefined
 iphone/13 pro orignal |/470/undefined
 iphone/13 pro max BYH |/130/undefined
+iphone/13 pro max Soft OLED |/180/undefined
 iphone/13 pro max orignal |/590/undefined
 iphone/14 BYH |/85/undefined
 iphone/14 orignal |/280/undefined
 iphone/14 pro BYH |/110/undefined
 iphone/14 pro orignal |/530/undefined
 iphone/14 pro max BYH |/140/undefined
+iphone/14 pro max Soft OLED |/180/undefined
 iphone/14 pro max orignal |/650/undefined
 iphone/15 BYH |/110/undefined
 iphone/15 original |/500/undefined
 iphone/15 pro BYH |/120/undefined
 iphone/15 pro original |/550/undefined
 iphone/15 pro max BYH |/150/undefined
-iphone/15 pro max OLED |/400/undefined
+iphone/15 pro max OLED |/250/undefined
 iphone/15 pro max orignal |/Aa/undefined
-iphone/16 pro max orignal |/1150/undefined
+iphone/16 pro max orignal |/1000/undefined
+iphone/16 pro max orignal |/1500/undefined
+iphone/17 pro max Soft OLED |/400/undefined
 iphone/6 plus |/25/undefined
 iphone/7 plus |/40/undefined
 iphone/8 plus AAA |/45/undefined
@@ -90,6 +95,7 @@ Mi | poco/REDMI Note 12 - NOTE 12 5G - POCO X5 incell |/55/undefined
 Mi | poco/REDMI Note 12 - NOTE 12 5G - POCO X5 OLED |/100/undefined
 Mi | poco/Note 12 incell +frame |/60/undefined
 Mi | poco/REDMI Note 14 4G - REDMI NOTE 13 4G - REDMI NOTE 14 5G - POCO M7 PRO incell |/60/undefined
+Mi | poco/REDMI Note 14 4G - REDMI NOTE 13 4G - REDMI NOTE 14 5G - POCO M7 PRO OLED |/110/undefined
 Mi | poco/REDMI Note 13 +Frame |/70/undefined
 Mi | poco/REDMI Note 14 4G - REDMI NOTE 13 4G - REDMI NOTE 14 5G - POCO M7 PRO OLED |/120/undefined
 Mi | poco/REDMI Note 14 PRO 5G - REDMI NOTE 13 PRO PLUS 5G - REDMI NOTE 14 PRO PLUS 5G - POCO X7 incell |/AAA/undefined
@@ -104,7 +110,7 @@ Mi | poco/REDMI Note 9 - MI 10X HI |/45/undefined
 Mi | poco/REDMI Note 9 HI +FRAME |/55/undefined
 Mi | poco/REDMI Note 9S - REDMI Note 9 pro - POCO M2 PRO HI |/45/undefined
 Mi | poco/REDMI Note 9S - REDMI Note 9 pro HI +FRAME |/55/undefined
-Mi | poco/POCO X3 - POCO X3 - MI 10T LITE orignal |/50/undefined
+Mi | poco/POCO X3 - POCO X3 pro - MI 10T LITE orignal |/50/undefined
 Mi | poco/POCO X5 PRO - REDMI NOTE 12 PRO PLUS 5G - REDMI NOTEN 12 PRO 5G INCELL |/60/undefined
 Mi | poco/POCO X6 pro - POCO F6 PRO - REDMI K70E incell |/60/undefined
 Mi | poco/POCO F5 5G - NOTE 13 5G ORI |/130/undefined
@@ -117,6 +123,7 @@ Mi | poco/redmi 13C - REDMI 13R - POCO C65 - POCO M6 5G ORI |/45/undefined
 Mi | poco/13C +frame |/55/undefined
 Mi | poco/redmi 14C - REDMI A3 PRO - REDMI A4 5G - POCO C75 - POCO M7 5G|/50/undefined
 Mi | poco/redmi 15C|/50/undefined
+Mi | poco/redmi 15|/50/undefined
 Mi | poco/redmi 8 - REDMI 8A |/45/undefined
 Mi | poco/redmi 9 - POCO M2 ORI |/45/undefined
 Mi | poco/redmi 9T - POCO M3 |/45/undefined
@@ -127,6 +134,7 @@ realmi | oppo | onePlus/REALMI C11 2021 - REALMI C20 - REALMI C21 - NARZO 50I OR
 realmi | oppo | onePlus/REALMI C11 - REALMI C12 - REALMI C15 - OPPO A15 - OPPO A15S - OPPO A35 - NARZO 20 - NARZO 20A ORI |/44/undefined
 realmi | oppo | onePlus/REALMI C25 - REALMI C21 - REALMI C25S - OPPO A16 - OPPO A16S - OPPO A55 5G - OPPO A56 5G - OPPO A54S - NARZO 50A ORI |/45/undefined
 realmi | oppo | onePlus/REALMI C25Y - REALMI C21Y ORI |/45/undefined
+realmi | oppo | onePlus/REALMI C67 - C65 ORI |/45/undefined
 realmi | oppo | onePlus/REALMI C53 - REALMI C51 - REALMI C60 - REALMI NOTE 50 ORI |/45/undefined
 realmi | oppo | onePlus/REALMI C55 - REALMI C67 5G - REALMI 11 5G - REALMI 11X - NARZO N55 - NARZO 60X - OPPO A58 - OPPO A79 5G - OPPO V50 - OPPO V50S - OPPO A98 5G - OPPO F22 5G - ONE PLUS NARD N30 5G - ONE PLUS NARD 60X PRO ORI |/45/undefined
 realmi | oppo | onePlus/REALMI C3 - REALMI 5I - REALMI 6I - REALMI 5S - REALMI 5 - OPPO A11 - OPPO A11X - OPPO A5 2020 - OPPO A9 2020 - OPPO A31 2020 - OPPO A51 ORI |/45/undefined
@@ -134,6 +142,11 @@ realmi | oppo | onePlus/OPPO A52 - OPPO A72 - OPPO A92 ORI |/50/undefined
 realmi | oppo | onePlus/REALMI 7I - REAMLI C17 - OPPO A54 - OPPO A33 - OPPO A55 - OPPO A53 - OPPO A32 - OPPO A53S - OPPO A51 2021 - A51 2020 ORI |/50/undefined
 realmi | oppo | onePlus/OPPO A72 - OPPO A52 - OPPO A92 ORI |/50/undefined
 realmi | oppo | onePlus/OPPO A93 - RENO 4 4G - RENO 4 LITE - F17 PRO INCELL |/55/undefined
+Samsung/S25 ultra 1:1 +F/550/undefined
+Samsung/S24 ultra 1:1 +F/550/undefined
+Samsung/S23 ultra 1:1 +F/550/undefined
+Samsung/S22 ultra 1:1 +F/aaa/undefined
+Samsung/S21 ultra 1:1 +F/aaa/undefined
 Samsung/A03 core |/45/undefined
 Samsung/A03S - A02S - A03 - A04E original |/45/undefined
 Samsung/A02S +FRAME |/55/undefined
@@ -164,6 +177,7 @@ Samsung/A14 5G +frame |/60/undefined
 Samsung/A14 |/45/undefined
 Samsung/A14 +FRAME |/55/undefined
 Samsung/A15 incell+F |/60/undefined
+Samsung/A17 +F/70/undefined
 Samsung/A16 oled+f |/165/undefined
 Samsung/A16 incell+F |/60/undefined
 Samsung/A21S hi |/45/undefined
@@ -199,6 +213,7 @@ Samsung/A72 olbig +FRAME |/120/undefined
 Samsung/A73 incell +FRAME |/65/undefined
 Samsung/A73 olbig +FRAME |/130/undefined
 Samsung/J4+-J6+ |/45/undefined
+Samsung/J8/50/undefined
 Samsung/J7 prime |/45/undefined
 Samsung/A50 - A30 INCELL +FRAME |/50/undefined
 Samsung/A20 INCELL + FRAME |/50/undefined
