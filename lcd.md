@@ -215,7 +215,7 @@ Samsung/A73 olbig +FRAME |/130/undefined
 Samsung/J4+-J6+ |/45/undefined
 Samsung/J8 |/50/undefined
 Samsung/J7 prime |/45/undefined
-Samsung/A50 - A30 INCELL +FRAME |/50/undefined
+Samsung/A50 - A30 INCELL +FRAME |/55/undefined
 Samsung/A20 INCELL + FRAME |/50/undefined
 Samsung/M13 |/45/undefined
 Samsung/Tap A9 |/90/undefined
