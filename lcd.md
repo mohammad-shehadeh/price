@@ -142,11 +142,11 @@ realmi | oppo | onePlus/OPPO A52 - OPPO A72 - OPPO A92 ORI |/50/undefined
 realmi | oppo | onePlus/REALMI 7I - REAMLI C17 - OPPO A54 - OPPO A33 - OPPO A55 - OPPO A53 - OPPO A32 - OPPO A53S - OPPO A51 2021 - A51 2020 ORI |/50/undefined
 realmi | oppo | onePlus/OPPO A72 - OPPO A52 - OPPO A92 ORI |/50/undefined
 realmi | oppo | onePlus/OPPO A93 - RENO 4 4G - RENO 4 LITE - F17 PRO INCELL |/55/undefined
-Samsung/S25 ultra 1:1 +F/550/undefined
-Samsung/S24 ultra 1:1 +F/550/undefined
-Samsung/S23 ultra 1:1 +F/550/undefined
-Samsung/S22 ultra 1:1 +F/aaa/undefined
-Samsung/S21 ultra 1:1 +F/aaa/undefined
+Samsung/S25 ultra 1:1 +F |/550/undefined
+Samsung/S24 ultra 1:1 +F |/550/undefined
+Samsung/S23 ultra 1:1 +F |/550/undefined
+Samsung/S22 ultra 1:1 +F |/aaa/undefined
+Samsung/S21 ultra 1:1 +F |/aaa/undefined
 Samsung/A03 core |/45/undefined
 Samsung/A03S - A02S - A03 - A04E original |/45/undefined
 Samsung/A02S +FRAME |/55/undefined
@@ -177,7 +177,7 @@ Samsung/A14 5G +frame |/60/undefined
 Samsung/A14 |/45/undefined
 Samsung/A14 +FRAME |/55/undefined
 Samsung/A15 incell+F |/60/undefined
-Samsung/A17 +F/70/undefined
+Samsung/A17 +F |/70/undefined
 Samsung/A16 oled+f |/165/undefined
 Samsung/A16 incell+F |/60/undefined
 Samsung/A21S hi |/45/undefined
@@ -213,7 +213,7 @@ Samsung/A72 olbig +FRAME |/120/undefined
 Samsung/A73 incell +FRAME |/65/undefined
 Samsung/A73 olbig +FRAME |/130/undefined
 Samsung/J4+-J6+ |/45/undefined
-Samsung/J8/50/undefined
+Samsung/J8 |/50/undefined
 Samsung/J7 prime |/45/undefined
 Samsung/A50 - A30 INCELL +FRAME |/50/undefined
 Samsung/A20 INCELL + FRAME |/50/undefined
@@ -227,7 +227,7 @@ HONOR/X6b |/55/undefined
 HONOR/X8b |/110/undefined
 HONOR/X9b |/220/undefined
 HONOR/X9C |/220/undefined
-HUAWEI/y9 prime 2019 |/50/undefined
+HUAWEI/y9 prime 2019 ori |/55/undefined
 HUAWEI/y9 2019 |/50/undefined
 HUAWEI/NOVA 3I |/50/undefined
 HUAWEI/P20 LITE |/40/undefined
