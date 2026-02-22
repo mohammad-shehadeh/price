@@ -186,9 +186,9 @@ yesido/CA159 |/12/https://res.cloudinary.com/dygc5b8cn/image/upload/v1767124177/
 yesido/EK02 |/40/https://res.cloudinary.com/dygc5b8cn/image/upload/v1767124178/lpzkpxgzosg49xejela0.jpg
 yesido/YH45 |/8/https://res.cloudinary.com/dygc5b8cn/image/upload/v1767124187/tx6mzurxx4i3gii0iofc.png
 yesido/YP86 |/80/https://res.cloudinary.com/dygc5b8cn/image/upload/v1767124191/pqqtba5r2viewuqln6hs.png
-yesido/CA137L |/1/https://res.cloudinary.com/dygc5b8cn/image/upload/v1767124192/jnnh5cd4mhf95zb7xj3g.png
-yesido/DS29 |/1/https://res.cloudinary.com/dygc5b8cn/image/upload/v1767124194/s27w6pjcgp4k878wookx.png
+yesido/CA137L |//https://res.cloudinary.com/dygc5b8cn/image/upload/v1767124192/jnnh5cd4mhf95zb7xj3g.png
 yesido/KB42 |/1/https://res.cloudinary.com/dygc5b8cn/image/upload/v1767124195/hy0piklgurilvvj0zjty.png
+yesido/DS29 |/1/https://res.cloudinary.com/dygc5b8cn/image/upload/v1767124194/s27w6pjcgp4k878wookx.png
 yesido/IO40 |/1/https://res.cloudinary.com/dygc5b8cn/image/upload/v1767124196/vuc6g7kufomfrnaqdg3j.png
 yesido/DS34 |/1/https://res.cloudinary.com/dygc5b8cn/image/upload/v1767124198/abzzkwzqxunvjqkaprah.png
 yesido/C269 |/1/https://res.cloudinary.com/dygc5b8cn/image/upload/v1767124199/ouschx8tdmhfpzn76ki2.png
@@ -228,65 +228,63 @@ VEN-DENS/VD-DCJ04 |/14/https://res.cloudinary.com/dygc5b8cn/image/upload/v174609
 VEN-DENS/VD-DCA08 |/15/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746097821/uyzoshwr9dfylgodzyz0.png
 VEN-DENS/VD-DCA10 |/30/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746097795/hgmvmo0nstepwhlaj6ou.png
 VEN-DENS/VD-DCB02 |/8/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746097769/xkdhiftwx02gchgxatpb.png
-Mixoria/Laser DISCO |/45/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746093053/eeejbwzarnaicqpillkp.jpg
-Mixoria/3D Hologram fan 42cm(风扇屏） |/100/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746012895/e0tqooyyfvveey5skonc.jpg
-Mixoria/LED DANCING |/LASER LAMP/40/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746012840/eaoqwhyffbjmxegtqxgu.jpg
-Mixoria/LED EMERGENCY LAMP"STAND' |/70/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746012529/pj27nxihruilzfsy6j7r.jpg
-Mixoria/LED EMERGENCY LAMP 2 |/30/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746012423/g7gfau77ywhputwbapm8.png
-Mixoria/LED EMERGENCY LAMP 1 |/60/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746012351/el9w57iy06uukc6g33bj.jpg
-Mixoria/LED SIGN Flex |/125/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746260232/njcmukjdvakkbtggij61.jpg
-Mixoria/3D Hologram fan 28cm(风扇屏） |/180/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746012176/c7mdzidwihyvc73v1xio.jpg
+Mixoria/Laser DISCO |/Aa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746093053/eeejbwzarnaicqpillkp.jpg
+Mixoria/3D Hologram fan 42cm(风扇屏） |/Aa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746012895/e0tqooyyfvveey5skonc.jpg
+Mixoria/LED DANCING |/Aa/40/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746012840/eaoqwhyffbjmxegtqxgu.jpg
+Mixoria/LED EMERGENCY LAMP"STAND' |/50/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746012529/pj27nxihruilzfsy6j7r.jpg
+Mixoria/LED EMERGENCY LAMP 2 |/Aa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746012423/g7gfau77ywhputwbapm8.png
+Mixoria/LED SIGN Flex |/Aa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746260232/njcmukjdvakkbtggij61.jpg
+Mixoria/3D Hologram fan 28cm(风扇屏） |/Aa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746012176/c7mdzidwihyvc73v1xio.jpg
 Mixoria/led sign"COFFEE" |/50/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746011061/qalbqaa8m5vasrwinvzr.jpg
 Mixoria/led sign"HAPPY-" |/52/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746011139/zjucmmdxon81ztugkcar.jpg
-Mixoria/led sign"OPEN "FLASH |/60/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746011013/xvbbqb1s2lkjhiyu89ad.jpg
-Mixoria/led sign"WELCOME"FLASH |/65/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746010863/gicaegfupbyiownzpc5s.jpg
-Mixoria/Soft screen 软显示屏（plus) |/145/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746010390/gy4oj6gsmzyrbdsmebky.png
-Mixoria/Soft screen 软显示屏（595MM) |/100/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746010363/wksv2tnr0ts6vgel16u4.png
-Mixoria/Soft screen 软显示屏（372MM) |/60/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746010347/j225nfdicm1mcfmmjvvo.png
-Mixoria/P3 screen |/145/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746010192/wh1kflfzmwvawxsladvr.png
-Mixoria/تيربوا X3 |/90/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746009332/oks54v7vp1kgrmynta8t.jpg
-Mixoria/تيربوا  X6 |/85/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746009480/dlmnldviu7i29ygutkhw.jpg
-Mixoria/تيربوا X3 mini |/58/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746009635/qptzurrmnoaksdsrknsh.jpg
-Mixoria/تيربوا X3-1 |/65/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746009671/e1gzzzf9znjae9onyqcs.jpg
-Mixoria/LED COB |/7/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746008842/vfts0ofj4f5ulrogbnhs.jpg
-Mixoria/LED A3 |/50/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746008805/asz1bmq9qlz73qyuf84m.jpg
-Mixoria/LED M11 |/24/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746008748/mpgjwwrgyib0m7ttyyxb.jpg
-Mixoria/4G GPS2 |/220/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746008697/xdg62dsjh6w3xyeeyhx9.jpg
-Mixoria/4G GPS1 |/270/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746008656/ot2r3tibjqpc8l3nlyry.jpg
-Mixoria/GPS app-1 |/25/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746008606/qk3sel8wb5s7tueldr3y.jpg
-Mixoria/GameRS36 max |/165/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746008533/o4qfuzubavbbj2shs90n.jpg
-Mixoria/Game RS36s |/145/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746008553/p2pkxqabhtpqxgyrphs8.jpg
-Mixoria/Game M18 |/210/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746008431/pfdfee5ygo32negqzano.jpg
-Mixoria/P15 mine |/25/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746008346/ocxsuuk6p9weuz2xifny.jpg
-Mixoria/Camera 850 |/175/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746008301/co7ysozxdppcdhngoxx3.jpg
-Mixoria/Camera Q6TA |/150/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746008226/x2ylmyxtsmitmqgl5dnj.jpg
-Mixoria/SR-56 |/36/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746008139/rscgrwbsps0e4tdlhc1i.png
+Mixoria/led sign"OPEN "FLASH |/50/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746011013/xvbbqb1s2lkjhiyu89ad.jpg
+Mixoria/led sign"WELCOME"FLASH |/50/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746010863/gicaegfupbyiownzpc5s.jpg
+Mixoria/Soft screen 软显示屏（plus) |/Aa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746010390/gy4oj6gsmzyrbdsmebky.png
+Mixoria/Soft screen 软显示屏（595MM) |/50/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746010363/wksv2tnr0ts6vgel16u4.png
+Mixoria/Soft screen 软显示屏（372MM) |/28/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746010347/j225nfdicm1mcfmmjvvo.png
+Mixoria/P3 screen |/110/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746010192/wh1kflfzmwvawxsladvr.png
+Mixoria/تيربوا X3 |/Aa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746009332/oks54v7vp1kgrmynta8t.jpg
+Mixoria/تيربوا  X6 |/Aa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746009480/dlmnldviu7i29ygutkhw.jpg
+Mixoria/تيربوا X3 mini |/Aa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746009635/qptzurrmnoaksdsrknsh.jpg
+Mixoria/تيربوا X3-1 |/Aa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746009671/e1gzzzf9znjae9onyqcs.jpg
+Mixoria/LED COB |/Aa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746008842/vfts0ofj4f5ulrogbnhs.jpg
+Mixoria/LED A3 |/Aa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746008805/asz1bmq9qlz73qyuf84m.jpg
+Mixoria/LED M11 |/20/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746008748/mpgjwwrgyib0m7ttyyxb.jpg
+Mixoria/4G GPS2 |/155/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746008697/xdg62dsjh6w3xyeeyhx9.jpg
+Mixoria/4G GPS1 |/190/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746008656/ot2r3tibjqpc8l3nlyry.jpg
+Mixoria/GPS app-1 |/Aa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746008606/qk3sel8wb5s7tueldr3y.jpg
+Mixoria/GameRS36 max |/90/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746008533/o4qfuzubavbbj2shs90n.jpg
+Mixoria/Game RS36s |/90/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746008553/p2pkxqabhtpqxgyrphs8.jpg
+Mixoria/Game M18 |/120/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746008431/pfdfee5ygo32negqzano.jpg
+Mixoria/P15 mine |/20/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746008346/ocxsuuk6p9weuz2xifny.jpg
+Mixoria/Camera 850 |/99/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746008301/co7ysozxdppcdhngoxx3.jpg
+Mixoria/Camera Q6TA |/125/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746008226/x2ylmyxtsmitmqgl5dnj.jpg
+Mixoria/SR-56 |/27/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746008139/rscgrwbsps0e4tdlhc1i.png
 Mixoria/BH-05 |/8/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746008103/hbrndzcpsqiznoh1mete.png
-Mixoria/Camera V39 4G |/150/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746008031/icyhqnsrhkwqwjng5qac.jpg
-Mixoria/4G GPS Camera |/365/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746007916/q8mcxxixydkhxgwmukrf.jpg
-Mixoria/Wifi 600mbps |/15/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746007847/msj5b1wqov8kdfxeigpz.jpg
-Mixoria/MT-75 |/25/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746007643/klwyofysllfwn43xs7ep.png
-Mixoria/MW-15 |/70/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746007574/pn46woulkbavw2vsulwj.png
-Mixoria/MW-16 |/80/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746007499/s1zp6af0coher4trsbbp.png
-Mixoria/MF-8 |/85/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746007395/bpfb6wzb0xsqzotzvlx3.png
-Mixoria/MF-5 |/45/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746007340/c4u9lmzvztwwsi5mb0p6.png
-Mixoria/مبرد SL-03 |/45/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746007286/kge4liwrc6fuccujygsl.jpg
-Mixoria/مبرد DY88 |/34/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746007221/supmuirwzabihzoiz7mi.jpg
+Mixoria/Camera V39 4G |/Aa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746008031/icyhqnsrhkwqwjng5qac.jpg
+Mixoria/4G GPS Camera |/265/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746007916/q8mcxxixydkhxgwmukrf.jpg
+Mixoria/Wifi 600mbps |/Aaa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746007847/msj5b1wqov8kdfxeigpz.jpg
+Mixoria/MT-75 |/Aa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746007643/klwyofysllfwn43xs7ep.png
+Mixoria/MW-15 |/50/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746007574/pn46woulkbavw2vsulwj.png
+Mixoria/MW-16 |/Aa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746007499/s1zp6af0coher4trsbbp.png
+Mixoria/MF-8 |/Aa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746007395/bpfb6wzb0xsqzotzvlx3.png
+Mixoria/MF-5 |/Aa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746007340/c4u9lmzvztwwsi5mb0p6.png
+Mixoria/مبرد SL-03 |/35/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746007286/kge4liwrc6fuccujygsl.jpg
+Mixoria/مبرد DY88 |/Aa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746007221/supmuirwzabihzoiz7mi.jpg
 Mixoria/مبرد DY58 |/35/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746007162/wcab12qck2anhtw21qty.jpg
 Mixoria/مبرد FS03 |/25/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746007098/tqxh0c1z9tpv4hieurpz.jpg
 Mixoria/مبرد GT31 |/25/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746007034/zbhdhn4dplxgbh17uw15.jpg
 Mixoria/مبرد X94 |/25/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746256276/kksegmkvxoqqox6m5ucm.jpg
 Mixoria/اصابع ببجي |/1/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746005941/jjbin5xmchovdvsdfco9.jpg
 Mixoria/CC-480  3in1 |/290/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746005772/hmhn8uznp0vsrye4tthi.jpg
-Mixoria/PT-389 |/150/undefined
-Mixoria/PT-60 |/85/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746005455/opzqljc5fe57rwfjpg4d.jpg
-Mixoria/PT-265 |/85/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746005516/edzuqaur5hgtrxubctjf.jpg
-Mixoria/AI Z2 |/180/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746005102/zccf09n8w9kivzp8mxee.jpg
-Mixoria/LED A1 |/55/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746005036/cjgevzkqqdozbc5waji4.jpg
-Mixoria/LED 270 |/55/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746004963/bzj8fx1arzhe0e7y1bxf.jpg
-Mixoria/LED 210 |/50/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746004822/vcpnubxuywugxub23wl9.jpg
-Mixoria/LED 157 |/38/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746004767/lqjjcwds85w6qrsyv8zz.jpg
-Mixoria/YM-A168 |/65/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746004666/lj4pybmv5so99xoq4sws.jpg
+Mixoria/PT-60 |/65/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746005455/opzqljc5fe57rwfjpg4d.jpg
+Mixoria/PT-265 |/65/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746005516/edzuqaur5hgtrxubctjf.jpg
+Mixoria/AI Z2 |/140/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746005102/zccf09n8w9kivzp8mxee.jpg
+Mixoria/LED A1 |/50/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746005036/cjgevzkqqdozbc5waji4.jpg
+Mixoria/LED 270 |/Aa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746004963/bzj8fx1arzhe0e7y1bxf.jpg
+Mixoria/LED 210 |/Aa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746004822/vcpnubxuywugxub23wl9.jpg
+Mixoria/LED 157 |/30/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746004767/lqjjcwds85w6qrsyv8zz.jpg
+Mixoria/YM-A168 |/50/https://res.cloudinary.com/dygc5b8cn/image/upload/v1746004666/lj4pybmv5so99xoq4sws.jpg
 UNIPRO/Privacy 360 |/7/https://res.cloudinary.com/dygc5b8cn/image/upload/v1745953031/syibygtifauhzbjnf42f.jpg
 UNIPRO/Privacy MATE |/5/https://res.cloudinary.com/dygc5b8cn/image/upload/v1745952946/vgqbziltsguuuyka9w1i.jpg
 UNIPRO/AR&AG MATE |/4/https://res.cloudinary.com/dygc5b8cn/image/upload/v1745952905/eiwrwnfeatjpacmvkc9t.jpg
