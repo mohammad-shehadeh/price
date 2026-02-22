@@ -320,19 +320,19 @@ LELISU/LS-731 3.5m |/5/https://res.cloudinary.com/dygc5b8cn/image/upload/v174568
 LELISU/LS-737 T-C |/6/https://res.cloudinary.com/dygc5b8cn/image/upload/v1745685375/gzhuidvn62hcyssrcfdw.png
 LELISU/LS-730 T-C |/7/https://res.cloudinary.com/dygc5b8cn/image/upload/v1745685306/whtuyryubqkop5ot9qdl.png
 LELISU/LS-10 |/18/https://res.cloudinary.com/dygc5b8cn/image/upload/v1745685265/j9s8hmi4vjatf4lmddhz.png
-LELISU/LS-80 |/20/https://res.cloudinary.com/dygc5b8cn/image/upload/v1745685230/caxy17fcpx9haxnt722j.png
-LELISU/LS-19 |/25/https://res.cloudinary.com/dygc5b8cn/image/upload/v1745685182/n7jimqnrjefjcsquirct.png
-LELISU/LS-517 |/18/https://res.cloudinary.com/dygc5b8cn/image/upload/v1745685139/n8cmiz7psb3leam0w5cm.png
-LELISU/LS-521 |/20/https://res.cloudinary.com/dygc5b8cn/image/upload/v1745685082/pcqc3btshjopd1oa2jpe.png
-LELISU/LS-520 |/20/https://res.cloudinary.com/dygc5b8cn/image/upload/v1745685040/jklomqjcvqckssgmmh53.png
-LELISU/LS-518 |/23/https://res.cloudinary.com/dygc5b8cn/image/upload/v1745684993/paamk8lvvmsk7nriuthp.png
-LELISU/LS-519 |/20/https://res.cloudinary.com/dygc5b8cn/image/upload/v1745684948/icahmvbemvggbqehpcei.png
+LELISU/LS-80 |/17/https://res.cloudinary.com/dygc5b8cn/image/upload/v1745685230/caxy17fcpx9haxnt722j.png
+LELISU/LS-19 |/19/https://res.cloudinary.com/dygc5b8cn/image/upload/v1745685182/n7jimqnrjefjcsquirct.png
+LELISU/LS-517 |/Aaa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1745685139/n8cmiz7psb3leam0w5cm.png
+LELISU/LS-521 |/17/https://res.cloudinary.com/dygc5b8cn/image/upload/v1745685082/pcqc3btshjopd1oa2jpe.png
+LELISU/LS-520 |/17/https://res.cloudinary.com/dygc5b8cn/image/upload/v1745685040/jklomqjcvqckssgmmh53.png
+LELISU/LS-518 |/19/https://res.cloudinary.com/dygc5b8cn/image/upload/v1745684993/paamk8lvvmsk7nriuthp.png
+LELISU/LS-519 |/17/https://res.cloudinary.com/dygc5b8cn/image/upload/v1745684948/icahmvbemvggbqehpcei.png
 LELISU/LS-839 |/13/https://res.cloudinary.com/dygc5b8cn/image/upload/v1745684910/cmdew0eijadtornsdypu.png
 LELISU/LS-835 |/13/https://res.cloudinary.com/dygc5b8cn/image/upload/v1745684852/lzyeqjfb5wjmlavjbsib.png
 LELISU/LS-256 |/22/https://res.cloudinary.com/dygc5b8cn/image/upload/v1745684807/d2luk8xpspqqo26twd0l.png
-LELISU/LS-853 |/22/https://res.cloudinary.com/dygc5b8cn/image/upload/v1745684768/yd3uoz0oqfwxlegqj87p.jpg
-LELISU/LS-852 |/22/https://res.cloudinary.com/dygc5b8cn/image/upload/v1745684740/b9icsboooazcw3gccp4g.jpg
-LELISU/LS-851 |/22/https://res.cloudinary.com/dygc5b8cn/image/upload/v1745684703/ly6edh182kftpkhgmd0f.png
+LELISU/LS-853 |/17/https://res.cloudinary.com/dygc5b8cn/image/upload/v1745684768/yd3uoz0oqfwxlegqj87p.jpg
+LELISU/LS-852 |/17/https://res.cloudinary.com/dygc5b8cn/image/upload/v1745684740/b9icsboooazcw3gccp4g.jpg
+LELISU/LS-851 |/17/https://res.cloudinary.com/dygc5b8cn/image/upload/v1745684703/ly6edh182kftpkhgmd0f.png
 LELISU/LS-239 |/28/https://res.cloudinary.com/dygc5b8cn/image/upload/v1745684666/gw8kyp8v44vs4srilmzm.png
 LELISU/LS-252 |/28/https://res.cloudinary.com/dygc5b8cn/image/upload/v1745684612/tuvl7ytcnq2zj5dzgju4.png
 LELISU/LS-251 |/28/https://res.cloudinary.com/dygc5b8cn/image/upload/v1745684546/szp5bxec6jxu4c4ollzj.png
