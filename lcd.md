@@ -181,7 +181,7 @@ Samsung/A17 +F |/70/undefined
 Samsung/A16 oled+f |/165/undefined
 Samsung/A16 incell+F |/60/undefined
 Samsung/A21S hi |/45/undefined
-Samsung/A21S +FRAME hi |/45/undefined
+Samsung/A21S +FRAME hi |/55/undefined
 Samsung/A24 incell +FRAME |/60/undefined
 Samsung/A24 OLBIG +FRAME |/100/undefined
 Samsung/A24 OLED +FRAME |/140/undefined
