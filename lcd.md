@@ -1,5 +1,4 @@
 HONOR/X7b |/55/undefined
-iphone/17 pro max original |/1500/undefined
 tecno | infinix | itel/CAMON 17 pro - zero x new ORI |/60/undefined
 tecno | infinix | itel/CAMON 18 Premer - zero x incell |/70/undefined
 tecno | infinix | itel/CAMON 19 - CAMON 19 new - CAMON 18 - CAMON 18P - CAMON 18t - spark 8 pro - infinix hot 11S - POVA New 5G - infinix HOT 20S - infinix HOT 20 PRO - CAMON 17P - CAMON 17 PREMIER ORI |/50/undefined
@@ -36,21 +35,21 @@ iphone/11 pro max original |/Aa/undefined
 iphone/12 pro BYH |/65/undefined
 iphone/12 pro original |/230/undefined
 iphone/12 pro max BYH |/80/undefined
-iphone/12 pro max Soft OLED |/160/undefined
+iphone/12 pro max Soft OLED |/180/undefined
 iphone/12 pro max orignal |/300/undefined
 iphone/13 BYH |/80/undefined
 iphone/13 orignal |/250/undefined
 iphone/13 pro BYH |/100/undefined
 iphone/13 pro orignal |/470/undefined
 iphone/13 pro max BYH |/130/undefined
-iphone/13 pro max Soft OLED |/180/undefined
+iphone/13 pro max Soft OLED |/200/undefined
 iphone/13 pro max orignal |/590/undefined
 iphone/14 BYH |/85/undefined
 iphone/14 orignal |/280/undefined
 iphone/14 pro BYH |/110/undefined
 iphone/14 pro orignal |/530/undefined
 iphone/14 pro max BYH |/140/undefined
-iphone/14 pro max Soft OLED |/180/undefined
+iphone/14 pro max Soft OLED |/200/undefined
 iphone/14 pro max orignal |/650/undefined
 iphone/15 BYH |/110/undefined
 iphone/15 original |/500/undefined
@@ -61,7 +60,8 @@ iphone/15 pro max OLED |/250/undefined
 iphone/15 pro max orignal |/Aa/undefined
 iphone/16 pro max orignal |/1000/undefined
 iphone/16 pro max orignal |/1500/undefined
-iphone/17 pro max Soft OLED |/400/undefined
+iphone/17 pro max original |/1500/undefined
+iphone/17 pro max Soft OLED |/450/undefined
 iphone/6 plus |/25/undefined
 iphone/7 plus |/40/undefined
 iphone/8 plus AAA |/45/undefined
