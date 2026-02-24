@@ -1,3 +1,4 @@
+HONOR/X7b |/55/undefined
 iphone/17 pro max original |/1500/undefined
 tecno | infinix | itel/CAMON 17 pro - zero x new ORI |/60/undefined
 tecno | infinix | itel/CAMON 18 Premer - zero x incell |/70/undefined
