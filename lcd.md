@@ -122,7 +122,7 @@ Mi | poco/redmi 12C +FRAME ORI |/55/undefined
 Mi | poco/redmi 12 - REDMI 13 - POCO M6 PRO |/45/undefined
 Mi | poco/redmi 13C - REDMI 13R - POCO C65 - POCO M6 5G ORI |/45/undefined
 Mi | poco/13C +frame |/55/undefined
-Mi | poco/redmi 14C - REDMI A3 PRO - REDMI A4 5G - POCO C75 - POCO M7 5G|/50/undefined
+Mi | poco/redmi 14C - REDMI A3 PRO - REDMI A4 5G - POCO C75 - POCO M7 |/45/undefined
 Mi | poco/redmi 15C|/50/undefined
 Mi | poco/redmi 15|/50/undefined
 Mi | poco/redmi 8 - REDMI 8A |/45/undefined
