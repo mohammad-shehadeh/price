@@ -67,17 +67,17 @@ iphone/7 plus |/40/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131135
 iphone/8 plus AAA |/45/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131135/wqebe6jd2ccu8qof69mh.webp
 iphone/8 plus orignal |/aaa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131135/wqebe6jd2ccu8qof69mh.webp
 iphone/8G |/aaa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131135/wqebe6jd2ccu8qof69mh.webp
-iphone/ipad 10 touch |/45/
-iphone/ipad 7,8,9 LCD |/Aa/undefined
-iphone/ipad 7,8,9 touch |/45/undefined
-iphone/watch S6 44mm |/200/undefined
-iphone/watch S7 44mm |/200/undefined
-Mi | poco/Redmi pad SE - Redmi pad 2 |/100/undefined
+iphone/ipad 10 touch |/45/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772134258/ufhindurmwznlpahwn43.jpg
+iphone/ipad 7,8,9 LCD |/Aa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772134176/q7vijn8krgoqoyz1pj7h.webp
+iphone/ipad 7,8,9 touch |/45/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772134251/ye9tdd4sfigrg5slp5ez.jpg
+iphone/watch S6 44mm |/200/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772134150/eav3hsrslz5l5756xata.jpg
+iphone/watch S7 44mm |/200/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772134155/wfoc5nmxcmzjwcozwfim.jpg
+Mi | poco/Redmi pad SE - Redmi pad 2 |/100/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772134327/xtwkmlmlilnal7wejqpr.avif
 Mi | poco/Redmi A5 - poco C71 |/50/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131155/tdehiviba8vewijxxkkg.webp
 Mi | poco/REDMI 10A - REDMI 9A - REDMI 9C ORI |/45/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131155/tdehiviba8vewijxxkkg.webp
 Mi | poco/REDMI 10A - REDMI 9A - REDMI 9C + FRAME ORI |/55/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131332/aupsba3hxy73xgau3ptv.jpg
 Mi | poco/MI 11 lite 4G - MI 11 LITE 5G - MI 11 LITE NE 5G INCELL |/60/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131155/tdehiviba8vewijxxkkg.webp
-Mi | poco/MI 11 lite 4G - MI 11 LITE 5G - MI 11 LITE NE 5G  orignal |/120/[undefined](https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131155/tdehiviba8vewijxxkkg.webp)
+Mi | poco/MI 11 lite 4G - MI 11 LITE 5G - MI 11 LITE NE 5G  orignal |/120/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772134351/bdfbc1z9prxue1ftmt15.webp
 Mi | poco/MI 12T - MI 12T pro orignal |/170/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131155/tdehiviba8vewijxxkkg.webp
 Mi | poco/REDMI A2 plus - REDMI A2 - REDMI A1 plus - REDMI A1 - POCO C50 - POCO C51 ORI |/45/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131155/tdehiviba8vewijxxkkg.webp
 Mi | poco/REDMI A3 - REDMI A3 PLUS - REDMI A3X - POCO C61 ORI |/45/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131155/tdehiviba8vewijxxkkg.webp
@@ -128,7 +128,7 @@ Mi | poco/redmi 15|/50/https://res.cloudinary.com/dygc5b8cn/image/upload/v177213
 Mi | poco/redmi 8 - REDMI 8A |/45/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131155/tdehiviba8vewijxxkkg.webp
 Mi | poco/redmi 9 - POCO M2 ORI |/45/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131155/tdehiviba8vewijxxkkg.webp
 Mi | poco/redmi 9T - POCO M3 |/45/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131155/tdehiviba8vewijxxkkg.webp
-realmi | oppo | onePlus/REALMI 7I - REALMI C17 - OPPO A11S - OPPO A54 4G - OPPO A55 4G - OPPO A53 - OPPO A33 2020 - OPPO A32 - OPPO A53S - OPPO A51 2021 - REALMI 7I - OPPO A51 2020 ORI |/50/undefined
+realmi | oppo | onePlus/REALMI 7I - REALMI C17 - OPPO A11S - OPPO A54 4G - OPPO A55 4G - OPPO A53 - OPPO A33 2020 - OPPO A32 - OPPO A53S - OPPO A51 2021 - REALMI 7I - OPPO A51 2020 ORI |/50/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772134403/esj2ufxq869fdoopql78.webp
 realmi | oppo | onePlus/OPPO A73 - OPPO A91 - OPPO RENO 3 - OPPO F15 - OPPO F17 |/50/undefined
 realmi | oppo | onePlus/REALMI 9I - REALMI 8I - NARZO 50 - K10 4G - OPPO A96 4G INDIA ORI |/60/undefined
 realmi | oppo | onePlus/REALMI C11 2021 - REALMI C20 - REALMI C21 - NARZO 50I ORI |/45/undefined
@@ -220,8 +220,8 @@ Samsung/J7 prime |/45/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131
 Samsung/A50 - A30 INCELL +FRAME |/55/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131284/pionk2xvkfmkhm2wodu6.jpg
 Samsung/A20 INCELL + FRAME |/50/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131284/pionk2xvkfmkhm2wodu6.jpg
 Samsung/M13 |/45/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131170/vtxjuu8x1w5qkkynzzrh.jpg
-Samsung/Tap A9 |/90/
-Samsung/Tap A9+ 5G 11" |/110/
+Samsung/Tap A9 |/90/undefined
+Samsung/Tap A9+ 5G 11" |/110/undefined
 HONOR/X5 plus |/55/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131616/pebvftygqsnz8h6j8eqf.webp
 HONOR/X5b |/55/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131616/pebvftygqsnz8h6j8eqf.webp
 HONOR/X6a |/55/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131616/pebvftygqsnz8h6j8eqf.webp
