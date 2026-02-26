@@ -129,20 +129,20 @@ Mi | poco/redmi 8 - REDMI 8A |/45/https://res.cloudinary.com/dygc5b8cn/image/upl
 Mi | poco/redmi 9 - POCO M2 ORI |/45/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131155/tdehiviba8vewijxxkkg.webp
 Mi | poco/redmi 9T - POCO M3 |/45/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131155/tdehiviba8vewijxxkkg.webp
 realmi | oppo | onePlus/REALMI 7I - REALMI C17 - OPPO A11S - OPPO A54 4G - OPPO A55 4G - OPPO A53 - OPPO A33 2020 - OPPO A32 - OPPO A53S - OPPO A51 2021 - REALMI 7I - OPPO A51 2020 ORI |/50/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772134403/esj2ufxq869fdoopql78.webp
-realmi | oppo | onePlus/OPPO A73 - OPPO A91 - OPPO RENO 3 - OPPO F15 - OPPO F17 |/50/undefined
-realmi | oppo | onePlus/REALMI 9I - REALMI 8I - NARZO 50 - K10 4G - OPPO A96 4G INDIA ORI |/60/undefined
-realmi | oppo | onePlus/REALMI C11 2021 - REALMI C20 - REALMI C21 - NARZO 50I ORI |/45/undefined
-realmi | oppo | onePlus/REALMI C11 - REALMI C12 - REALMI C15 - OPPO A15 - OPPO A15S - OPPO A35 - NARZO 20 - NARZO 20A ORI |/44/undefined
-realmi | oppo | onePlus/REALMI C25 - REALMI C21 - REALMI C25S - OPPO A16 - OPPO A16S - OPPO A55 5G - OPPO A56 5G - OPPO A54S - NARZO 50A ORI |/45/undefined
-realmi | oppo | onePlus/REALMI C25Y - REALMI C21Y ORI |/45/undefined
-realmi | oppo | onePlus/REALMI C67 - C65 ORI |/45/undefined
-realmi | oppo | onePlus/REALMI C53 - REALMI C51 - REALMI C60 - REALMI NOTE 50 ORI |/45/undefined
-realmi | oppo | onePlus/REALMI C55 - REALMI C67 5G - REALMI 11 5G - REALMI 11X - NARZO N55 - NARZO 60X - OPPO A58 - OPPO A79 5G - OPPO V50 - OPPO V50S - OPPO A98 5G - OPPO F22 5G - ONE PLUS NARD N30 5G - ONE PLUS NARD 60X PRO ORI |/45/undefined
-realmi | oppo | onePlus/REALMI C3 - REALMI 5I - REALMI 6I - REALMI 5S - REALMI 5 - OPPO A11 - OPPO A11X - OPPO A5 2020 - OPPO A9 2020 - OPPO A31 2020 - OPPO A51 ORI |/45/undefined
-realmi | oppo | onePlus/OPPO A52 - OPPO A72 - OPPO A92 ORI |/50/undefined
-realmi | oppo | onePlus/REALMI 7I - REAMLI C17 - OPPO A54 - OPPO A33 - OPPO A55 - OPPO A53 - OPPO A32 - OPPO A53S - OPPO A51 2021 - A51 2020 ORI |/50/undefined
-realmi | oppo | onePlus/OPPO A72 - OPPO A52 - OPPO A92 ORI |/50/undefined
-realmi | oppo | onePlus/OPPO A93 - RENO 4 4G - RENO 4 LITE - F17 PRO INCELL |/55/undefined
+realmi | oppo | onePlus/OPPO A73 - OPPO A91 - OPPO RENO 3 - OPPO F15 - OPPO F17 |/50/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772134403/esj2ufxq869fdoopql78.webp
+realmi | oppo | onePlus/REALMI 9I - REALMI 8I - NARZO 50 - K10 4G - OPPO A96 4G INDIA ORI |/60/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772134403/esj2ufxq869fdoopql78.webp
+realmi | oppo | onePlus/REALMI C11 2021 - REALMI C20 - REALMI C21 - NARZO 50I ORI |/45/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772134403/esj2ufxq869fdoopql78.webp
+realmi | oppo | onePlus/REALMI C11 - REALMI C12 - REALMI C15 - OPPO A15 - OPPO A15S - OPPO A35 - NARZO 20 - NARZO 20A ORI |/44/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772134403/esj2ufxq869fdoopql78.webp
+realmi | oppo | onePlus/REALMI C25 - REALMI C21 - REALMI C25S - OPPO A16 - OPPO A16S - OPPO A55 5G - OPPO A56 5G - OPPO A54S - NARZO 50A ORI |/45/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772134403/esj2ufxq869fdoopql78.webp
+realmi | oppo | onePlus/REALMI C25Y - REALMI C21Y ORI |/45/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772134403/esj2ufxq869fdoopql78.webp
+realmi | oppo | onePlus/REALMI C67 - C65 ORI |/45/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772134403/esj2ufxq869fdoopql78.webp
+realmi | oppo | onePlus/REALMI C53 - REALMI C51 - REALMI C60 - REALMI NOTE 50 ORI |/45/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772134403/esj2ufxq869fdoopql78.webp
+realmi | oppo | onePlus/REALMI C55 - REALMI C67 5G - REALMI 11 5G - REALMI 11X - NARZO N55 - NARZO 60X - OPPO A58 - OPPO A79 5G - OPPO V50 - OPPO V50S - OPPO A98 5G - OPPO F22 5G - ONE PLUS NARD N30 5G - ONE PLUS NARD 60X PRO ORI |/45/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772134403/esj2ufxq869fdoopql78.webp
+realmi | oppo | onePlus/REALMI C3 - REALMI 5I - REALMI 6I - REALMI 5S - REALMI 5 - OPPO A11 - OPPO A11X - OPPO A5 2020 - OPPO A9 2020 - OPPO A31 2020 - OPPO A51 ORI |/45/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772134403/esj2ufxq869fdoopql78.webp
+realmi | oppo | onePlus/OPPO A52 - OPPO A72 - OPPO A92 ORI |/50/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772134403/esj2ufxq869fdoopql78.webp
+realmi | oppo | onePlus/REALMI 7I - REAMLI C17 - OPPO A54 - OPPO A33 - OPPO A55 - OPPO A53 - OPPO A32 - OPPO A53S - OPPO A51 2021 - A51 2020 ORI |/50/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772134403/esj2ufxq869fdoopql78.webp
+realmi | oppo | onePlus/OPPO A72 - OPPO A52 - OPPO A92 ORI |/50/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772134403/esj2ufxq869fdoopql78.webp
+realmi | oppo | onePlus/OPPO A93 - RENO 4 4G - RENO 4 LITE - F17 PRO INCELL |/55/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772134403/esj2ufxq869fdoopql78.webp
 Samsung/S25 ultra 1:1 +F |/550/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131242/emk09yzk3v79adozksm5.jpg
 Samsung/S24 ultra 1:1 +F |/550/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131242/emk09yzk3v79adozksm5.jpg
 Samsung/S23 ultra 1:1 +F |/550/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131242/emk09yzk3v79adozksm5.jpg
