@@ -1,42 +1,3 @@
-Charging Connector/P1 |/1.5/https://res.cloudinary.com/dygc5b8cn/image/upload/v1770196515/x28kg4jxrptjnsvmefvm.jpg
-Charging Connector/P2 |/1.5/https://res.cloudinary.com/dygc5b8cn/image/upload/v1770197893/yfelktn3rzitmenajbti.jpg
-Charging Connector/P3 |/1.5/https://res.cloudinary.com/dygc5b8cn/image/upload/v1770196528/efvotmslqx9vlfpm9qij.jpg
-Charging Connector/P4 |/1.5/https://res.cloudinary.com/dygc5b8cn/image/upload/v1770196533/ne2liib5ou7iqbpgg8d1.webp
-Charging Connector/P5 |/1.5/https://res.cloudinary.com/dygc5b8cn/image/upload/v1770197897/vlvelienmrsiccmuvkuf.jpg
-Charging Connector/P6 |/1.5/https://res.cloudinary.com/dygc5b8cn/image/upload/v1770196544/afd9qxcq1adzjslqnrtx.jpg
-Charging Connector/P7 |/1.5/https://res.cloudinary.com/dygc5b8cn/image/upload/v1770196551/q9iunj6rslv1lgrmtr3q.jpg
-Charging Connector/P8 |/1.5/https://res.cloudinary.com/dygc5b8cn/image/upload/v1770196558/azbaa4pwoqjcuvgqudp8.jpg
-Charging Connector/P9 |/1.5/https://res.cloudinary.com/dygc5b8cn/image/upload/v1770196567/q9feuul1icso3xng9cse.jpg
-Charging Connector/P10 |/1.5/https://res.cloudinary.com/dygc5b8cn/image/upload/v1770196578/keeg4ar3wj141oca28hv.jpg
-Charging Connector/P11 |/1.5/https://res.cloudinary.com/dygc5b8cn/image/upload/v1770196589/t4t8jv5hwzwvk8dcudcl.jpg
-Charging Connector/P12 |/1.5/https://res.cloudinary.com/dygc5b8cn/image/upload/v1770196598/lsn1f3bpbmg1cjtbsway.jpg
-Charging Connector/P13 |/1.5/https://res.cloudinary.com/dygc5b8cn/image/upload/v1770196604/bhisz7opvoczemcltgwg.jpg
-Charging Connector/P14 |/1.5/https://res.cloudinary.com/dygc5b8cn/image/upload/v1770196609/mh9yhg0y5hmpxtef2uam.jpg
-Charging Connector/P15 |/1.5/https://res.cloudinary.com/dygc5b8cn/image/upload/v1770196744/p2clsifnoteemgh3ifdy.jpg
-Charging Connector/P16 |/1.5/https://res.cloudinary.com/dygc5b8cn/image/upload/v1770196754/hbe2nqztr5uuiyqxvj7n.jpg
-Charging Connector/P17 |/1.5/https://res.cloudinary.com/dygc5b8cn/image/upload/v1770196863/jg00jqemmzmuvrr2kkxi.jpg
-Charging Connector/P18 |/1.5/https://res.cloudinary.com/dygc5b8cn/image/upload/v1770196765/t0hql88g1fuow4jundhp.jpg
-Charging Connector/P19 |/1.5/https://res.cloudinary.com/dygc5b8cn/image/upload/v1770196873/vcslfyocbcld2c111cfe.jpg
-Charging Connector/P20 |/1.5/https://res.cloudinary.com/dygc5b8cn/image/upload/v1770196883/cbh8xpaxcxvymiag3xna.jpg
-Charging Connector/P21 |/1.5/https://res.cloudinary.com/dygc5b8cn/image/upload/v1770197299/uvkoetbptmmmcvdepfkr.jpg
-Charging Connector/P22 |/1.5/https://res.cloudinary.com/dygc5b8cn/image/upload/v1770197290/ugkszdnm30rihw9vl2dr.jpg
-Charging Connector/P23 |/1.5/https://res.cloudinary.com/dygc5b8cn/image/upload/v1770197278/vgp0uprnebaqc2zvjkdu.jpg
-Charging Connector/P24 |/1.5/https://res.cloudinary.com/dygc5b8cn/image/upload/v1770197270/a1qymrkvgshpfkvnqqb3.jpg
-Charging Connector/P25 |/1.5/https://res.cloudinary.com/dygc5b8cn/image/upload/v1770197467/tyf4zg82c7kcvdtghmcb.jpg
-Charging Connector/P26 |/1.5/https://res.cloudinary.com/dygc5b8cn/image/upload/v1770197256/ub6ugen5k58184eiovdl.webp
-Charging Connector/P27 |/1.5/https://res.cloudinary.com/dygc5b8cn/image/upload/v1770197246/qhsjuogp1eeuhxtl9s7x.jpg
-Charging Connector/P28 |/1.5/https://res.cloudinary.com/dygc5b8cn/image/upload/v1770197241/akungzbuhnq03kg5odq0.jpg
-Charging Connector/P29 |/1.5/https://res.cloudinary.com/dygc5b8cn/image/upload/v1770197232/tmxujgylbslgt19bnooq.jpg
-Charging Connector/P30 |/1.5/https://res.cloudinary.com/dygc5b8cn/image/upload/v1770197215/p7neihuib3lnwczgtqy5.jpg
-Charging Connector/P31 |/1.5/https://res.cloudinary.com/dygc5b8cn/image/upload/v1770197208/jdbntxngyuozjpqcglyi.jpg
-Charging Connector/P32 |/1.5/https://res.cloudinary.com/dygc5b8cn/image/upload/v1770197195/wwi24bn8v5t5t0m4sa9l.jpg
-motherboard Connector/P42 |/3/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769793003/ywqujxucb2bli2dekfnq.jpg
-motherboard Connector/P41 |/3/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769793008/jygdrjqcdvlghhml7od5.jpg
-motherboard Connector/P40 |/3/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769793934/fgdbsalzdzgtmg5wge7e.jpg
-motherboard Connector/P39 |/3/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769793627/yuekomcvokok7tpdixkk.jpg
-motherboard Connector/P38 |/3/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769793354/ayel7cwxtujaxiqyzvob.webp
-motherboard Connector/P37 |/3/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769794126/grl0mjkbbwlmmt0fzbxz.jpg
-motherboard Connector/P36 |/3/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769795102/azdmlybq2ptsedk8x46r.jpg
 iphone flex charger/ip 17 pro max أصلي|/aaa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769068342/bt7wcaixkeqvi9cdj5wh.jpg
 iphone flex charger/Ip 16 pro max أصلي|/80/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769068320/jpxg1uctfmy6f65pfcrj.jpg
 iphone flex charger/Ip 15 pro max أصلي|/80/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769068368/nnpwakprkebfchnlkbjn.webp
@@ -94,6 +55,45 @@ iphone flex sensor/Ip 8 plus أصلي|/25/https://res.cloudinary.com/dygc5b8cn/i
 iphone flex sensor/Ip 8 أصلي|/20/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769072938/j5wepjd1ttbstndi5svv.jpg
 iphone flex sensor/Ip 7 plus أصلي|/20/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769072942/h3tnlg41bq5me444rtck.webp
 iphone flex sensor/Ip 7 أصلي|/20/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769072951/feazht86iqje9j8mvpuz.jpg
+Charging Connector/P1 |/1.5/https://res.cloudinary.com/dygc5b8cn/image/upload/v1770196515/x28kg4jxrptjnsvmefvm.jpg
+Charging Connector/P2 |/1.5/https://res.cloudinary.com/dygc5b8cn/image/upload/v1770197893/yfelktn3rzitmenajbti.jpg
+Charging Connector/P3 |/1.5/https://res.cloudinary.com/dygc5b8cn/image/upload/v1770196528/efvotmslqx9vlfpm9qij.jpg
+Charging Connector/P4 |/1.5/https://res.cloudinary.com/dygc5b8cn/image/upload/v1770196533/ne2liib5ou7iqbpgg8d1.webp
+Charging Connector/P5 |/1.5/https://res.cloudinary.com/dygc5b8cn/image/upload/v1770197897/vlvelienmrsiccmuvkuf.jpg
+Charging Connector/P6 |/1.5/https://res.cloudinary.com/dygc5b8cn/image/upload/v1770196544/afd9qxcq1adzjslqnrtx.jpg
+Charging Connector/P7 |/1.5/https://res.cloudinary.com/dygc5b8cn/image/upload/v1770196551/q9iunj6rslv1lgrmtr3q.jpg
+Charging Connector/P8 |/1.5/https://res.cloudinary.com/dygc5b8cn/image/upload/v1770196558/azbaa4pwoqjcuvgqudp8.jpg
+Charging Connector/P9 |/1.5/https://res.cloudinary.com/dygc5b8cn/image/upload/v1770196567/q9feuul1icso3xng9cse.jpg
+Charging Connector/P10 |/1.5/https://res.cloudinary.com/dygc5b8cn/image/upload/v1770196578/keeg4ar3wj141oca28hv.jpg
+Charging Connector/P11 |/1.5/https://res.cloudinary.com/dygc5b8cn/image/upload/v1770196589/t4t8jv5hwzwvk8dcudcl.jpg
+Charging Connector/P12 |/1.5/https://res.cloudinary.com/dygc5b8cn/image/upload/v1770196598/lsn1f3bpbmg1cjtbsway.jpg
+Charging Connector/P13 |/1.5/https://res.cloudinary.com/dygc5b8cn/image/upload/v1770196604/bhisz7opvoczemcltgwg.jpg
+Charging Connector/P14 |/1.5/https://res.cloudinary.com/dygc5b8cn/image/upload/v1770196609/mh9yhg0y5hmpxtef2uam.jpg
+Charging Connector/P15 |/1.5/https://res.cloudinary.com/dygc5b8cn/image/upload/v1770196744/p2clsifnoteemgh3ifdy.jpg
+Charging Connector/P16 |/1.5/https://res.cloudinary.com/dygc5b8cn/image/upload/v1770196754/hbe2nqztr5uuiyqxvj7n.jpg
+Charging Connector/P17 |/1.5/https://res.cloudinary.com/dygc5b8cn/image/upload/v1770196863/jg00jqemmzmuvrr2kkxi.jpg
+Charging Connector/P18 |/1.5/https://res.cloudinary.com/dygc5b8cn/image/upload/v1770196765/t0hql88g1fuow4jundhp.jpg
+Charging Connector/P19 |/1.5/https://res.cloudinary.com/dygc5b8cn/image/upload/v1770196873/vcslfyocbcld2c111cfe.jpg
+Charging Connector/P20 |/1.5/https://res.cloudinary.com/dygc5b8cn/image/upload/v1770196883/cbh8xpaxcxvymiag3xna.jpg
+Charging Connector/P21 |/1.5/https://res.cloudinary.com/dygc5b8cn/image/upload/v1770197299/uvkoetbptmmmcvdepfkr.jpg
+Charging Connector/P22 |/1.5/https://res.cloudinary.com/dygc5b8cn/image/upload/v1770197290/ugkszdnm30rihw9vl2dr.jpg
+Charging Connector/P23 |/1.5/https://res.cloudinary.com/dygc5b8cn/image/upload/v1770197278/vgp0uprnebaqc2zvjkdu.jpg
+Charging Connector/P24 |/1.5/https://res.cloudinary.com/dygc5b8cn/image/upload/v1770197270/a1qymrkvgshpfkvnqqb3.jpg
+Charging Connector/P25 |/1.5/https://res.cloudinary.com/dygc5b8cn/image/upload/v1770197467/tyf4zg82c7kcvdtghmcb.jpg
+Charging Connector/P26 |/1.5/https://res.cloudinary.com/dygc5b8cn/image/upload/v1770197256/ub6ugen5k58184eiovdl.webp
+Charging Connector/P27 |/1.5/https://res.cloudinary.com/dygc5b8cn/image/upload/v1770197246/qhsjuogp1eeuhxtl9s7x.jpg
+Charging Connector/P28 |/1.5/https://res.cloudinary.com/dygc5b8cn/image/upload/v1770197241/akungzbuhnq03kg5odq0.jpg
+Charging Connector/P29 |/1.5/https://res.cloudinary.com/dygc5b8cn/image/upload/v1770197232/tmxujgylbslgt19bnooq.jpg
+Charging Connector/P30 |/1.5/https://res.cloudinary.com/dygc5b8cn/image/upload/v1770197215/p7neihuib3lnwczgtqy5.jpg
+Charging Connector/P31 |/1.5/https://res.cloudinary.com/dygc5b8cn/image/upload/v1770197208/jdbntxngyuozjpqcglyi.jpg
+Charging Connector/P32 |/1.5/https://res.cloudinary.com/dygc5b8cn/image/upload/v1770197195/wwi24bn8v5t5t0m4sa9l.jpg
+motherboard Connector/P42 |/3/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769793003/ywqujxucb2bli2dekfnq.jpg
+motherboard Connector/P41 |/3/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769793008/jygdrjqcdvlghhml7od5.jpg
+motherboard Connector/P40 |/3/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769793934/fgdbsalzdzgtmg5wge7e.jpg
+motherboard Connector/P39 |/3/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769793627/yuekomcvokok7tpdixkk.jpg
+motherboard Connector/P38 |/3/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769793354/ayel7cwxtujaxiqyzvob.webp
+motherboard Connector/P37 |/3/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769794126/grl0mjkbbwlmmt0fzbxz.jpg
+motherboard Connector/P36 |/3/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769795102/azdmlybq2ptsedk8x46r.jpg
 mi flex charger/Redmi Note 14 Ori ic|/20/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769103726/i4y9ccrzjq6yyqsrirjh.jpg
 mi flex charger/Redmi Note 13 Ori ic|/15/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769074723/nps0aadfi6jlrtry7577.jpg
 mi flex charger/Redmi Note 12 Ori ic|/15/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769074723/nps0aadfi6jlrtry7577.jpg
