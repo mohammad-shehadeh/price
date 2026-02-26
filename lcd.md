@@ -1,5 +1,5 @@
-HONOR/X7b |/55/undefined
-tecno | infinix | itel/CAMON 17 pro - zero x new ORI |/60/undefined
+HONOR/X7b |/55/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131616/pebvftygqsnz8h6j8eqf.webp
+tecno | infinix | itel/CAMON 17 pro - zero x new ORI |/aaa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131117/z2dzmryifu1g3pgusfso.jpg
 tecno | infinix | itel/CAMON 18 Premer - zero x incell |/70/undefined
 tecno | infinix | itel/CAMON 19 - CAMON 19 new - CAMON 18 - CAMON 18P - CAMON 18t - spark 8 pro - infinix hot 11S - POVA New 5G - infinix HOT 20S - infinix HOT 20 PRO - CAMON 17P - CAMON 17 PREMIER ORI |/50/undefined
 tecno | infinix | itel/CAMON 19 - CAMON 19 PRO ORI |/50/undefined
@@ -22,7 +22,7 @@ tecno | infinix | itel/tecno POVA 6 - tecno POVA 6 PRO 5G - tecno CAMON 30 - tec
 tecno | infinix | itel/tecno POVA 7 |/60/undefined
 tecno | infinix | itel/infinix HOT 10 |/45/undefined
 tecno | infinix | itel/infinix S5 pro |/45/undefined
-iphone/x BYH |/55/undefined
+iphone/x BYH |/55/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131135/wqebe6jd2ccu8qof69mh.webp
 iphone/xr BYH |/55/undefined
 iphone/xs BYH |/55/undefined
 iphone/xs max BYH |/65/undefined
@@ -73,9 +73,9 @@ iphone/ipad 7,8,9 touch |/45/undefined
 iphone/watch S6 44mm |/200/undefined
 iphone/watch S7 44mm |/200/undefined
 Mi | poco/Redmi pad SE - Redmi pad 2 |/100/undefined
-Mi | poco/Redmi A5 - poco C71 |/50/undefined
+Mi | poco/Redmi A5 - poco C71 |/50/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131155/tdehiviba8vewijxxkkg.webp
 Mi | poco/REDMI 10A - REDMI 9A - REDMI 9C ORI |/45/undefined
-Mi | poco/REDMI 10A - REDMI 9A - REDMI 9C + FRAME ORI |/55/undefined
+Mi | poco/REDMI 10A - REDMI 9A - REDMI 9C + FRAME ORI |/55/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131332/aupsba3hxy73xgau3ptv.jpg
 Mi | poco/MI 11 lite 4G - MI 11 LITE 5G - MI 11 LITE NE 5G INCELL |/60/undefined
 Mi | poco/MI 11 lite 4G - MI 11 LITE 5G - MI 11 LITE NE 5G  orignal |/120/undefined
 Mi | poco/MI 12T - MI 12T pro orignal |/170/undefined
@@ -143,14 +143,14 @@ realmi | oppo | onePlus/OPPO A52 - OPPO A72 - OPPO A92 ORI |/50/undefined
 realmi | oppo | onePlus/REALMI 7I - REAMLI C17 - OPPO A54 - OPPO A33 - OPPO A55 - OPPO A53 - OPPO A32 - OPPO A53S - OPPO A51 2021 - A51 2020 ORI |/50/undefined
 realmi | oppo | onePlus/OPPO A72 - OPPO A52 - OPPO A92 ORI |/50/undefined
 realmi | oppo | onePlus/OPPO A93 - RENO 4 4G - RENO 4 LITE - F17 PRO INCELL |/55/undefined
-Samsung/S25 ultra 1:1 +F |/550/undefined
+Samsung/S25 ultra 1:1 +F |/550/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131242/emk09yzk3v79adozksm5.jpg
 Samsung/S24 ultra 1:1 +F |/550/undefined
 Samsung/S23 ultra 1:1 +F |/550/undefined
 Samsung/S22 ultra 1:1 +F |/aaa/undefined
 Samsung/S21 ultra 1:1 +F |/aaa/undefined
-Samsung/A03 core |/45/undefined
+Samsung/A03 core |/45/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131170/vtxjuu8x1w5qkkynzzrh.jpg
 Samsung/A03S - A02S - A03 - A04E original |/45/undefined
-Samsung/A02S +FRAME |/55/undefined
+Samsung/A02S +FRAME |/55/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131284/pionk2xvkfmkhm2wodu6.jpg
 Samsung/A03S +FRAME |/55/undefined
 Samsung/A04E +FRAME |/55/undefined
 Samsung/A04 original |/45/undefined
@@ -226,8 +226,8 @@ HONOR/X5b |/55/undefined
 HONOR/X6a |/55/undefined
 HONOR/X6b |/55/undefined
 HONOR/X8b |/110/undefined
-HONOR/X9b |/220/undefined
-HONOR/X9C |/220/undefined
+HONOR/X9b +F |/220/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131457/g8h5tqbpxj4wga50kar6.avif
+HONOR/X9C +F |/220/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131452/g8xj9zcy0lxitw5lhzgv.avif
 HUAWEI/y9 prime 2019 ori |/55/undefined
 HUAWEI/y9 2019 |/50/undefined
 HUAWEI/NOVA 3I |/50/undefined
