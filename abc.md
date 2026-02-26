@@ -605,7 +605,7 @@ VEN-DENS/VD-EAR025 |/9/https://res.cloudinary.com/dygc5b8cn/image/upload/v177140
 VEN-DENS/VD-EAR010 |/7/https://res.cloudinary.com/dygc5b8cn/image/upload/v1771407032/c4gnmp9zgobabxovrazc.jpg
 VEN-DENS/VD-BT016 |/Aaa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1771407034/kuat2uvftu93h4g10tq3.jpg
 VEN-DENS/VD-EAR009 |/4/https://res.cloudinary.com/dygc5b8cn/image/upload/v1771407036/ac20dto5qvapvwclllpv.jpg
-VEN-DENS/VD-EAR008 |//https://res.cloudinary.com/dygc5b8cn/image/upload/v1771407037/gpzccifs6h7xd8vcvkv6.jpg
+VEN-DENS/VD-EAR008 |/Aaa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1771407037/gpzccifs6h7xd8vcvkv6.jpg
 VEN-DENS/VD-EAR007 |/3/https://res.cloudinary.com/dygc5b8cn/image/upload/v1771407039/ch1fri9ibi0bzkzsdob2.jpg
 VEN-DENS/VD-EAR005 |/5/https://res.cloudinary.com/dygc5b8cn/image/upload/v1771407040/od0wd9690mrektukwjfn.jpg
 VEN-DENS/VD-EAR001 |/7/https://res.cloudinary.com/dygc5b8cn/image/upload/v1771407042/hvyojnfavla2x1aakn9l.jpg
