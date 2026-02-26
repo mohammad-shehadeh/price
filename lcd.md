@@ -144,82 +144,83 @@ realmi | oppo | onePlus/REALMI 7I - REAMLI C17 - OPPO A54 - OPPO A33 - OPPO A55 
 realmi | oppo | onePlus/OPPO A72 - OPPO A52 - OPPO A92 ORI |/50/undefined
 realmi | oppo | onePlus/OPPO A93 - RENO 4 4G - RENO 4 LITE - F17 PRO INCELL |/55/undefined
 Samsung/S25 ultra 1:1 +F |/550/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131242/emk09yzk3v79adozksm5.jpg
-Samsung/S24 ultra 1:1 +F |/550/undefined
-Samsung/S23 ultra 1:1 +F |/550/undefined
-Samsung/S22 ultra 1:1 +F |/aaa/undefined
-Samsung/S21 ultra 1:1 +F |/aaa/undefined
+Samsung/S24 ultra 1:1 +F |/550/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131242/emk09yzk3v79adozksm5.jpg
+Samsung/S23 ultra 1:1 +F |/550/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131242/emk09yzk3v79adozksm5.jpg
+Samsung/S22 ultra 1:1 +F |/aaa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131242/emk09yzk3v79adozksm5.jpg
+Samsung/S21 ultra 1:1 +F |/aaa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131242/emk09yzk3v79adozksm5.jpg
+Samsung/note 20 ultra 1:1 +F |/aaa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131242/emk09yzk3v79adozksm5.jpg
 Samsung/A03 core |/45/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131170/vtxjuu8x1w5qkkynzzrh.jpg
-Samsung/A03S - A02S - A03 - A04E original |/45/undefined
+Samsung/A03S - A02S - A03 - A04E original |/45/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131170/vtxjuu8x1w5qkkynzzrh.jpg
 Samsung/A02S +FRAME |/55/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131284/pionk2xvkfmkhm2wodu6.jpg
-Samsung/A03S +FRAME |/55/undefined
-Samsung/A04E +FRAME |/55/undefined
-Samsung/A04 original |/45/undefined
-Samsung/A04 +FRAME |/55/undefined
-Samsung/A04S - A13 5G original |/45/undefined
-Samsung/A04S +FRAME |/55/undefined
-Samsung/A05 original |/45/undefined
-Samsung/A05 +FRAME |/55/undefined
-Samsung/A05S original |/50/undefined
-Samsung/A06 original |/50/undefined
-Samsung/A06 +FRAME |/60/undefined
-Samsung/A07 |/50/undefined
-Samsung/A07 +FRAME |/60/undefined
-Samsung/A10 |/40/undefined
-Samsung/A10S |/40/undefined
-Samsung/A11 |/45/undefined
-Samsung/A11 +Frame |/55/undefined
-Samsung/A12-A02 original |/45/undefined
-Samsung/A12 +FRAME |/55/undefined
-Samsung/A13-A23-M336 original |/45/undefined
-Samsung/A13 +FRAME |/55/undefined
-Samsung/A23 +FRAME |/55/undefined
-Samsung/A14 5G |/50/undefined
-Samsung/A14 5G +frame |/60/undefined
-Samsung/A14 |/45/undefined
-Samsung/A14 +FRAME |/55/undefined
-Samsung/A15 incell+F |/60/undefined
-Samsung/A17 +F |/70/undefined
-Samsung/A16 oled+f |/165/undefined
-Samsung/A16 incell+F |/60/undefined
-Samsung/A21S hi |/45/undefined
-Samsung/A21S +FRAME hi |/55/undefined
-Samsung/A24 incell +FRAME |/60/undefined
-Samsung/A24 OLBIG +FRAME |/100/undefined
-Samsung/A24 OLED +FRAME |/140/undefined
-Samsung/A25 incell +FRAME |/60/undefined
-Samsung/A31 incell +FRAME |/55/undefined
-Samsung/A31 oled +FRAME |/90/undefined
-Samsung/A32 incell +FRAME |/60/undefined
-Samsung/A32 olbig +FRAME |/90/undefined
-Samsung/A33 +FRAME |/65/undefined
-Samsung/A33 olbig +FRAME |/110/undefined
-Samsung/A35 original +FRAME |/aaa/undefined
-Samsung/A51 incell +FRAME |/60/undefined
-Samsung/A51 olbig +FRAME |/100/undefined
-Samsung/A52 incell+FRAME |/60/undefined
-Samsung/A52 olbig +FRAME |/120/undefined
-Samsung/A52 original +FRAME |/250/undefined
-Samsung/A33 incell +FRAME |/65/undefined
-Samsung/A53 incell +FRAME |/65/undefined
-Samsung/A53 olbig +FRAME |/120/undefined
-Samsung/A54 incell +FRAME |/70/undefined
-Samsung/A34 incell +FRAME |/65/undefined
-Samsung/A55 incell +FRAME |/70/undefined
-Samsung/A70 incell +FRAME |/60/undefined
-Samsung/A70 olbig +FRAME |/120/undefined
-Samsung/A71 incell +FRAME |/60/undefined
-Samsung/A71 oled +FRAME |/aaa/undefined
-Samsung/A72 incell +FRAME |/65/undefined
-Samsung/A72 olbig +FRAME |/120/undefined
-Samsung/A73 incell +FRAME |/65/undefined
-Samsung/A73 olbig +FRAME |/130/undefined
-Samsung/J4+-J6+ |/45/undefined
-Samsung/J8 |/50/undefined
-Samsung/J7 prime |/45/undefined
-Samsung/A50 - A30 INCELL +FRAME |/55/undefined
-Samsung/A20 INCELL + FRAME |/50/undefined
-Samsung/M13 |/45/undefined
-Samsung/Tap A9 |/90/undefined
+Samsung/A03S +FRAME |/55/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131284/pionk2xvkfmkhm2wodu6.jpg
+Samsung/A04E +FRAME |/55/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131284/pionk2xvkfmkhm2wodu6.jpg
+Samsung/A04 original |/45/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131170/vtxjuu8x1w5qkkynzzrh.jpg
+Samsung/A04 +FRAME |/55/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131284/pionk2xvkfmkhm2wodu6.jpg
+Samsung/A04S - A13 5G original |/45/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131170/vtxjuu8x1w5qkkynzzrh.jpg
+Samsung/A04S +FRAME |/55/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131284/pionk2xvkfmkhm2wodu6.jpg
+Samsung/A05 original |/45/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131170/vtxjuu8x1w5qkkynzzrh.jpg
+Samsung/A05 +FRAME |/55/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131284/pionk2xvkfmkhm2wodu6.jpg
+Samsung/A05S original |/50/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131170/vtxjuu8x1w5qkkynzzrh.jpg
+Samsung/A06 original |/50/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131170/vtxjuu8x1w5qkkynzzrh.jpg
+Samsung/A06 +FRAME |/60/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131284/pionk2xvkfmkhm2wodu6.jpg
+Samsung/A07 |/50/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131170/vtxjuu8x1w5qkkynzzrh.jpg
+Samsung/A07 +FRAME |/60/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131284/pionk2xvkfmkhm2wodu6.jpg
+Samsung/A10 |/40/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131170/vtxjuu8x1w5qkkynzzrh.jpg
+Samsung/A10S |/40/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131170/vtxjuu8x1w5qkkynzzrh.jpg
+Samsung/A11 |/45/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131170/vtxjuu8x1w5qkkynzzrh.jpg
+Samsung/A11 +Frame |/55/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131284/pionk2xvkfmkhm2wodu6.jpg
+Samsung/A12-A02 original |/45/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131170/vtxjuu8x1w5qkkynzzrh.jpg
+Samsung/A12 +FRAME |/55/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131284/pionk2xvkfmkhm2wodu6.jpg
+Samsung/A13-A23-M336 original |/45/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131170/vtxjuu8x1w5qkkynzzrh.jpg
+Samsung/A13 +FRAME |/55/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131284/pionk2xvkfmkhm2wodu6.jpg
+Samsung/A23 +FRAME |/55/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131284/pionk2xvkfmkhm2wodu6.jpg
+Samsung/A14 5G |/50/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131170/vtxjuu8x1w5qkkynzzrh.jpg
+Samsung/A14 5G +frame |/60/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131284/pionk2xvkfmkhm2wodu6.jpg
+Samsung/A14 |/45/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131170/vtxjuu8x1w5qkkynzzrh.jpg
+Samsung/A14 +FRAME |/55/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131284/pionk2xvkfmkhm2wodu6.jpg
+Samsung/A15 incell+F |/60/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131284/pionk2xvkfmkhm2wodu6.jpg
+Samsung/A17 +F |/70/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131284/pionk2xvkfmkhm2wodu6.jpg
+Samsung/A16 oled+f |/165/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131284/pionk2xvkfmkhm2wodu6.jpg
+Samsung/A16 incell+F |/60/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131284/pionk2xvkfmkhm2wodu6.jpg
+Samsung/A21S hi |/45/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131170/vtxjuu8x1w5qkkynzzrh.jpg
+Samsung/A21S +FRAME hi |/55/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131284/pionk2xvkfmkhm2wodu6.jpg
+Samsung/A24 incell +FRAME |/60/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131284/pionk2xvkfmkhm2wodu6.jpg
+Samsung/A24 OLBIG +FRAME |/100/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131284/pionk2xvkfmkhm2wodu6.jpg
+Samsung/A24 OLED +FRAME |/140/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131284/pionk2xvkfmkhm2wodu6.jpg
+Samsung/A25 incell +FRAME |/60/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131284/pionk2xvkfmkhm2wodu6.jpg
+Samsung/A31 incell +FRAME |/55/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131284/pionk2xvkfmkhm2wodu6.jpg
+Samsung/A31 oled +FRAME |/90/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131284/pionk2xvkfmkhm2wodu6.jpg
+Samsung/A32 incell +FRAME |/60/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131284/pionk2xvkfmkhm2wodu6.jpg
+Samsung/A32 olbig +FRAME |/90/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131284/pionk2xvkfmkhm2wodu6.jpg
+Samsung/A33 +FRAME |/65/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131284/pionk2xvkfmkhm2wodu6.jpg
+Samsung/A33 olbig +FRAME |/110/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131284/pionk2xvkfmkhm2wodu6.jpg
+Samsung/A35 original +FRAME |/aaa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131284/pionk2xvkfmkhm2wodu6.jpg
+Samsung/A51 incell +FRAME |/60/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131284/pionk2xvkfmkhm2wodu6.jpg
+Samsung/A51 olbig +FRAME |/100/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131284/pionk2xvkfmkhm2wodu6.jpg
+Samsung/A52 incell+FRAME |/60/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131284/pionk2xvkfmkhm2wodu6.jpg
+Samsung/A52 olbig +FRAME |/120/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131284/pionk2xvkfmkhm2wodu6.jpg
+Samsung/A52 original +FRAME |/250/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131284/pionk2xvkfmkhm2wodu6.jpg
+Samsung/A33 incell +FRAME |/65/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131284/pionk2xvkfmkhm2wodu6.jpg
+Samsung/A53 incell +FRAME |/65/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131284/pionk2xvkfmkhm2wodu6.jpg
+Samsung/A53 olbig +FRAME |/120/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131284/pionk2xvkfmkhm2wodu6.jpg
+Samsung/A54 incell +FRAME |/70/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131284/pionk2xvkfmkhm2wodu6.jpg
+Samsung/A34 incell +FRAME |/65/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131284/pionk2xvkfmkhm2wodu6.jpg
+Samsung/A55 incell +FRAME |/70/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131284/pionk2xvkfmkhm2wodu6.jpg
+Samsung/A70 incell +FRAME |/60/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131284/pionk2xvkfmkhm2wodu6.jpg
+Samsung/A70 olbig +FRAME |/120/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131284/pionk2xvkfmkhm2wodu6.jpg
+Samsung/A71 incell +FRAME |/60/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131284/pionk2xvkfmkhm2wodu6.jpg
+Samsung/A71 oled +FRAME |/aaa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131284/pionk2xvkfmkhm2wodu6.jpg
+Samsung/A72 incell +FRAME |/65/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131284/pionk2xvkfmkhm2wodu6.jpg
+Samsung/A72 olbig +FRAME |/120/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131284/pionk2xvkfmkhm2wodu6.jpg
+Samsung/A73 incell +FRAME |/65/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131284/pionk2xvkfmkhm2wodu6.jpg
+Samsung/A73 olbig +FRAME |/130/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131284/pionk2xvkfmkhm2wodu6.jpg
+Samsung/J4+-J6+ |/45/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131170/vtxjuu8x1w5qkkynzzrh.jpg
+Samsung/J8 |/50/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131170/vtxjuu8x1w5qkkynzzrh.jpg
+Samsung/J7 prime |/45/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131170/vtxjuu8x1w5qkkynzzrh.jpg
+Samsung/A50 - A30 INCELL +FRAME |/55/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131284/pionk2xvkfmkhm2wodu6.jpg
+Samsung/A20 INCELL + FRAME |/50/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131284/pionk2xvkfmkhm2wodu6.jpg
+Samsung/M13 |/45/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131170/vtxjuu8x1w5qkkynzzrh.jpg
+Samsung/Tap A9 |/90/
 Samsung/Tap A9+ 5G 11" |/110/
 HONOR/X5 plus |/55/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131616/pebvftygqsnz8h6j8eqf.webp
 HONOR/X5b |/55/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131616/pebvftygqsnz8h6j8eqf.webp
