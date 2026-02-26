@@ -220,8 +220,8 @@ Samsung/J7 prime |/45/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131
 Samsung/A50 - A30 INCELL +FRAME |/55/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131284/pionk2xvkfmkhm2wodu6.jpg
 Samsung/A20 INCELL + FRAME |/50/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131284/pionk2xvkfmkhm2wodu6.jpg
 Samsung/M13 |/45/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131170/vtxjuu8x1w5qkkynzzrh.jpg
-Samsung/Tap A9 |/90/undefined
-Samsung/Tap A9+ 5G 11" |/110/undefined
+Samsung/Tap A9 |/90/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772135116/giig74c1czgfwilihrbo.avif
+Samsung/Tap A9+ 5G 11" |/110/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772135125/tpzilpl9khhvitqdmvxy.png
 HONOR/X5 plus |/55/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131616/pebvftygqsnz8h6j8eqf.webp
 HONOR/X5b |/55/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131616/pebvftygqsnz8h6j8eqf.webp
 HONOR/X6a |/55/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131616/pebvftygqsnz8h6j8eqf.webp
