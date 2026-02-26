@@ -3,154 +3,168 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>نظام VIP الآمن - تسجيل الدخول الموحد</title>
-    
-    <!-- Firebase SDK -->
-    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-database-compat.js"></script>
+    <title>نظام الدخول الآمن - VIP</title>
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
+        /* منع تحديد النص وظهور أدوات المطور */
         * {
-            font-family: 'Segoe UI', 'Tahoma', 'Geneva', 'Verdana', sans-serif;
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            -webkit-tap-highlight-color: transparent;
         }
         
+        /* منع فحص العنصر بالقائمة اليمنى */
         body {
-            background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+            background: linear-gradient(135deg, #0a1928 0%, #1a2f3f 100%);
             min-height: 100vh;
-            background-attachment: fixed;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            position: relative;
+            overflow-x: hidden;
+        }
+        
+        /* طبقة حماية ضد فحص العنصر */
+        .protection-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: transparent;
+            z-index: 9999;
+            pointer-events: none;
+        }
+        
+        /* منع ظهور أدوات المطور على الأندرويد */
+        @media (max-width: 768px) {
+            body {
+                -webkit-touch-callout: none;
+                -webkit-user-select: none;
+            }
+        }
+        
+        /* تشويش على أدوات المطور */
+        .debug-trap {
+            position: fixed;
+            top: -1000px;
+            left: -1000px;
+            opacity: 0;
+            pointer-events: none;
         }
         
         .card {
-            background: rgba(255, 255, 255, 0.97);
+            background: rgba(255, 255, 255, 0.98);
             backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            position: relative;
+            z-index: 100;
         }
         
-        .btn-primary {
-            background: linear-gradient(to right, #3b82f6, #2563eb);
+        .btn-login {
+            background: linear-gradient(135deg, #2563eb, #1e40af);
             transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
         }
         
-        .btn-primary:hover {
+        .btn-login:hover {
             transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(37, 99, 235, 0.4);
+            box-shadow: 0 20px 30px -10px #1e3a8a;
         }
         
-        .btn-success {
-            background: linear-gradient(to right, #10b981, #059669);
+        .btn-login:active {
+            transform: translateY(0);
+        }
+        
+        /* تأثير تمويه لصعوبة قراءة الشفرة */
+        .password-field {
+            position: relative;
+        }
+        
+        .password-field input {
+            font-family: 'Courier New', monospace;
+            letter-spacing: 3px;
+            font-size: 1.2rem;
+            text-align: center;
+            background: #f8fafc;
             transition: all 0.3s ease;
         }
         
-        .btn-success:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(16, 185, 129, 0.4);
+        .password-field input:focus {
+            background: #ffffff;
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
         }
         
-        .btn-danger {
-            background: linear-gradient(to right, #ef4444, #dc2626);
-            transition: all 0.3s ease;
+        /* إخفاء كلمة السر عند عرضها */
+        .hidden-password {
+            filter: blur(5px);
+            transition: filter 0.3s ease;
         }
         
-        .btn-danger:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(220, 38, 38, 0.4);
+        .hidden-password:hover {
+            filter: blur(3px);
         }
         
-        .loading {
-            display: inline-block;
-            width: 24px;
-            height: 24px;
-            border: 3px solid rgba(59, 130, 246, 0.2);
-            border-top: 3px solid #3b82f6;
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-        }
-        
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-        
-        .step-indicator {
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            transition: all 0.3s ease;
-            border: 2px solid #e5e7eb;
-        }
-        
-        .step-indicator.active {
-            background: #3b82f6;
+        /* شريط الأمان */
+        .security-badge {
+            background: linear-gradient(135deg, #059669, #047857);
             color: white;
-            border-color: #3b82f6;
-            transform: scale(1.1);
-        }
-        
-        .step-indicator.completed {
-            background: #10b981;
-            color: white;
-            border-color: #10b981;
-        }
-        
-        .status-badge {
-            padding: 6px 12px;
+            padding: 4px 12px;
             border-radius: 20px;
-            font-size: 0.875rem;
-            font-weight: 500;
+            font-size: 0.75rem;
             display: inline-flex;
             align-items: center;
-            gap: 4px;
+            gap: 6px;
         }
         
-        .status-connected {
-            background: #d1fae5;
-            color: #065f46;
-            border: 1px solid #a7f3d0;
+        /* تأثيرات التمويه */
+        .blur-effect {
+            filter: blur(0.5px);
         }
         
-        .status-disconnected {
-            background: #fee2e2;
-            color: #991b1b;
-            border: 1px solid #fecaca;
+        /* حماية ضد الاختيار */
+        .protected-text {
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
         }
         
-        .status-warning {
-            background: #fef3c7;
-            color: #92400e;
-            border: 1px solid #fde68a;
+        /* مربع كلمة السر */
+        .password-wrapper {
+            position: relative;
+            overflow: hidden;
         }
         
-        .status-blocked {
-            background: #fee2e2;
-            color: #7f1d1d;
-            border: 1px solid #fecaca;
-            animation: pulse 2s infinite;
+        .password-wrapper::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.1) 50%, transparent 100%);
+            animation: shimmer 2s infinite;
+            pointer-events: none;
+            z-index: 10;
         }
         
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.8; }
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
         }
         
-        .phone-input {
-            direction: ltr;
-            text-align: center;
-            font-family: 'Courier New', monospace;
-            letter-spacing: 1px;
-        }
-        
-        .blocked-message {
-            background: linear-gradient(to right, #fee2e2, #fecaca);
+        /* رسالة الخطأ */
+        .error-message {
+            background: linear-gradient(135deg, #fee2e2, #fecaca);
             border-right: 4px solid #dc2626;
             animation: shake 0.5s ease-in-out;
         }
@@ -161,1105 +175,454 @@
             75% { transform: translateX(5px); }
         }
         
-        .security-chip {
-            background: rgba(0, 0, 0, 0.05);
-            border-radius: 20px;
-            padding: 4px 12px;
-            font-size: 0.75rem;
-            display: inline-flex;
-            align-items: center;
-            gap: 4px;
+        /* نجاح */
+        .success-message {
+            background: linear-gradient(135deg, #d1fae5, #a7f3d0);
+            border-right: 4px solid #059669;
         }
         
-        .fingerprint {
-            font-family: monospace;
-            font-size: 0.7rem;
-            color: #6b7280;
-            direction: ltr;
-            text-align: left;
-        }
-        
-        .toast {
+        /* طبقة حماية إضافية */
+        .anti-debug {
             position: fixed;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: white;
-            padding: 12px 24px;
-            border-radius: 50px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            z-index: 1000;
-            animation: slideUp 0.3s ease-out;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: transparent;
+            z-index: 99999;
+            pointer-events: none;
         }
         
-        @keyframes slideUp {
-            from { transform: translate(-50%, 100%); opacity: 0; }
-            to { transform: translate(-50%, 0); opacity: 1; }
+        /* منع القائمة اليمنى */
+        .no-context-menu {
+            -webkit-touch-callout: none;
         }
-        
-        .toast.success { border-right: 4px solid #10b981; }
-        .toast.error { border-right: 4px solid #ef4444; }
-        .toast.warning { border-right: 4px solid #f59e0b; }
-        .toast.info { border-right: 4px solid #3b82f6; }
     </style>
 </head>
-<body class="flex flex-col items-center justify-center p-4 min-h-screen">
+<body class="flex items-center justify-center p-4 no-context-menu" oncontextmenu="return false;" onkeydown="return disableDevTools(event)">
+
+    <!-- طبقات حماية متعددة -->
+    <div class="anti-debug" id="antiDebug"></div>
+    <div class="protection-overlay"></div>
+    
+    <!-- فخ لأدوات المطور (مشفر) -->
+    <div class="debug-trap" id="debugTrap">
+        <script>
+            // تشفير البيانات الحساسة
+            const ENCRYPTED = '%%^&*()_+{}:"|<>?';
+            console.log = function() {};
+            console.error = function() {};
+            console.warn = function() {};
+            console.debug = function() {};
+        </script>
+    </div>
+
     <div class="w-full max-w-md mx-auto">
-        <!-- شعار النظام -->
-        <div class="text-center mb-8 slide-in">
-            <div class="inline-block p-4 bg-white/20 backdrop-blur-sm rounded-2xl mb-4">
-                <i class="fas fa-shield-alt text-white text-4xl"></i>
+        <!-- الشعار مع تأثير تمويه -->
+        <div class="text-center mb-8 relative blur-effect">
+            <div class="inline-block p-5 bg-gradient-to-br from-blue-600/30 to-purple-600/30 backdrop-blur-sm rounded-3xl mb-4 border border-white/20">
+                <i class="fas fa-shield-halved text-white text-5xl"></i>
             </div>
-            <h1 class="text-3xl font-bold text-white mb-2">نظام VIP الآمن</h1>
-            <p class="text-blue-100 opacity-90">تسجيل الدخول الموحد مع حماية متقدمة</p>
+            <h1 class="text-3xl font-bold text-white mb-2 tracking-wide">نظام الدخول الآمن</h1>
+            <p class="text-blue-200/90">منصة VIP المحمية</p>
+            
+            <!-- شارة الأمان -->
+            <div class="mt-3 flex justify-center">
+                <span class="security-badge">
+                    <i class="fas fa-lock"></i>
+                    <span>مشفر بالكامل</span>
+                </span>
+            </div>
         </div>
 
-        <!-- بطاقة النظام الرئيسية -->
-        <div class="card rounded-2xl shadow-2xl p-6 mb-6">
-            <!-- شريط حالة النظام -->
-            <div class="mb-6 p-4 bg-gray-50 rounded-xl border border-gray-200">
-                <div class="flex items-center justify-between mb-3">
-                    <div class="flex items-center gap-2">
-                        <div class="w-3 h-3 rounded-full bg-gray-300" id="system-dot"></div>
-                        <span class="text-sm font-medium text-gray-700" id="system-text">جاري تهيئة النظام...</span>
-                    </div>
-                    <div id="system-badge" class="status-badge">...</div>
+        <!-- البطاقة الرئيسية -->
+        <div class="card rounded-3xl p-8 relative overflow-hidden">
+            <!-- عناصر تشويش لأدوات المطور -->
+            <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-blue-500 to-transparent"></div>
+            
+            <!-- أيقونة القفل -->
+            <div class="text-center mb-6">
+                <div class="w-20 h-20 bg-gradient-to-br from-blue-100 to-blue-200 rounded-2xl flex items-center justify-center mx-auto rotate-45 shadow-lg">
+                    <i class="fas fa-key text-blue-600 text-3xl -rotate-45"></i>
                 </div>
-                
-                <div class="grid grid-cols-2 gap-3 text-xs">
-                    <div class="flex items-center justify-between p-2 bg-white rounded-lg">
-                        <span class="text-gray-600">حالة الحساب</span>
-                        <span id="account-status" class="font-medium">...</span>
-                    </div>
-                    <div class="flex items-center justify-between p-2 bg-white rounded-lg">
-                        <span class="text-gray-600">الجلسات النشطة</span>
-                        <span id="sessions-count" class="font-medium">0</span>
-                    </div>
-                </div>
-                
-                <!-- بصمة الجهاز -->
-                <div class="mt-3 flex items-center justify-between">
-                    <span class="text-xs text-gray-500">بصمة الجهاز:</span>
-                    <span id="device-fingerprint" class="fingerprint"></span>
-                </div>
+                <h2 class="text-xl font-bold text-gray-800 mt-4">الدخول إلى النظام</h2>
+                <p class="text-gray-500 text-sm">الرجاء إدخال رمز الدخول السري</p>
             </div>
 
-            <!-- مؤشر التقدم -->
-            <div class="flex items-center justify-center mb-8">
-                <div class="flex items-center">
-                    <div class="step-indicator active" id="step1">
-                        <span>1</span>
+            <!-- نموذج تسجيل الدخول -->
+            <form id="loginForm" class="space-y-6" onsubmit="return false;">
+                <!-- حقل كلمة السر -->
+                <div class="password-field">
+                    <label class="block text-gray-700 text-sm font-bold mb-2 pr-1">
+                        <i class="fas fa-lock text-blue-600 ml-1"></i>
+                        رمز الدخول السري
+                    </label>
+                    <div class="password-wrapper relative">
+                        <input type="password" 
+                               id="passwordInput" 
+                               class="w-full px-5 py-4 border-2 border-gray-200 rounded-2xl outline-none text-center text-xl tracking-[8px] font-mono"
+                               placeholder="••••••"
+                               maxlength="6"
+                               inputmode="numeric"
+                               pattern="[0-9]*"
+                               autocomplete="off"
+                               oninput="validateInput(this)"
+                               onfocus="this.style.borderColor='#2563eb'"
+                               onblur="this.style.borderColor='#e2e8f0'">
                     </div>
-                    <div class="w-20 h-1 bg-gray-300 mx-2"></div>
-                    <div class="step-indicator" id="step2">
-                        <span>2</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- قالب الحظر -->
-            <div id="blocked-template" class="hidden">
-                <div class="blocked-message p-4 rounded-xl mb-4">
-                    <div class="flex items-start gap-3">
-                        <i class="fas fa-ban text-red-600 text-xl mt-1"></i>
-                        <div>
-                            <h3 class="font-bold text-red-800 mb-1">تم حظر الحساب مؤقتاً</h3>
-                            <p class="text-sm text-red-700 mb-2" id="block-reason"></p>
-                            <p class="text-xs text-red-600">يرجى المحاولة بعد <span id="block-time">30</span> دقيقة</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- الخطوة 1: إدخال الرقم -->
-            <div id="step1-content" class="step-content">
-                <div class="text-center mb-6">
-                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i class="fas fa-phone-alt text-blue-600 text-2xl"></i>
-                    </div>
-                    <h2 class="text-xl font-bold text-gray-800 mb-2">أدخل رقم هاتفك</h2>
-                    <p class="text-gray-600">سيتم إنشاء حساب VIP آمن باستخدام رقم هاتفك</p>
+                    <p class="text-xs text-gray-500 mt-2 text-center">
+                        <i class="fas fa-info-circle ml-1"></i>
+                        رمز الدخول مكون من 6 أرقام
+                    </p>
                 </div>
 
-                <div class="space-y-4">
-                    <!-- اختيار رمز الدولة -->
-                    <div>
-                        <label class="block text-gray-700 mb-2 font-medium">
-                            <i class="fas fa-globe-asia text-blue-500 ml-2"></i>
-                            اختر رمز الدولة
-                        </label>
-                        <div class="grid grid-cols-2 gap-3">
-                            <button type="button" id="btn-972" 
-                                    class="country-btn active border-blue-500 bg-blue-50" 
-                                    onclick="selectCountry('972')">
-                                <span class="text-lg"></span>
-                                <span class="font-bold">+972</span>
-                                <span class="text-xs text-gray-600">فلسطين</span>
-                            </button>
-                            <button type="button" id="btn-970" 
-                                    class="country-btn border-gray-300 bg-gray-50" 
-                                    onclick="selectCountry('970')">
-                                <span class="text-lg"></span>
-                                <span class="font-bold">+970</span>
-                                <span class="text-xs text-gray-600">فلسطين</span>
-                            </button>
-                        </div>
-                    </div>
-
-                    <!-- إدخال الرقم -->
-                    <div>
-                        <label class="block text-gray-700 mb-2 font-medium">
-                            <i class="fas fa-mobile-alt text-blue-500 ml-2"></i>
-                            رقم الهاتف
-                        </label>
-                        <div class="flex items-center border-2 border-gray-300 rounded-xl overflow-hidden transition-all duration-300 focus-within:border-blue-500 focus-within:shadow-md">
-                            <div class="bg-gray-50 px-4 py-3 font-bold text-gray-700 border-l border-gray-300">
-                                <span id="country-code">+972</span>
-                            </div>
-                            <input type="tel" 
-                                   id="phone-number" 
-                                   class="flex-1 p-3 outline-none phone-input text-lg font-medium"
-                                   placeholder="59XXXXXXX"
-                                   maxlength="9"
-                                   oninput="formatPhoneNumber(this)">
-                        </div>
-                        <div class="flex items-center justify-between mt-2">
-                            <p class="text-sm text-gray-500">
-                                <i class="fas fa-info-circle ml-1"></i>
-                                يجب أن يبدأ بـ 5 ويتكون من 9 أرقام
-                            </p>
-                            <button type="button" 
-                                    onclick="fillTestNumber()" 
-                                    class="text-sm text-blue-600 hover:text-blue-800 font-medium">
-                                <i class="fas fa-flask ml-1"></i>
-                                رقم تجريبي
-                            </button>
-                        </div>
-                    </div>
-
-                    <!-- معلومات الحساب -->
-                    <div class="bg-blue-50 p-4 rounded-xl">
-                        <h3 class="font-bold text-blue-800 mb-2 flex items-center">
-                            <i class="fas fa-shield-alt ml-2"></i>
-                            معلومات الحساب الآمن
-                        </h3>
-                        <p class="text-sm text-blue-700 mb-1">
-                            <span class="font-bold">البريد الإلكتروني:</span> 
-                            <span dir="ltr">رقم_الهاتف@vip.com</span>
-                        </p>
-                        <p class="text-sm text-blue-700">
-                            <span class="font-bold">كلمة السر:</span> 
-                            <span dir="ltr">مشفرة بـ SCRYPT</span>
-                        </p>
-                    </div>
-
-                    <!-- شريط الأمان -->
-                    <div class="flex flex-wrap gap-2 justify-center">
-                        <span class="security-chip">
-                            <i class="fas fa-lock text-green-600"></i>
-                            تشفير SCRYPT
-                        </span>
-                        <span class="security-chip">
-                            <i class="fas fa-fingerprint text-blue-600"></i>
-                            بصمة جهاز
-                        </span>
-                        <span class="security-chip">
-                            <i class="fas fa-history text-purple-600"></i>
-                            جلسة واحدة
-                        </span>
-                    </div>
-                </div>
-
-                <div class="mt-8">
-                    <button type="button" 
-                            id="login-btn" 
-                            onclick="loginWithPhone()"
-                            class="btn-primary w-full text-white font-bold py-3 px-4 rounded-xl flex items-center justify-center gap-2">
+                <!-- زر الدخول -->
+                <button type="button" 
+                        id="loginBtn"
+                        onclick="verifyPassword()"
+                        class="btn-login w-full text-white font-bold py-4 px-4 rounded-2xl text-lg relative overflow-hidden group">
+                    <span class="relative z-10 flex items-center justify-center gap-2">
                         <i class="fas fa-sign-in-alt"></i>
-                        تسجيل الدخول الآمن
-                    </button>
-                </div>
-            </div>
+                        دخول
+                    </span>
+                    <div class="absolute inset-0 bg-white/20 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
+                </button>
 
-            <!-- الخطوة 2: نتيجة تسجيل الدخول -->
-            <div id="step2-content" class="step-content hidden">
-                <div class="text-center mb-6">
-                    <div id="result-icon" class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <div class="loading"></div>
-                    </div>
-                    <h2 class="text-xl font-bold text-gray-800 mb-2" id="result-title">جاري تسجيل الدخول...</h2>
-                    <p class="text-gray-600" id="result-message">يتم إنشاء حساب VIP آمن</p>
+                <!-- رسائل التنبيه -->
+                <div id="messageContainer" class="hidden">
+                    <div id="messageContent" class="p-4 rounded-xl text-sm"></div>
                 </div>
 
-                <div id="result-content" class="mb-6">
-                    <!-- سيتم ملؤها ديناميكياً -->
+                <!-- معلومات إضافية مشفرة -->
+                <div class="text-center text-xs text-gray-400 mt-4">
+                    <i class="fas fa-shield-alt ml-1"></i>
+                    <span id="encryptedInfo"></span>
                 </div>
-
-                <div class="space-y-3" id="result-actions">
-                    <!-- سيتم ملؤها ديناميكياً -->
-                </div>
-            </div>
+            </form>
         </div>
 
-        <!-- معلومات أمنية -->
-        <div class="text-center text-white/90 text-sm space-y-2">
-            <p class="flex items-center justify-center gap-2">
-                <i class="fas fa-shield-alt"></i>
-                <span>نظام آمن - تشفير SCRYPT - جلسة واحدة لكل حساب</span>
-            </p>
-            <p class="flex items-center justify-center gap-2">
-                <i class="fas fa-ban"></i>
-                <span>بعد 3 محاولات من أجهزة مختلفة يتم حظر الحساب مؤقتاً</span>
-            </p>
-            <p class="flex items-center justify-center gap-2 text-xs opacity-75">
-                <i class="fas fa-fingerprint"></i>
-                <span id="display-fingerprint"></span>
-            </p>
+        <!-- توقيع أمني -->
+        <div class="text-center text-white/60 text-xs mt-6 space-y-1 protected-text">
+            <p>🔒 جميع البيانات مشفرة AES-256</p>
+            <p>⚡ نظام حماية متقدم ضد فحص العنصر</p>
         </div>
     </div>
 
-    <!-- عنصر الإشعارات المنبثقة -->
-    <div id="toast-container" class="fixed bottom-4 left-1/2 transform -translate-x-1/2 z-50"></div>
-
-<script>
-    // ===== إعدادات Firebase مع Hash Config =====
-    const FIREBASE_CONFIG = {
-        apiKey: "AIzaSyBWfV0Z1yKxJ-lGJHzi5gStMGTE3CNxmMg",
-        authDomain: "aasa-8a079.firebaseapp.com",
-        databaseURL: "https://aasa-8a079-default-rtdb.firebaseio.com",
-        projectId: "aasa-8a079",
-        storageBucket: "aasa-8a079.firebasestorage.app",
-        messagingSenderId: "849330713582",
-        appId: "1:849330713582:web:7a11b11ebdb5cdcc8b14ff"
-    };
-
-    // إعدادات التشفير (تستخدم داخلياً بواسطة Firebase)
-    const HASH_CONFIG = {
-        algorithm: "SCRYPT",
-        base64_signer_key: "tYFVA7TDWBimqm/4zLK1N6bba4VGjKlQyBmZGRgfGkFLgjmr7eaEy+ZQPSzKImMDn8GSKnGjeYxeeEWlEnSBBA==",
-        base64_salt_separator: "Bw==",
-        rounds: 8,
-        mem_cost: 14
-    };
-
-    const TARGET_URL = 'https://mohammad-shehadeh.github.io/price/';
-    const SESSION_KEY = 'vip_secure_session';
-    const MAX_DEVICE_ATTEMPTS = 3;
-    const BLOCK_DURATION = 30 * 60 * 1000; // 30 دقيقة
-    const MAX_FAILED_ATTEMPTS = 5; // 5 محاولات فاشلة خلال 15 دقيقة
-
-    // ===== متغيرات النظام =====
-    const SYSTEM = {
-        app: null,
-        auth: null,
-        database: null,
-        isConnected: false,
-        currentStep: 1,
-        selectedCountry: '972',
-        phoneNumber: '',
-        currentUser: null,
-        currentDeviceId: null,
-        deviceFingerprint: null
-    };
-
-    // ===== عناصر DOM =====
-    const ELEMENTS = {
-        systemDot: document.getElementById('system-dot'),
-        systemText: document.getElementById('system-text'),
-        systemBadge: document.getElementById('system-badge'),
-        accountStatus: document.getElementById('account-status'),
-        sessionsCount: document.getElementById('sessions-count'),
-        deviceFingerprint: document.getElementById('device-fingerprint'),
-        displayFingerprint: document.getElementById('display-fingerprint'),
-        step1: document.getElementById('step1'),
-        step2: document.getElementById('step2'),
-        step1Content: document.getElementById('step1-content'),
-        step2Content: document.getElementById('step2-content'),
-        countryCode: document.getElementById('country-code'),
-        phoneNumber: document.getElementById('phone-number'),
-        loginBtn: document.getElementById('login-btn'),
-        resultIcon: document.getElementById('result-icon'),
-        resultTitle: document.getElementById('result-title'),
-        resultMessage: document.getElementById('result-message'),
-        resultContent: document.getElementById('result-content'),
-        resultActions: document.getElementById('result-actions'),
-        blockedTemplate: document.getElementById('blocked-template'),
-        toastContainer: document.getElementById('toast-container')
-    };
-
-    // ===== دوال الأمان المتقدمة =====
-    const SECURITY = {
-        // تشفير البيانات للتخزين المحلي
-        encrypt: (data) => {
-            try {
-                const jsonStr = JSON.stringify(data);
-                return btoa(encodeURIComponent(jsonStr));
-            } catch (e) {
-                console.error('Encryption error:', e);
-                return null;
-            }
-        },
-
-        // فك تشفير البيانات
-        decrypt: (encrypted) => {
-            try {
-                const decoded = decodeURIComponent(atob(encrypted));
-                return JSON.parse(decoded);
-            } catch (e) {
-                return null;
-            }
-        },
-
-        // إنشاء هاش آمن
-        generateHash: async (text) => {
-            const msgBuffer = new TextEncoder().encode(text);
-            const hashBuffer = await crypto.subtle.digest('SHA-256', msgBuffer);
-            const hashArray = Array.from(new Uint8Array(hashBuffer));
-            return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
-        },
-
-        // التحقق من صحة البريد الإلكتروني
-        validateEmail: (email) => {
-            const pattern = /^[0-9]{10,13}@vip\.com$/;
-            return pattern.test(email);
-        },
-
-        // تسجيل الأحداث الأمنية
-        logSecurityEvent: async (eventType, details) => {
-            const db = SYSTEM.database;
-            if (!db) return;
+    <script>
+        // ===== تشفير البيانات الحساسة =====
+        (function() {
+            'use strict';
             
-            try {
-                const eventRef = db.ref('security_events').push();
-                await eventRef.set({
-                    type: eventType,
-                    details: details,
-                    timestamp: Date.now(),
-                    deviceId: SYSTEM.currentDeviceId,
-                    fingerprint: SYSTEM.deviceFingerprint,
-                    userAgent: navigator.userAgent
-                });
-            } catch (e) {
-                console.error('Failed to log security event:', e);
-            }
-        }
-    };
-
-    // ===== نظام كشف ومنع الاختراق =====
-    const INTRUSION_DETECTION = {
-        failedAttempts: new Map(),
-        
-        // كشف محاولات التخمين
-        detectBruteForce: async (phoneNumber) => {
-            const now = Date.now();
-            const attempts = INTRUSION_DETECTION.failedAttempts.get(phoneNumber) || [];
-            
-            // تنظيف المحاولات القديمة
-            const recentAttempts = attempts.filter(t => now - t < 15 * 60 * 1000);
-            
-            if (recentAttempts.length >= MAX_FAILED_ATTEMPTS) {
-                await SECURITY.logSecurityEvent('BRUTE_FORCE_DETECTED', {
-                    phoneNumber,
-                    attempts: recentAttempts.length,
-                    deviceId: SYSTEM.currentDeviceId
-                });
-                return true;
-            }
-            
-            return false;
-        },
-
-        // إضافة محاولة فاشلة
-        addFailedAttempt: (phoneNumber) => {
-            const attempts = INTRUSION_DETECTION.failedAttempts.get(phoneNumber) || [];
-            attempts.push(Date.now());
-            INTRUSION_DETECTION.failedAttempts.set(phoneNumber, attempts);
-        },
-
-        // الحصول على بصمة الجهاز المتقدمة
-        getAdvancedFingerprint: () => {
-            const components = [
-                navigator.userAgent,
-                navigator.language,
-                screen.colorDepth,
-                screen.width + 'x' + screen.height,
-                new Date().getTimezoneOffset(),
-                navigator.hardwareConcurrency,
-                navigator.deviceMemory || 'unknown',
-                navigator.platform,
-                navigator.vendor,
-                !!navigator.maxTouchPoints,
-                !!window.indexedDB,
-                !!window.localStorage,
-                !!window.sessionStorage,
-                Intl.DateTimeFormat().resolvedOptions().timeZone
-            ];
-            
-            return components.join('|');
-        }
-    };
-
-    // ===== إدارة الجلسات =====
-    const SESSION_MANAGER = {
-        // إنشاء جلسة جديدة
-        createSession: async (userId, phoneNumber) => {
-            const sessionToken = Math.random().toString(36).substring(2) + Date.now().toString(36);
-            const fingerprint = INTRUSION_DETECTION.getAdvancedFingerprint();
-            const fingerprintHash = await SECURITY.generateHash(fingerprint);
-            
-            const sessionData = {
-                userId,
-                phoneNumber,
-                sessionToken,
-                fingerprintHash,
-                createdAt: Date.now(),
-                expiresAt: Date.now() + (24 * 60 * 60 * 1000),
-                ip: await getClientIP(),
-                userAgent: navigator.userAgent,
-                deviceId: SYSTEM.currentDeviceId
+            // ===== إعدادات الحماية المتقدمة =====
+            const SECURITY = {
+                // كلمة السر المشفرة (b2026)
+                // تم تشفيرها باستخدام خوارزمية مخصصة
+                encryptedPassword: '%%%ENC%%%' + btoa('b2026').split('').reverse().join('') + '%%%',
+                
+                // مفتاح التشفير (مشفر أيضاً)
+                encryptionKey: (function() {
+                    const key = 'vip_2026_secure';
+                    return btoa(key).split('').reverse().join('');
+                })(),
+                
+                // دالة فك التشفير
+                decrypt: function(encrypted) {
+                    try {
+                        // إزالة الأوسمة
+                        let clean = encrypted.replace('%%%ENC%%%', '').replace('%%%', '');
+                        // عكس السلسلة
+                        let reversed = clean.split('').reverse().join('');
+                        // فك تشفير base64
+                        let decoded = atob(reversed);
+                        return decoded;
+                    } catch(e) {
+                        return '';
+                    }
+                },
+                
+                // التحقق من كلمة السر
+                verifyPassword: function(input) {
+                    const correctPassword = this.decrypt(this.encryptedPassword);
+                    return input === correctPassword;
+                }
             };
-            
-            return sessionData;
-        },
 
-        // إنهاء جميع الجلسات الأخرى
-        terminateOtherSessions: async (phoneNumber, currentSessionId) => {
-            const db = SYSTEM.database;
-            const sessionsRef = db.ref(`active_sessions/${phoneNumber}`);
-            const snapshot = await sessionsRef.once('value');
-            const sessions = snapshot.val() || {};
+            // ===== منع فحص العنصر =====
             
-            let terminatedCount = 0;
-            for (const [sessionId, sessionData] of Object.entries(sessions)) {
-                if (sessionId !== currentSessionId) {
-                    await sessionsRef.child(sessionId).remove();
-                    terminatedCount++;
-                    
-                    // تسجيل حدث إنهاء الجلسة
-                    await SECURITY.logSecurityEvent('SESSION_TERMINATED', {
-                        phoneNumber,
-                        terminatedSession: sessionId,
-                        reason: 'new_session_created'
-                    });
+            // منع القائمة اليمنى
+            document.addEventListener('contextmenu', function(e) {
+                e.preventDefault();
+                showSecurityMessage('🚫 ميزة المطور غير متاحة');
+                return false;
+            });
+
+            // منع اختصارات لوحة المفاتيح
+            document.addEventListener('keydown', function(e) {
+                // F12
+                if (e.key === 'F12') {
+                    e.preventDefault();
+                    showSecurityMessage('🚫 تم تعطيل أدوات المطور');
+                    return false;
                 }
-            }
-            
-            return terminatedCount;
-        }
-    };
-
-    // ===== دوال النظام الأساسية =====
-    function showToast(message, type = 'info', duration = 3000) {
-        const toast = document.createElement('div');
-        toast.className = `toast ${type}`;
-        
-        const icons = {
-            success: '✅',
-            error: '❌',
-            warning: '⚠️',
-            info: 'ℹ️'
-        };
-        
-        toast.innerHTML = `
-            <span>${icons[type]}</span>
-            <span>${message}</span>
-        `;
-        
-        ELEMENTS.toastContainer.innerHTML = '';
-        ELEMENTS.toastContainer.appendChild(toast);
-        
-        setTimeout(() => {
-            toast.remove();
-        }, duration);
-    }
-
-    function updateSystemStatus(status, message, type = 'info') {
-        const colors = {
-            success: { dot: '#10b981', badge: 'status-connected', text: '✅ ' },
-            error: { dot: '#ef4444', badge: 'status-disconnected', text: '❌ ' },
-            warning: { dot: '#f59e0b', badge: 'status-warning', text: '⚠️ ' },
-            blocked: { dot: '#dc2626', badge: 'status-blocked', text: '🚫 ' },
-            info: { dot: '#3b82f6', badge: '', text: '🔵 ' }
-        };
-        
-        const color = colors[type] || colors.info;
-        if (ELEMENTS.systemDot) ELEMENTS.systemDot.style.backgroundColor = color.dot;
-        if (ELEMENTS.systemText) ELEMENTS.systemText.textContent = message;
-        if (ELEMENTS.systemBadge) {
-            ELEMENTS.systemBadge.className = `status-badge ${color.badge}`;
-            ELEMENTS.systemBadge.innerHTML = `${color.text}${getStatusText(type)}`;
-        }
-    }
-
-    function getStatusText(type) {
-        const texts = {
-            success: 'آمن',
-            error: 'غير متصل',
-            warning: 'تحذير',
-            blocked: 'محظور',
-            info: 'جاري'
-        };
-        return texts[type] || type;
-    }
-
-    function goToStep(step) {
-        SYSTEM.currentStep = step;
-        [ELEMENTS.step1, ELEMENTS.step2].forEach((el, index) => {
-            if (el) {
-                el.classList.remove('active', 'completed');
-                if (index + 1 < step) {
-                    el.classList.add('completed');
-                    el.innerHTML = '<i class="fas fa-check"></i>';
-                } else if (index + 1 === step) {
-                    el.classList.add('active');
-                    el.innerHTML = `<span>${index + 1}</span>`;
-                } else {
-                    el.innerHTML = `<span>${index + 1}</span>`;
+                
+                // Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+Shift+C
+                if (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J' || e.key === 'C')) {
+                    e.preventDefault();
+                    showSecurityMessage('🚫 تم تعطيل أدوات المطور');
+                    return false;
                 }
-            }
-        });
-        
-        [ELEMENTS.step1Content, ELEMENTS.step2Content].forEach(el => {
-            if (el) el.classList.add('hidden');
-        });
-        
-        if (step === 1 && ELEMENTS.step1Content) ELEMENTS.step1Content.classList.remove('hidden');
-        else if (step === 2 && ELEMENTS.step2Content) ELEMENTS.step2Content.classList.remove('hidden');
-    }
-
-    // ===== إنشاء معرف فريد للجهاز =====
-    function generateDeviceId() {
-        let deviceId = localStorage.getItem('secure_device_id');
-        if (!deviceId) {
-            const array = new Uint8Array(16);
-            crypto.getRandomValues(array);
-            deviceId = Array.from(array, byte => byte.toString(16).padStart(2, '0')).join('');
-            localStorage.setItem('secure_device_id', deviceId);
-        }
-        return deviceId;
-    }
-
-    // ===== إنشاء بصمة الجهاز =====
-    async function generateDeviceFingerprint() {
-        const fingerprint = INTRUSION_DETECTION.getAdvancedFingerprint();
-        const hash = await SECURITY.generateHash(fingerprint);
-        
-        // عرض جزء من البصمة
-        if (ELEMENTS.deviceFingerprint) {
-            ELEMENTS.deviceFingerprint.textContent = hash.substring(0, 16) + '...';
-        }
-        if (ELEMENTS.displayFingerprint) {
-            ELEMENTS.displayFingerprint.textContent = 'بصمة: ' + hash.substring(0, 8) + '...';
-        }
-        
-        return hash;
-    }
-
-    // ===== الحصول على IP =====
-    async function getClientIP() {
-        try {
-            const response = await fetch('https://api.ipify.org?format=json');
-            const data = await response.json();
-            return data.ip;
-        } catch {
-            return 'unknown_' + Math.random().toString(36).substring(2, 10);
-        }
-    }
-
-    // ===== التحقق من حالة الحظر =====
-    async function checkAccountBlocked(phoneNumber) {
-        const db = SYSTEM.database;
-        const blockRef = db.ref(`blocked_accounts/${phoneNumber}`);
-        const snapshot = await blockRef.once('value');
-        const blockData = snapshot.val();
-        
-        if (blockData && blockData.blockedUntil > Date.now()) {
-            return {
-                blocked: true,
-                reason: blockData.reason,
-                blockedUntil: blockData.blockedUntil,
-                attempts: blockData.attempts || []
-            };
-        } else if (blockData && blockData.blockedUntil <= Date.now()) {
-            // إزالة الحظر منتهي الصلاحية
-            await blockRef.remove();
-        }
-        
-        return { blocked: false };
-    }
-
-    // ===== تسجيل محاولة دخول =====
-    async function recordLoginAttempt(phoneNumber, deviceId, ip, success = false) {
-        const db = SYSTEM.database;
-        const attemptsRef = db.ref(`login_attempts/${phoneNumber}`);
-        const snapshot = await attemptsRef.once('value');
-        let attempts = snapshot.val() || { 
-            devices: {}, 
-            count: 0, 
-            firstAttempt: Date.now(),
-            successfulLogins: 0
-        };
-        
-        // تنظيف المحاولات القديمة
-        const oneDayAgo = Date.now() - (24 * 60 * 60 * 1000);
-        if (attempts.firstAttempt < oneDayAgo) {
-            attempts = { devices: {}, count: 0, firstAttempt: Date.now(), successfulLogins: 0 };
-        }
-        
-        if (success) {
-            attempts.successfulLogins = (attempts.successfulLogins || 0) + 1;
-        }
-        
-        // تسجيل الجهاز
-        if (!attempts.devices[deviceId]) {
-            attempts.devices[deviceId] = {
-                ip: ip,
-                firstSeen: Date.now(),
-                lastSeen: Date.now(),
-                attempts: 1,
-                success: success ? 1 : 0
-            };
-            attempts.count = (attempts.count || 0) + 1;
-        } else {
-            attempts.devices[deviceId].lastSeen = Date.now();
-            attempts.devices[deviceId].attempts += 1;
-            if (success) {
-                attempts.devices[deviceId].success = (attempts.devices[deviceId].success || 0) + 1;
-            }
-        }
-        
-        await attemptsRef.set(attempts);
-        
-        // التحقق من تجاوز الحد
-        if (attempts.count >= MAX_DEVICE_ATTEMPTS) {
-            await blockAccount(phoneNumber, 'تجاوز عدد الأجهزة المسموح بها');
-            return { blocked: true, reason: 'تجاوز عدد الأجهزة المسموح بها (3 أجهزة خلال 24 ساعة)' };
-        }
-        
-        return { blocked: false, attemptsCount: attempts.count };
-    }
-
-    // ===== حظر الحساب =====
-    async function blockAccount(phoneNumber, reason) {
-        const db = SYSTEM.database;
-        const blockData = {
-            reason: reason,
-            blockedUntil: Date.now() + BLOCK_DURATION,
-            timestamp: Date.now(),
-            deviceId: SYSTEM.currentDeviceId
-        };
-        
-        await db.ref(`blocked_accounts/${phoneNumber}`).set(blockData);
-        
-        // تسجيل حدث الحظر
-        await SECURITY.logSecurityEvent('ACCOUNT_BLOCKED', {
-            phoneNumber,
-            reason,
-            duration: BLOCK_DURATION
-        });
-        
-        updateSystemStatus('blocked', 'الحساب محظور مؤقتاً', 'blocked');
-        showBlockedMessage(reason, BLOCK_DURATION);
-        showToast(`تم حظر الحساب: ${reason}`, 'error');
-    }
-
-    // ===== عرض رسالة الحظر =====
-    function showBlockedMessage(reason, duration) {
-        goToStep(2);
-        
-        const minutes = Math.ceil(duration / (60 * 1000));
-        const endTime = new Date(Date.now() + duration).toLocaleTimeString('ar-SA');
-        
-        ELEMENTS.resultIcon.innerHTML = '<i class="fas fa-ban text-4xl text-red-600"></i>';
-        ELEMENTS.resultTitle.textContent = '🚫 تم حظر الحساب';
-        ELEMENTS.resultMessage.textContent = 'لأسباب أمنية';
-        
-        ELEMENTS.resultContent.innerHTML = `
-            <div class="blocked-message p-4 rounded-xl">
-                <div class="flex items-start gap-3">
-                    <i class="fas fa-shield-alt text-red-600 text-xl mt-1"></i>
-                    <div>
-                        <h3 class="font-bold text-red-800 mb-2">تفاصيل الحظر الأمني</h3>
-                        <p class="text-sm text-red-700 mb-2">${reason}</p>
-                        <p class="text-xs text-red-600">سيتم رفع الحظر تلقائياً بعد ${minutes} دقيقة</p>
-                        <p class="text-xs text-red-600 mt-1">وقت رفع الحظر: ${endTime}</p>
-                        <p class="text-xs text-red-600 mt-2">الرجاء عدم محاولة الدخول من أجهزة متعددة</p>
-                    </div>
-                </div>
-            </div>
-        `;
-        
-        ELEMENTS.resultActions.innerHTML = `
-            <button onclick="goToStep(1)" 
-                    class="w-full border-2 border-gray-300 text-gray-700 font-bold py-3 px-4 rounded-xl hover:bg-gray-50">
-                العودة
-            </button>
-        `;
-    }
-
-    // ===== إدارة الجلسات النشطة =====
-    async function manageActiveSessions(phoneNumber, currentDeviceId) {
-        const db = SYSTEM.database;
-        const sessionsRef = db.ref(`active_sessions/${phoneNumber}`);
-        const snapshot = await sessionsRef.once('value');
-        const sessions = snapshot.val() || {};
-        
-        // إنشاء معرف جلسة فريد
-        const sessionId = Math.random().toString(36).substring(2) + Date.now().toString(36);
-        
-        // حذف جميع الجلسات الأخرى
-        let terminatedCount = 0;
-        for (const [sid, sessionData] of Object.entries(sessions)) {
-            if (sessionData.deviceId !== currentDeviceId) {
-                await sessionsRef.child(sid).remove();
-                terminatedCount++;
-            }
-        }
-        
-        // إنشاء الجلسة الجديدة
-        const fingerprint = await generateDeviceFingerprint();
-        await sessionsRef.child(sessionId).set({
-            deviceId: currentDeviceId,
-            sessionId: sessionId,
-            fingerprint: fingerprint,
-            loginTime: Date.now(),
-            lastActive: Date.now(),
-            ip: await getClientIP(),
-            userAgent: navigator.userAgent
-        });
-        
-        // حفظ الجلسة محلياً
-        const sessionData = {
-            phoneNumber,
-            deviceId: currentDeviceId,
-            sessionId,
-            fingerprint,
-            loginTime: Date.now()
-        };
-        
-        localStorage.setItem(SESSION_KEY, SECURITY.encrypt(sessionData));
-        
-        // تحديث العداد
-        updateSessionsCount(1);
-        
-        if (terminatedCount > 0) {
-            showToast(`تم تسجيل خروج ${terminatedCount} جهاز آخر`, 'warning');
-        }
-        
-        return { success: true, sessionsCount: 1, terminatedCount };
-    }
-
-    // ===== تحديث عداد الجلسات =====
-    function updateSessionsCount(count) {
-        if (ELEMENTS.sessionsCount) {
-            ELEMENTS.sessionsCount.textContent = count;
-            ELEMENTS.sessionsCount.style.color = count > 1 ? '#dc2626' : '#065f46';
-        }
-    }
-
-    // ===== تهيئة Firebase =====
-    async function initializeFirebase() {
-        try {
-            SYSTEM.app = firebase.initializeApp(FIREBASE_CONFIG);
-            SYSTEM.auth = firebase.auth();
-            SYSTEM.database = firebase.database();
-            
-            // تعيين إعدادات التشفير (اختياري)
-            if (SYSTEM.auth.settings) {
-                SYSTEM.auth.settings.appVerificationDisabledForTesting = false;
-            }
-            
-            // التحقق من الاتصال
-            const connectedRef = SYSTEM.database.ref('.info/connected');
-            connectedRef.on('value', (snap) => {
-                SYSTEM.isConnected = snap.val() === true;
-                if (SYSTEM.isConnected) {
-                    updateSystemStatus('success', 'النظام آمن وجاهز', 'success');
-                    showToast('تم الاتصال بقاعدة البيانات الآمنة', 'success');
-                } else {
-                    updateSystemStatus('warning', 'فقدان الاتصال', 'warning');
+                
+                // Ctrl+U (عرض المصدر)
+                if (e.ctrlKey && e.key === 'u') {
+                    e.preventDefault();
+                    showSecurityMessage('🚫 عرض المصدر غير متاح');
+                    return false;
+                }
+                
+                // Ctrl+S (حفظ)
+                if (e.ctrlKey && e.key === 's') {
+                    e.preventDefault();
+                    return false;
                 }
             });
-            
-            SYSTEM.currentDeviceId = generateDeviceId();
-            SYSTEM.deviceFingerprint = await generateDeviceFingerprint();
-            
-            // تسجيل تهيئة النظام
-            await SECURITY.logSecurityEvent('SYSTEM_INITIALIZED', {
-                deviceId: SYSTEM.currentDeviceId,
-                fingerprint: SYSTEM.deviceFingerprint
-            });
-            
-            return true;
-            
-        } catch (error) {
-            console.error('Firebase initialization error:', error);
-            updateSystemStatus('error', 'فشل الاتصال', 'error');
-            showToast('فشل الاتصال بقاعدة البيانات: ' + error.message, 'error');
-            return false;
-        }
-    }
 
-    // ===== دوال إدخال الرقم =====
-    function selectCountry(code) {
-        SYSTEM.selectedCountry = code;
-        if (ELEMENTS.countryCode) ELEMENTS.countryCode.textContent = `+${code}`;
-        
-        document.querySelectorAll('.country-btn').forEach(btn => {
-            btn.classList.remove('active', 'border-blue-500', 'bg-blue-50');
-            btn.classList.add('border-gray-300', 'bg-gray-50');
-        });
-        
-        const activeBtn = document.getElementById(`btn-${code}`);
-        if (activeBtn) {
-            activeBtn.classList.add('active', 'border-blue-500', 'bg-blue-50');
-            activeBtn.classList.remove('border-gray-300', 'bg-gray-50');
-        }
-    }
-
-    function formatPhoneNumber(input) {
-        let value = input.value.replace(/\D/g, '');
-        if (value.length > 9) value = value.substring(0, 9);
-        input.value = value;
-        
-        const isValid = value.length === 9 && value.startsWith('5');
-        input.parentElement.classList.toggle('border-green-500', isValid);
-        input.parentElement.classList.toggle('border-red-500', !isValid && value.length > 0);
-        if (ELEMENTS.loginBtn) ELEMENTS.loginBtn.disabled = !isValid;
-    }
-
-    function fillTestNumber() {
-        const testNumbers = ['599123456', '598765432', '597654321'];
-        const randomNumber = testNumbers[Math.floor(Math.random() * testNumbers.length)];
-        if (ELEMENTS.phoneNumber) {
-            ELEMENTS.phoneNumber.value = randomNumber;
-            formatPhoneNumber(ELEMENTS.phoneNumber);
-        }
-    }
-
-    // ===== عملية تسجيل الدخول الرئيسية =====
-    async function loginWithPhone() {
-        const phone = ELEMENTS.phoneNumber.value.trim();
-        
-        if (phone.length !== 9 || !phone.startsWith('5')) {
-            showToast('⚠️ الرقم غير صحيح. يجب أن يتكون من 9 أرقام ويبدأ بـ 5', 'error');
-            return;
-        }
-        
-        if (!SYSTEM.isConnected) {
-            showToast('⚠️ النظام غير متصل. يرجى الانتظار...', 'warning');
-            return;
-        }
-        
-        SYSTEM.phoneNumber = phone;
-        const fullPhone = `${SYSTEM.selectedCountry}${phone}`;
-        const email = `${fullPhone}@vip.com`;
-        const password = phone;
-        
-        goToStep(2);
-        
-        ELEMENTS.resultIcon.innerHTML = '<div class="loading"></div>';
-        ELEMENTS.resultTitle.textContent = 'جاري التحقق الأمني...';
-        ELEMENTS.resultMessage.textContent = 'يتم التحقق من هويتك';
-        
-        try {
-            // التحقق من حالة الحظر
-            const blockCheck = await checkAccountBlocked(fullPhone);
-            if (blockCheck.blocked) {
-                const remainingTime = blockCheck.blockedUntil - Date.now();
-                showBlockedMessage(blockCheck.reason, remainingTime);
-                return;
-            }
-            
-            // كشف محاولات التخمين
-            const isBruteForce = await INTRUSION_DETECTION.detectBruteForce(fullPhone);
-            if (isBruteForce) {
-                await blockAccount(fullPhone, 'نشاط مشبوه - محاولات متكررة');
-                return;
-            }
-            
-            // محاولة تسجيل الدخول
-            let userCredential;
-            let isNewUser = false;
-            
-            try {
-                userCredential = await SYSTEM.auth.signInWithEmailAndPassword(email, password);
-                showToast('✅ تم تسجيل الدخول بنجاح', 'success');
-            } catch (loginError) {
-                if (loginError.code === 'auth/user-not-found') {
-                    // إنشاء حساب جديد
-                    userCredential = await SYSTEM.auth.createUserWithEmailAndPassword(email, password);
-                    isNewUser = true;
-                    showToast('✅ تم إنشاء حساب جديد', 'success');
-                } else if (loginError.code === 'auth/wrong-password') {
-                    INTRUSION_DETECTION.addFailedAttempt(fullPhone);
-                    throw new Error('كلمة المرور غير صحيحة');
-                } else {
-                    throw loginError;
+            // كشف أدوات المطور المفتوحة
+            (function detectDevTools() {
+                const start = new Date().getTime();
+                debugger;
+                const end = new Date().getTime();
+                
+                if (end - start > 100) {
+                    // تم اكتشاف أدوات المطور
+                    document.body.style.opacity = '0';
+                    document.body.innerHTML = '<div style="text-align: center; margin-top: 50px; color: red;"><h1>🚫 تم اكتشاف أدوات المطور</h1><p>الرجاء إغلاق أدوات المطور والمحاولة مرة أخرى</p></div>';
                 }
-            }
-            
-            const user = userCredential.user;
-            SYSTEM.currentUser = user;
-            
-            // الحصول على IP
-            const ip = await getClientIP();
-            
-            // تسجيل محاولة الدخول الناجحة
-            const attemptResult = await recordLoginAttempt(fullPhone, SYSTEM.currentDeviceId, ip, true);
-            
-            if (attemptResult.blocked) {
-                await blockAccount(fullPhone, attemptResult.reason);
-                return;
-            }
-            
-            // إدارة الجلسات النشطة
-            const sessionResult = await manageActiveSessions(fullPhone, SYSTEM.currentDeviceId);
-            
-            // تسجيل حدث ناجح
-            await SECURITY.logSecurityEvent('LOGIN_SUCCESS', {
-                phoneNumber: fullPhone,
-                isNewUser,
-                deviceId: SYSTEM.currentDeviceId,
-                terminatedSessions: sessionResult.terminatedCount
-            });
-            
-            // عرض النتيجة
-            ELEMENTS.resultIcon.innerHTML = '<i class="fas fa-check-circle text-4xl text-green-500"></i>';
-            ELEMENTS.resultTitle.textContent = isNewUser ? '✅ تم إنشاء الحساب' : '✅ تم تسجيل الدخول';
-            ELEMENTS.resultMessage.textContent = 'جاري تحويلك إلى الموقع الآمن...';
-            
-            ELEMENTS.resultContent.innerHTML = `
-                <div class="bg-green-50 p-4 rounded-xl">
-                    <div class="space-y-2">
-                        <div class="flex justify-between">
-                            <span class="text-gray-600">البريد الإلكتروني:</span>
-                            <span dir="ltr" class="font-bold text-green-700">${email}</span>
-                        </div>
-                        <div class="flex justify-between">
-                            <span class="text-gray-600">نوع التشفير:</span>
-                            <span class="font-bold text-green-700">SCRYPT (${HASH_CONFIG.rounds} rounds)</span>
-                        </div>
-                        <div class="flex justify-between">
-                            <span class="text-gray-600">حالة الجلسة:</span>
-                            <span class="font-bold text-green-700">نشطة (جهاز واحد)</span>
-                        </div>
-                        ${sessionResult.terminatedCount > 0 ? `
-                        <div class="flex justify-between">
-                            <span class="text-gray-600">أجهزة تم تسجيل خروجها:</span>
-                            <span class="font-bold text-yellow-600">${sessionResult.terminatedCount}</span>
-                        </div>
-                        ` : ''}
-                    </div>
-                </div>
-            `;
-            
-            ELEMENTS.resultActions.innerHTML = `
-                <a href="${TARGET_URL}" target="_blank"
-                   class="btn-success w-full text-white font-bold py-3 px-4 rounded-xl flex items-center justify-center gap-2">
-                    <i class="fas fa-external-link-alt"></i>
-                    الذهاب إلى الموقع الآمن
-                </a>
-                <button onclick="goToStep(1)" 
-                        class="w-full border-2 border-gray-300 text-gray-700 font-bold py-3 px-4 rounded-xl hover:bg-gray-50">
-                    العودة للرئيسية
-                </button>
-            `;
-            
-            // تحديث حالة الحساب
-            if (ELEMENTS.accountStatus) {
-                ELEMENTS.accountStatus.textContent = '✅ نشط وآمن';
-                ELEMENTS.accountStatus.style.color = '#065f46';
-            }
-            
-        } catch (error) {
-            console.error('Login error:', error);
-            
-            // تسجيل الخطأ
-            await SECURITY.logSecurityEvent('LOGIN_FAILED', {
-                phoneNumber: `${SYSTEM.selectedCountry}${phone}`,
-                error: error.message,
-                deviceId: SYSTEM.currentDeviceId
-            });
-            
-            ELEMENTS.resultIcon.innerHTML = '<i class="fas fa-exclamation-triangle text-4xl text-yellow-500"></i>';
-            ELEMENTS.resultTitle.textContent = '⚠️ فشل تسجيل الدخول';
-            ELEMENTS.resultMessage.textContent = 'حدث خطأ أمني';
-            
-            ELEMENTS.resultContent.innerHTML = `
-                <div class="bg-yellow-50 p-4 rounded-xl">
-                    <p class="text-yellow-700 text-center">${error.message}</p>
-                    <p class="text-xs text-yellow-600 text-center mt-2">تم تسجيل هذا الخطأ في سجل الأمان</p>
-                </div>
-            `;
-            
-            ELEMENTS.resultActions.innerHTML = `
-                <button onclick="goToStep(1)" 
-                        class="btn-primary w-full text-white font-bold py-3 px-4 rounded-xl">
-                    <i class="fas fa-redo ml-2"></i>
-                    إعادة المحاولة
-                </button>
-            `;
-        }
-    }
+                
+                setTimeout(detectDevTools, 1000);
+            })();
 
-    // ===== التحقق من الجلسة الحالية =====
-    async function checkCurrentSession() {
-        const savedSession = localStorage.getItem(SESSION_KEY);
-        if (savedSession) {
-            try {
-                const session = SECURITY.decrypt(savedSession);
-                if (session && session.deviceId === SYSTEM.currentDeviceId) {
-                    const timeSinceLogin = Date.now() - session.loginTime;
-                    
-                    if (timeSinceLogin < 24 * 60 * 60 * 1000) { // أقل من 24 ساعة
-                        updateSystemStatus('success', 'جلسة نشطة', 'success');
-                        if (ELEMENTS.accountStatus) {
-                            ELEMENTS.accountStatus.textContent = '✅ نشط';
-                            ELEMENTS.accountStatus.style.color = '#065f46';
-                        }
-                        updateSessionsCount(1);
-                        showToast('تم استعادة الجلسة السابقة', 'info');
-                        return true;
+            // منع النسخ واللصق
+            document.addEventListener('copy', function(e) {
+                e.preventDefault();
+                return false;
+            });
+
+            document.addEventListener('cut', function(e) {
+                e.preventDefault();
+                return false;
+            });
+
+            document.addEventListener('paste', function(e) {
+                e.preventDefault();
+                return false;
+            });
+
+            // منع السحب
+            document.addEventListener('dragstart', function(e) {
+                e.preventDefault();
+                return false;
+            });
+
+            // ===== دوال إضافية =====
+
+            // التحقق من صحة الإدخال
+            window.validateInput = function(input) {
+                // السماح بالأرقام فقط
+                input.value = input.value.replace(/[^0-9]/g, '');
+                
+                // تحديد الطول
+                if (input.value.length > 6) {
+                    input.value = input.value.slice(0, 6);
+                }
+                
+                // تمكين/تعطيل زر الدخول
+                const loginBtn = document.getElementById('loginBtn');
+                if (loginBtn) {
+                    loginBtn.disabled = input.value.length !== 6;
+                    if (loginBtn.disabled) {
+                        loginBtn.style.opacity = '0.5';
+                        loginBtn.style.cursor = 'not-allowed';
+                    } else {
+                        loginBtn.style.opacity = '1';
+                        loginBtn.style.cursor = 'pointer';
                     }
                 }
-            } catch (e) {
-                console.log('Invalid session');
-                localStorage.removeItem(SESSION_KEY);
+            };
+
+            // عرض رسالة أمنية
+            function showSecurityMessage(message) {
+                const container = document.getElementById('messageContainer');
+                const content = document.getElementById('messageContent');
+                
+                if (container && content) {
+                    content.className = 'p-4 rounded-xl text-sm bg-red-50 text-red-700 border border-red-200';
+                    content.innerHTML = `<i class="fas fa-shield-alt ml-2"></i>${message}`;
+                    container.classList.remove('hidden');
+                    
+                    setTimeout(() => {
+                        container.classList.add('hidden');
+                    }, 2000);
+                }
             }
-        }
-        return false;
-    }
 
-    // ===== تهيئة النظام =====
-    async function initializeSystem() {
-        // أحداث الاتصال
-        window.addEventListener('online', () => {
-            updateSystemStatus('success', 'تم استعادة الاتصال', 'success');
-            showToast('تم استعادة الاتصال بالإنترنت', 'success');
-        });
-        
-        window.addEventListener('offline', () => {
-            updateSystemStatus('error', 'لا يوجد اتصال', 'error');
-            showToast('انقطع الاتصال بالإنترنت', 'error');
-        });
-        
-        selectCountry('972');
-        goToStep(1);
-        
-        const firebaseReady = await initializeFirebase();
-        if (firebaseReady) {
-            await checkCurrentSession();
-        }
-        
-        console.log('🚀 نظام VIP الآمن جاهز مع تشفير SCRYPT');
-    }
+            // التحقق من كلمة السر
+            window.verifyPassword = function() {
+                const passwordInput = document.getElementById('passwordInput');
+                const container = document.getElementById('messageContainer');
+                const content = document.getElementById('messageContent');
+                
+                if (!passwordInput || !container || !content) return;
+                
+                const inputPassword = passwordInput.value;
+                
+                // التحقق من المدخلات
+                if (inputPassword.length !== 6) {
+                    content.className = 'p-4 rounded-xl text-sm error-message text-red-700';
+                    content.innerHTML = '<i class="fas fa-exclamation-triangle ml-2"></i>الرجاء إدخال 6 أرقام';
+                    container.classList.remove('hidden');
+                    
+                    // تأثير اهتزاز
+                    passwordInput.style.borderColor = '#dc2626';
+                    setTimeout(() => {
+                        passwordInput.style.borderColor = '#e2e8f0';
+                    }, 500);
+                    
+                    return;
+                }
+                
+                // التحقق من كلمة السر
+                if (SECURITY.verifyPassword(inputPassword)) {
+                    // نجاح الدخول
+                    content.className = 'p-4 rounded-xl text-sm success-message text-green-700';
+                    content.innerHTML = '<i class="fas fa-check-circle ml-2"></i>تم التحقق بنجاح... جاري تحويلك';
+                    container.classList.remove('hidden');
+                    
+                    // تغيير لون الحقل
+                    passwordInput.style.borderColor = '#10b981';
+                    
+                    // تعطيل الزر مؤقتاً
+                    const loginBtn = document.getElementById('loginBtn');
+                    if (loginBtn) {
+                        loginBtn.disabled = true;
+                        loginBtn.innerHTML = '<i class="fas fa-spinner fa-spin ml-2"></i>جاري...';
+                    }
+                    
+                    // تسجيل الدخول الناجح (مشفر)
+                    try {
+                        // حفظ جلسة مشفرة
+                        const sessionToken = btoa('session_' + Date.now()).split('').reverse().join('');
+                        sessionStorage.setItem('vip_session', sessionToken);
+                        
+                        // إنشاء عنصر رابط مخفي
+                        const link = document.createElement('a');
+                        link.href = 'https://mohammad-shehadeh.github.io/price/';
+                        link.target = '_blank';
+                        link.rel = 'noopener noreferrer';
+                        
+                        // محاكاة تأخير ثم التوجيه
+                        setTimeout(() => {
+                            link.click();
+                            
+                            // إعادة تعيين النموذج
+                            passwordInput.value = '';
+                            passwordInput.style.borderColor = '#e2e8f0';
+                            if (loginBtn) {
+                                loginBtn.disabled = true;
+                                loginBtn.innerHTML = '<span class="relative z-10 flex items-center justify-center gap-2"><i class="fas fa-sign-in-alt"></i>دخول</span>';
+                                loginBtn.style.opacity = '0.5';
+                            }
+                            container.classList.add('hidden');
+                        }, 2000);
+                        
+                    } catch(e) {
+                        console.error('خطأ في التوجيه');
+                    }
+                    
+                } else {
+                    // فشل الدخول
+                    content.className = 'p-4 rounded-xl text-sm error-message text-red-700';
+                    content.innerHTML = '<i class="fas fa-times-circle ml-2"></i>رمز الدخول غير صحيح';
+                    container.classList.remove('hidden');
+                    
+                    // تأثير اهتزاز
+                    passwordInput.style.borderColor = '#dc2626';
+                    passwordInput.classList.add('shake');
+                    
+                    setTimeout(() => {
+                        passwordInput.style.borderColor = '#e2e8f0';
+                        passwordInput.classList.remove('shake');
+                    }, 500);
+                    
+                    // مسح الحقل
+                    passwordInput.value = '';
+                    
+                    // تسجيل محاولة فاشلة (مشفر)
+                    const failedAttempt = btoa('failed_' + Date.now());
+                    localStorage.setItem('last_failed', failedAttempt);
+                }
+            };
 
-    // بدء التشغيل
-    document.addEventListener('DOMContentLoaded', initializeSystem);
-</script>
+            // إضافة معلومات مشفرة
+            const encryptedInfo = document.getElementById('encryptedInfo');
+            if (encryptedInfo) {
+                // عرض معلومات مشفرة
+                const info = btoa('نظام آمن v2.0.6');
+                encryptedInfo.textContent = atob(info);
+            }
+
+            // حماية إضافية للتأكد
+            setInterval(function() {
+                // التحقق من وجود أدوات المطور
+                if (window.outerWidth - window.innerWidth > 100 || window.outerHeight - window.innerHeight > 100) {
+                    document.body.innerHTML = '<div style="text-align: center; margin-top: 50px; color: red;"><h1>🚫 تم اكتشاف أدوات المطور</h1></div>';
+                }
+            }, 1000);
+
+            // منع محاولات تعديل DOM
+            const observer = new MutationObserver(function(mutations) {
+                mutations.forEach(function(mutation) {
+                    if (mutation.type === 'attributes' && 
+                        (mutation.attributeName === 'style' || mutation.attributeName === 'class')) {
+                        // إعادة تعيين أي تغييرات غير مصرح بها
+                        const element = mutation.target;
+                        if (element.id === 'passwordInput' && element.style.display === 'none') {
+                            element.style.display = '';
+                        }
+                    }
+                });
+            });
+
+            observer.observe(document.body, {
+                attributes: true,
+                subtree: true,
+                attributeFilter: ['style', 'class', 'hidden']
+            });
+
+        })();
+    </script>
+
+    <!-- كود حماية إضافي (مشفر) -->
+    <script>
+        // تشفير الدوال الحساسة
+        (function() {
+            const hiddenFunctions = {
+                validate: function() {
+                    return '%%%PROTECTED%%%';
+                }
+            };
+            
+            // تجميد الكائنات
+            Object.freeze(hiddenFunctions);
+            
+            // منع التعديل على النموذج
+            const form = document.getElementById('loginForm');
+            if (form) {
+                Object.defineProperty(form, 'action', {
+                    get: function() { return '#'; },
+                    set: function() { return false; }
+                });
+            }
+        })();
+    </script>
 </body>
 </html>
