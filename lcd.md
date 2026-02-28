@@ -36,7 +36,7 @@ iphone/12 pro BYH |/65/https://res.cloudinary.com/dygc5b8cn/image/upload/v177213
 iphone/12 pro original |/230/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131135/wqebe6jd2ccu8qof69mh.webp
 iphone/12 pro max BYH |/80/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131135/wqebe6jd2ccu8qof69mh.webp
 iphone/12 pro max Soft OLED |/180/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131135/wqebe6jd2ccu8qof69mh.webp
-iphone/12 pro max orignal |/300/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131135/wqebe6jd2ccu8qof69mh.webp
+iphone/12 pro max orignal |/350/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131135/wqebe6jd2ccu8qof69mh.webp
 iphone/13 BYH |/80/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131135/wqebe6jd2ccu8qof69mh.webp
 iphone/13 orignal |/250/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131135/wqebe6jd2ccu8qof69mh.webp
 iphone/13 pro BYH |/100/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131135/wqebe6jd2ccu8qof69mh.webp
