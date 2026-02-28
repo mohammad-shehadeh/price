@@ -180,8 +180,8 @@ Samsung/A14 |/45/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131170/v
 Samsung/A14 +FRAME |/55/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131284/pionk2xvkfmkhm2wodu6.jpg
 Samsung/A15 incell+F |/60/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131284/pionk2xvkfmkhm2wodu6.jpg
 Samsung/A17 +F |/70/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131284/pionk2xvkfmkhm2wodu6.jpg
-Samsung/A16 oled+f |/165/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131284/pionk2xvkfmkhm2wodu6.jpg
-Samsung/A16 incell+F |/60/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131284/pionk2xvkfmkhm2wodu6.jpg
+Samsung/A16 4G+5G oled+f |/165/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131284/pionk2xvkfmkhm2wodu6.jpg
+Samsung/A16 4G+5G incell+F |/60/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131284/pionk2xvkfmkhm2wodu6.jpg
 Samsung/A21S hi |/45/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131170/vtxjuu8x1w5qkkynzzrh.jpg
 Samsung/A21S +FRAME hi |/55/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131284/pionk2xvkfmkhm2wodu6.jpg
 Samsung/A24 incell +FRAME |/60/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131284/pionk2xvkfmkhm2wodu6.jpg
