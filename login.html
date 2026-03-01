@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>نظام الدخول الآمن - VIP</title>
+    <title>نظام الدخول الفوري - VIP</title>
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
-        /* منع تحديد النص وظهور أدوات المطور */
+        /* منع تحديد النص وظهور أدوات المطور (يبقى كما هو) */
         * {
             -webkit-touch-callout: none;
             -webkit-user-select: none;
@@ -21,7 +21,6 @@
             -webkit-tap-highlight-color: transparent;
         }
         
-        /* منع فحص العنصر بالقائمة اليمنى */
         body {
             background: linear-gradient(135deg, #0a1928 0%, #1a2f3f 100%);
             min-height: 100vh;
@@ -30,7 +29,6 @@
             overflow-x: hidden;
         }
         
-        /* طبقة حماية ضد فحص العنصر */
         .protection-overlay {
             position: fixed;
             top: 0;
@@ -42,7 +40,6 @@
             pointer-events: none;
         }
         
-        /* منع ظهور أدوات المطور على الأندرويد */
         @media (max-width: 768px) {
             body {
                 -webkit-touch-callout: none;
@@ -50,7 +47,6 @@
             }
         }
         
-        /* تشويش على أدوات المطور */
         .debug-trap {
             position: fixed;
             top: -1000px;
@@ -68,52 +64,6 @@
             z-index: 100;
         }
         
-        .btn-login {
-            background: linear-gradient(135deg, #2563eb, #1e40af);
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .btn-login:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 20px 30px -10px #1e3a8a;
-        }
-        
-        .btn-login:active {
-            transform: translateY(0);
-        }
-        
-        /* تأثير تمويه لصعوبة قراءة الشفرة */
-        .password-field {
-            position: relative;
-        }
-        
-        .password-field input {
-            font-family: 'Courier New', monospace;
-            letter-spacing: 3px;
-            font-size: 1.2rem;
-            text-align: center;
-            background: #f8fafc;
-            transition: all 0.3s ease;
-        }
-        
-        .password-field input:focus {
-            background: #ffffff;
-            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
-        }
-        
-        /* إخفاء كلمة السر عند عرضها */
-        .hidden-password {
-            filter: blur(5px);
-            transition: filter 0.3s ease;
-        }
-        
-        .hidden-password:hover {
-            filter: blur(3px);
-        }
-        
-        /* شريط الأمان */
         .security-badge {
             background: linear-gradient(135deg, #059669, #047857);
             color: white;
@@ -125,12 +75,10 @@
             gap: 6px;
         }
         
-        /* تأثيرات التمويه */
         .blur-effect {
             filter: blur(0.5px);
         }
         
-        /* حماية ضد الاختيار */
         .protected-text {
             -webkit-user-select: none;
             -moz-user-select: none;
@@ -138,50 +86,6 @@
             user-select: none;
         }
         
-        /* مربع كلمة السر */
-        .password-wrapper {
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .password-wrapper::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.1) 50%, transparent 100%);
-            animation: shimmer 2s infinite;
-            pointer-events: none;
-            z-index: 10;
-        }
-        
-        @keyframes shimmer {
-            0% { transform: translateX(-100%); }
-            100% { transform: translateX(100%); }
-        }
-        
-        /* رسالة الخطأ */
-        .error-message {
-            background: linear-gradient(135deg, #fee2e2, #fecaca);
-            border-right: 4px solid #dc2626;
-            animation: shake 0.5s ease-in-out;
-        }
-        
-        @keyframes shake {
-            0%, 100% { transform: translateX(0); }
-            25% { transform: translateX(-5px); }
-            75% { transform: translateX(5px); }
-        }
-        
-        /* نجاح */
-        .success-message {
-            background: linear-gradient(135deg, #d1fae5, #a7f3d0);
-            border-right: 4px solid #059669;
-        }
-        
-        /* طبقة حماية إضافية */
         .anti-debug {
             position: fixed;
             top: 0;
@@ -193,15 +97,36 @@
             pointer-events: none;
         }
         
-        /* منع القائمة اليمنى */
         .no-context-menu {
             -webkit-touch-callout: none;
+        }
+
+        /* دخول فوري: زر غير مرئي يملأ البطاقة */
+        .immediate-access-area {
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .immediate-access-area:active {
+            transform: scale(0.99);
+        }
+        /* إزالة أي حقول أو أزرار دخول */
+        .hidden-field {
+            display: none !important;
+        }
+        /* رسالة الترحيب */
+        .welcome-message {
+            background: linear-gradient(135deg, #d1fae5, #a7f3d0);
+            border-right: 4px solid #059669;
+            padding: 1rem;
+            border-radius: 1rem;
+            color: #065f46;
+            font-weight: 500;
         }
     </style>
 </head>
 <body class="flex items-center justify-center p-4 no-context-menu" oncontextmenu="return false;" onkeydown="return disableDevTools(event)">
 
-    <!-- طبقات حماية متعددة -->
+    <!-- طبقات حماية متعددة (تبقى) -->
     <div class="anti-debug" id="antiDebug"></div>
     <div class="protection-overlay"></div>
     
@@ -217,411 +142,200 @@
         </script>
     </div>
 
-    <div class="w-full max-w-md mx-auto">
+    <div class="w-full max-w-md mx-auto immediate-access-area" id="immediateAccessCard" onclick="performImmediateAccess()">
         <!-- الشعار مع تأثير تمويه -->
         <div class="text-center mb-8 relative blur-effect">
             <div class="inline-block p-5 bg-gradient-to-br from-blue-600/30 to-purple-600/30 backdrop-blur-sm rounded-3xl mb-4 border border-white/20">
                 <i class="fas fa-shield-halved text-white text-5xl"></i>
             </div>
-            <h1 class="text-3xl font-bold text-white mb-2 tracking-wide">نظام الدخول الآمن</h1>
-            <p class="text-blue-200/90">منصة VIP المحمية</p>
+            <h1 class="text-3xl font-bold text-white mb-2 tracking-wide">نظام الدخول الفوري</h1>
+            <p class="text-blue-200/90">منصة VIP - دخول بدون عوائق</p>
             
             <!-- شارة الأمان -->
             <div class="mt-3 flex justify-center">
                 <span class="security-badge">
-                    <i class="fas fa-lock"></i>
-                    <span>مشفر بالكامل</span>
+                    <i class="fas fa-lock-open"></i>
+                    <span>دخول فوري للجميع</span>
                 </span>
             </div>
         </div>
 
-        <!-- البطاقة الرئيسية -->
-        <div class="card rounded-3xl p-8 relative overflow-hidden">
-            <!-- عناصر تشويش لأدوات المطور -->
+        <!-- البطاقة الرئيسية - بدون حقل كلمة سر أو زر -->
+        <div class="card rounded-3xl p-8 relative overflow-hidden text-center">
+            <!-- عناصر تشويش لأدوات المطور (تبقى) -->
             <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-blue-500 to-transparent"></div>
             
-            <!-- أيقونة القفل -->
+            <!-- أيقونة القفل المفتوح -->
             <div class="text-center mb-6">
-                <div class="w-20 h-20 bg-gradient-to-br from-blue-100 to-blue-200 rounded-2xl flex items-center justify-center mx-auto rotate-45 shadow-lg">
-                    <i class="fas fa-key text-blue-600 text-3xl -rotate-45"></i>
+                <div class="w-20 h-20 bg-gradient-to-br from-green-100 to-green-200 rounded-2xl flex items-center justify-center mx-auto rotate-45 shadow-lg">
+                    <i class="fas fa-door-open text-green-600 text-3xl -rotate-45"></i>
                 </div>
-                <h2 class="text-xl font-bold text-gray-800 mt-4">الدخول إلى النظام</h2>
-                <p class="text-gray-500 text-sm">الرجاء إدخال رمز الدخول السري</p>
+                <h2 class="text-xl font-bold text-gray-800 mt-4">أهلاً وسهلاً</h2>
+                <p class="text-gray-500 text-sm">اضغط في أي مكان للدخول الفوري</p>
             </div>
 
-            <!-- نموذج تسجيل الدخول -->
-            <form id="loginForm" class="space-y-6" onsubmit="return false;">
-                <!-- حقل كلمة السر -->
-                <div class="password-field">
-                    <label class="block text-gray-700 text-sm font-bold mb-2 pr-1">
-                        <i class="fas fa-lock text-blue-600 ml-1"></i>
-                        رمز الدخول السري
-                    </label>
-                    <div class="password-wrapper relative">
-                        <input type="password" 
-                               id="passwordInput" 
-                               class="w-full px-5 py-4 border-2 border-gray-200 rounded-2xl outline-none text-center text-xl tracking-[8px] font-mono"
-                               placeholder="••••••"
-                               maxlength="6"
-                               inputmode="numeric"
-                               pattern="[0-9]*"
-                               autocomplete="off"
-                               oninput="validateInput(this)"
-                               onfocus="this.style.borderColor='#2563eb'"
-                               onblur="this.style.borderColor='#e2e8f0'">
-                    </div>
-                    <p class="text-xs text-gray-500 mt-2 text-center">
-                        <i class="fas fa-info-circle ml-1"></i>
-                        رمز الدخول مكون من 6 أرقام
-                    </p>
-                </div>
+            <!-- رسالة ترحيب وإرشاد -->
+            <div class="welcome-message mb-4">
+                <i class="fas fa-smile-wink ml-2 text-green-700"></i>
+                جميع المستخدمين مدعوون! اضغط على البطاقة أو على أيقونة الدخول للوصول المباشر.
+            </div>
 
-                <!-- زر الدخول -->
-                <button type="button" 
-                        id="loginBtn"
-                        onclick="verifyPassword()"
-                        class="btn-login w-full text-white font-bold py-4 px-4 rounded-2xl text-lg relative overflow-hidden group">
-                    <span class="relative z-10 flex items-center justify-center gap-2">
-                        <i class="fas fa-sign-in-alt"></i>
-                        دخول
-                    </span>
-                    <div class="absolute inset-0 bg-white/20 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
-                </button>
-
-                <!-- رسائل التنبيه -->
-                <div id="messageContainer" class="hidden">
-                    <div id="messageContent" class="p-4 rounded-xl text-sm"></div>
+            <!-- أيقونة دخول سريع (كبيرة وواضحة) -->
+            <div class="flex justify-center items-center space-x-2 space-x-reverse mt-4">
+                <i class="fas fa-hand-pointer text-4xl text-blue-600 animate-pulse"></i>
+                <i class="fas fa-arrow-left text-2xl text-gray-400"></i>
+                <i class="fas fa-arrow-left text-2xl text-gray-400"></i>
+                <div class="bg-blue-100 p-4 rounded-full">
+                    <i class="fas fa-arrow-circle-right text-4xl text-blue-600"></i>
                 </div>
+            </div>
+            
+            <p class="text-sm text-gray-500 mt-6">لا يوجد تحقق، ولا كلمات سر. دخول مفتوح بالكامل.</p>
 
-                <!-- معلومات إضافية مشفرة -->
-                <div class="text-center text-xs text-gray-400 mt-4">
-                    <i class="fas fa-shield-alt ml-1"></i>
-                    <span id="encryptedInfo"></span>
-                </div>
-            </form>
+            <!-- معلومات إضافية مشفرة (تبقى للزينة) -->
+            <div class="text-center text-xs text-gray-400 mt-6">
+                <i class="fas fa-shield-alt ml-1"></i>
+                <span id="encryptedInfo"></span>
+            </div>
         </div>
 
         <!-- توقيع أمني -->
         <div class="text-center text-white/60 text-xs mt-6 space-y-1 protected-text">
-            <p>🔒 جميع البيانات مشفرة AES-256</p>
-            <p>⚡ نظام حماية متقدم ضد فحص العنصر</p>
+            <p>🔓 دخول فوري بدون عوائق | جميع الصلاحيات متاحة</p>
+            <p>⚡ نظام حماية متقدم (معطل للتحقق تجاوباً مع طلبك)</p>
         </div>
     </div>
 
     <script>
-        // ===== تشفير البيانات الحساسة =====
+        // ===== حماية أصلية ولكن مع تعديل لدخول فوري =====
         (function() {
             'use strict';
             
-            // ===== إعدادات الحماية المتقدمة =====
-            const SECURITY = {
-                // كلمة السر المشفرة (b2026)
-                // تم تشفيرها باستخدام خوارزمية مخصصة
-                encryptedPassword: '%%%ENC%%%' + btoa('202626').split('').reverse().join('') + '%%%',
-                
-                // مفتاح التشفير (مشفر أيضاً)
-                encryptionKey: (function() {
-                    const key = 'vip_2026_secure';
-                    return btoa(key).split('').reverse().join('');
-                })(),
-                
-                // دالة فك التشفير
-                decrypt: function(encrypted) {
-                    try {
-                        // إزالة الأوسمة
-                        let clean = encrypted.replace('%%%ENC%%%', '').replace('%%%', '');
-                        // عكس السلسلة
-                        let reversed = clean.split('').reverse().join('');
-                        // فك تشفير base64
-                        let decoded = atob(reversed);
-                        return decoded;
-                    } catch(e) {
-                        return '';
-                    }
-                },
-                
-                // التحقق من كلمة السر
-                verifyPassword: function(input) {
-                    const correctPassword = this.decrypt(this.encryptedPassword);
-                    return input === correctPassword;
-                }
-            };
-
-            // ===== منع فحص العنصر =====
-            
-            // منع القائمة اليمنى
+            // منع القائمة اليمنى (يبقى)
             document.addEventListener('contextmenu', function(e) {
                 e.preventDefault();
-                showSecurityMessage('🚫 ميزة المطور غير متاحة');
                 return false;
             });
 
-            // منع اختصارات لوحة المفاتيح
+            // منع اختصارات المطور (يبقى للحماية)
             document.addEventListener('keydown', function(e) {
-                // F12
-                if (e.key === 'F12') {
-                    e.preventDefault();
-                    showSecurityMessage('🚫 تم تعطيل أدوات المطور');
-                    return false;
-                }
-                
-                // Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+Shift+C
-                if (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J' || e.key === 'C')) {
-                    e.preventDefault();
-                    showSecurityMessage('🚫 تم تعطيل أدوات المطور');
-                    return false;
-                }
-                
-                // Ctrl+U (عرض المصدر)
-                if (e.ctrlKey && e.key === 'u') {
-                    e.preventDefault();
-                    showSecurityMessage('🚫 عرض المصدر غير متاح');
-                    return false;
-                }
-                
-                // Ctrl+S (حفظ)
-                if (e.ctrlKey && e.key === 's') {
+                if (e.key === 'F12' || 
+                    (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J' || e.key === 'C')) ||
+                    (e.ctrlKey && e.key === 'u') ||
+                    (e.ctrlKey && e.key === 's')) {
                     e.preventDefault();
                     return false;
                 }
             });
 
-            // كشف أدوات المطور المفتوحة
+            // كشف أدوات المطور (يبقى)
             (function detectDevTools() {
                 const start = new Date().getTime();
                 debugger;
                 const end = new Date().getTime();
                 
                 if (end - start > 100) {
-                    // تم اكتشاف أدوات المطور
-                    document.body.style.opacity = '0';
-                    document.body.innerHTML = '<div style="text-align: center; margin-top: 50px; color: red;"><h1>🚫 تم اكتشاف أدوات المطور</h1><p>الرجاء إغلاق أدوات المطور والمحاولة مرة أخرى</p></div>';
+                    // تم اكتشاف أدوات المطور - لكننا نسمح بالدخول، فقط رسالة بسيطة
+                    console.warn('DevTools detected');
                 }
-                
-                setTimeout(detectDevTools, 1000);
+                setTimeout(detectDevTools, 2000);
             })();
 
-            // منع النسخ واللصق
-            document.addEventListener('copy', function(e) {
-                e.preventDefault();
-                return false;
-            });
+            // منع النسخ واللصق (يبقى)
+            document.addEventListener('copy', (e) => e.preventDefault());
+            document.addEventListener('cut', (e) => e.preventDefault());
+            document.addEventListener('paste', (e) => e.preventDefault());
+            document.addEventListener('dragstart', (e) => e.preventDefault());
 
-            document.addEventListener('cut', function(e) {
-                e.preventDefault();
-                return false;
-            });
-
-            document.addEventListener('paste', function(e) {
-                e.preventDefault();
-                return false;
-            });
-
-            // منع السحب
-            document.addEventListener('dragstart', function(e) {
-                e.preventDefault();
-                return false;
-            });
-
-            // ===== دوال إضافية =====
-
-            // التحقق من صحة الإدخال
-            window.validateInput = function(input) {
-                // السماح بالأرقام فقط
-                input.value = input.value.replace(/[^0-9]/g, '');
-                
-                // تحديد الطول
-                if (input.value.length > 6) {
-                    input.value = input.value.slice(0, 6);
-                }
-                
-                // تمكين/تعطيل زر الدخول
-                const loginBtn = document.getElementById('loginBtn');
-                if (loginBtn) {
-                    loginBtn.disabled = input.value.length !== 6;
-                    if (loginBtn.disabled) {
-                        loginBtn.style.opacity = '0.5';
-                        loginBtn.style.cursor = 'not-allowed';
-                    } else {
-                        loginBtn.style.opacity = '1';
-                        loginBtn.style.cursor = 'pointer';
-                    }
-                }
-            };
-
-            // عرض رسالة أمنية
-            function showSecurityMessage(message) {
-                const container = document.getElementById('messageContainer');
-                const content = document.getElementById('messageContent');
-                
-                if (container && content) {
-                    content.className = 'p-4 rounded-xl text-sm bg-red-50 text-red-700 border border-red-200';
-                    content.innerHTML = `<i class="fas fa-shield-alt ml-2"></i>${message}`;
-                    container.classList.remove('hidden');
-                    
-                    setTimeout(() => {
-                        container.classList.add('hidden');
-                    }, 2000);
-                }
-            }
-
-            // التحقق من كلمة السر
-            window.verifyPassword = function() {
-                const passwordInput = document.getElementById('passwordInput');
-                const container = document.getElementById('messageContainer');
-                const content = document.getElementById('messageContent');
-                
-                if (!passwordInput || !container || !content) return;
-                
-                const inputPassword = passwordInput.value;
-                
-                // التحقق من المدخلات
-                if (inputPassword.length !== 6) {
-                    content.className = 'p-4 rounded-xl text-sm error-message text-red-700';
-                    content.innerHTML = '<i class="fas fa-exclamation-triangle ml-2"></i>الرجاء إدخال 6 أرقام';
-                    container.classList.remove('hidden');
-                    
-                    // تأثير اهتزاز
-                    passwordInput.style.borderColor = '#dc2626';
-                    setTimeout(() => {
-                        passwordInput.style.borderColor = '#e2e8f0';
-                    }, 500);
-                    
-                    return;
-                }
-                
-                // التحقق من كلمة السر
-                if (SECURITY.verifyPassword(inputPassword)) {
-                    // نجاح الدخول
-                    content.className = 'p-4 rounded-xl text-sm success-message text-green-700';
-                    content.innerHTML = '<i class="fas fa-check-circle ml-2"></i>تم التحقق بنجاح... جاري تحويلك';
-                    container.classList.remove('hidden');
-                    
-                    // تغيير لون الحقل
-                    passwordInput.style.borderColor = '#10b981';
-                    
-                    // تعطيل الزر مؤقتاً
-                    const loginBtn = document.getElementById('loginBtn');
-                    if (loginBtn) {
-                        loginBtn.disabled = true;
-                        loginBtn.innerHTML = '<i class="fas fa-spinner fa-spin ml-2"></i>جاري...';
-                    }
-                    
-                    // تسجيل الدخول الناجح (مشفر)
-                    try {
-                        // حفظ جلسة مشفرة
-                        const sessionToken = btoa('session_' + Date.now()).split('').reverse().join('');
-                        sessionStorage.setItem('vip_session', sessionToken);
-                        
-                        // إنشاء عنصر رابط مخفي
-                        const link = document.createElement('a');
-                        link.href = 'https://mohammad-shehadeh.github.io/price/';
-                        link.target = '_blank';
-                        link.rel = 'noopener noreferrer';
-                        
-                        // محاكاة تأخير ثم التوجيه
-                        setTimeout(() => {
-                            link.click();
-                            
-                            // إعادة تعيين النموذج
-                            passwordInput.value = '';
-                            passwordInput.style.borderColor = '#e2e8f0';
-                            if (loginBtn) {
-                                loginBtn.disabled = true;
-                                loginBtn.innerHTML = '<span class="relative z-10 flex items-center justify-center gap-2"><i class="fas fa-sign-in-alt"></i>دخول</span>';
-                                loginBtn.style.opacity = '0.5';
-                            }
-                            container.classList.add('hidden');
-                        }, 2000);
-                        
-                    } catch(e) {
-                        console.error('خطأ في التوجيه');
-                    }
-                    
-                } else {
-                    // فشل الدخول
-                    content.className = 'p-4 rounded-xl text-sm error-message text-red-700';
-                    content.innerHTML = '<i class="fas fa-times-circle ml-2"></i>رمز الدخول غير صحيح';
-                    container.classList.remove('hidden');
-                    
-                    // تأثير اهتزاز
-                    passwordInput.style.borderColor = '#dc2626';
-                    passwordInput.classList.add('shake');
-                    
-                    setTimeout(() => {
-                        passwordInput.style.borderColor = '#e2e8f0';
-                        passwordInput.classList.remove('shake');
-                    }, 500);
-                    
-                    // مسح الحقل
-                    passwordInput.value = '';
-                    
-                    // تسجيل محاولة فاشلة (مشفر)
-                    const failedAttempt = btoa('failed_' + Date.now());
-                    localStorage.setItem('last_failed', failedAttempt);
-                }
-            };
-
-            // إضافة معلومات مشفرة
+            // إضافة معلومات مشفرة للزينة
             const encryptedInfo = document.getElementById('encryptedInfo');
             if (encryptedInfo) {
-                // عرض معلومات مشفرة
-                const info = btoa('نظام آمن v2.0.6');
-                encryptedInfo.textContent = atob(info);
+                encryptedInfo.textContent = 'نظام مفتوح بالكامل v3.0';
             }
 
-            // حماية إضافية للتأكد
-            setInterval(function() {
-                // التحقق من وجود أدوات المطور
-                if (window.outerWidth - window.innerWidth > 100 || window.outerHeight - window.innerHeight > 100) {
-                    document.body.innerHTML = '<div style="text-align: center; margin-top: 50px; color: red;"><h1>🚫 تم اكتشاف أدوات المطور</h1></div>';
-                }
-            }, 1000);
-
-            // منع محاولات تعديل DOM
+            // مراقب للتأكد من عدم إعادة إضافة الحقول (يبقى)
             const observer = new MutationObserver(function(mutations) {
                 mutations.forEach(function(mutation) {
-                    if (mutation.type === 'attributes' && 
-                        (mutation.attributeName === 'style' || mutation.attributeName === 'class')) {
-                        // إعادة تعيين أي تغييرات غير مصرح بها
-                        const element = mutation.target;
-                        if (element.id === 'passwordInput' && element.style.display === 'none') {
-                            element.style.display = '';
-                        }
-                    }
+                    // لا نفعل شيئاً لأننا أزلنا الحقول عمداً
                 });
             });
-
-            observer.observe(document.body, {
-                attributes: true,
-                subtree: true,
-                attributeFilter: ['style', 'class', 'hidden']
-            });
+            observer.observe(document.body, { attributes: true, subtree: true, attributeFilter: ['style', 'class', 'hidden'] });
 
         })();
+
+        // دالة الدخول الفوري - تنقل الجميع دون شرط
+        window.performImmediateAccess = function() {
+            // عرض رسالة انتقال سريع (اختياري)
+            const card = document.querySelector('.card');
+            const originalInner = card.innerHTML; // ليس ضرورياً
+            
+            // مؤشر تحميل بسيط
+            card.style.opacity = '0.7';
+            
+            // حفظ جلسة فورية (محاكاة)
+            try {
+                sessionStorage.setItem('vip_instant_access', 'true');
+                localStorage.setItem('vip_welcome', 'تم الدخول الفوري في ' + new Date().toLocaleString('ar-SA'));
+            } catch(e) {}
+            
+            // إنشاء عنصر رابط مخفي للتوجيه إلى الرابط المطلوب
+            const link = document.createElement('a');
+            link.href = 'https://mohammad-shehadeh.github.io/price/';
+            link.target = '_blank';
+            link.rel = 'noopener noreferrer';
+            
+            // تأخير بسيط لتجربة أفضل
+            setTimeout(() => {
+                link.click();
+                // إعادة opacity
+                card.style.opacity = '1';
+                
+                // رسالة نجاح سريعة (تظهر وتختفي)
+                const msgDiv = document.createElement('div');
+                msgDiv.className = 'fixed top-4 left-1/2 transform -translate-x-1/2 bg-green-500 text-white px-6 py-3 rounded-full shadow-lg z-50 transition-opacity';
+                msgDiv.innerHTML = '<i class="fas fa-check-circle ml-2"></i>تم الدخول الفوري! جاري التوجيه...';
+                document.body.appendChild(msgDiv);
+                setTimeout(() => {
+                    msgDiv.style.opacity = '0';
+                    setTimeout(() => document.body.removeChild(msgDiv), 300);
+                }, 2000);
+            }, 300);
+        };
+
+        // دعم النقر على أي مكان في البطاقة (تم تعيين onclick على العنصر الأب)
+        // بالإضافة إلى ذلك، نجعل المستخدم ينقر على أيقونة الدخول أيضاً
+        document.addEventListener('DOMContentLoaded', function() {
+            // يمكن النقر على أيقونة السهم أيضاً
+            const icons = document.querySelectorAll('.fa-arrow-circle-right, .fa-door-open, .card');
+            icons.forEach(icon => {
+                icon.addEventListener('click', function(e) {
+                    e.stopPropagation(); // منع التكرار لكن النقر سينفذ مرة واحدة
+                    performImmediateAccess();
+                });
+            });
+            
+            // إزالة أي أحداث قديمة من بقايا النموذج
+            const oldForm = document.getElementById('loginForm');
+            if (oldForm) {
+                oldForm.remove(); // لم يعد موجوداً لكن للتأكد
+            }
+        });
+
+        // override أي دالة قديمة للتحقق
+        window.verifyPassword = null;
+        window.validateInput = null;
+
+        // معلومات إضافية: نعرض رسالة في الكونسول ولكن بشكل ودي
+        console.log('%cنظام الدخول الفوري مفعل بالكامل - جميع المستخدمين مرحب بهم', 'color: green; font-size: 16px;');
     </script>
 
-    <!-- كود حماية إضافي (مشفر) -->
+    <!-- كود حماية إضافي (مشفر) - يبقى للشكل -->
     <script>
-        // تشفير الدوال الحساسة
         (function() {
             const hiddenFunctions = {
-                validate: function() {
-                    return '%%%PROTECTED%%%';
-                }
+                validate: function() { return '%%%PROTECTED%%%'; }
             };
-            
-            // تجميد الكائنات
             Object.freeze(hiddenFunctions);
-            
-            // منع التعديل على النموذج
-            const form = document.getElementById('loginForm');
-            if (form) {
-                Object.defineProperty(form, 'action', {
-                    get: function() { return '#'; },
-                    set: function() { return false; }
-                });
-            }
         })();
     </script>
 </body>
