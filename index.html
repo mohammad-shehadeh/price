@@ -3112,118 +3112,7 @@ function filterProducts(category) {
     }
 
 
-// أضف هذا السطر في بداية قسم نظام التحويل
-const LOGIN_SYSTEM_ENABLED = false; // غير القيمة إلى false لتعطيل النظام
 
-// ثم عدل الدالة redirectToLoginIfNeeded بهذه الطريقة:
-function redirectToLoginIfNeeded() {
-    if (!LOGIN_SYSTEM_ENABLED) {
-        console.log('نظام تسجيل الدخول معطل');
-        return; // لا تقم بأي تحويل
-    }
-    
-    // باقي الكود كما هو...
-    if (window.location.pathname.includes('index.html') || 
-        window.location.pathname === '/' || 
-        window.location.pathname.endsWith('/')) {
-        
-        if (!checkLoginSession()) {
-            console.log('🔄 تحويل إلى صفحة الدخول...');
-            window.location.href = LOGIN_PAGE_URL;
-        } else {
-            console.log('✅ جلسة نشطة، البقاء في الصفحة الرئيسية');
-        }
-    }
-}
-
-
-// ===== نظام التحويل المباشر والجلسات =====
-const SESSION_KEY = 'shehadeh_login_session';
-const LOGIN_PAGE_URL = 'https://mohammad-shehadeh.github.io/price/login.html';
-
-// التحقق من الجلسة عند تحميل الصفحة
-function checkLoginSession() {
-    try {
-        const session = localStorage.getItem(SESSION_KEY);
-        
-        if (!session) {
-            console.log('❌ لا توجد جلسة مسجلة');
-            return false;
-        }
-        
-        const sessionData = JSON.parse(session);
-        const now = new Date();
-        const loginTime = new Date(sessionData.loginTime);
-        const hoursDiff = (now - loginTime) / (1000 * 60 * 60);
-        
-        // إذا مرت أقل من 24 ساعة
-        if (hoursDiff < 24) {
-            console.log('✅ الجلسة نشطة');
-            return true;
-        } else {
-            console.log('❌ الجلسة منتهية');
-            localStorage.removeItem(SESSION_KEY);
-            return false;
-        }
-    } catch (error) {
-        console.error('❌ خطأ:', error);
-        return false;
-    }
-}
-
-// التحويل إلى صفحة الدخول إذا لم تكن هناك جلسة نشطة
-function redirectToLoginIfNeeded() {
-    // تأكد أننا في صفحة index.html ولسنا في صفحة login.html
-    if (window.location.pathname.includes('index.html') || 
-        window.location.pathname === '/' || 
-        window.location.pathname.endsWith('/')) {
-        
-        if (!checkLoginSession()) {
-            console.log('🔄 تحويل إلى صفحة الدخول...');
-            window.location.href = LOGIN_PAGE_URL;
-        } else {
-            console.log('✅ جلسة نشطة، البقاء في الصفحة الرئيسية');
-        }
-    }
-}
-
-// تسجيل الدخول - استخدم هذا في صفحة login.html
-function loginUser(phoneNumber, countryCode) {
-    try {
-        const sessionData = {
-            phoneNumber: phoneNumber,
-            countryCode: countryCode,
-            loginTime: new Date().toISOString(),
-            timestamp: Date.now()
-        };
-        
-        localStorage.setItem(SESSION_KEY, JSON.stringify(sessionData));
-        console.log('✅ تم تسجيل الدخول');
-        window.location.href = 'index.html'; // تحويل إلى الصفحة الرئيسية
-        return true;
-    } catch (error) {
-        console.error('❌ خطأ في تسجيل الدخول:', error);
-        return false;
-    }
-}
-
-// تسجيل الخروج
-function logoutUser() {
-    if (confirm('تسجيل الخروج؟')) {
-        localStorage.removeItem(SESSION_KEY);
-        window.location.href = LOGIN_PAGE_URL;
-    }
-}
-
-// التنفيذ عند تحميل الصفحة - فقط في index.html
-document.addEventListener('DOMContentLoaded', function() {
-    // تأكد أننا في صفحة index.html
-    if (window.location.pathname.includes('index.html') || 
-        window.location.pathname === '/' || 
-        window.location.pathname.endsWith('/')) {
-        redirectToLoginIfNeeded();
-    }
-});
 
     window.addEventListener('load', init);
 </script>
