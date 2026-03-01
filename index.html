@@ -3111,6 +3111,32 @@ function filterProducts(category) {
             });
     }
 
+
+// أضف هذا السطر في بداية قسم نظام التحويل
+const LOGIN_SYSTEM_ENABLED = false; // غير القيمة إلى false لتعطيل النظام
+
+// ثم عدل الدالة redirectToLoginIfNeeded بهذه الطريقة:
+function redirectToLoginIfNeeded() {
+    if (!LOGIN_SYSTEM_ENABLED) {
+        console.log('نظام تسجيل الدخول معطل');
+        return; // لا تقم بأي تحويل
+    }
+    
+    // باقي الكود كما هو...
+    if (window.location.pathname.includes('index.html') || 
+        window.location.pathname === '/' || 
+        window.location.pathname.endsWith('/')) {
+        
+        if (!checkLoginSession()) {
+            console.log('🔄 تحويل إلى صفحة الدخول...');
+            window.location.href = LOGIN_PAGE_URL;
+        } else {
+            console.log('✅ جلسة نشطة، البقاء في الصفحة الرئيسية');
+        }
+    }
+}
+
+
 // ===== نظام التحويل المباشر والجلسات =====
 const SESSION_KEY = 'shehadeh_login_session';
 const LOGIN_PAGE_URL = 'https://mohammad-shehadeh.github.io/price/login.html';
