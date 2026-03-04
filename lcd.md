@@ -17,7 +17,7 @@ tecno | infinix | itel/spark 10 - spark 10C - spark GO 2023 - POP 7 - POP 7 PRO 
 tecno | infinix | itel/SPARK 20 - spark 20C - spark GO 2024 - infinix SMART 8 - infinix SMART 8 HD - infinix SMART 8C - infinix SMART 8 PRO - infinix HOT 40 I - TECNO POP 8 - ITEL P55 PLUS - ITEL P55 - ITEL A70S - ITEL S24 - ORI |/45/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131117/z2dzmryifu1g3pgusfso.jpg
 tecno | infinix | itel/spark 8C - spark 9T - spark 8T - spark 9 - ITEL S18 ORI |/45/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131117/z2dzmryifu1g3pgusfso.jpg
 tecno | infinix | itel/Spark Go1 - spark GO1S - TECNO POP 9 5G - SPARK 30 5G - SPARK 30C - infinix HOT 50 5G - infinix HOT 50I - infinix NOTE 50X 5G - infinix SMART 9 - infinix SMART 9 HD - ITEL P65 ITEL P65 PLUS - ITEL P67 - ITEL A80 - A95 5G - POVA 6 NEW 5G - |/45/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131117/z2dzmryifu1g3pgusfso.jpg
-tecno | infinix | itel/SPARK GO2 |/50/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131117/z2dzmryifu1g3pgusfso.jpg
+tecno | infinix | itel/SPARK GO2 - spark 40 - spark 40C - infinix Hot 60i - pop 10|/50/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131117/z2dzmryifu1g3pgusfso.jpg
 tecno | infinix | itel/tecno POVA 6 - tecno POVA 6 PRO 5G - tecno CAMON 30 - tecno CAMON 30 5G - infinix NOTE 40 5G ORI |/60/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131117/z2dzmryifu1g3pgusfso.jpg
 tecno | infinix | itel/tecno POVA 7 |/60/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131117/z2dzmryifu1g3pgusfso.jpg
 tecno | infinix | itel/infinix HOT 10 |/45/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131117/z2dzmryifu1g3pgusfso.jpg
