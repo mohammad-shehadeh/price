@@ -189,7 +189,8 @@ yesido/C267 |/1/https://res.cloudinary.com/dygc5b8cn/image/upload/v1767124211/fy
 yesido/YAU43 |/1/https://res.cloudinary.com/dygc5b8cn/image/upload/v1767124214/uyezjc4jtq17gus8zgjb.png
 yesido/YH42 |/1/https://res.cloudinary.com/dygc5b8cn/image/upload/v1767124216/agm3llrj1v0wb2bspwgh.png
 yesido/YP81 |/1/https://res.cloudinary.com/dygc5b8cn/image/upload/v1767124217/ucz5kjoyyy08ih4klrs2.png
-yesido/CA136C |/1/https://res.cloudinary.com/dygc5b8cn/image/upload/v1767124218/yqvehujkld1s4hidspax.png
+yesido/CA136C |/18/https://res.cloudinary.com/dygc5b8cn/image/upload/v1767124218/yqvehujkld1s4hidspax.png
+yesido/CA136L |/18/https://res.cloudinary.com/dygc5b8cn/image/upload/v1767124218/yqvehujkld1s4hidspax.png
 yesido/YSW39 |/1/https://res.cloudinary.com/dygc5b8cn/image/upload/v1767124218/fyhiod4bxf4svmyfeeri.png
 yesido/Y70 |/1/https://res.cloudinary.com/dygc5b8cn/image/upload/v1767124219/sebdzpkew88zfgmq3qm3.png
 yesido/KB32 |/1/https://res.cloudinary.com/dygc5b8cn/image/upload/v1767124220/u3p60n67x2ryeyhnboou.png
