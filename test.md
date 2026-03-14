@@ -8,7 +8,7 @@ Tecno/Go3 128|4/330/https://res.cloudinary.com/dygc5b8cn/image/upload/v176943371
 Tecno/Go3 64|4/300/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769433709/or8ge3cehifuwlfq5ozn.jpg
 MI/NOTE 15 PRO 512|12/1010/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769083954/ytytfhodxytzcrqr1pcz.jpg
 MI/NOTE 15 PRO 256|8/835/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769083899/cxucuyswalsqf24gqprl.webp
-MI/NOTE 15 256|8/660/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769083825/bytesdd6t344fn7bnhou.jpg
+MI/NOTE 15 256|8/650/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769083825/bytesdd6t344fn7bnhou.jpg
 Nokia/Nokia 108 4G ori |/125/https://res.cloudinary.com/dygc5b8cn/image/upload/v1768648661/gat9whx1e07qi9ilswpg.webp
 Nokia/Nokia 105 4G ori |/110/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769789789/unvvxjjvwktvugwpdv8u.jpg
 Nokia/Nokia 110 4G ori |/120/https://res.cloudinary.com/dygc5b8cn/image/upload/v1768648574/g1gljaqe1lwqaafpobf0.jpg
@@ -20,7 +20,7 @@ huawei/GT 6 pro titanium |/1300/https://res.cloudinary.com/dygc5b8cn/image/uploa
 huawei/GT 6 pro black |/950/https://res.cloudinary.com/dygc5b8cn/image/upload/v1768227584/ouneqq7unlc2mcycqwva.jpg
 huawei/GT 6 pro Brown |/950/https://res.cloudinary.com/dygc5b8cn/image/upload/v1768227586/oukwzyqhww3kulp9tvsr.webp
 samsung/TAB A11 128|8/580/https://res.cloudinary.com/dygc5b8cn/image/upload/v1767692192/ubyqea0ilzlcx95s4mwa.jpg
-MI/C71 64|3/240/https://res.cloudinary.com/dygc5b8cn/image/upload/v1766568493/kwt5ow5wuofjizgiweqe.webp
+MI/C71 128|4/290/https://res.cloudinary.com/dygc5b8cn/image/upload/v1766568493/kwt5ow5wuofjizgiweqe.webp
 samsung/A26 256|8/710/https://res.cloudinary.com/dygc5b8cn/image/upload/v1764065061/khfpksu8x13khbj6rok2.jpg
 Honor/مع ساعة مع فرق سعر X9d 256|12/1120/https://res.cloudinary.com/dygc5b8cn/image/upload/v1763373225/j3170qc31xs8tyqnkoju.webp
 Tecno/Slim 256|8/660/https://res.cloudinary.com/dygc5b8cn/image/upload/v1760622512/yze1nsxdm3lgmny2tjyo.webp
@@ -63,16 +63,16 @@ samsung/TAP A9 64|4/Aa/https://oplayce.ci/cdn/shop/files/samsung-galaxy-tab-a9_5
 samsung/A26 128|6 |/610/https://res.cloudinary.com/dygc5b8cn/image/upload/v1747478968/m8ckbi5uatn8p2qcarzi.jpg
 MI/Redmi 13X 256|8/420/https://res.cloudinary.com/dygc5b8cn/image/upload/v1753791535/a13rrdzxc1i0gtxd5b6f.png
 MI/redmi A5 128|4/280/https://media.ldlc.com/r1600/ld/products/00/06/22/87/LD0006228768.jpg
-MI/Redmi A5 64|3/240/https://res.cloudinary.com/dygc5b8cn/image/upload/v1745846501/huvlm2coxnrudfzwmhtm.jpg
-MI/Note 14 pro plus 5G |/1250/https://fonexpress.net/wp-content/uploads/2025/01/Xiaomi-Redmi-Note-14-Pro-Plus.webp
+MI/Redmi A5 64|3/235/https://res.cloudinary.com/dygc5b8cn/image/upload/v1745846501/huvlm2coxnrudfzwmhtm.jpg
+MI/Note 14 pro plus 5G |/Aa/https://fonexpress.net/wp-content/uploads/2025/01/Xiaomi-Redmi-Note-14-Pro-Plus.webp
 MI/Note 14 pro 512|12/Aa/https://www.giztop.com/media/catalog/product/cache/97cc1143d2e20f2b0c8ea91aaa12053c/r/e/redmi_note_14_pro.png
 MI/Note 14 pro 256|8/Aa/https://www.giztop.com/media/catalog/product/cache/97cc1143d2e20f2b0c8ea91aaa12053c/r/e/redmi_note_14_pro.png
 MI/Note 14 256|8/560/https://cdn.gadgetbytenepal.com/wp-content/uploads/2025/01/Redmi-Note-14-4G-1.jpg
-MI/poco X7 pro 512|12/1160/https://cdn.shortpixel.ai/spai/q_glossy+ret_img+to_webp/mobizil.com/wp-content/uploads/2025/01/Xiaomi-Poco-X7-Pro.jpg
+MI/poco X7 pro 512|12/1150/https://cdn.shortpixel.ai/spai/q_glossy+ret_img+to_webp/mobizil.com/wp-content/uploads/2025/01/Xiaomi-Poco-X7-Pro.jpg
 MI/POCO F6 PRO 512|12/1600/https://res.cloudinary.com/dygc5b8cn/image/upload/v1757492561/uzaash86iswt4gtg59b0.jpg
 MI/14C 256|8/Aa/https://www.hemfrance.com/39078-thickbox_default/xiaomi-redmi-14c-688-128-gb-6-gb-ram-green.jpg
 MI/14C 128|6/Aa/https://www.hemfrance.com/39078-thickbox_default/xiaomi-redmi-14c-688-128-gb-6-gb-ram-green.jpg
-MI/Note 13 pro PLUS 512|12/1180/https://mobizil.com/wp-content/uploads/2023/11/Xiaomi-Redmi-Note-13-Pro-Plus.jpg
+MI/Note 13 pro PLUS 512|12/Aa/https://mobizil.com/wp-content/uploads/2023/11/Xiaomi-Redmi-Note-13-Pro-Plus.jpg
 MI/extender AC1200 |/100/https://www.smartbox.am/webroot/myfiles/images/products/ac1200/3ffafe36-ccb4-4dfe-87db-2f546a39b1b5.png
 Apple/Ip 16 pro max 256GB|كفالة ضفة |/Aa/https://mac-center.com.pr/cdn/shop/files/iPhone_16_Pro_Max_Desert_Titanium_PDP_Image_Position_1__en-US_bf24ca74-a053-42d3-80e2-3edc40e85c1e.jpg?v=1726226953&width=823
 Apple/Ip 15 pro max 512GB|/aaa/https://www.apollo.pl/gfx/apollo/userfiles/_public/opisy/apple/195949019036/195949019036_5.jpg
