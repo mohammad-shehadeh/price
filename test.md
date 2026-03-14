@@ -23,7 +23,7 @@ samsung/TAB A11 128|8/580/https://res.cloudinary.com/dygc5b8cn/image/upload/v176
 MI/C71 64|3/240/https://res.cloudinary.com/dygc5b8cn/image/upload/v1766568493/kwt5ow5wuofjizgiweqe.webp
 samsung/A26 256|8/750/https://res.cloudinary.com/dygc5b8cn/image/upload/v1764065061/khfpksu8x13khbj6rok2.jpg
 Honor/مع ساعة مع فرق سعر X9d 256|12/1120/https://res.cloudinary.com/dygc5b8cn/image/upload/v1763373225/j3170qc31xs8tyqnkoju.webp
-Tecno/Slim 256|8/670/https://res.cloudinary.com/dygc5b8cn/image/upload/v1760622512/yze1nsxdm3lgmny2tjyo.webp
+Tecno/Slim 256|8/660/https://res.cloudinary.com/dygc5b8cn/image/upload/v1760622512/yze1nsxdm3lgmny2tjyo.webp
 MI/Pad 2 256|8/Aa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1759655366/bsrpwamkyjsfjjxjyvqq.webp
 MI/SE 11" 256|8/aaa/https://www.celletronic.com/wp-content/uploads/2023/09/xiaomi-redmi-pad-se-11-0-6gb-ram-128gb-wifi-gris.jpg
 Apple/17 pro max كفالة ضفة معتمد|/Aa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1761035345/gwlomv0ep0ounsg6zndj.jpg
@@ -48,7 +48,7 @@ Tecno/Camon 40 Pro 256|16/Aa/https://res.cloudinary.com/dygc5b8cn/image/upload/v
 Tecno/POVA 7 256|16/Aa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1753778442/gy0m4h8sjnuloar9avmw.jpg
 Tecno/Spark 30C 256|16/390/https://res.cloudinary.com/dygc5b8cn/image/upload/v1753778370/sp6c0p34w1ngaj0kb8yw.jpg
 Tecno/Go2 128|8/Aa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1753777890/pnir0njijadnn5r09v5i.jpg
-Tecno/Go2 64|6/230/https://res.cloudinary.com/dygc5b8cn/image/upload/v1753777830/x9ncq6ozpitqppwqmu87.jpg
+Tecno/Go2 64|6/Aa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1753777830/x9ncq6ozpitqppwqmu87.jpg
 Tecno/Go1 128|8/Aa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1753777748/hfymoxudmn6gt41pqhoi.jpg
 Honor/X7C 256|8/500/https://res.cloudinary.com/dygc5b8cn/image/upload/v1753694752/kw0rwr4ygtl6vcsorjhv.webp
 Honor/X6C 128|6/370/https://res.cloudinary.com/dygc5b8cn/image/upload/v1753694659/qgw3j4v8b2byfx3zp99s.jpg
@@ -82,7 +82,7 @@ Apple/iphone 13 128GB|كفالة ضفة |/Aa/https://m.media-amazon.com/images/I
 Apple/ipad 11 256GB |كفالة ضفة |/AA/https://realplaza.vtexassets.com/arquivos/ids/33743614-800-auto?v=638265979022630000&width=800&height=auto&aspect=true
 Apple/Ipad 11 128GB |كفالة ضفة |/1240/https://realplaza.vtexassets.com/arquivos/ids/33743614-800-auto?v=638265979022630000&width=800&height=auto&aspect=true
 Apple/20W cdata |/65/https://atoz.ps/media/catalog/product/cache/80ae6a42c65321efa11f489c1d538fd0/o/r/original_apple_c-data_20w_charger_1_.jpg
-Tecno/GO 1 64|6/Aa/https://static.reach-tele.com/uploads/thumbs/55/5512810686892b375ab5043332011747.png
+Tecno/GO 1 64|6/240/https://static.reach-tele.com/uploads/thumbs/55/5512810686892b375ab5043332011747.png
 Honor/X9C 256|8/960/https://res.cloudinary.com/dygc5b8cn/image/upload/v1753782809/admrtfjph5mggqchmg8d.jpg
 Honor/X9C 256|12/1140/https://mob4g.com/wp-content/uploads/2024/12/Honor-X9c-Smart-2-600x600.webp
 Honor/X8b 512|8/AAA/https://www.honor.com/content/dam/honor/my/product-list/smartphone/honor-x8b/honor-x8b-green.png
