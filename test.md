@@ -22,7 +22,7 @@ huawei/GT 6 pro black |/950/https://res.cloudinary.com/dygc5b8cn/image/upload/v1
 huawei/GT 6 pro Brown |/950/https://res.cloudinary.com/dygc5b8cn/image/upload/v1768227586/oukwzyqhww3kulp9tvsr.webp
 samsung/TAB A11 128|8/580/https://res.cloudinary.com/dygc5b8cn/image/upload/v1767692192/ubyqea0ilzlcx95s4mwa.jpg
 MI/C71 128|4/290/https://res.cloudinary.com/dygc5b8cn/image/upload/v1766568493/kwt5ow5wuofjizgiweqe.webp
-samsung/A26 256|8/710/https://res.cloudinary.com/dygc5b8cn/image/upload/v1764065061/khfpksu8x13khbj6rok2.jpg
+samsung/A26 256|8/650/https://res.cloudinary.com/dygc5b8cn/image/upload/v1764065061/khfpksu8x13khbj6rok2.jpg
 Honor/مع ساعة مع فرق سعر X9d 256|12/1120/https://res.cloudinary.com/dygc5b8cn/image/upload/v1763373225/j3170qc31xs8tyqnkoju.webp
 Tecno/Slim 256|8/660/https://res.cloudinary.com/dygc5b8cn/image/upload/v1760622512/yze1nsxdm3lgmny2tjyo.webp
 MI/Pad 2 256|8/Aa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1759655366/bsrpwamkyjsfjjxjyvqq.webp
