@@ -1,10 +1,13 @@
+Honor/X5C 64|4//undefined
+Honor/X5C 128|4//undefined
+Honor/X6C 256|8//undefined
 Honor/PLAY 10 64|3/230/https://res.cloudinary.com/dygc5b8cn/image/upload/v1773488724/dskshebfjtlm0zhvle0u.png
 samsung/S26 ultra 256|12/4000/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772910348/muxhmjpfgfumtsowyv69.webp
 samsung/S26 ultra 512|12/4400/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772910347/z35p8zr82lup8f1svbfz.webp
 N\A/A17 pro max 128|3/290/https://res.cloudinary.com/dygc5b8cn/image/upload/v1771316250/nvlfmrrgmghfglzr3t5x.webp
 N\A/A26 ultra 128|3/290/https://res.cloudinary.com/dygc5b8cn/image/upload/v1771316270/jof5pzc5icvsuecqihdd.webp
 samsung/Tap A11+ 5G 256|8/830/https://res.cloudinary.com/dygc5b8cn/image/upload/v1771082599/b497on9imix4xsaztlvf.png
-Honor/X7D 256|8/530/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769508671/xkjcincirbyzfyqyfg3s.png
+Honor/X7D 256|8/510/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769508671/xkjcincirbyzfyqyfg3s.png
 Tecno/Go3 128|4/330/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769433712/rwkj73icwxmb1uucngjt.webp
 Tecno/Go3 64|4/300/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769433709/or8ge3cehifuwlfq5ozn.jpg
 MI/NOTE 15 PRO 512|12/1010/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769083954/ytytfhodxytzcrqr1pcz.jpg
@@ -79,7 +82,7 @@ Apple/iphone 13 128GB|كفالة ضفة |/Aa/https://m.media-amazon.com/images/I
 Apple/ipad 11 256GB |كفالة ضفة |/AA/https://realplaza.vtexassets.com/arquivos/ids/33743614-800-auto?v=638265979022630000&width=800&height=auto&aspect=true
 Apple/20W cdata |/65/https://atoz.ps/media/catalog/product/cache/80ae6a42c65321efa11f489c1d538fd0/o/r/original_apple_c-data_20w_charger_1_.jpg
 Tecno/GO 1 64|6/240/https://static.reach-tele.com/uploads/thumbs/55/5512810686892b375ab5043332011747.png
-Honor/X5b 64|4/200/https://www.honor.com/content/dam/honor/sa-ar/product-list/smartphone/honor-x5b-plus/honor-x5b-list.png
+Honor/X5b 64|4/Aa/https://www.honor.com/content/dam/honor/sa-ar/product-list/smartphone/honor-x5b-plus/honor-x5b-list.png
 ZTE/A35e 64|4/Aaa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1757492442/l9tkbpeovqme0pxjrsrm.webp
 ZTE/A75 256|14/350/https://m.media-amazon.com/images/I/81lUzTar8HL.jpg
 ZTE/A55 256|12/Aa/https://media.zid.store/b74f2313-1275-4caa-abca-b5ece66cb8bd/e64dbe11-465b-499d-8fa6-b7ca47ecb1d6.png
