@@ -1,6 +1,6 @@
-Honor/X5C 64|4//undefined
-Honor/X5C 128|4//undefined
-Honor/X6C 256|8//undefined
+Honor/X5C 64|4/30/undefined
+Honor/X5C 128|4/30/undefined
+Honor/X6C 256|8/30/undefined
 Honor/PLAY 10 64|3/230/https://res.cloudinary.com/dygc5b8cn/image/upload/v1773488724/dskshebfjtlm0zhvle0u.png
 samsung/S26 ultra 256|12/4000/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772910348/muxhmjpfgfumtsowyv69.webp
 samsung/S26 ultra 512|12/4400/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772910347/z35p8zr82lup8f1svbfz.webp
