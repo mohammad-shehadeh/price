@@ -30,7 +30,7 @@ Honor/مع ساعة مع فرق سعر X9d 256|12/1120/https://res.cloudinary.co
 Tecno/Slim 256|8/660/https://res.cloudinary.com/dygc5b8cn/image/upload/v1760622512/yze1nsxdm3lgmny2tjyo.webp
 MI/Pad 2 256|8/700/https://res.cloudinary.com/dygc5b8cn/image/upload/v1759655366/bsrpwamkyjsfjjxjyvqq.webp
 MI/SE 11" 256|8/aaa/https://www.celletronic.com/wp-content/uploads/2023/09/xiaomi-redmi-pad-se-11-0-6gb-ram-128gb-wifi-gris.jpg
-Apple/17 pro max كفالة ضفة معتمد|/4600/https://res.cloudinary.com/dygc5b8cn/image/upload/v1761035345/gwlomv0ep0ounsg6zndj.jpg
+Apple/17 pro max كفالة ضفة معتمد|/Aa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1761035345/gwlomv0ep0ounsg6zndj.jpg
 MI/Redmi 15 256|8/500/https://res.cloudinary.com/dygc5b8cn/image/upload/v1759304172/u2xrt2uhefd3tbhmjroe.webp
 MI/Redmi 15C 256|8/430/https://res.cloudinary.com/dygc5b8cn/image/upload/v1757324304/mijovlzrsdbgsxgcl1lf.webp
 samsung/S25 ultra 256|12/AAA/https://assets.mmsrg.com/isr/166325/c1/-/ASSET_MMS_149453259/fee_786_587_png
@@ -40,7 +40,7 @@ samsung/A17 128|6/550/https://res.cloudinary.com/dygc5b8cn/image/upload/v1759654
 samsung/A07 64|4/290/https://res.cloudinary.com/dygc5b8cn/image/upload/v1758201166/sicjbxtmxarydofvmecm.jpg
 MI/Redmi 15C 128|6/Aa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1757324301/ilyhjiezyfz5khp30p5e.webp
 MI/Redmi 15C 128|4/340/https://res.cloudinary.com/dygc5b8cn/image/upload/v1757324301/ilyhjiezyfz5khp30p5e.webp
-Apple/Ipad 11 128|كفالة ضفة |/1250/https://res.cloudinary.com/dygc5b8cn/image/upload/v1756986041/ajb0lks9smgql3bccyjx.webp
+Apple/Ipad 11 128|كفالة ضفة |/1270/https://res.cloudinary.com/dygc5b8cn/image/upload/v1756986041/ajb0lks9smgql3bccyjx.webp
 samsung/A07 128|4/320/https://res.cloudinary.com/dygc5b8cn/image/upload/v1756559491/wokzeyy83lncbbewic1v.jpg
 Honor/400 pro 512|12/Aa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1749889558/fmzaah1o7lludxn31jts.jpg
 Honor/400 512|12/Aa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1749890166/zudnes5gdxiihzll14p1.jpg
@@ -80,7 +80,7 @@ Apple/iphone 16 128GB|كفالة ضفة |/aaa/https://asiamall.asiacell.com/medi
 Apple/iphone 15 128GB|كفالة ضفة |/aaa/https://cdn.shortpixel.ai/spai/q_glossy+ret_img+to_webp/mobizil.com/wp-content/uploads/2023/09/iPhone-15-3.jpg
 Apple/iphone 13 128GB|كفالة ضفة |/Aa/https://m.media-amazon.com/images/I/516QZcrv+dL.jpg
 Apple/ipad 11 256GB |كفالة ضفة |/AA/https://realplaza.vtexassets.com/arquivos/ids/33743614-800-auto?v=638265979022630000&width=800&height=auto&aspect=true
-Apple/20W cdata |/65/https://atoz.ps/media/catalog/product/cache/80ae6a42c65321efa11f489c1d538fd0/o/r/original_apple_c-data_20w_charger_1_.jpg
+Apple/20W cdata |/Aa/https://atoz.ps/media/catalog/product/cache/80ae6a42c65321efa11f489c1d538fd0/o/r/original_apple_c-data_20w_charger_1_.jpg
 Tecno/GO 1 64|6/240/https://static.reach-tele.com/uploads/thumbs/55/5512810686892b375ab5043332011747.png
 Honor/X5b 64|4/Aa/https://www.honor.com/content/dam/honor/sa-ar/product-list/smartphone/honor-x5b-plus/honor-x5b-list.png
 ZTE/A35e 64|4/Aaa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1757492442/l9tkbpeovqme0pxjrsrm.webp
