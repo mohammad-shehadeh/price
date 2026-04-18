@@ -11,7 +11,7 @@ Tecno/Go3 128|4/330/https://res.cloudinary.com/dygc5b8cn/image/upload/v176943371
 Tecno/Go3 64|4/300/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769433709/or8ge3cehifuwlfq5ozn.jpg
 MI/NOTE 15 PRO 512|12/1010/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769083954/ytytfhodxytzcrqr1pcz.jpg
 MI/NOTE 15 PRO 256|8/830/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769083899/cxucuyswalsqf24gqprl.webp
-MI/NOTE 15 256|8/660/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769083825/bytesdd6t344fn7bnhou.jpg
+MI/NOTE 15 256|8/550/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769083825/bytesdd6t344fn7bnhou.jpg
 Nokia/Nokia 108 4G ori |/125/https://res.cloudinary.com/dygc5b8cn/image/upload/v1768648661/gat9whx1e07qi9ilswpg.webp
 Nokia/Nokia 105 4G ori |/110/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769789789/unvvxjjvwktvugwpdv8u.jpg
 Nokia/Nokia 110 4G ori |/120/https://res.cloudinary.com/dygc5b8cn/image/upload/v1768648574/g1gljaqe1lwqaafpobf0.jpg
@@ -31,7 +31,7 @@ MI/Pad 2 256|8/700/https://res.cloudinary.com/dygc5b8cn/image/upload/v1759655366
 MI/SE 11" 256|8/aaa/https://www.celletronic.com/wp-content/uploads/2023/09/xiaomi-redmi-pad-se-11-0-6gb-ram-128gb-wifi-gris.jpg
 Apple/17 pro max كفالة ضفة معتمد|/Aa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1761035345/gwlomv0ep0ounsg6zndj.jpg
 MI/Redmi 15 256|8/500/https://res.cloudinary.com/dygc5b8cn/image/upload/v1759304172/u2xrt2uhefd3tbhmjroe.webp
-MI/Redmi 15C 256|8/430/https://res.cloudinary.com/dygc5b8cn/image/upload/v1757324304/mijovlzrsdbgsxgcl1lf.webp
+MI/Redmi 15C 256|8/420/https://res.cloudinary.com/dygc5b8cn/image/upload/v1757324304/mijovlzrsdbgsxgcl1lf.webp
 samsung/S25 ultra 256|12/AAA/https://assets.mmsrg.com/isr/166325/c1/-/ASSET_MMS_149453259/fee_786_587_png
 samsung/A17 128|4/Aa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1759304168/d3bqnjrcxoay06rrnjtx.jpg
 samsung/A07 256|8/Aa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1764064978/vvks2bmm3sqhrvyidtnu.jpg
