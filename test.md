@@ -66,7 +66,7 @@ MI/Redmi A5 64|3/250/https://res.cloudinary.com/dygc5b8cn/image/upload/v17458465
 MI/Note 14 pro plus 5G |/Aa/https://fonexpress.net/wp-content/uploads/2025/01/Xiaomi-Redmi-Note-14-Pro-Plus.webp
 MI/Note 14 pro 512|12/Aa/https://www.giztop.com/media/catalog/product/cache/97cc1143d2e20f2b0c8ea91aaa12053c/r/e/redmi_note_14_pro.png
 MI/Note 14 pro 256|8/Aa/https://www.giztop.com/media/catalog/product/cache/97cc1143d2e20f2b0c8ea91aaa12053c/r/e/redmi_note_14_pro.png
-MI/Note 14 256|8/560/https://cdn.gadgetbytenepal.com/wp-content/uploads/2025/01/Redmi-Note-14-4G-1.jpg
+MI/Note 14 256|8/550/https://cdn.gadgetbytenepal.com/wp-content/uploads/2025/01/Redmi-Note-14-4G-1.jpg
 MI/poco X7 pro 512|12/Aa/https://cdn.shortpixel.ai/spai/q_glossy+ret_img+to_webp/mobizil.com/wp-content/uploads/2025/01/Xiaomi-Poco-X7-Pro.jpg
 MI/POCO F6 PRO 512|12/1600/https://res.cloudinary.com/dygc5b8cn/image/upload/v1757492561/uzaash86iswt4gtg59b0.jpg
 MI/14C 256|8/Aa/https://www.hemfrance.com/39078-thickbox_default/xiaomi-redmi-14c-688-128-gb-6-gb-ram-green.jpg
