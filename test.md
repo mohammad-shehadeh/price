@@ -1,13 +1,13 @@
 Honor/X8D 256|8/720/undefined
 Honor/X5C 128|4/290/undefined
-Honor/X6C 256|6/400/undefined
+Honor/X6C 256|6/420/undefined
 Honor/PLAY 10 64|3/270/https://res.cloudinary.com/dygc5b8cn/image/upload/v1773488724/dskshebfjtlm0zhvle0u.png
 samsung/S26 ultra 256|12/3850/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772910348/muxhmjpfgfumtsowyv69.webp
 samsung/S26 ultra 512|12/4400/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772910347/z35p8zr82lup8f1svbfz.webp
 N\A/A17 pro max 128|3/290/https://res.cloudinary.com/dygc5b8cn/image/upload/v1771316250/nvlfmrrgmghfglzr3t5x.webp
 N\A/A26 ultra 128|3/290/https://res.cloudinary.com/dygc5b8cn/image/upload/v1771316270/jof5pzc5icvsuecqihdd.webp
 samsung/Tap A11+ 5G 256|8/Aa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1771082599/b497on9imix4xsaztlvf.png
-Honor/X7D 256|8/510/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769508671/xkjcincirbyzfyqyfg3s.png
+Honor/X7D 256|8/Aa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769508671/xkjcincirbyzfyqyfg3s.png
 Tecno/Go3 128|4/330/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769433712/rwkj73icwxmb1uucngjt.webp
 Tecno/Go3 64|4/300/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769433709/or8ge3cehifuwlfq5ozn.jpg
 MI/NOTE 15 PRO 512|12/1010/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769083954/ytytfhodxytzcrqr1pcz.jpg
@@ -26,7 +26,7 @@ huawei/GT 6 pro Brown |/950/https://res.cloudinary.com/dygc5b8cn/image/upload/v1
 samsung/TAB A11 128|8/Aa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1767692192/ubyqea0ilzlcx95s4mwa.jpg
 MI/C71 128|4/Aa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1766568493/kwt5ow5wuofjizgiweqe.webp
 samsung/A26 256|8/650/https://res.cloudinary.com/dygc5b8cn/image/upload/v1764065061/khfpksu8x13khbj6rok2.jpg
-Honor/X9d 256|12/1120/https://res.cloudinary.com/dygc5b8cn/image/upload/v1763373225/j3170qc31xs8tyqnkoju.webp
+Honor/X9d 256|12/1150/https://res.cloudinary.com/dygc5b8cn/image/upload/v1763373225/j3170qc31xs8tyqnkoju.webp
 Tecno/Slim 256|8/660/https://res.cloudinary.com/dygc5b8cn/image/upload/v1760622512/yze1nsxdm3lgmny2tjyo.webp
 MI/Pad 2 256|8/700/https://res.cloudinary.com/dygc5b8cn/image/upload/v1759655366/bsrpwamkyjsfjjxjyvqq.webp
 MI/SE 11" 256|8/aaa/https://www.celletronic.com/wp-content/uploads/2023/09/xiaomi-redmi-pad-se-11-0-6gb-ram-128gb-wifi-gris.jpg
