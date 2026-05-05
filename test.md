@@ -1,3 +1,4 @@
+MI/NOTE 15 PRO PLUS 512|12/1400/undefined
 Honor/X8D 256|8/720/undefined
 Honor/X5C 128|4/290/undefined
 Honor/X6C 256|6/420/undefined
