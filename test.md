@@ -1,6 +1,6 @@
 MI/NOTE 15 PRO PLUS 512|12/1400/undefined
 Honor/X8D 256|8/820/undefined
-Honor/X5C 128|4/290/undefined
+Honor/X5C 128|4/Aa/undefined
 Honor/X6C 256|6/420/undefined
 Honor/PLAY 10 64|3/270/https://res.cloudinary.com/dygc5b8cn/image/upload/v1773488724/dskshebfjtlm0zhvle0u.png
 samsung/S26 ultra 256|12/3650/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772910348/muxhmjpfgfumtsowyv69.webp
@@ -31,7 +31,7 @@ Honor/X9d 256|12/1150/https://res.cloudinary.com/dygc5b8cn/image/upload/v1763373
 Tecno/Slim 256|8/660/https://res.cloudinary.com/dygc5b8cn/image/upload/v1760622512/yze1nsxdm3lgmny2tjyo.webp
 MI/Pad 2 256|8/Aa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1759655366/bsrpwamkyjsfjjxjyvqq.webp
 MI/SE 11" 256|8/aaa/https://www.celletronic.com/wp-content/uploads/2023/09/xiaomi-redmi-pad-se-11-0-6gb-ram-128gb-wifi-gris.jpg
-Apple/17 pro max كفالة ضفة معتمد|/Aa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1761035345/gwlomv0ep0ounsg6zndj.jpg
+Apple/17 pro max كفالة ضفة معتمد|/4650/https://res.cloudinary.com/dygc5b8cn/image/upload/v1761035345/gwlomv0ep0ounsg6zndj.jpg
 MI/Redmi 15 256|8/500/https://res.cloudinary.com/dygc5b8cn/image/upload/v1759304172/u2xrt2uhefd3tbhmjroe.webp
 MI/Redmi 15C 256|8/420/https://res.cloudinary.com/dygc5b8cn/image/upload/v1757324304/mijovlzrsdbgsxgcl1lf.webp
 samsung/S25 ultra 256|12/3080/https://assets.mmsrg.com/isr/166325/c1/-/ASSET_MMS_149453259/fee_786_587_png
