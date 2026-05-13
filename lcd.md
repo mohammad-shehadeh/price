@@ -120,7 +120,7 @@ Mi | poco/redmi 10 - REDMI 10 PRIME - REDMI 10 2022 |/45/https://res.cloudinary.
 Mi | poco/redmi 10C - REDMI 12C - REDMI 11A - POCO C40 - POCO C55 ORI |/45/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131155/tdehiviba8vewijxxkkg.webp
 Mi | poco/redmi 10C +FRAME ORI |/55/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131332/aupsba3hxy73xgau3ptv.jpg
 Mi | poco/redmi 12C +FRAME ORI |/55/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131332/aupsba3hxy73xgau3ptv.jpg
-Mi | poco/redmi 12 - REDMI 13 - POCO M6 PRO |/45/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131155/tdehiviba8vewijxxkkg.webp
+Mi | poco/redmi 12 - REDMI 13 - Redmi 13X - POCO M6 PRO |/45/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131155/tdehiviba8vewijxxkkg.webp
 Mi | poco/redmi 13C - REDMI 13R - POCO C65 - POCO M6 5G ORI |/45/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131155/tdehiviba8vewijxxkkg.webp
 Mi | poco/13C +frame |/55/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131332/aupsba3hxy73xgau3ptv.jpg
 Mi | poco/redmi 14C - REDMI A3 PRO - REDMI A4 5G - POCO C75 - POCO M7 |/45/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131155/tdehiviba8vewijxxkkg.webp
