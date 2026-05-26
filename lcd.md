@@ -74,7 +74,7 @@ iphone/ipad 7,8,9 touch |/45/https://res.cloudinary.com/dygc5b8cn/image/upload/v
 iphone/watch S6 44mm |/200/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772134150/eav3hsrslz5l5756xata.jpg
 iphone/watch S7 44mm |/200/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772134155/wfoc5nmxcmzjwcozwfim.jpg
 Mi | poco/Redmi pad SE - Redmi pad 2 |/110/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772134327/xtwkmlmlilnal7wejqpr.avif
-Mi | poco/Redmi A5 - poco C71 |/50/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131155/tdehiviba8vewijxxkkg.webp
+Mi | poco/Redmi A5 - poco C71 |/45/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131155/tdehiviba8vewijxxkkg.webp
 Mi | poco/REDMI 10A - REDMI 9A - REDMI 9C ORI |/45/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131155/tdehiviba8vewijxxkkg.webp
 Mi | poco/REDMI 10A - REDMI 9A - REDMI 9C + FRAME ORI |/55/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131332/aupsba3hxy73xgau3ptv.jpg
 Mi | poco/MI 11 lite 4G - MI 11 LITE 5G - MI 11 LITE NE 5G INCELL |/60/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131155/tdehiviba8vewijxxkkg.webp
