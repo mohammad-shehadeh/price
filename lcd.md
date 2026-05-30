@@ -94,7 +94,7 @@ Mi | poco/REDMI Note 11 - REDMI note 11S - REDMI Note 12S - POCO M4 PRO INCELL |
 Mi | poco/REDMI Note 11 - REDMI note 11S - REDMI Note 12S - POCO M4 PRO OLED |/110/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131155/tdehiviba8vewijxxkkg.webp
 Mi | poco/REDMI Note 11 - REDMI note 11S +FRAME incell |/65/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131332/aupsba3hxy73xgau3ptv.jpg
 Mi | poco/REDMI Note 12 - NOTE 12 5G - POCO X5 incell |/55/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131155/tdehiviba8vewijxxkkg.webp
-Mi | poco/REDMI Note 12 - NOTE 12 5G - POCO X5 OLED |/100/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131155/tdehiviba8vewijxxkkg.webp
+Mi | poco/REDMI Note 12 - NOTE 12 5G - POCO X5 OLED |/110/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131155/tdehiviba8vewijxxkkg.webp
 Mi | poco/Note 12 incell +frame |/60/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131332/aupsba3hxy73xgau3ptv.jpg
 Mi | poco/REDMI Note 14 4G - REDMI NOTE 13 4G - REDMI NOTE 14 5G - POCO M7 PRO incell |/60/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131155/tdehiviba8vewijxxkkg.webp
 Mi | poco/REDMI Note 14 4G - REDMI NOTE 13 4G - REDMI NOTE 14 5G - POCO M7 PRO OLED |/110/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131155/tdehiviba8vewijxxkkg.webp
