@@ -1,3 +1,29 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 HONOR/X7b |/55/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131616/pebvftygqsnz8h6j8eqf.webp
 tecno | infinix | itel/CAMON 17 pro - zero x new ORI |/aaa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131117/z2dzmryifu1g3pgusfso.jpg
 tecno | infinix | itel/CAMON 18 Premer - zero x incell |/70/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131117/z2dzmryifu1g3pgusfso.jpg
@@ -22,54 +48,63 @@ tecno | infinix | itel/tecno POVA 6 - tecno POVA 6 PRO 5G - tecno CAMON 30 - tec
 tecno | infinix | itel/tecno POVA 7 |/60/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131117/z2dzmryifu1g3pgusfso.jpg
 tecno | infinix | itel/infinix HOT 10 - camon 16 - spark 6 2020 - pova - note 8i - note 10 |/45/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131117/z2dzmryifu1g3pgusfso.jpg
 tecno | infinix | itel/infinix S5 pro |/45/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131117/z2dzmryifu1g3pgusfso.jpg
-iphone/x BYH |/55/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131135/wqebe6jd2ccu8qof69mh.webp
-iphone/xr BYH |/55/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131135/wqebe6jd2ccu8qof69mh.webp
-iphone/xs BYH |/55/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131135/wqebe6jd2ccu8qof69mh.webp
-iphone/xs max BYH |/65/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131135/wqebe6jd2ccu8qof69mh.webp
+iphone/x WTDT HD++ |/55/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131135/wqebe6jd2ccu8qof69mh.webp
+iphone/xr WTDT HD++ |/55/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131135/wqebe6jd2ccu8qof69mh.webp
+iphone/xs WTDT HD++ |/55/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131135/wqebe6jd2ccu8qof69mh.webp
+iphone/xs max WTDT HD++ |/65/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131135/wqebe6jd2ccu8qof69mh.webp
 iphone/XS max original |/180/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131135/wqebe6jd2ccu8qof69mh.webp
-iphone/Ip 11 byh |/55/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131135/wqebe6jd2ccu8qof69mh.webp
-iphone/Ip 11 pro HD+ |/60/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131135/wqebe6jd2ccu8qof69mh.webp
+iphone/Ip 11 WTDT HD++ |/60/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131135/wqebe6jd2ccu8qof69mh.webp
+iphone/Ip 11 pro WTDT HD++ |/60/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131135/wqebe6jd2ccu8qof69mh.webp
 iphone/Ip 11 original |/85/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131135/wqebe6jd2ccu8qof69mh.webp
 iphone/Ip 11 orignal ch |/120/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131135/wqebe6jd2ccu8qof69mh.webp
-iphone/11 pro max BYH |/60/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131135/wqebe6jd2ccu8qof69mh.webp
+iphone/11 pro max WTDT HD++ |/65/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131135/wqebe6jd2ccu8qof69mh.webp
+iphone/11 pro max WTDT SOFT OLED |/155/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131135/wqebe6jd2ccu8qof69mh.webp
 iphone/11 pro max original |/Aa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131135/wqebe6jd2ccu8qof69mh.webp
-iphone/12 pro BYH |/65/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131135/wqebe6jd2ccu8qof69mh.webp
-iphone/12 pro original |/230/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131135/wqebe6jd2ccu8qof69mh.webp
-iphone/12 pro max BYH |/80/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131135/wqebe6jd2ccu8qof69mh.webp
-iphone/12 pro max Soft OLED |/180/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131135/wqebe6jd2ccu8qof69mh.webp
+iphone/12 pro - 12 WTDT HD++ |/65/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131135/wqebe6jd2ccu8qof69mh.webp
+iphone/12 PRO - 12 WTDT SOFT OLED |/170/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131135/wqebe6jd2ccu8qof69mh.webp
+iphone/12 pro original |/280/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131135/wqebe6jd2ccu8qof69mh.webp
+iphone/12 pro max WTDT HD++ |/80/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131135/wqebe6jd2ccu8qof69mh.webp
+iphone/12 pro max WTDT SOFT OLED |/180/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131135/wqebe6jd2ccu8qof69mh.webp
 iphone/12 pro max orignal |/350/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131135/wqebe6jd2ccu8qof69mh.webp
-iphone/13 BYH |/80/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131135/wqebe6jd2ccu8qof69mh.webp
-iphone/13 orignal |/250/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131135/wqebe6jd2ccu8qof69mh.webp
-iphone/13 pro BYH |/100/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131135/wqebe6jd2ccu8qof69mh.webp
+iphone/13 WTDT HD++ |/80/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131135/wqebe6jd2ccu8qof69mh.webp/
+iphone/13 WTDT SOFT OLED |/170/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131135/wqebe6jd2ccu8qof69mh.webp
+iphone/13 orignal |/350/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131135/wqebe6jd2ccu8qof69mh.webp
+iphone/13 pro WTDT HD++ |/100/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131135/wqebe6jd2ccu8qof69mh.webp
+iphone/13 PRO WTDT SOFT OLED |/180/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131135/wqebe6jd2ccu8qof69mh.webp
 iphone/13 pro orignal |/470/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131135/wqebe6jd2ccu8qof69mh.webp
-iphone/13 pro max BYH |/130/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131135/wqebe6jd2ccu8qof69mh.webp
-iphone/13 pro max Soft OLED |/200/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131135/wqebe6jd2ccu8qof69mh.webp
+iphone/13 pro max WTDT HD++ |/130/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131135/wqebe6jd2ccu8qof69mh.webp
+iphone/13 pro max WTDT Soft OLED |/200/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131135/wqebe6jd2ccu8qof69mh.webp
 iphone/13 pro max orignal |/590/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131135/wqebe6jd2ccu8qof69mh.webp
 iphone/14 BYH |/85/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131135/wqebe6jd2ccu8qof69mh.webp
+iphone/14 WTDT SOFT OLED |/180/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131135/wqebe6jd2ccu8qof69mh.webp
 iphone/14 orignal |/280/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131135/wqebe6jd2ccu8qof69mh.webp
-iphone/14 pro BYH |/110/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131135/wqebe6jd2ccu8qof69mh.webp
+iphone/14 pro WTDT HD++ |/110/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131135/wqebe6jd2ccu8qof69mh.webp
+iphone/14 PRO WTDT SOFT OLED |/180/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131135/wqebe6jd2ccu8qof69mh.webp
 iphone/14 pro orignal |/530/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131135/wqebe6jd2ccu8qof69mh.webp
 iphone/14 pro max BYH |/140/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131135/wqebe6jd2ccu8qof69mh.webp
-iphone/14 pro max Soft OLED |/200/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131135/wqebe6jd2ccu8qof69mh.webp
+iphone/14 pro max WTDT Soft OLED |/200/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131135/wqebe6jd2ccu8qof69mh.webp
 iphone/14 pro max orignal |/650/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131135/wqebe6jd2ccu8qof69mh.webp
-iphone/15 BYH |/110/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131135/wqebe6jd2ccu8qof69mh.webp
-iphone/15 original |/500/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131135/wqebe6jd2ccu8qof69mh.webp
-iphone/15 pro BYH |/120/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131135/wqebe6jd2ccu8qof69mh.webp
-iphone/15 pro original |/550/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131135/wqebe6jd2ccu8qof69mh.webp
-iphone/15 pro max BYH |/150/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131135/wqebe6jd2ccu8qof69mh.webp
-iphone/15 pro max OLED |/250/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131135/wqebe6jd2ccu8qof69mh.webp
-iphone/15 pro max orignal |/Aa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131135/wqebe6jd2ccu8qof69mh.webp
+iphone/15 WTDT HD++ |/100/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131135/wqebe6jd2ccu8qof69mh.webp
+iphone/15 WTDT SOFT OLED |/180/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131135/wqebe6jd2ccu8qof69mh.webp
+iphone/15 ORIGNAL |/400/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131135/wqebe6jd2ccu8qof69mh.webp
+iphone/16 WTDT HD++ |/110/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131135/wqebe6jd2ccu8qof69mh.webp
+iphone/16 WTDT SOFT OLED |/250/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131135/wqebe6jd2ccu8qof69mh.webp
+iphone/15 pro WTDT HD++ |/120/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131135/wqebe6jd2ccu8qof69mh.webp
+iphone/15 pro original |/450/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131135/wqebe6jd2ccu8qof69mh.webp
+iphone/15 pro max WTDT |/150/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131135/wqebe6jd2ccu8qof69mh.webp
+iphone/15 pro max WTDT SOFT OLED |/250/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131135/wqebe6jd2ccu8qof69mh.webp
+iphone/15 pro max orignal |/1000/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131135/wqebe6jd2ccu8qof69mh.webp
 iphone/16 pro max orignal |/1000/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131135/wqebe6jd2ccu8qof69mh.webp
-iphone/16 pro max Soft OLED |/aaa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131135/wqebe6jd2ccu8qof69mh.webp
+iphone/16 pro max WTDT Soft OLED |/350/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131135/wqebe6jd2ccu8qof69mh.webp
 iphone/17 pro max original |/1500/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131135/wqebe6jd2ccu8qof69mh.webp
-iphone/17 pro max Soft OLED |/450/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131135/wqebe6jd2ccu8qof69mh.webp
+iphone/17 pro max WTDT Soft OLED |/450/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131135/wqebe6jd2ccu8qof69mh.webp
 iphone/6 plus |/25/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131135/wqebe6jd2ccu8qof69mh.webp
-iphone/7 plus |/40/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131135/wqebe6jd2ccu8qof69mh.webp
-iphone/8 plus AAA |/45/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131135/wqebe6jd2ccu8qof69mh.webp
+iphone/7 plus WTDT |/45/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131135/wqebe6jd2ccu8qof69mh.webp
+iphone/8 plus WTDT |/45/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131135/wqebe6jd2ccu8qof69mh.webp
 iphone/8 plus orignal |/aaa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131135/wqebe6jd2ccu8qof69mh.webp
-iphone/8G |/aaa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131135/wqebe6jd2ccu8qof69mh.webp
+iphone/8G WTDT |/40/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131135/wqebe6jd2ccu8qof69mh.webp
 iphone/ipad 10 touch |/45/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772134258/ufhindurmwznlpahwn43.jpg
-iphone/ipad 7,8,9 LCD |/Aa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772134176/q7vijn8krgoqoyz1pj7h.webp
+iphone/ipad 7,8,9 LCD |/45/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772134176/q7vijn8krgoqoyz1pj7h.webp
 iphone/ipad 7,8,9 touch |/45/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772134251/ye9tdd4sfigrg5slp5ez.jpg
 iphone/watch S6 44mm |/200/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772134150/eav3hsrslz5l5756xata.jpg
 iphone/watch S7 44mm |/200/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772134155/wfoc5nmxcmzjwcozwfim.jpg
@@ -144,12 +179,12 @@ realmi | oppo | onePlus/OPPO A52 - OPPO A72 - OPPO A92 ORI |/50/https://res.clou
 realmi | oppo | onePlus/REALMI 7I - REAMLI C17 - OPPO A54 - OPPO A33 - OPPO A55 - OPPO A53 - OPPO A32 - OPPO A53S - OPPO A51 2021 - A51 2020 ORI |/50/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772134403/esj2ufxq869fdoopql78.webp
 realmi | oppo | onePlus/OPPO A72 - OPPO A52 - OPPO A92 ORI |/50/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772134403/esj2ufxq869fdoopql78.webp
 realmi | oppo | onePlus/OPPO A93 - RENO 4 4G - RENO 4 LITE - F17 PRO INCELL |/55/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772134403/esj2ufxq869fdoopql78.webp
-Samsung/S25 ultra 1:1 +F |/550/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131242/emk09yzk3v79adozksm5.jpg
-Samsung/S24 ultra 1:1 +F |/550/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131242/emk09yzk3v79adozksm5.jpg
-Samsung/S23 ultra 1:1 +F |/550/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131242/emk09yzk3v79adozksm5.jpg
-Samsung/S22 ultra 1:1 +F |/aaa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131242/emk09yzk3v79adozksm5.jpg
-Samsung/S21 ultra 1:1 +F |/aaa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131242/emk09yzk3v79adozksm5.jpg
-Samsung/note 20 ultra 1:1 +F |/aaa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131242/emk09yzk3v79adozksm5.jpg
+Samsung/S25 ultra 1:1 +F |/520/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131242/emk09yzk3v79adozksm5.jpg
+Samsung/S24 ultra 1:1 +F |/520/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131242/emk09yzk3v79adozksm5.jpg
+Samsung/S23 ultra 1:1 +F |/520/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131242/emk09yzk3v79adozksm5.jpg
+Samsung/S22 ultra 1:1 +F |/520/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131242/emk09yzk3v79adozksm5.jpg
+Samsung/S21 ultra 1:1 +F |/350/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131242/emk09yzk3v79adozksm5.jpg
+Samsung/note 20 ultra 1:1 +F |/520/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131242/emk09yzk3v79adozksm5.jpg
 Samsung/A03 core |/45/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131170/vtxjuu8x1w5qkkynzzrh.jpg
 Samsung/A03S - A02S - A03 - A04E original |/45/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131170/vtxjuu8x1w5qkkynzzrh.jpg
 Samsung/A02S +FRAME |/55/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131284/pionk2xvkfmkhm2wodu6.jpg
@@ -221,8 +256,11 @@ Samsung/J7 prime |/45/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131
 Samsung/A50 - A30 INCELL +FRAME |/55/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131284/pionk2xvkfmkhm2wodu6.jpg
 Samsung/A20 INCELL + FRAME |/50/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131284/pionk2xvkfmkhm2wodu6.jpg
 Samsung/M13 |/45/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131170/vtxjuu8x1w5qkkynzzrh.jpg
-Samsung/Tap A9 |/90/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772135116/giig74c1czgfwilihrbo.avif
-Samsung/Tap A9+ 5G 11" |/110/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772135125/tpzilpl9khhvitqdmvxy.png
+Samsung/Tap TAP A - T290 |/70/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772135116/giig74c1czgfwilihrbo.avif
+Samsung/Tap TAP A 4G - T295 |/70/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772135116/giig74c1czgfwilihrbo.avif
+Samsung/Tap A7 LITE - T220 |/70/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772135116/giig74c1czgfwilihrbo.avif
+Samsung/Tap A9 - X110 |/80/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772135116/giig74c1czgfwilihrbo.avif
+Samsung/Tap A9+ 5G 11" - X218 |/110/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772135125/tpzilpl9khhvitqdmvxy.png
 HONOR/X5 plus |/55/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131616/pebvftygqsnz8h6j8eqf.webp
 HONOR/X5b |/55/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131616/pebvftygqsnz8h6j8eqf.webp
 HONOR/X6a |/55/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131616/pebvftygqsnz8h6j8eqf.webp
