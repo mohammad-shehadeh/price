@@ -25,7 +25,7 @@ tecno | infinix | itel/tecno POVA 7 |/60/https://res.cloudinary.com/dygc5b8cn/im
 tecno | infinix | itel/infinix HOT 10 - camon 16 - spark 6 2020 - pova - note 8i - note 10 |/45/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131117/z2dzmryifu1g3pgusfso.jpg
 tecno | infinix | itel/infinix S5 pro |/45/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131117/z2dzmryifu1g3pgusfso.jpg
 tecno | infinix | itel/ ZTE A35 - ZTE A55 - ZTE Blade A35 - ZTE Blade A55 |/55/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131117/z2dzmryifu1g3pgusfso.jpg
-tecno | infinix | itel/ ZTE A35e |/45/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131117/z2dzmryifu1g3pgusfso.jpg
+tecno | infinix | itel/ ZTE A35e |/55/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131117/z2dzmryifu1g3pgusfso.jpg
 iphone/x WTDT HD++ |/55/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131135/wqebe6jd2ccu8qof69mh.webp
 iphone/xr WTDT HD++ |/55/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131135/wqebe6jd2ccu8qof69mh.webp
 iphone/xs WTDT HD++ |/55/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131135/wqebe6jd2ccu8qof69mh.webp
