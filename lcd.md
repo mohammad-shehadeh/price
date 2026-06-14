@@ -181,7 +181,7 @@ Samsung/A04S +FRAME |/55/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772
 Samsung/A05 original |/45/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131170/vtxjuu8x1w5qkkynzzrh.jpg
 Samsung/A05 +FRAME |/55/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131284/pionk2xvkfmkhm2wodu6.jpg
 Samsung/A05S original |/50/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131170/vtxjuu8x1w5qkkynzzrh.jpg
-Samsung/A06 original |/50/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131170/vtxjuu8x1w5qkkynzzrh.jpg
+Samsung/A06 original |/45/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131170/vtxjuu8x1w5qkkynzzrh.jpg
 Samsung/A06 +FRAME |/60/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131284/pionk2xvkfmkhm2wodu6.jpg
 Samsung/A07 |/50/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131170/vtxjuu8x1w5qkkynzzrh.jpg
 Samsung/A07 +FRAME |/60/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131284/pionk2xvkfmkhm2wodu6.jpg
