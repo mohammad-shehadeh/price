@@ -4,7 +4,7 @@ Honor/X8D 256|8/820/undefined
 Honor/X5C 128|4/Aa/undefined
 Honor/X6C 256|6/420/undefined
 Honor/PLAY 10 64|3/270/https://res.cloudinary.com/dygc5b8cn/image/upload/v1773488724/dskshebfjtlm0zhvle0u.png
-samsung/S26 ultra 256|12/3230/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772910348/muxhmjpfgfumtsowyv69.webp
+samsung/S26 ultra 256|12/31000/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772910348/muxhmjpfgfumtsowyv69.webp
 samsung/S26 ultra 512|12/Aa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772910347/z35p8zr82lup8f1svbfz.webp
 N\A/A17 pro max 128|3/290/https://res.cloudinary.com/dygc5b8cn/image/upload/v1771316250/nvlfmrrgmghfglzr3t5x.webp
 N\A/A26 ultra 128|3/290/https://res.cloudinary.com/dygc5b8cn/image/upload/v1771316270/jof5pzc5icvsuecqihdd.webp
