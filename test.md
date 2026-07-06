@@ -1,5 +1,5 @@
 Apple/Iphone 17 256|/aaa/undefined
-MI/NOTE 15 PRO PLUS 512|12/1350/undefined
+MI/NOTE 15 PRO PLUS 512|12/1370/undefined
 Honor/X8D 256|8/820/undefined
 Honor/X5C 128|4/Aa/undefined
 Honor/X6C 256|6/420/undefined
@@ -12,7 +12,7 @@ samsung/Tap A11+ 5G 256|8/Aa/https://res.cloudinary.com/dygc5b8cn/image/upload/v
 Honor/X7D 256|8/Aa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769508671/xkjcincirbyzfyqyfg3s.png
 Tecno/Go3 128|4/330/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769433712/rwkj73icwxmb1uucngjt.webp
 Tecno/Go3 64|4/300/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769433709/or8ge3cehifuwlfq5ozn.jpg
-MI/NOTE 15 PRO 512|12/970/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769083954/ytytfhodxytzcrqr1pcz.jpg
+MI/NOTE 15 PRO 512|12/960/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769083954/ytytfhodxytzcrqr1pcz.jpg
 MI/NOTE 15 PRO 256|8/800/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769083899/cxucuyswalsqf24gqprl.webp
 MI/NOTE 15 256|8/630/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769083825/bytesdd6t344fn7bnhou.jpg
 Nokia/Nokia 108 4G ori |/125/https://res.cloudinary.com/dygc5b8cn/image/upload/v1768648661/gat9whx1e07qi9ilswpg.webp
@@ -41,7 +41,7 @@ samsung/A07 256|8/Aa/https://res.cloudinary.com/dygc5b8cn/image/upload/v17640649
 samsung/A17 128|6/aa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1759654356/tdq2lrtsxwo9hshuo4dd.jpg
 samsung/A07 64|4/280/https://res.cloudinary.com/dygc5b8cn/image/upload/v1758201166/sicjbxtmxarydofvmecm.jpg
 MI/Redmi 15C 128|6/Aa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1757324301/ilyhjiezyfz5khp30p5e.webp
-MI/Redmi 15C 128|4/330/https://res.cloudinary.com/dygc5b8cn/image/upload/v1757324301/ilyhjiezyfz5khp30p5e.webp
+MI/Redmi 15C 128|4/aa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1757324301/ilyhjiezyfz5khp30p5e.webp
 Apple/Ipad 11 128|كفالة ضفة |/1170/https://res.cloudinary.com/dygc5b8cn/image/upload/v1756986041/ajb0lks9smgql3bccyjx.webp
 samsung/A07 128|6/340/https://res.cloudinary.com/dygc5b8cn/image/upload/v1756559491/wokzeyy83lncbbewic1v.jpg
 Honor/400 pro 512|12/Aa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1749889558/fmzaah1o7lludxn31jts.jpg
@@ -62,13 +62,13 @@ samsung/A36 256|12/Aa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1759655
 samsung/A36 128|8/780/https://media-ik.croma.com/prod/https://media.croma.com/image/upload/v1741009141/Croma%20Assets/Communication/Mobiles/Images/314440_0_g3jqt5.png
 samsung/Tap A9+  5G 128|8/Aa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1753694538/hof796y09s8x8ovvttwp.jpg
 samsung/TAP A9 64|4/Aa/https://oplayce.ci/cdn/shop/files/samsung-galaxy-tab-a9_5_1024x.jpg?v=1717431017
-MI/Redmi 13X 256|8/390/https://res.cloudinary.com/dygc5b8cn/image/upload/v1753791535/a13rrdzxc1i0gtxd5b6f.png
+MI/Redmi 13X 256|8/400/https://res.cloudinary.com/dygc5b8cn/image/upload/v1753791535/a13rrdzxc1i0gtxd5b6f.png
 MI/redmi A5 128|4/Aa/https://media.ldlc.com/r1600/ld/products/00/06/22/87/LD0006228768.jpg
 MI/Redmi A5 64|3/Aa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1745846501/huvlm2coxnrudfzwmhtm.jpg
 MI/Note 14 pro plus 5G |/Aa/https://fonexpress.net/wp-content/uploads/2025/01/Xiaomi-Redmi-Note-14-Pro-Plus.webp
 MI/Note 14 pro 512|12/Aa/https://www.giztop.com/media/catalog/product/cache/97cc1143d2e20f2b0c8ea91aaa12053c/r/e/redmi_note_14_pro.png
 MI/Note 14 pro 256|8/Aa/https://www.giztop.com/media/catalog/product/cache/97cc1143d2e20f2b0c8ea91aaa12053c/r/e/redmi_note_14_pro.png
-MI/Note 14 256|8/540/https://cdn.gadgetbytenepal.com/wp-content/uploads/2025/01/Redmi-Note-14-4G-1.jpg
+MI/Note 14 256|8/aa/https://cdn.gadgetbytenepal.com/wp-content/uploads/2025/01/Redmi-Note-14-4G-1.jpg
 MI/poco X7 pro 512|12/Aa/https://cdn.shortpixel.ai/spai/q_glossy+ret_img+to_webp/mobizil.com/wp-content/uploads/2025/01/Xiaomi-Poco-X7-Pro.jpg
 MI/POCO F6 PRO 512|12/Aa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1757492561/uzaash86iswt4gtg59b0.jpg
 MI/14C 256|8/Aa/https://www.hemfrance.com/39078-thickbox_default/xiaomi-redmi-14c-688-128-gb-6-gb-ram-green.jpg
