@@ -35,11 +35,11 @@ MI/SE 11" 256|8/aaa/https://www.celletronic.com/wp-content/uploads/2023/09/xiaom
 Apple/17 pro max كفالة ضفة معتمد|/4100/https://res.cloudinary.com/dygc5b8cn/image/upload/v1761035345/gwlomv0ep0ounsg6zndj.jpg
 MI/Redmi 15 256|8/500/https://res.cloudinary.com/dygc5b8cn/image/upload/v1759304172/u2xrt2uhefd3tbhmjroe.webp
 MI/Redmi 15C 256|8/400/https://res.cloudinary.com/dygc5b8cn/image/upload/v1757324304/mijovlzrsdbgsxgcl1lf.webp
-samsung/S25 ultra 256|12/3020/https://assets.mmsrg.com/isr/166325/c1/-/ASSET_MMS_149453259/fee_786_587_png
+samsung/S25 ultra 256|12/2900/https://assets.mmsrg.com/isr/166325/c1/-/ASSET_MMS_149453259/fee_786_587_png
 samsung/A17 128|4/500/https://res.cloudinary.com/dygc5b8cn/image/upload/v1759304168/d3bqnjrcxoay06rrnjtx.jpg
 samsung/A07 256|8/Aa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1764064978/vvks2bmm3sqhrvyidtnu.jpg
-samsung/A17 128|6/530/https://res.cloudinary.com/dygc5b8cn/image/upload/v1759654356/tdq2lrtsxwo9hshuo4dd.jpg
-samsung/A07 64|4/290/https://res.cloudinary.com/dygc5b8cn/image/upload/v1758201166/sicjbxtmxarydofvmecm.jpg
+samsung/A17 128|6/aa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1759654356/tdq2lrtsxwo9hshuo4dd.jpg
+samsung/A07 64|4/280/https://res.cloudinary.com/dygc5b8cn/image/upload/v1758201166/sicjbxtmxarydofvmecm.jpg
 MI/Redmi 15C 128|6/Aa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1757324301/ilyhjiezyfz5khp30p5e.webp
 MI/Redmi 15C 128|4/330/https://res.cloudinary.com/dygc5b8cn/image/upload/v1757324301/ilyhjiezyfz5khp30p5e.webp
 Apple/Ipad 11 128|كفالة ضفة |/1170/https://res.cloudinary.com/dygc5b8cn/image/upload/v1756986041/ajb0lks9smgql3bccyjx.webp
@@ -55,7 +55,7 @@ Tecno/Go2 64|6/Aa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1753777830/
 Tecno/Go1 128|8/Aa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1753777748/hfymoxudmn6gt41pqhoi.jpg
 Honor/X7C 256|8/470/https://res.cloudinary.com/dygc5b8cn/image/upload/v1753694752/kw0rwr4ygtl6vcsorjhv.webp
 Honor/X9C Smart |/780/https://res.cloudinary.com/dygc5b8cn/image/upload/v1748939036/fmnbqj4pn9g6a759fwja.jpg
-samsung/A56 256|12/1190/https://res.cloudinary.com/dygc5b8cn/image/upload/v1749459188/y0z6o06cd6vd4duldj4x.webp
+samsung/A56 256|12/1140/https://res.cloudinary.com/dygc5b8cn/image/upload/v1749459188/y0z6o06cd6vd4duldj4x.webp
 samsung/A56 256|8/Aa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1754820726/old4z9el309kurxmnjsi.jpg
 samsung/A36 256|8/Aa/https://media-ik.croma.com/prod/https://media.croma.com/image/upload/v1741009141/Croma%20Assets/Communication/Mobiles/Images/314440_0_g3jqt5.png
 samsung/A36 256|12/Aa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1759655087/fcymols1dg15oczams6c.webp
