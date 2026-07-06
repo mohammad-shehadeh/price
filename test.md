@@ -54,7 +54,7 @@ Tecno/Go2 128|8/Aa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1753777890
 Tecno/Go2 64|6/Aa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1753777830/x9ncq6ozpitqppwqmu87.jpg
 Tecno/Go1 128|8/Aa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1753777748/hfymoxudmn6gt41pqhoi.jpg
 Honor/X7C 256|8/470/https://res.cloudinary.com/dygc5b8cn/image/upload/v1753694752/kw0rwr4ygtl6vcsorjhv.webp
-Honor/X9C Smart |/780/https://res.cloudinary.com/dygc5b8cn/image/upload/v1748939036/fmnbqj4pn9g6a759fwja.jpg
+Honor/X9C Smart |/aa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1748939036/fmnbqj4pn9g6a759fwja.jpg
 samsung/A56 256|12/1140/https://res.cloudinary.com/dygc5b8cn/image/upload/v1749459188/y0z6o06cd6vd4duldj4x.webp
 samsung/A56 256|8/Aa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1754820726/old4z9el309kurxmnjsi.jpg
 samsung/A36 256|8/Aa/https://media-ik.croma.com/prod/https://media.croma.com/image/upload/v1741009141/Croma%20Assets/Communication/Mobiles/Images/314440_0_g3jqt5.png
