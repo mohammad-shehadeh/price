@@ -1,3 +1,4 @@
+MI/NOTE 70 +AIR PUDS 256|8/500/undefined
 Apple/Iphone 17 256|/aaa/undefined
 MI/NOTE 15 PRO PLUS 512|12/1370/undefined
 Honor/X8D 256|8/820/undefined
