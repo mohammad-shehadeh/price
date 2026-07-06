@@ -1,3 +1,4 @@
+samsung/A57 256|8/1280/undefined
 MI/NOTE 70 +AIR PUDS 256|8/500/undefined
 Apple/Iphone 17 256|/aaa/undefined
 MI/NOTE 15 PRO PLUS 512|12/1370/undefined
