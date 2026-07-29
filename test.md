@@ -1,8 +1,10 @@
-MI/X8 PRO MAX 512|12/1680/undefined
+MI/REDMI PAD 2 256|8/730/undefined
+MI/REDMI PAD 2 pro 256|8/1000/undefined
+MI/REDMI PAD 2 Pro 256|8/1000/undefined
 samsung/A57 256|8/1280/undefined
+MI/X8 PRO MAX 512|12/1680/undefined
 MI/NOTE 70 +AIR PUDS 256|8/500/undefined
 Apple/Iphone 17 256|/aaa/undefined
-MI/NOTE 15 PRO PLUS 512|12/1370/undefined
 Honor/X8D 256|8/820/undefined
 Honor/X5C 128|4/Aa/undefined
 Honor/X6C 256|6/420/undefined
@@ -20,7 +22,7 @@ MI/NOTE 15 256|8/630/https://res.cloudinary.com/dygc5b8cn/image/upload/v17690838
 Nokia/Nokia 108 4G ori |/125/https://res.cloudinary.com/dygc5b8cn/image/upload/v1768648661/gat9whx1e07qi9ilswpg.webp
 Nokia/Nokia 105 4G ori |/110/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769789789/unvvxjjvwktvugwpdv8u.jpg
 Nokia/Nokia 110 4G ori |/120/https://res.cloudinary.com/dygc5b8cn/image/upload/v1768648574/g1gljaqe1lwqaafpobf0.jpg
-samsung/Tab a11 ‏64|‏4/420/https://res.cloudinary.com/dygc5b8cn/image/upload/v1768648464/upearlshkahnpk5bgd3v.jpg
+samsung/Tab a11 ‏64|‏4/430/https://res.cloudinary.com/dygc5b8cn/image/upload/v1768648464/upearlshkahnpk5bgd3v.jpg
 huawei/GT  6 Black |/700/https://res.cloudinary.com/dygc5b8cn/image/upload/v1768227581/nffehziqmd7dfnioefmp.webp
 huawei/GT  6 Green |/700/https://res.cloudinary.com/dygc5b8cn/image/upload/v1768227582/fisgduwjkpvoxrtz65ra.webp
 huawei/GT 6 Grey |/700/https://res.cloudinary.com/dygc5b8cn/image/upload/v1768227583/fx4u6lvsfp27l4esagkh.jpg
@@ -28,14 +30,13 @@ huawei/GT 6 pro titanium |/1300/https://res.cloudinary.com/dygc5b8cn/image/uploa
 huawei/GT 6 pro black |/950/https://res.cloudinary.com/dygc5b8cn/image/upload/v1768227584/ouneqq7unlc2mcycqwva.jpg
 huawei/GT 6 pro Brown |/950/https://res.cloudinary.com/dygc5b8cn/image/upload/v1768227586/oukwzyqhww3kulp9tvsr.webp
 samsung/TAB A11 128|8/Aa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1767692192/ubyqea0ilzlcx95s4mwa.jpg
-MI/C71 128|4/Aa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1766568493/kwt5ow5wuofjizgiweqe.webp
 samsung/A26 128|6/620/https://res.cloudinary.com/dygc5b8cn/image/upload/v1764065061/khfpksu8x13khbj6rok2.jpg
 Honor/X9d 256|12/1150/https://res.cloudinary.com/dygc5b8cn/image/upload/v1763373225/j3170qc31xs8tyqnkoju.webp
 Tecno/Slim 256|8/660/https://res.cloudinary.com/dygc5b8cn/image/upload/v1760622512/yze1nsxdm3lgmny2tjyo.webp
 MI/Pad 2 256|8/Aa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1759655366/bsrpwamkyjsfjjxjyvqq.webp
 MI/SE 11" 256|8/aaa/https://www.celletronic.com/wp-content/uploads/2023/09/xiaomi-redmi-pad-se-11-0-6gb-ram-128gb-wifi-gris.jpg
 Apple/17 pro max كفالة ضفة معتمد|/aa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1761035345/gwlomv0ep0ounsg6zndj.jpg
-MI/Redmi 15 256|8/Aa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1759304172/u2xrt2uhefd3tbhmjroe.webp
+MI/C71 128|4/Aa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1766568493/kwt5ow5wuofjizgiweqe.webp
 MI/Redmi 15C 256|8/Aa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1757324304/mijovlzrsdbgsxgcl1lf.webp
 samsung/S25 ultra 256|12/2900/https://assets.mmsrg.com/isr/166325/c1/-/ASSET_MMS_149453259/fee_786_587_png
 samsung/A17 128|4/500/https://res.cloudinary.com/dygc5b8cn/image/upload/v1759304168/d3bqnjrcxoay06rrnjtx.jpg
@@ -74,6 +75,7 @@ MI/Note 14 pro 256|8/Aa/https://www.giztop.com/media/catalog/product/cache/97cc1
 MI/Note 14 256|8/aa/https://cdn.gadgetbytenepal.com/wp-content/uploads/2025/01/Redmi-Note-14-4G-1.jpg
 MI/poco X7 pro 512|12/Aa/https://cdn.shortpixel.ai/spai/q_glossy+ret_img+to_webp/mobizil.com/wp-content/uploads/2025/01/Xiaomi-Poco-X7-Pro.jpg
 MI/POCO F6 PRO 512|12/Aa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1757492561/uzaash86iswt4gtg59b0.jpg
+MI/Redmi 15 256|8/Aa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1759304172/u2xrt2uhefd3tbhmjroe.webp
 MI/14C 256|8/Aa/https://www.hemfrance.com/39078-thickbox_default/xiaomi-redmi-14c-688-128-gb-6-gb-ram-green.jpg
 MI/14C 128|6/Aa/https://www.hemfrance.com/39078-thickbox_default/xiaomi-redmi-14c-688-128-gb-6-gb-ram-green.jpg
 MI/Note 13 pro PLUS 512|12/Aa/https://mobizil.com/wp-content/uploads/2023/11/Xiaomi-Redmi-Note-13-Pro-Plus.jpg
@@ -95,3 +97,5 @@ ZTE/nubia Music 128 |/Aa/https://promart.vteximg.com.br/arquivos/ids/8633792-100
 ZTE/nubia V60 design 256|16/370/https://www.innwa.com.mm/storage/product/1430/202408181124zte-blade-v60-design-blue.webp
 ZTE/nubia V60 256|20/460/https://www.innwa.com.mm/storage/product/1430/202408181124zte-blade-v60-design-blue.webp
 Nokia/H2163 كشاف صيني |/35/https://s9.pik.ba/galerija/2021-04/26/06/slika-2830089-6086f09649711-velika.jpg
+MI/REDMI A7 pro 128|4/380/undefined
+MI/NOTE 15 PRO PLUS 512|12/1370/undefined
