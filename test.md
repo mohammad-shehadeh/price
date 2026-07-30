@@ -39,7 +39,7 @@ Apple/17 pro max كفالة ضفة معتمد|/aa/https://res.cloudinary.com/dyg
 MI/C71 128|4/Aa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1766568493/kwt5ow5wuofjizgiweqe.webp
 MI/Redmi 15C 256|8/Aa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1757324304/mijovlzrsdbgsxgcl1lf.webp
 samsung/S25 ultra 256|12/2900/https://assets.mmsrg.com/isr/166325/c1/-/ASSET_MMS_149453259/fee_786_587_png
-samsung/A17 128|4/500/https://res.cloudinary.com/dygc5b8cn/image/upload/v1759304168/d3bqnjrcxoay06rrnjtx.jpg
+samsung/A17 128|4/480/https://res.cloudinary.com/dygc5b8cn/image/upload/v1759304168/d3bqnjrcxoay06rrnjtx.jpg
 samsung/A07 256|8/Aa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1764064978/vvks2bmm3sqhrvyidtnu.jpg
 samsung/A17 128|6/aa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1759654356/tdq2lrtsxwo9hshuo4dd.jpg
 samsung/A07 64|4/290/https://res.cloudinary.com/dygc5b8cn/image/upload/v1758201166/sicjbxtmxarydofvmecm.jpg
