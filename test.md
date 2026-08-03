@@ -1,5 +1,5 @@
 MI/REDMI PAD 2 256|8/730/undefined
-MI/REDMI A7 pro 128|4/380/undefined
+MI/REDMI A7 pro 128|4/390/undefined
 MI/REDMI PAD 2 Pro 256|8/1000/undefined
 samsung/A57 256|8/1280/undefined
 MI/X8 PRO MAX 512|12/1770/undefined
