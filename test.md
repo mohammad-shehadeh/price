@@ -2,7 +2,7 @@ MI/REDMI PAD 2 256|8/730/undefined
 MI/REDMI A7 pro 128|4/380/undefined
 MI/REDMI PAD 2 Pro 256|8/1000/undefined
 samsung/A57 256|8/1280/undefined
-MI/X8 PRO MAX 512|12/1680/undefined
+MI/X8 PRO MAX 512|12/1770/undefined
 MI/NOTE 70 +AIR PUDS 256|8/500/undefined
 Apple/Iphone 17 256|/aaa/undefined
 Honor/X8D 256|8/820/undefined
