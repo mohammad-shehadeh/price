@@ -254,10 +254,10 @@ HONOR/X5b |/55/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131616/peb
 HONOR/X6a |/55/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131616/pebvftygqsnz8h6j8eqf.webp
 HONOR/X6b |/55/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131616/pebvftygqsnz8h6j8eqf.webp
 HONOR/X8b |/110/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131616/pebvftygqsnz8h6j8eqf.webp
-HONOR/X9b +F ORI |/200/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131457/g8h5tqbpxj4wga50kar6.avif
-HONOR/X9C +F ORI |/200/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131452/g8xj9zcy0lxitw5lhzgv.avif
+HONOR/X9b +F ORI |/180/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131457/g8h5tqbpxj4wga50kar6.avif
+HONOR/X9C +F ORI |/180/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131452/g8xj9zcy0lxitw5lhzgv.avif
 HUAWEI/y9 prime 2019 ori |/55/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131616/pebvftygqsnz8h6j8eqf.webp
-HUAWEI/y9 2019 |/50/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131616/pebvftygqsnz8h6j8eqf.webp
+HUAWEI/y9 2019 ori |/55/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131616/pebvftygqsnz8h6j8eqf.webp
 HUAWEI/NOVA 3I |/45/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131616/pebvftygqsnz8h6j8eqf.webp
 HUAWEI/P20 LITE |/40/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131616/pebvftygqsnz8h6j8eqf.webp
 HUAWEI/P30 LITE |/AAA/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131616/pebvftygqsnz8h6j8eqf.webp
