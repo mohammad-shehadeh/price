@@ -1,4 +1,4 @@
-Honor/T10 64|4/310/undefined
+Honor/T10 64|4/330/undefined
 MI/REDMI PAD 2 256|8/730/undefined
 MI/REDMI A7 pro 128|4/400/undefined
 MI/REDMI PAD 2 Pro 256|8/1000/undefined
