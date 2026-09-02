@@ -118,7 +118,7 @@ Mi | poco/REDMI Note 14 PRO 5G - REDMI NOTE 13 PRO PLUS 5G - REDMI NOTE 14 PRO P
 Mi | poco/REDMI Note 13 pro - REDMI NOTE 14S - POCO M6 PRO OLED |/120/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131155/tdehiviba8vewijxxkkg.webp
 Mi | poco/REDMI Note 13 pro - REDMI NOTE 14S - POCO M6 PRO incell |/60/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131155/tdehiviba8vewijxxkkg.webp
 Mi | poco/REDMI Note 14 PRO INCELL + FRAME ACC |/85/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131155/tdehiviba8vewijxxkkg.webp
-Mi | poco/REDMI Note 14 PRO OLED + FRAME ACC |/150/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131155/tdehiviba8vewijxxkkg.webp
+Mi | poco/REDMI Note 14 PRO soft OLED + FRAME ACC |/180/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131155/tdehiviba8vewijxxkkg.webp
 Mi | poco/REDMI Note 7 |/45/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131155/tdehiviba8vewijxxkkg.webp
 Mi | poco/REDMI Note 8 pro HI |/45/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131155/tdehiviba8vewijxxkkg.webp
 Mi | poco/REDMI Note 8 - Note 8 2021 original |/45/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131155/tdehiviba8vewijxxkkg.webp
