@@ -46,7 +46,7 @@ iphone/12 pro max WTDT SOFT OLED |/180/https://res.cloudinary.com/dygc5b8cn/imag
 iphone/12 pro max orignal |/350/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131135/wqebe6jd2ccu8qof69mh.webp
 iphone/13 WTDT HD++ |/80/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131135/wqebe6jd2ccu8qof69mh.webp/
 iphone/13 WTDT SOFT OLED |/170/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131135/wqebe6jd2ccu8qof69mh.webp
-iphone/13 orignal |/350/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131135/wqebe6jd2ccu8qof69mh.webp
+iphone/13 orignal |/350/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131135/wqebe6jd2ccu8qof69mh.webp 
 iphone/13 pro WTDT HD++ |/100/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131135/wqebe6jd2ccu8qof69mh.webp
 iphone/13 PRO WTDT SOFT OLED |/180/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131135/wqebe6jd2ccu8qof69mh.webp
 iphone/13 pro orignal |/470/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131135/wqebe6jd2ccu8qof69mh.webp
