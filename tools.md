@@ -22,6 +22,7 @@ tecno | infinix | itel/SPARK GO2 - spark 40 - spark 40C - GO2 S - GO2 PRO smart 
 tecno | infinix | itel/SPARK GO3 - SMART 20 - POP 20 - ITEL A200 - POP X - SPARK 50 5G - HOT 70 |/50/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131117/z2dzmryifu1g3pgusfso.jpg
 tecno | infinix | itel/tecno POVA 6 - tecno POVA 6 PRO 5G - tecno CAMON 30 - tecno CAMON 30 5G - infinix NOTE 40 5G ORI |/60/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131117/z2dzmryifu1g3pgusfso.jpg
 tecno | infinix | itel/tecno POVA 7 |/60/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131117/z2dzmryifu1g3pgusfso.jpg
+tecno | infinix | itel/tecno POVA 6 Oled +frame ACC/130/
 tecno | infinix | itel/infinix HOT 10 - camon 16 - spark 6 2020 - pova - note 8i - note 10 |/45/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131117/z2dzmryifu1g3pgusfso.jpg
 tecno | infinix | itel/infinix S5 pro |/45/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131117/z2dzmryifu1g3pgusfso.jpg
 tecno | infinix | itel/ ZTE A35 - ZTE A55 - ZTE Blade A35 - ZTE Blade A55 |/55/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131117/z2dzmryifu1g3pgusfso.jpg
@@ -91,11 +92,12 @@ Mi | poco/Redmi A5 - poco C71 |/45/https://res.cloudinary.com/dygc5b8cn/image/up
 Mi | poco/REDMI 10A - REDMI 9A - REDMI 9C ORI |/45/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131155/tdehiviba8vewijxxkkg.webp
 Mi | poco/REDMI 10A - REDMI 9A - REDMI 9C + FRAME ORI |/55/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131332/aupsba3hxy73xgau3ptv.jpg
 Mi | poco/MI 11 lite 4G - MI 11 LITE 5G - MI 11 LITE NE 5G INCELL |/60/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131155/tdehiviba8vewijxxkkg.webp
-Mi | poco/MI 11 lite 4G - MI 11 LITE 5G - MI 11 LITE NE 5G  orignal |/120/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772134351/bdfbc1z9prxue1ftmt15.webp
+Mi | poco/MI 11 lite 4G - MI 11 LITE 5G - MI 11 LITE NE 5G  orignal |/140/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772134351/bdfbc1z9prxue1ftmt15.webp
 Mi | poco/MI 12T - MI 12T pro orignal |/170/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131155/tdehiviba8vewijxxkkg.webp
 Mi | poco/REDMI A2 plus - REDMI A2 - REDMI A1 plus - REDMI A1 - POCO C50 - POCO C51 ORI |/45/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131155/tdehiviba8vewijxxkkg.webp
 Mi | poco/REDMI A3 - REDMI A3 PLUS - REDMI A3X - POCO C61 ORI |/45/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131155/tdehiviba8vewijxxkkg.webp
 Mi | poco/REDMI Note 10 - REDMI note 10S - POCO M5S incell |/50/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131155/tdehiviba8vewijxxkkg.webp
+Mi | poco/REDMI Note 10 5G HD++ |/55/
 Mi | poco/REDMI Note 10 - REDMI note 10S +FRAME incell |/60/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131332/aupsba3hxy73xgau3ptv.jpg
 Mi | poco/REDMI Note 10 - REDMI note 10S - POCO M5S oled |/80/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131155/tdehiviba8vewijxxkkg.webp
 Mi | poco/REDMI NOTE 10 PRO - NOTE 10 PRO MAX - NOTE 11 PRO - NOTE 11 PRO 5G - NOTE 11 PRO PLUS 5G - NOTE 12 PRO - POCO X4 PRO - POCO X4 PRO 5G INCELL |/55/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131155/tdehiviba8vewijxxkkg.webp
@@ -109,7 +111,7 @@ Mi | poco/REDMI Note 11 - REDMI note 11S +FRAME incell |/65/https://res.cloudina
 Mi | poco/REDMI Note 12 - NOTE 12 5G - POCO X5 incell |/55/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131155/tdehiviba8vewijxxkkg.webp
 Mi | poco/REDMI Note 12 - NOTE 12 5G - POCO X5 OLED |/110/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131155/tdehiviba8vewijxxkkg.webp
 Mi | poco/Note 12 incell +frame |/60/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131332/aupsba3hxy73xgau3ptv.jpg
-Mi | poco/REDMI Note 14 4G - REDMI NOTE 13 4G - REDMI NOTE 14 5G - POCO M7 PRO incell |/60/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131155/tdehiviba8vewijxxkkg.webp
+Mi | poco/REDMI Note 14 4G - REDMI NOTE 13 4G - REDMI NOTE 14 5G - POCO M7 PRO incell |/55/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131155/tdehiviba8vewijxxkkg.webp
 Mi | poco/REDMI Note 14 4G - REDMI NOTE 13 4G - REDMI NOTE 14 5G - POCO M7 PRO OLED |/110/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131155/tdehiviba8vewijxxkkg.webp
 Mi | poco/REDMI Note 13 +Frame |/70/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131332/aupsba3hxy73xgau3ptv.jpg
 Mi | poco/REDMI Note 14 4G - REDMI NOTE 13 4G - REDMI NOTE 14 5G - POCO M7 PRO OLED |/120/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131155/tdehiviba8vewijxxkkg.webp
@@ -148,6 +150,12 @@ Mi | poco/redmi 8 - REDMI 8A |/45/https://res.cloudinary.com/dygc5b8cn/image/upl
 Mi | poco/redmi 9 - POCO M2 ORI |/45/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131155/tdehiviba8vewijxxkkg.webp
 Mi | poco/redmi 9T - POCO M3 |/45/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131155/tdehiviba8vewijxxkkg.webp
 realmi | oppo | onePlus/REALMI 7I - REALMI C17 - OPPO A11S - OPPO A54 4G - OPPO A55 4G - OPPO A53 - OPPO A33 2020 - OPPO A32 - OPPO A53S - OPPO A51 2021 - REALMI 7I - OPPO A51 2020 ORI |/50/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772134403/esj2ufxq869fdoopql78.webp
+realmi | oppo | onePlus/REALMI C63 - REALMI C61 ORI |/45/
+realmi | oppo | onePlus/REALMI C30 - REALMI C30S ORI |/45/
+realmi | oppo | onePlus/REALMI C31 - REALMI C33S ORI |/45/
+realmi | oppo | onePlus/REALMI C71 - REALMI C72 ORI |/45/
+realmi | oppo | onePlus/oppo A94 - Reno 5 lite HD++ |/45/
+realmi | oppo | onePlus/REALMI Note 7 ORI |/45/
 realmi | oppo | onePlus/OPPO A73 - OPPO A91 - OPPO RENO 3 - OPPO F15 - OPPO F17 |/50/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772134403/esj2ufxq869fdoopql78.webp
 realmi | oppo | onePlus/OPPO A17 - OPPO A57 4G - OPPO A57 5G - OPPO A57S - OPPO A77S - OPPO A18 - OPPO A38 - OPPO A58 5G - OPPO A1 - A1 X - OPPO A2X _  OPPO A58X - OPPO A78 - OPPO A57E - A56S - OENPLUS NORD N300 5G - ONEPLUS N20 SE |/45/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772134403/esj2ufxq869fdoopql78.webp
 realmi | oppo | onePlus/OPPO A12 - OPPO A5S - OPPO A7 - REALME 3 - REALME 3I |/45/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772134403/esj2ufxq869fdoopql78.webp
@@ -247,7 +255,7 @@ Samsung/Tap A7 LITE - T220 |/70/https://res.cloudinary.com/dygc5b8cn/image/uploa
 Samsung/Tap A9 - X110 |/80/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772135116/giig74c1czgfwilihrbo.avif
 Samsung/Tap A9+ 5G 11" - X218 |/110/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772135125/tpzilpl9khhvitqdmvxy.png
 HONOR/X7b |/55/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131616/pebvftygqsnz8h6j8eqf.webp
-HONOR/PLAY 10 |/55/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131616/pebvftygqsnz8h6j8eqf.webp
+HONOR/PLAY 10 |/50/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131616/pebvftygqsnz8h6j8eqf.webp
 HONOR/X7D |/55/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131616/pebvftygqsnz8h6j8eqf.webp
 HONOR/X5 plus |/55/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131616/pebvftygqsnz8h6j8eqf.webp
 HONOR/X5b |/55/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131616/pebvftygqsnz8h6j8eqf.webp
@@ -259,7 +267,7 @@ HONOR/X9C +F ORI |/180/https://res.cloudinary.com/dygc5b8cn/image/upload/v177213
 HUAWEI/y9 prime 2019 ori |/55/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131616/pebvftygqsnz8h6j8eqf.webp
 HUAWEI/y9 2019 ori |/55/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131616/pebvftygqsnz8h6j8eqf.webp
 HUAWEI/NOVA 3I |/45/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131616/pebvftygqsnz8h6j8eqf.webp
-HUAWEI/P20 LITE |/40/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131616/pebvftygqsnz8h6j8eqf.webp
+HUAWEI/Nova 5T |/50/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131616/pebvftygqsnz8h6j8eqf.webp
 HUAWEI/P30 LITE |/AAA/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131616/pebvftygqsnz8h6j8eqf.webp
 HUAWEI/Y6 2019 |/50/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131616/pebvftygqsnz8h6j8eqf.webp
 HUAWEI/Y7 2018 |/40/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131616/pebvftygqsnz8h6j8eqf.webp
