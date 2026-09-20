@@ -1,3 +1,11 @@
+samsung/A55 +F ACC HD++ |/75/undefined
+Mi/note 15 oled +f acc |/180/undefined
+Mi/note 15 pro oled +f acc |/180/undefined
+samsung/A30S +F ACCHD++ |/55/undefined
+samsung/A26 +F ACCHD++ |/75/undefined
+samsung/A36 +F ACCHD++ |/757/undefined
+samsung/A56 +F ACCHD++ |/75/undefined
+HONOR/X9D |/140/undefined
 samsung/S25 ORI +F |/750/undefined
 samsung/S24 ORI +F |/750/undefined
 samsung/S23 ULTRA ORI +F |/750/undefined
