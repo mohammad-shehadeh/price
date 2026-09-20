@@ -1,3 +1,22 @@
+samsung/S25 ORI +F |/750/undefined
+samsung/S24 ORI +F |/750/undefined
+samsung/S23 ULTRA ORI +F |/750/undefined
+samsung/S22 ULTRA ORI +F |/750/undefined
+OPPO/A94 - RENO 5 LITE |/50/undefined
+tecno/HOTWAV NOTE 13 PRO - 15 PRO |/75/undefined
+tecno/HOTWAV A17 PRO MAX - S26 ULTRA |/75/undefined
+realmi/NOTE 70 |/50/undefined
+samsung/A26 OLBIG +F ACC |/140/undefined
+samsung/A25 OLBIG +F ACC |/140/undefined
+samsung/A34 OLBIG +F ACC |/140/undefined
+samsung/A54 OLBIG +F ACC |/140/undefined
+samsung/S20 FE |/150/undefined
+samsung/S21 FE |/150/undefined
+samsung/J700 - J7 |/45/undefined
+samsung/J7 PRO |/45/undefined
+samsung/A55 ORI +F ACC |/240/undefined
+samsung/A56 ORI +F ACC |/230/undefined
+samsung/A36 ORI +F ACC |/230/undefined
 iphone/ip 11 orginal new |/150/undefined
 iphone/ip 14 plus |/200/undefined
 iphone/ip 15 plus |/200/undefined
