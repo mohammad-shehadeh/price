@@ -1,3 +1,12 @@
+iphone/ip 11 orginal new |/150/undefined
+iphone/ip 14 plus |/200/undefined
+iphone/ip 15 plus |/200/undefined
+iphone/ip 16 plus |/200/undefined
+iphone/ip 17 pro soft oled |/330/undefined
+iphone/ipad 9 |/140/undefined
+iphone/ipad 10 |/350/undefined
+tecno/smart 5 - spark 6 go - hot 10 lite |/50/undefined
+tecno/CAMON 30 PRO +F ACC |/160/undefined
 tecno/SPARK SLIM |/160/undefined
 INFINEX/NOTE 40 PRO +F ACC ORI |/170/undefined
 tecno/CAMON 40 PRO +F ACC |/180/undefined
