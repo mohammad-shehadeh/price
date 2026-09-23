@@ -1,4 +1,7 @@
-MI/A7 128|4/420/undefined
+samsung/A57 512|12/1550/undefined
+samsung/A37 256|12/1120/undefined
+samsung/A27 128|6/790/undefined
+MI/A7 pro 128|4/420/undefined
 Honor/T10 64|4/330/undefined
 MI/REDMI PAD 2 256|8/730/undefined
 MI/REDMI A7 pro 128|4/400/undefined
@@ -41,7 +44,7 @@ Apple/17 pro max كفالة ضفة معتمد|/aa/https://res.cloudinary.com/dyg
 MI/C71 128|4/Aa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1766568493/kwt5ow5wuofjizgiweqe.webp
 MI/Redmi 15C 256|8/Aa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1757324304/mijovlzrsdbgsxgcl1lf.webp
 samsung/S25 ultra 256|12/Aa/https://assets.mmsrg.com/isr/166325/c1/-/ASSET_MMS_149453259/fee_786_587_png
-samsung/A17 128|4/530/https://res.cloudinary.com/dygc5b8cn/image/upload/v1759304168/d3bqnjrcxoay06rrnjtx.jpg
+samsung/A17 128|4/550/https://res.cloudinary.com/dygc5b8cn/image/upload/v1759304168/d3bqnjrcxoay06rrnjtx.jpg
 samsung/A07 256|8/Aa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1764064978/vvks2bmm3sqhrvyidtnu.jpg
 samsung/A17 128|6/aa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1759654356/tdq2lrtsxwo9hshuo4dd.jpg
 samsung/A07 64|4/400/https://res.cloudinary.com/dygc5b8cn/image/upload/v1758201166/sicjbxtmxarydofvmecm.jpg
