@@ -52,7 +52,6 @@ Honor/400 pro 512|12/Aa/https://res.cloudinary.com/dygc5b8cn/image/upload/v17498
 Honor/400 512|12/Aa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1749890166/zudnes5gdxiihzll14p1.jpg
 Honor/400 LITE 256|8/820/https://res.cloudinary.com/dygc5b8cn/image/upload/v1754815540/i5mtqw9pbcm7nstx5wy1.jpg
 samsung/S26 ultra 512|12/Aa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772910347/z35p8zr82lup8f1svbfz.webp
-samsung/TAP A9 64|4/Aa/https://oplayce.ci/cdn/shop/files/samsung-galaxy-tab-a9_5_1024x.jpg?v=1717431017
 MI/Redmi 13X 256|8/Aa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1753791535/a13rrdzxc1i0gtxd5b6f.png
 MI/redmi A5 128|4/Aa/https://media.ldlc.com/r1600/ld/products/00/06/22/87/LD0006228768.jpg
 MI/Redmi A5 64|3/Aa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1745846501/huvlm2coxnrudfzwmhtm.jpg
