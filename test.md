@@ -60,9 +60,9 @@ MI/Redmi 15 256|8/Aa/https://res.cloudinary.com/dygc5b8cn/image/upload/v17593041
 MI/extender AC1200 |/100/https://www.smartbox.am/webroot/myfiles/images/products/ac1200/3ffafe36-ccb4-4dfe-87db-2f546a39b1b5.png
 Honor/X5b 64|4/Aa/https://www.honor.com/content/dam/honor/sa-ar/product-list/smartphone/honor-x5b-plus/honor-x5b-list.png
 ZTE/A35e 64|4/Aaa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1757492442/l9tkbpeovqme0pxjrsrm.webp
-ZTE/A75 256|14/350/https://m.media-amazon.com/images/I/81lUzTar8HL.jpg
+ZTE/A75 256|14/Aa/https://m.media-amazon.com/images/I/81lUzTar8HL.jpg
 ZTE/A55 256|12/Aa/https://media.zid.store/b74f2313-1275-4caa-abca-b5ece66cb8bd/e64dbe11-465b-499d-8fa6-b7ca47ecb1d6.png
-ZTE/A35 64|12/250/https://cdn.salla.sa/vzoPn/3e76ec41-f0fc-4349-a7b2-f5f6ef94390d-1000x1000-c7ZnhNfHRihxRTwVSwrnTq3pnLjbywUwvD15sDd3.png
+ZTE/A35 64|12/Aa/https://cdn.salla.sa/vzoPn/3e76ec41-f0fc-4349-a7b2-f5f6ef94390d-1000x1000-c7ZnhNfHRihxRTwVSwrnTq3pnLjbywUwvD15sDd3.png
 ZTE/nubia Music 128 |/Aa/https://promart.vteximg.com.br/arquivos/ids/8633792-1000-1000/imageUrl_1.jpg?v=638766667087600000
 ZTE/nubia V60 design 256|16/370/https://www.innwa.com.mm/storage/product/1430/202408181124zte-blade-v60-design-blue.webp
 ZTE/nubia V60 256|20/460/https://www.innwa.com.mm/storage/product/1430/202408181124zte-blade-v60-design-blue.webp
