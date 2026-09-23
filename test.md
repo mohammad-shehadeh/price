@@ -1,3 +1,6 @@
+MI/NOTE 17 pro max 256|8/1370/undefined
+MI/NOTE 17 pro 256|12/1220/undefined
+MI/NOTE 17 256|8/830/undefined
 samsung/A57 512|12/1550/undefined
 samsung/A37 256|12/1120/undefined
 samsung/A27 128|6/790/undefined
