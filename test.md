@@ -48,16 +48,14 @@ samsung/A07 64|4/400/https://res.cloudinary.com/dygc5b8cn/image/upload/v17582011
 MI/Redmi 15C 128|6/Aa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1757324301/ilyhjiezyfz5khp30p5e.webp
 MI/Redmi 15C 128|4/aa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1757324301/ilyhjiezyfz5khp30p5e.webp
 samsung/A07 128|4/450/https://res.cloudinary.com/dygc5b8cn/image/upload/v1756559491/wokzeyy83lncbbewic1v.jpg
-Honor/400 pro 512|12/Aa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1749889558/fmzaah1o7lludxn31jts.jpg
-Honor/400 512|12/Aa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1749890166/zudnes5gdxiihzll14p1.jpg
 Honor/400 LITE 256|8/820/https://res.cloudinary.com/dygc5b8cn/image/upload/v1754815540/i5mtqw9pbcm7nstx5wy1.jpg
+Honor/400 pro 512|12/Aa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1749889558/fmzaah1o7lludxn31jts.jpg
 samsung/S26 ultra 512|12/Aa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772910347/z35p8zr82lup8f1svbfz.webp
 MI/Redmi 13X 256|8/Aa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1753791535/a13rrdzxc1i0gtxd5b6f.png
 MI/redmi A5 128|4/Aa/https://media.ldlc.com/r1600/ld/products/00/06/22/87/LD0006228768.jpg
 MI/Redmi A5 64|3/Aa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1745846501/huvlm2coxnrudfzwmhtm.jpg
 MI/Redmi 15 256|8/Aa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1759304172/u2xrt2uhefd3tbhmjroe.webp
 MI/extender AC1200 |/100/https://www.smartbox.am/webroot/myfiles/images/products/ac1200/3ffafe36-ccb4-4dfe-87db-2f546a39b1b5.png
-Honor/X5b 64|4/Aa/https://www.honor.com/content/dam/honor/sa-ar/product-list/smartphone/honor-x5b-plus/honor-x5b-list.png
 ZTE/A35e 64|4/Aaa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1757492442/l9tkbpeovqme0pxjrsrm.webp
 ZTE/A75 256|14/Aa/https://m.media-amazon.com/images/I/81lUzTar8HL.jpg
 ZTE/A55 256|12/Aa/https://media.zid.store/b74f2313-1275-4caa-abca-b5ece66cb8bd/e64dbe11-465b-499d-8fa6-b7ca47ecb1d6.png
@@ -68,3 +66,4 @@ ZTE/nubia V60 256|20/460/https://www.innwa.com.mm/storage/product/1430/202408181
 Nokia/H2163 كشاف صيني |/35/https://s9.pik.ba/galerija/2021-04/26/06/slika-2830089-6086f09649711-velika.jpg
 MI/REDMI A7 pro 128|4/420/undefined
 MI/NOTE 15 PRO PLUS 512|12/Aa/undefined
+Honor/400 512|12/Aa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1749890166/zudnes5gdxiihzll14p1.jpg
