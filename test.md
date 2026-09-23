@@ -67,5 +67,5 @@ ZTE/nubia Music 128 |/Aa/https://promart.vteximg.com.br/arquivos/ids/8633792-100
 ZTE/nubia V60 design 256|16/370/https://www.innwa.com.mm/storage/product/1430/202408181124zte-blade-v60-design-blue.webp
 ZTE/nubia V60 256|20/460/https://www.innwa.com.mm/storage/product/1430/202408181124zte-blade-v60-design-blue.webp
 Nokia/H2163 كشاف صيني |/35/https://s9.pik.ba/galerija/2021-04/26/06/slika-2830089-6086f09649711-velika.jpg
-MI/REDMI A7 pro 128|4/380/undefined
-MI/NOTE 15 PRO PLUS 512|12/1370/undefined
+MI/REDMI A7 pro 128|4/420/undefined
+MI/NOTE 15 PRO PLUS 512|12/Aa/undefined
