@@ -11,7 +11,7 @@ MI/REDMI A7 pro 128|4/400/undefined
 MI/REDMI PAD 2 Pro 256|8/1000/undefined
 samsung/A57 256|8/1280/undefined
 MI/X8 PRO MAX 512|12/1770/undefined
-MI/NOTE 70 +AIR PUDS 256|8/500/undefined
+MI/NOTE 70 +AIR PUDS 256|8/550/undefined
 Honor/X8D 256|8/820/undefined
 Honor/X5C 128|4/Aa/undefined
 Honor/X6C 256|6/Aa/undefined
@@ -21,8 +21,8 @@ N\A/A17 pro max 128|3/300/https://res.cloudinary.com/dygc5b8cn/image/upload/v177
 N\A/X26 ultra 128|6/350/https://res.cloudinary.com/dygc5b8cn/image/upload/v1771316270/jof5pzc5icvsuecqihdd.webp
 samsung/Tap A11+ 5G 256|8/Aa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1771082599/b497on9imix4xsaztlvf.png
 Honor/X7D 256|8/Aa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769508671/xkjcincirbyzfyqyfg3s.png
-MI/NOTE 15 PRO 512|12/1000/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769083954/ytytfhodxytzcrqr1pcz.jpg
-MI/NOTE 15 PRO 256|8/860/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769083899/cxucuyswalsqf24gqprl.webp
+MI/NOTE 15 PRO 512|12/1050/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769083954/ytytfhodxytzcrqr1pcz.jpg
+MI/NOTE 15 PRO 256|8/Aa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769083899/cxucuyswalsqf24gqprl.webp
 MI/NOTE 15 256|8/740/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769083825/bytesdd6t344fn7bnhou.jpg
 Nokia/Nokia 108 4G ori |/125/https://res.cloudinary.com/dygc5b8cn/image/upload/v1768648661/gat9whx1e07qi9ilswpg.webp
 Nokia/Nokia 105 4G ori |/110/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769789789/unvvxjjvwktvugwpdv8u.jpg
