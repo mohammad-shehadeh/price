@@ -10,7 +10,7 @@ Honor/T10 64|4/330/undefined
 MI/REDMI PAD 2 256|8/730/undefined
 MI/REDMI A7 pro 128|4/400/undefined
 MI/REDMI PAD 2 Pro 256|8/1000/undefined
-MI/X8 PRO MAX 512|12/1770/undefined
+MI/X8 PRO MAX 512|12/1800/undefined
 MI/NOTE 70 +AIR PUDS 256|8/550/undefined
 Honor/X8D 256|8/820/undefined
 Honor/X5C 128|4/Aa/undefined
