@@ -190,7 +190,7 @@ Mi | poco/redmi 9 - POCO M2 ORI |/45/https://res.cloudinary.com/dygc5b8cn/image/
 Mi | poco/redmi 9T - POCO M3 |/45/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131155/tdehiviba8vewijxxkkg.webp
 realmi | oppo | onePlus/REALMI 7I - REALMI C17 - OPPO A11S - OPPO A54 4G - OPPO A55 4G - OPPO A53 - OPPO A33 2020 - OPPO A32 - OPPO A53S - OPPO A51 2021 - REALMI 7I - OPPO A51 2020 ORI |/50/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772134403/esj2ufxq869fdoopql78.webp
 realmi | oppo | onePlus/REALMI C63 - REALMI C61 ORI |/45/undefined
-realmi | oppo | onePlus/REALMI C30 - REALMI C30S ORI |/45/undefined
+realmi | oppo | onePlus/REALMI C30 - REALMI C30S - C33 ORI |/45/undefined
 realmi | oppo | onePlus/REALMI C31 - REALMI C33S ORI |/45/undefined
 realmi | oppo | onePlus/REALMI C71 - REALMI C72 ORI |/45/undefined
 realmi | oppo | onePlus/oppo A94 - Reno 5 lite HD++ |/45/undefined
