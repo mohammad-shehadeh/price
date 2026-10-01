@@ -46,7 +46,7 @@ tecno | infinix | itel/CAMON 19 - CAMON 19 PRO ORI |/50/https://res.cloudinary.c
 tecno | infinix | itel/CAMON 20 PRO - CAMON 20 - infinix NOTE 30 VIP - infinix NOTE 30 PRO - CAMON 20 PRIMER - GT 10 PRO - GT 10 PRO PLUS incell |/60/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131117/z2dzmryifu1g3pgusfso.jpg
 tecno | infinix | itel/CAMON 20 PRO - CAMON 20 - infinix NOTE 30 VIP - infinix NOTE 30 PRO - CAMON 20 PRIMER - GT 10 PRO - GT 10 PRO PLUS orignal |/120/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131117/z2dzmryifu1g3pgusfso.jpg
 tecno | infinix | itel/comon 17 - spark 7 pro - CAMON 18I - VISION 2 ORI |/50/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131117/z2dzmryifu1g3pgusfso.jpg
-tecno | infinix | itel/tecno pop 5 lite - spark GO 2022 - tecno POP 5 PRO - infinix SMART 6 ORI |/45/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131117/z2dzmryifu1g3pgusfso.jpg
+tecno | infinix | itel/tecno pop 5 lite - spark GO 2022 - tecno POP 5 PRO - infinix SMART 6 - Hot 20I ORI |/45/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131117/z2dzmryifu1g3pgusfso.jpg
 tecno | infinix | itel/tecno POP 6 PRO - infinix HOT 12 PRO |/45/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131117/z2dzmryifu1g3pgusfso.jpg
 tecno | infinix | itel/tecno POVA 1 ORI |/50/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131117/z2dzmryifu1g3pgusfso.jpg
 tecno | infinix | itel/tecno POVA 2 - tecno POVA 3 - tecno POVA 5G - infinix NOTE 10 - infinix NOTE 11S - infinix NOTE 11 PRO - infinix NOTE 11I ORI |/50/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131117/z2dzmryifu1g3pgusfso.jpg
