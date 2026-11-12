@@ -2,29 +2,39 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>أسعار الأجهزة | Shehadeh Center</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <title>أسعار الأجهزة أونلاين | Shehadeh Center</title>
     <meta name="description" content="أفضل أسعار الأجهزة الإلكترونية والكهربائية">
     
+    <!-- Open Graph Metadata -->
+    <meta property="og:title" content="Shehadeh Center">
+    <meta property="og:description" content="اسعار الاجهزة اونلاين">
+    <meta property="og:image" content="https://res.cloudinary.com/dygc5b8cn/image/upload/v1768501375/smzshfxxouffjvgrrdnq.jpg">
+    <meta property="og:type" content="website">
+
+    <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="32x32" href="https://i.postimg.cc/VNssYbVS/IMG-1002.jpg">
-    
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&display=swap" rel="stylesheet">
-    
+    <link rel="apple-touch-icon" sizes="180x180" href="https://i.postimg.cc/VNssYbVS/IMG-1002.jpg">
+    <link rel="manifest" href="manifest.json">
+
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-color: #1a5276;
-            --secondary-color: #2c3e50;
-            --accent-color: #c0392b;
-            --light-bg: #f5f5f5;
-            --white: #ffffff;
-            --border-color: #ddd;
-            --text-dark: #333;
-            --text-muted: #777;
-            --success-color: #27ae60;
+            --primary-color: #0bb5b0;
+            --secondary-color: #2b2b2b;
+            --accent-color: #ff5722;
+            --light-color: #f8f9fa;
+            --dark-color: #212529;
+            --success-color: #28a745;
+            --warning-color: #ffc107;
+            --danger-color: #dc3545;
+            --border-radius: 12px;
+            --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
         }
         
         * {
@@ -35,642 +45,1589 @@
         
         body {
             font-family: 'Tajawal', Arial, sans-serif;
-            background-color: var(--light-bg);
-            color: var(--text-dark);
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #333;
             line-height: 1.6;
-            min-height: 100vh;
+            overflow-x: hidden;
         }
         
-        /* Header */
-        .header {
-            background: var(--secondary-color);
-            color: var(--white);
-            padding: 1.5rem;
+        /* شريط التمرير المخصص */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary-color);
+            border-radius: 4px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: #0a9d98;
+        }
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--secondary-color), #1a1a1a);
+            color: white;
+            padding: 1.2rem;
             text-align: center;
-            border-bottom: 4px solid var(--primary-color);
+            position: relative;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
         }
         
-        .header h1 {
+        .logo-img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-left: 15px;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        header h1 {
             font-size: 1.8rem;
             font-weight: 700;
+            margin: 0;
+            padding: 0.5rem 0;
+            position: relative;
+            transition: var(--transition);
+            text-transform: uppercase;
             letter-spacing: 1px;
+            color: #f0f0f0;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
         }
         
-        .header h1 span {
-            color: #5dade2;
+        header h1::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
+            margin: 0.5rem auto 0;
+            opacity: 0.7;
+            transition: var(--transition);
         }
         
-        .header p {
-            color: #bdc3c7;
-            font-size: 0.9rem;
-            margin-top: 0.3rem;
-        }
-        
-        /* Navigation / Tabs */
-        .file-tabs {
+        /* Navigation Bar */
+        .nav-container {
             display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 0.5rem;
-            padding: 1rem;
-            background: var(--white);
-            border-bottom: 1px solid var(--border-color);
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.5rem 1rem;
+            background-color: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
             position: sticky;
             top: 0;
-            z-index: 100;
+            z-index: 999;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
         
-        .file-tab {
-            padding: 0.6rem 1.2rem;
-            font-size: 0.9rem;
-            font-weight: 500;
-            border: 2px solid var(--border-color);
-            background: var(--white);
-            color: var(--text-dark);
-            cursor: pointer;
-            border-radius: 6px;
-            transition: all 0.2s ease;
-            font-family: 'Tajawal', sans-serif;
+        .nav-logo {
+            font-weight: 700;
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
         }
         
-        .file-tab:hover {
-            border-color: var(--primary-color);
+        .nav-logo span {
             color: var(--primary-color);
         }
         
-        .file-tab.active {
-            background: var(--primary-color);
-            color: var(--white);
-            border-color: var(--primary-color);
+        /* Main Content */
+        main {
+            padding: 2rem 1rem;
+            max-width: 1400px;
+            margin: 0 auto;
         }
         
-        /* Search */
-        .search-container {
-            padding: 1rem;
-            background: var(--white);
-            text-align: center;
-            border-bottom: 1px solid var(--border-color);
-        }
-        
-        .search-container input {
-            width: 100%;
-            max-width: 500px;
-            padding: 0.7rem 1rem;
-            font-size: 1rem;
-            border: 2px solid var(--border-color);
-            border-radius: 6px;
-            font-family: 'Tajawal', sans-serif;
-            transition: border-color 0.2s ease;
-        }
-        
-        .search-container input:focus {
-            outline: none;
-            border-color: var(--primary-color);
-        }
-        
-        /* Filter Buttons */
-        .filter-buttons {
+        /* Smart Flexible Filter Buttons */
+        .smart-filter-buttons {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 0.5rem;
-            padding: 1rem;
+            gap: 0.6rem;
+            margin: 1rem auto;
+            padding: 0.6rem;
+            max-width: 1400px;
+            transition: all 0.3s ease;
         }
-        
-        .filter-btn {
-            padding: 0.5rem 1.1rem;
-            font-size: 0.85rem;
-            font-weight: 500;
-            border: 1px solid var(--border-color);
-            background: var(--white);
-            color: var(--text-dark);
+
+        .smart-filter-btn {
+            padding: 0.5rem 1.2rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            border: none;
+            background: #f5f5f5;
+            color: #555;
             cursor: pointer;
-            border-radius: 4px;
-            transition: all 0.2s ease;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border-radius: 10px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+            border: 2px solid transparent;
             font-family: 'Tajawal', sans-serif;
+            min-height: 38px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            white-space: nowrap;
+            min-width: fit-content;
+            max-width: 100%;
         }
-        
-        .filter-btn:hover {
-            background: #eaf2f8;
+
+        .smart-filter-btn.short-text { 
+            padding: 0.5rem 1rem;
+            font-size: 0.9rem;
+        }
+
+        .smart-filter-btn.medium-text { 
+            padding: 0.5rem 1.4rem;
+            font-size: 0.9rem;
+        }
+
+        .smart-filter-btn.long-text { 
+            padding: 0.5rem 1.6rem;
+            font-size: 0.88rem;
+        }
+
+        .smart-filter-btn.very-long-text { 
+            padding: 0.5rem 1.8rem;
+            font-size: 0.86rem;
+        }
+
+        .smart-filter-btn:hover {
+            background: #e8f4f8;
+            color: var(--primary-color);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 12px rgba(11, 181, 176, 0.15);
+            border-color: rgba(11, 181, 176, 0.2);
+        }
+
+        .smart-filter-btn.active {
+            background: linear-gradient(135deg, var(--primary-color), #0a9d98);
+            color: white;
+            transform: translateY(-1px);
+            box-shadow: 0 5px 15px rgba(11, 181, 176, 0.25);
             border-color: var(--primary-color);
+            font-weight: 700;
+        }
+
+        .smart-filter-btn.active::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 25px;
+            height: 2px;
+            background: white;
+            border-radius: 2px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+        }
+
+        .smart-filter-btn.all-btn {
+            background: #6c757d;
+            color: white;
+        }
+
+        .smart-filter-btn.all-btn:hover {
+            background: #5a6268;
+            color: white;
+        }
+
+        .smart-filter-btn.all-btn.active {
+            background: linear-gradient(135deg, #495057, #343a40);
+            color: white;
+        }
+
+        .smart-filter-btn:active {
+            transform: translateY(0);
+            transition: transform 0.1s;
+        }
+
+        @media (max-width: 768px) {
+            .smart-filter-buttons {
+                gap: 0.5rem;
+                padding: 0.5rem;
+                margin: 0.8rem auto;
+            }
+            
+            .smart-filter-btn {
+                flex: 1 0 auto;
+                min-width: calc(33.333% - 0.5rem);
+                max-width: calc(33.333% - 0.5rem);
+                padding: 0.4rem 0.8rem;
+                font-size: 0.85rem;
+                min-height: 34px;
+                border-radius: 8px;
+                white-space: normal;
+                line-height: 1.2;
+            }
+            
+            .smart-filter-btn.short-text,
+            .smart-filter-btn.medium-text,
+            .smart-filter-btn.long-text,
+            .smart-filter-btn.very-long-text {
+                padding: 0.4rem 0.8rem;
+                font-size: 0.82rem;
+                min-height: 32px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            
+            .smart-filter-btn.all-btn {
+                flex: 1 0 calc(100% - 0.5rem);
+                min-width: calc(100% - 0.5rem);
+                max-width: calc(100% - 0.5rem);
+                margin-bottom: 0.3rem;
+            }
+        }
+
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .smart-filter-buttons {
+                gap: 0.6rem;
+                padding: 0.6rem;
+            }
+            
+            .smart-filter-btn {
+                flex: 1 0 auto;
+                min-width: calc(25% - 0.6rem);
+                max-width: calc(25% - 0.6rem);
+                padding: 0.45rem 1rem;
+                font-size: 0.88rem;
+                min-height: 36px;
+                white-space: normal;
+                line-height: 1.2;
+            }
+            
+            .smart-filter-btn.all-btn {
+                flex: 1 0 calc(50% - 0.6rem);
+                min-width: calc(50% - 0.6rem);
+                max-width: calc(50% - 0.6rem);
+            }
+        }
+
+        @media (min-width: 1025px) {
+            .smart-filter-buttons {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+                gap: 0.6rem;
+            }
+            
+            .smart-filter-btn {
+                width: 100%;
+                margin: 0;
+                justify-self: center;
+            }
+            
+            .smart-filter-btn.all-btn {
+                grid-column: span 1;
+                justify-self: start;
+                min-width: 90px;
+            }
+            
+            .smart-filter-btn.short-text { 
+                min-width: 110px;
+                max-width: 140px;
+            }
+            
+            .smart-filter-btn.medium-text { 
+                min-width: 140px;
+                max-width: 170px;
+            }
+            
+            .smart-filter-btn.long-text { 
+                min-width: 170px;
+                max-width: 200px;
+            }
+            
+            .smart-filter-btn.very-long-text { 
+                min-width: 200px;
+                max-width: 240px;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(8px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .smart-filter-btn {
+            animation: fadeInUp 0.3s ease-out forwards;
+            opacity: 0;
+        }
+
+        .smart-filter-btn:nth-child(1) { animation-delay: 0.05s; }
+        .smart-filter-btn:nth-child(2) { animation-delay: 0.1s; }
+        .smart-filter-btn:nth-child(3) { animation-delay: 0.15s; }
+        .smart-filter-btn:nth-child(4) { animation-delay: 0.2s; }
+        .smart-filter-btn:nth-child(5) { animation-delay: 0.25s; }
+        .smart-filter-btn:nth-child(6) { animation-delay: 0.3s; }
+        .smart-filter-btn:nth-child(7) { animation-delay: 0.35s; }
+        .smart-filter-btn:nth-child(8) { animation-delay: 0.4s; }
+        .smart-filter-btn:nth-child(9) { animation-delay: 0.45s; }
+        .smart-filter-btn:nth-child(10) { animation-delay: 0.5s; }
+
+        /* Search Box */
+        #search-box {
+            width: 100%;
+            max-width: 400px;
+            margin: 1rem auto;
+            padding: 0.8rem 1.2rem;
+            font-size: 1rem;
+            background-color: rgba(255, 255, 255, 0.9);
+            color: var(--dark-color);
+            border: 1px solid #ddd;
+            border-radius: 50px;
+            outline: none;
+            transition: var(--transition);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            display: block;
         }
         
-        .filter-btn.active {
-            background: var(--primary-color);
-            color: var(--white);
+        #search-box:focus {
             border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(11, 181, 176, 0.2);
         }
         
-        /* Main Container */
-        .main-container {
-            max-width: 1000px;
-            margin: 0 auto;
+        #search-box::placeholder {
+            color: #999;
+        }
+        
+        /* Products Container */
+        .products-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
             padding: 1rem;
         }
         
-        /* Category Section */
-        .category-section {
-            background: var(--white);
-            border-radius: 8px;
-            margin-bottom: 1.5rem;
+        .product {
+            background-color: white;
+            border-radius: var(--border-radius);
             overflow: hidden;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+            position: relative;
         }
         
-        .category-header {
-            background: var(--primary-color);
-            color: var(--white);
-            padding: 0.8rem 1.2rem;
+        .product:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .product-img-container {
+            position: relative;
+            width: 100%;
+            padding-top: 100%;
+            overflow: hidden;
+            border-radius: var(--border-radius);
+            background-color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .product img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+            max-width: 100%;
+            max-height: 100%;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            transition: transform 0.5s ease;
+            border-radius: var(--border-radius);
+        }
+        
+        .product:hover img {
+            transform: scale(1.05);
+        }
+        
+        .product-content {
+            padding: 1.2rem;
+        }
+        
+        .product-category {
+            font-size: 1.2rem;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+        
+        .product-name {
             font-size: 1.1rem;
             font-weight: 700;
-            border-bottom: 3px solid var(--secondary-color);
+            margin-bottom: 0.5rem;
+            color: var(--dark-color);
+            min-height: 3rem;
         }
         
-        /* Price Table */
-        .price-table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        
-        .price-table thead th {
-            background: #eaf2f8;
-            color: var(--primary-color);
-            padding: 0.7rem 1rem;
-            text-align: right;
-            font-weight: 700;
-            font-size: 0.9rem;
-            border-bottom: 2px solid var(--border-color);
-        }
-        
-        .price-table tbody td {
-            padding: 0.75rem 1rem;
-            border-bottom: 1px solid #eee;
-            font-size: 0.95rem;
-            text-align: right;
-            vertical-align: middle;
-        }
-        
-        .price-table tbody tr:last-child td {
-            border-bottom: none;
-        }
-        
-        .price-table tbody tr:hover {
-            background: #f9fbfc;
-        }
-        
-        .price-table tbody tr:nth-child(even) {
-            background: #fafafa;
-        }
-        
-        .price-table tbody tr:nth-child(even):hover {
-            background: #f0f5f8;
-        }
-        
-        /* Product Name */
-        .product-name {
-            font-weight: 500;
-            color: var(--text-dark);
-            line-height: 1.5;
-            word-break: break-word;
-        }
-        
-        /* Price */
         .product-price {
+            font-size: 1.3rem;
             font-weight: 700;
-            font-size: 1rem;
             color: var(--success-color);
-            text-align: left;
-            direction: ltr;
-            white-space: nowrap;
-            font-family: 'Tajawal', Arial, sans-serif;
+            margin: 0.5rem 0;
+            text-align: center;
+            padding: 0.5rem;
+            background: rgba(40, 167, 69, 0.08);
+            border-radius: 8px;
         }
         
         .product-price.unavailable {
-            color: var(--accent-color);
-            font-weight: 600;
-            direction: rtl;
-            text-align: center;
+            color: var(--danger-color);
+            background: rgba(220, 53, 69, 0.08);
         }
         
-        /* Row number */
-        .row-number {
-            color: var(--text-muted);
-            font-size: 0.85rem;
-            width: 40px;
-            text-align: center;
+        .unavailable {
+            color: red;
+            font-weight: bold;
         }
         
-        /* Search Highlight */
-        .search-highlight {
-            background-color: #fff3cd;
-            padding: 1px 3px;
-            border-radius: 2px;
-            font-weight: 700;
+        /* Scroll Button */
+        .scroll-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 999;
         }
         
-        /* Footer */
-        .footer {
-            text-align: center;
-            padding: 1.5rem 1rem;
-            color: var(--text-muted);
-            font-size: 0.85rem;
-            border-top: 1px solid var(--border-color);
-            background: var(--white);
-            margin-top: 2rem;
+        .scroll-btn button {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            font-size: 1.2rem;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         
-        .footer .contact-info {
-            margin-bottom: 0.5rem;
-            color: var(--secondary-color);
-            font-weight: 500;
+        .scroll-btn button:hover {
+            background-color: #0a9d98;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
         }
         
-        /* Empty State */
-        .empty-state {
-            text-align: center;
-            padding: 3rem 1rem;
-            color: var(--text-muted);
-            font-size: 1.1rem;
+        /* Loading Screen */
+        #loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--secondary-color);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease;
         }
         
-        .empty-state i {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            display: block;
-            color: var(--border-color);
-        }
-        
-        /* Loading */
-        .loading-indicator {
-            text-align: center;
-            padding: 2rem;
-            color: var(--text-muted);
-        }
-        
-        .loading-indicator i {
-            animation: spin 1s linear infinite;
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
-            display: block;
-            color: var(--primary-color);
+        .loader {
+            width: 50px;
+            height: 50px;
+            border: 5px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top-color: var(--primary-color);
+            animation: spin 1s ease-in-out infinite;
         }
         
         @keyframes spin {
-            to { transform: rotate(360deg); }
+            to {
+                transform: rotate(360deg);
+            }
         }
         
-        /* Responsive */
+        .loading-text {
+            color: white;
+            margin-top: 1rem;
+            font-size: 1.2rem;
+            font-weight: 500;
+        }
+        
+        /* Notification */
+        .notification {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: var(--success-color);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            z-index: 999;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            display: flex;
+            align-items: center;
+        }
+        
+        .notification.show {
+            opacity: 1;
+        }
+        
+        .notification i {
+            margin-left: 0.5rem;
+        }
+        
+        /* Toggle Files Menu */
+        .toggle-files-container {
+            position: relative;
+            margin: 1rem auto;
+            width: 90%;
+            max-width: 300px;
+            z-index: 100;
+        }
+
+        .toggle-files-btn {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            padding: 0.9rem 1.2rem;
+            background: linear-gradient(135deg, var(--secondary-color), #1a1a1a);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: var(--transition);
+            font-family: 'Tajawal', Arial, sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            z-index: 101;
+        }
+
+        .toggle-files-btn:hover {
+            background: linear-gradient(135deg, #2e2e2e, #0f0f0f);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .toggle-files-btn:active {
+            transform: translateY(0);
+        }
+
+        .toggle-files-btn i {
+            margin: 0 0.5rem;
+            font-size: 0.9rem;
+            transition: transform 0.3s ease;
+        }
+
+        .toggle-files-btn i.fa-chevron-down {
+            transition: transform 0.3s ease;
+        }
+
+        .toggle-files-btn.active i.fa-chevron-down {
+            transform: rotate(180deg);
+        }
+
+        .files-menu {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            width: 100%;
+            background-color: white;
+            border-radius: var(--border-radius);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            margin-top: 8px;
+            overflow: hidden;
+            max-height: 0;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 100;
+        }
+
+        .files-menu.show {
+            max-height: 400px;
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .file-option {
+            display: block;
+            width: 100%;
+            padding: 0.9rem 1.2rem;
+            text-align: right;
+            background-color: white;
+            color: var(--dark-color);
+            border: none;
+            border-bottom: 1px solid #f0f0f0;
+            cursor: pointer;
+            transition: var(--transition);
+            font-family: 'Tajawal', Arial, sans-serif;
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        .file-option:last-child {
+            border-bottom: none;
+        }
+
+        .file-option:hover {
+            background-color: #f8f9fa;
+            color: var(--primary-color);
+            padding-right: 1.5rem;
+        }
+
+        .file-option.active {
+            background-color: var(--primary-color);
+            color: white;
+            font-weight: 600;
+        }
+
+        .file-option.active:hover {
+            background-color: #0a9d98;
+            color: white;
+        }
+
+        .file-option:active {
+            transform: scale(0.98);
+        }
+
+        .files-menu-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: transparent;
+            z-index: 99;
+            display: none;
+        }
+
+        .files-menu-overlay.show {
+            display: block;
+        }
+
         @media (max-width: 768px) {
-            .header h1 {
-                font-size: 1.4rem;
+            .toggle-files-container {
+                width: 95%;
             }
             
-            .file-tab {
-                padding: 0.5rem 0.8rem;
-                font-size: 0.8rem;
+            .toggle-files-btn {
+                padding: 0.8rem 1rem;
+                font-size: 0.95rem;
             }
             
-            .filter-btn {
-                padding: 0.4rem 0.8rem;
-                font-size: 0.8rem;
-            }
-            
-            .price-table thead th,
-            .price-table tbody td {
-                padding: 0.6rem 0.7rem;
-                font-size: 0.85rem;
-            }
-            
-            .product-price {
+            .file-option {
+                padding: 0.8rem 1rem;
                 font-size: 0.9rem;
             }
-            
-            .category-header {
-                font-size: 1rem;
-                padding: 0.7rem 1rem;
-            }
-            
-            .main-container {
-                padding: 0.5rem;
+        }
+
+        @media (max-width: 480px) {
+            .toggle-files-btn span {
+                max-width: 150px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
             }
         }
-        
+
+        /* Modern Products Table Design */
+        .products-table-container {
+            background: #ffffff;
+            border-radius: 14px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            margin-bottom: 2rem;
+        }
+
+        .products-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            font-size: 0.95rem;
+        }
+
+        .products-table thead th {
+            background: linear-gradient(135deg, #f8f9fa, #eef1f4);
+            color: var(--dark-color);
+            padding: 1rem;
+            font-weight: 700;
+            text-align: right;
+            border-bottom: 1px solid #e5e7eb;
+            position: sticky;
+            top: 0;
+            z-index: 2;
+        }
+
+        .products-table td {
+            padding: 1rem;
+            text-align: right;
+            border-bottom: 1px solid #f0f0f0;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .products-table tbody tr:nth-child(even) {
+            background-color: #fafafa;
+        }
+
+        .products-table tbody tr:hover {
+            background-color: #f1f5f9;
+            transform: scale(1.01);
+        }
+
+        .product-name-cell {
+            font-weight: 600;
+            color: var(--dark-color);
+            min-width: 260px;
+            max-width: 420px;
+            line-height: 1.6;
+            word-break: break-word;
+        }
+
+        .product-price-cell {
+            color: var(--success-color);
+            font-weight: 800;
+            text-align: left !important;
+            direction: ltr;
+            min-width: 120px;
+            font-size: 1.15rem;
+            white-space: nowrap;
+        }
+
+        .product-price-cell span {
+            background: rgba(25, 135, 84, 0.1);
+            padding: 0.35rem 0.75rem;
+            border-radius: 20px;
+            display: inline-block;
+        }
+
+        .category-table-section {
+            margin-bottom: 2rem;
+        }
+
+        .category-title {
+            background: linear-gradient(135deg, var(--primary-color), #4f46e5);
+            color: #fff;
+            padding: 1rem 1.25rem;
+            font-size: 1.2rem;
+            font-weight: 700;
+            border-radius: 12px;
+            margin-bottom: 1rem;
+            box-shadow: 0 8px 20px rgba(79, 70, 229, 0.25);
+        }
+
+        @media (max-width: 768px) {
+            .products-table {
+                font-size: 0.9rem;
+            }
+
+            .products-table th,
+            .products-table td {
+                padding: 0.75rem;
+            }
+
+            .product-name-cell {
+                min-width: 200px;
+            }
+
+            .product-price-cell {
+                font-size: 1rem;
+            }
+            
+            .products-container {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+            
+            header h1 {
+                font-size: 1.5rem;
+            }
+        }
+
         @media (max-width: 480px) {
-            .header h1 {
-                font-size: 1.2rem;
+            .products-table-container {
+                overflow-x: auto;
+            }
+
+            .products-table {
+                min-width: 600px;
+            }
+
+            .product-name-cell {
+                min-width: 160px;
             }
             
-            .file-tab {
-                padding: 0.4rem 0.6rem;
-                font-size: 0.75rem;
+            .products-container {
+                grid-template-columns: 1fr;
             }
             
-            .price-table thead th,
-            .price-table tbody td {
-                padding: 0.5rem;
-                font-size: 0.8rem;
+            header h1 {
+                font-size: 1.3rem;
             }
             
-            .row-number {
-                display: none;
+            .product-img-container {
+                height: 180px;
+            }
+        }
+
+        /* Search Highlight */
+        .search-highlight {
+            background-color: #ffeb3b;
+            color: #000;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+
+        .products-table .search-highlight {
+            font-weight: bold;
+            background-color: #ffeb3b;
+        }
+
+        /* Animation Classes */
+        .fade-in {
+            animation: fadeIn 0.5s ease forwards;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Red Glow for product name parts */
+        .red-glow {
+            color: #dc3545;
+            text-shadow: 0 0 8px rgba(220, 53, 69, 0.3);
+        }
+
+        /* View toggle button (hidden on desktop as before) */
+        .view-toggle-btn {
+            background-color: var(--accent-color);
+        }
+
+        .view-toggle-btn:hover {
+            background-color: #e64a19;
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .nav-btn {
+            display: flex;
+            align-items: center;
+            color: white;
+            background-color: var(--primary-color);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: var(--transition);
+            text-decoration: none;
+            font-size: 0.9rem;
+            border: none;
+            font-family: 'Tajawal', sans-serif;
+        }
+
+        .nav-btn:hover {
+            background-color: #0a9d98;
+            transform: translateY(-2px);
+        }
+
+        .nav-btn i {
+            margin-left: 0.5rem;
+        }
+
+        @media (min-width: 992px) {
+            #view-toggle-btn {
+                display: none !important;
             }
         }
     </style>
 </head>
 <body>
+    <div id="main-content-area">
+        
+        <!-- Loading Screen -->
+        <div id="loading-screen">
+            <div class="loader"></div>
+            <div class="loading-text">جاري التحميل...</div>
+        </div>
+        
+        <div class="nav-container">
+            <a href="#" class="nav-logo">Shehadeh <span>Center</span></a>
+            
+            <!-- زر تبديل العرض -->
+            <button class="nav-btn view-toggle-btn" id="view-toggle-btn">
+                <i class="fas fa-th-large" id="view-icon"></i>
+                <span id="view-text">عرض متجر</span>
+            </button>
+        </div>
+    </div>
 
     <!-- Header -->
-    <header class="header">
-        <h1>Shehadeh <span>Center</span></h1>
-        <p>قائمة أسعار الأجهزة الإلكترونية</p>
+    <header>
+        <div class="logo-container">
+            <img src="https://res.cloudinary.com/dygc5b8cn/image/upload/v1768501375/smzshfxxouffjvgrrdnq.jpg" alt="Shehadeh Center Logo" class="logo-img">
+        </div>
+        <h1>SHEHADEH CENTER</h1>
+        
+        <!-- قائمة الملفات -->
+        <div class="toggle-files-container">
+            <button class="toggle-files-btn" id="toggle-files-btn">
+                <i class="fas fa-list"></i>
+                <span id="current-file-label">أسعار الأجهزة</span>
+                <i class="fas fa-chevron-down" id="toggle-icon"></i>
+            </button>
+            
+            <div class="files-menu" id="files-menu">
+                <!-- سيتم إضافة الخيارات هنا عبر JavaScript -->
+            </div>
+        </div>
+        
+        <!-- Filter Buttons -->
+        <div class="smart-filter-buttons" id="smart-filter-buttons">
+            <!-- سيتم إضافة الفئات هنا ديناميكيًا -->
+        </div>
+        
+        <!-- Search Box -->
+        <input type="text" id="search-box" placeholder="🔍 ابحث عن منتج...">
     </header>
     
-    <!-- File Tabs -->
-    <nav class="file-tabs" id="file-tabs">
-        <!-- Populated by JS -->
-    </nav>
-    
-    <!-- Search -->
-    <div class="search-container">
-        <input type="text" id="search-box" placeholder="🔍 ابحث عن منتج أو قسم...">
-    </div>
-    
-    <!-- Filter Buttons -->
-    <div class="filter-buttons" id="filter-buttons">
-        <!-- Populated by JS -->
-    </div>
-    
     <!-- Main Content -->
-    <main class="main-container" id="main-content">
-        <div class="loading-indicator">
-            <i class="fas fa-spinner"></i>
-            جاري تحميل الأسعار...
-        </div>
+    <main>
+        <div id="categories" class="products-container"></div>
     </main>
     
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="contact-info">
-            <i class="fas fa-phone"></i> 0566888825
-        </div>
-        <div>
-            Shehadeh Center &copy; 2025 - جميع الحقوق محفوظة
-        </div>
-    </footer>
+    <!-- Scroll to Top Button -->
+    <div class="scroll-btn">
+        <button id="scrollUp" title="الصعود للأعلى">
+            <i class="fas fa-arrow-up"></i>
+        </button>
+    </div>
+    
+    <!-- Notification -->
+    <div class="notification" id="notification">
+        <i class="fas fa-check-circle"></i>
+        <span id="notification-text">تم التحميل</span>
+    </div>
 
-    <script>
-        // ========== Configuration ==========
-        const fileButtons = [
-            { label: 'أسعار الأجهزة', fileName: 'test.md', icon: 'fas fa-mobile-alt' },
-            { label: 'أسعار الشاشات', fileName: 'lcd.md', icon: 'fas fa-tv' },
-            { label: 'أسعار الاكسسوارات', fileName: 'abc.md', icon: 'fas fa-headphones' },
-            { label: 'أسعار معدات الصيانة', fileName: 'tools.md', icon: 'fas fa-tools' },
-            { label: 'أسعار قطع صيانة', fileName: 'flex.md', icon: 'fas fa-microchip' },
-            { label: 'أسعار البطاريات', fileName: 'batteries.md', icon: 'fas fa-car-battery' }
-        ];
+<script>
+    // DOM Elements
+    const categoriesContainer = document.getElementById('categories');
+    const searchBox = document.getElementById('search-box');
+    const notification = document.getElementById('notification');
+    const notificationText = document.getElementById('notification-text');
+    const scrollUpButton = document.getElementById('scrollUp');
+    const viewToggleBtn = document.getElementById('view-toggle-btn');
+    const viewIcon = document.getElementById('view-icon');
+    const viewText = document.getElementById('view-text');
+    const toggleFilesBtn = document.getElementById('toggle-files-btn');
+    const toggleIcon = document.getElementById('toggle-icon');
+    const filesMenu = document.getElementById('files-menu');
+    const currentFileLabel = document.getElementById('current-file-label');
 
-        // ========== State ==========
-        let products = [];
-        let currentFileName = '';
-        let currentCategory = 'All';
-        let searchTerm = '';
-        let isLoading = false;
+    // Data
+    let currentView = 'store';
+    let products = [];
+    let filesMenuOverlay;
 
-        // ========== DOM Elements ==========
-        const fileTabsContainer = document.getElementById('file-tabs');
-        const filterButtonsContainer = document.getElementById('filter-buttons');
-        const mainContent = document.getElementById('main-content');
-        const searchBox = document.getElementById('search-box');
+    // File Buttons Data
+    const fileButtons = [
+        { label: 'أسعار الأجهزة', fileName: 'test.md', icon: 'fas fa-mobile-alt' },
+        { label: 'أسعار الشاشات', fileName: 'lcd.md', icon: 'fas fa-tv' },
+        { label: 'أسعار الاكسسوارات', fileName: 'abc.md', icon: 'fas fa-headphones' },
+        { label: 'أسعار معدات الصيانة', fileName: 'tools.md', icon: 'fas fa-tools' },
+        { label: 'أسعار قطع صيانة', fileName: 'flex.md', icon: 'fas fa-microchip' },
+        { label: 'أسعار البطاريات', fileName: 'batteries.md', icon: 'fas fa-car-battery' }
+    ];
 
-        // ========== Init ==========
-        function init() {
-            createFileTabs();
-            loadProductsFromFile(fileButtons[0].fileName);
-            searchBox.addEventListener('input', handleSearch);
-        }
-
-        // ========== File Tabs ==========
-        function createFileTabs() {
-            fileTabsContainer.innerHTML = '';
-            fileButtons.forEach((btn, index) => {
-                const tab = document.createElement('button');
-                tab.className = 'file-tab' + (index === 0 ? ' active' : '');
-                tab.innerHTML = `<i class="${btn.icon}"></i> ${btn.label}`;
-                tab.dataset.fileName = btn.fileName;
-                tab.onclick = () => {
-                    if (isLoading) return;
-                    document.querySelectorAll('.file-tab').forEach(t => t.classList.remove('active'));
-                    tab.classList.add('active');
-                    currentCategory = 'All';
-                    searchTerm = '';
-                    searchBox.value = '';
-                    loadProductsFromFile(btn.fileName);
-                };
-                fileTabsContainer.appendChild(tab);
-            });
-        }
-
-        // ========== Load Products ==========
-        async function loadProductsFromFile(fileName) {
-            if (isLoading) return;
-            isLoading = true;
-            currentFileName = fileName;
-            showLoading();
-
-            try {
-                const response = await fetch(fileName);
-                if (!response.ok) throw new Error('File not found');
-                const data = await response.text();
-                products = parseProducts(data);
-                currentCategory = 'All';
-                createFilterButtons();
-                renderProducts();
-            } catch (error) {
-                console.error('Error loading file:', error);
-                showError('حدث خطأ في تحميل الملف. تأكد من وجود الملف.');
-            } finally {
-                isLoading = false;
+    // Initialize
+    function init() {
+        loadViewPreference();
+        createFileButtons();
+        loadProductsFromFile('test.md');
+        
+        // Event Listeners
+        scrollUpButton.addEventListener('click', scrollToTop);
+        searchBox.addEventListener('input', handleSearch);
+        viewToggleBtn.addEventListener('click', toggleView);
+        
+        setTimeout(() => {
+            const loadingScreen = document.getElementById('loading-screen');
+            if (loadingScreen) {
+                loadingScreen.style.opacity = '0';
+                setTimeout(() => {
+                    loadingScreen.style.display = 'none';
+                }, 500);
             }
-        }
+        }, 0);
+    }
 
-        // ========== Parse Products ==========
-        function parseProducts(data) {
-            const result = [];
-            const lines = data.split('\n');
-            lines.forEach(line => {
-                // Format: category / name / price / image_url
-                const parts = line.split('/');
-                if (parts.length >= 3) {
-                    const category = parts[0].trim();
-                    const name = parts[1].trim();
-                    const priceStr = parts[2].trim();
-                    if (!category || !name) return;
-                    const price = priceStr === '' ? NaN : parseFloat(priceStr);
-                    result.push({
-                        category,
-                        name,
-                        price: isNaN(price) ? NaN : price
-                    });
-                }
-            });
-            return result;
-        }
-
-        // ========== Filter Buttons ==========
-        function createFilterButtons() {
-            filterButtonsContainer.innerHTML = '';
-            if (products.length === 0) return;
-
-            const categories = [...new Set(products.map(p => p.category))];
-
-            // "All" button
-            const allBtn = document.createElement('button');
-            allBtn.className = 'filter-btn active';
-            allBtn.textContent = 'الكل';
-            allBtn.onclick = () => {
-                currentCategory = 'All';
-                setActiveFilter(allBtn);
-                renderProducts();
+    // إنشاء زر تبديل الملفات
+    function createFileButtons() {
+        filesMenuOverlay = document.createElement('div');
+        filesMenuOverlay.className = 'files-menu-overlay';
+        document.body.appendChild(filesMenuOverlay);
+        
+        toggleFilesBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            toggleFilesMenu();
+        });
+        
+        filesMenuOverlay.addEventListener('click', () => {
+            closeFilesMenu();
+        });
+        
+        fileButtons.forEach((buttonInfo, index) => {
+            const option = document.createElement('button');
+            option.className = 'file-option';
+            
+            if (buttonInfo.icon) {
+                option.innerHTML = `<i class="${buttonInfo.icon}"></i> ${buttonInfo.label}`;
+            } else {
+                option.textContent = buttonInfo.label;
+            }
+            
+            option.dataset.fileName = buttonInfo.fileName;
+            
+            if (index === 0) {
+                option.classList.add('active');
+            }
+            
+            option.onclick = (e) => {
+                e.stopPropagation();
+                updateSelectedFile(buttonInfo.label, buttonInfo.fileName);
+                
+                document.querySelectorAll('.file-option').forEach(opt => {
+                    opt.classList.remove('active');
+                });
+                option.classList.add('active');
+                
+                loadProductsFromFile(buttonInfo.fileName);
+                closeFilesMenu();
+                
+                option.style.backgroundColor = '#e8f4f8';
+                setTimeout(() => {
+                    option.style.backgroundColor = '';
+                }, 300);
             };
-            filterButtonsContainer.appendChild(allBtn);
+            
+            filesMenu.appendChild(option);
+        });
+    }
 
-            categories.forEach(cat => {
-                const btn = document.createElement('button');
-                btn.className = 'filter-btn';
-                btn.textContent = cat;
-                btn.onclick = () => {
-                    currentCategory = cat;
-                    setActiveFilter(btn);
-                    renderProducts();
-                };
-                filterButtonsContainer.appendChild(btn);
-            });
+    // حفظ واستعادة تفضيلات العرض
+    function saveViewPreference() {
+        localStorage.setItem('productView', currentView);
+    }
+
+    function loadViewPreference() {
+        const savedView = localStorage.getItem('productView');
+        if (savedView === 'store' || savedView === 'table') {
+            currentView = savedView;
+            updateViewButton();
         }
+    }
 
-        function setActiveFilter(activeBtn) {
-            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    function toggleView() {
+        currentView = currentView === 'store' ? 'table' : 'store';
+        updateViewButton();
+        saveViewPreference();
+        renderProducts();
+    }
+
+    function updateViewButton() {
+        if (currentView === 'store') {
+            viewIcon.className = 'fas fa-th-large';
+            viewText.textContent = 'عرض متجر';
+            viewToggleBtn.style.backgroundColor = '#ff5722';
+        } else {
+            viewIcon.className = 'fas fa-list';
+            viewText.textContent = 'عرض جدول';
+            viewToggleBtn.style.backgroundColor = '#6c757d';
+        }
+    }
+
+    function renderProducts() {
+        categoriesContainer.innerHTML = '';
+        
+        if (currentView === 'store') {
+            renderStoreView();
+        } else {
+            renderTableView();
+        }
+    }
+
+    function renderStoreView() {
+        const categories = [...new Set(products.map(p => p.category))];
+        
+        categories.forEach(category => {
+            const categoryProducts = products.filter(p => p.category === category);
+            
+            categoryProducts.forEach(product => {
+                const productElement = createProductElement(product);
+                categoriesContainer.appendChild(productElement);
+            });
+        });
+    }
+
+    function renderTableView() {
+        const categories = [...new Set(products.map(p => p.category))];
+        
+        categories.forEach(category => {
+            const categorySection = document.createElement('div');
+            categorySection.className = 'category-table-section';
+            
+            const categoryTitle = document.createElement('h2');
+            categoryTitle.className = 'category-title';
+            categoryTitle.textContent = category;
+            categorySection.appendChild(categoryTitle);
+            
+            const tableContainer = document.createElement('div');
+            tableContainer.className = 'products-table-container';
+            
+            const table = document.createElement('table');
+            table.className = 'products-table';
+            
+            const thead = document.createElement('thead');
+            thead.innerHTML = `
+                <tr>
+                    <th>الصنف</th>
+                    <th>السعر</th>
+                </tr>
+            `;
+            table.appendChild(thead);
+            
+            const tbody = document.createElement('tbody');
+            
+            const categoryProducts = products.filter(p => p.category === category);
+            
+            categoryProducts.forEach(product => {
+                const row = document.createElement('tr');
+                const cleanName = product.name.replace(/<br>/g, ' ').trim();
+                const price = isNaN(product.price) ? 
+                    '<span class="unavailable">غير متوفر</span>' : 
+                    `<span class="price">${product.price.toFixed(2)} ₪</span>`;
+                
+                row.innerHTML = `
+                    <td class="product-name-cell">${cleanName}</td>
+                    <td class="product-price-cell">${price}</td>
+                `;
+                
+                tbody.appendChild(row);
+            });
+            
+            table.appendChild(tbody);
+            tableContainer.appendChild(table);
+            categorySection.appendChild(tableContainer);
+            categoriesContainer.appendChild(categorySection);
+        });
+    }
+    
+    function toggleFilesMenu() {
+        const isOpen = filesMenu.classList.contains('show');
+        
+        if (isOpen) {
+            closeFilesMenu();
+        } else {
+            openFilesMenu();
+        }
+    }
+
+    function openFilesMenu() {
+        filesMenu.classList.add('show');
+        toggleFilesBtn.classList.add('active');
+        filesMenuOverlay.classList.add('show');
+        
+        toggleFilesBtn.style.transform = 'scale(0.98)';
+        setTimeout(() => {
+            toggleFilesBtn.style.transform = '';
+        }, 200);
+    }
+
+    function closeFilesMenu() {
+        filesMenu.classList.remove('show');
+        toggleFilesBtn.classList.remove('active');
+        filesMenuOverlay.classList.remove('show');
+    }
+
+    function updateSelectedFile(label, fileName) {
+        currentFileLabel.textContent = label;
+        
+        currentFileLabel.style.opacity = '0.5';
+        currentFileLabel.style.transform = 'translateY(5px)';
+        
+        setTimeout(() => {
+            currentFileLabel.style.opacity = '1';
+            currentFileLabel.style.transform = 'translateY(0)';
+            
+            toggleFilesBtn.style.backgroundColor = 'rgba(11, 181, 176, 0.2)';
+            setTimeout(() => {
+                toggleFilesBtn.style.backgroundColor = '';
+            }, 500);
+        }, 150);
+    }
+    
+    function loadProductsFromFile(fileName) {
+        const originalLabel = currentFileLabel.textContent;
+        currentFileLabel.textContent = 'جاري التحميل...';
+        toggleFilesBtn.disabled = true;
+        
+        fetch(fileName)
+            .then(response => response.text())
+            .then(data => {
+                products = [];
+                const lines = data.split('\n');
+                lines.forEach(line => {
+                    const parts = line.split('/');
+                    if (parts.length >= 4) {
+                        const imageUrl = parts.slice(3).join('/').trim();
+                        products.push({
+                            category: parts[0].trim(),
+                            name: parts[1].trim(),
+                            price: parseFloat(parts[2].trim()),
+                            image: imageUrl
+                        });
+                    }
+                });
+                
+                renderProducts();
+                createFilterButtons();
+                
+                const selectedFile = fileButtons.find(f => f.fileName === fileName);
+                if (selectedFile) {
+                    currentFileLabel.textContent = selectedFile.label;
+                }
+                toggleFilesBtn.disabled = false;
+                
+                showNotification(`تم تحميل ${products.length} منتج`);
+            })
+            .catch(error => {
+                console.error('Error loading products:', error);
+                currentFileLabel.textContent = originalLabel;
+                toggleFilesBtn.disabled = false;
+                showNotification('حدث خطأ في تحميل الملف');
+            });
+    }
+    
+    function createProductElement(product) {
+        const productDiv = document.createElement('div');
+        productDiv.className = 'product fade-in';
+        
+        // Image container
+        const productImgContainer = document.createElement('div');
+        productImgContainer.className = 'product-img-container';
+        
+        const productImage = document.createElement('img');
+        productImage.src = product.image;
+        productImage.alt = product.name;
+        productImage.onerror = () => {
+            productImage.src = 'https://via.placeholder.com/300x200?text=No+Image';
+        };
+        
+        productImgContainer.appendChild(productImage);
+        productDiv.appendChild(productImgContainer);
+        
+        // Content
+        const productContent = document.createElement('div');
+        productContent.className = 'product-content';
+        
+        const productCategory = document.createElement('div');
+        productCategory.className = 'product-category';
+        productCategory.textContent = product.category;
+        productContent.appendChild(productCategory);
+        
+        const productName = document.createElement('div');
+        productName.className = 'product-name';
+        
+        const nameParts = product.name.split('<br>');
+        if (nameParts.length > 1) {
+            productName.innerHTML = `
+                <strong>${nameParts[0]}<br>
+                <span class="red-glow">${nameParts.slice(1).join('<br>')}</span></strong>
+            `;
+        } else {
+            productName.innerHTML = `<strong>${product.name}</strong>`;
+        }
+        
+        productContent.appendChild(productName);
+        
+        // Price only - NO ADD TO CART
+        const productPrice = document.createElement('div');
+        productPrice.className = 'product-price';
+        
+        const price = isNaN(product.price) ? "غير متوفر" : product.price.toFixed(2) + " ₪";
+        const priceClass = isNaN(product.price) ? "unavailable" : "";
+        
+        productPrice.innerHTML = `<span class="${priceClass}">${price}</span>`;
+        productContent.appendChild(productPrice);
+        
+        productDiv.appendChild(productContent);
+        
+        return productDiv;
+    }
+    
+    function createFilterButtons() {
+        const filterContainer = document.getElementById('smart-filter-buttons');
+        filterContainer.innerHTML = '';
+        
+        // "All" button
+        const allButton = document.createElement('button');
+        allButton.className = 'smart-filter-btn all-btn active';
+        allButton.textContent = 'الكل';
+        allButton.onclick = (e) => {
+            filterProducts('All');
+            setActiveButton(e.target);
+            addClickEffect(e.target);
+        };
+        filterContainer.appendChild(allButton);
+        
+        // Category buttons
+        const categories = [...new Set(products.map(p => p.category))];
+        categories.forEach(category => {
+            const button = document.createElement('button');
+            button.className = 'smart-filter-btn';
+            button.textContent = category;
+            
+            const textLength = category.length;
+            
+            if (textLength <= 8) {
+                button.classList.add('short-text');
+            } else if (textLength <= 12) {
+                button.classList.add('medium-text');
+            } else if (textLength <= 18) {
+                button.classList.add('long-text');
+            } else {
+                button.classList.add('very-long-text');
+            }
+            
+            button.onclick = (e) => {
+                filterProducts(category);
+                setActiveButton(e.target);
+                addClickEffect(e.target);
+            };
+            filterContainer.appendChild(button);
+        });
+        
+        function setActiveButton(activeBtn) {
+            document.querySelectorAll('.smart-filter-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
             activeBtn.classList.add('active');
         }
+        
+        function addClickEffect(element) {
+            element.style.transform = 'translateY(0)';
+            setTimeout(() => {
+                element.style.transform = 'translateY(-2px)';
+            }, 100);
+        }
+    }
 
-        // ========== Render Products ==========
-        function renderProducts() {
-            if (products.length === 0) {
-                mainContent.innerHTML = `
-                    <div class="empty-state">
-                        <i class="fas fa-inbox"></i>
-                        لا توجد منتجات لعرضها
-                    </div>`;
-                return;
-            }
+    function filterProducts(category) {
+        const filteredProducts = category === 'All' 
+            ? products 
+            : products.filter(p => p.category === category);
+        renderFilteredProducts(filteredProducts);
+    }
 
-            // Apply filters
-            let filtered = products;
-            if (currentCategory !== 'All') {
-                filtered = filtered.filter(p => p.category === currentCategory);
-            }
-            if (searchTerm) {
-                const term = searchTerm.toLowerCase();
-                filtered = filtered.filter(p =>
-                    p.name.toLowerCase().includes(term) ||
-                    p.category.toLowerCase().includes(term)
-                );
-            }
-
-            if (filtered.length === 0) {
-                mainContent.innerHTML = `
-                    <div class="empty-state">
-                        <i class="fas fa-search"></i>
-                        لا توجد نتائج مطابقة للبحث
-                    </div>`;
-                return;
-            }
-
-            // Group by category
-            const grouped = {};
-            filtered.forEach(p => {
-                if (!grouped[p.category]) grouped[p.category] = [];
-                grouped[p.category].push(p);
+    function renderFilteredProducts(filteredProducts) {
+        categoriesContainer.innerHTML = '';
+        
+        if (currentView === 'store') {
+            filteredProducts.forEach(product => {
+                const productElement = createProductElement(product);
+                categoriesContainer.appendChild(productElement);
             });
+        } else {
+            renderFilteredProductsTable(filteredProducts);
+        }
+    }
 
-            // Build HTML
-            let html = '';
-            for (const [category, items] of Object.entries(grouped)) {
-                html += `
-                    <div class="category-section">
-                        <div class="category-header">${escapeHtml(category)}</div>
-                        <table class="price-table">
-                            <thead>
-                                <tr>
-                                    <th style="width:40px;">#</th>
-                                    <th>الصنف</th>
-                                    <th style="width:120px;text-align:left;">السعر</th>
-                                </tr>
-                            </thead>
-                            <tbody>`;
-                items.forEach((item, idx) => {
-                    const nameHtml = highlightText(escapeHtml(item.name), searchTerm);
-                    const priceHtml = isNaN(item.price)
-                        ? '<span class="product-price unavailable">غير متوفر</span>'
-                        : `<span class="product-price">${item.price.toFixed(2)} ₪</span>`;
-                    html += `
-                        <tr>
-                            <td class="row-number">${idx + 1}</td>
-                            <td class="product-name">${nameHtml}</td>
-                            <td>${priceHtml}</td>
-                        </tr>`;
+    function renderFilteredProductsTable(filteredProducts) {
+        const filteredCategories = [...new Set(filteredProducts.map(p => p.category))];
+        
+        filteredCategories.forEach(category => {
+            const categorySection = document.createElement('div');
+            categorySection.className = 'category-table-section';
+            
+            const categoryTitle = document.createElement('h2');
+            categoryTitle.className = 'category-title';
+            categoryTitle.textContent = category;
+            categorySection.appendChild(categoryTitle);
+            
+            const tableContainer = document.createElement('div');
+            tableContainer.className = 'products-table-container';
+            
+            const table = document.createElement('table');
+            table.className = 'products-table';
+            
+            const thead = document.createElement('thead');
+            thead.innerHTML = `
+                <tr>
+                    <th>الصنف</th>
+                    <th>السعر</th>
+                </tr>
+            `;
+            table.appendChild(thead);
+            
+            const tbody = document.createElement('tbody');
+            
+            const categoryProducts = filteredProducts.filter(p => p.category === category);
+            
+            categoryProducts.forEach(product => {
+                const row = document.createElement('tr');
+                const cleanName = product.name.replace(/<br>/g, ' ').trim();
+                const price = isNaN(product.price) ? 
+                    '<span class="unavailable">غير متوفر</span>' : 
+                    `<span class="price">${product.price.toFixed(2)} ₪</span>`;
+                
+                row.innerHTML = `
+                    <td class="product-name-cell">${cleanName}</td>
+                    <td class="product-price-cell">${price}</td>
+                `;
+                
+                tbody.appendChild(row);
+            });
+            
+            table.appendChild(tbody);
+            tableContainer.appendChild(table);
+            categorySection.appendChild(tableContainer);
+            categoriesContainer.appendChild(categorySection);
+        });
+    }
+
+    function handleSearch() {
+        const searchTerm = searchBox.value.toLowerCase().trim();
+        
+        const filteredProducts = products.filter(product => {
+            const productName = product.name.toLowerCase();
+            const productCategory = product.category.toLowerCase();
+            return (
+                productName.includes(searchTerm) ||
+                productCategory.includes(searchTerm)
+            );
+        });
+        
+        renderFilteredProducts(filteredProducts);
+        
+        if (searchTerm) {
+            if (currentView === 'store') {
+                document.querySelectorAll('.product-name, .product-category').forEach(el => {
+                    const text = el.textContent;
+                    const regex = new RegExp(`(${searchTerm})`, 'gi');
+                    el.innerHTML = text.replace(regex, '<mark class="search-highlight">$1</mark>');
                 });
-                html += `
-                            </tbody>
-                        </table>
-                    </div>`;
+            } 
+            else if (currentView === 'table') {
+                document.querySelectorAll('.product-name-cell').forEach(el => {
+                    const text = el.textContent;
+                    const regex = new RegExp(`(${searchTerm})`, 'gi');
+                    el.innerHTML = text.replace(regex, '<mark class="search-highlight">$1</mark>');
+                });
+                
+                document.querySelectorAll('.category-title').forEach(el => {
+                    const text = el.textContent;
+                    const regex = new RegExp(`(${searchTerm})`, 'gi');
+                    el.innerHTML = text.replace(regex, '<mark class="search-highlight">$1</mark>');
+                });
             }
-
-            mainContent.innerHTML = html;
+        } else {
+            if (currentView === 'store') {
+                document.querySelectorAll('.product-name, .product-category').forEach(el => {
+                    el.innerHTML = el.textContent;
+                });
+            } else {
+                document.querySelectorAll('.product-name-cell, .category-title').forEach(el => {
+                    el.innerHTML = el.textContent;
+                });
+            }
         }
+    }
 
-        // ========== Search ==========
-        function handleSearch() {
-            searchTerm = searchBox.value.trim();
-            renderProducts();
+    // Notification
+    function showNotification(text) {
+        notificationText.textContent = text;
+        notification.classList.add('show');
+        
+        setTimeout(() => {
+            notification.classList.remove('show');
+        }, 3000);
+    }
+
+    // Scroll to Top
+    function scrollToTop() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    }
+
+    // منع التكبير على الموبايل
+    document.addEventListener('touchstart', function (event) {
+        if (event.touches.length > 1) {
+            event.preventDefault();
         }
-
-        // ========== Helpers ==========
-        function escapeHtml(text) {
-            const div = document.createElement('div');
-            div.textContent = text;
-            return div.innerHTML;
+    }, { passive: false });
+    
+    let lastTouchEnd = 0;
+    document.addEventListener('touchend', function (event) {
+        const now = (new Date()).getTime();
+        if (now - lastTouchEnd <= 300) {
+            event.preventDefault();
         }
+        lastTouchEnd = now;
+    }, { passive: false });
+    
+    // Service Worker
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/sw.js')
+            .then(function(reg) {
+                console.log('Service Worker registered with scope:', reg.scope);
+            })
+            .catch(function(error) {
+                console.error('Service Worker registration failed:', error);
+            });
+    }
 
-        function highlightText(text, term) {
-            if (!term) return text;
-            const regex = new RegExp(`(${escapeRegExp(term)})`, 'gi');
-            return text.replace(regex, '<mark class="search-highlight">$1</mark>');
-        }
-
-        function escapeRegExp(string) {
-            return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-        }
-
-        function showLoading() {
-            mainContent.innerHTML = `
-                <div class="loading-indicator">
-                    <i class="fas fa-spinner"></i>
-                    جاري تحميل الأسعار...
-                </div>`;
-        }
-
-        function showError(msg) {
-            mainContent.innerHTML = `
-                <div class="empty-state">
-                    <i class="fas fa-exclamation-triangle" style="color:var(--accent-color);"></i>
-                    ${msg}
-                </div>`;
-            filterButtonsContainer.innerHTML = '';
-        }
-
-        // ========== Start ==========
-        window.addEventListener('load', init);
-    </script>
+    window.addEventListener('load', init);
+</script>
 </body>
 </html>
