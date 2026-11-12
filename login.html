@@ -3,340 +3,674 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>نظام الدخول الفوري - VIP</title>
+    <title>أسعار الأجهزة | Shehadeh Center</title>
+    <meta name="description" content="أفضل أسعار الأجهزة الإلكترونية والكهربائية">
     
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" type="image/png" sizes="32x32" href="https://i.postimg.cc/VNssYbVS/IMG-1002.jpg">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
-        /* منع تحديد النص وظهور أدوات المطور (يبقى كما هو) */
+        :root {
+            --primary-color: #1a5276;
+            --secondary-color: #2c3e50;
+            --accent-color: #c0392b;
+            --light-bg: #f5f5f5;
+            --white: #ffffff;
+            --border-color: #ddd;
+            --text-dark: #333;
+            --text-muted: #777;
+            --success-color: #27ae60;
+        }
+        
         * {
-            -webkit-touch-callout: none;
-            -webkit-user-select: none;
-            -khtml-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            user-select: none;
-            -webkit-tap-highlight-color: transparent;
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
         
         body {
-            background: linear-gradient(135deg, #0a1928 0%, #1a2f3f 100%);
+            font-family: 'Tajawal', Arial, sans-serif;
+            background-color: var(--light-bg);
+            color: var(--text-dark);
+            line-height: 1.6;
             min-height: 100vh;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            position: relative;
-            overflow-x: hidden;
         }
         
-        .protection-overlay {
-            position: fixed;
+        /* Header */
+        .header {
+            background: var(--secondary-color);
+            color: var(--white);
+            padding: 1.5rem;
+            text-align: center;
+            border-bottom: 4px solid var(--primary-color);
+        }
+        
+        .header h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+        
+        .header h1 span {
+            color: #5dade2;
+        }
+        
+        .header p {
+            color: #bdc3c7;
+            font-size: 0.9rem;
+            margin-top: 0.3rem;
+        }
+        
+        /* Navigation / Tabs */
+        .file-tabs {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 1rem;
+            background: var(--white);
+            border-bottom: 1px solid var(--border-color);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            position: sticky;
             top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: transparent;
-            z-index: 9999;
-            pointer-events: none;
-        }
-        
-        @media (max-width: 768px) {
-            body {
-                -webkit-touch-callout: none;
-                -webkit-user-select: none;
-            }
-        }
-        
-        .debug-trap {
-            position: fixed;
-            top: -1000px;
-            left: -1000px;
-            opacity: 0;
-            pointer-events: none;
-        }
-        
-        .card {
-            background: rgba(255, 255, 255, 0.98);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-            position: relative;
             z-index: 100;
         }
         
-        .security-badge {
-            background: linear-gradient(135deg, #059669, #047857);
-            color: white;
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 0.75rem;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-        }
-        
-        .blur-effect {
-            filter: blur(0.5px);
-        }
-        
-        .protected-text {
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            user-select: none;
-        }
-        
-        .anti-debug {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: transparent;
-            z-index: 99999;
-            pointer-events: none;
-        }
-        
-        .no-context-menu {
-            -webkit-touch-callout: none;
-        }
-
-        /* دخول فوري: زر غير مرئي يملأ البطاقة */
-        .immediate-access-area {
-            cursor: pointer;
-            transition: all 0.2s ease;
-        }
-        .immediate-access-area:active {
-            transform: scale(0.99);
-        }
-        /* إزالة أي حقول أو أزرار دخول */
-        .hidden-field {
-            display: none !important;
-        }
-        /* رسالة الترحيب */
-        .welcome-message {
-            background: linear-gradient(135deg, #d1fae5, #a7f3d0);
-            border-right: 4px solid #059669;
-            padding: 1rem;
-            border-radius: 1rem;
-            color: #065f46;
+        .file-tab {
+            padding: 0.6rem 1.2rem;
+            font-size: 0.9rem;
             font-weight: 500;
+            border: 2px solid var(--border-color);
+            background: var(--white);
+            color: var(--text-dark);
+            cursor: pointer;
+            border-radius: 6px;
+            transition: all 0.2s ease;
+            font-family: 'Tajawal', sans-serif;
+        }
+        
+        .file-tab:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+        }
+        
+        .file-tab.active {
+            background: var(--primary-color);
+            color: var(--white);
+            border-color: var(--primary-color);
+        }
+        
+        /* Search */
+        .search-container {
+            padding: 1rem;
+            background: var(--white);
+            text-align: center;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .search-container input {
+            width: 100%;
+            max-width: 500px;
+            padding: 0.7rem 1rem;
+            font-size: 1rem;
+            border: 2px solid var(--border-color);
+            border-radius: 6px;
+            font-family: 'Tajawal', sans-serif;
+            transition: border-color 0.2s ease;
+        }
+        
+        .search-container input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+        
+        /* Filter Buttons */
+        .filter-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 1rem;
+        }
+        
+        .filter-btn {
+            padding: 0.5rem 1.1rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+            border: 1px solid var(--border-color);
+            background: var(--white);
+            color: var(--text-dark);
+            cursor: pointer;
+            border-radius: 4px;
+            transition: all 0.2s ease;
+            font-family: 'Tajawal', sans-serif;
+        }
+        
+        .filter-btn:hover {
+            background: #eaf2f8;
+            border-color: var(--primary-color);
+        }
+        
+        .filter-btn.active {
+            background: var(--primary-color);
+            color: var(--white);
+            border-color: var(--primary-color);
+        }
+        
+        /* Main Container */
+        .main-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 1rem;
+        }
+        
+        /* Category Section */
+        .category-section {
+            background: var(--white);
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+        
+        .category-header {
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 0.8rem 1.2rem;
+            font-size: 1.1rem;
+            font-weight: 700;
+            border-bottom: 3px solid var(--secondary-color);
+        }
+        
+        /* Price Table */
+        .price-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .price-table thead th {
+            background: #eaf2f8;
+            color: var(--primary-color);
+            padding: 0.7rem 1rem;
+            text-align: right;
+            font-weight: 700;
+            font-size: 0.9rem;
+            border-bottom: 2px solid var(--border-color);
+        }
+        
+        .price-table tbody td {
+            padding: 0.75rem 1rem;
+            border-bottom: 1px solid #eee;
+            font-size: 0.95rem;
+            text-align: right;
+            vertical-align: middle;
+        }
+        
+        .price-table tbody tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .price-table tbody tr:hover {
+            background: #f9fbfc;
+        }
+        
+        .price-table tbody tr:nth-child(even) {
+            background: #fafafa;
+        }
+        
+        .price-table tbody tr:nth-child(even):hover {
+            background: #f0f5f8;
+        }
+        
+        /* Product Name */
+        .product-name {
+            font-weight: 500;
+            color: var(--text-dark);
+            line-height: 1.5;
+            word-break: break-word;
+        }
+        
+        /* Price */
+        .product-price {
+            font-weight: 700;
+            font-size: 1rem;
+            color: var(--success-color);
+            text-align: left;
+            direction: ltr;
+            white-space: nowrap;
+            font-family: 'Tajawal', Arial, sans-serif;
+        }
+        
+        .product-price.unavailable {
+            color: var(--accent-color);
+            font-weight: 600;
+            direction: rtl;
+            text-align: center;
+        }
+        
+        /* Row number */
+        .row-number {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            width: 40px;
+            text-align: center;
+        }
+        
+        /* Search Highlight */
+        .search-highlight {
+            background-color: #fff3cd;
+            padding: 1px 3px;
+            border-radius: 2px;
+            font-weight: 700;
+        }
+        
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 1.5rem 1rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border-color);
+            background: var(--white);
+            margin-top: 2rem;
+        }
+        
+        .footer .contact-info {
+            margin-bottom: 0.5rem;
+            color: var(--secondary-color);
+            font-weight: 500;
+        }
+        
+        /* Empty State */
+        .empty-state {
+            text-align: center;
+            padding: 3rem 1rem;
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+        
+        .empty-state i {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+            color: var(--border-color);
+        }
+        
+        /* Loading */
+        .loading-indicator {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-muted);
+        }
+        
+        .loading-indicator i {
+            animation: spin 1s linear infinite;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            display: block;
+            color: var(--primary-color);
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.4rem;
+            }
+            
+            .file-tab {
+                padding: 0.5rem 0.8rem;
+                font-size: 0.8rem;
+            }
+            
+            .filter-btn {
+                padding: 0.4rem 0.8rem;
+                font-size: 0.8rem;
+            }
+            
+            .price-table thead th,
+            .price-table tbody td {
+                padding: 0.6rem 0.7rem;
+                font-size: 0.85rem;
+            }
+            
+            .product-price {
+                font-size: 0.9rem;
+            }
+            
+            .category-header {
+                font-size: 1rem;
+                padding: 0.7rem 1rem;
+            }
+            
+            .main-container {
+                padding: 0.5rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .header h1 {
+                font-size: 1.2rem;
+            }
+            
+            .file-tab {
+                padding: 0.4rem 0.6rem;
+                font-size: 0.75rem;
+            }
+            
+            .price-table thead th,
+            .price-table tbody td {
+                padding: 0.5rem;
+                font-size: 0.8rem;
+            }
+            
+            .row-number {
+                display: none;
+            }
         }
     </style>
 </head>
-<body class="flex items-center justify-center p-4 no-context-menu" oncontextmenu="return false;" onkeydown="return disableDevTools(event)">
+<body>
 
-    <!-- طبقات حماية متعددة (تبقى) -->
-    <div class="anti-debug" id="antiDebug"></div>
-    <div class="protection-overlay"></div>
+    <!-- Header -->
+    <header class="header">
+        <h1>Shehadeh <span>Center</span></h1>
+        <p>قائمة أسعار الأجهزة الإلكترونية</p>
+    </header>
     
-    <!-- فخ لأدوات المطور (مشفر) -->
-    <div class="debug-trap" id="debugTrap">
-        <script>
-            // تشفير البيانات الحساسة
-            const ENCRYPTED = '%%^&*()_+{}:"|<>?';
-            console.log = function() {};
-            console.error = function() {};
-            console.warn = function() {};
-            console.debug = function() {};
-        </script>
+    <!-- File Tabs -->
+    <nav class="file-tabs" id="file-tabs">
+        <!-- Populated by JS -->
+    </nav>
+    
+    <!-- Search -->
+    <div class="search-container">
+        <input type="text" id="search-box" placeholder="🔍 ابحث عن منتج أو قسم...">
     </div>
-
-    <div class="w-full max-w-md mx-auto immediate-access-area" id="immediateAccessCard" onclick="performImmediateAccess()">
-        <!-- الشعار مع تأثير تمويه -->
-        <div class="text-center mb-8 relative blur-effect">
-            <div class="inline-block p-5 bg-gradient-to-br from-blue-600/30 to-purple-600/30 backdrop-blur-sm rounded-3xl mb-4 border border-white/20">
-                <i class="fas fa-shield-halved text-white text-5xl"></i>
-            </div>
-            <h1 class="text-3xl font-bold text-white mb-2 tracking-wide">نظام الدخول الفوري</h1>
-            <p class="text-blue-200/90">منصة VIP - دخول بدون عوائق</p>
-            
-            <!-- شارة الأمان -->
-            <div class="mt-3 flex justify-center">
-                <span class="security-badge">
-                    <i class="fas fa-lock-open"></i>
-                    <span>دخول فوري للجميع</span>
-                </span>
-            </div>
-        </div>
-
-        <!-- البطاقة الرئيسية - بدون حقل كلمة سر أو زر -->
-        <div class="card rounded-3xl p-8 relative overflow-hidden text-center">
-            <!-- عناصر تشويش لأدوات المطور (تبقى) -->
-            <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-blue-500 to-transparent"></div>
-            
-            <!-- أيقونة القفل المفتوح -->
-            <div class="text-center mb-6">
-                <div class="w-20 h-20 bg-gradient-to-br from-green-100 to-green-200 rounded-2xl flex items-center justify-center mx-auto rotate-45 shadow-lg">
-                    <i class="fas fa-door-open text-green-600 text-3xl -rotate-45"></i>
-                </div>
-                <h2 class="text-xl font-bold text-gray-800 mt-4">أهلاً وسهلاً</h2>
-                <p class="text-gray-500 text-sm">اضغط في أي مكان للدخول الفوري</p>
-            </div>
-
-            <!-- رسالة ترحيب وإرشاد -->
-            <div class="welcome-message mb-4">
-                <i class="fas fa-smile-wink ml-2 text-green-700"></i>
-                جميع المستخدمين مدعوون! اضغط على البطاقة أو على أيقونة الدخول للوصول المباشر.
-            </div>
-
-            <!-- أيقونة دخول سريع (كبيرة وواضحة) -->
-            <div class="flex justify-center items-center space-x-2 space-x-reverse mt-4">
-                <i class="fas fa-hand-pointer text-4xl text-blue-600 animate-pulse"></i>
-                <i class="fas fa-arrow-left text-2xl text-gray-400"></i>
-                <i class="fas fa-arrow-left text-2xl text-gray-400"></i>
-                <div class="bg-blue-100 p-4 rounded-full">
-                    <i class="fas fa-arrow-circle-right text-4xl text-blue-600"></i>
-                </div>
-            </div>
-            
-            <p class="text-sm text-gray-500 mt-6">لا يوجد تحقق، ولا كلمات سر. دخول مفتوح بالكامل.</p>
-
-            <!-- معلومات إضافية مشفرة (تبقى للزينة) -->
-            <div class="text-center text-xs text-gray-400 mt-6">
-                <i class="fas fa-shield-alt ml-1"></i>
-                <span id="encryptedInfo"></span>
-            </div>
-        </div>
-
-        <!-- توقيع أمني -->
-        <div class="text-center text-white/60 text-xs mt-6 space-y-1 protected-text">
-            <p>🔓 دخول فوري بدون عوائق | جميع الصلاحيات متاحة</p>
-            <p>⚡ نظام حماية متقدم (معطل للتحقق تجاوباً مع طلبك)</p>
-        </div>
+    
+    <!-- Filter Buttons -->
+    <div class="filter-buttons" id="filter-buttons">
+        <!-- Populated by JS -->
     </div>
+    
+    <!-- Main Content -->
+    <main class="main-container" id="main-content">
+        <div class="loading-indicator">
+            <i class="fas fa-spinner"></i>
+            جاري تحميل الأسعار...
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="contact-info">
+            <i class="fas fa-phone"></i> 0566888825
+        </div>
+        <div>
+            Shehadeh Center &copy; 2025 - جميع الحقوق محفوظة
+        </div>
+    </footer>
 
     <script>
-        // ===== حماية أصلية ولكن مع تعديل لدخول فوري =====
-        (function() {
-            'use strict';
-            
-            // منع القائمة اليمنى (يبقى)
-            document.addEventListener('contextmenu', function(e) {
-                e.preventDefault();
-                return false;
+        // ========== Configuration ==========
+        const fileButtons = [
+            { label: 'أسعار الأجهزة', fileName: 'test.md', icon: 'fas fa-mobile-alt' },
+            { label: 'أسعار الشاشات', fileName: 'lcd.md', icon: 'fas fa-tv' },
+            { label: 'أسعار الاكسسوارات', fileName: 'abc.md', icon: 'fas fa-headphones' },
+            { label: 'أسعار معدات الصيانة', fileName: 'tools.md', icon: 'fas fa-tools' },
+            { label: 'أسعار قطع صيانة', fileName: 'flex.md', icon: 'fas fa-microchip' },
+            { label: 'أسعار البطاريات', fileName: 'batteries.md', icon: 'fas fa-car-battery' }
+        ];
+
+        // ========== State ==========
+        let products = [];
+        let currentFileName = '';
+        let currentCategory = 'All';
+        let searchTerm = '';
+        let isLoading = false;
+
+        // ========== DOM Elements ==========
+        const fileTabsContainer = document.getElementById('file-tabs');
+        const filterButtonsContainer = document.getElementById('filter-buttons');
+        const mainContent = document.getElementById('main-content');
+        const searchBox = document.getElementById('search-box');
+
+        // ========== Init ==========
+        function init() {
+            createFileTabs();
+            loadProductsFromFile(fileButtons[0].fileName);
+            searchBox.addEventListener('input', handleSearch);
+        }
+
+        // ========== File Tabs ==========
+        function createFileTabs() {
+            fileTabsContainer.innerHTML = '';
+            fileButtons.forEach((btn, index) => {
+                const tab = document.createElement('button');
+                tab.className = 'file-tab' + (index === 0 ? ' active' : '');
+                tab.innerHTML = `<i class="${btn.icon}"></i> ${btn.label}`;
+                tab.dataset.fileName = btn.fileName;
+                tab.onclick = () => {
+                    if (isLoading) return;
+                    document.querySelectorAll('.file-tab').forEach(t => t.classList.remove('active'));
+                    tab.classList.add('active');
+                    currentCategory = 'All';
+                    searchTerm = '';
+                    searchBox.value = '';
+                    loadProductsFromFile(btn.fileName);
+                };
+                fileTabsContainer.appendChild(tab);
             });
+        }
 
-            // منع اختصارات المطور (يبقى للحماية)
-            document.addEventListener('keydown', function(e) {
-                if (e.key === 'F12' || 
-                    (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J' || e.key === 'C')) ||
-                    (e.ctrlKey && e.key === 'u') ||
-                    (e.ctrlKey && e.key === 's')) {
-                    e.preventDefault();
-                    return false;
-                }
-            });
+        // ========== Load Products ==========
+        async function loadProductsFromFile(fileName) {
+            if (isLoading) return;
+            isLoading = true;
+            currentFileName = fileName;
+            showLoading();
 
-            // كشف أدوات المطور (يبقى)
-            (function detectDevTools() {
-                const start = new Date().getTime();
-                debugger;
-                const end = new Date().getTime();
-                
-                if (end - start > 100) {
-                    // تم اكتشاف أدوات المطور - لكننا نسمح بالدخول، فقط رسالة بسيطة
-                    console.warn('DevTools detected');
-                }
-                setTimeout(detectDevTools, 2000);
-            })();
-
-            // منع النسخ واللصق (يبقى)
-            document.addEventListener('copy', (e) => e.preventDefault());
-            document.addEventListener('cut', (e) => e.preventDefault());
-            document.addEventListener('paste', (e) => e.preventDefault());
-            document.addEventListener('dragstart', (e) => e.preventDefault());
-
-            // إضافة معلومات مشفرة للزينة
-            const encryptedInfo = document.getElementById('encryptedInfo');
-            if (encryptedInfo) {
-                encryptedInfo.textContent = 'نظام مفتوح بالكامل v3.0';
-            }
-
-            // مراقب للتأكد من عدم إعادة إضافة الحقول (يبقى)
-            const observer = new MutationObserver(function(mutations) {
-                mutations.forEach(function(mutation) {
-                    // لا نفعل شيئاً لأننا أزلنا الحقول عمداً
-                });
-            });
-            observer.observe(document.body, { attributes: true, subtree: true, attributeFilter: ['style', 'class', 'hidden'] });
-
-        })();
-
-        // دالة الدخول الفوري - تنقل الجميع دون شرط
-        window.performImmediateAccess = function() {
-            // عرض رسالة انتقال سريع (اختياري)
-            const card = document.querySelector('.card');
-            const originalInner = card.innerHTML; // ليس ضرورياً
-            
-            // مؤشر تحميل بسيط
-            card.style.opacity = '0.7';
-            
-            // حفظ جلسة فورية (محاكاة)
             try {
-                sessionStorage.setItem('vip_instant_access', 'true');
-                localStorage.setItem('vip_welcome', 'تم الدخول الفوري في ' + new Date().toLocaleString('ar-SA'));
-            } catch(e) {}
-            
-            // إنشاء عنصر رابط مخفي للتوجيه إلى الرابط المطلوب
-            const link = document.createElement('a');
-            link.href = 'https://mohammad-shehadeh.github.io/price/';
-            link.target = '_blank';
-            link.rel = 'noopener noreferrer';
-            
-            // تأخير بسيط لتجربة أفضل
-            setTimeout(() => {
-                link.click();
-                // إعادة opacity
-                card.style.opacity = '1';
-                
-                // رسالة نجاح سريعة (تظهر وتختفي)
-                const msgDiv = document.createElement('div');
-                msgDiv.className = 'fixed top-4 left-1/2 transform -translate-x-1/2 bg-green-500 text-white px-6 py-3 rounded-full shadow-lg z-50 transition-opacity';
-                msgDiv.innerHTML = '<i class="fas fa-check-circle ml-2"></i>تم الدخول الفوري! جاري التوجيه...';
-                document.body.appendChild(msgDiv);
-                setTimeout(() => {
-                    msgDiv.style.opacity = '0';
-                    setTimeout(() => document.body.removeChild(msgDiv), 300);
-                }, 2000);
-            }, 300);
-        };
-
-        // دعم النقر على أي مكان في البطاقة (تم تعيين onclick على العنصر الأب)
-        // بالإضافة إلى ذلك، نجعل المستخدم ينقر على أيقونة الدخول أيضاً
-        document.addEventListener('DOMContentLoaded', function() {
-            // يمكن النقر على أيقونة السهم أيضاً
-            const icons = document.querySelectorAll('.fa-arrow-circle-right, .fa-door-open, .card');
-            icons.forEach(icon => {
-                icon.addEventListener('click', function(e) {
-                    e.stopPropagation(); // منع التكرار لكن النقر سينفذ مرة واحدة
-                    performImmediateAccess();
-                });
-            });
-            
-            // إزالة أي أحداث قديمة من بقايا النموذج
-            const oldForm = document.getElementById('loginForm');
-            if (oldForm) {
-                oldForm.remove(); // لم يعد موجوداً لكن للتأكد
+                const response = await fetch(fileName);
+                if (!response.ok) throw new Error('File not found');
+                const data = await response.text();
+                products = parseProducts(data);
+                currentCategory = 'All';
+                createFilterButtons();
+                renderProducts();
+            } catch (error) {
+                console.error('Error loading file:', error);
+                showError('حدث خطأ في تحميل الملف. تأكد من وجود الملف.');
+            } finally {
+                isLoading = false;
             }
-        });
+        }
 
-        // override أي دالة قديمة للتحقق
-        window.verifyPassword = null;
-        window.validateInput = null;
+        // ========== Parse Products ==========
+        function parseProducts(data) {
+            const result = [];
+            const lines = data.split('\n');
+            lines.forEach(line => {
+                // Format: category / name / price / image_url
+                const parts = line.split('/');
+                if (parts.length >= 3) {
+                    const category = parts[0].trim();
+                    const name = parts[1].trim();
+                    const priceStr = parts[2].trim();
+                    if (!category || !name) return;
+                    const price = priceStr === '' ? NaN : parseFloat(priceStr);
+                    result.push({
+                        category,
+                        name,
+                        price: isNaN(price) ? NaN : price
+                    });
+                }
+            });
+            return result;
+        }
 
-        // معلومات إضافية: نعرض رسالة في الكونسول ولكن بشكل ودي
-        console.log('%cنظام الدخول الفوري مفعل بالكامل - جميع المستخدمين مرحب بهم', 'color: green; font-size: 16px;');
-    </script>
+        // ========== Filter Buttons ==========
+        function createFilterButtons() {
+            filterButtonsContainer.innerHTML = '';
+            if (products.length === 0) return;
 
-    <!-- كود حماية إضافي (مشفر) - يبقى للشكل -->
-    <script>
-        (function() {
-            const hiddenFunctions = {
-                validate: function() { return '%%%PROTECTED%%%'; }
+            const categories = [...new Set(products.map(p => p.category))];
+
+            // "All" button
+            const allBtn = document.createElement('button');
+            allBtn.className = 'filter-btn active';
+            allBtn.textContent = 'الكل';
+            allBtn.onclick = () => {
+                currentCategory = 'All';
+                setActiveFilter(allBtn);
+                renderProducts();
             };
-            Object.freeze(hiddenFunctions);
-        })();
+            filterButtonsContainer.appendChild(allBtn);
+
+            categories.forEach(cat => {
+                const btn = document.createElement('button');
+                btn.className = 'filter-btn';
+                btn.textContent = cat;
+                btn.onclick = () => {
+                    currentCategory = cat;
+                    setActiveFilter(btn);
+                    renderProducts();
+                };
+                filterButtonsContainer.appendChild(btn);
+            });
+        }
+
+        function setActiveFilter(activeBtn) {
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            activeBtn.classList.add('active');
+        }
+
+        // ========== Render Products ==========
+        function renderProducts() {
+            if (products.length === 0) {
+                mainContent.innerHTML = `
+                    <div class="empty-state">
+                        <i class="fas fa-inbox"></i>
+                        لا توجد منتجات لعرضها
+                    </div>`;
+                return;
+            }
+
+            // Apply filters
+            let filtered = products;
+            if (currentCategory !== 'All') {
+                filtered = filtered.filter(p => p.category === currentCategory);
+            }
+            if (searchTerm) {
+                const term = searchTerm.toLowerCase();
+                filtered = filtered.filter(p =>
+                    p.name.toLowerCase().includes(term) ||
+                    p.category.toLowerCase().includes(term)
+                );
+            }
+
+            if (filtered.length === 0) {
+                mainContent.innerHTML = `
+                    <div class="empty-state">
+                        <i class="fas fa-search"></i>
+                        لا توجد نتائج مطابقة للبحث
+                    </div>`;
+                return;
+            }
+
+            // Group by category
+            const grouped = {};
+            filtered.forEach(p => {
+                if (!grouped[p.category]) grouped[p.category] = [];
+                grouped[p.category].push(p);
+            });
+
+            // Build HTML
+            let html = '';
+            for (const [category, items] of Object.entries(grouped)) {
+                html += `
+                    <div class="category-section">
+                        <div class="category-header">${escapeHtml(category)}</div>
+                        <table class="price-table">
+                            <thead>
+                                <tr>
+                                    <th style="width:40px;">#</th>
+                                    <th>الصنف</th>
+                                    <th style="width:120px;text-align:left;">السعر</th>
+                                </tr>
+                            </thead>
+                            <tbody>`;
+                items.forEach((item, idx) => {
+                    const nameHtml = highlightText(escapeHtml(item.name), searchTerm);
+                    const priceHtml = isNaN(item.price)
+                        ? '<span class="product-price unavailable">غير متوفر</span>'
+                        : `<span class="product-price">${item.price.toFixed(2)} ₪</span>`;
+                    html += `
+                        <tr>
+                            <td class="row-number">${idx + 1}</td>
+                            <td class="product-name">${nameHtml}</td>
+                            <td>${priceHtml}</td>
+                        </tr>`;
+                });
+                html += `
+                            </tbody>
+                        </table>
+                    </div>`;
+            }
+
+            mainContent.innerHTML = html;
+        }
+
+        // ========== Search ==========
+        function handleSearch() {
+            searchTerm = searchBox.value.trim();
+            renderProducts();
+        }
+
+        // ========== Helpers ==========
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        function highlightText(text, term) {
+            if (!term) return text;
+            const regex = new RegExp(`(${escapeRegExp(term)})`, 'gi');
+            return text.replace(regex, '<mark class="search-highlight">$1</mark>');
+        }
+
+        function escapeRegExp(string) {
+            return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        }
+
+        function showLoading() {
+            mainContent.innerHTML = `
+                <div class="loading-indicator">
+                    <i class="fas fa-spinner"></i>
+                    جاري تحميل الأسعار...
+                </div>`;
+        }
+
+        function showError(msg) {
+            mainContent.innerHTML = `
+                <div class="empty-state">
+                    <i class="fas fa-exclamation-triangle" style="color:var(--accent-color);"></i>
+                    ${msg}
+                </div>`;
+            filterButtonsContainer.innerHTML = '';
+        }
+
+        // ========== Start ==========
+        window.addEventListener('load', init);
     </script>
 </body>
 </html>
