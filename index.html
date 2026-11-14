@@ -1170,9 +1170,10 @@
             return;
         }
         
-        // Show result count
+        // Show result count (أصناف + أنواع)
         if (searchTerm || currentCategory !== 'All') {
-            resultsCount.innerHTML = `تم العثور على <strong>${filtered.length}</strong> صنف`;
+            const totalTypes = filtered.reduce((sum, p) => sum + (p.types ? p.types.length : 0), 0);
+            resultsCount.innerHTML = `تم العثور على <strong>${filtered.length}</strong> صنف و <strong>${totalTypes}</strong> نوع`;
         } else {
             resultsCount.innerHTML = '';
         }
@@ -1181,7 +1182,6 @@
             categoriesContainer.appendChild(createProductElement(product));
         });
     }
-    
     function updateStats() {
         const totalProducts = products.length;
         const totalTypes = products.reduce((sum, p) => sum + p.types.length, 0);
