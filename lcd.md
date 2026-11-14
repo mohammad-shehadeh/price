@@ -1,30 +1,30 @@
-samsung/A55 +F ACC HD++ |/75/undefined
-Mi/note 15 oled +f acc |/180/undefined
-Mi/note 15 pro oled +f acc |/180/undefined
-samsung/A30S +F ACCHD++ |/55/undefined
-samsung/A26 +F ACCHD++ |/75/undefined
-samsung/A36 +F ACCHD++ |/757/undefined
-samsung/A56 +F ACCHD++ |/75/undefined
+Samsung/A55 +F ACC HD++ |/75/undefined
+Mi | poco/note 15 oled +f acc |/180/undefined
+Mi | poco/note 15 pro oled +f acc |/180/undefined
+Samsung/A30S +F ACCHD++ |/55/undefined
+Samsung/A26 +F ACCHD++ |/75/undefined
+Samsung/A36 +F ACCHD++ |/757/undefined
+Samsung/A56 +F ACCHD++ |/75/undefined
 HONOR/X9D |/140/undefined
-samsung/S25 ORI +F |/750/undefined
-samsung/S24 ORI +F |/750/undefined
-samsung/S23 ULTRA ORI +F |/750/undefined
-samsung/S22 ULTRA ORI +F |/750/undefined
+Samsung/S25 ORI +F |/750/undefined
+Samsung/S24 ORI +F |/750/undefined
+Samsung/S23 ULTRA ORI +F |/750/undefined
+Samsung/S22 ULTRA ORI +F |/750/undefined
 OPPO/A94 - RENO 5 LITE |/50/undefined
-tecno/HOTWAV NOTE 13 PRO - 15 PRO |/75/undefined
-tecno/HOTWAV A17 PRO MAX - S26 ULTRA |/75/undefined
+tecno | infinix | itel/HOTWAV NOTE 13 PRO - 15 PRO |/75/undefined
+tecno | infinix | itel/HOTWAV A17 PRO MAX - S26 ULTRA |/75/undefined
 realmi/NOTE 70 |/50/undefined
-samsung/A26 OLBIG +F ACC |/140/undefined
-samsung/A25 OLBIG +F ACC |/140/undefined
-samsung/A34 OLBIG +F ACC |/140/undefined
-samsung/A54 OLBIG +F ACC |/140/undefined
-samsung/S20 FE |/150/undefined
-samsung/S21 FE |/150/undefined
-samsung/J700 - J7 |/45/undefined
-samsung/J7 PRO |/45/undefined
-samsung/A55 ORI +F ACC |/240/undefined
-samsung/A56 ORI +F ACC |/230/undefined
-samsung/A36 ORI +F ACC |/230/undefined
+Samsung/A26 OLBIG +F ACC |/140/undefined
+Samsung/A25 OLBIG +F ACC |/140/undefined
+Samsung/A34 OLBIG +F ACC |/140/undefined
+Samsung/A54 OLBIG +F ACC |/140/undefined
+Samsung/S20 FE |/150/undefined
+Samsung/S21 FE |/150/undefined
+Samsung/J700 - J7 |/45/undefined
+Samsung/J7 PRO |/45/undefined
+Samsung/A55 ORI +F ACC |/240/undefined
+Samsung/A56 ORI +F ACC |/230/undefined
+Samsung/A36 ORI +F ACC |/230/undefined
 iphone/ip 11 orginal new |/150/undefined
 iphone/ip 14 plus |/200/undefined
 iphone/ip 15 plus |/200/undefined
@@ -32,11 +32,11 @@ iphone/ip 16 plus |/200/undefined
 iphone/ip 17 pro soft oled |/330/undefined
 iphone/ipad 9 |/140/undefined
 iphone/ipad 10 |/350/undefined
-tecno/smart 5 - spark 6 go - hot 10 lite |/50/undefined
-tecno/CAMON 30 PRO +F ACC |/160/undefined
-tecno/SPARK SLIM |/160/undefined
-INFINEX/NOTE 40 PRO +F ACC ORI |/170/undefined
-tecno/CAMON 40 PRO +F ACC |/180/undefined
+tecno | infinix | itel/smart 5 - spark 6 go - hot 10 lite |/50/undefined
+tecno | infinix | itel/CAMON 30 PRO +F ACC |/160/undefined
+tecno | infinix | itel/SPARK SLIM |/160/undefined
+tecno | infinix | itel/NOTE 40 PRO +F ACC ORI |/170/undefined
+tecno | infinix | itel/CAMON 40 PRO +F ACC |/180/undefined
 tecno | infinix | itel/CAMON 17 pro - zero x new ORI |/50/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131117/z2dzmryifu1g3pgusfso.jpg
 tecno | infinix | itel/SPARK 30 PRO - HOT 50 PRO 4G - ITEL S25 OLED |/120/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131117/z2dzmryifu1g3pgusfso.jpg
 tecno | infinix | itel/SPARK 30 PRO - HOT 50 PRO 4G - ITEL S25 INCELL |/65/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131117/z2dzmryifu1g3pgusfso.jpg
