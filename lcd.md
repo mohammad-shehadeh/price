@@ -10,7 +10,7 @@ Samsung/S25 ORI +F |/750/undefined
 Samsung/S24 ORI +F |/750/undefined
 Samsung/S23 ULTRA ORI +F |/750/undefined
 Samsung/S22 ULTRA ORI +F |/750/undefined
-OPPO/A94 - RENO 5 LITE |/50/undefined
+realmi | oppo | onePlus/A94 - RENO 5 LITE |/50/undefined
 tecno | infinix | itel/HOTWAV NOTE 13 PRO - 15 PRO |/75/undefined
 tecno | infinix | itel/HOTWAV A17 PRO MAX - S26 ULTRA |/75/undefined
 realmi/NOTE 70 |/50/undefined
