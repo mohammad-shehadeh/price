@@ -798,6 +798,29 @@
         }
         .file-option i { width: 20px; text-align: center; }
 
+        /* ===== زر القائمة المعطل ===== */
+        .file-option:disabled,
+        .file-option.disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            pointer-events: none;
+            background-color: #f5f5f5;
+            color: #999;
+        }
+
+        .file-option:disabled:hover,
+        .file-option.disabled:hover {
+            background-color: #f5f5f5;
+            padding-right: 1.2rem;
+            color: #999;
+        }
+
+        body.dark-mode .file-option:disabled,
+        body.dark-mode .file-option.disabled {
+            background-color: #0d1117;
+            color: #555;
+        }
+
         .files-menu-overlay {
             position: fixed;
             top: 0;
@@ -988,15 +1011,18 @@
     let filesMenuOverlay;
     let debounceTimer = null;
 
-    // ============ FILE BUTTONS ============
+    // ============================================================
+    // ⭐⭐ التحكم بالأزرار — عدّل enabled فقط: true = مفعل / false = معطل
+    // ============================================================
     const fileButtons = [
-        { label: 'أسعار الأجهزة', fileName: 'test.md', icon: 'fas fa-mobile-alt' },
-        { label: 'أسعار الشاشات', fileName: 'lcd.md', icon: 'fas fa-tv' },
-        { label: 'أسعار الاكسسوارات', fileName: 'abc.md', icon: 'fas fa-headphones' },
-        { label: 'أسعار معدات الصيانة', fileName: 'tools.md', icon: 'fas fa-tools' },
-        { label: 'أسعار قطع صيانة', fileName: 'flex.md', icon: 'fas fa-microchip' },
-        { label: 'أسعار البطاريات', fileName: 'batteries.md', icon: 'fas fa-car-battery' }
+        { label: 'أسعار الأجهزة',        fileName: 'test.md',      icon: 'fas fa-mobile-alt',  enabled: true  },
+        { label: 'أسعار الشاشات',        fileName: 'lcd.md',       icon: 'fas fa-tv',          enabled: true  },
+        { label: 'أسعار الاكسسوارات',    fileName: 'abc.md',       icon: 'fas fa-headphones',  enabled: false  },
+        { label: 'أسعار معدات الصيانة',  fileName: 'tools.md',     icon: 'fas fa-tools',       enabled: false  },
+        { label: 'أسعار قطع صيانة',      fileName: 'flex.md',      icon: 'fas fa-microchip',   enabled: false  },
+        { label: 'أسعار البطاريات',      fileName: 'batteries.md', icon: 'fas fa-car-battery', enabled: false  }
     ];
+    // ============================================================
 
     // ============ INIT ============
     function init() {
@@ -1006,11 +1032,19 @@
         createFileButtons();
         
         // ⭐ Load last selected file from localStorage
-        const savedFile = localStorage.getItem('lastFile') || 'test.md';
+        let savedFile = localStorage.getItem('lastFile') || 'test.md';
         const savedFileLabel = localStorage.getItem('lastFileLabel');
         
+        // 🛡️ إذا كان الملف المحفوظ معطلاً، اختر أول ملف مفعل
+        const savedConfig = fileButtons.find(f => f.fileName === savedFile);
+        if (savedConfig && savedConfig.enabled === false) {
+            const firstEnabled = fileButtons.find(f => f.enabled !== false);
+            savedFile = firstEnabled ? firstEnabled.fileName : fileButtons[0].fileName;
+        }
+        
         if (savedFileLabel) {
-            currentFileLabel.textContent = savedFileLabel;
+            const labelConfig = fileButtons.find(f => f.fileName === savedFile);
+            if (labelConfig) currentFileLabel.textContent = labelConfig.label;
         }
         
         // Mark active file option
@@ -1087,14 +1121,22 @@
             option.dataset.fileName = buttonInfo.fileName;
             option.innerHTML = `<i class="${buttonInfo.icon}"></i> <span>${buttonInfo.label}</span>`;
             
-            option.onclick = (e) => {
-                e.stopPropagation();
-                updateSelectedFile(buttonInfo.label, buttonInfo.fileName);
-                document.querySelectorAll('.file-option').forEach(opt => opt.classList.remove('active'));
-                option.classList.add('active');
-                loadProductsFromFile(buttonInfo.fileName);
-                closeFilesMenu();
-            };
+            // ✅ التحكم بالتفعيل/التعطيل من enabled
+            if (buttonInfo.enabled === false) {
+                option.disabled = true;
+                option.classList.add('disabled');
+                option.title = 'غير متوفر حالياً';
+                option.innerHTML += ' <span style="color:#999; font-size:0.72rem; margin-right:auto;">(مغلق مؤقتاً)</span>';
+            } else {
+                option.onclick = (e) => {
+                    e.stopPropagation();
+                    updateSelectedFile(buttonInfo.label, buttonInfo.fileName);
+                    document.querySelectorAll('.file-option').forEach(opt => opt.classList.remove('active'));
+                    option.classList.add('active');
+                    loadProductsFromFile(buttonInfo.fileName);
+                    closeFilesMenu();
+                };
+            }
             
             filesMenu.appendChild(option);
         });
@@ -1131,6 +1173,13 @@
     
     // ============ LOAD PRODUCTS ============
     function loadProductsFromFile(fileName) {
+        // 🛡️ حماية: منع تحميل الملفات المعطلة
+        const fileConfig = fileButtons.find(f => f.fileName === fileName);
+        if (fileConfig && fileConfig.enabled === false) {
+            showNotification('هذا الملف غير متوفر حالياً', true);
+            return;
+        }
+        
         const originalLabel = currentFileLabel.textContent;
         currentFileLabel.textContent = 'جاري التحميل...';
         toggleFilesBtn.disabled = true;
@@ -1255,8 +1304,6 @@
     }
     
     // ============ ⭐ BIDI-SAFE HIGHLIGHT ============
-    // Renders text with all matching search terms highlighted
-    // Handles mixed EN/AR safely without breaking word order
     function renderHighlightedText(text, searchTerm) {
         if (!searchTerm || !text) {
             return escapeHtml(text || '');
@@ -1265,11 +1312,8 @@
         const terms = searchTerm.toLowerCase().split(/\s+/).filter(t => t.length > 0);
         if (terms.length === 0) return escapeHtml(text);
         
-        // Use the text as-is, do highlighting on escaped version
         const escaped = escapeHtml(text);
         
-        // Build regex that matches any of the terms (case-insensitive)
-        // Sort by length desc to avoid partial overlap issues
         const sortedTerms = [...terms].sort((a, b) => b.length - a.length);
         const pattern = sortedTerms.map(escapeRegExp).join('|');
         
@@ -1278,11 +1322,9 @@
         const regex = new RegExp(`(${pattern})`, 'gi');
         const highlighted = escaped.replace(regex, '<mark class="search-highlight">$1</mark>');
         
-        // Wrap with proper direction based on content
         return renderBidiTextWithMark(highlighted, text);
     }
     
-    // Wrap highlighted HTML with proper bidi dir (but don't re-escape the mark tags)
     function renderBidiTextWithMark(highlightedHtml, originalText) {
         const hasArabic = containsArabic(originalText);
         const hasLatin = /[A-Za-z]/.test(originalText);
@@ -1301,7 +1343,6 @@
         const productDiv = document.createElement('div');
         productDiv.className = 'product fade-in';
         
-        // Copy card button
         const copyBtn = document.createElement('button');
         copyBtn.className = 'copy-card-btn';
         copyBtn.innerHTML = '<i class="fas fa-copy"></i>';
@@ -1315,11 +1356,9 @@
         const content = document.createElement('div');
         content.className = 'product-content';
         
-        // === Category Box ===
         const categoryBox = document.createElement('div');
         categoryBox.className = 'category-box';
         
-        // ⭐ Highlight in category too
         const categoryHtml = searchTerm 
             ? renderHighlightedText(product.category, searchTerm)
             : renderBidiText(escapeHtml(product.category));
@@ -1331,7 +1370,6 @@
         `;
         content.appendChild(categoryBox);
         
-        // === Types Section ===
         if (product.types && product.types.length > 0) {
             const typesSection = document.createElement('div');
             typesSection.className = 'types-section';
@@ -1352,7 +1390,6 @@
                     chip.classList.add('rtl');
                 }
                 
-                // ⭐ Highlight in types too
                 const typeHtml = searchTerm 
                     ? renderHighlightedText(type, searchTerm)
                     : renderBidiText(escapeHtml(type));
@@ -1365,7 +1402,6 @@
             content.appendChild(typesSection);
         }
         
-        // === Price Box ===
         const priceBox = document.createElement('div');
         priceBox.className = 'price-box' + (isNaN(product.price) ? ' unavailable' : '');
         
@@ -1416,7 +1452,6 @@
         if (navigator.clipboard && window.isSecureContext) {
             return navigator.clipboard.writeText(text);
         } else {
-            // Fallback
             return new Promise((resolve, reject) => {
                 const textArea = document.createElement('textarea');
                 textArea.value = text;
@@ -1459,9 +1494,7 @@
             button.className = 'smart-filter-btn';
             button.dataset.category = category;
             
-            const categoryHtml = containsArabic(category) 
-                ? renderBidiText(escapeHtml(category))
-                : renderBidiText(escapeHtml(category));
+            const categoryHtml = renderBidiText(escapeHtml(category));
             
             button.innerHTML = `${categoryHtml} <span class="filter-count-badge">${count}</span>`;
             button.onclick = () => {
@@ -1488,7 +1521,6 @@
             clearSearchBtn.classList.remove('show');
         }
         
-        // ⭐ Debounce 250ms
         clearTimeout(debounceTimer);
         debounceTimer = setTimeout(() => {
             searchTerm = value.trim();
@@ -1509,12 +1541,10 @@
     function applyFilters() {
         let filtered = products;
         
-        // Category filter
         if (currentCategory !== 'All') {
             filtered = filtered.filter(p => p.category === currentCategory);
         }
         
-        // ⭐ AND search (all terms must match somewhere in category or types)
         if (searchTerm) {
             const terms = searchTerm.toLowerCase().split(/\s+/).filter(t => t.length > 0);
             
@@ -1524,11 +1554,9 @@
                     product.types.join(' ')
                 ).toLowerCase();
                 
-                // AND logic: every term must be found
                 return terms.every(term => searchableText.includes(term));
             });
             
-            // ⭐ Sort by relevance
             filtered.sort((a, b) => {
                 const scoreA = calculateRelevanceScore(a, searchTerm);
                 const scoreB = calculateRelevanceScore(b, searchTerm);
@@ -1539,24 +1567,20 @@
         renderFilteredProducts(filtered);
     }
     
-    // ⭐ Calculate relevance score for sorting
     function calculateRelevanceScore(product, term) {
         let score = 0;
         const lowerTerm = term.toLowerCase();
         const category = product.category.toLowerCase();
         
-        // Category starts with term → high score
         if (category.startsWith(lowerTerm)) score += 100;
         else if (category.includes(lowerTerm)) score += 50;
         
-        // Type starts with term → high score
         product.types.forEach(type => {
             const t = type.toLowerCase();
             if (t.startsWith(lowerTerm)) score += 80;
             else if (t.includes(lowerTerm)) score += 40;
         });
         
-        // Multiple terms matching → bonus
         const terms = lowerTerm.split(/\s+/).filter(t => t.length > 0);
         if (terms.length > 1) {
             const searchable = (product.category + ' ' + product.types.join(' ')).toLowerCase();
@@ -1575,7 +1599,6 @@
         categoriesContainer.innerHTML = '';
         
         if (filtered.length === 0) {
-            // ⭐ Suggest alternatives
             const suggestions = getSearchSuggestions(searchTerm);
             let suggestionsHtml = '';
             if (suggestions.length > 0) {
@@ -1599,7 +1622,6 @@
             return;
         }
         
-        // Result count
         if (searchTerm || currentCategory !== 'All') {
             const totalTypes = filtered.reduce((sum, p) => sum + (p.types ? p.types.length : 0), 0);
             resultsCount.innerHTML = `تم العثور على <strong>${filtered.length}</strong> صنف و <strong>${totalTypes}</strong> نوع`;
@@ -1612,7 +1634,6 @@
         });
     }
     
-    // ⭐ Get search suggestions (similar words from categories/types)
     function getSearchSuggestions(term) {
         if (!term || term.length < 2) return [];
         
@@ -1625,7 +1646,6 @@
             p.types.forEach(t => allWords.add(t));
         });
         
-        // Find words that share first 2+ characters with the search term
         const prefix = lowerTerm.substring(0, Math.min(3, lowerTerm.length));
         
         allWords.forEach(word => {
@@ -1641,7 +1661,6 @@
         return [...suggestions].slice(0, 5);
     }
     
-    // ⭐ Apply suggestion from empty state
     function applySuggestion(term) {
         searchBox.value = term;
         searchTerm = term;
