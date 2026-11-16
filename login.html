@@ -30,20 +30,39 @@
             --border-radius: 12px;
             --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
             --transition: all 0.3s ease;
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --text-color: #333;
+            --text-muted: #777;
+            --border-light: #f0f0f0;
+        }
+        
+        /* Dark Mode Variables */
+        body.dark-mode {
+            --secondary-color: #0d1117;
+            --dark-color: #e6edf3;
+            --light-color: #161b22;
+            --bg-color: #0d1117;
+            --card-bg: #161b22;
+            --text-color: #e6edf3;
+            --text-muted: #8b949e;
+            --border-light: #30363d;
+            --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
         }
         
         * { box-sizing: border-box; margin: 0; padding: 0; }
         
         body {
             font-family: 'Tajawal', Arial, sans-serif;
-            background-color: #f8f9fa;
-            color: #333;
+            background-color: var(--bg-color);
+            color: var(--text-color);
             line-height: 1.6;
             overflow-x: hidden;
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
         
         ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-track { background: var(--border-light); }
         ::-webkit-scrollbar-thumb { background: var(--primary-color); border-radius: 4px; }
         ::-webkit-scrollbar-thumb:hover { background: #0a9d98; }
 
@@ -118,6 +137,42 @@
         
         .nav-logo span { color: var(--primary-color); }
         
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+        
+        .nav-stats {
+            color: #b0b0b0;
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .nav-stats i { color: var(--primary-color); }
+        
+        .dark-mode-toggle {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.95rem;
+            transition: var(--transition);
+        }
+        
+        .dark-mode-toggle:hover {
+            background: var(--primary-color);
+            transform: rotate(20deg);
+        }
+        
         main {
             padding: 2rem 1rem;
             max-width: 1400px;
@@ -155,6 +210,14 @@
             justify-content: center;
             white-space: nowrap;
             max-width: 100%;
+            direction: rtl;
+            unicode-bidi: plaintext;
+        }
+
+        body.dark-mode .smart-filter-btn {
+            background: #21262d;
+            color: #c9d1d9;
+            border-color: #30363d;
         }
 
         .smart-filter-btn:hover {
@@ -163,6 +226,11 @@
             transform: translateY(-2px);
             box-shadow: 0 5px 12px rgba(11, 181, 176, 0.15);
             border-color: rgba(11, 181, 176, 0.2);
+        }
+        
+        body.dark-mode .smart-filter-btn:hover {
+            background: #30363d;
+            color: var(--primary-color);
         }
 
         .smart-filter-btn.active {
@@ -177,6 +245,27 @@
         .smart-filter-btn.all-btn { background: #6c757d; color: white; }
         .smart-filter-btn.all-btn:hover { background: #5a6268; color: white; }
         .smart-filter-btn.all-btn.active { background: linear-gradient(135deg, #495057, #343a40); color: white; }
+
+        /* Filter count badge */
+        .filter-count-badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.25);
+            color: inherit;
+            font-size: 0.7rem;
+            font-weight: 700;
+            min-width: 20px;
+            height: 18px;
+            padding: 0 5px;
+            border-radius: 9px;
+            margin-right: 0.3rem;
+        }
+        
+        .smart-filter-btn:not(.active) .filter-count-badge {
+            background: rgba(11, 181, 176, 0.15);
+            color: var(--primary-color);
+        }
 
         @media (max-width: 768px) {
             .smart-filter-buttons { gap: 0.5rem; padding: 0.5rem; margin: 0.8rem auto; }
@@ -211,28 +300,68 @@
         .smart-filter-btn:nth-child(6) { animation-delay: 0.3s; }
 
         /* Search */
+        .search-wrapper {
+            position: relative;
+            max-width: 500px;
+            margin: 1rem auto;
+            padding: 0 1rem;
+        }
+        
         #search-box {
             width: 100%;
-            max-width: 400px;
-            margin: 1rem auto;
-            padding: 0.8rem 1.2rem;
+            padding: 0.8rem 1.2rem 0.8rem 2.5rem;
             font-size: 1rem;
-            background-color: rgba(255, 255, 255, 0.9);
+            background-color: rgba(255, 255, 255, 0.95);
             color: var(--dark-color);
-            border: 1px solid #ddd;
+            border: 2px solid transparent;
             border-radius: 50px;
             outline: none;
             transition: var(--transition);
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
             display: block;
+            font-family: 'Tajawal', sans-serif;
+            direction: rtl;
         }
         
         #search-box:focus {
             border-color: var(--primary-color);
-            box-shadow: 0 0 0 3px rgba(11, 181, 176, 0.2);
+            box-shadow: 0 0 0 4px rgba(11, 181, 176, 0.2);
         }
         
         #search-box::placeholder { color: #999; }
+        
+        .clear-search {
+            position: absolute;
+            left: 1.8rem;
+            top: 50%;
+            transform: translateY(-50%);
+            background: #ddd;
+            border: none;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-size: 0.75rem;
+            transition: var(--transition);
+        }
+        
+        .clear-search:hover { background: var(--danger-color); color: white; }
+        .clear-search.show { display: flex; }
+        
+        /* Results count */
+        .results-count {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            padding: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .results-count strong { color: var(--primary-color); }
         
         /* Products Container */
         .products-container {
@@ -242,9 +371,9 @@
             padding: 1rem;
         }
         
-        /* NEW Product Card - Category + Price boxes + Types chips */
+        /* Product Card */
         .product {
-            background-color: white;
+            background-color: var(--card-bg);
             border-radius: var(--border-radius);
             overflow: hidden;
             box-shadow: var(--box-shadow);
@@ -268,7 +397,38 @@
             flex-grow: 1;
         }
         
-        /* Category box - separate box */
+        /* Copy button (top-right) */
+        .copy-card-btn {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: rgba(11, 181, 176, 0.1);
+            border: none;
+            color: var(--primary-color);
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.85rem;
+            transition: var(--transition);
+            z-index: 5;
+        }
+        
+        .copy-card-btn:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: scale(1.1);
+        }
+        
+        .copy-card-btn.copied {
+            background: var(--success-color);
+            color: white;
+        }
+        
+        /* Category box */
         .category-box {
             background: linear-gradient(135deg, #e8f4f8, #d4ecf3);
             border-right: 4px solid var(--primary-color);
@@ -277,16 +437,22 @@
             display: flex;
             align-items: center;
             gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+        
+        body.dark-mode .category-box {
+            background: linear-gradient(135deg, #1e3a5f, #243b53);
         }
         
         .category-box i {
             color: var(--primary-color);
             font-size: 1rem;
+            flex-shrink: 0;
         }
         
         .category-box .category-label {
             font-size: 0.75rem;
-            color: #666;
+            color: var(--text-muted);
             font-weight: 500;
         }
         
@@ -294,9 +460,12 @@
             font-size: 1.05rem;
             color: var(--primary-color);
             font-weight: 700;
+            direction: rtl;
+            unicode-bidi: plaintext;
+            text-align: right;
         }
         
-        /* Types section - separate chips */
+        /* Types section */
         .types-section {
             display: flex;
             flex-direction: column;
@@ -306,16 +475,14 @@
         .types-label {
             font-size: 0.85rem;
             font-weight: 600;
-            color: #555;
+            color: var(--text-muted);
             display: flex;
             align-items: center;
             gap: 0.4rem;
             margin-bottom: 0.2rem;
         }
         
-        .types-label i {
-            color: var(--primary-color);
-        }
+        .types-label i { color: var(--primary-color); }
         
         .types-grid {
             display: flex;
@@ -323,6 +490,7 @@
             gap: 0.5rem;
         }
         
+        /* Type chips */
         .type-chip {
             display: inline-flex;
             align-items: center;
@@ -337,6 +505,22 @@
             transition: all 0.25s ease;
             cursor: default;
             font-family: 'Tajawal', sans-serif;
+            direction: ltr;
+            unicode-bidi: plaintext;
+            text-align: left;
+            max-width: 100%;
+            word-break: break-word;
+        }
+        
+        body.dark-mode .type-chip {
+            background: linear-gradient(135deg, #21262d, #30363d);
+            color: #c9d1d9;
+            border-color: #30363d;
+        }
+        
+        .type-chip.rtl {
+            direction: rtl;
+            text-align: right;
         }
         
         .type-chip::before {
@@ -355,11 +539,9 @@
             box-shadow: 0 4px 10px rgba(11, 181, 176, 0.3);
         }
         
-        .type-chip:hover::before {
-            color: white;
-        }
+        .type-chip:hover::before { color: white; }
         
-        /* Price box - separate box, prominent */
+        /* Price box */
         .price-box {
             background: linear-gradient(135deg, #d4f5e9, #a8e6cf);
             border: 2px solid var(--success-color);
@@ -373,6 +555,10 @@
             margin-top: auto;
         }
         
+        body.dark-mode .price-box {
+            background: linear-gradient(135deg, #1a4d3a, #0e3d28);
+        }
+        
         .price-box i {
             color: var(--success-color);
             font-size: 1.2rem;
@@ -384,21 +570,33 @@
             font-weight: 600;
         }
         
+        body.dark-mode .price-box .price-label { color: #7ee0b3; }
+        
         .price-box .price-value {
             font-size: 1.4rem;
             font-weight: 900;
             color: #1a6d4e;
             direction: ltr;
+            unicode-bidi: embed;
         }
+        
+        body.dark-mode .price-box .price-value { color: #7ee0b3; }
         
         .price-box.unavailable {
             background: linear-gradient(135deg, #fadbd8, #f5b7b1);
             border-color: var(--danger-color);
         }
         
+        body.dark-mode .price-box.unavailable {
+            background: linear-gradient(135deg, #5a1e1e, #4a1515);
+        }
+        
         .price-box.unavailable i { color: var(--danger-color); }
         .price-box.unavailable .price-value { color: #922b21; font-size: 1.15rem; }
         .price-box.unavailable .price-label { color: #922b21; }
+        
+        body.dark-mode .price-box.unavailable .price-value,
+        body.dark-mode .price-box.unavailable .price-label { color: #f5b7b1; }
         
         /* Scroll Button */
         .scroll-btn {
@@ -406,6 +604,14 @@
             bottom: 30px;
             right: 30px;
             z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .scroll-btn.visible {
+            opacity: 1;
+            visibility: visible;
         }
         
         .scroll-btn button {
@@ -469,21 +675,27 @@
             position: fixed;
             bottom: 20px;
             left: 50%;
-            transform: translateX(-50%);
+            transform: translateX(-50%) translateY(100px);
             background-color: var(--success-color);
             color: white;
             padding: 0.8rem 1.5rem;
             border-radius: 50px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-            z-index: 999;
+            z-index: 1000;
             opacity: 0;
-            transition: opacity 0.3s ease;
+            transition: all 0.3s ease;
             display: flex;
             align-items: center;
+            gap: 0.5rem;
+            max-width: 90%;
         }
         
-        .notification.show { opacity: 1; }
-        .notification i { margin-left: 0.5rem; }
+        .notification.show {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+        }
+        
+        .notification.error { background-color: var(--danger-color); }
         
         /* Toggle Files */
         .toggle-files-container {
@@ -533,7 +745,7 @@
             top: 100%;
             right: 0;
             width: 100%;
-            background-color: white;
+            background-color: var(--card-bg);
             border-radius: var(--border-radius);
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
             margin-top: 8px;
@@ -558,10 +770,10 @@
             width: 100%;
             padding: 0.9rem 1.2rem;
             text-align: right;
-            background-color: white;
-            color: var(--dark-color);
+            background-color: var(--card-bg);
+            color: var(--text-color);
             border: none;
-            border-bottom: 1px solid #f0f0f0;
+            border-bottom: 1px solid var(--border-light);
             cursor: pointer;
             transition: var(--transition);
             font-family: 'Tajawal', Arial, sans-serif;
@@ -571,7 +783,7 @@
 
         .file-option:last-child { border-bottom: none; }
         .file-option:hover {
-            background-color: #f8f9fa;
+            background-color: var(--light-color);
             color: var(--primary-color);
             padding-right: 1.5rem;
         }
@@ -585,6 +797,29 @@
             color: white;
         }
         .file-option i { width: 20px; text-align: center; }
+
+        /* ===== زر القائمة المعطل ===== */
+        .file-option:disabled,
+        .file-option.disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            pointer-events: none;
+            background-color: #f5f5f5;
+            color: #999;
+        }
+
+        .file-option:disabled:hover,
+        .file-option.disabled:hover {
+            background-color: #f5f5f5;
+            padding-right: 1.2rem;
+            color: #999;
+        }
+
+        body.dark-mode .file-option:disabled,
+        body.dark-mode .file-option.disabled {
+            background-color: #0d1117;
+            color: #555;
+        }
 
         .files-menu-overlay {
             position: fixed;
@@ -605,12 +840,20 @@
             header h1 { font-size: 1.5rem; }
         }
 
-        /* Search Highlight */
+        /* ⭐ SEARCH HIGHLIGHT - Enhanced for Bidi */
         .search-highlight {
             background-color: #ffeb3b;
             color: #000;
-            padding: 2px 4px;
+            padding: 1px 3px;
             border-radius: 3px;
+            font-weight: 700;
+            box-shadow: 0 1px 3px rgba(255, 235, 59, 0.5);
+            display: inline;
+        }
+        
+        body.dark-mode .search-highlight {
+            background-color: #ffd700;
+            color: #000;
         }
         
         .fade-in { animation: fadeIn 0.5s ease forwards; }
@@ -618,22 +861,91 @@
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
+        
+        /* Empty state */
+        .empty-state {
+            grid-column: 1/-1;
+            text-align: center;
+            padding: 3rem 1rem;
+            color: var(--text-muted);
+        }
+        
+        .empty-state i {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+            color: #ddd;
+        }
+        
+        .empty-state p {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-muted);
+        }
+        
+        .empty-state small {
+            font-size: 0.9rem;
+        }
+        
+        /* Suggestion chip */
+        .suggestion-btn {
+            display: inline-block;
+            margin: 0.5rem 0.3rem;
+            padding: 0.5rem 1rem;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            font-family: 'Tajawal', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+        
+        .suggestion-btn:hover {
+            background: #0a9d98;
+            transform: translateY(-2px);
+        }
+        
+        /* Skeleton loading */
+        .skeleton {
+            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+            background-size: 200% 100%;
+            animation: shimmer 1.5s infinite;
+            border-radius: 8px;
+        }
+        
+        body.dark-mode .skeleton {
+            background: linear-gradient(90deg, #21262d 25%, #30363d 50%, #21262d 75%);
+        }
+        
+        @keyframes shimmer {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
     </style>
 </head>
 <body>
     
-    <!-- Loading Screen -->
     <div id="loading-screen">
         <div class="loader"></div>
         <div class="loading-text">جاري التحميل...</div>
     </div>
     
-    <!-- Nav -->
     <div class="nav-container">
         <a href="#" class="nav-logo">Shehadeh <span>Center</span></a>
+        <div class="nav-right">
+            <div class="nav-stats" id="nav-stats">
+                <i class="fas fa-boxes"></i>
+                <span id="stats-text">-- صنف</span>
+            </div>
+            <button class="dark-mode-toggle" id="dark-mode-toggle" title="الوضع الليلي">
+                <i class="fas fa-moon"></i>
+            </button>
+        </div>
     </div>
 
-    <!-- Header -->
     <header>
         <div class="logo-container">
             <img src="https://res.cloudinary.com/dygc5b8cn/image/upload/v1768501375/smzshfxxouffjvgrrdnq.jpg" alt="Logo" class="logo-img">
@@ -651,14 +963,20 @@
         
         <div class="smart-filter-buttons" id="smart-filter-buttons"></div>
         
-        <input type="text" id="search-box" placeholder="🔍 ابحث عن فئة أو نوع...">
+        <div class="search-wrapper">
+            <input type="text" id="search-box" placeholder="🔍 ابحث عن فئة أو نوع...">
+            <button class="clear-search" id="clear-search" title="مسح البحث">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
     </header>
     
     <main>
+        <div class="results-count" id="results-count"></div>
         <div id="categories" class="products-container"></div>
     </main>
     
-    <div class="scroll-btn">
+    <div class="scroll-btn" id="scroll-btn-container">
         <button id="scrollUp" title="الصعود للأعلى">
             <i class="fas fa-arrow-up"></i>
         </button>
@@ -670,37 +988,90 @@
     </div>
 
 <script>
-    // DOM
+    // ============ DOM ============
     const categoriesContainer = document.getElementById('categories');
     const searchBox = document.getElementById('search-box');
+    const clearSearchBtn = document.getElementById('clear-search');
     const notification = document.getElementById('notification');
     const notificationText = document.getElementById('notification-text');
     const scrollUpButton = document.getElementById('scrollUp');
+    const scrollBtnContainer = document.getElementById('scroll-btn-container');
     const toggleFilesBtn = document.getElementById('toggle-files-btn');
     const filesMenu = document.getElementById('files-menu');
     const currentFileLabel = document.getElementById('current-file-label');
     const filterContainer = document.getElementById('smart-filter-buttons');
+    const resultsCount = document.getElementById('results-count');
+    const statsText = document.getElementById('stats-text');
+    const darkModeToggle = document.getElementById('dark-mode-toggle');
 
-    // State
+    // ============ STATE ============
     let products = [];
+    let currentCategory = 'All';
+    let searchTerm = '';
     let filesMenuOverlay;
+    let debounceTimer = null;
 
-    // Files
+    // ============================================================
+    // ⭐⭐ التحكم بالأزرار — عدّل enabled فقط: true = مفعل / false = معطل
+    // ============================================================
     const fileButtons = [
-        { label: 'أسعار الأجهزة', fileName: 'test.md', icon: 'fas fa-mobile-alt' },
-        { label: 'أسعار الشاشات', fileName: 'lcd.md', icon: 'fas fa-tv' },
-        { label: 'أسعار الاكسسوارات', fileName: 'abc.md', icon: 'fas fa-headphones' },
-        { label: 'أسعار معدات الصيانة', fileName: 'tools.md', icon: 'fas fa-tools' },
-        { label: 'أسعار قطع صيانة', fileName: 'flex.md', icon: 'fas fa-microchip' },
-        { label: 'أسعار البطاريات', fileName: 'batteries.md', icon: 'fas fa-car-battery' }
+        { label: 'أسعار الأجهزة',        fileName: 'test.md',      icon: 'fas fa-mobile-alt',  enabled: true  },
+        { label: 'أسعار الشاشات',        fileName: 'lcd.md',       icon: 'fas fa-tv',          enabled: true  },
+        { label: 'أسعار الاكسسوارات',    fileName: 'abc.md',       icon: 'fas fa-headphones',  enabled: true  },
+        { label: 'أسعار معدات الصيانة',  fileName: 'tools.md',     icon: 'fas fa-tools',       enabled: true  },
+        { label: 'أسعار قطع صيانة',      fileName: 'flex.md',      icon: 'fas fa-microchip',   enabled: true  },
+        { label: 'أسعار البطاريات',      fileName: 'batteries.md', icon: 'fas fa-car-battery', enabled: true  }
     ];
+    // ============================================================
 
-    // Init
+    // ============ INIT ============
     function init() {
+        // Load dark mode preference
+        loadDarkMode();
+        
         createFileButtons();
-        loadProductsFromFile('test.md');
+        
+        // ⭐ Load last selected file from localStorage
+        let savedFile = localStorage.getItem('lastFile') || 'test.md';
+        const savedFileLabel = localStorage.getItem('lastFileLabel');
+        
+        // 🛡️ إذا كان الملف المحفوظ معطلاً، اختر أول ملف مفعل
+        const savedConfig = fileButtons.find(f => f.fileName === savedFile);
+        if (savedConfig && savedConfig.enabled === false) {
+            const firstEnabled = fileButtons.find(f => f.enabled !== false);
+            savedFile = firstEnabled ? firstEnabled.fileName : fileButtons[0].fileName;
+        }
+        
+        if (savedFileLabel) {
+            const labelConfig = fileButtons.find(f => f.fileName === savedFile);
+            if (labelConfig) currentFileLabel.textContent = labelConfig.label;
+        }
+        
+        // Mark active file option
+        setTimeout(() => {
+            document.querySelectorAll('.file-option').forEach(opt => {
+                opt.classList.remove('active');
+                if (opt.dataset.fileName === savedFile) {
+                    opt.classList.add('active');
+                }
+            });
+        }, 100);
+        
+        loadProductsFromFile(savedFile);
+        
+        // Events
         scrollUpButton.addEventListener('click', scrollToTop);
-        searchBox.addEventListener('input', handleSearch);
+        searchBox.addEventListener('input', handleSearchInput);
+        clearSearchBtn.addEventListener('click', clearSearch);
+        darkModeToggle.addEventListener('click', toggleDarkMode);
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                scrollBtnContainer.classList.add('visible');
+            } else {
+                scrollBtnContainer.classList.remove('visible');
+            }
+        });
         
         setTimeout(() => {
             const loadingScreen = document.getElementById('loading-screen');
@@ -711,7 +1082,27 @@
         }, 0);
     }
 
-    // File Buttons
+    // ============ DARK MODE ============
+    function toggleDarkMode() {
+        document.body.classList.toggle('dark-mode');
+        const isDark = document.body.classList.contains('dark-mode');
+        localStorage.setItem('darkMode', isDark ? 'true' : 'false');
+        darkModeToggle.innerHTML = isDark 
+            ? '<i class="fas fa-sun"></i>' 
+            : '<i class="fas fa-moon"></i>';
+        darkModeToggle.title = isDark ? 'الوضع النهاري' : 'الوضع الليلي';
+    }
+    
+    function loadDarkMode() {
+        const isDark = localStorage.getItem('darkMode') === 'true';
+        if (isDark) {
+            document.body.classList.add('dark-mode');
+            darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+            darkModeToggle.title = 'الوضع النهاري';
+        }
+    }
+
+    // ============ FILE BUTTONS ============
     function createFileButtons() {
         filesMenuOverlay = document.createElement('div');
         filesMenuOverlay.className = 'files-menu-overlay';
@@ -724,29 +1115,35 @@
         
         filesMenuOverlay.addEventListener('click', closeFilesMenu);
         
-        fileButtons.forEach((buttonInfo, index) => {
+        fileButtons.forEach((buttonInfo) => {
             const option = document.createElement('button');
             option.className = 'file-option';
+            option.dataset.fileName = buttonInfo.fileName;
             option.innerHTML = `<i class="${buttonInfo.icon}"></i> <span>${buttonInfo.label}</span>`;
             
-            if (index === 0) option.classList.add('active');
-            
-            option.onclick = (e) => {
-                e.stopPropagation();
-                updateSelectedFile(buttonInfo.label, buttonInfo.fileName);
-                document.querySelectorAll('.file-option').forEach(opt => opt.classList.remove('active'));
-                option.classList.add('active');
-                loadProductsFromFile(buttonInfo.fileName);
-                closeFilesMenu();
-            };
+            // ✅ التحكم بالتفعيل/التعطيل من enabled
+            if (buttonInfo.enabled === false) {
+                option.disabled = true;
+                option.classList.add('disabled');
+                option.title = 'غير متوفر حالياً';
+                option.innerHTML += ' <span style="color:#999; font-size:0.72rem; margin-right:auto;">(قريباً)</span>';
+            } else {
+                option.onclick = (e) => {
+                    e.stopPropagation();
+                    updateSelectedFile(buttonInfo.label, buttonInfo.fileName);
+                    document.querySelectorAll('.file-option').forEach(opt => opt.classList.remove('active'));
+                    option.classList.add('active');
+                    loadProductsFromFile(buttonInfo.fileName);
+                    closeFilesMenu();
+                };
+            }
             
             filesMenu.appendChild(option);
         });
     }
     
     function toggleFilesMenu() {
-        const isOpen = filesMenu.classList.contains('show');
-        if (isOpen) closeFilesMenu();
+        if (filesMenu.classList.contains('show')) closeFilesMenu();
         else openFilesMenu();
     }
 
@@ -762,96 +1159,224 @@
         filesMenuOverlay.classList.remove('show');
     }
 
-    function updateSelectedFile(label) {
-        currentFileLabel.textContent = label;
+    function updateSelectedFile(label, fileName) {
         currentFileLabel.style.opacity = '0.5';
         setTimeout(() => {
+            currentFileLabel.textContent = label;
             currentFileLabel.style.opacity = '1';
         }, 150);
+        
+        // ⭐ Save to localStorage
+        localStorage.setItem('lastFile', fileName);
+        localStorage.setItem('lastFileLabel', label);
     }
     
-    // ========= NEW PARSER for: category / type1 - type2 - type3 / price =========
+    // ============ LOAD PRODUCTS ============
     function loadProductsFromFile(fileName) {
+        // 🛡️ حماية: منع تحميل الملفات المعطلة
+        const fileConfig = fileButtons.find(f => f.fileName === fileName);
+        if (fileConfig && fileConfig.enabled === false) {
+            showNotification('هذا الملف غير متوفر حالياً', true);
+            return;
+        }
+        
         const originalLabel = currentFileLabel.textContent;
         currentFileLabel.textContent = 'جاري التحميل...';
         toggleFilesBtn.disabled = true;
         
+        currentCategory = 'All';
+        searchTerm = '';
+        searchBox.value = '';
+        clearSearchBtn.classList.remove('show');
+        
+        // Show skeleton
+        showSkeleton();
+        
         fetch(fileName)
-            .then(response => response.text())
+            .then(response => {
+                if (!response.ok) throw new Error('File not found');
+                return response.text();
+            })
             .then(data => {
-                products = [];
-                const lines = data.split('\n');
-                
-                lines.forEach(rawLine => {
-                    const line = rawLine.trim();
-                    if (!line || line.startsWith('#')) return; // skip empty/comments
-                    
-                    // Split by "/"
-                    const parts = line.split('/').map(p => p.trim()).filter(p => p !== '');
-                    if (parts.length < 2) return;
-                    
-                    const category = parts[0];
-                    const typesRaw = parts[1];
-                    const priceStr = parts[2] || '';
-                    
-                    // Split types by "-" or "|" or ","
-                    const types = typesRaw
-                        .split(/[-|,]/)
-                        .map(t => t.trim())
-                        .filter(t => t.length > 0);
-                    
-                    const price = priceStr === '' ? NaN : parseFloat(priceStr);
-                    
-                    products.push({
-                        category,
-                        types,
-                        price: isNaN(price) ? NaN : price
-                    });
-                });
-                
-                renderProducts();
+                products = parseProducts(data);
                 createFilterButtons();
+                applyFilters();
+                updateStats();
                 
                 const selectedFile = fileButtons.find(f => f.fileName === fileName);
                 if (selectedFile) currentFileLabel.textContent = selectedFile.label;
                 toggleFilesBtn.disabled = false;
                 
-                showNotification(`تم تحميل ${products.length} صنف`);
+                showNotification(`تم تحميل ${products.length} صنف بنجاح ✓`);
             })
             .catch(error => {
-                console.error('Error loading products:', error);
+                console.error('Error:', error);
                 currentFileLabel.textContent = originalLabel;
                 toggleFilesBtn.disabled = false;
-                showNotification('حدث خطأ في تحميل الملف');
+                showNotification('حدث خطأ في تحميل الملف', true);
+                categoriesContainer.innerHTML = `
+                    <div class="empty-state">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <p>تعذر تحميل الملف</p>
+                        <small>تأكد من وجود الملف: ${fileName}</small>
+                    </div>
+                `;
             });
     }
     
-    // ========= Product Card (no images) =========
-    function createProductElement(product, searchTerm = '') {
+    function showSkeleton() {
+        categoriesContainer.innerHTML = `
+            <div class="product" style="border-top-color: #ddd; opacity: 0.7;">
+                <div class="product-content">
+                    <div class="skeleton" style="height: 40px;"></div>
+                    <div class="skeleton" style="height: 30px; width: 60%;"></div>
+                    <div class="skeleton" style="height: 60px;"></div>
+                </div>
+            </div>
+            <div class="product" style="border-top-color: #ddd; opacity: 0.7;">
+                <div class="product-content">
+                    <div class="skeleton" style="height: 40px;"></div>
+                    <div class="skeleton" style="height: 30px; width: 60%;"></div>
+                    <div class="skeleton" style="height: 60px;"></div>
+                </div>
+            </div>
+            <div class="product" style="border-top-color: #ddd; opacity: 0.7;">
+                <div class="product-content">
+                    <div class="skeleton" style="height: 40px;"></div>
+                    <div class="skeleton" style="height: 30px; width: 60%;"></div>
+                    <div class="skeleton" style="height: 60px;"></div>
+                </div>
+            </div>
+        `;
+    }
+    
+    // ============ PARSER ============
+    function parseProducts(data) {
+        const result = [];
+        const lines = data.split('\n');
+        
+        lines.forEach(rawLine => {
+            const line = rawLine.trim();
+            if (!line || line.startsWith('#')) return;
+            
+            const parts = line.split('/');
+            if (parts.length < 2) return;
+            
+            const category = parts[0].trim();
+            const typesRaw = parts[1].trim();
+            const priceStr = parts.length >= 3 ? parts[2].trim() : '';
+            
+            if (!category || !typesRaw) return;
+            
+            const types = typesRaw
+                .split(/\s*[-|,]\s*/)
+                .map(t => t.trim())
+                .filter(t => t.length > 0);
+            
+            const price = priceStr === '' ? NaN : parseFloat(priceStr);
+            
+            result.push({
+                category,
+                types,
+                price: isNaN(price) ? NaN : price
+            });
+        });
+        
+        return result;
+    }
+    
+    // ============ BIDI HANDLING ============
+    function containsArabic(str) {
+        return /[\u0600-\u06FF\u0750-\u077F\u08A0-\u08FF]/.test(str);
+    }
+    
+    function renderBidiText(text) {
+        const hasArabic = containsArabic(text);
+        const hasLatin = /[A-Za-z]/.test(text);
+        
+        if (hasArabic && hasLatin) {
+            return `<span dir="rtl" style="unicode-bidi: plaintext; display: inline-block;">${text}</span>`;
+        }
+        if (hasLatin && !hasArabic) {
+            return `<span dir="ltr" style="unicode-bidi: plaintext; display: inline-block; text-align: left;">${text}</span>`;
+        }
+        return `<span dir="rtl" style="unicode-bidi: plaintext; display: inline-block;">${text}</span>`;
+    }
+    
+    // ============ ⭐ BIDI-SAFE HIGHLIGHT ============
+    function renderHighlightedText(text, searchTerm) {
+        if (!searchTerm || !text) {
+            return escapeHtml(text || '');
+        }
+        
+        const terms = searchTerm.toLowerCase().split(/\s+/).filter(t => t.length > 0);
+        if (terms.length === 0) return escapeHtml(text);
+        
+        const escaped = escapeHtml(text);
+        
+        const sortedTerms = [...terms].sort((a, b) => b.length - a.length);
+        const pattern = sortedTerms.map(escapeRegExp).join('|');
+        
+        if (!pattern) return escaped;
+        
+        const regex = new RegExp(`(${pattern})`, 'gi');
+        const highlighted = escaped.replace(regex, '<mark class="search-highlight">$1</mark>');
+        
+        return renderBidiTextWithMark(highlighted, text);
+    }
+    
+    function renderBidiTextWithMark(highlightedHtml, originalText) {
+        const hasArabic = containsArabic(originalText);
+        const hasLatin = /[A-Za-z]/.test(originalText);
+        
+        if (hasArabic && hasLatin) {
+            return `<span dir="rtl" style="unicode-bidi: plaintext; display: inline-block;">${highlightedHtml}</span>`;
+        }
+        if (hasLatin && !hasArabic) {
+            return `<span dir="ltr" style="unicode-bidi: plaintext; display: inline-block; text-align: left;">${highlightedHtml}</span>`;
+        }
+        return `<span dir="rtl" style="unicode-bidi: plaintext; display: inline-block;">${highlightedHtml}</span>`;
+    }
+    
+    // ============ PRODUCT CARD ============
+    function createProductElement(product) {
         const productDiv = document.createElement('div');
         productDiv.className = 'product fade-in';
+        
+        const copyBtn = document.createElement('button');
+        copyBtn.className = 'copy-card-btn';
+        copyBtn.innerHTML = '<i class="fas fa-copy"></i>';
+        copyBtn.title = 'نسخ بيانات الصنف';
+        copyBtn.onclick = (e) => {
+            e.stopPropagation();
+            copyProductToClipboard(product, copyBtn);
+        };
+        productDiv.appendChild(copyBtn);
         
         const content = document.createElement('div');
         content.className = 'product-content';
         
-        // === Category Box (separate) ===
         const categoryBox = document.createElement('div');
         categoryBox.className = 'category-box';
+        
+        const categoryHtml = searchTerm 
+            ? renderHighlightedText(product.category, searchTerm)
+            : renderBidiText(escapeHtml(product.category));
+        
         categoryBox.innerHTML = `
             <i class="fas fa-tag"></i>
             <span class="category-label">الفئة:</span>
-            <span class="category-value">${escapeHtml(product.category)}</span>
+            <span class="category-value">${categoryHtml}</span>
         `;
         content.appendChild(categoryBox);
         
-        // === Types Section (separate chips) ===
         if (product.types && product.types.length > 0) {
             const typesSection = document.createElement('div');
             typesSection.className = 'types-section';
             
             const typesLabel = document.createElement('div');
             typesLabel.className = 'types-label';
-            typesLabel.innerHTML = `<i class="fas fa-layer-group"></i> الأنواع المتوفرة:`;
+            typesLabel.innerHTML = `<i class="fas fa-layer-group"></i> الأنواع المتوافقة (${product.types.length}):`;
             typesSection.appendChild(typesLabel);
             
             const typesGrid = document.createElement('div');
@@ -860,7 +1385,16 @@
             product.types.forEach(type => {
                 const chip = document.createElement('span');
                 chip.className = 'type-chip';
-                chip.textContent = type;
+                
+                if (containsArabic(type)) {
+                    chip.classList.add('rtl');
+                }
+                
+                const typeHtml = searchTerm 
+                    ? renderHighlightedText(type, searchTerm)
+                    : renderBidiText(escapeHtml(type));
+                
+                chip.innerHTML = typeHtml;
                 typesGrid.appendChild(chip);
             });
             
@@ -868,7 +1402,6 @@
             content.appendChild(typesSection);
         }
         
-        // === Price Box (separate, prominent) ===
         const priceBox = document.createElement('div');
         priceBox.className = 'price-box' + (isNaN(product.price) ? ' unavailable' : '');
         
@@ -892,27 +1425,82 @@
         return productDiv;
     }
     
-    // ========= Filter Buttons =========
+    // ⭐ Copy product to clipboard
+    function copyProductToClipboard(product, btn) {
+        const priceText = isNaN(product.price) ? 'غير متوفر' : `${product.price.toFixed(2)} ₪`;
+        const textToCopy = 
+`📱 الفئة: ${product.category}
+📦 الأنواع (${product.types.length}): ${product.types.join(' - ')}
+💰 السعر: ${priceText}
+🏪 Shehadeh Center`;
+        
+        copyText(textToCopy).then(() => {
+            btn.classList.add('copied');
+            btn.innerHTML = '<i class="fas fa-check"></i>';
+            showNotification('تم نسخ بيانات الصنف ✓');
+            
+            setTimeout(() => {
+                btn.classList.remove('copied');
+                btn.innerHTML = '<i class="fas fa-copy"></i>';
+            }, 2000);
+        }).catch(() => {
+            showNotification('فشل النسخ', true);
+        });
+    }
+    
+    function copyText(text) {
+        if (navigator.clipboard && window.isSecureContext) {
+            return navigator.clipboard.writeText(text);
+        } else {
+            return new Promise((resolve, reject) => {
+                const textArea = document.createElement('textarea');
+                textArea.value = text;
+                textArea.style.position = 'fixed';
+                textArea.style.left = '-9999px';
+                document.body.appendChild(textArea);
+                textArea.focus();
+                textArea.select();
+                try {
+                    document.execCommand('copy');
+                    document.body.removeChild(textArea);
+                    resolve();
+                } catch (err) {
+                    document.body.removeChild(textArea);
+                    reject(err);
+                }
+            });
+        }
+    }
+    
+    // ============ FILTER (with counts) ============
     function createFilterButtons() {
         filterContainer.innerHTML = '';
         
         const allButton = document.createElement('button');
         allButton.className = 'smart-filter-btn all-btn active';
-        allButton.textContent = 'الكل';
-        allButton.onclick = (e) => {
-            filterProducts('All');
-            setActiveFilterButton(e.target);
+        allButton.dataset.category = 'All';
+        allButton.innerHTML = `الكل <span class="filter-count-badge">${products.length}</span>`;
+        allButton.onclick = () => {
+            currentCategory = 'All';
+            applyFilters();
+            setActiveFilterButton(allButton);
         };
         filterContainer.appendChild(allButton);
         
         const categories = [...new Set(products.map(p => p.category))];
         categories.forEach(category => {
+            const count = products.filter(p => p.category === category).length;
             const button = document.createElement('button');
             button.className = 'smart-filter-btn';
-            button.textContent = category;
-            button.onclick = (e) => {
-                filterProducts(category);
-                setActiveFilterButton(e.target);
+            button.dataset.category = category;
+            
+            const categoryHtml = renderBidiText(escapeHtml(category));
+            
+            button.innerHTML = `${categoryHtml} <span class="filter-count-badge">${count}</span>`;
+            button.onclick = () => {
+                currentCategory = category;
+                applyFilters();
+                setActiveFilterButton(button);
             };
             filterContainer.appendChild(button);
         });
@@ -922,61 +1510,173 @@
         document.querySelectorAll('.smart-filter-btn').forEach(btn => btn.classList.remove('active'));
         activeBtn.classList.add('active');
     }
-
-    function filterProducts(category) {
-        const filtered = category === 'All' 
-            ? products 
-            : products.filter(p => p.category === category);
+    
+    // ============ SEARCH (with debounce) ============
+    function handleSearchInput() {
+        const value = searchBox.value;
+        
+        if (value.length > 0) {
+            clearSearchBtn.classList.add('show');
+        } else {
+            clearSearchBtn.classList.remove('show');
+        }
+        
+        clearTimeout(debounceTimer);
+        debounceTimer = setTimeout(() => {
+            searchTerm = value.trim();
+            applyFilters();
+        }, 250);
+    }
+    
+    function clearSearch() {
+        searchBox.value = '';
+        searchTerm = '';
+        clearSearchBtn.classList.remove('show');
+        clearTimeout(debounceTimer);
+        applyFilters();
+        searchBox.focus();
+    }
+    
+    // ============ ⭐ AND LOGIC SEARCH + SORTING ============
+    function applyFilters() {
+        let filtered = products;
+        
+        if (currentCategory !== 'All') {
+            filtered = filtered.filter(p => p.category === currentCategory);
+        }
+        
+        if (searchTerm) {
+            const terms = searchTerm.toLowerCase().split(/\s+/).filter(t => t.length > 0);
+            
+            filtered = filtered.filter(product => {
+                const searchableText = (
+                    product.category + ' ' + 
+                    product.types.join(' ')
+                ).toLowerCase();
+                
+                return terms.every(term => searchableText.includes(term));
+            });
+            
+            filtered.sort((a, b) => {
+                const scoreA = calculateRelevanceScore(a, searchTerm);
+                const scoreB = calculateRelevanceScore(b, searchTerm);
+                return scoreB - scoreA;
+            });
+        }
+        
         renderFilteredProducts(filtered);
     }
     
-    function renderProducts() {
-        categoriesContainer.innerHTML = '';
-        products.forEach(product => {
-            categoriesContainer.appendChild(createProductElement(product));
+    function calculateRelevanceScore(product, term) {
+        let score = 0;
+        const lowerTerm = term.toLowerCase();
+        const category = product.category.toLowerCase();
+        
+        if (category.startsWith(lowerTerm)) score += 100;
+        else if (category.includes(lowerTerm)) score += 50;
+        
+        product.types.forEach(type => {
+            const t = type.toLowerCase();
+            if (t.startsWith(lowerTerm)) score += 80;
+            else if (t.includes(lowerTerm)) score += 40;
         });
+        
+        const terms = lowerTerm.split(/\s+/).filter(t => t.length > 0);
+        if (terms.length > 1) {
+            const searchable = (product.category + ' ' + product.types.join(' ')).toLowerCase();
+            const matchedTerms = terms.filter(t => searchable.includes(t)).length;
+            score += matchedTerms * 10;
+        }
+        
+        return score;
+    }
+    
+    function renderProducts() {
+        applyFilters();
     }
     
     function renderFilteredProducts(filtered) {
         categoriesContainer.innerHTML = '';
+        
         if (filtered.length === 0) {
+            const suggestions = getSearchSuggestions(searchTerm);
+            let suggestionsHtml = '';
+            if (suggestions.length > 0) {
+                suggestionsHtml = `
+                    <div style="margin-top: 1rem;">
+                        <p style="margin-bottom: 0.5rem; font-size: 0.9rem;">هل تقصد:</p>
+                        ${suggestions.map(s => `<button class="suggestion-btn" onclick="applySuggestion('${escapeHtml(s).replace(/'/g, "\\'")}')">${escapeHtml(s)}</button>`).join('')}
+                    </div>
+                `;
+            }
+            
             categoriesContainer.innerHTML = `
-                <div style="grid-column: 1/-1; text-align: center; padding: 3rem; color: #999;">
-                    <i class="fas fa-search" style="font-size: 3rem; margin-bottom: 1rem; display: block;"></i>
-                    لا توجد نتائج مطابقة
+                <div class="empty-state">
+                    <i class="fas fa-search"></i>
+                    <p>لا توجد نتائج مطابقة</p>
+                    <small>جرب كلمة بحث أخرى أو اختر فئة مختلفة</small>
+                    ${suggestionsHtml}
                 </div>
             `;
+            resultsCount.innerHTML = '';
             return;
         }
+        
+        if (searchTerm || currentCategory !== 'All') {
+            const totalTypes = filtered.reduce((sum, p) => sum + (p.types ? p.types.length : 0), 0);
+            resultsCount.innerHTML = `تم العثور على <strong>${filtered.length}</strong> صنف و <strong>${totalTypes}</strong> نوع`;
+        } else {
+            resultsCount.innerHTML = '';
+        }
+        
         filtered.forEach(product => {
             categoriesContainer.appendChild(createProductElement(product));
         });
     }
     
-    // ========= Search =========
-    function handleSearch() {
-        const term = searchBox.value.toLowerCase().trim();
+    function getSearchSuggestions(term) {
+        if (!term || term.length < 2) return [];
         
-        const filtered = products.filter(product => {
-            const categoryMatch = product.category.toLowerCase().includes(term);
-            const typesMatch = product.types.some(t => t.toLowerCase().includes(term));
-            return categoryMatch || typesMatch;
+        const lowerTerm = term.toLowerCase();
+        const suggestions = new Set();
+        const allWords = new Set();
+        
+        products.forEach(p => {
+            allWords.add(p.category);
+            p.types.forEach(t => allWords.add(t));
         });
         
-        renderFilteredProducts(filtered);
+        const prefix = lowerTerm.substring(0, Math.min(3, lowerTerm.length));
         
-        // Highlight
-        if (term) {
-            document.querySelectorAll('.category-value, .type-chip').forEach(el => {
-                const text = el.textContent;
-                const regex = new RegExp(`(${escapeRegExp(term)})`, 'gi');
-                el.innerHTML = text.replace(regex, '<mark class="search-highlight">$1</mark>');
-            });
-        }
+        allWords.forEach(word => {
+            const lowerWord = word.toLowerCase();
+            if (lowerWord !== lowerTerm) {
+                if (lowerWord.startsWith(prefix) || 
+                    (lowerTerm.length >= 2 && lowerWord.includes(lowerTerm.substring(0, 2)))) {
+                    suggestions.add(word);
+                }
+            }
+        });
+        
+        return [...suggestions].slice(0, 5);
     }
     
-    // ========= Helpers =========
+    function applySuggestion(term) {
+        searchBox.value = term;
+        searchTerm = term;
+        clearSearchBtn.classList.add('show');
+        applyFilters();
+    }
+    
+    function updateStats() {
+        const totalProducts = products.length;
+        const totalTypes = products.reduce((sum, p) => sum + p.types.length, 0);
+        statsText.textContent = `${totalProducts} صنف / ${totalTypes} نوع`;
+    }
+    
+    // ============ HELPERS ============
     function escapeHtml(text) {
+        if (!text) return '';
         const div = document.createElement('div');
         div.textContent = text;
         return div.innerHTML;
@@ -986,9 +1686,14 @@
         return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
     }
     
-    function showNotification(text) {
+    function showNotification(text, isError = false) {
         notificationText.textContent = text;
         notification.classList.add('show');
+        if (isError) {
+            notification.classList.add('error');
+        } else {
+            notification.classList.remove('error');
+        }
         setTimeout(() => notification.classList.remove('show'), 3000);
     }
     
