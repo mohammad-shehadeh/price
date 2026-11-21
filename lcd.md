@@ -60,7 +60,7 @@ tecno | infinix | itel/Spark Go1 - spark 30 5G - spark GO1S - TECNO POP 9 5G - S
 tecno | infinix | itel/SPARK GO2 - spark 40 - spark 40C - GO2 S - GO2 PRO smart 10 - smart 10 hd - hot 60i - hot 60 5G  infinix Hot 60i - pop 10|/50/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131117/z2dzmryifu1g3pgusfso.jpg
 tecno | infinix | itel/SPARK GO3 - SMART 20 - POP 20 - ITEL A200 - POP X - SPARK 50 5G - HOT 70 |/50/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131117/z2dzmryifu1g3pgusfso.jpg
 tecno | infinix | itel/tecno POVA 6 - tecno POVA 6 PRO 5G - tecno CAMON 30 - tecno CAMON 30 5G - infinix NOTE 40 5G ORI |/60/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131117/z2dzmryifu1g3pgusfso.jpg
-tecno | infinix | itel/tecno POVA 7 |/60/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131117/z2dzmryifu1g3pgusfso.jpg
+tecno | infinix | itel/tecno POVA 7 5G |/50/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131117/z2dzmryifu1g3pgusfso.jpg
 tecno | infinix | itel/tecno POVA 6 Oled +frame ACC |/130/undefined
 tecno | infinix | itel/infinix HOT 10 - camon 16 - spark 6 2020 - pova - note 8i - note 10 |/45/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131117/z2dzmryifu1g3pgusfso.jpg
 tecno | infinix | itel/infinix S5 pro |/45/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772131117/z2dzmryifu1g3pgusfso.jpg
