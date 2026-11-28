@@ -1,16 +1,16 @@
-MI/NOTE 17 pro max 256|8/1370/undefined
-MI/NOTE 17 pro 256|12/1220/undefined
-MI/NOTE 17 256|8/830/undefined
+MI/NOTE 17 pro max 256|8/1420/undefined
+MI/NOTE 17 pro 256|12/1250/undefined
+MI/NOTE 17 256|8/850/undefined
 samsung/A57 512|12/Aa/undefined
 samsung/A57 256|8/1300/undefined
 samsung/A37 256|12/1180/undefined
 samsung/A27 128|6/Aa/undefined
-MI/A7 pro 128|4/420/undefined
+MI/A7 pro 128|4/460/undefined
 Honor/T10 64|4/330/undefined
-MI/REDMI PAD 2 256|8/730/undefined
-MI/REDMI A7 pro 128|4/400/undefined
-MI/REDMI PAD 2 Pro 256|8/1000/undefined
-MI/X8 PRO MAX 512|12/1800/undefined
+MI/REDMI PAD 2 256|8/Aa/undefined
+MI/REDMI A7 pro 128|4/460/undefined
+MI/REDMI PAD 2 Pro 256|8/Aa/undefined
+MI/X8 PRO MAX 512|12/1900/undefined
 MI/NOTE 70 +AIR PUDS 256|8/550/undefined
 Honor/X8D 256|8/820/undefined
 Honor/X5C 128|4/Aa/undefined
@@ -20,9 +20,9 @@ N\A/A17 pro max 128|3/300/https://res.cloudinary.com/dygc5b8cn/image/upload/v177
 N\A/X26 ultra 128|6/350/https://res.cloudinary.com/dygc5b8cn/image/upload/v1771316270/jof5pzc5icvsuecqihdd.webp
 samsung/Tap A11+ 5G 256|8/Aa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1771082599/b497on9imix4xsaztlvf.png
 Honor/X7D 256|8/Aa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769508671/xkjcincirbyzfyqyfg3s.png
-MI/NOTE 15 PRO 512|12/1050/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769083954/ytytfhodxytzcrqr1pcz.jpg
+MI/NOTE 15 PRO 512|12/1100/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769083954/ytytfhodxytzcrqr1pcz.jpg
 MI/NOTE 15 PRO 256|8/Aa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769083899/cxucuyswalsqf24gqprl.webp
-MI/NOTE 15 256|8/740/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769083825/bytesdd6t344fn7bnhou.jpg
+MI/NOTE 15 256|8/770/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769083825/bytesdd6t344fn7bnhou.jpg
 Nokia/Nokia 108 4G ori |/125/https://res.cloudinary.com/dygc5b8cn/image/upload/v1768648661/gat9whx1e07qi9ilswpg.webp
 Nokia/Nokia 105 4G ori |/110/https://res.cloudinary.com/dygc5b8cn/image/upload/v1769789789/unvvxjjvwktvugwpdv8u.jpg
 Nokia/Nokia 110 4G ori |/120/https://res.cloudinary.com/dygc5b8cn/image/upload/v1768648574/g1gljaqe1lwqaafpobf0.jpg
