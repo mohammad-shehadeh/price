@@ -1,3 +1,4 @@
+Honor/X9E pro 256|8/1500/undefined
 MI/NOTE 17 pro max 256|8/1420/undefined
 MI/NOTE 17 pro 256|12/1250/undefined
 MI/NOTE 17 256|8/850/undefined
@@ -12,7 +13,7 @@ MI/REDMI A7 pro 128|4/460/undefined
 MI/REDMI PAD 2 Pro 256|8/Aa/undefined
 MI/X8 PRO MAX 512|12/1900/undefined
 MI/NOTE 70 +AIR PUDS 256|8/550/undefined
-Honor/X8D 256|8/820/undefined
+Honor/X8D 256|8/850/undefined
 Honor/X5C 128|4/Aa/undefined
 Honor/X6C 256|6/Aa/undefined
 Honor/PLAY 10 64|3/Aa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1773488724/dskshebfjtlm0zhvle0u.png
@@ -34,7 +35,7 @@ huawei/GT 6 pro titanium |/1300/https://res.cloudinary.com/dygc5b8cn/image/uploa
 huawei/GT 6 pro black |/950/https://res.cloudinary.com/dygc5b8cn/image/upload/v1768227584/ouneqq7unlc2mcycqwva.jpg
 huawei/GT 6 pro Brown |/950/https://res.cloudinary.com/dygc5b8cn/image/upload/v1768227586/oukwzyqhww3kulp9tvsr.webp
 samsung/TAB A11 128|8/Aa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1767692192/ubyqea0ilzlcx95s4mwa.jpg
-Honor/X9d 256|12/1150/https://res.cloudinary.com/dygc5b8cn/image/upload/v1763373225/j3170qc31xs8tyqnkoju.webp
+Honor/X9d 256|12/Aa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1763373225/j3170qc31xs8tyqnkoju.webp
 MI/Pad 2 256|8/Aa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1759655366/bsrpwamkyjsfjjxjyvqq.webp
 MI/SE 11" 256|8/aaa/https://www.celletronic.com/wp-content/uploads/2023/09/xiaomi-redmi-pad-se-11-0-6gb-ram-128gb-wifi-gris.jpg
 MI/C71 128|4/Aa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1766568493/kwt5ow5wuofjizgiweqe.webp
@@ -47,7 +48,7 @@ samsung/A07 64|4/410/https://res.cloudinary.com/dygc5b8cn/image/upload/v17582011
 MI/Redmi 15C 128|6/Aa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1757324301/ilyhjiezyfz5khp30p5e.webp
 MI/Redmi 15C 128|4/aa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1757324301/ilyhjiezyfz5khp30p5e.webp
 samsung/A07 128|4/470/https://res.cloudinary.com/dygc5b8cn/image/upload/v1756559491/wokzeyy83lncbbewic1v.jpg
-Honor/400 LITE 256|8/820/https://res.cloudinary.com/dygc5b8cn/image/upload/v1754815540/i5mtqw9pbcm7nstx5wy1.jpg
+Honor/400 LITE 256|8/850/https://res.cloudinary.com/dygc5b8cn/image/upload/v1754815540/i5mtqw9pbcm7nstx5wy1.jpg
 Honor/400 pro 512|12/Aa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1749889558/fmzaah1o7lludxn31jts.jpg
 samsung/S26 ultra 512|12/Aa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772910347/z35p8zr82lup8f1svbfz.webp
 MI/Redmi 13X 256|8/Aa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1753791535/a13rrdzxc1i0gtxd5b6f.png
@@ -64,6 +65,5 @@ ZTE/nubia V60 design 256|16/370/https://www.innwa.com.mm/storage/product/1430/20
 ZTE/nubia V60 256|20/460/https://www.innwa.com.mm/storage/product/1430/202408181124zte-blade-v60-design-blue.webp
 Nokia/H2163 كشاف صيني |/35/https://s9.pik.ba/galerija/2021-04/26/06/slika-2830089-6086f09649711-velika.jpg
 MI/REDMI A7 pro 128|4/420/undefined
-MI/NOTE 15 PRO PLUS 512|12/Aa/undefined
 Honor/400 512|12/Aa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1749890166/zudnes5gdxiihzll14p1.jpg
 samsung/S26 ultra 256|12/Aa/https://res.cloudinary.com/dygc5b8cn/image/upload/v1772910348/muxhmjpfgfumtsowyv69.webp
