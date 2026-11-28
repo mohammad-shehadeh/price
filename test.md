@@ -1,3 +1,7 @@
+N\A/Pova 7 5G 256|8/880/undefined
+N\A/Note 15 128|4/440/undefined
+N\A/POP 20C 64|4/370/undefined
+N\A/Go3 128|4/400/undefined
 Honor/X9E pro 256|8/1500/undefined
 MI/NOTE 17 pro max 256|8/1420/undefined
 MI/NOTE 17 pro 256|12/1250/undefined
